@@ -111,14 +111,7 @@ async function enrichDurations(items, { fetchLimit, log }) {
     if (cache.get(it.title) !== undefined) continue;
     if (fetched >= fetchLimit) break;
     try {
-      // 读取页面内联时长字段：优酷为「秒」（如 "duration":1415 / "duration":59.47）；兼容毫秒与 ISO 8601（PT0M59.47S）
-      let pageHtml = await fetchText(it.url, { referer: "https://www.youku.com/ku/webcomic", timeout: 12000 });
-      if (!/"duration"\s*:\s*(\d+)/.test(pageHtml)) {
-        // 快速重试一次（页面可能偶发缺字段/超时）
-        pageHtml = await fetchText(it.url, { referer: "https://www.youku.com/ku/webcomic", timeout: 12000 });
-      }
-      // 请求间隔 300ms，降低触发优酷限流概率
-      await new Promise((r) => setTimeout(r, 300));
+      const pageHtml = await fetchShowPage(it.url);
       const all = [
         ...[...pageHtml.matchAll(/"duration"\s*:\s*(\d+)/g)],
         ...[...pageHtml.matchAll(/"videoDuration"\s*:\s*(\d+)/g)],
@@ -137,10 +130,28 @@ async function enrichDurations(items, { fetchLimit, log }) {
     } catch {
       cache.set(it.title, null);
     }
+    // 请求间隔 400ms，降低连续请求触发优酷降级（缺字段/限流）的概率
+    await new Promise((r) => setTimeout(r, 400));
   }
   for (const it of items) {
     const dur = cache.get(it.title);
     if (dur !== undefined) it.duration = dur;
   }
   log(`时长富集完成：抓取 ${fetched} 页`);
+}
+
+/** show_page 抓取：失败或缺少时长字段时退避重试（优酷对连续请求偶发限流/缺字段） */
+async function fetchShowPage(url) {
+  let lastErr;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const html = await fetchText(url, { referer: "https://www.youku.com/ku/webcomic", timeout: 15000 });
+      if (/duration/.test(html)) return html;
+      lastErr = new Error("页面缺少 duration 字段");
+    } catch (err) {
+      lastErr = err;
+    }
+    if (attempt < 2) await new Promise((r) => setTimeout(r, 900 * (attempt + 1)));
+  }
+  throw lastErr ?? new Error("show_page 抓取失败");
 }
