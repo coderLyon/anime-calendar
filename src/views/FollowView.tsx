@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { ChevronDownIcon, DownloadIcon, ExternalIcon, SearchIcon, UploadIcon } from "../lib/icons";
+import { ChevronLeftIcon, DownloadIcon, ExternalIcon, SearchIcon, UploadIcon } from "../lib/icons";
 import { PLATFORMS, platShort, PlatformLogo } from "../lib/platforms";
 import { posterGlyph, posterStyle } from "../lib/poster";
 import { posterForTitle } from "../lib/items";
@@ -15,7 +15,6 @@ export function FollowView({ onNavigate }: { onNavigate: (p: Page) => void }) {
   const toast = useToast();
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<Filter>("all");
-  const [open, setOpen] = useState<Set<string>>(() => new Set());
   const fileRef = useRef<HTMLInputElement>(null);
 
   const list = Object.values(follows)
@@ -25,15 +24,6 @@ export function FollowView({ onNavigate }: { onNavigate: (p: Page) => void }) {
       return okQ && okP;
     })
     .sort((a, b) => (a.followedAt || "").localeCompare(b.followedAt || ""));
-
-  const toggleOpen = (key: string) => {
-    setOpen((prev) => {
-      const next = new Set(prev);
-      if (next.has(key)) next.delete(key);
-      else next.add(key);
-      return next;
-    });
-  };
 
   const onExport = () => {
     const blob = new Blob([exportJson()], { type: "application/json" });
@@ -68,6 +58,9 @@ export function FollowView({ onNavigate }: { onNavigate: (p: Page) => void }) {
           <div className="sub">共 {count} 部 · 仅保存在本机（localStorage），支持导出/导入 JSON 备份</div>
         </div>
         <div style={{ display: "flex", gap: 8 }}>
+          <button className="btn ghost" onClick={() => onNavigate("home")}>
+            <ChevronLeftIcon /> 返回看板
+          </button>
           <button className="btn ghost" onClick={onExport}>
             <DownloadIcon /> 导出
           </button>
@@ -103,7 +96,7 @@ export function FollowView({ onNavigate }: { onNavigate: (p: Page) => void }) {
       </div>
       <div className="follow-list">
         {list.length
-          ? list.map((f) => <FollowItemRow key={f.key} follow={f} open={open.has(f.key)} onToggle={() => toggleOpen(f.key)} onRemove={() => { remove(f.key); toast("已取消追番"); }} />)
+          ? list.map((f) => <FollowItemRow key={f.key} follow={f} onRemove={() => { remove(f.key); toast("已取消追番"); }} />)
           : (
               <EmptyState title="没有匹配的追番" desc="试试其他关键词或平台筛选；点星标即可把想追的番收进来">
                 <button className="btn primary" onClick={() => onNavigate("home")}>
@@ -116,12 +109,13 @@ export function FollowView({ onNavigate }: { onNavigate: (p: Page) => void }) {
   );
 }
 
-function FollowItemRow({ follow, open, onToggle, onRemove }: { follow: FollowItem; open: boolean; onToggle: () => void; onRemove: () => void }) {
+function FollowItemRow({ follow, onRemove }: { follow: FollowItem; onRemove: () => void }) {
   const latest = [...follow.platforms].sort((a, b) => (b.updateTime ?? "").localeCompare(a.updateTime ?? ""))[0];
   const poster = posterForTitle(follow.title);
+  const sorted = [...follow.platforms].sort((a, b) => a.platform.localeCompare(b.platform));
   return (
-    <div className={`follow-item ${open ? "open" : ""}`}>
-      <div className="fi-head" onClick={onToggle}>
+    <div className="follow-item">
+      <div className="fi-head">
         <div className="poster" style={{ background: posterStyle(follow.title) }}>
           <span className="ph-mark" />
           {poster ? (
@@ -148,17 +142,13 @@ function FollowItemRow({ follow, open, onToggle, onRemove }: { follow: FollowIte
         <button
           className="star-btn on"
           aria-label="取消追番"
-          onClick={(e) => {
-            e.stopPropagation();
-            onRemove();
-          }}
+          onClick={onRemove}
         >
           <StarFill />
         </button>
-        <ChevronDownIcon className="fi-chevron" />
       </div>
       <div className="fi-body">
-        {follow.platforms.map((p) => (
+        {sorted.map((p) => (
           <div key={p.platform} className="fi-plat">
             <span className={`plat-chip ${p.platform}`}>{platShort(p.platform)}</span>
             <span className="plat-info">

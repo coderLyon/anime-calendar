@@ -58,5 +58,11 @@ export function useShortFilterVersion(): number {
 /** 应用短剧过滤：关闭时全部保留；开启时保留未知时长与 >= 阈值的条目 */
 export function applyShortFilter(items: AnimeItem[]): AnimeItem[] {
   if (!config.enabled) return items;
-  return items.filter((i) => i.duration == null || i.duration >= config.thresholdSec);
+  const strict = config.thresholdSec <= 60;
+  return items.filter((i) => {
+    if (i.duration != null && i.duration < config.thresholdSec) return false;
+    // 阈值 ≤ 1 分钟时额外排除优酷名称含标点符号的条目（AI 短剧常见特征，如「XX，XX」「XX：XX」）
+    if (strict && i.platform === "youku" && /[，。！？：；、]/.test(i.title)) return false;
+    return true;
+  });
 }

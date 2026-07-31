@@ -36,15 +36,18 @@ function CalItem({ item, toast }: { item: AnimeItem; toast: (m: string) => void 
         ) : (
           <span className="ph-glyph">{posterGlyph(item.title)}</span>
         )}
-        <span className={`plat-chip ${item.platform}`}>{platShort(item.platform)}</span>
       </div>
       <div className="cal-item-main">
-        <div className="cal-item-title">{item.title}</div>
+        <div className="cal-item-title-row">
+          <span className={`plat-chip ${item.platform}`}>{platShort(item.platform)}</span>
+          <span className="cal-item-title">{item.title}</span>
+        </div>
         <div className="cal-item-meta">
           <span className={`plat-dot ${item.platform}`} />
           {item.episode}
           {item.svip ? " · SVIP抢先" : ""}
           {item.badge === "独播" ? " · 独播" : ""}
+          {item.badge === "超前点映" ? " · 超前点映" : ""}
         </div>
       </div>
       <span className="cal-item-time">{item.updateTime || "更新"}</span>
@@ -211,10 +214,12 @@ function renderSchedule(calDate: Date, scopeItems: (d: Date) => AnimeItem[], toa
                 ) : (
                   <span className="ph-glyph">{posterGlyph(it.title)}</span>
                 )}
-                <span className={`plat-chip ${it.platform}`}>{platShort(it.platform)}</span>
               </div>
               <div className="preview-item-main">
-                <div className="preview-item-title">{it.title}</div>
+                <div className="cal-item-title-row">
+                  <span className={`plat-chip ${it.platform}`}>{platShort(it.platform)}</span>
+                  <span className="preview-item-title">{it.title}</span>
+                </div>
                 <div className="preview-item-meta">
                   <span className={`plat-dot ${it.platform}`} />
                   {it.episode} · {it.updateTime}
@@ -267,7 +272,10 @@ function renderWeek(
                 )}
               </div>
               <div className="week-item-main">
-                <div className="week-item-title">{it.title}</div>
+                <div className="cal-item-title-row">
+                  <span className={`plat-chip ${it.platform}`}>{platShort(it.platform)}</span>
+                  <span className="week-item-title">{it.title}</span>
+                </div>
                 <div className="week-item-time">{it.episode} · {it.updateTime}</div>
               </div>
             </div>

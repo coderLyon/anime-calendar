@@ -5,6 +5,7 @@ const PRESETS = [
   { label: "3 分钟", sec: 180 },
   { label: "5 分钟", sec: 300 },
   { label: "10 分钟", sec: 600 },
+  { label: "15 分钟", sec: 900 },
 ];
 
 export function ShortFilterControl() {

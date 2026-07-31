@@ -126,12 +126,12 @@ svg { display: block; }
 .brand { display: flex; align-items: center; gap: var(--s3); }
 .brand-mark {
   width: 38px; height: 38px; border-radius: 12px;
-  background: linear-gradient(135deg, var(--accent), #7C63E8);
+  background: linear-gradient(135deg, #FB7299, #FF9BB3);
   color: #fff; display: grid; place-items: center;
-  box-shadow: 0 6px 14px -6px rgba(79,91,213,.55);
+  box-shadow: 0 6px 14px -6px rgba(251,114,153,.55);
 }
 .brand-mark svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.brand-mark svg path:last-child { stroke: #CFD5FF; }
+.brand-mark svg path:last-child { stroke: #FFE3EC; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
 .brand-name { font-size: 17px; font-weight: 700; letter-spacing: .5px; }
 .brand-sub { font-size: 11px; color: var(--ink-3); }
@@ -345,6 +345,7 @@ svg { display: block; }
 .tag.mianfei { background: var(--success-soft); color: var(--success); }
 .tag.shangxin { background: var(--danger-soft); color: var(--danger); }
 .tag.wanjie { background: var(--surface-2); color: var(--ink-3); border: 1px solid var(--line); }
+.tag.cqdy { background: color-mix(in srgb, var(--accent) 14%, var(--surface)); color: var(--accent-ink); border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent); }
 
 /* ---------- Platform identity ---------- */
 .plat-logo { width: 16px; height: 16px; flex: none; display: inline-flex; border-radius: 5px; overflow: hidden; }
@@ -499,7 +500,7 @@ svg { display: block; }
   transition: border-color .16s;
 }
 .follow-item.open { border-color: var(--accent); }
-.fi-head { display: flex; align-items: center; gap: var(--s3); padding: var(--s3) var(--s4); cursor: pointer; }
+.fi-head { display: flex; align-items: center; gap: var(--s3); padding: var(--s3) var(--s4); }
 .fi-head .star-btn { position: static; width: 30px; height: 30px; flex: none; margin-left: 2px; background: transparent; box-shadow: none; color: #F5A623; }
 .fi-head .star-btn::before { display: none; }
 .fi-head .star-btn svg { fill: #F5A623; stroke: #F5A623; }
@@ -508,10 +509,7 @@ svg { display: block; }
 .fi-info { flex: 1; min-width: 0; }
 .fi-title { font-size: 15px; font-weight: 700; display: flex; align-items: center; gap: 6px; }
 .fi-sub { font-size: 12px; color: var(--ink-3); margin-top: 2px; }
-.fi-chevron { color: var(--ink-3); width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .18s; }
-.follow-item.open .fi-chevron { transform: rotate(180deg); }
-.fi-body { border-top: 1px solid var(--line); padding: var(--s3) var(--s4); display: none; flex-direction: column; gap: 8px; }
-.follow-item.open .fi-body { display: flex; }
+.fi-body { border-top: 1px solid var(--line); padding: var(--s3) var(--s4); display: flex; flex-direction: column; gap: 8px; }
 .fi-plat {
   display: flex; align-items: center; gap: 10px;
   padding: 8px 10px; border-radius: 10px; background: var(--surface-2); border: 1px solid var(--line);
@@ -552,6 +550,7 @@ svg { display: block; }
 .cal-item .poster { width: 44px; aspect-ratio: 3/4; border-radius: 7px; flex: none; }
 .cal-item .poster .ph-glyph { font-size: 11px; }
 .cal-item-main { flex: 1; min-width: 0; }
+.cal-item-title-row { display: flex; align-items: center; gap: 6px; min-width: 0; }
 .cal-item-title { font-size: 13.5px; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .cal-item-meta { font-size: 11.5px; color: var(--ink-3); margin-top: 2px; display: flex; align-items: center; gap: 5px; }
 .cal-item-time {
@@ -564,6 +563,8 @@ svg { display: block; }
 .preview-item .poster { width: 34px; aspect-ratio: 3/4; border-radius: 6px; flex: none; }
 .preview-item .poster .ph-glyph { font-size: 9px; }
 .preview-item-main { flex: 1; min-width: 0; }
+.preview-item .plat-chip { font-size: 9px; height: 16px; padding: 0 5px; }
+.preview-item .cal-item-title-row .preview-item-title { flex: 1; }
 .preview-item-title { font-size: 12.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .preview-item-meta { font-size: 11px; color: var(--ink-3); }
 
@@ -588,6 +589,8 @@ svg { display: block; }
 .week-item .poster { width: 30px; aspect-ratio: 3/4; border-radius: 5px; flex: none; }
 .week-item .poster .ph-glyph { font-size: 8px; }
 .week-item-main { flex: 1; min-width: 0; }
+.week-item .plat-chip { font-size: 8.5px; height: 14px; padding: 0 4px; }
+.week-item .cal-item-title-row .week-item-title { flex: 1; }
 .week-item-title { font-size: 11.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .week-item-time { font-size: 10px; color: var(--ink-3); }
 

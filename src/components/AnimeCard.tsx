@@ -9,6 +9,7 @@ function Tag({ item }: { item: AnimeItem }) {
   if (item.svip) return <span className="tag svip">SVIP抢先</span>;
   if (item.badge === "独播") return <span className="tag dubo">独播</span>;
   if (item.badge === "限免") return <span className="tag mianfei">限免</span>;
+  if (item.badge === "超前点映") return <span className="tag cqdy">超前点映</span>;
   return null;
 }
 

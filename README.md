@@ -32,11 +32,11 @@ GitHub Pages 静态前端 + GitHub Actions 定时数据管道：
 ```
 Actions（cron 0 11,23 * * * UTC + workflow_dispatch + push）
   → npm ci → playwright install chromium
-  → node scripts/sync.mjs（抓取四平台 → 时长富集（B站季分集接口 / 腾讯卡片 / 优酷 show_page+播放页 / 爱奇艺 avlistinfo 分集接口）→ 短条目保留 + AI 短剧关键词/评论区启发式兜底 → SVIP 抢先去重 → 最新集解析 → 写 data/updates.json）
+  → node scripts/sync.mjs（抓取四平台 → 时长富集（B站季分集接口 / 腾讯卡片 / 优酷 show_page+播放页 / 爱奇艺 avlistinfo 分集接口）→ 短条目保留 + AI 短剧关键词/评论区启发式兜底 + 豆瓣甄别（优酷/爱奇艺缺失时长条目，限额防反爬）→ SVIP 抢先去重 → 最新集解析 → 写 data/updates.json）
   → vite build → actions/deploy-pages 发布 dist/
 ```
 
-前端「短剧过滤」开关（默认开启、阈值可调 1/3/5/10 分钟）：仅隐藏展示，数据仍保留，关闭后可见全部条目。
+前端「短剧过滤」开关（默认开启、阈值可调 1/3/5/10/15 分钟）：仅隐藏展示，数据仍保留，关闭后可见全部条目；阈值 ≤1 分钟时额外排除优酷名称含标点符号的 AI 短剧条目。
 
 前端构建时读取 `data/updates.json`（结构与 `AnimeItem` 契约一致，仓库内为最近一次同步结果）。单平台抓取失败时输出 `error` 字段并沿用上次成功数据，只有完全无法产出数据时同步才退出非零。
 
