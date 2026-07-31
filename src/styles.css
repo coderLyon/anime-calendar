@@ -343,7 +343,7 @@ svg { display: block; }
 
 /* ---------- Platform identity ---------- */
 .plat-logo { width: 16px; height: 16px; flex: none; display: inline-flex; border-radius: 5px; overflow: hidden; }
-.plat-logo svg { width: 100%; height: 100%; display: block; }
+.plat-logo img { width: 100%; height: 100%; display: block; object-fit: contain; }
 .tab .plat-logo { width: 17px; height: 17px; }
 .chip .plat-logo { width: 15px; height: 15px; }
 .plat-dot.bili { background: var(--bili); }

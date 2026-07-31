@@ -112,14 +112,17 @@ async function enrichDurations(items, { fetchLimit, log }) {
     if (fetched >= fetchLimit) break;
     try {
       const pageHtml = await fetchText(it.url, { referer: "https://www.youku.com/ku/webcomic", timeout: 8000 });
-      // 读取页面内联时长字段（毫秒），取合理区间内的最大值
+      // 读取页面内联时长字段：优酷为「秒」（如 "duration":1415）；兼容毫秒字段
       const all = [
         ...[...pageHtml.matchAll(/"duration"\s*:\s*(\d+)/g)],
         ...[...pageHtml.matchAll(/"videoDuration"\s*:\s*(\d+)/g)],
         ...[...pageHtml.matchAll(/"duration_msec"\s*:\s*(\d+)/g)],
       ].map((m) => Number(m[1]));
-      const plausible = all.filter((v) => v > 300000 && v < 7200000); // 5 分钟 ~ 2 小时（毫秒）
-      cache.set(it.title, plausible.length ? Math.round(Math.max(...plausible) / 1000) : null);
+      const max = all.length ? Math.max(...all) : 0;
+      let dur = null;
+      if (max >= 300000) dur = Math.round(max / 1000); // 毫秒字段（≥5 分钟）
+      else if (max >= 60) dur = max; // 秒字段（1 分钟 ~ 几小时）
+      cache.set(it.title, dur);
       fetched++;
     } catch {
       cache.set(it.title, null);

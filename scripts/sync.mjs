@@ -34,13 +34,13 @@ function loadPrevious() {
   }
 }
 
-/** 清洗层步骤 1：时长过滤（<600s 丢弃；缺失时长关键词兜底并记 warnings） */
+/** 清洗层步骤 1：时长过滤（<300s 即不足 5 分钟丢弃；缺失时长关键词兜底并记 warnings） */
 function cleanDuration(items, warnings) {
   const kept = [];
   let missing = 0;
   let dropped = 0;
   for (const it of items) {
-    if (typeof it.duration === "number" && it.duration > 0 && it.duration < 600) {
+    if (typeof it.duration === "number" && it.duration > 0 && it.duration < 300) {
       dropped++;
       continue;
     }
@@ -55,7 +55,7 @@ function cleanDuration(items, warnings) {
     }
     kept.push(it);
   }
-  if (dropped) warnings.push(`时长过滤：丢弃 ${dropped} 条时长过短/无法确认条目`);
+  if (dropped) warnings.push(`时长过滤：丢弃 ${dropped} 条不足 5 分钟（<300 秒）或无法确认时长的条目`);
   if (missing) warnings.push(`${missing} 条时长无法确认已保留（平台未提供内联时长）`);
   return kept;
 }

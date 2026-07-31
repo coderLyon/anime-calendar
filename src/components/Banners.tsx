@@ -6,7 +6,7 @@ export function WarnBanner({ onClose }: { onClose: () => void }) {
       <WarnIcon />
       <div>
         <span className="warn-title">数据提示：</span>
-        <span className="warn-body">已按规则过滤时长过短条目（泡面番/AI动漫），未确认时长条目进入富集流程；详情见同步日志 warnings</span>
+        <span className="warn-body">已按规则过滤时长不足 5 分钟（&lt;300 秒）的条目；无法确认时长的条目按关键词兜底判定，详情见同步日志 warnings</span>
       </div>
       <div className="warn-actions">
         <button className="btn sm" onClick={onClose}>知道了</button>

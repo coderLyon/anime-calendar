@@ -36,12 +36,19 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
       await page.waitForTimeout(1300);
       dismissOverlay(page);
 
-      const cards = await page.locator("[class*=filmFeed_innerwrap]").evaluateAll((els) => {
+      // 仅取「追番表」日历卡片：优先 followCalendarCard 容器；页面存在 A/B 变体时，
+      // 回退为排除「猜你喜欢」推荐区（compFuncs_simpleWrap）后取剩余卡片
+      const cards = await page.evaluate(() => {
+        const host = document.querySelector("[class*=followCalendarCard]");
+        const els = host
+          ? [...host.querySelectorAll("[class*=filmFeed_innerwrap]")]
+          : [...document.querySelectorAll("[class*=filmFeed_innerwrap]")].filter((el) => !el.closest("[class*=compFuncs_simpleWrap]"));
         const out = [];
         for (const el of els) {
           if (!el.querySelector('[data-ai-entity="文案区"]') || !el.querySelector("img")) continue;
           const anchors = [...el.querySelectorAll("a[href]")];
-          const titleA = anchors.find((a) => a.getAttribute("href")?.includes("a%3Atitl")) ?? anchors[0];
+          // 标题锚点 href 含 ext_params=a%3Dtitl（即 a=titl）；匹配失败时回退首个锚点
+          const titleA = anchors.find((a) => a.getAttribute("href")?.includes("a%3Dtitl")) ?? anchors[0];
           const title = titleA?.textContent?.trim() ?? "";
           const contentEl = el.querySelector("[data-content]");
           const text = (el.textContent ?? "").replace(/\s+/g, " ");
