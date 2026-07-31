@@ -91,15 +91,42 @@ async function doubanShortDramaFilter(items, platform, warnings, { log }) {
 
   // 豆瓣「暂无评分」但确认为正规剧集的条目（避免误杀）：B站国创《苏东坡与杭州的故事》等
   const UNRATED_WHITELIST = new Set(["苏东坡与杭州的故事"]);
+  // 用户经评论区等渠道人工确认的 AI 短剧（自动判据覆盖不到时兜底）：云月大陆评论区出现「AI漫剧」
+  const CURATED_AI_SHORTS = new Set(["云月大陆"]);
   const MAX_QUERIES = 10;
   const DELAY_MS = 2000;
   const cache = new Map();
   let queries = 0;
   let dropped = 0;
+  let curated = 0;
   let nomatch = 0;
   let quotaLeft = 0;
   let failed = 0;
   const kept = [];
+
+  // 查询优先级：标点命名/AI 常见词/一周多次出现的条目优先消耗豆瓣配额（AI 短剧特征）
+  const AI_KEYWORD_RE = /开局|无敌|逆天|系统|穿越|废|宠|御兽|修仙|觉醒|大婚|赘婿|龙王|神医|战神|宗门|仙帝|杀伐|苟/;
+  const score = (it) => (/[，。！？：；、]/.test(it.title) ? 3 : 0) + (AI_KEYWORD_RE.test(it.title) ? 2 : 0) + (items.filter((x) => x.title === it.title).length > 1 ? 1 : 0);
+  const queryOrder = [...new Map(suspicious.map((i) => [i.title, i])).values()].sort((a, b) => score(b) - score(a));
+  for (const it of queryOrder) {
+    if (queries >= MAX_QUERIES) break;
+    queries++;
+    const r = await doubanLookup(it.title);
+    await new Promise((res) => setTimeout(res, DELAY_MS));
+    if (!r.ok) {
+      cache.set(it.title, "fail");
+      failed++;
+    } else if (r.exact && r.exact.unrated && !UNRATED_WHITELIST.has(it.title)) {
+      cache.set(it.title, "drop");
+    } else if (r.exact && r.exact.unrated && UNRATED_WHITELIST.has(it.title)) {
+      cache.set(it.title, "keep");
+      log(`豆瓣暂无评分但命中白名单，保留：${it.title}`);
+    } else if (r.exact && r.exact.rated) {
+      cache.set(it.title, "keep");
+    } else {
+      cache.set(it.title, "nomatch");
+    }
+  }
 
   for (const it of items) {
     const isSus = it.duration == null || (it.duration > 0 && it.duration < 60);
@@ -107,29 +134,14 @@ async function doubanShortDramaFilter(items, platform, warnings, { log }) {
       kept.push(it);
       continue;
     }
+    if (CURATED_AI_SHORTS.has(it.title)) {
+      curated++;
+      log(`人工确认 AI 短剧排除：${it.title}`);
+      continue;
+    }
     if (!cache.has(it.title)) {
-      if (queries >= MAX_QUERIES) {
-        cache.set(it.title, "quota");
-        quotaLeft++;
-        kept.push(it);
-        continue;
-      }
-      queries++;
-      const r = await doubanLookup(it.title);
-      await new Promise((res) => setTimeout(res, DELAY_MS));
-      if (!r.ok) {
-        cache.set(it.title, "fail");
-        failed++;
-      } else if (r.exact && r.exact.unrated && !UNRATED_WHITELIST.has(it.title)) {
-        cache.set(it.title, "drop");
-      } else if (r.exact && r.exact.unrated && UNRATED_WHITELIST.has(it.title)) {
-        cache.set(it.title, "keep");
-        log(`豆瓣暂无评分但命中白名单，保留：${it.title}`);
-      } else if (r.exact && r.exact.rated) {
-        cache.set(it.title, "keep");
-      } else {
-        cache.set(it.title, "nomatch");
-      }
+      cache.set(it.title, "quota");
+      quotaLeft++;
     }
     const verdict = cache.get(it.title);
     if (verdict === "drop") {
@@ -141,6 +153,7 @@ async function doubanShortDramaFilter(items, platform, warnings, { log }) {
     kept.push(it);
   }
 
+  if (curated) warnings.push(`已按人工确认黑名单排除 ${curated} 条 AI 短剧（评论区等渠道确认，如云月大陆）`);
   if (dropped) warnings.push(`已按豆瓣判据排除 ${dropped} 条疑似 AI 短剧（时长缺失/过短且豆瓣条目暂无评分）`);
   if (nomatch) warnings.push(`${nomatch} 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）`);
   if (quotaLeft) warnings.push(`${quotaLeft} 条时长缺失条目超出豆瓣查询配额，已保留`);
