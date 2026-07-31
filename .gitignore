@@ -1,0 +1,19 @@
+# 依赖与构建产物
+node_modules/
+dist/
+*.bak
+
+# 本地工作区（中间产物，不入库）
+work/
+
+# 编辑器 / 系统
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# 本地生成数据（由 scripts/sync.mjs 生成，M1 起使用）
+data/*.json
+
+# 原型缓存规避副本（冗余，以主文件 anime-calendar-prototype.html 为准）
+outputs/design/anime-calendar-prototype-v*.html

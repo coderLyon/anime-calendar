@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F4F5F7">
+  <meta name="description" content="动漫追番日历：哔哩哔哩 / 腾讯视频 / 优酷 / 爱奇艺 周更看板、追番收藏与日历视图">
+  <link rel="icon" type="image/svg+xml" href="/anime-calendar/favicon.svg">
+  <title>追番日历 · 动漫更新看板</title>
+  <script>
+    // 防闪烁：HTML 解析阶段即应用已保存的主题（localStorage 键与 src/store/theme.ts 一致）
+    (function () {
+      try {
+        var t = localStorage.getItem("anime-calendar.theme.v1");
+        if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

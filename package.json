@@ -1,0 +1,23 @@
+{
+  "name": "anime-calendar",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "动漫追番日历：四平台周更看板 + 追番收藏 + 日历三视图（GitHub Pages 静态站点）",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.5"
+  }
+}

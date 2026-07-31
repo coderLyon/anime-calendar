@@ -1,0 +1,61 @@
+# 动漫追番日历（anime-calendar）
+
+聚合哔哩哔哩国创 / 腾讯视频 / 优酷 / 爱奇艺的周更动漫信息，提供「周一~周日更新看板」「追番收藏」「日历三视图（日程 / 周 / 月）」的静态站点。
+
+## 功能
+
+- **更新看板**：左侧星期栏 + 横向卡片（今日行高亮）；四平台 Tab（含品牌 LOGO）筛选；卡片直达最新正剧集；单日超过 12 部自动折行并显示「+N 部」展开。
+- **追番收藏**：卡片星标收藏/取消（localStorage，键 `anime-calendar.follows.v1`）；同标题跨平台合并；支持搜索、平台筛选、导出/导入 JSON。
+- **追番日历**：日程（当日列表 + 明日预告）/ 周视图 / 月视图（每日数量角标）；范围默认「仅已追番」，可切换「全部番剧」；「回到今天」。
+- **体验**：今日追番更新摘要、深色模式（跟随系统/手动）、加载骨架屏、抓取失败重试、warnings 提示、移动端响应式（<768px 降级为星期 Tab + 单日列表）。
+
+## 数据来源与免责声明
+
+剧集更新数据版权归各平台所有，本项目仅供个人追番参考，请勿商用。生产数据由 GitHub Actions 定时抓取生成（详见下方「架构」），仓库内 `src/data/items.ts` 为**示例数据**，仅用于开发与设计验收。
+
+## 本地运行
+
+```bash
+npm install
+npm run dev        # 开发服务器
+npm run build      # 类型检查 + 构建到 dist/
+npm run preview    # 本地预览构建产物
+```
+
+## 架构
+
+GitHub Pages 静态前端 + GitHub Actions 定时数据管道：
+
+```
+Actions（cron 0 11,23 * * * UTC + workflow_dispatch + push）
+  → npm ci → playwright install chromium
+  → node scripts/sync.mjs（抓取四平台 → 时长过滤 → 去重 → 最新集解析 → 写 data/updates.json）
+  → vite build → actions/deploy-pages 发布 dist/
+```
+
+> 数据管道（`scripts/sync.mjs`、`server/` 抓取器、`.github/workflows/deploy.yml`）为 M1 里程碑内容，仓库初始化阶段暂未包含。
+
+前端读取 `data/updates.json`（结构与 `AnimeItem` 契约一致），加载失败时展示上次成功数据与重试入口。
+
+## 目录结构
+
+```text
+src/                  React 前端（tokens / 组件 / 数据契约）
+  components/         页面与组件（Header、WeekdayBoard、CalendarView、FollowView…）
+  data/items.ts       示例数据（M1 后由 updates.json 驱动）
+  lib/                日期、平台标识、图标
+  store/              localStorage（追番 / 主题）
+  styles.css          设计 tokens 与组件样式（源自已审批 G0 原型）
+outputs/design/       G0 设计原型交付物（可交互原型、PNG、设计规范）
+work/                 本地中间产物（不入库）
+```
+
+## 部署
+
+- 仓库：公开仓库 `anime-calendar`，默认分支 `main`。
+- Pages：Settings → Pages → Source = **GitHub Actions**（由工作流产物部署）。
+- `vite.config.ts` 的 `base` 与仓库名一致（`/anime-calendar/`）。
+
+## 许可
+
+MIT。数据版权归各平台，仅供个人追番参考，请勿商用。
