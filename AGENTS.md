@@ -19,4 +19,16 @@ Conventional Commits（`feat:` / `fix:` / `refactor:` / `chore:` / `docs:`）；
 
 ## 里程碑
 
-G0 设计原型（已通过）→ M0 仓库初始化与原型代码迁移（当前）→ M1 数据管道（sync.mjs + Actions + Pages）→ M2 前端功能完善 → M3 高保真 QA → M4 上线与 README。
+- G0 设计原型（已通过）
+- M0 仓库初始化与原型代码迁移（已完成）
+- M1 数据管道（sync.mjs + Actions + Pages 部署，线上 https://coderLyon.github.io/anime-calendar/）
+- M2 前端功能完善（追番/日历/移动端已在 M0 迁移中按审批设计落地，随 M3 统一验收）
+- M3 高保真 QA（浏览器截图 vs 原型逐屏对比）
+- M4 上线验证与 README 收尾
+
+## 数据管道运维
+
+- 本地同步：`pnpm run sync`（或 `npm run sync`），生成 `data/updates.json`。
+- 定时任务：GitHub Actions cron `0 11,23 * * *`（UTC）= 北京 07:00/19:00；支持 `workflow_dispatch` 手动触发。
+- 单平台失败会沿用上次成功数据并写 `error` 字段；只有完全无法产出数据时才退出非零。
+- `pnpm-workspace.yaml` 的 `allowBuilds` 必须保留（esbuild 构建脚本，CI 安装依赖依赖它）。

@@ -74,7 +74,7 @@ async function enrichDurations(items, { fetchLimit, log }) {
     if (cache.get(it.id) !== undefined) continue;
     if (fetched >= fetchLimit) break;
     try {
-      const epHtml = await fetchText(it.url, { referer: "https://www.bilibili.com/guochuang/" });
+      const epHtml = await fetchText(it.url, { referer: "https://www.bilibili.com/guochuang/", timeout: 8000 });
       const m = epHtml.match(/"timelength":(\d+)/);
       const ms = m ? Number(m[1]) : null;
       cache.set(it.id, ms ? Math.round(ms / 1000) : null);

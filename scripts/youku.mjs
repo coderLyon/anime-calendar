@@ -111,7 +111,7 @@ async function enrichDurations(items, { fetchLimit, log }) {
     if (cache.get(it.title) !== undefined) continue;
     if (fetched >= fetchLimit) break;
     try {
-      const pageHtml = await fetchText(it.url, { referer: "https://www.youku.com/ku/webcomic" });
+      const pageHtml = await fetchText(it.url, { referer: "https://www.youku.com/ku/webcomic", timeout: 8000 });
       // 读取页面内联时长字段（毫秒），取合理区间内的最大值
       const all = [
         ...[...pageHtml.matchAll(/"duration"\s*:\s*(\d+)/g)],

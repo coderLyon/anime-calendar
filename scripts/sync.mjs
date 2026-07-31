@@ -17,6 +17,7 @@ import { sortByDateThenTime, ymd } from "./shared.mjs";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA_FILE = join(ROOT, "data", "updates.json");
 const FETCH_LIMIT = 40; // 单次同步富集请求上限（计划 §9）
+const PLATFORM_TIMEOUT_MS = 150_000; // 单平台抓取硬超时（防 CI 卡死）
 
 const PLATFORMS = [
   { platform: "bili", label: "哔哩哔哩", scrape: scrapeBili },
@@ -79,7 +80,10 @@ async function main() {
 
   for (const p of PLATFORMS) {
     try {
-      const result = await p.scrape({ fetchLimit: FETCH_LIMIT, log: (m) => console.log(`[${p.platform}] ${m}`) });
+      const result = await Promise.race([
+        p.scrape({ fetchLimit: FETCH_LIMIT, log: (m) => console.log(`[${p.platform}] ${m}`) }),
+        new Promise((_, reject) => setTimeout(() => reject(new Error(`超时（>${PLATFORM_TIMEOUT_MS / 1000}s）`)), PLATFORM_TIMEOUT_MS)),
+      ]);
       result.warnings = Array.isArray(result.warnings) ? result.warnings : [];
       result.items = cleanDuration(result.items, result.warnings);
       result.items = keepCurrentWeek(result.items, result.warnings);
@@ -116,6 +120,8 @@ async function main() {
     console.error("完全无法产出数据，退出非零");
     process.exit(1);
   }
+  // 显式退出：清理超时平台的遗留句柄/浏览器进程
+  process.exit(0);
 }
 
 main().catch((err) => {
