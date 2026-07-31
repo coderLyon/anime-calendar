@@ -51,6 +51,7 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
           weekday: dow,
           svip: false,
           url,
+          seasonId: String(ep.season_id ?? ""), // 季分集时长接口用
           badge: ep.rating ? String(ep.rating) : null,
           duration: null, // 由时长富集填充
         });
@@ -65,30 +66,64 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
   return { platform: PLATFORM, label: LABEL, items, fetchedAt: new Date().toISOString(), warnings: [] };
 }
 
-/** 时长富集：去重后唯一番剧抓剧集页，读 playurl 的 timelength（毫秒） */
+/**
+ * 时长富集：季分集接口 api.bilibili.com/pgc/view/web/season 一次返回整季各集时长（毫秒），
+ * 按 episode_id 匹配；匹配不到用该季最新集时长兜底（参考 anime-duration-api 方案）。
+ */
 async function enrichDurations(items, { fetchLimit, log }) {
   const cache = createCache();
-  const uniq = [...new Map(items.map((i) => [i.id, i])).values()];
+  const uniq = [...new Map(items.filter((i) => i.seasonId).map((i) => [i.seasonId, i])).values()];
   let fetched = 0;
   for (const it of uniq) {
-    if (cache.get(it.id) !== undefined) continue;
+    if (cache.get(it.seasonId) !== undefined) continue;
     if (fetched >= fetchLimit) break;
     try {
-      const epHtml = await fetchText(it.url, { referer: "https://www.bilibili.com/guochuang/", timeout: 8000 });
-      const m = epHtml.match(/"timelength":(\d+)/);
-      const ms = m ? Number(m[1]) : null;
-      cache.set(it.id, ms ? Math.round(ms / 1000) : null);
-      fetched++;
+      cache.set(it.seasonId, await fetchSeasonDurations(it.seasonId));
     } catch (err) {
-      cache.set(it.id, null);
+      cache.set(it.seasonId, null);
       log(`时长富集失败 ${it.title}: ${err.message}`);
     }
+    fetched++;
   }
+  let hit = 0;
   for (const it of items) {
-    const dur = cache.get(it.id);
-    if (dur !== undefined) it.duration = dur;
+    if (!it.seasonId) continue;
+    const r = cache.get(it.seasonId);
+    if (!r) continue;
+    const epId = String(it.id.replace(/^bili-/, ""));
+    const dur = r.byEp.get(epId) ?? r.latest;
+    if (dur != null && dur > 0) {
+      it.duration = dur;
+      hit++;
+    }
   }
-  log(`时长富集完成：抓取 ${fetched} 页，命中 ${uniq.filter((i) => cache.get(i.id)).length}/${uniq.length} 条`);
+  log(`时长富集完成：抓取 ${fetched} 季，命中 ${hit}/${items.length} 条`);
+}
+
+/** 季分集时长：返回 { byEp: Map<episode_id,秒>, latest }；badge=预告 的条目同样可取时长 */
+async function fetchSeasonDurations(seasonId) {
+  const text = await fetchText(`https://api.bilibili.com/pgc/view/web/season?season_id=${encodeURIComponent(seasonId)}`, {
+    referer: "https://www.bilibili.com/",
+    timeout: 15000,
+  });
+  const j = JSON.parse(text);
+  if (!j || j.code !== 0) throw new Error(`season API code ${j?.code ?? "?"}`);
+  // 响应体可能是 data（新结构）或 result（当前结构），兼容两者
+  const payload = j.result ?? j.data ?? {};
+  const eps = payload.episodes ?? payload.sections?.flatMap((s) => s.episodes ?? []) ?? [];
+  const byEp = new Map();
+  let latest = null;
+  for (const ep of eps) {
+    const ms = Number(ep.duration);
+    if (Number.isFinite(ms) && ms > 0) {
+      const sec = Math.round(ms / 1000);
+      if (ep.id) byEp.set(String(ep.id), sec);
+      // 兜底取「正片最新集」时长，避免命中末尾 PV/预告（badge=预告）
+      if (ep.badge !== "预告") latest = sec;
+    }
+  }
+  if (!byEp.size) throw new Error("季分集无时长字段");
+  return { byEp, latest };
 }
 
 function mondayOf(d) {

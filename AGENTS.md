@@ -10,10 +10,9 @@
 
 - `CONTENT_BLOCKLIST`（小课堂/发布会/预告/片花/花絮/幕后/访谈/见面会/先导/抢先看）**只影响最新集解析**，不参与周表过滤；周表按平台原始更新数据展示。
 - 追番日历与「今日追番更新」默认**仅已追番**，可切换全部番剧。
-- 时长过滤：`duration < 300` 秒（不足 5 分钟）丢弃；缺失时长富集后仍缺失则关键词（动态漫/AI动漫/泡面番）兜底并记入 `warnings`。
-- 爱奇艺时长：专辑分集接口 `pcw-api.iqiyi.com/albums/album/avlistinfo?aid=<专辑ID>` 返回每集真实时长（按条目集数匹配，兜底最新集），参与 <300s 过滤。
-- AI 短剧识别（爱奇艺）：评论区含「AI 关键字 + 负面情绪」同条评论时判定为 AI 短剧并过滤；评论接口限流时优雅降级保留。
-- 优酷时长：show_page 内联时长（秒/ISO 8601）优先，缺失时用播放页 `v_show/id_<videoId>.html` 的 `pageMap.extra.duration` 兜底（概率性风控，内置重试）。
+- 短剧过滤（前端开关）：同步**保留**全部已知时长条目（含 <300s 短条目）；前端「短剧过滤」默认开启、阈值默认 300s 可调（localStorage 键 `anime-calendar.shortfilter.v1`），关闭时展示全部。
+- 时长富集：B站季分集接口 `api.bilibili.com/pgc/view/web/season?season_id=`（毫秒，按 episode_id 匹配、正片最新集兜底）；优酷 show_page 内联时长（秒/ISO 8601）优先 + 播放页 `pageMap.extra.duration` 兜底；爱奇艺专辑分集接口 `pcw-api.iqiyi.com/albums/album/avlistinfo?aid=`（按集数匹配、最新集兜底）。
+- 缺失时长且命中 AI 短剧关键词（动态漫/AI动漫/泡面番）的条目在同步时丢弃并记入 `warnings`；爱奇艺另以评论区「AI 关键字 + 负面情绪」启发式过滤（限流时优雅降级）。
 - 腾讯更新规则：卡片下方「每周X…」规则文案入库为 `rule` 字段；SVIP 抢先去重仅限卡片文案含 SVIP 的相邻同日集重复。
 - 本地存储键：追番 `anime-calendar.follows.v1`；主题 `anime-calendar.theme.v1`。
 

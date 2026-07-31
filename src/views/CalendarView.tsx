@@ -7,9 +7,10 @@ import { ChevronLeftIcon, ChevronRightIcon } from "../lib/icons";
 import { itemsOn } from "../lib/items";
 import { platShort } from "../lib/platforms";
 import { posterGlyph, posterStyle } from "../lib/poster";
+import { useShortFilterVersion } from "../lib/shortFilter";
 import { normTitle, useFollows } from "../store/follows";
 import { TODAY } from "../store/data";
-import type { AnimeItem, CalScope, CalView } from "../types";
+import type { AnimeItem, CalScope, CalView, Page } from "../types";
 
 function openItem(item: AnimeItem, toast: (m: string) => void) {
   if (item.url && item.url !== "#") {
@@ -51,12 +52,13 @@ function CalItem({ item, toast }: { item: AnimeItem; toast: (m: string) => void 
   );
 }
 
-export function CalendarView() {
+export function CalendarView({ onNavigate }: { onNavigate: (p: Page) => void }) {
   const { follows } = useFollows();
   const toast = useToast();
+  useShortFilterVersion();
   const [view, setView] = useState<CalView>(() => {
     const v = new URLSearchParams(location.search).get("view");
-    return v === "week" || v === "month" ? v : "schedule";
+    return v === "schedule" || v === "month" ? v : "week";
   });
   const [scope, setScope] = useState<CalScope>("follow");
   const [calDate, setCalDate] = useState<Date>(() => new Date(TODAY));
@@ -112,6 +114,9 @@ export function CalendarView() {
           <h1>追番日历</h1>
           <div className="sub">{sub} · 范围默认为「仅已追番」，可切换「全部番剧」</div>
         </div>
+        <button className="btn ghost" onClick={() => onNavigate("home")}>
+          <ChevronLeftIcon /> 返回看板
+        </button>
       </div>
       <div className="cal-head">
         <div className="cal-controls">
@@ -195,7 +200,18 @@ function renderSchedule(calDate: Date, scopeItems: (d: Date) => AnimeItem[], toa
             <div key={it.id} className="preview-item" onClick={() => openItem(it, toast)}>
               <div className="poster" style={{ background: posterStyle(it.title) }}>
                 <span className="ph-mark" />
-                <span className="ph-glyph">{posterGlyph(it.title)}</span>
+                {it.poster ? (
+                  <img
+                    src={it.poster}
+                    alt=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => { e.currentTarget.style.display = "none"; }}
+                  />
+                ) : (
+                  <span className="ph-glyph">{posterGlyph(it.title)}</span>
+                )}
+                <span className={`plat-chip ${it.platform}`}>{platShort(it.platform)}</span>
               </div>
               <div className="preview-item-main">
                 <div className="preview-item-title">{it.title}</div>
@@ -238,7 +254,17 @@ function renderWeek(
             <div key={it.id} className="week-item" onClick={(e) => { e.stopPropagation(); openItem(it, toast); }}>
               <div className="poster" style={{ background: posterStyle(it.title) }}>
                 <span className="ph-mark" />
-                <span className="ph-glyph">{posterGlyph(it.title)}</span>
+                {it.poster ? (
+                  <img
+                    src={it.poster}
+                    alt=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => { e.currentTarget.style.display = "none"; }}
+                  />
+                ) : (
+                  <span className="ph-glyph">{posterGlyph(it.title)}</span>
+                )}
               </div>
               <div className="week-item-main">
                 <div className="week-item-title">{it.title}</div>
@@ -316,7 +342,12 @@ function renderMonth(
       <div key={day} className={`month-cell ${isToday ? "today" : ""} ${sel ? "sel" : ""}`} onClick={() => setMonthSel(day)}>
         <span className="d">{day}</span>
         {items.length ? <span className="cnt">{items.length}</span> : null}
-        {items.length ? <div className="preview">{items.slice(0, 2).map((i) => i.title).join(" · ")}</div> : null}
+        {items.length ? (
+          <div className="preview" title={items.map((i) => i.title).join("、")}>
+            {items.slice(0, 5).map((i) => i.title).join(" · ")}
+            {items.length > 5 ? ` +${items.length - 5} 部` : ""}
+          </div>
+        ) : null}
       </div>,
     );
   }

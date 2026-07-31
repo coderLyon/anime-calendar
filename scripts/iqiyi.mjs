@@ -24,7 +24,7 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
 
     const tabLoc = page.locator("[class*=videoCards_tab_btn]");
     const today = new Date();
-    const monday = addDays(new Date(today.getFullYear(), today.getMonth(), today.getDate()), 1 - ((today.getDay() + 6) % 7));
+    const monday = addDays(new Date(today.getFullYear(), today.getMonth(), today.getDate()), -(((today.getDay() + 6) % 7)));
     const items = [];
     const seen = new Set();
 

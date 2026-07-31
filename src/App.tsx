@@ -68,7 +68,7 @@ export function App() {
           />
         ) : null}
         {page === "follow" ? <FollowView onNavigate={setPage} /> : null}
-        {page === "calendar" ? <CalendarView /> : null}
+        {page === "calendar" ? <CalendarView onNavigate={setPage} /> : null}
       </main>
     </>
   );

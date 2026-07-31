@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { ChevronDownIcon, DownloadIcon, ExternalIcon, SearchIcon, UploadIcon } from "../lib/icons";
 import { PLATFORMS, platShort, PlatformLogo } from "../lib/platforms";
 import { posterGlyph, posterStyle } from "../lib/poster";
+import { posterForTitle } from "../lib/items";
 import { useFollows } from "../store/follows";
 import type { FollowItem, Page, PlatformKey } from "../types";
 import { EmptyState } from "../components/EmptyState";
@@ -117,12 +118,23 @@ export function FollowView({ onNavigate }: { onNavigate: (p: Page) => void }) {
 
 function FollowItemRow({ follow, open, onToggle, onRemove }: { follow: FollowItem; open: boolean; onToggle: () => void; onRemove: () => void }) {
   const latest = [...follow.platforms].sort((a, b) => (b.updateTime ?? "").localeCompare(a.updateTime ?? ""))[0];
+  const poster = posterForTitle(follow.title);
   return (
     <div className={`follow-item ${open ? "open" : ""}`}>
       <div className="fi-head" onClick={onToggle}>
         <div className="poster" style={{ background: posterStyle(follow.title) }}>
           <span className="ph-mark" />
-          <span className="ph-glyph">{posterGlyph(follow.title)}</span>
+          {poster ? (
+            <img
+              src={poster}
+              alt=""
+              loading="lazy"
+              referrerPolicy="no-referrer"
+              onError={(e) => { e.currentTarget.style.display = "none"; }}
+            />
+          ) : (
+            <span className="ph-glyph">{posterGlyph(follow.title)}</span>
+          )}
         </div>
         <div className="fi-info">
           <div className="fi-title">

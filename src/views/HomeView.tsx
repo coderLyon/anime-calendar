@@ -3,10 +3,12 @@ import { ErrorBanner, WarnBanner } from "../components/Banners";
 import { EmptyState } from "../components/EmptyState";
 import { MobileBoard } from "../components/MobileBoard";
 import { PlatformTabs } from "../components/PlatformTabs";
+import { ShortFilterControl } from "../components/ShortFilterControl";
 import { TodayStrip } from "../components/TodayStrip";
 import { WeekdayBoard } from "../components/WeekdayBoard";
 import { addDays, isoWeek, wdOf } from "../lib/date";
 import { platformCounts } from "../lib/items";
+import { useShortFilterVersion } from "../lib/shortFilter";
 import { GENERATED_AT, TODAY, WEEK_START } from "../store/data";
 import type { Mode, Page, PlatformFilter } from "../types";
 
@@ -21,6 +23,7 @@ interface HomeViewProps {
 }
 
 export function HomeView({ platform, onPlatformChange, mode, onRetry, warn, onWarnClose, onNavigate }: HomeViewProps) {
+  useShortFilterVersion();
   const [day, setDay] = useState<number>(() => wdOf(TODAY));
   const counts = platformCounts();
   const weekEnd = addDays(WEEK_START, 6);
@@ -45,6 +48,7 @@ export function HomeView({ platform, onPlatformChange, mode, onRetry, warn, onWa
       <TodayStrip onOpenCalendar={() => onNavigate("calendar")} />
       <div className="toolbar">
         <PlatformTabs platform={platform} mode={mode} counts={counts} onChange={onPlatformChange} />
+        <ShortFilterControl />
         <div className="grow" />
         <span className="board-meta">四平台定时同步（每日 07:00 / 19:00）</span>
       </div>

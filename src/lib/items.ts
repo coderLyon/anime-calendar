@@ -1,4 +1,5 @@
 import { dstr } from "./date";
+import { applyShortFilter } from "./shortFilter";
 import { ITEMS } from "../store/data";
 import type { AnimeItem, PlatformFilter } from "../types";
 
@@ -7,7 +8,8 @@ import type { AnimeItem, PlatformFilter } from "../types";
  * M1 起改为加载 data/updates.json（结构与 AnimeItem 契约一致），本层接口保持不变。
  */
 export function itemsFor(platform: PlatformFilter): AnimeItem[] {
-  return platform === "all" ? ITEMS : ITEMS.filter((i) => i.platform === platform);
+  const base = platform === "all" ? ITEMS : ITEMS.filter((i) => i.platform === platform);
+  return applyShortFilter(base);
 }
 
 export function itemsOn(date: Date, platform: PlatformFilter): AnimeItem[] {
@@ -18,7 +20,15 @@ export function itemsOn(date: Date, platform: PlatformFilter): AnimeItem[] {
 }
 
 export function platformCounts(): Record<PlatformFilter, number> {
-  const counts: Record<PlatformFilter, number> = { all: ITEMS.length, bili: 0, tencent: 0, youku: 0, iqiyi: 0 };
-  for (const item of ITEMS) counts[item.platform]++;
+  const filtered = applyShortFilter(ITEMS);
+  const counts: Record<PlatformFilter, number> = { all: filtered.length, bili: 0, tencent: 0, youku: 0, iqiyi: 0 };
+  for (const item of filtered) counts[item.platform]++;
   return counts;
+}
+
+/** 按标题找当前周数据的海报（追番列表等未持久化海报的场景使用） */
+export function posterForTitle(title: string): string | undefined {
+  const norm = (t: string) => t.replace(/[·．\s:：]/g, "").toLowerCase();
+  const k = norm(title);
+  return ITEMS.find((i) => norm(i.title) === k)?.poster;
 }

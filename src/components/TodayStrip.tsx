@@ -12,7 +12,15 @@ export function TodayStrip({ onOpenCalendar }: { onOpenCalendar: () => void }) {
       <div className="today-strip-body">
         {todayItems.length
           ? todayItems.map((i) => (
-              <a key={i.id} href={i.url ?? "#"} onClick={(e) => e.preventDefault()}>
+              <a
+                key={i.id}
+                href={i.url ?? "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => {
+                  if (!i.url || i.url === "#") e.preventDefault();
+                }}
+              >
                 <span className={`plat-dot ${i.platform}`} />
                 {i.title}
               </a>
