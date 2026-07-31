@@ -12,7 +12,7 @@
 - 追番日历与「今日追番更新」默认**仅已追番**，可切换全部番剧。
 - 短剧过滤（前端开关）：同步**保留**全部已知时长条目（含 <300s 短条目）；前端「短剧过滤」默认开启、阈值默认 300s 可调（localStorage 键 `anime-calendar.shortfilter.v1`），关闭时展示全部。
 - 时长富集：B站季分集接口 `api.bilibili.com/pgc/view/web/season?season_id=`（毫秒，按 episode_id 匹配、正片最新集兜底）；优酷 show_page 内联时长（秒/ISO 8601）优先 + 播放页 `pageMap.extra.duration` 兜底；爱奇艺专辑分集接口 `pcw-api.iqiyi.com/albums/album/avlistinfo?aid=`（按集数匹配、最新集兜底）。
-- 缺失时长且命中 AI 短剧关键词（动态漫/AI动漫/泡面番）的条目在同步时丢弃并记入 `warnings`；爱奇艺另以评论区「AI 关键字 + 负面情绪」启发式过滤（限流时优雅降级）。
+- 内容类型排除：标题含「动态漫/AI动漫/泡面番」（AI 生成短剧）的条目在同步时直接丢弃并记入 `warnings`（与时长无关）；爱奇艺另以评论区「AI 关键字 + 负面情绪」启发式过滤（限流时优雅降级）。
 - 腾讯更新规则：卡片下方「每周X…」规则文案入库为 `rule` 字段；SVIP 抢先去重仅限卡片文案含 SVIP 的相邻同日集重复。
 - 本地存储键：追番 `anime-calendar.follows.v1`；主题 `anime-calendar.theme.v1`。
 

@@ -37,7 +37,7 @@ function loadPrevious() {
 /**
  * 清洗层步骤 1：时长处理（前端提供「过滤短剧」开关与可调阈值，默认 300s）：
  * - 已知时长的短条目（<300s）**保留**并携带 duration，由前端过滤控制展示；
- * - 缺失时长且命中 AI 短剧关键词（动态漫/AI动漫/泡面番）的条目丢弃并记 warnings。
+ * - 内容类型排除：标题含「动态漫/AI动漫/泡面番」（AI 生成短剧）的条目直接丢弃并记 warnings，与时长无关。
  */
 function cleanDuration(items, warnings) {
   const kept = [];
@@ -45,15 +45,15 @@ function cleanDuration(items, warnings) {
   let dropped = 0;
   let short = 0;
   for (const it of items) {
+    if (/动态漫|AI动漫|泡面番/.test(it.title)) {
+      warnings.push(`内容类型排除（动态漫/AI动漫/泡面番）：${it.title}`);
+      dropped++;
+      continue;
+    }
     if (typeof it.duration === "number" && it.duration > 0 && it.duration < 300) {
       short++;
     }
     if (it.duration == null || it.duration <= 0) {
-      if (/动态漫|AI动漫|泡面番/.test(it.title)) {
-        warnings.push(`时长无法确认且命中关键词，已丢弃：${it.title}`);
-        dropped++;
-        continue;
-      }
       missing++;
       it.duration = null;
     }
@@ -61,7 +61,7 @@ function cleanDuration(items, warnings) {
   }
   if (short) warnings.push(`已保留 ${short} 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整`);
   if (missing) warnings.push(`${missing} 条时长无法确认已保留（平台未提供内联时长）`);
-  if (dropped) warnings.push(`时长无法确认且命中 AI 短剧关键词，已丢弃 ${dropped} 条`);
+  if (dropped) warnings.push(`已排除 ${dropped} 条动态漫/AI动漫/泡面番条目`);
   return kept;
 }
 
