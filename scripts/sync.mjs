@@ -101,13 +101,18 @@ async function main() {
     } catch (err) {
       console.error(`[${p.platform}] 抓取失败：${err.message}`);
       const prevRes = prev?.platforms?.find((x) => x.platform === p.platform);
+      // 回退上次成功数据同样走清洗层（动态漫画排除 / 周过滤等保持生效）
+      const fbItems = [...(prevRes?.items ?? [])];
+      const fbWarnings = [];
+      const cleaned = cleanDuration(fbItems, fbWarnings);
+      const kept = keepCurrentWeek(cleaned, fbWarnings);
       platforms.push({
         platform: p.platform,
         label: p.label,
-        items: prevRes?.items ?? [],
+        items: sortByDateThenTime(kept),
         error: err.message,
         fetchedAt: prevRes?.fetchedAt ?? null,
-        warnings: prevRes?.warnings ?? [],
+        warnings: fbWarnings,
       });
       if (!prevRes) console.error(`[${p.platform}] 无上次成功数据，输出空 items`);
     }
