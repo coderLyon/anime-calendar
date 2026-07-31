@@ -23,8 +23,8 @@ Conventional Commits（`feat:` / `fix:` / `refactor:` / `chore:` / `docs:`）；
 - M0 仓库初始化与原型代码迁移（已完成）
 - M1 数据管道（sync.mjs + Actions + Pages 部署，线上 https://coderLyon.github.io/anime-calendar/）
 - M2 前端功能完善（追番/日历/移动端已在 M0 迁移中按审批设计落地，随 M3 统一验收）
-- M3 高保真 QA（浏览器截图 vs 原型逐屏对比）
-- M4 上线验证与 README 收尾
+- M3 高保真 QA（已完成，台账 `outputs/design/qa/保真度台账-M3.md`）
+- M4 上线验证与 README 收尾（进行中/完成）
 
 ## 数据管道运维
 

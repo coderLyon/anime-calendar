@@ -37,7 +37,17 @@ export function AnimeCard({ item, followed, onToggleFollow, onClick }: AnimeCard
     >
       <div className="poster" style={{ background: posterStyle(item.title) }}>
         <span className="ph-mark" />
-        {item.poster ? <img src={item.poster} alt="" loading="lazy" referrerPolicy="no-referrer" /> : <span className="ph-glyph">{posterGlyph(item.title)}</span>}
+        {item.poster ? (
+          <img
+            src={item.poster}
+            alt=""
+            loading="lazy"
+            referrerPolicy="no-referrer"
+            onError={(e) => { e.currentTarget.style.display = "none"; }}
+          />
+        ) : (
+          <span className="ph-glyph">{posterGlyph(item.title)}</span>
+        )}
         <span className={`plat-chip ${item.platform}`}>{platShort(item.platform)}</span>
         <button
           className={`star-btn ${followed ? "on" : ""}`}

@@ -45,7 +45,7 @@ export function MobileBoard({ platform, mode, day, onDayChange }: MobileBoardPro
           const isToday = sameDay(d, TODAY);
           const count = itemsOn(d, platform).length;
           return (
-            <button key={wd} className={`m-tab ${day === wd ? "active" : ""}`} onClick={() => onDayChange(wd)}>
+            <button key={wd} data-mday={wd} className={`m-tab ${day === wd ? "active" : ""}`} onClick={() => onDayChange(wd)}>
               <span className="dow">
                 {WEEK_CN[i]}
                 {isToday ? <span className="today-dot" /> : null}
@@ -83,7 +83,13 @@ export function MobileBoard({ platform, mode, day, onDayChange }: MobileBoardPro
                     <div className="poster" style={{ background: posterStyle(item.title) }}>
                       <span className="ph-mark" />
                       {item.poster ? (
-                        <img src={item.poster} alt="" loading="lazy" referrerPolicy="no-referrer" />
+                        <img
+                          src={item.poster}
+                          alt=""
+                          loading="lazy"
+                          referrerPolicy="no-referrer"
+                          onError={(e) => { e.currentTarget.style.display = "none"; }}
+                        />
                       ) : (
                         <span className="ph-glyph">{posterGlyph(item.title)}</span>
                       )}
