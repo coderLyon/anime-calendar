@@ -1,11 +1,11 @@
 import { useRef } from "react";
-import { SAMPLE_TODAY, SAMPLE_WEEK_START } from "../data/items";
 import { addDays, sameDay, WEEK_CN } from "../lib/date";
 import { StarIcon } from "../lib/icons";
 import { itemsOn } from "../lib/items";
 import { platShort } from "../lib/platforms";
 import { posterGlyph, posterStyle } from "../lib/poster";
 import { useFollows } from "../store/follows";
+import { TODAY, WEEK_START } from "../store/data";
 import type { Mode, PlatformFilter } from "../types";
 import { useToast } from "./Toast";
 
@@ -21,7 +21,7 @@ export function MobileBoard({ platform, mode, day, onDayChange }: MobileBoardPro
   const toast = useToast();
   const touchX = useRef<number | null>(null);
 
-  const date = addDays(SAMPLE_WEEK_START, day - 1);
+  const date = addDays(WEEK_START, day - 1);
   const items = mode === "empty" ? [] : itemsOn(date, platform);
 
   const onTouchStart = (e: React.TouchEvent) => {
@@ -40,9 +40,9 @@ export function MobileBoard({ platform, mode, day, onDayChange }: MobileBoardPro
     <div className="m-board" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
       <div className="m-tabs">
         {Array.from({ length: 7 }, (_, i) => {
-          const d = addDays(SAMPLE_WEEK_START, i);
+          const d = addDays(WEEK_START, i);
           const wd = i + 1;
-          const isToday = sameDay(d, SAMPLE_TODAY);
+          const isToday = sameDay(d, TODAY);
           const count = itemsOn(d, platform).length;
           return (
             <button key={wd} className={`m-tab ${day === wd ? "active" : ""}`} onClick={() => onDayChange(wd)}>
@@ -105,7 +105,7 @@ export function MobileBoard({ platform, mode, day, onDayChange }: MobileBoardPro
                         <span className={`plat-dot ${item.platform}`} />
                         {item.episode}
                       </div>
-                      <div className="m-time">{WEEK_CN[item.weekday - 1]} {item.updateTime} 更新</div>
+                      <div className="m-time">{WEEK_CN[(item.weekday ?? 0) - 1] ?? ""}{item.updateTime ? ` ${item.updateTime}` : ""} 更新</div>
                       <div className="m-tags">
                         {item.svip ? <span className="tag svip">SVIP抢先</span> : null}
                         {item.badge === "独播" ? <span className="tag dubo">独播</span> : null}

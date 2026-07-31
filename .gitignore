@@ -14,6 +14,7 @@ Thumbs.db
 
 # 本地生成数据（由 scripts/sync.mjs 生成，M1 起使用）
 data/*.json
+!data/updates.json
 
 # 原型缓存规避副本（冗余，以主文件 anime-calendar-prototype.html 为准）
 outputs/design/anime-calendar-prototype-v*.html

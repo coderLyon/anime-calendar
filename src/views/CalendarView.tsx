@@ -2,13 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import { EmptyState } from "../components/EmptyState";
 import { Segmented } from "../components/Segmented";
 import { useToast } from "../components/Toast";
-import { SAMPLE_TODAY } from "../data/items";
 import { addDays, isoWeek, sameDay, wdOf, WEEK_CN } from "../lib/date";
 import { ChevronLeftIcon, ChevronRightIcon } from "../lib/icons";
 import { itemsOn } from "../lib/items";
 import { platShort } from "../lib/platforms";
 import { posterGlyph, posterStyle } from "../lib/poster";
 import { normTitle, useFollows } from "../store/follows";
+import { TODAY } from "../store/data";
 import type { AnimeItem, CalScope, CalView } from "../types";
 
 function openItem(item: AnimeItem, toast: (m: string) => void) {
@@ -36,7 +36,7 @@ function CalItem({ item, toast }: { item: AnimeItem; toast: (m: string) => void 
           {item.badge === "独播" ? " · 独播" : ""}
         </div>
       </div>
-      <span className="cal-item-time">{item.updateTime}</span>
+      <span className="cal-item-time">{item.updateTime || "更新"}</span>
     </div>
   );
 }
@@ -49,19 +49,19 @@ export function CalendarView() {
     return v === "week" || v === "month" ? v : "schedule";
   });
   const [scope, setScope] = useState<CalScope>("follow");
-  const [calDate, setCalDate] = useState<Date>(() => new Date(SAMPLE_TODAY));
-  const [calMonth, setCalMonth] = useState<Date>(() => new Date(SAMPLE_TODAY.getFullYear(), SAMPLE_TODAY.getMonth(), 1));
-  const [weekSel, setWeekSel] = useState<number>(() => wdOf(SAMPLE_TODAY));
-  const [monthSel, setMonthSel] = useState<number>(() => SAMPLE_TODAY.getDate());
+  const [calDate, setCalDate] = useState<Date>(() => new Date(TODAY));
+  const [calMonth, setCalMonth] = useState<Date>(() => new Date(TODAY.getFullYear(), TODAY.getMonth(), 1));
+  const [weekSel, setWeekSel] = useState<number>(() => wdOf(TODAY));
+  const [monthSel, setMonthSel] = useState<number>(() => TODAY.getDate());
   const touchX = useRef<number | null>(null);
 
   const scopeItems = (d: Date) => itemsOn(d, "all").filter((i) => scope === "all" || follows[normTitle(i.title)]);
 
   const backToday = () => {
-    setCalDate(new Date(SAMPLE_TODAY));
-    setCalMonth(new Date(SAMPLE_TODAY.getFullYear(), SAMPLE_TODAY.getMonth(), 1));
-    setWeekSel(wdOf(SAMPLE_TODAY));
-    setMonthSel(SAMPLE_TODAY.getDate());
+    setCalDate(new Date(TODAY));
+    setCalMonth(new Date(TODAY.getFullYear(), TODAY.getMonth(), 1));
+    setWeekSel(wdOf(TODAY));
+    setMonthSel(TODAY.getDate());
     window.scrollTo({ top: 0, behavior: "smooth" });
     toast("已回到今天");
   };
@@ -112,7 +112,7 @@ export function CalendarView() {
           <button className="nav-btn" aria-label="上一页" onClick={() => step(-1)}>
             <ChevronLeftIcon />
           </button>
-          <div className={`cal-date-title ${sameDay(calDate, SAMPLE_TODAY) ? "today" : ""}`}>
+          <div className={`cal-date-title ${sameDay(calDate, TODAY) ? "today" : ""}`}>
             {view === "month" ? (
               <>
                 <div className="d">{calMonth.getFullYear()}年{calMonth.getMonth() + 1}月</div>
@@ -128,7 +128,7 @@ export function CalendarView() {
             ) : (
               <>
                 <div className="d">
-                  {calDate.getMonth() + 1}月{calDate.getDate()}日{sameDay(calDate, SAMPLE_TODAY) ? " · 今天" : ""}
+                  {calDate.getMonth() + 1}月{calDate.getDate()}日{sameDay(calDate, TODAY) ? " · 今天" : ""}
                 </div>
                 <div className="week">{WEEK_CN[wdOf(calDate) - 1]} · {scopeItems(calDate).length} 部更新</div>
               </>
@@ -215,7 +215,7 @@ function renderWeek(
   const cols = Array.from({ length: 7 }, (_, i) => {
     const date = addDays(monday, i);
     const items = scopeItems(date);
-    const isToday = sameDay(date, SAMPLE_TODAY);
+    const isToday = sameDay(date, TODAY);
     const sel = weekSel === i + 1;
     return (
       <div key={i} className={`week-col ${isToday ? "today" : ""} ${sel ? "sel" : ""}`} onClick={() => setWeekSel(i + 1)}>
@@ -257,7 +257,7 @@ function renderWeek(
             <div className="m-tabs">
               {Array.from({ length: 7 }, (_, i) => {
                 const date = addDays(monday, i);
-                const isToday = sameDay(date, SAMPLE_TODAY);
+                const isToday = sameDay(date, TODAY);
                 return (
                   <button key={i} className={`m-tab ${weekSel === i + 1 ? "active" : ""}`} onClick={() => setWeekSel(i + 1)}>
                     <span className="dow">
@@ -300,7 +300,7 @@ function renderMonth(
   for (let day = 1; day <= daysInMonth; day++) {
     const date = new Date(calMonth.getFullYear(), calMonth.getMonth(), day);
     const items = scopeItems(date);
-    const isToday = sameDay(date, SAMPLE_TODAY);
+    const isToday = sameDay(date, TODAY);
     const sel = monthSel === day;
     cells.push(
       <div key={day} className={`month-cell ${isToday ? "today" : ""} ${sel ? "sel" : ""}`} onClick={() => setMonthSel(day)}>

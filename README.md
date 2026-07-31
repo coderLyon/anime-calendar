@@ -20,7 +20,10 @@ npm install
 npm run dev        # 开发服务器
 npm run build      # 类型检查 + 构建到 dist/
 npm run preview    # 本地预览构建产物
+npm run sync       # 手动同步四平台数据 → data/updates.json（需 Playwright chromium）
 ```
+
+> 包管理器说明：仓库使用 pnpm（`pnpm install` / `pnpm run build` / `pnpm run sync`）；npm 命令同样可用。
 
 ## 架构
 
@@ -33,9 +36,7 @@ Actions（cron 0 11,23 * * * UTC + workflow_dispatch + push）
   → vite build → actions/deploy-pages 发布 dist/
 ```
 
-> 数据管道（`scripts/sync.mjs`、`server/` 抓取器、`.github/workflows/deploy.yml`）为 M1 里程碑内容，仓库初始化阶段暂未包含。
-
-前端读取 `data/updates.json`（结构与 `AnimeItem` 契约一致），加载失败时展示上次成功数据与重试入口。
+前端构建时读取 `data/updates.json`（结构与 `AnimeItem` 契约一致，仓库内为最近一次同步结果）。单平台抓取失败时输出 `error` 字段并沿用上次成功数据，只有完全无法产出数据时同步才退出非零。
 
 ## 目录结构
 
@@ -46,6 +47,8 @@ src/                  React 前端（tokens / 组件 / 数据契约）
   lib/                日期、平台标识、图标
   store/              localStorage（追番 / 主题）
   styles.css          设计 tokens 与组件样式（源自已审批 G0 原型）
+scripts/             数据管道（sync.mjs 编排 + 四平台抓取器 + shared 工具）
+data/updates.json    最近一次同步结果（npm run sync / Actions 生成）
 outputs/design/       G0 设计原型交付物（可交互原型、PNG、设计规范）
 work/                 本地中间产物（不入库）
 ```

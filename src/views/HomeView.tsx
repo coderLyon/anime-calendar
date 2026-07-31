@@ -5,9 +5,9 @@ import { MobileBoard } from "../components/MobileBoard";
 import { PlatformTabs } from "../components/PlatformTabs";
 import { TodayStrip } from "../components/TodayStrip";
 import { WeekdayBoard } from "../components/WeekdayBoard";
-import { SAMPLE_TODAY } from "../data/items";
-import { wdOf } from "../lib/date";
+import { addDays, isoWeek, wdOf } from "../lib/date";
 import { platformCounts } from "../lib/items";
+import { GENERATED_AT, TODAY, WEEK_START } from "../store/data";
 import type { Mode, Page, PlatformFilter } from "../types";
 
 interface HomeViewProps {
@@ -21,8 +21,13 @@ interface HomeViewProps {
 }
 
 export function HomeView({ platform, onPlatformChange, mode, onRetry, warn, onWarnClose, onNavigate }: HomeViewProps) {
-  const [day, setDay] = useState<number>(() => wdOf(SAMPLE_TODAY));
+  const [day, setDay] = useState<number>(() => wdOf(TODAY));
   const counts = platformCounts();
+  const weekEnd = addDays(WEEK_START, 6);
+  const weekRange = `${WEEK_START.getMonth() + 1}月${WEEK_START.getDate()}日 – ${weekEnd.getMonth() + 1}月${weekEnd.getDate()}日`;
+  const updatedText = GENERATED_AT
+    ? `数据更新于 ${new Date(GENERATED_AT).toLocaleTimeString("zh-CN", { hour: "2-digit", minute: "2-digit", hour12: false })}`
+    : "";
 
   return (
     <>
@@ -32,7 +37,7 @@ export function HomeView({ platform, onPlatformChange, mode, onRetry, warn, onWa
         <div>
           <h1>更新看板</h1>
           <div className="sub">
-            7月27日 – 8月2日 · 第31周 · 数据更新于 11:05（1 小时前）· 数据源：哔哩哔哩 / 腾讯视频 / 优酷 / 爱奇艺
+            {weekRange} · 第{isoWeek(WEEK_START)}周 · {updatedText} · 数据源：哔哩哔哩 / 腾讯视频 / 优酷 / 爱奇艺
           </div>
         </div>
         <div className="board-meta">今日高亮 · 共 {counts.all} 条更新 · 点击卡片直达最新正剧集</div>
@@ -41,7 +46,7 @@ export function HomeView({ platform, onPlatformChange, mode, onRetry, warn, onWa
       <div className="toolbar">
         <PlatformTabs platform={platform} mode={mode} counts={counts} onChange={onPlatformChange} />
         <div className="grow" />
-        <span className="board-meta">示例数据 · 仅用于开发与设计验收</span>
+        <span className="board-meta">四平台定时同步（每日 07:00 / 19:00）</span>
       </div>
       {mode === "empty" ? (
         <EmptyState title="本周暂无更新" desc="四个平台本周都没有剧集更新，试试刷新或稍后再来">

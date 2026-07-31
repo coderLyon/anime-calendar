@@ -54,7 +54,8 @@ export function AnimeCard({ item, followed, onToggleFollow, onClick }: AnimeCard
         <h3 className="card-title">{item.title}</h3>
         <div className="card-meta">
           <span className={`plat-dot ${item.platform}`} />
-          {item.episode} · {WEEK_CN[item.weekday - 1]} {item.updateTime}
+          {item.episode} · {WEEK_CN[(item.weekday ?? 0) - 1] ?? ""}
+          {item.updateTime ? ` ${item.updateTime}` : ""}
         </div>
         <div className="card-tags">
           <Tag item={item} />

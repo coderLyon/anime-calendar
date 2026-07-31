@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { SAMPLE_TODAY, SAMPLE_WEEK_START } from "../data/items";
 import { addDays, sameDay, WEEK_CN } from "../lib/date";
 import { ChevronDownIcon, ChevronUpIcon } from "../lib/icons";
 import { itemsOn } from "../lib/items";
 import { useFollows } from "../store/follows";
+import { TODAY, WEEK_START } from "../store/data";
 import type { Mode, PlatformFilter } from "../types";
 import { AnimeCard } from "./AnimeCard";
 import { useToast } from "./Toast";
@@ -33,10 +33,10 @@ export function WeekdayBoard({ platform, mode }: { platform: PlatformFilter; mod
   };
 
   const rows = Array.from({ length: 7 }, (_, i) => {
-    const date = addDays(SAMPLE_WEEK_START, i);
+    const date = addDays(WEEK_START, i);
     const wd = i + 1;
     const items = mode === "empty" ? [] : itemsOn(date, platform);
-    const isToday = sameDay(date, SAMPLE_TODAY);
+    const isToday = sameDay(date, TODAY);
     const isExpanded = expanded.has(wd);
     const visible = items.slice(0, isExpanded ? items.length : MAX_VISIBLE);
     const more = items.length - visible.length;
