@@ -85,10 +85,104 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
     }
 
     if (!items.length) throw new Error("未解析到任何周更卡片");
-    return { platform: PLATFORM, label: LABEL, items, fetchedAt: new Date().toISOString(), warnings: [] };
+    await enrichDurations(items, { fetchLimit, log });
+    const filtered = await classifyAiShorts(items, { fetchLimit, log });
+    if (filtered.length !== items.length) log(`AI 短剧评论判定过滤：${items.length - filtered.length} 条`);
+    return { platform: PLATFORM, label: LABEL, items: filtered, fetchedAt: new Date().toISOString(), warnings: [] };
   } finally {
     if (browser) await browser.close().catch(() => {});
   }
+}
+
+/** 卡片 URL 中的 tv_id（base64）解码为数字视频 id */
+function tvOf(url) {
+  const m = String(url ?? "").match(/tv_id=([^&]+)/);
+  return m ? Buffer.from(decodeURIComponent(m[1]), "base64").toString("utf8") : null;
+}
+
+/**
+ * 时长富集（mixer API，轻量 HTTP）：
+ * 爱奇艺日历卡片链接多为 PV/预告/片花（content_type 3/4），其时长不代表剧集，置空避免误过滤长剧；
+ * 仅当卡片链接为「正片」（content_type === 1）时取真实集时长（秒），供 <300s 过滤 AI 短剧。
+ */
+async function enrichDurations(items, { fetchLimit, log }) {
+  const cache = createCache();
+  const uniq = [...new Map(items.map((i) => [tvOf(i.url) ?? i.title, i])).values()];
+  let fetched = 0;
+  for (const it of uniq) {
+    const key = tvOf(it.url) ?? it.title;
+    if (cache.get(key) !== undefined) continue;
+    if (fetched >= fetchLimit) break;
+    fetched++;
+    try {
+      const res = await fetch(`https://mesh.if.iqiyi.com/tvg/play/mixer?id=${key}&fid=`, {
+        headers: { "user-agent": UA, referer: "https://www.iqiyi.com/", accept: "application/json" },
+        signal: AbortSignal.timeout(12000),
+      });
+      const j = res.ok ? await res.json().catch(() => null) : null;
+      const data = j?.data ?? null;
+      let dur = null;
+      if (data && Number(data.content_type) === 1) dur = Math.round(Number(data.duration) || 0);
+      cache.set(key, dur && dur > 0 ? dur : null);
+    } catch (err) {
+      cache.set(key, null);
+      log(`时长富集失败 ${it.title}: ${err.message}`);
+    }
+  }
+  for (const it of items) {
+    const key = tvOf(it.url) ?? it.title;
+    const dur = cache.get(key);
+    if (dur !== undefined) it.duration = dur;
+  }
+  log(`时长富集完成：抓取 ${fetched} 页，命中 ${uniq.filter((i) => cache.get(tvOf(i.url) ?? i.title)).length}/${uniq.length} 条（仅正片链接）`);
+}
+
+/** 评论区 AI 负面反馈特征：同一条评论同时含 AI 关键字与负面情绪词 */
+const AI_COMMENT_RE = /AI|人工智能/;
+const NEG_COMMENT_RE = /垃圾|难看|太差|烂|敷衍|粗糙|廉价|恶心|僵硬|失望|弃|退钱|骗|鬼畜|帧数|看坏|受不了|偷工减料|省成本|毁|无语|拉胯|倒胃口|低质|不行|太短|几分钟|泡面番/;
+
+/**
+ * AI 短剧分类（评论区启发式，计划外补充）：
+ * 拉取剧集评论区（1 页 20 条，控制请求量避免触发限流），若存在「提及 AI 且负面情绪」的评论，判定为 AI 短剧并过滤。
+ * 评论接口可能限流（403/429）或评论稀疏，失败时优雅降级保留条目。
+ */
+async function classifyAiShorts(items, { fetchLimit, log }) {
+  const cache = createCache();
+  const uniq = [...new Map(items.map((i) => [i.title, i])).values()];
+  const dropped = new Set();
+  let fetched = 0;
+  for (const it of uniq) {
+    if (cache.get(it.title) !== undefined) continue;
+    const tvId = tvOf(it.url);
+    if (!tvId) {
+      cache.set(it.title, false);
+      continue;
+    }
+    if (fetched >= fetchLimit) break;
+    fetched++;
+    let aiNeg = false;
+    try {
+      const res = await fetch(`https://sns-comment.iqiyi.com/v3/comment/get_comments.action?content_id=${tvId}&business_type=17&agent_version=10.2&agent_type=30&page=1&page_size=20`, {
+        headers: { "user-agent": UA, referer: "https://www.iqiyi.com/", accept: "application/json" },
+        signal: AbortSignal.timeout(12000),
+      });
+      if (res.status === 403 || res.status === 429) throw new Error(`评论接口限流 HTTP ${res.status}`);
+      if (!res.ok) throw new Error(`评论接口 HTTP ${res.status}`);
+      const t = await res.text();
+      const comments = [...t.matchAll(/"content"\s*:\s*"((?:[^"\\]|\\.)*)"/g)].map((m) => m[1]);
+      if (comments.some((c) => AI_COMMENT_RE.test(c) && NEG_COMMENT_RE.test(c))) {
+        aiNeg = true;
+      }
+    } catch (err) {
+      log(`AI 评论检测失败 ${it.title}: ${err.message}`);
+    }
+    cache.set(it.title, aiNeg);
+    if (aiNeg) {
+      dropped.add(it.title);
+      log(`评论区 AI 负面反馈，判定为 AI 短剧：${it.title}`);
+    }
+  }
+  return items.filter((i) => !dropped.has(i.title));
 }
 
 async function launchBrowser() {

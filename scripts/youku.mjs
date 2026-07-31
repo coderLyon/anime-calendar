@@ -111,17 +111,27 @@ async function enrichDurations(items, { fetchLimit, log }) {
     if (cache.get(it.title) !== undefined) continue;
     if (fetched >= fetchLimit) break;
     try {
-      const pageHtml = await fetchText(it.url, { referer: "https://www.youku.com/ku/webcomic", timeout: 8000 });
-      // 读取页面内联时长字段：优酷为「秒」（如 "duration":1415）；兼容毫秒字段
+      // 读取页面内联时长字段：优酷为「秒」（如 "duration":1415 / "duration":59.47）；兼容毫秒与 ISO 8601（PT0M59.47S）
+      let pageHtml = await fetchText(it.url, { referer: "https://www.youku.com/ku/webcomic", timeout: 12000 });
+      if (!/"duration"\s*:\s*(\d+)/.test(pageHtml)) {
+        // 快速重试一次（页面可能偶发缺字段/超时）
+        pageHtml = await fetchText(it.url, { referer: "https://www.youku.com/ku/webcomic", timeout: 12000 });
+      }
+      // 请求间隔 300ms，降低触发优酷限流概率
+      await new Promise((r) => setTimeout(r, 300));
       const all = [
         ...[...pageHtml.matchAll(/"duration"\s*:\s*(\d+)/g)],
         ...[...pageHtml.matchAll(/"videoDuration"\s*:\s*(\d+)/g)],
         ...[...pageHtml.matchAll(/"duration_msec"\s*:\s*(\d+)/g)],
       ].map((m) => Number(m[1]));
+      // ISO 8601 形式："duration":"PT0M59.47S" / "PT9M59.73000000000002S"
+      for (const m of pageHtml.matchAll(/"duration"\s*:\s*"PT(?:(\d+)M)?([\d.]+)S"/g)) {
+        all.push(Number(m[2]) + (m[1] ? Number(m[1]) * 60 : 0));
+      }
       const max = all.length ? Math.max(...all) : 0;
       let dur = null;
       if (max >= 300000) dur = Math.round(max / 1000); // 毫秒字段（≥5 分钟）
-      else if (max >= 60) dur = max; // 秒字段（1 分钟 ~ 几小时）
+      else if (max >= 1) dur = max; // 秒字段（AI 漫剧单集可不足 1 分钟，如 "duration":59.47）
       cache.set(it.title, dur);
       fetched++;
     } catch {

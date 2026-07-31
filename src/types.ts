@@ -20,8 +20,10 @@ export interface AnimeItem {
   url?: string;
   /** 独播 / 限免 / SVIP抢先 等 */
   badge?: string | null;
-  /** 秒；<600 会被清洗层丢弃 */
+  /** 秒；<300（不足 5 分钟）会被清洗层丢弃 */
   duration?: number;
+  /** 更新规则文案：腾讯每日更新卡片提供（如「每周四、五、六、日各更新1集」）；其余平台规则见剧集简介，暂不入库 */
+  rule?: string;
 }
 
 export interface PlatformResult {

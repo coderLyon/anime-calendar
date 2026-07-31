@@ -58,6 +58,17 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
         const linkRe = /link=([^&]+)/;
         const cidRe = /(?:^|&)cid=([^&]+)/;
         const vidRe = /(?:^|&)vid=([^&]+)/;
+        // 卡片下方更新规则：取「标题之后、'追' 之前」含「每周」的片段
+        const ruleOf = (t, title) => {
+          const i = t.indexOf(title);
+          if (i < 0) return null;
+          const after = t.slice(i + title.length);
+          const j = after.indexOf("追");
+          const seg = (j >= 0 ? after.slice(0, j) : after).trim();
+          const t2 = seg.indexOf(title);
+          const rule = (t2 > 0 ? seg.slice(0, t2) : seg).trim();
+          return /每周/.test(rule) ? rule.slice(0, 100) : null;
+        };
         return els.map((c) => {
           const paramsEl = c.querySelector(".banner-card__poster-container");
           const params = paramsEl?.getAttribute("dt-params") ?? c.getAttribute("dt-params") ?? "";
@@ -65,12 +76,14 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
             ?? c.querySelector(".banner-card__title")?.textContent?.trim()
             ?? "";
           const text = (c.textContent ?? "").replace(/\s+/g, " ");
+          const rule = ruleOf(text, title);
           const epMatch = text.match(EP_RE);
           const linkMatch = params.match(linkRe);
           return {
             cid: params.match(cidRe)?.[1] ?? null,
             vid: params.match(vidRe)?.[1] ?? null,
             title: String(title).trim(),
+            rule,
             poster: linkMatch ? decodeURIComponent(linkMatch[1]).replace(/^http:/, "https:") : null,
             episode: epMatch
               ? epMatch[1] && epMatch[2]
@@ -92,6 +105,7 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
           id: `tencent-${c.cid}-${date}`,
           platform: PLATFORM,
           title: c.title,
+          rule: c.rule,
           poster: c.poster,
           episode: c.episode ?? "",
           updateTime: "",
@@ -131,7 +145,13 @@ function dedupPipeline(items, log) {
   return out;
 }
 
-/** 相邻两天同标题同集 = SVIP 抢先：留早删晚 */
+/**
+ * 相邻两天同标题同集去重：
+ * - 仅当卡片规则文案涉及 SVIP（如「SVIP抢先看 / SVIP权益加码 / SVIP会员每周X抢先」）时，
+ *   判定为 SVIP 抢先 + 常规更新重复，留早（SVIP 日）删晚（常规日）。
+ * - 多日更新剧（如「每周四、五、六、日各更新1集」）的卡片集数文案在周末可能不刷新，
+ *   出现相邻日同集数，但并无 SVIP —— 不能按抢先去重删除，否则会过度过滤。
+ */
 function dedupAdjacentSvipEarly(items, log) {
   const groups = groupBy(items, (i) => `${i.title}:${i.episode}`);
   const remove = new Set();
@@ -142,7 +162,7 @@ function dedupAdjacentSvipEarly(items, log) {
       const prev = sorted[i - 1];
       const cur = sorted[i];
       const diff = dayDiff(prev.date, cur.date);
-      if (diff === 1) remove.add(cur);
+      if (diff === 1 && (prev.svip || cur.svip)) remove.add(cur);
     }
   }
   if (remove.size) log(`SVIP 抢先相邻去重：移除 ${remove.size} 条`);
@@ -164,7 +184,7 @@ function dedupFinaleEarlyRelease(items, log) {
   return items.filter((i) => !remove.has(i));
 }
 
-/** 同周周一 + 周日同集留周日 */
+/** 同周周一 + 周日同集留周日：仅当涉及 SVIP（周日为 SVIP 抢先日、周一为常规更新）时生效 */
 function dedupMonSunSameWeek(items, log) {
   const groups = groupBy(items, (i) => `${i.title}:${i.episode}`);
   const remove = new Set();
@@ -178,7 +198,7 @@ function dedupMonSunSameWeek(items, log) {
         const sunday = new Date(d);
         sunday.setDate(d.getDate() + 6);
         const sundayKey = toYmd(sunday);
-        if (byDate.has(sundayKey)) remove.add(it);
+        if (byDate.has(sundayKey) && (it.svip || byDate.get(sundayKey).svip)) remove.add(it);
       }
     }
   }
