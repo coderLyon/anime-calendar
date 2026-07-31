@@ -47,6 +47,7 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
           weekday,
           svip,
         url: `https://www.youku.com/show_page/id_${it.action_value}.html`,
+        videoId: it.previewInfo?.videoId ?? null, // 播放页兜底用（X+base64 形式的 videoId）
         badge: it.mark?.text || it.mark?.iconfont || null,
         duration: null,
       });
@@ -110,6 +111,7 @@ async function enrichDurations(items, { fetchLimit, log }) {
   for (const it of uniq) {
     if (cache.get(it.title) !== undefined) continue;
     if (fetched >= fetchLimit) break;
+    let dur = null;
     try {
       const pageHtml = await fetchShowPage(it.url);
       const all = [
@@ -122,14 +124,21 @@ async function enrichDurations(items, { fetchLimit, log }) {
         all.push(Number(m[2]) + (m[1] ? Number(m[1]) * 60 : 0));
       }
       const max = all.length ? Math.max(...all) : 0;
-      let dur = null;
       if (max >= 300000) dur = Math.round(max / 1000); // 毫秒字段（≥5 分钟）
       else if (max >= 1) dur = max; // 秒字段（AI 漫剧单集可不足 1 分钟，如 "duration":59.47）
-      cache.set(it.title, dur);
-      fetched++;
-    } catch {
-      cache.set(it.title, null);
+    } catch (err) {
+      log(`show_page 富集失败 ${it.title}: ${err.message}`);
     }
+    // 播放页兜底：show_page 未取到时长且条目带 videoId 时，走 v_show 播放页（概率性风控，内置重试）
+    if (dur == null && it.videoId) {
+      try {
+        dur = await fetchPlayerDuration(it.videoId);
+      } catch (err) {
+        log(`播放页兜底失败 ${it.title}: ${err.message}`);
+      }
+    }
+    cache.set(it.title, dur);
+    fetched++;
     // 请求间隔 400ms，降低连续请求触发优酷降级（缺字段/限流）的概率
     await new Promise((r) => setTimeout(r, 400));
   }
@@ -138,6 +147,37 @@ async function enrichDurations(items, { fetchLimit, log }) {
     if (dur !== undefined) it.duration = dur;
   }
   log(`时长富集完成：抓取 ${fetched} 页`);
+}
+
+/** 解析 "MM:SS" / "HH:MM:SS" / 秒数 为秒 */
+function parseDurText(input) {
+  if (input === null || input === undefined || input === "") return null;
+  if (typeof input === "number" && Number.isFinite(input)) return Math.round(input);
+  const text = String(input).trim();
+  if (/^\d+(\.\d+)?$/.test(text)) return Math.round(Number(text));
+  const m = text.match(/^(?:(\d{1,3}):)?([0-5]?\d):([0-5]\d)$/);
+  return m ? Number(m[1] || 0) * 3600 + Number(m[2]) * 60 + Number(m[3]) : null;
+}
+
+/** 播放页兜底：v_show/id_{videoId}.html 的 __INITIAL_DATA__.pageMap.extra.duration（概率性风控，最多 4 次重试） */
+async function fetchPlayerDuration(videoId) {
+  const url = `https://v.youku.com/v_show/id_${encodeURIComponent(videoId)}.html`;
+  let lastErr;
+  for (let attempt = 0; attempt < 4; attempt++) {
+    try {
+      const html = await fetchText(url, { referer: "https://www.youku.com/", timeout: 15000 });
+      const dataText = extractAssignedObject(html, "__INITIAL_DATA__");
+      if (!dataText) throw new Error("播放页无 __INITIAL_DATA__（风控变种页）");
+      const data = parseJsObject(dataText);
+      const dur = parseDurText(data?.pageMap?.extra?.duration);
+      if (dur != null && dur > 0) return dur;
+      throw new Error("播放页 extra 无时长");
+    } catch (err) {
+      lastErr = err;
+      if (attempt < 3) await new Promise((r) => setTimeout(r, 700 * (attempt + 1)));
+    }
+  }
+  throw lastErr ?? new Error("播放页时长获取失败");
 }
 
 /** show_page 抓取：失败或缺少时长字段时退避重试（优酷对连续请求偶发限流/缺字段） */

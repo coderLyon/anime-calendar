@@ -94,47 +94,94 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
   }
 }
 
-/** 卡片 URL 中的 tv_id（base64）解码为数字视频 id */
+/** 卡片 URL 中的 album_id（base64）解码为数字专辑 ID */
+function albumOf(url) {
+  const m = String(url ?? "").match(/album_id=([^&]+)/);
+  return m ? Buffer.from(decodeURIComponent(m[1]), "base64").toString("utf8") : null;
+}
+
+/** 卡片 URL 中的 tv_id（base64）解码为数字视频 id（评论区 content_id 用） */
 function tvOf(url) {
   const m = String(url ?? "").match(/tv_id=([^&]+)/);
   return m ? Buffer.from(decodeURIComponent(m[1]), "base64").toString("utf8") : null;
 }
 
+/** 解析多种时长格式为秒：爱奇艺 avlistinfo 返回 "MM:SS" / "HH:MM:SS" / 秒数 */
+function parseDur(input) {
+  if (input === null || input === undefined || input === "") return null;
+  if (typeof input === "number" && Number.isFinite(input)) return Math.round(input);
+  const text = String(input).trim();
+  if (/^\d+(\.\d+)?$/.test(text)) return Math.round(Number(text));
+  const m = text.match(/^(?:(\d{1,3}):)?([0-5]?\d):([0-5]\d)$/);
+  return m ? Number(m[1] || 0) * 3600 + Number(m[2]) * 60 + Number(m[3]) : null;
+}
+
+/** 条目集数文本 → 数字（"第202集"/"14集全" → 202/14；"Ⅱ-3" 等无法解析返回 null） */
+function epNum(episode) {
+  const m = String(episode ?? "").match(/(\d+)\s*集/);
+  return m ? Number(m[1]) : null;
+}
+
 /**
- * 时长富集（mixer API，轻量 HTTP）：
- * 爱奇艺日历卡片链接多为 PV/预告/片花（content_type 3/4），其时长不代表剧集，置空避免误过滤长剧；
- * 仅当卡片链接为「正片」（content_type === 1）时取真实集时长（秒），供 <300s 过滤 AI 短剧。
+ * 时长富集：专辑分集接口 avlistinfo（稳定）返回每集真实时长，
+ * 替代卡片链接（PV/预告/正片不定）带来的不可靠时长。
  */
 async function enrichDurations(items, { fetchLimit, log }) {
   const cache = createCache();
-  const uniq = [...new Map(items.map((i) => [tvOf(i.url) ?? i.title, i])).values()];
+  const uniq = [...new Map(items.map((i) => [albumOf(i.url) ?? i.title, i])).values()];
   let fetched = 0;
   for (const it of uniq) {
-    const key = tvOf(it.url) ?? it.title;
-    if (cache.get(key) !== undefined) continue;
+    const aid = albumOf(it.url) ?? it.title;
+    if (cache.get(aid) !== undefined) continue;
     if (fetched >= fetchLimit) break;
     fetched++;
     try {
-      const res = await fetch(`https://mesh.if.iqiyi.com/tvg/play/mixer?id=${key}&fid=`, {
-        headers: { "user-agent": UA, referer: "https://www.iqiyi.com/", accept: "application/json" },
-        signal: AbortSignal.timeout(12000),
-      });
-      const j = res.ok ? await res.json().catch(() => null) : null;
-      const data = j?.data ?? null;
-      let dur = null;
-      if (data && Number(data.content_type) === 1) dur = Math.round(Number(data.duration) || 0);
-      cache.set(key, dur && dur > 0 ? dur : null);
+      cache.set(aid, await fetchAlbumDurations(aid));
     } catch (err) {
-      cache.set(key, null);
+      cache.set(aid, null);
       log(`时长富集失败 ${it.title}: ${err.message}`);
     }
   }
+  let hit = 0;
   for (const it of items) {
-    const key = tvOf(it.url) ?? it.title;
-    const dur = cache.get(key);
-    if (dur !== undefined) it.duration = dur;
+    const aid = albumOf(it.url) ?? it.title;
+    const r = cache.get(aid);
+    if (!r) continue;
+    const n = epNum(it.episode);
+    const dur = (n != null ? r.byOrder.get(n) : undefined) ?? r.latest;
+    if (dur != null && dur > 0) {
+      it.duration = dur;
+      hit++;
+    }
   }
-  log(`时长富集完成：抓取 ${fetched} 页，命中 ${uniq.filter((i) => cache.get(tvOf(i.url) ?? i.title)).length}/${uniq.length} 条（仅正片链接）`);
+  log(`时长富集完成：抓取 ${fetched} 专辑，命中 ${hit}/${items.length} 条`);
+}
+
+/** 拉取专辑全部分集时长（分页 200/页，最多 3 页覆盖年番），返回 { byOrder: Map<集数,秒>, latest } */
+async function fetchAlbumDurations(aid) {
+  const byOrder = new Map();
+  let latest = null;
+  for (let page = 1; page <= 3; page++) {
+    const res = await fetch(`https://pcw-api.iqiyi.com/albums/album/avlistinfo?aid=${encodeURIComponent(aid)}&page=${page}&size=200`, {
+      headers: { "user-agent": UA, referer: "https://www.iqiyi.com/", accept: "application/json" },
+      signal: AbortSignal.timeout(15000),
+    });
+    if (!res.ok) throw new Error(`avlistinfo HTTP ${res.status}`);
+    const j = await res.json().catch(() => null);
+    if (!j || j.code !== "A00000") throw new Error("avlistinfo 响应异常");
+    const list = j.data?.epsodelist ?? [];
+    if (!list.length) break;
+    for (const ep of list) {
+      const dur = parseDur(ep.duration);
+      if (dur != null && dur > 0) {
+        byOrder.set(Number(ep.order), dur);
+        latest = dur; // 列表有序，最后一个有效时长即最新集
+      }
+    }
+    if (list.length < 200) break;
+  }
+  if (!byOrder.size) throw new Error("分集列表无时长字段");
+  return { byOrder, latest };
 }
 
 /** 评论区 AI 负面反馈特征：同一条评论同时含 AI 关键字与负面情绪词 */
