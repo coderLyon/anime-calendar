@@ -11,7 +11,7 @@ export const LABEL = "腾讯视频";
 
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
-const BADGE_RE = /(限免|独播|上新|结局点映|大结局|高清修复)/;
+const BADGE_RE = /(限免|独播|上新|结局点映|大结局|高清修复|超前点映)/;
 const EP_RE = /更新至\s*([0-9]+|[一二三四五六七八九十百千]+|Ⅱ[0-9]+)\s*(集|话)|全\s*([0-9]+)\s*(集)|(大结局|完结)/;
 
 export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {

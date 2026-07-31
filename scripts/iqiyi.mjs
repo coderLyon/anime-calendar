@@ -123,8 +123,8 @@ function epNum(episode) {
 }
 
 /**
- * 时长富集：专辑分集接口 avlistinfo（稳定）返回每集真实时长，
- * 替代卡片链接（PV/预告/正片不定）带来的不可靠时长。
+ * 富集：专辑分集接口 avlistinfo（稳定）返回每集真实时长与正片 playUrl，
+ * 替代卡片链接（多为 PV/预告）带来的不可靠时长与跳转；条目 URL 修正为该集正片直达。
  */
 async function enrichDurations(items, { fetchLimit, log }) {
   const cache = createCache();
@@ -148,19 +148,23 @@ async function enrichDurations(items, { fetchLimit, log }) {
     const r = cache.get(aid);
     if (!r) continue;
     const n = epNum(it.episode);
-    const dur = (n != null ? r.byOrder.get(n) : undefined) ?? r.latest;
+    const dur = (n != null ? r.byDur.get(n) : undefined) ?? r.latestDur;
     if (dur != null && dur > 0) {
       it.duration = dur;
       hit++;
     }
+    const url = (n != null ? r.byUrl.get(n) : undefined) ?? r.latestUrl;
+    if (url) it.url = url; // 正片直达（原卡片链接多为 PV/预告）
   }
   log(`时长富集完成：抓取 ${fetched} 专辑，命中 ${hit}/${items.length} 条`);
 }
 
-/** 拉取专辑全部分集时长（分页 200/页，最多 3 页覆盖年番），返回 { byOrder: Map<集数,秒>, latest } */
+/** 拉取专辑全部分集（分页 200/页，最多 3 页覆盖年番），返回 { byDur, byUrl, latestDur, latestUrl } */
 async function fetchAlbumDurations(aid) {
-  const byOrder = new Map();
-  let latest = null;
+  const byDur = new Map();
+  const byUrl = new Map();
+  let latestDur = null;
+  let latestUrl = null;
   for (let page = 1; page <= 3; page++) {
     const res = await fetch(`https://pcw-api.iqiyi.com/albums/album/avlistinfo?aid=${encodeURIComponent(aid)}&page=${page}&size=200`, {
       headers: { "user-agent": UA, referer: "https://www.iqiyi.com/", accept: "application/json" },
@@ -173,15 +177,20 @@ async function fetchAlbumDurations(aid) {
     if (!list.length) break;
     for (const ep of list) {
       const dur = parseDur(ep.duration);
+      const url = ep.playUrl ? String(ep.playUrl).replace(/^http:/, "https:") : null;
       if (dur != null && dur > 0) {
-        byOrder.set(Number(ep.order), dur);
-        latest = dur; // 列表有序，最后一个有效时长即最新集
+        byDur.set(Number(ep.order), dur);
       }
+      if (url) {
+        byUrl.set(Number(ep.order), url);
+        latestUrl = url; // 列表有序，最后一项即最新集
+      }
+      if (dur != null && dur > 0) latestDur = dur;
     }
     if (list.length < 200) break;
   }
-  if (!byOrder.size) throw new Error("分集列表无时长字段");
-  return { byOrder, latest };
+  if (!byDur.size) throw new Error("分集列表无时长字段");
+  return { byDur, byUrl, latestDur, latestUrl };
 }
 
 /** 评论区 AI 负面反馈特征：同一条评论同时含 AI 关键字与负面情绪词 */
@@ -200,6 +209,11 @@ async function classifyAiShorts(items, { fetchLimit, log }) {
   let fetched = 0;
   for (const it of uniq) {
     if (cache.get(it.title) !== undefined) continue;
+    // 已知时长为长剧（≥5 分钟）的跳过评论判定，避免「AI 修复/作画」类负面评论误判
+    if (it.duration != null && it.duration >= 300) {
+      cache.set(it.title, false);
+      continue;
+    }
     const tvId = tvOf(it.url);
     if (!tvId) {
       cache.set(it.title, false);

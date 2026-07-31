@@ -46,7 +46,10 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
           date,
           weekday,
           svip,
-        url: `https://www.youku.com/show_page/id_${it.action_value}.html`,
+        // 有 videoId 时用播放页直达（最新更新集）；否则回退剧集页
+        url: it.previewInfo?.videoId
+          ? `https://v.youku.com/v_show/id_${it.previewInfo.videoId}.html`
+          : `https://www.youku.com/show_page/id_${it.action_value}.html`,
         videoId: it.previewInfo?.videoId ?? null, // 播放页兜底用（X+base64 形式的 videoId）
         badge: it.mark?.text || it.mark?.iconfont || null,
         duration: null,
@@ -166,6 +169,10 @@ async function fetchPlayerDuration(videoId) {
   for (let attempt = 0; attempt < 4; attempt++) {
     try {
       const html = await fetchText(url, { referer: "https://www.youku.com/", timeout: 15000 });
+      // 风控页（_____tmd_____/punish）短小且无 __INITIAL_DATA__：重试只会加重风控，直接失败
+      if (html.length < 10000 || html.includes("_____tmd_____")) {
+        throw new Error("播放页命中风控");
+      }
       const dataText = extractAssignedObject(html, "__INITIAL_DATA__");
       if (!dataText) throw new Error("播放页无 __INITIAL_DATA__（风控变种页）");
       const data = parseJsObject(dataText);
@@ -174,6 +181,8 @@ async function fetchPlayerDuration(videoId) {
       throw new Error("播放页 extra 无时长");
     } catch (err) {
       lastErr = err;
+      // 风控页重试无益，提前结束
+      if (/风控/.test(String(err.message))) break;
       if (attempt < 3) await new Promise((r) => setTimeout(r, 700 * (attempt + 1)));
     }
   }
@@ -187,10 +196,14 @@ async function fetchShowPage(url) {
     try {
       const html = await fetchText(url, { referer: "https://www.youku.com/ku/webcomic", timeout: 15000 });
       if (/duration/.test(html)) return html;
-      lastErr = new Error("页面缺少 duration 字段");
+      // 风控页无 duration 且短小：重试只会加重风控，立即失败
+      if (html.length < 10000 || html.includes("_____tmd_____")) throw new Error("页面命中风控");
+      throw new Error("页面缺少 duration 字段");
     } catch (err) {
       lastErr = err;
     }
+    // 风控/降级响应重试无益，提前结束
+    if (/风控/.test(String(lastErr.message))) break;
     if (attempt < 2) await new Promise((r) => setTimeout(r, 900 * (attempt + 1)));
   }
   throw lastErr ?? new Error("show_page 抓取失败");

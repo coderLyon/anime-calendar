@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T20:32:38.146Z",
+  "generatedAt": "2026-07-31T21:15:20.839Z",
   "platforms": [
     {
       "platform": "bili",
@@ -501,7 +501,7 @@
           "duration": null
         }
       ],
-      "fetchedAt": "2026-07-31T20:27:29.717Z",
+      "fetchedAt": "2026-07-31T21:12:04.684Z",
       "warnings": [
         "已保留 5 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "5 条时长无法确认已保留（平台未提供内联时长）"
@@ -515,31 +515,31 @@
           "id": "youku-afbe218f2b834b8698e7-2026-07-27",
           "platform": "youku",
           "title": "轩辕小豆之山海奇缘",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/896395a00d194bf79ff5813005f0aaf8.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/7b3336744fd04f2d8781ce8ee8e02cc5.webp.jpg",
           "episode": "第68话",
           "updateTime": "10:00",
           "date": "2026-07-27",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_afbe218f2b834b8698e7.html",
-          "videoId": "XNjUzODU4OTQ5Ng==",
+          "url": "https://v.youku.com/v_show/id_XNjQ1OTA2MDM0OA==.html",
+          "videoId": "XNjQ1OTA2MDM0OA==",
           "badge": "逐集限免",
-          "duration": 193.84
+          "duration": 29.92
         },
         {
           "id": "youku-ffed8094008e47acad25-2026-07-27",
           "platform": "youku",
           "title": "余烬之后",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/8b5188e788d048ec87ba3b03d9bdb573.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/5179763be4f44b72bf183c563a7880cc.webp.jpg",
           "episode": "第8话",
           "updateTime": "10:00",
           "date": "2026-07-27",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_ffed8094008e47acad25.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0NTE4MjY0MA==.html",
           "videoId": "XNjU0NTE4MjY0MA==",
           "badge": "SVIP",
-          "duration": 241.33
+          "duration": 323
         },
         {
           "id": "youku-daaad3bb331546659410-2026-07-27",
@@ -551,25 +551,25 @@
           "date": "2026-07-27",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_daaad3bb331546659410.html",
-          "videoId": "XNjU0MTg4ODQyOA==",
+          "url": "https://v.youku.com/v_show/id_XNjU1MDk0MDI1Mg==.html",
+          "videoId": "XNjU1MDk0MDI1Mg==",
           "badge": "VIP",
-          "duration": 395.37
+          "duration": 31.6
         },
         {
           "id": "youku-babb02b2839847ff901c-2026-07-27",
           "platform": "youku",
           "title": "一具枯骨，逆天修成仙",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/384181d485a94bbc8a8e7f14007480ed.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/9b9678579ef0458492fd731c613e587d.webp.jpg",
           "episode": "第272话",
           "updateTime": "10:00",
           "date": "2026-07-27",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_babb02b2839847ff901c.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0ODYyMzM4NA==.html",
           "videoId": "XNjU0ODYyMzM4NA==",
           "badge": "VIP",
-          "duration": 128.37
+          "duration": null
         },
         {
           "id": "youku-caabc3bf10da41a38ff4-2026-07-27",
@@ -581,10 +581,10 @@
           "date": "2026-07-27",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_caabc3bf10da41a38ff4.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0Mjg2MzA3Mg==.html",
           "videoId": "XNjU0Mjg2MzA3Mg==",
           "badge": null,
-          "duration": 117.77
+          "duration": 42
         },
         {
           "id": "youku-cbae70c33fa6433a9c1b-2026-07-27",
@@ -596,25 +596,25 @@
           "date": "2026-07-27",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_cbae70c33fa6433a9c1b.html",
+          "url": "https://v.youku.com/v_show/id_XNjU1MDQyMDI0NA==.html",
           "videoId": "XNjU1MDQyMDI0NA==",
           "badge": "VIP",
-          "duration": 113.37
+          "duration": 38.1
         },
         {
           "id": "youku-cebaa3486ff54e81bb65-2026-07-27",
           "platform": "youku",
           "title": "怪物侦探小辛之时空奥秘1",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/086e27ef0a3e4afba20248d1afecb3dd.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/117de98646ba4059941b7b97c30fe6e7.webp.jpg",
           "episode": "24话全",
           "updateTime": "10:00",
           "date": "2026-07-27",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_cebaa3486ff54e81bb65.html",
+          "url": "https://v.youku.com/v_show/id_XNjUzOTkzODM0MA==.html",
           "videoId": "XNjUzOTkzODM0MA==",
           "badge": "VIP",
-          "duration": 660.04
+          "duration": 55.08
         },
         {
           "id": "youku-caae9f722a14448fa37f-2026-07-27",
@@ -626,10 +626,10 @@
           "date": "2026-07-27",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_caae9f722a14448fa37f.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0Mjg2MzA5Ng==.html",
           "videoId": "XNjU0Mjg2MzA5Ng==",
           "badge": "VIP",
-          "duration": 154.5
+          "duration": 47.4
         },
         {
           "id": "youku-abbcca50d9794f6899e4-2026-07-27",
@@ -641,10 +641,10 @@
           "date": "2026-07-27",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_abbcca50d9794f6899e4.html",
+          "url": "https://v.youku.com/v_show/id_XNjUzODQ2NzM1Mg==.html",
           "videoId": "XNjUzODQ2NzM1Mg==",
           "badge": "VIP",
-          "duration": 59.47
+          "duration": 59.57
         },
         {
           "id": "youku-acfb3adc43ff41128664-2026-07-27",
@@ -656,10 +656,10 @@
           "date": "2026-07-27",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_acfb3adc43ff41128664.html",
+          "url": "https://v.youku.com/v_show/id_XNjU1MzMwMDgwMA==.html",
           "videoId": "XNjU1MzMwMDgwMA==",
           "badge": "SVIP",
-          "duration": 312.47
+          "duration": 32
         },
         {
           "id": "youku-fbbfa201ace1459495cb-2026-07-27",
@@ -671,10 +671,10 @@
           "date": "2026-07-27",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_fbbfa201ace1459495cb.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0ODY1NTIwNA==.html",
           "videoId": "XNjU0ODY1NTIwNA==",
           "badge": "VIP",
-          "duration": 122.67
+          "duration": 163.43
         },
         {
           "id": "youku-aadcff01583e41cca74b-2026-07-27",
@@ -686,10 +686,10 @@
           "date": "2026-07-27",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_aadcff01583e41cca74b.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0MzQwODUyOA==.html",
           "videoId": "XNjU0MzQwODUyOA==",
           "badge": "VIP",
-          "duration": 125.43
+          "duration": 36.93
         },
         {
           "id": "youku-dcea046b43ce4c65a593-2026-07-27",
@@ -701,10 +701,10 @@
           "date": "2026-07-27",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_dcea046b43ce4c65a593.html",
+          "url": "https://v.youku.com/v_show/id_XNjUzOTk3MDE3Ng==.html",
           "videoId": "XNjUzOTk3MDE3Ng==",
           "badge": "VIP",
-          "duration": 159.67
+          "duration": 150.13
         },
         {
           "id": "youku-feca9dced6f74ec38285-2026-07-27",
@@ -716,25 +716,25 @@
           "date": "2026-07-27",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_feca9dced6f74ec38285.html",
+          "url": "https://v.youku.com/v_show/id_XNjU1MTg4NjE4NA==.html",
           "videoId": "XNjU1MTg4NjE4NA==",
           "badge": "VIP",
-          "duration": 168.1
+          "duration": 29.67
         },
         {
           "id": "youku-fdca5177ae604c66bdb8-2026-07-28",
           "platform": "youku",
           "title": "一斩苍穹",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/bbc2a1bbada849b9b101321012d8c48c.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/3b8e8850993549eabb2950e19ea08552.webp.jpg",
           "episode": "第2话",
           "updateTime": "10:00",
           "date": "2026-07-28",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_fdca5177ae604c66bdb8.html",
-          "videoId": "XNjUzOTEwOTU5Ng==",
+          "url": "https://v.youku.com/v_show/id_XNjU0MTY1NjIwMA==.html",
+          "videoId": "XNjU0MTY1NjIwMA==",
           "badge": "独播",
-          "duration": 1534.56
+          "duration": 37.16
         },
         {
           "id": "youku-dcfc601098b54c379a57-2026-07-28",
@@ -746,25 +746,25 @@
           "date": "2026-07-28",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_dcfc601098b54c379a57.html",
+          "url": "https://v.youku.com/v_show/id_XNjUxMTQ1Mjk3Ng==.html",
           "videoId": "XNjUxMTQ1Mjk3Ng==",
           "badge": "VIP",
-          "duration": 357.08
+          "duration": 32.68
         },
         {
           "id": "youku-babb02b2839847ff901c-2026-07-28",
           "platform": "youku",
           "title": "一具枯骨，逆天修成仙",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/384181d485a94bbc8a8e7f14007480ed.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/9b9678579ef0458492fd731c613e587d.webp.jpg",
           "episode": "第272话",
           "updateTime": "10:00",
           "date": "2026-07-28",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_babb02b2839847ff901c.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0ODYyMzM4NA==.html",
           "videoId": "XNjU0ODYyMzM4NA==",
           "badge": "VIP",
-          "duration": 128.37
+          "duration": null
         },
         {
           "id": "youku-caabc3bf10da41a38ff4-2026-07-28",
@@ -776,10 +776,10 @@
           "date": "2026-07-28",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_caabc3bf10da41a38ff4.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0Mjg2MzA3Mg==.html",
           "videoId": "XNjU0Mjg2MzA3Mg==",
           "badge": null,
-          "duration": 117.77
+          "duration": 42
         },
         {
           "id": "youku-fede1c50fd6e40ccbc4f-2026-07-28",
@@ -791,10 +791,10 @@
           "date": "2026-07-28",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_fede1c50fd6e40ccbc4f.html",
-          "videoId": "XNjU0MDg2MjQ3Mg==",
+          "url": "https://v.youku.com/v_show/id_XNjU0MDg1OTc3Mg==.html",
+          "videoId": "XNjU0MDg1OTc3Mg==",
           "badge": "独播",
-          "duration": 314.17
+          "duration": 39.33
         },
         {
           "id": "youku-cacf63f037604089b341-2026-07-28",
@@ -806,10 +806,10 @@
           "date": "2026-07-28",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_cacf63f037604089b341.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0MTkwMjczMg==.html",
           "videoId": "XNjU0MTkwMjczMg==",
           "badge": "首播",
-          "duration": 286.87
+          "duration": null
         },
         {
           "id": "youku-cbae70c33fa6433a9c1b-2026-07-28",
@@ -821,25 +821,25 @@
           "date": "2026-07-28",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_cbae70c33fa6433a9c1b.html",
+          "url": "https://v.youku.com/v_show/id_XNjU1MDQyMDI0NA==.html",
           "videoId": "XNjU1MDQyMDI0NA==",
           "badge": "VIP",
-          "duration": 113.37
+          "duration": 38.1
         },
         {
           "id": "youku-cebaa3486ff54e81bb65-2026-07-28",
           "platform": "youku",
           "title": "怪物侦探小辛之时空奥秘1",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/086e27ef0a3e4afba20248d1afecb3dd.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/117de98646ba4059941b7b97c30fe6e7.webp.jpg",
           "episode": "24话全",
           "updateTime": "10:00",
           "date": "2026-07-28",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_cebaa3486ff54e81bb65.html",
+          "url": "https://v.youku.com/v_show/id_XNjUzOTkzODM0MA==.html",
           "videoId": "XNjUzOTkzODM0MA==",
           "badge": "VIP",
-          "duration": 660.04
+          "duration": 55.08
         },
         {
           "id": "youku-caae9f722a14448fa37f-2026-07-28",
@@ -851,10 +851,10 @@
           "date": "2026-07-28",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_caae9f722a14448fa37f.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0Mjg2MzA5Ng==.html",
           "videoId": "XNjU0Mjg2MzA5Ng==",
           "badge": "VIP",
-          "duration": 154.5
+          "duration": 47.4
         },
         {
           "id": "youku-abef95f5ff0b40af9452-2026-07-28",
@@ -866,7 +866,7 @@
           "date": "2026-07-28",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_abef95f5ff0b40af9452.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0MTg5MTU1Ng==.html",
           "videoId": "XNjU0MTg5MTU1Ng==",
           "badge": "VIP",
           "duration": null
@@ -881,10 +881,10 @@
           "date": "2026-07-28",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_abbcca50d9794f6899e4.html",
+          "url": "https://v.youku.com/v_show/id_XNjUzODQ2NzM1Mg==.html",
           "videoId": "XNjUzODQ2NzM1Mg==",
           "badge": "VIP",
-          "duration": 59.47
+          "duration": 59.57
         },
         {
           "id": "youku-edaab22fca4647389278-2026-07-28",
@@ -896,10 +896,10 @@
           "date": "2026-07-28",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_edaab22fca4647389278.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0NDU5NTk2OA==.html",
           "videoId": "XNjU0NDU5NTk2OA==",
           "badge": "VIP",
-          "duration": 174.04
+          "duration": null
         },
         {
           "id": "youku-cebcebd964e644cf8837-2026-07-28",
@@ -911,10 +911,10 @@
           "date": "2026-07-28",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_cebcebd964e644cf8837.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0MDI0MTgwMA==.html",
           "videoId": "XNjU0MDI0MTgwMA==",
           "badge": "VIP",
-          "duration": 178.03
+          "duration": null
         },
         {
           "id": "youku-feca9dced6f74ec38285-2026-07-28",
@@ -926,23 +926,23 @@
           "date": "2026-07-28",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_feca9dced6f74ec38285.html",
+          "url": "https://v.youku.com/v_show/id_XNjU1MTg4NjE4NA==.html",
           "videoId": "XNjU1MTg4NjE4NA==",
           "badge": "VIP",
-          "duration": 168.1
+          "duration": 29.67
         },
         {
           "id": "youku-badbb5792f934ddb82fd-2026-07-29",
           "platform": "youku",
           "title": "师兄啊师兄",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/cb2d62c06e684e4db8e2ae4d54c182a1.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/45d824044c914d93bd5a626018b3a431.webp.jpg",
           "episode": "第152话",
           "updateTime": "10:00",
           "date": "2026-07-29",
           "weekday": 3,
           "svip": true,
-          "url": "https://www.youku.com/show_page/id_badbb5792f934ddb82fd.html",
-          "videoId": "XNjQ0MDk3Njc5Mg==",
+          "url": "https://v.youku.com/v_show/id_XNjUyNTI0MzY1Mg==.html",
+          "videoId": "XNjUyNTI0MzY1Mg==",
           "badge": "独播",
           "duration": null
         },
@@ -950,16 +950,16 @@
           "id": "youku-babb02b2839847ff901c-2026-07-29",
           "platform": "youku",
           "title": "一具枯骨，逆天修成仙",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/384181d485a94bbc8a8e7f14007480ed.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/9b9678579ef0458492fd731c613e587d.webp.jpg",
           "episode": "第272话",
           "updateTime": "10:00",
           "date": "2026-07-29",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_babb02b2839847ff901c.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0ODYyMzM4NA==.html",
           "videoId": "XNjU0ODYyMzM4NA==",
           "badge": "VIP",
-          "duration": 128.37
+          "duration": null
         },
         {
           "id": "youku-caabc3bf10da41a38ff4-2026-07-29",
@@ -971,25 +971,25 @@
           "date": "2026-07-29",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_caabc3bf10da41a38ff4.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0Mjg2MzA3Mg==.html",
           "videoId": "XNjU0Mjg2MzA3Mg==",
           "badge": null,
-          "duration": 117.77
+          "duration": 42
         },
         {
           "id": "youku-cebaa3486ff54e81bb65-2026-07-29",
           "platform": "youku",
           "title": "怪物侦探小辛之时空奥秘1",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/086e27ef0a3e4afba20248d1afecb3dd.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/117de98646ba4059941b7b97c30fe6e7.webp.jpg",
           "episode": "24话全",
           "updateTime": "10:00",
           "date": "2026-07-29",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_cebaa3486ff54e81bb65.html",
+          "url": "https://v.youku.com/v_show/id_XNjUzOTkzODM0MA==.html",
           "videoId": "XNjUzOTkzODM0MA==",
           "badge": "VIP",
-          "duration": 660.04
+          "duration": 55.08
         },
         {
           "id": "youku-caae9f722a14448fa37f-2026-07-29",
@@ -1001,10 +1001,10 @@
           "date": "2026-07-29",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_caae9f722a14448fa37f.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0Mjg2MzA5Ng==.html",
           "videoId": "XNjU0Mjg2MzA5Ng==",
           "badge": "VIP",
-          "duration": 154.5
+          "duration": 47.4
         },
         {
           "id": "youku-dcbb7f8925584943b43c-2026-07-29",
@@ -1016,7 +1016,7 @@
           "date": "2026-07-29",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_dcbb7f8925584943b43c.html",
+          "url": "https://v.youku.com/v_show/id_XNjU1MTYzNjY2NA==.html",
           "videoId": "XNjU1MTYzNjY2NA==",
           "badge": "VIP",
           "duration": null
@@ -1031,8 +1031,8 @@
           "date": "2026-07-29",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_aceb6e01286849c99847.html",
-          "videoId": "XNjUzNDUwODgyMA==",
+          "url": "https://v.youku.com/v_show/id_XNjU0MzM5MTQ2OA==.html",
+          "videoId": "XNjU0MzM5MTQ2OA==",
           "badge": "VIP",
           "duration": null
         },
@@ -1046,10 +1046,10 @@
           "date": "2026-07-29",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_fbbfa201ace1459495cb.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0ODY1NTIwNA==.html",
           "videoId": "XNjU0ODY1NTIwNA==",
           "badge": "VIP",
-          "duration": 122.67
+          "duration": 163.43
         },
         {
           "id": "youku-abbcca50d9794f6899e4-2026-07-29",
@@ -1061,10 +1061,10 @@
           "date": "2026-07-29",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_abbcca50d9794f6899e4.html",
+          "url": "https://v.youku.com/v_show/id_XNjUzODQ2NzM1Mg==.html",
           "videoId": "XNjUzODQ2NzM1Mg==",
           "badge": "VIP",
-          "duration": 59.47
+          "duration": 59.57
         },
         {
           "id": "youku-aadcff01583e41cca74b-2026-07-29",
@@ -1076,10 +1076,10 @@
           "date": "2026-07-29",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_aadcff01583e41cca74b.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0MzQwODUyOA==.html",
           "videoId": "XNjU0MzQwODUyOA==",
           "badge": "VIP",
-          "duration": 125.43
+          "duration": 36.93
         },
         {
           "id": "youku-dcea046b43ce4c65a593-2026-07-29",
@@ -1091,10 +1091,10 @@
           "date": "2026-07-29",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_dcea046b43ce4c65a593.html",
+          "url": "https://v.youku.com/v_show/id_XNjUzOTk3MDE3Ng==.html",
           "videoId": "XNjUzOTk3MDE3Ng==",
           "badge": "VIP",
-          "duration": 159.67
+          "duration": 150.13
         },
         {
           "id": "youku-aefb6e73b0e245dfa2ee-2026-07-29",
@@ -1106,8 +1106,8 @@
           "date": "2026-07-29",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_aefb6e73b0e245dfa2ee.html",
-          "videoId": "XNjQ2NjYwODY4MA==",
+          "url": "https://v.youku.com/v_show/id_XNjQ2NjYxNzY4OA==.html",
+          "videoId": "XNjQ2NjYxNzY4OA==",
           "badge": "VIP",
           "duration": null
         },
@@ -1121,10 +1121,10 @@
           "date": "2026-07-29",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_feca9dced6f74ec38285.html",
+          "url": "https://v.youku.com/v_show/id_XNjU1MTg4NjE4NA==.html",
           "videoId": "XNjU1MTg4NjE4NA==",
           "badge": "VIP",
-          "duration": 168.1
+          "duration": 29.67
         },
         {
           "id": "youku-ebce16ca30e74e53a020-2026-07-29",
@@ -1136,7 +1136,7 @@
           "date": "2026-07-29",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_ebce16ca30e74e53a020.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0ODM4NTM3Ng==.html",
           "videoId": "XNjU0ODM4NTM3Ng==",
           "badge": null,
           "duration": null
@@ -1145,13 +1145,13 @@
           "id": "youku-eabedc9465724a09b03d-2026-07-30",
           "platform": "youku",
           "title": "东大高武学院",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/33b76912f9164ac999b2a1accb998098.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/bef281c6151a4938be891293b9ebebc8.webp.jpg",
           "episode": "第4话",
           "updateTime": "10:00",
           "date": "2026-07-30",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_eabedc9465724a09b03d.html",
+          "url": "https://v.youku.com/v_show/id_XNjUzODMyNTU1Mg==.html",
           "videoId": "XNjUzODMyNTU1Mg==",
           "badge": "独播",
           "duration": null
@@ -1166,25 +1166,25 @@
           "date": "2026-07-30",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_afedf8e291394eccb06e.html",
+          "url": "https://v.youku.com/v_show/id_XNjU1MDcyNTkwOA==.html",
           "videoId": "XNjU1MDcyNTkwOA==",
           "badge": "VIP",
-          "duration": 59
+          "duration": null
         },
         {
           "id": "youku-afbe218f2b834b8698e7-2026-07-30",
           "platform": "youku",
           "title": "轩辕小豆之山海奇缘",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/896395a00d194bf79ff5813005f0aaf8.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/7b3336744fd04f2d8781ce8ee8e02cc5.webp.jpg",
           "episode": "第68话",
           "updateTime": "10:00",
           "date": "2026-07-30",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_afbe218f2b834b8698e7.html",
-          "videoId": "XNjUzODU4OTQ5Ng==",
+          "url": "https://v.youku.com/v_show/id_XNjQ1OTA2MDM0OA==.html",
+          "videoId": "XNjQ1OTA2MDM0OA==",
           "badge": "逐集限免",
-          "duration": 193.84
+          "duration": 29.92
         },
         {
           "id": "youku-daaad3bb331546659410-2026-07-30",
@@ -1196,10 +1196,10 @@
           "date": "2026-07-30",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_daaad3bb331546659410.html",
-          "videoId": "XNjU0MTg4ODQyOA==",
+          "url": "https://v.youku.com/v_show/id_XNjU1MDk0MDI1Mg==.html",
+          "videoId": "XNjU1MDk0MDI1Mg==",
           "badge": "VIP",
-          "duration": 395.37
+          "duration": 31.6
         },
         {
           "id": "youku-caabc3bf10da41a38ff4-2026-07-30",
@@ -1211,10 +1211,10 @@
           "date": "2026-07-30",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_caabc3bf10da41a38ff4.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0Mjg2MzA3Mg==.html",
           "videoId": "XNjU0Mjg2MzA3Mg==",
           "badge": null,
-          "duration": 117.77
+          "duration": 42
         },
         {
           "id": "youku-cacf63f037604089b341-2026-07-30",
@@ -1226,25 +1226,25 @@
           "date": "2026-07-30",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_cacf63f037604089b341.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0MTkwMjczMg==.html",
           "videoId": "XNjU0MTkwMjczMg==",
           "badge": "首播",
-          "duration": 286.87
+          "duration": null
         },
         {
           "id": "youku-cebaa3486ff54e81bb65-2026-07-30",
           "platform": "youku",
           "title": "怪物侦探小辛之时空奥秘1",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/086e27ef0a3e4afba20248d1afecb3dd.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/117de98646ba4059941b7b97c30fe6e7.webp.jpg",
           "episode": "24话全",
           "updateTime": "10:00",
           "date": "2026-07-30",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_cebaa3486ff54e81bb65.html",
+          "url": "https://v.youku.com/v_show/id_XNjUzOTkzODM0MA==.html",
           "videoId": "XNjUzOTkzODM0MA==",
           "badge": "VIP",
-          "duration": 660.04
+          "duration": 55.08
         },
         {
           "id": "youku-caae9f722a14448fa37f-2026-07-30",
@@ -1256,10 +1256,10 @@
           "date": "2026-07-30",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_caae9f722a14448fa37f.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0Mjg2MzA5Ng==.html",
           "videoId": "XNjU0Mjg2MzA5Ng==",
           "badge": "VIP",
-          "duration": 154.5
+          "duration": 47.4
         },
         {
           "id": "youku-fbbfa201ace1459495cb-2026-07-30",
@@ -1271,10 +1271,10 @@
           "date": "2026-07-30",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_fbbfa201ace1459495cb.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0ODY1NTIwNA==.html",
           "videoId": "XNjU0ODY1NTIwNA==",
           "badge": "VIP",
-          "duration": 122.67
+          "duration": 163.43
         },
         {
           "id": "youku-ffdd5bdcaac844a0b99b-2026-07-30",
@@ -1286,10 +1286,10 @@
           "date": "2026-07-30",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_ffdd5bdcaac844a0b99b.html",
+          "url": "https://v.youku.com/v_show/id_XNjU1NDQ3MzMwMA==.html",
           "videoId": "XNjU1NDQ3MzMwMA==",
           "badge": "VIP",
-          "duration": 436.6
+          "duration": null
         },
         {
           "id": "youku-aadcff01583e41cca74b-2026-07-30",
@@ -1301,10 +1301,10 @@
           "date": "2026-07-30",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_aadcff01583e41cca74b.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0MzQwODUyOA==.html",
           "videoId": "XNjU0MzQwODUyOA==",
           "badge": "VIP",
-          "duration": 125.43
+          "duration": 36.93
         },
         {
           "id": "youku-cebcebd964e644cf8837-2026-07-30",
@@ -1316,10 +1316,10 @@
           "date": "2026-07-30",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_cebcebd964e644cf8837.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0MDI0MTgwMA==.html",
           "videoId": "XNjU0MDI0MTgwMA==",
           "badge": "VIP",
-          "duration": 178.03
+          "duration": null
         },
         {
           "id": "youku-feca9dced6f74ec38285-2026-07-30",
@@ -1331,40 +1331,40 @@
           "date": "2026-07-30",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_feca9dced6f74ec38285.html",
+          "url": "https://v.youku.com/v_show/id_XNjU1MTg4NjE4NA==.html",
           "videoId": "XNjU1MTg4NjE4NA==",
           "badge": "VIP",
-          "duration": 168.1
+          "duration": 29.67
         },
         {
           "id": "youku-adaec02f09f9469ab8d8-2026-07-31",
           "platform": "youku",
           "title": "沧元图",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/83821d842e9f432298428fecedaa6a1c.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/9c419282d9d740cfb65b095cc3c349bf.webp.jpg",
           "episode": "第88话",
           "updateTime": "10:00",
           "date": "2026-07-31",
           "weekday": 5,
           "svip": true,
-          "url": "https://www.youku.com/show_page/id_adaec02f09f9469ab8d8.html",
-          "videoId": "XNjUxODMwMTI1Ng==",
+          "url": "https://v.youku.com/v_show/id_XNjUyNzg0MjkzNg==.html",
+          "videoId": "XNjUyNzg0MjkzNg==",
           "badge": "独播",
-          "duration": 1415.56
+          "duration": null
         },
         {
           "id": "youku-ffed8094008e47acad25-2026-07-31",
           "platform": "youku",
           "title": "余烬之后",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/8b5188e788d048ec87ba3b03d9bdb573.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/5179763be4f44b72bf183c563a7880cc.webp.jpg",
           "episode": "第8话",
           "updateTime": "10:00",
           "date": "2026-07-31",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_ffed8094008e47acad25.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0NTE4MjY0MA==.html",
           "videoId": "XNjU0NTE4MjY0MA==",
           "badge": "SVIP",
-          "duration": 241.33
+          "duration": 323
         },
         {
           "id": "youku-dcfc646c60664dab978b-2026-07-31",
@@ -1376,25 +1376,25 @@
           "date": "2026-07-31",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_dcfc646c60664dab978b.html",
+          "url": "https://v.youku.com/v_show/id_XNjUzODcwNjMzNg==.html",
           "videoId": "XNjUzODcwNjMzNg==",
           "badge": "VIP",
-          "duration": 349.5
+          "duration": null
         },
         {
           "id": "youku-babb02b2839847ff901c-2026-07-31",
           "platform": "youku",
           "title": "一具枯骨，逆天修成仙",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/384181d485a94bbc8a8e7f14007480ed.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/9b9678579ef0458492fd731c613e587d.webp.jpg",
           "episode": "第272话",
           "updateTime": "10:00",
           "date": "2026-07-31",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_babb02b2839847ff901c.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0ODYyMzM4NA==.html",
           "videoId": "XNjU0ODYyMzM4NA==",
           "badge": "VIP",
-          "duration": 128.37
+          "duration": null
         },
         {
           "id": "youku-caabc3bf10da41a38ff4-2026-07-31",
@@ -1406,10 +1406,10 @@
           "date": "2026-07-31",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_caabc3bf10da41a38ff4.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0Mjg2MzA3Mg==.html",
           "videoId": "XNjU0Mjg2MzA3Mg==",
           "badge": null,
-          "duration": 117.77
+          "duration": 42
         },
         {
           "id": "youku-fede1c50fd6e40ccbc4f-2026-07-31",
@@ -1421,10 +1421,10 @@
           "date": "2026-07-31",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_fede1c50fd6e40ccbc4f.html",
-          "videoId": "XNjU0MDg2MjQ3Mg==",
+          "url": "https://v.youku.com/v_show/id_XNjU0MDg1OTc3Mg==.html",
+          "videoId": "XNjU0MDg1OTc3Mg==",
           "badge": "独播",
-          "duration": 314.17
+          "duration": 39.33
         },
         {
           "id": "youku-cacf63f037604089b341-2026-07-31",
@@ -1436,10 +1436,10 @@
           "date": "2026-07-31",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_cacf63f037604089b341.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0MTkwMjczMg==.html",
           "videoId": "XNjU0MTkwMjczMg==",
           "badge": "首播",
-          "duration": 286.87
+          "duration": null
         },
         {
           "id": "youku-aceb6e01286849c99847-2026-07-31",
@@ -1451,8 +1451,8 @@
           "date": "2026-07-31",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_aceb6e01286849c99847.html",
-          "videoId": "XNjUzNDUwODgyMA==",
+          "url": "https://v.youku.com/v_show/id_XNjU0MzM5MTQ2OA==.html",
+          "videoId": "XNjU0MzM5MTQ2OA==",
           "badge": "VIP",
           "duration": null
         },
@@ -1460,16 +1460,16 @@
           "id": "youku-cebaa3486ff54e81bb65-2026-07-31",
           "platform": "youku",
           "title": "怪物侦探小辛之时空奥秘1",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/086e27ef0a3e4afba20248d1afecb3dd.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/117de98646ba4059941b7b97c30fe6e7.webp.jpg",
           "episode": "24话全",
           "updateTime": "10:00",
           "date": "2026-07-31",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_cebaa3486ff54e81bb65.html",
+          "url": "https://v.youku.com/v_show/id_XNjUzOTkzODM0MA==.html",
           "videoId": "XNjUzOTkzODM0MA==",
           "badge": "VIP",
-          "duration": 660.04
+          "duration": 55.08
         },
         {
           "id": "youku-caae9f722a14448fa37f-2026-07-31",
@@ -1481,10 +1481,10 @@
           "date": "2026-07-31",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_caae9f722a14448fa37f.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0Mjg2MzA5Ng==.html",
           "videoId": "XNjU0Mjg2MzA5Ng==",
           "badge": "VIP",
-          "duration": 154.5
+          "duration": 47.4
         },
         {
           "id": "youku-acfb3adc43ff41128664-2026-07-31",
@@ -1496,10 +1496,10 @@
           "date": "2026-07-31",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_acfb3adc43ff41128664.html",
+          "url": "https://v.youku.com/v_show/id_XNjU1MzMwMDgwMA==.html",
           "videoId": "XNjU1MzMwMDgwMA==",
           "badge": "SVIP",
-          "duration": 312.47
+          "duration": 32
         },
         {
           "id": "youku-aeba838ca57d49579712-2026-07-31",
@@ -1511,10 +1511,10 @@
           "date": "2026-07-31",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_aeba838ca57d49579712.html",
+          "url": "https://v.youku.com/v_show/id_XNjUzODYyMDg3Mg==.html",
           "videoId": "XNjUzODYyMDg3Mg==",
           "badge": "SVIP",
-          "duration": 594.6
+          "duration": null
         },
         {
           "id": "youku-edaab22fca4647389278-2026-07-31",
@@ -1526,10 +1526,10 @@
           "date": "2026-07-31",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_edaab22fca4647389278.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0NDU5NTk2OA==.html",
           "videoId": "XNjU0NDU5NTk2OA==",
           "badge": "VIP",
-          "duration": 174.04
+          "duration": null
         },
         {
           "id": "youku-ebbc85b6c57d404792f9-2026-07-31",
@@ -1541,10 +1541,10 @@
           "date": "2026-07-31",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_ebbc85b6c57d404792f9.html",
-          "videoId": "XNjQ2Mzc2NDk0OA==",
+          "url": "https://v.youku.com/v_show/id_XNjQ2Mzc2NDk3Mg==.html",
+          "videoId": "XNjQ2Mzc2NDk3Mg==",
           "badge": "逐集限免",
-          "duration": 841.96
+          "duration": null
         },
         {
           "id": "youku-addedfedd8b64f2b8b69-2026-08-01",
@@ -1556,25 +1556,25 @@
           "date": "2026-08-01",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_addedfedd8b64f2b8b69.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0ODM5NjAxMg==.html",
           "videoId": "XNjU0ODM5NjAxMg==",
           "badge": "VIP",
-          "duration": 537.6
+          "duration": null
         },
         {
           "id": "youku-bfde49388a234156a90a-2026-08-01",
           "platform": "youku",
           "title": "盲眼御兽师：我的灵宠全是上古神",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/acddf80337134d0f9fa3062c57730dc7.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/3b6e80e8526f4e53a3e603b3ca42d778.webp.jpg",
           "episode": "第119话",
           "updateTime": "10:00",
           "date": "2026-08-01",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_bfde49388a234156a90a.html",
+          "url": "https://v.youku.com/v_show/id_XNjUzODYwODQzMg==.html",
           "videoId": "XNjUzODYwODQzMg==",
           "badge": "VIP",
-          "duration": 126.33
+          "duration": null
         },
         {
           "id": "youku-daaad3bb331546659410-2026-08-01",
@@ -1586,25 +1586,25 @@
           "date": "2026-08-01",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_daaad3bb331546659410.html",
-          "videoId": "XNjU0MTg4ODQyOA==",
+          "url": "https://v.youku.com/v_show/id_XNjU1MDk0MDI1Mg==.html",
+          "videoId": "XNjU1MDk0MDI1Mg==",
           "badge": "VIP",
-          "duration": 395.37
+          "duration": 31.6
         },
         {
           "id": "youku-babb02b2839847ff901c-2026-08-01",
           "platform": "youku",
           "title": "一具枯骨，逆天修成仙",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/384181d485a94bbc8a8e7f14007480ed.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/9b9678579ef0458492fd731c613e587d.webp.jpg",
           "episode": "第272话",
           "updateTime": "10:00",
           "date": "2026-08-01",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_babb02b2839847ff901c.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0ODYyMzM4NA==.html",
           "videoId": "XNjU0ODYyMzM4NA==",
           "badge": "VIP",
-          "duration": 128.37
+          "duration": null
         },
         {
           "id": "youku-caabc3bf10da41a38ff4-2026-08-01",
@@ -1616,25 +1616,25 @@
           "date": "2026-08-01",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_caabc3bf10da41a38ff4.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0Mjg2MzA3Mg==.html",
           "videoId": "XNjU0Mjg2MzA3Mg==",
           "badge": null,
-          "duration": 117.77
+          "duration": 42
         },
         {
           "id": "youku-cebaa3486ff54e81bb65-2026-08-01",
           "platform": "youku",
           "title": "怪物侦探小辛之时空奥秘1",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/086e27ef0a3e4afba20248d1afecb3dd.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/117de98646ba4059941b7b97c30fe6e7.webp.jpg",
           "episode": "24话全",
           "updateTime": "10:00",
           "date": "2026-08-01",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_cebaa3486ff54e81bb65.html",
+          "url": "https://v.youku.com/v_show/id_XNjUzOTkzODM0MA==.html",
           "videoId": "XNjUzOTkzODM0MA==",
           "badge": "VIP",
-          "duration": 660.04
+          "duration": 55.08
         },
         {
           "id": "youku-aeba838ca57d49579712-2026-08-01",
@@ -1646,10 +1646,10 @@
           "date": "2026-08-01",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_aeba838ca57d49579712.html",
+          "url": "https://v.youku.com/v_show/id_XNjUzODYyMDg3Mg==.html",
           "videoId": "XNjUzODYyMDg3Mg==",
           "badge": "SVIP",
-          "duration": 594.6
+          "duration": null
         },
         {
           "id": "youku-abbcca50d9794f6899e4-2026-08-01",
@@ -1661,10 +1661,10 @@
           "date": "2026-08-01",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_abbcca50d9794f6899e4.html",
+          "url": "https://v.youku.com/v_show/id_XNjUzODQ2NzM1Mg==.html",
           "videoId": "XNjUzODQ2NzM1Mg==",
           "badge": "VIP",
-          "duration": 59.47
+          "duration": 59.57
         },
         {
           "id": "youku-caae9f722a14448fa37f-2026-08-01",
@@ -1676,10 +1676,10 @@
           "date": "2026-08-01",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_caae9f722a14448fa37f.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0Mjg2MzA5Ng==.html",
           "videoId": "XNjU0Mjg2MzA5Ng==",
           "badge": "VIP",
-          "duration": 154.5
+          "duration": 47.4
         },
         {
           "id": "youku-dcbb7f8925584943b43c-2026-08-01",
@@ -1691,7 +1691,7 @@
           "date": "2026-08-01",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_dcbb7f8925584943b43c.html",
+          "url": "https://v.youku.com/v_show/id_XNjU1MTYzNjY2NA==.html",
           "videoId": "XNjU1MTYzNjY2NA==",
           "badge": "VIP",
           "duration": null
@@ -1706,38 +1706,38 @@
           "date": "2026-08-01",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_aadcff01583e41cca74b.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0MzQwODUyOA==.html",
           "videoId": "XNjU0MzQwODUyOA==",
           "badge": "VIP",
-          "duration": 125.43
+          "duration": 36.93
         },
         {
           "id": "youku-caab6ed59a5547a78fb1-2026-08-01",
           "platform": "youku",
           "title": "光阴之外",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/6e36c60ed7ef442b82cabbd5f0b13cf4.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/2bcf28abdcfc4a8bb97e9061d4923354.webp.jpg",
           "episode": "第32话",
           "updateTime": "18:00",
           "date": "2026-08-01",
           "weekday": 6,
           "svip": true,
-          "url": "https://www.youku.com/show_page/id_caab6ed59a5547a78fb1.html",
-          "videoId": "XNjUxNDUwMjQ5Mg==",
+          "url": "https://v.youku.com/v_show/id_XNjUzNTM0NDMwMA==.html",
+          "videoId": "XNjUzNTM0NDMwMA==",
           "badge": "独播",
-          "duration": 1612.88
+          "duration": null
         },
         {
           "id": "youku-cc003400962411de83b1-2026-08-01",
           "platform": "youku",
           "title": "名侦探柯南",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/155d507d302a49789828fa4881725b83.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/a40a0689deb245da927e3adaef99d11b.webp.jpg",
           "episode": "第1268话",
           "updateTime": "19:30",
           "date": "2026-08-01",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_cc003400962411de83b1.html",
-          "videoId": "XNjQ0ODg5NDQ2OA==",
+          "url": "https://v.youku.com/v_show/id_XNTg3ODY4MTU1Ng==.html",
+          "videoId": "XNTg3ODY4MTU1Ng==",
           "badge": "VIP",
           "duration": null
         },
@@ -1751,40 +1751,40 @@
           "date": "2026-08-02",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_dcfc646c60664dab978b.html",
+          "url": "https://v.youku.com/v_show/id_XNjUzODcwNjMzNg==.html",
           "videoId": "XNjUzODcwNjMzNg==",
           "badge": "VIP",
-          "duration": 349.5
+          "duration": null
         },
         {
           "id": "youku-ffed8094008e47acad25-2026-08-02",
           "platform": "youku",
           "title": "余烬之后",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/8b5188e788d048ec87ba3b03d9bdb573.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/5179763be4f44b72bf183c563a7880cc.webp.jpg",
           "episode": "第8话",
           "updateTime": "10:00",
           "date": "2026-08-02",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_ffed8094008e47acad25.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0NTE4MjY0MA==.html",
           "videoId": "XNjU0NTE4MjY0MA==",
           "badge": "SVIP",
-          "duration": 241.33
+          "duration": 323
         },
         {
           "id": "youku-bfde49388a234156a90a-2026-08-02",
           "platform": "youku",
           "title": "盲眼御兽师：我的灵宠全是上古神",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/acddf80337134d0f9fa3062c57730dc7.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/3b6e80e8526f4e53a3e603b3ca42d778.webp.jpg",
           "episode": "第119话",
           "updateTime": "10:00",
           "date": "2026-08-02",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_bfde49388a234156a90a.html",
+          "url": "https://v.youku.com/v_show/id_XNjUzODYwODQzMg==.html",
           "videoId": "XNjUzODYwODQzMg==",
           "badge": "VIP",
-          "duration": 126.33
+          "duration": null
         },
         {
           "id": "youku-caabc3bf10da41a38ff4-2026-08-02",
@@ -1796,25 +1796,25 @@
           "date": "2026-08-02",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_caabc3bf10da41a38ff4.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0Mjg2MzA3Mg==.html",
           "videoId": "XNjU0Mjg2MzA3Mg==",
           "badge": null,
-          "duration": 117.77
+          "duration": 42
         },
         {
           "id": "youku-babb02b2839847ff901c-2026-08-02",
           "platform": "youku",
           "title": "一具枯骨，逆天修成仙",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/384181d485a94bbc8a8e7f14007480ed.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/9b9678579ef0458492fd731c613e587d.webp.jpg",
           "episode": "第272话",
           "updateTime": "10:00",
           "date": "2026-08-02",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_babb02b2839847ff901c.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0ODYyMzM4NA==.html",
           "videoId": "XNjU0ODYyMzM4NA==",
           "badge": "VIP",
-          "duration": 128.37
+          "duration": null
         },
         {
           "id": "youku-caae9f722a14448fa37f-2026-08-02",
@@ -1826,25 +1826,25 @@
           "date": "2026-08-02",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_caae9f722a14448fa37f.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0Mjg2MzA5Ng==.html",
           "videoId": "XNjU0Mjg2MzA5Ng==",
           "badge": "VIP",
-          "duration": 154.5
+          "duration": 47.4
         },
         {
           "id": "youku-cebaa3486ff54e81bb65-2026-08-02",
           "platform": "youku",
           "title": "怪物侦探小辛之时空奥秘1",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/086e27ef0a3e4afba20248d1afecb3dd.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/117de98646ba4059941b7b97c30fe6e7.webp.jpg",
           "episode": "24话全",
           "updateTime": "10:00",
           "date": "2026-08-02",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_cebaa3486ff54e81bb65.html",
+          "url": "https://v.youku.com/v_show/id_XNjUzOTkzODM0MA==.html",
           "videoId": "XNjUzOTkzODM0MA==",
           "badge": "VIP",
-          "duration": 660.04
+          "duration": 55.08
         },
         {
           "id": "youku-abbcca50d9794f6899e4-2026-08-02",
@@ -1856,10 +1856,10 @@
           "date": "2026-08-02",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_abbcca50d9794f6899e4.html",
+          "url": "https://v.youku.com/v_show/id_XNjUzODQ2NzM1Mg==.html",
           "videoId": "XNjUzODQ2NzM1Mg==",
           "badge": "VIP",
-          "duration": 59.47
+          "duration": 59.57
         },
         {
           "id": "youku-acba3b0995164e0fac8b-2026-08-02",
@@ -1871,7 +1871,7 @@
           "date": "2026-08-02",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_acba3b0995164e0fac8b.html",
+          "url": "https://v.youku.com/v_show/id_XNjUzOTgxOTcyMA==.html",
           "videoId": "XNjUzOTgxOTcyMA==",
           "badge": "VIP",
           "duration": null
@@ -1886,7 +1886,7 @@
           "date": "2026-08-02",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_bafaacf950634b35b2cf.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0MTM1NDM4NA==.html",
           "videoId": "XNjU0MTM1NDM4NA==",
           "badge": "VIP",
           "duration": null
@@ -1901,10 +1901,10 @@
           "date": "2026-08-02",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_aadcff01583e41cca74b.html",
+          "url": "https://v.youku.com/v_show/id_XNjU0MzQwODUyOA==.html",
           "videoId": "XNjU0MzQwODUyOA==",
           "badge": "VIP",
-          "duration": 125.43
+          "duration": 36.93
         },
         {
           "id": "youku-feca9dced6f74ec38285-2026-08-02",
@@ -1916,19 +1916,18 @@
           "date": "2026-08-02",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_feca9dced6f74ec38285.html",
+          "url": "https://v.youku.com/v_show/id_XNjU1MTg4NjE4NA==.html",
           "videoId": "XNjU1MTg4NjE4NA==",
           "badge": "VIP",
-          "duration": 168.1
+          "duration": 29.67
         }
       ],
-      "error": "超时（>150s）",
-      "fetchedAt": "2026-07-31T19:46:19.520Z",
+      "fetchedAt": "2026-07-31T21:12:44.403Z",
       "warnings": [
-        "已保留 57 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "12 条时长无法确认已保留（平台未提供内联时长）",
-        "已保留 57 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "12 条时长无法确认已保留（平台未提供内联时长）"
+        "已保留 54 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "37 条时长无法确认已保留（平台未提供内联时长）",
+        "26 条时长缺失条目超出豆瓣查询配额，已保留",
+        "10 条豆瓣查询失败（反爬/网络），已保留"
       ]
     },
     {
@@ -2431,7 +2430,7 @@
           "duration": null
         }
       ],
-      "fetchedAt": "2026-07-31T20:32:14.782Z",
+      "fetchedAt": "2026-07-31T21:14:57.733Z",
       "warnings": [
         "33 条时长无法确认已保留（平台未提供内联时长）"
       ]
@@ -2450,7 +2449,7 @@
           "date": "2026-07-27",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=MTcwMjY5NzI4MjU4NjcwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DuxU2SoMmKps0Lep7&on_record=1&timestamp=1785529941013&tv_id=MzgzMDA0MTExMzcxMDIwMA%3D%3D&sign=A83D2C7628101FB062EBA4F1E92B370C",
+          "url": "https://www.iqiyi.com/v_12lv23q0pw4.html",
           "badge": null,
           "duration": 4054
         },
@@ -2464,7 +2463,7 @@
           "date": "2026-07-27",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=NDgxMjY5NDI3NDExOTQwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DRTWXizWvUbPLVxua&on_record=1&timestamp=1785529941015&tv_id=ODg3MzI1Nzc5NzI5ODAwMA%3D%3D&sign=16EE8AFD01DCEDF86EB56C3382E3C330",
+          "url": "https://www.iqiyi.com/v_1oujltu3mhk.html",
           "badge": null,
           "duration": 643
         },
@@ -2478,7 +2477,7 @@
           "date": "2026-07-27",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=MjMwMjcxNzMzNjY2OTQwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DLAdlM2WpZPzByLC4&on_record=1&timestamp=1785529941021&tv_id=MjQ0ODcxMTUyMzgxOTAwMA%3D%3D&sign=4143964DA89AD685279B4CBC668FB4D4",
+          "url": "https://www.iqiyi.com/v_13m8dw6qm84.html",
           "badge": null,
           "duration": 125
         },
@@ -2492,7 +2491,7 @@
           "date": "2026-07-28",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=MzM4MTYzMDQwMTgyMzQwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3D2PQsaXU4eX5g94Hd&on_record=1&timestamp=1785529942445&tv_id=NDc4NDYxODQ3MjM0MTAwMA%3D%3D&sign=89459B5B6781572D64A6918EAB184EBF",
+          "url": "https://www.iqiyi.com/v_1cppz343unk.html",
           "badge": null,
           "duration": 1451
         },
@@ -2506,7 +2505,7 @@
           "date": "2026-07-28",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=NzgyNDgyNzAzMjIzMjkwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DTkuk7ygOP895DaTv&on_record=1&timestamp=1785529942447&tv_id=NzQwNTI5NDI5NjUyNjIwMA%3D%3D&sign=2C6DBD92F981C042A65C911E4031B249",
+          "url": "https://www.iqiyi.com/v_1oumus5zd0c.html",
           "badge": null,
           "duration": 618
         },
@@ -2520,7 +2519,7 @@
           "date": "2026-07-28",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=ODIzNDczMzc4MDQxMTEwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DyAijeGJlX720e94i&on_record=1&timestamp=1785529942448&tv_id=MzA4MDAxNjA0NTk5ODkwMA%3D%3D&sign=56BEA4A3A3343417D7CCC57F5E0704CA",
+          "url": "https://www.iqiyi.com/v_thhn9pxbac.html",
           "badge": null,
           "duration": 518
         },
@@ -2534,7 +2533,7 @@
           "date": "2026-07-28",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=MjMwMjcxNzMzNjY2OTQwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3Dz1WOHIybPssr6GHz&on_record=1&timestamp=1785529942453&tv_id=MjQ0ODcxMTUyMzgxOTAwMA%3D%3D&sign=7CBBF51CFCB59C307ADC9C7B959CE798",
+          "url": "https://www.iqiyi.com/v_13m8dw6qm84.html",
           "badge": null,
           "duration": 125
         },
@@ -2548,7 +2547,7 @@
           "date": "2026-07-29",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=Mzc4NDMxNzY1NzM2NzgwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DvUMKCp17MrRggWC2&on_record=1&timestamp=1785529943794&tv_id=NTg3Mzk1OTY5MjgyODkwMA%3D%3D&sign=072229145A64E8A732C31DBDF9DC0387",
+          "url": "https://www.iqiyi.com/v_s4cgrgrxro.html",
           "badge": null,
           "duration": 677
         },
@@ -2562,7 +2561,7 @@
           "date": "2026-07-29",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=NzQyNDU0NjI3NDIzMTMwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3Dr83xKPXKhmohtlUO&on_record=1&timestamp=1785529943796&tv_id=Mzc0NjYxNTg2NTA5MTUwMA%3D%3D&sign=4176449D7D9DD9E887861ACFAB67A162",
+          "url": "https://www.iqiyi.com/v_1zwd92ot3ws.html",
           "badge": null,
           "duration": 574
         },
@@ -2576,7 +2575,7 @@
           "date": "2026-07-29",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=MjMwMjcxNzMzNjY2OTQwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3D00JrEJ2Jsv8pHZV0&on_record=1&timestamp=1785529943800&tv_id=MjQ0ODcxMTUyMzgxOTAwMA%3D%3D&sign=B8050871941195F9FAB3B80BD1EE6B1A",
+          "url": "https://www.iqiyi.com/v_13m8dw6qm84.html",
           "badge": null,
           "duration": 125
         },
@@ -2590,7 +2589,7 @@
           "date": "2026-07-30",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=ODgzNzk2MjQ5Nzg3OTAwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DpdZC2A5hnXoByWEm&on_record=1&timestamp=1785529945928&tv_id=MjQ2NjM1OTE3MTM2NDYwMA%3D%3D&sign=1E1A6385B7875B25954BCD9244996FD8",
+          "url": "https://www.iqiyi.com/v_137v61lis80.html",
           "badge": null,
           "duration": 1167
         },
@@ -2604,7 +2603,7 @@
           "date": "2026-07-30",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=ODMxMzM0NjAzMzQ4MjkwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DvpZ5VLiOS9QBMLA4&on_record=1&timestamp=1785529945929&tv_id=NDg2ODA0MzcxOTUwMjAwMA%3D%3D&sign=8753ABC8D7E80E1862F4A5C4C501C292",
+          "url": "https://www.iqiyi.com/v_1sdcx3vcpgc.html",
           "badge": null,
           "duration": 540
         },
@@ -2618,7 +2617,7 @@
           "date": "2026-07-30",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=ODQ1NzczNTg4NjA3MjAwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DQIf7XulDwj9YXYbl&on_record=1&timestamp=1785529945930&tv_id=NzM2NDM4MzgzODcxNzYwMA%3D%3D&sign=94F7FCE98884A6515EE095D646BCDC2E",
+          "url": "https://www.iqiyi.com/v_25lf3hhfkzg.html",
           "badge": null,
           "duration": 582
         },
@@ -2632,7 +2631,7 @@
           "date": "2026-07-30",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=MjMwMjcxNzMzNjY2OTQwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DOhRENaW7VS3AKQFa&on_record=1&timestamp=1785529945931&tv_id=MjQ0ODcxMTUyMzgxOTAwMA%3D%3D&sign=1F6E413F3E964A5C4A348DACDA4EFC24",
+          "url": "https://www.iqiyi.com/v_13m8dw6qm84.html",
           "badge": null,
           "duration": 125
         },
@@ -2646,7 +2645,7 @@
           "date": "2026-07-31",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=NTMwNTIyNDEwNDYwNjQwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DgyEtP8FslwhQ9ZeW&on_record=1&timestamp=1785529946494&tv_id=NDk4NDM1Nzc2NzIxMDEwMA%3D%3D&sign=3FA7CC2328FAD7338AA28B452DFCF851",
+          "url": "https://www.iqiyi.com/v_hx1wvh4wuc.html",
           "badge": null,
           "duration": 1228
         },
@@ -2660,7 +2659,7 @@
           "date": "2026-07-31",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=ODYzOTgyNzUzMzUwMDAwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DJ3uVTLGQqqQQXu5i&on_record=1&timestamp=1785529946496&tv_id=MTk4ODI2ODMyNzQwMDIwMA%3D%3D&sign=9CFAA411636510B3FE61289A4821998F",
+          "url": "https://www.iqiyi.com/v_217s19gbgt8.html",
           "badge": null,
           "duration": 344
         },
@@ -2674,7 +2673,7 @@
           "date": "2026-07-31",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=NDgxMjY5NDI3NDExOTQwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3Dd90qOwbE894Ps8pI&on_record=1&timestamp=1785529946497&tv_id=ODg3MzI1Nzc5NzI5ODAwMA%3D%3D&sign=15F3B6B52B555A278AF01D51E8251EA8",
+          "url": "https://www.iqiyi.com/v_1oujltu3mhk.html",
           "badge": null,
           "duration": 643
         },
@@ -2688,7 +2687,7 @@
           "date": "2026-08-01",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=NzkwOTg1NjYxMjA4OTIwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DCFhGCRwTJ4XGFH2r&on_record=1&timestamp=1785529947842&tv_id=NjgzODE2MzA0MjU5OTIwMA%3D%3D&sign=2376F2871495E02623AEC5664F8C140B",
+          "url": "https://www.iqiyi.com/v_b34dsoks2g.html",
           "badge": null,
           "duration": 1331
         },
@@ -2702,7 +2701,7 @@
           "date": "2026-08-01",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=MTA2NzQxOTAx&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DhZleAnRVfl6Jjd5C&on_record=1&timestamp=1785529947843&tv_id=MTA4NjQ4NDAw&sign=4467F848E9C357A79657CF738DDDC3B5",
+          "url": "https://www.iqiyi.com/v_19rrjzffvk.html",
           "badge": null,
           "duration": 1497
         },
@@ -2716,7 +2715,7 @@
           "date": "2026-08-01",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=MjAyMTM0MjAx&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DOb1mOKL9UH4l9GLo&on_record=1&timestamp=1785529947844&tv_id=MzAyNzI1MzAw&sign=8D30A41BE902CC491BF8255BA982AB1F",
+          "url": "https://www.iqiyi.com/v_19rrnaxilc.html",
           "badge": null,
           "duration": 1497
         },
@@ -2730,7 +2729,7 @@
           "date": "2026-08-01",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=NjM0MjQyNDU0NTY5MjAwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3D0qqcfdZVrzEk1hY1&on_record=1&timestamp=1785529947845&tv_id=NzQ1NjYzMjkxMTE3NzQwMA%3D%3D&sign=7E2F7FFD5F0180781FE1B96096FB7107",
+          "url": "https://www.iqiyi.com/v_1qs4cf4m6ss.html",
           "badge": null,
           "duration": 529
         },
@@ -2744,7 +2743,7 @@
           "date": "2026-08-02",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=MjAyODYxMTAx&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DNNobdc5IGW45sAlK&on_record=1&timestamp=1785529949192&tv_id=Mzg1Mjc0NjAw&sign=97F01431D9D38AB12FFBEF22F6A674A1",
+          "url": "https://www.iqiyi.com/v_19rrok94l4.html",
           "badge": null,
           "duration": 1440
         },
@@ -2758,7 +2757,7 @@
           "date": "2026-08-02",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=MzI4Mzc2NjE2ODQwMzEwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DfQW0p8jx61oKaS98&on_record=1&timestamp=1785529949193&tv_id=ODU2ODQzNDc3NTgzNjIwMA%3D%3D&sign=D8C2AC5C9F3A72116D27ADE1A3A728FA",
+          "url": "https://www.iqiyi.com/v_1dwd2x2pgj0.html",
           "badge": null,
           "duration": 1373
         },
@@ -2772,7 +2771,7 @@
           "date": "2026-08-02",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=MTI5NTE5NzAzMTk1ODEwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DvccAtejP5zCChbkh&on_record=1&timestamp=1785529949194&tv_id=MzA2MjM2ODM5NzUwNzQwMA%3D%3D&sign=F88795A565062EF5D1F7466A8DC6AD1D",
+          "url": "https://www.iqiyi.com/v_tbj7539y5g.html",
           "badge": null,
           "duration": 4700
         },
@@ -2786,7 +2785,7 @@
           "date": "2026-08-02",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=Mzc4NDMxNzY1NzM2NzgwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DyxawK3F1FolX8qMD&on_record=1&timestamp=1785529949196&tv_id=NTg3Mzk1OTY5MjgyODkwMA%3D%3D&sign=BB1B780AD7B973E53D081F7656C088F7",
+          "url": "https://www.iqiyi.com/v_s4cgrgrxro.html",
           "badge": null,
           "duration": 677
         },
@@ -2800,7 +2799,7 @@
           "date": "2026-08-02",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=NTM1NDE1NjIyMTMxODgwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DkuNkMUzouteNE5ZZ&on_record=1&timestamp=1785529949197&tv_id=MzA5MDQ0NDIwMTY1MDAwMA%3D%3D&sign=FF45FDF19EF3E8E560C86CE2A3D1F592",
+          "url": "https://www.iqiyi.com/v_1tehnw8chh0.html",
           "badge": null,
           "duration": 1360
         },
@@ -2814,12 +2813,12 @@
           "date": "2026-08-02",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=MzI5NDE5NDMyNDQyNTEwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DrJlWSCd4OjwvECPU&on_record=1&timestamp=1785529949198&tv_id=NDk1MjI3MTEzNDExOTgwMA%3D%3D&sign=EAF7C5D1EB8AC3C51D86A3CE5E4FE27A",
+          "url": "https://www.iqiyi.com/v_13fedysl92o.html",
           "badge": null,
           "duration": 1351
         }
       ],
-      "fetchedAt": "2026-07-31T20:32:38.146Z",
+      "fetchedAt": "2026-07-31T21:15:20.839Z",
       "warnings": [
         "内容类型排除（动态漫/AI动漫/泡面番）：斗罗大陆4终极斗罗 动态漫画 合集",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",

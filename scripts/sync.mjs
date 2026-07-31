@@ -12,12 +12,13 @@ import { scrape as scrapeBili } from "./bilibili.mjs";
 import { scrape as scrapeYouku } from "./youku.mjs";
 import { scrape as scrapeTencent } from "./tencent.mjs";
 import { scrape as scrapeIqiyi } from "./iqiyi.mjs";
+import { doubanLookup } from "./douban.mjs";
 import { sortByDateThenTime, ymd } from "./shared.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA_FILE = join(ROOT, "data", "updates.json");
 const FETCH_LIMIT = 40; // 单次同步富集请求上限（计划 §9）
-const PLATFORM_TIMEOUT_MS = 150_000; // 单平台抓取硬超时（防 CI 卡死）
+const PLATFORM_TIMEOUT_MS = 240_000; // 单平台抓取硬超时（防 CI 卡死）
 
 const PLATFORMS = [
   { platform: "bili", label: "哔哩哔哩", scrape: scrapeBili },
@@ -78,6 +79,75 @@ function keepCurrentWeek(items, warnings) {
   return kept;
 }
 
+/**
+ * 豆瓣甄别（第 10 项需求）：仅对优酷/爱奇艺「时长缺失或 <1 分钟」的条目做豆瓣搜索——
+ * 精确命中且暂无评分 → 疑似 AI 短剧丢弃；精确命中且已有评分 → 保留；未命中/查询失败 → 保留。
+ * 反爬约束：每次同步豆瓣查询全局上限 10 次、间隔 2s，命中验证码时 fail-open。
+ */
+async function doubanShortDramaFilter(items, platform, warnings, { log }) {
+  if (platform !== "youku" && platform !== "iqiyi") return items;
+  const suspicious = items.filter((i) => i.duration == null || (i.duration > 0 && i.duration < 60));
+  if (!suspicious.length) return items;
+
+  // 豆瓣「暂无评分」但确认为正规剧集的条目（避免误杀）：B站国创《苏东坡与杭州的故事》等
+  const UNRATED_WHITELIST = new Set(["苏东坡与杭州的故事"]);
+  const MAX_QUERIES = 10;
+  const DELAY_MS = 2000;
+  const cache = new Map();
+  let queries = 0;
+  let dropped = 0;
+  let nomatch = 0;
+  let quotaLeft = 0;
+  let failed = 0;
+  const kept = [];
+
+  for (const it of items) {
+    const isSus = it.duration == null || (it.duration > 0 && it.duration < 60);
+    if (!isSus) {
+      kept.push(it);
+      continue;
+    }
+    if (!cache.has(it.title)) {
+      if (queries >= MAX_QUERIES) {
+        cache.set(it.title, "quota");
+        quotaLeft++;
+        kept.push(it);
+        continue;
+      }
+      queries++;
+      const r = await doubanLookup(it.title);
+      await new Promise((res) => setTimeout(res, DELAY_MS));
+      if (!r.ok) {
+        cache.set(it.title, "fail");
+        failed++;
+      } else if (r.exact && r.exact.unrated && !UNRATED_WHITELIST.has(it.title)) {
+        cache.set(it.title, "drop");
+      } else if (r.exact && r.exact.unrated && UNRATED_WHITELIST.has(it.title)) {
+        cache.set(it.title, "keep");
+        log(`豆瓣暂无评分但命中白名单，保留：${it.title}`);
+      } else if (r.exact && r.exact.rated) {
+        cache.set(it.title, "keep");
+      } else {
+        cache.set(it.title, "nomatch");
+      }
+    }
+    const verdict = cache.get(it.title);
+    if (verdict === "drop") {
+      dropped++;
+      log(`豆瓣暂无评分（疑似 AI 短剧）排除：${it.title}`);
+      continue;
+    }
+    if (verdict === "nomatch") nomatch++;
+    kept.push(it);
+  }
+
+  if (dropped) warnings.push(`已按豆瓣判据排除 ${dropped} 条疑似 AI 短剧（时长缺失/过短且豆瓣条目暂无评分）`);
+  if (nomatch) warnings.push(`${nomatch} 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）`);
+  if (quotaLeft) warnings.push(`${quotaLeft} 条时长缺失条目超出豆瓣查询配额，已保留`);
+  if (failed) warnings.push(`${failed} 条豆瓣查询失败（反爬/网络），已保留`);
+  return kept;
+}
+
 async function main() {
   const prev = loadPrevious();
   const platforms = [];
@@ -92,6 +162,7 @@ async function main() {
       result.warnings = Array.isArray(result.warnings) ? result.warnings : [];
       result.items = cleanDuration(result.items, result.warnings);
       result.items = keepCurrentWeek(result.items, result.warnings);
+      result.items = await doubanShortDramaFilter(result.items, p.platform, result.warnings, { log: (m) => console.log(`[${p.platform}] ${m}`) });
       result.items = sortByDateThenTime(result.items);
       result.fetchedAt = new Date().toISOString();
       delete result.error;
@@ -106,10 +177,11 @@ async function main() {
       const fbWarnings = [];
       const cleaned = cleanDuration(fbItems, fbWarnings);
       const kept = keepCurrentWeek(cleaned, fbWarnings);
+      const kept2 = await doubanShortDramaFilter(kept, p.platform, fbWarnings, { log: (m) => console.log(`[${p.platform}] ${m}`) });
       platforms.push({
         platform: p.platform,
         label: p.label,
-        items: sortByDateThenTime(kept),
+        items: sortByDateThenTime(kept2),
         error: err.message,
         fetchedAt: prevRes?.fetchedAt ?? null,
         warnings: fbWarnings,
