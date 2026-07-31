@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T18:29:18.750Z",
+  "generatedAt": "2026-07-31T18:50:04.076Z",
   "platforms": [
     {
       "platform": "bili",
@@ -356,7 +356,7 @@
           "duration": 1148
         }
       ],
-      "fetchedAt": "2026-07-31T18:26:29.893Z",
+      "fetchedAt": "2026-07-31T18:46:29.825Z",
       "warnings": [
         "时长过滤：丢弃 8 条不足 5 分钟（<300 秒）或无法确认时长的条目",
         "2 条时长无法确认已保留（平台未提供内联时长）"
@@ -366,20 +366,6 @@
       "platform": "youku",
       "label": "优酷",
       "items": [
-        {
-          "id": "youku-afbe218f2b834b8698e7-2026-07-27",
-          "platform": "youku",
-          "title": "轩辕小豆之山海奇缘",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/7b3336744fd04f2d8781ce8ee8e02cc5.webp.jpg",
-          "episode": "第68话",
-          "updateTime": "10:00",
-          "date": "2026-07-27",
-          "weekday": 1,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_afbe218f2b834b8698e7.html",
-          "badge": "逐集限免",
-          "duration": null
-        },
         {
           "id": "youku-daaad3bb331546659410-2026-07-27",
           "platform": "youku",
@@ -392,7 +378,7 @@
           "svip": false,
           "url": "https://www.youku.com/show_page/id_daaad3bb331546659410.html",
           "badge": "VIP",
-          "duration": null
+          "duration": 395.37
         },
         {
           "id": "youku-cebaa3486ff54e81bb65-2026-07-27",
@@ -426,7 +412,7 @@
           "id": "youku-fdca5177ae604c66bdb8-2026-07-28",
           "platform": "youku",
           "title": "一斩苍穹",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/9a11a59f40e749a79ec95c4a4f9b8186.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/e6de92c009ee4998b74e70bf2873a180.webp.jpg",
           "episode": "第2话",
           "updateTime": "10:00",
           "date": "2026-07-28",
@@ -462,21 +448,7 @@
           "svip": false,
           "url": "https://www.youku.com/show_page/id_fede1c50fd6e40ccbc4f.html",
           "badge": "独播",
-          "duration": null
-        },
-        {
-          "id": "youku-cacf63f037604089b341-2026-07-28",
-          "platform": "youku",
-          "title": "长生猫",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/94aed3ec09e449169cbfcc48a05996cb.webp.jpg",
-          "episode": "第7话",
-          "updateTime": "10:00",
-          "date": "2026-07-28",
-          "weekday": 2,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_cacf63f037604089b341.html",
-          "badge": "首播",
-          "duration": null
+          "duration": 314.17
         },
         {
           "id": "youku-cebaa3486ff54e81bb65-2026-07-28",
@@ -507,38 +479,10 @@
           "duration": null
         },
         {
-          "id": "youku-edaab22fca4647389278-2026-07-28",
-          "platform": "youku",
-          "title": "瓦罗兰特世界赛，你让我一个黑铁当大哥",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/10f1cea85a5e43139b53cbacfb60719d.webp.jpg",
-          "episode": "第23话",
-          "updateTime": "10:30",
-          "date": "2026-07-28",
-          "weekday": 2,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_edaab22fca4647389278.html",
-          "badge": "VIP",
-          "duration": null
-        },
-        {
-          "id": "youku-cebcebd964e644cf8837-2026-07-28",
-          "platform": "youku",
-          "title": "误入诡宗后，我成了全宗团宠",
-          "poster": "https://m.ykimg.com/058100006A59EA6670A43D14BFFA7B7E",
-          "episode": "第11话",
-          "updateTime": "11:30",
-          "date": "2026-07-28",
-          "weekday": 2,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_cebcebd964e644cf8837.html",
-          "badge": "VIP",
-          "duration": null
-        },
-        {
           "id": "youku-badbb5792f934ddb82fd-2026-07-29",
           "platform": "youku",
           "title": "师兄啊师兄",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/46fb6af3b2204f779bdb38d081d4a974.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/234bc9566833407b88d3aa5b64b9a803.webp.jpg",
           "episode": "第152话",
           "updateTime": "10:00",
           "date": "2026-07-29",
@@ -622,7 +566,7 @@
           "id": "youku-eabedc9465724a09b03d-2026-07-30",
           "platform": "youku",
           "title": "东大高武学院",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/65fea09c962d40238da0dd15d3165fad.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/33b76912f9164ac999b2a1accb998098.webp.jpg",
           "episode": "第4话",
           "updateTime": "10:00",
           "date": "2026-07-30",
@@ -647,20 +591,6 @@
           "duration": null
         },
         {
-          "id": "youku-afbe218f2b834b8698e7-2026-07-30",
-          "platform": "youku",
-          "title": "轩辕小豆之山海奇缘",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/7b3336744fd04f2d8781ce8ee8e02cc5.webp.jpg",
-          "episode": "第68话",
-          "updateTime": "10:00",
-          "date": "2026-07-30",
-          "weekday": 4,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_afbe218f2b834b8698e7.html",
-          "badge": "逐集限免",
-          "duration": null
-        },
-        {
           "id": "youku-daaad3bb331546659410-2026-07-30",
           "platform": "youku",
           "title": "从乱葬岗到幽冥之主",
@@ -672,21 +602,7 @@
           "svip": false,
           "url": "https://www.youku.com/show_page/id_daaad3bb331546659410.html",
           "badge": "VIP",
-          "duration": null
-        },
-        {
-          "id": "youku-cacf63f037604089b341-2026-07-30",
-          "platform": "youku",
-          "title": "长生猫",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/94aed3ec09e449169cbfcc48a05996cb.webp.jpg",
-          "episode": "第7话",
-          "updateTime": "10:00",
-          "date": "2026-07-30",
-          "weekday": 4,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_cacf63f037604089b341.html",
-          "badge": "首播",
-          "duration": null
+          "duration": 395.37
         },
         {
           "id": "youku-cebaa3486ff54e81bb65-2026-07-30",
@@ -717,24 +633,10 @@
           "duration": null
         },
         {
-          "id": "youku-cebcebd964e644cf8837-2026-07-30",
-          "platform": "youku",
-          "title": "误入诡宗后，我成了全宗团宠",
-          "poster": "https://m.ykimg.com/058100006A59EA6670A43D14BFFA7B7E",
-          "episode": "第11话",
-          "updateTime": "11:30",
-          "date": "2026-07-30",
-          "weekday": 4,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_cebcebd964e644cf8837.html",
-          "badge": "VIP",
-          "duration": null
-        },
-        {
           "id": "youku-adaec02f09f9469ab8d8-2026-07-31",
           "platform": "youku",
           "title": "沧元图",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/1eb323e8e17147d28bd52931d0f763d1.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/49657a15d8004d98ac38bd58285ba439.webp.jpg",
           "episode": "第88话",
           "updateTime": "10:00",
           "date": "2026-07-31",
@@ -770,21 +672,7 @@
           "svip": false,
           "url": "https://www.youku.com/show_page/id_fede1c50fd6e40ccbc4f.html",
           "badge": "独播",
-          "duration": null
-        },
-        {
-          "id": "youku-cacf63f037604089b341-2026-07-31",
-          "platform": "youku",
-          "title": "长生猫",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/94aed3ec09e449169cbfcc48a05996cb.webp.jpg",
-          "episode": "第7话",
-          "updateTime": "10:00",
-          "date": "2026-07-31",
-          "weekday": 5,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_cacf63f037604089b341.html",
-          "badge": "首播",
-          "duration": null
+          "duration": 314.17
         },
         {
           "id": "youku-aceb6e01286849c99847-2026-07-31",
@@ -843,20 +731,6 @@
           "duration": null
         },
         {
-          "id": "youku-edaab22fca4647389278-2026-07-31",
-          "platform": "youku",
-          "title": "瓦罗兰特世界赛，你让我一个黑铁当大哥",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/10f1cea85a5e43139b53cbacfb60719d.webp.jpg",
-          "episode": "第23话",
-          "updateTime": "10:30",
-          "date": "2026-07-31",
-          "weekday": 5,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_edaab22fca4647389278.html",
-          "badge": "VIP",
-          "duration": null
-        },
-        {
           "id": "youku-ebbc85b6c57d404792f9-2026-07-31",
           "platform": "youku",
           "title": "斗罗大陆3龙王传说 合集",
@@ -910,7 +784,7 @@
           "svip": false,
           "url": "https://www.youku.com/show_page/id_daaad3bb331546659410.html",
           "badge": "VIP",
-          "duration": null
+          "duration": 395.37
         },
         {
           "id": "youku-cebaa3486ff54e81bb65-2026-08-01",
@@ -958,7 +832,7 @@
           "id": "youku-caab6ed59a5547a78fb1-2026-08-01",
           "platform": "youku",
           "title": "光阴之外",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/6304ff3e25814fa5a3fbbe3be12bcdf3.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/c2f5466e8f0f4bebb4f8d53e8ab78070.webp.jpg",
           "episode": "第32话",
           "updateTime": "18:00",
           "date": "2026-08-01",
@@ -1053,10 +927,10 @@
           "duration": null
         }
       ],
-      "fetchedAt": "2026-07-31T18:26:48.597Z",
+      "fetchedAt": "2026-07-31T18:47:29.489Z",
       "warnings": [
-        "时长过滤：丢弃 45 条不足 5 分钟（<300 秒）或无法确认时长的条目",
-        "38 条时长无法确认已保留（平台未提供内联时长）"
+        "时长过滤：丢弃 54 条不足 5 分钟（<300 秒）或无法确认时长的条目",
+        "24 条时长无法确认已保留（平台未提供内联时长）"
       ]
     },
     {
@@ -1439,21 +1313,6 @@
           "duration": null
         },
         {
-          "id": "tencent-mzc002006n62s11-2026-08-01",
-          "platform": "tencent",
-          "title": "炼气十万年",
-          "rule": "每周二、周六10点更新",
-          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc002006n62s111722876262898/750?imageMogr2/thumbnail/400x",
-          "episode": "第363集",
-          "updateTime": "",
-          "date": "2026-08-01",
-          "weekday": 6,
-          "svip": false,
-          "url": "https://v.qq.com/x/page/e0045s2g2eg.html",
-          "badge": "独播",
-          "duration": null
-        },
-        {
           "id": "tencent-mzc002002qg0pbc-2026-08-01",
           "platform": "tencent",
           "title": "花仙子之魔法香对论",
@@ -1466,6 +1325,21 @@
           "svip": false,
           "url": "https://v.qq.com/x/page/j41022h1k79.html",
           "badge": "上新",
+          "duration": null
+        },
+        {
+          "id": "tencent-mzc002006n62s11-2026-08-01",
+          "platform": "tencent",
+          "title": "炼气十万年",
+          "rule": "每周二、周六10点更新",
+          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc002006n62s111722876262898/750?imageMogr2/thumbnail/400x",
+          "episode": "第363集",
+          "updateTime": "",
+          "date": "2026-08-01",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://v.qq.com/x/page/e0045s2g2eg.html",
+          "badge": "独播",
           "duration": null
         },
         {
@@ -1559,7 +1433,7 @@
           "duration": null
         }
       ],
-      "fetchedAt": "2026-07-31T18:29:06.361Z",
+      "fetchedAt": "2026-07-31T18:49:46.698Z",
       "warnings": [
         "33 条时长无法确认已保留（平台未提供内联时长）"
       ]
@@ -1578,7 +1452,7 @@
           "date": "2026-07-28",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=NDgxMjY5NDI3NDExOTQwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DoV2FQESt0P9aggjO&on_record=1&timestamp=1785522552851&tv_id=NzYwODI0MjI1NTQzMTgwMA%3D%3D&sign=3F210AE9D4A6D90EB6929228CCFCE51B",
+          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=NDgxMjY5NDI3NDExOTQwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DZ3wIvzjdcyZ7rAbp&on_record=1&timestamp=1785523793103&tv_id=NzYwODI0MjI1NTQzMTgwMA%3D%3D&sign=43A2EC79AD05FF5F78BF48CD194EC153",
           "badge": null,
           "duration": null
         },
@@ -1592,7 +1466,7 @@
           "date": "2026-07-28",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=MjIxMjA3MjU5NTg4MTQwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DaxpJyX9G8Y4WCJzI&on_record=1&timestamp=1785522552854&tv_id=NjE0OTEwMjU3OTQyMDMwMA%3D%3D&sign=31C0C9BFFFF6E4055656048D90B30ED3",
+          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=MjIxMjA3MjU5NTg4MTQwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DTU4hz0LZv7BUs7eX&on_record=1&timestamp=1785523793106&tv_id=NjE0OTEwMjU3OTQyMDMwMA%3D%3D&sign=6B8B89E59FC4B48323420E86627F5F05",
           "badge": null,
           "duration": null
         },
@@ -1606,7 +1480,7 @@
           "date": "2026-07-28",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=MTgxOTgxMzQ5NjM1MjMwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3D7CiCFHCsaoQlK0uU&on_record=1&timestamp=1785522552858&tv_id=NTk0NjE1NDYxOTE4NjUwMA%3D%3D&sign=DC0C3A5371A964F9E0BAC5A5BAC6FE3C",
+          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=MTgxOTgxMzQ5NjM1MjMwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3De70Z8OTLLQzDC1M5&on_record=1&timestamp=1785523793112&tv_id=NTk0NjE1NDYxOTE4NjUwMA%3D%3D&sign=9F7911914A7E23FA730E889334012A06",
           "badge": null,
           "duration": 357
         },
@@ -1620,7 +1494,7 @@
           "date": "2026-07-29",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=MzM4MTYzMDQwMTgyMzQwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DCUxPnNaJyLWn3TPG&on_record=1&timestamp=1785522554323&tv_id=ODUzNTU0NTk3NjE1NjcwMA%3D%3D&sign=11EB6EEC32355C42D3DA4AFFB6E5F06A",
+          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=MzM4MTYzMDQwMTgyMzQwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DLg6YlbBl2SfFLOKg&on_record=1&timestamp=1785523794596&tv_id=ODUzNTU0NTk3NjE1NjcwMA%3D%3D&sign=989425B016E139FD2D0D187A8AC615CE",
           "badge": null,
           "duration": null
         },
@@ -1634,7 +1508,7 @@
           "date": "2026-07-29",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=NzgyNDgyNzAzMjIzMjkwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3D6Ua2Zilz1S9ykG8K&on_record=1&timestamp=1785522554325&tv_id=MjY3NzMyODc5MDE3NDEwMA%3D%3D&sign=14F988AF9107D7FB496D1277E1CE031E",
+          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=NzgyNDgyNzAzMjIzMjkwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DiYzJu0nNLKB99CvH&on_record=1&timestamp=1785523794598&tv_id=MjY3NzMyODc5MDE3NDEwMA%3D%3D&sign=09A45A88D87C8B34662B32268538401D",
           "badge": null,
           "duration": null
         },
@@ -1648,7 +1522,7 @@
           "date": "2026-07-29",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=ODIzNDczMzc4MDQxMTEwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DxmnNHrJWfk4bLsxj&on_record=1&timestamp=1785522554326&tv_id=MjAzMjM4NzQ0ODkxMzUwMA%3D%3D&sign=024193F4A3B90D0CCEA104228AC419E2",
+          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=ODIzNDczMzc4MDQxMTEwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DK9zpB99nIOXKjaXE&on_record=1&timestamp=1785523794600&tv_id=MjAzMjM4NzQ0ODkxMzUwMA%3D%3D&sign=B11D73E7D56EDBDDCCF0B3AE01713BFE",
           "badge": null,
           "duration": null
         },
@@ -1662,7 +1536,7 @@
           "date": "2026-07-29",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=NjAzMzU5MDY5NDMxOTUwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DhJcFaAx5aitmIItv&on_record=1&timestamp=1785522554327&tv_id=Nzc1NTg0MDc3MTQ4ODkwMA%3D%3D&sign=68C40218102EFEF9B22C6874FD03F6E0",
+          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=NjAzMzU5MDY5NDMxOTUwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DfZAaFRM1Fc4Gn0ZC&on_record=1&timestamp=1785523794602&tv_id=Nzc1NTg0MDc3MTQ4ODkwMA%3D%3D&sign=5009C4D09C0D41EAEA8E25ED4C6A27E6",
           "badge": null,
           "duration": 368
         },
@@ -1676,7 +1550,7 @@
           "date": "2026-07-29",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=MzIyMTk5OTM5ODEzMTkwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DcIwrrqECsnMs6mVo&on_record=1&timestamp=1785522554328&tv_id=ODA4NzEzNTI2NjgyNDAwMA%3D%3D&sign=8AA341AB3B7CCCD51427E5DAD1258EE9",
+          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=MzIyMTk5OTM5ODEzMTkwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3Dsw78nAxOf8qtM8Hg&on_record=1&timestamp=1785523794604&tv_id=ODA4NzEzNTI2NjgyNDAwMA%3D%3D&sign=F77A0CCC8015559F48D054435F568C46",
           "badge": null,
           "duration": 374
         },
@@ -1690,7 +1564,7 @@
           "date": "2026-07-30",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=NDE5ODIzNTIzNDc4NDAwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3D4bB3Na22ux0Eu83a&on_record=1&timestamp=1785522555683&tv_id=MjQ3MzU3ODY2NTA1NDUwMA%3D%3D&sign=5D178B7FA01B7DDFD64F6009A97DFAC4",
+          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=NDE5ODIzNTIzNDc4NDAwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DH8UnBQkXTVQqW5ZN&on_record=1&timestamp=1785523795945&tv_id=MjQ3MzU3ODY2NTA1NDUwMA%3D%3D&sign=74AECB11500BF54A7D1FA265D7C04167",
           "badge": null,
           "duration": null
         },
@@ -1704,7 +1578,7 @@
           "date": "2026-07-30",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=MjIxMjA3MjU5NTg4MTQwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3D2cL4ugiFy2WJuUgj&on_record=1&timestamp=1785522555684&tv_id=NjE0OTEwMjU3OTQyMDMwMA%3D%3D&sign=0AC4998D5F4E8EE5B5004B3D68CF01A8",
+          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=MjIxMjA3MjU5NTg4MTQwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DYqgiRcId0fCXBPbG&on_record=1&timestamp=1785523795947&tv_id=NjE0OTEwMjU3OTQyMDMwMA%3D%3D&sign=334DC5B0DE2E89E49F1C4FEC726CE8CA",
           "badge": null,
           "duration": null
         },
@@ -1718,7 +1592,7 @@
           "date": "2026-07-30",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=Mzc4NDMxNzY1NzM2NzgwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DsMavxCILcSpOXMwz&on_record=1&timestamp=1785522555686&tv_id=Nzk1ODc4ODczMDk2MzkwMA%3D%3D&sign=4B0DE03804E1C9579B0A43C3A55A9C35",
+          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=Mzc4NDMxNzY1NzM2NzgwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DxUpjXYRpKbbvFKYn&on_record=1&timestamp=1785523795948&tv_id=Nzk1ODc4ODczMDk2MzkwMA%3D%3D&sign=C2C797DA705D7ACC223301BB065C4967",
           "badge": null,
           "duration": null
         },
@@ -1732,7 +1606,7 @@
           "date": "2026-07-30",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=NzQyNDU0NjI3NDIzMTMwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DqmN7NLaAt6kLIKdb&on_record=1&timestamp=1785522555687&tv_id=Mjk2NjEwODQ5NTI3NDMwMA%3D%3D&sign=85D08B3F27BEC14A0AAC57230A83FCB3",
+          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=NzQyNDU0NjI3NDIzMTMwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3D101v7hCZtVX84GWW&on_record=1&timestamp=1785523795950&tv_id=Mjk2NjEwODQ5NTI3NDMwMA%3D%3D&sign=22F9E1312F59498DE2F4C37A27C4ED69",
           "badge": null,
           "duration": null
         },
@@ -1746,17 +1620,159 @@
           "date": "2026-07-30",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=Mzg1OTcyMTI0NzA1MjYwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DU9idgAuoFrHS6eW3&on_record=1&timestamp=1785522555689&tv_id=MjE4NDc5ODk1OTA4NDEwMA%3D%3D&sign=B52732555407041683A9662D0F402A04",
+          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=Mzg1OTcyMTI0NzA1MjYwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DIGjdbsQmEwvaD8VZ&on_record=1&timestamp=1785523795952&tv_id=MjE4NDc5ODk1OTA4NDEwMA%3D%3D&sign=4583BA39D6993489BFE003BDE6BABFBD",
           "badge": null,
           "duration": 382
+        },
+        {
+          "id": "iqiyi-2026-07-31-逆天邪神年番",
+          "platform": "iqiyi",
+          "title": "逆天邪神年番",
+          "poster": "https://pic0.iqiyipic.com/image/20260416/ff/0b/a_100613847_m_601_m4_318_424.avif",
+          "episode": "第48集",
+          "updateTime": "",
+          "date": "2026-07-31",
+          "weekday": 4,
+          "svip": false,
+          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=ODgzNzk2MjQ5Nzg3OTAwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DmcnbFYX8o84CDtF9&on_record=1&timestamp=1785523798000&tv_id=NTA4MzAyNDE2NzYxMzIwMA%3D%3D&sign=E550BE01662BC9ACFA554746D9171BF8",
+          "badge": null,
+          "duration": null
+        },
+        {
+          "id": "iqiyi-2026-07-31-太古神尊",
+          "platform": "iqiyi",
+          "title": "太古神尊",
+          "poster": "https://pic5.iqiyipic.com/image/20260714/58/dd/a_101211018_m_601_m1_318_424.avif",
+          "episode": "第4集",
+          "updateTime": "",
+          "date": "2026-07-31",
+          "weekday": 4,
+          "svip": false,
+          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=NDg2MjQyODU1NjY4MTUwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DjJhWdVyi5nmPQrbj&on_record=1&timestamp=1785523798002&tv_id=NTM1MTc0OTcyNjg1ODAwMA%3D%3D&sign=0423AA622265F2D94156B83FF8E0EC66",
+          "badge": null,
+          "duration": null
+        },
+        {
+          "id": "iqiyi-2026-07-31-丹道至尊",
+          "platform": "iqiyi",
+          "title": "丹道至尊",
+          "poster": "https://pic1.iqiyipic.com/image/20250409/5e/c4/a_100554260_m_601_m13_318_424.avif",
+          "episode": "第186集",
+          "updateTime": "",
+          "date": "2026-07-31",
+          "weekday": 4,
+          "svip": false,
+          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=ODMxMzM0NjAzMzQ4MjkwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3D6ZCRAlAY4euWpzed&on_record=1&timestamp=1785523798003&tv_id=MjEwMjE3NTg3NjYyODEwMA%3D%3D&sign=5F20891235DB105F8CF7AAFF737CA243",
+          "badge": null,
+          "duration": null
+        },
+        {
+          "id": "iqiyi-2026-07-31-是王者啊？第6季",
+          "platform": "iqiyi",
+          "title": "是王者啊？第6季",
+          "poster": "https://pic6.iqiyipic.com/image/20260713/08/36/a_100879043_m_601_m1_318_424.avif",
+          "episode": "第3集",
+          "updateTime": "",
+          "date": "2026-07-31",
+          "weekday": 4,
+          "svip": false,
+          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=ODQ1NzczNTg4NjA3MjAwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DgbQOaMQWfOKXHPjJ&on_record=1&timestamp=1785523798003&tv_id=ODA4OTU0MTc2NDk1ODAwMA%3D%3D&sign=E70A27B0A5D05A3BF8C3E1B88D4C070C",
+          "badge": null,
+          "duration": null
+        },
+        {
+          "id": "iqiyi-2026-07-31-师尊：这个冲师逆徒才不是圣子 动态漫画",
+          "platform": "iqiyi",
+          "title": "师尊：这个冲师逆徒才不是圣子 动态漫画",
+          "poster": "https://pic8.iqiyipic.com/image/20250506/13/ea/a_100614875_m_601_m2_318_424.avif",
+          "episode": "第187集",
+          "updateTime": "",
+          "date": "2026-07-31",
+          "weekday": 4,
+          "svip": false,
+          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=NzU0OTY4NDE0NjQ3NDQwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DSThkTFcl1GuzP8Vh&on_record=1&timestamp=1785523798004&tv_id=MTk1NjE4MTY5MjgxOTMwMA%3D%3D&sign=A423FFFD1ACE2164673E29B1338A4B7F",
+          "badge": null,
+          "duration": 322
+        },
+        {
+          "id": "iqiyi-2026-08-01-大主宰年番",
+          "platform": "iqiyi",
+          "title": "大主宰年番",
+          "poster": "https://pic4.iqiyipic.com/image/20260710/d1/1e/a_100459186_m_601_m39_318_424.avif",
+          "episode": "第84集",
+          "updateTime": "",
+          "date": "2026-08-01",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=NTMwNTIyNDEwNDYwNjQwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3D2GwczLhb2pywsCAf&on_record=1&timestamp=1785523798660&tv_id=MTE1ODgyODg0MDYzNDgwMA%3D%3D&sign=4CB9F69FDF3959D8281C198DB7080FE0",
+          "badge": null,
+          "duration": null
+        },
+        {
+          "id": "iqiyi-2026-08-01-大千小镇",
+          "platform": "iqiyi",
+          "title": "大千小镇",
+          "poster": "https://pic0.iqiyipic.com/image/20260708/5d/85/a_101189109_m_601_m3_318_424.avif",
+          "episode": "第3集",
+          "updateTime": "",
+          "date": "2026-08-01",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=ODYzOTgyNzUzMzUwMDAwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3D3fOBkWgQWI0bNJiU&on_record=1&timestamp=1785523798662&tv_id=MzI5NDE5NDMyNzQ1NjgwMA%3D%3D&sign=9D2D362778D18E573523ECD029CFBBFE",
+          "badge": null,
+          "duration": null
+        },
+        {
+          "id": "iqiyi-2026-08-01-灵武大陆",
+          "platform": "iqiyi",
+          "title": "灵武大陆",
+          "poster": "https://pic0.iqiyipic.com/image/20250416/14/a8/a_100570241_m_601_m4_318_424.avif",
+          "episode": "第202集",
+          "updateTime": "",
+          "date": "2026-08-01",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=NDgxMjY5NDI3NDExOTQwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DexLnQBdA20fD8ffj&on_record=1&timestamp=1785523798663&tv_id=NzYwODI0MjI1NTQzMTgwMA%3D%3D&sign=C41825A48362B3FE55966FE3982751F2",
+          "badge": null,
+          "duration": null
+        },
+        {
+          "id": "iqiyi-2026-08-01-开心锤锤世界",
+          "platform": "iqiyi",
+          "title": "开心锤锤世界",
+          "poster": "https://pic5.iqiyipic.com/image/20260706/e7/50/a_100615404_m_601_m6_318_424.avif",
+          "episode": "第65集",
+          "updateTime": "",
+          "date": "2026-08-01",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=Mjk1MjQ3MTY3MzMwNDIwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DfVgjjgxIDtiZw1Nj&on_record=1&timestamp=1785523798664&tv_id=NjQwNDk5MzQ4NDE3OTAwMA%3D%3D&sign=954AF0DF3507D997D6858750FE4B929B",
+          "badge": null,
+          "duration": null
+        },
+        {
+          "id": "iqiyi-2026-08-01-江思先生 动态漫画",
+          "platform": "iqiyi",
+          "title": "江思先生 动态漫画",
+          "poster": "https://pic5.iqiyipic.com/image/20241021/76/e3/a_100590439_m_601_m3_318_424.avif",
+          "episode": "第185集",
+          "updateTime": "",
+          "date": "2026-08-01",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://www.iqiyi.com/tvg/to_page_url?album_id=NjAzMzU5MDY5NDMxOTUwMQ%3D%3D&app_version=17.074.25935&ext_params=a%3Dimage%26qyTrace%3DaBcBY1UybLDWCooV&on_record=1&timestamp=1785523798667&tv_id=Nzc1NTg0MDc3MTQ4ODkwMA%3D%3D&sign=BB532800BABBD3E4D15254C4928573F8",
+          "badge": null,
+          "duration": 368
         }
       ],
-      "fetchedAt": "2026-07-31T18:29:18.750Z",
+      "fetchedAt": "2026-07-31T18:50:04.076Z",
       "warnings": [
         "时长无法确认且命中关键词，已丢弃：斗罗大陆4终极斗罗 动态漫画 合集",
         "时长无法确认且命中关键词，已丢弃：末世钞能力者 动态漫画",
-        "时长过滤：丢弃 4 条不足 5 分钟（<300 秒）或无法确认时长的条目",
-        "9 条时长无法确认已保留（平台未提供内联时长）"
+        "时长无法确认且命中关键词，已丢弃：原来我早就无敌了 动态漫画",
+        "时长过滤：丢弃 6 条不足 5 分钟（<300 秒）或无法确认时长的条目",
+        "20 条时长无法确认已保留（平台未提供内联时长）",
+        "过滤 6 条不在本周（2026-07-27~2026-08-02）的条目"
       ]
     }
   ]
