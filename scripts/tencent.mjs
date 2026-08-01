@@ -69,6 +69,14 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
           const rule = (t2 > 0 ? seg.slice(0, t2) : seg).trim();
           return /每周/.test(rule) ? rule.slice(0, 100) : null;
         };
+        // 卡片底部更新时间：如「10:00更新1集」「VIP用户每周一10点更新1集」「每日0点更新」
+        const timeOf = (t) => {
+          const m = t.match(/([01]?\d|2[0-3])[:：点](\d{2})?/);
+          if (!m) return "";
+          const h = Number(m[1]);
+          const min = m[2] ? Number(m[2]) : 0;
+          return `${String(h).padStart(2, "0")}:${String(min).padStart(2, "0")}`;
+        };
         return els.map((c) => {
           const paramsEl = c.querySelector(".banner-card__poster-container");
           const params = paramsEl?.getAttribute("dt-params") ?? c.getAttribute("dt-params") ?? "";
@@ -92,6 +100,7 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
                   ? `第${epMatch[3]}${epMatch[4]}`
                   : epMatch[5] ?? "更新"
               : null,
+            updateTime: timeOf(text),
             text,
           };
         });
@@ -108,7 +117,7 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
           rule: c.rule,
           poster: c.poster,
           episode: c.episode ?? "",
-          updateTime: "",
+          updateTime: c.updateTime ?? "",
           date,
           weekday,
           svip: c.text.includes("SVIP"),
