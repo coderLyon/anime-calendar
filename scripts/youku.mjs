@@ -46,10 +46,9 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
           date,
           weekday,
           svip,
-        // 有 videoId 时用播放页直达（最新更新集）；否则回退剧集页
-        url: it.previewInfo?.videoId
-          ? `https://v.youku.com/v_show/id_${it.previewInfo.videoId}.html`
-          : `https://www.youku.com/show_page/id_${it.action_value}.html`,
+        // 直达剧集页：previewInfo.videoId 是预览短片（片花/预告）而非正片，不能作卡片直达链接；
+        // show_page 在浏览器中会落到该动漫的播放界面（选集可选最新集）。
+        url: `https://www.youku.com/show_page/id_${it.action_value}.html`,
         videoId: it.previewInfo?.videoId ?? null, // 播放页兜底用（X+base64 形式的 videoId）
         badge: it.mark?.text || it.mark?.iconfont || null,
         duration: null,
