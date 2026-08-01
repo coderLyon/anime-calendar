@@ -13,7 +13,7 @@ import { scrape as scrapeYouku } from "./youku.mjs";
 import { scrape as scrapeTencent } from "./tencent.mjs";
 import { scrape as scrapeIqiyi } from "./iqiyi.mjs";
 import { doubanLookup } from "./douban.mjs";
-import { sortByDateThenTime, ymd } from "./shared.mjs";
+import { addDays, sortByDateThenTime, ymd } from "./shared.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA_FILE = join(ROOT, "data", "updates.json");
@@ -161,6 +161,39 @@ async function doubanShortDramaFilter(items, platform, warnings, { log }) {
   return kept;
 }
 
+/** 完结判定：剧集文案/标签含大结局、完结、全X话/集、X集全 等标记 */
+function finishedOf(it) {
+  if (it.badge === "大结局" || it.badge === "结局点映") return true;
+  return /(大结局|完结|已完结|全\s*\d+\s*(话|集)|\d+\s*集全)/.test(`${it.episode ?? ""} ${it.rule ?? ""}`);
+}
+
+/**
+ * 下一周排期预测（第 7 轮需求）：本周未完结条目按「同星期、同时段」+7 天推导下周排期，
+ * 标记 predicted 供前端显示「预计」；已完结条目标记 finished 且不生成下周排期。
+ * 注意：预测为启发式（平台原始数据仅覆盖本周），不参与清洗/时长/豆瓣过滤。
+ */
+function extendNextWeek(items, warnings) {
+  const out = [];
+  let predicted = 0;
+  let finished = 0;
+  for (const it of items) {
+    if (finishedOf(it)) {
+      finished++;
+      out.push({ ...it, finished: true });
+      continue;
+    }
+    out.push(it);
+    const next = { ...it, id: `${it.id}-pred`, date: ymd(addDays(new Date(`${it.date}T00:00:00`), 7)), predicted: true };
+    const m = String(it.episode ?? "").match(/(?:第|更新至)(\d+)(集|话)/);
+    if (m) next.episode = `第${Number(m[1]) + 1}${m[2]}`;
+    out.push(next);
+    predicted++;
+  }
+  if (predicted) warnings.push(`已生成下周预计排期 ${predicted} 条（本周未完结条目 +7 天推导，前端标「预计」）`);
+  if (finished) warnings.push(`${finished} 条剧集已完结，不生成下周排期`);
+  return out;
+}
+
 async function main() {
   const prev = loadPrevious();
   const platforms = [];
@@ -176,6 +209,7 @@ async function main() {
       result.items = cleanDuration(result.items, result.warnings);
       result.items = keepCurrentWeek(result.items, result.warnings);
       result.items = await doubanShortDramaFilter(result.items, p.platform, result.warnings, { log: (m) => console.log(`[${p.platform}] ${m}`) });
+      result.items = extendNextWeek(result.items, result.warnings);
       result.items = sortByDateThenTime(result.items);
       result.fetchedAt = new Date().toISOString();
       delete result.error;
@@ -191,10 +225,11 @@ async function main() {
       const cleaned = cleanDuration(fbItems, fbWarnings);
       const kept = keepCurrentWeek(cleaned, fbWarnings);
       const kept2 = await doubanShortDramaFilter(kept, p.platform, fbWarnings, { log: (m) => console.log(`[${p.platform}] ${m}`) });
+      const kept3 = extendNextWeek(kept2, fbWarnings);
       platforms.push({
         platform: p.platform,
         label: p.label,
-        items: sortByDateThenTime(kept2),
+        items: sortByDateThenTime(kept3),
         error: err.message,
         fetchedAt: prevRes?.fetchedAt ?? null,
         warnings: fbWarnings,

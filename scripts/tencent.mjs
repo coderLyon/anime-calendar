@@ -69,13 +69,27 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
           const rule = (t2 > 0 ? seg.slice(0, t2) : seg).trim();
           return /每周/.test(rule) ? rule.slice(0, 100) : null;
         };
-        // 卡片底部更新时间：如「10:00更新1集」「VIP用户每周一10点更新1集」「每日0点更新」
-        const timeOf = (t) => {
+        // 卡片底部更新时间：优先取「与卡片星期匹配」的时间（SVIP 抢先日为 18:00 等，不能用 VIP 的 10:00）
+        const WK = { 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 日: 7, 天: 7, 末: 6 };
+        const fmt = (h, min) => `${String(h).padStart(2, "0")}:${String(min ?? 0).padStart(2, "0")}`;
+        // 「每周一、五10:00更新」/「每周二18点抢先看」/「每日0点更新」→ [{days:Set<1..7>, h, min}]
+        const timeCandidates = (t) => {
+          const out = [];
+          for (const m of t.matchAll(/每?周([一二三四五六日天末])([^。；;0-9]{0,6}?)(\d{1,2})[:：点](\d{2})?/g)) {
+            const days = new Set([WK[m[1]]]);
+            for (const ch of m[2]) { const w = WK[ch]; if (w) days.add(w); }
+            out.push({ days, h: Number(m[3]), min: m[4] ? Number(m[4]) : 0 });
+          }
+          for (const m of t.matchAll(/每[日天][^。；;0-9]{0,14}?(\d{1,2})[:：点](\d{2})?/g)) {
+            out.push({ days: new Set([1, 2, 3, 4, 5, 6, 7]), h: Number(m[1]), min: m[2] ? Number(m[2]) : 0 });
+          }
+          return out;
+        };
+        const timeOf = (t, weekday) => {
+          const hit = timeCandidates(t).find((c) => c.days.has(weekday));
+          if (hit) return fmt(hit.h, hit.min);
           const m = t.match(/([01]?\d|2[0-3])[:：点](\d{2})?/);
-          if (!m) return "";
-          const h = Number(m[1]);
-          const min = m[2] ? Number(m[2]) : 0;
-          return `${String(h).padStart(2, "0")}:${String(min).padStart(2, "0")}`;
+          return m ? fmt(Number(m[1]), m[2] ? Number(m[2]) : 0) : "";
         };
         return els.map((c) => {
           const paramsEl = c.querySelector(".banner-card__poster-container");
@@ -100,11 +114,11 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
                   ? `第${epMatch[3]}${epMatch[4]}`
                   : epMatch[5] ?? "更新"
               : null,
-            updateTime: timeOf(text),
+            updateTime: timeOf(text, cfg.weekday),
             text,
           };
         });
-      }, { epRe: EP_RE.source, badgeRe: BADGE_RE.source });
+      }, { epRe: EP_RE.source, badgeRe: BADGE_RE.source, weekday });
       for (const c of cards) {
         if (!c.cid || !c.title) continue;
         const dedupKey = `${date}:${c.cid}`;
