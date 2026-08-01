@@ -2,6 +2,7 @@ import { useState } from "react";
 import { addDays, sameDay, WEEK_CN } from "../lib/date";
 import { ChevronDownIcon, ChevronUpIcon } from "../lib/icons";
 import { itemsOn } from "../lib/items";
+import { useBlocked } from "../store/blocked";
 import { useFollows } from "../store/follows";
 import { TODAY, WEEK_START } from "../store/data";
 import type { Mode, PlatformFilter } from "../types";
@@ -13,6 +14,7 @@ const MAX_VISIBLE = 12; // 两行 × 6 张卡；超出显示「+N 部」展开
 export function WeekdayBoard({ platform, mode }: { platform: PlatformFilter; mode: Mode }) {
   const [expanded, setExpanded] = useState<Set<number>>(() => new Set());
   const { isFollowed, toggle } = useFollows();
+  const { isBlocked, toggle: toggleBlock } = useBlocked();
   const toast = useToast();
 
   const toggleDay = (wd: number) => {
@@ -79,6 +81,12 @@ export function WeekdayBoard({ platform, mode }: { platform: PlatformFilter; mod
                     item={item}
                     followed={isFollowed(item.title)}
                     onToggleFollow={() => toggle(item)}
+                    blocked={isBlocked(item.title)}
+                    onToggleBlock={() => {
+                      const wasBlocked = isBlocked(item.title);
+                      toggleBlock(item.title);
+                      toast(wasBlocked ? `已取消屏蔽《${item.title}》` : `已屏蔽《${item.title}》，可在短剧过滤 1 分钟档生效`);
+                    }}
                     onClick={() => openItem(item.url, item.title)}
                   />
                 )).concat(moreChip ? [moreChip] : [])

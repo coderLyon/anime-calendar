@@ -1,6 +1,6 @@
 import type { KeyboardEvent } from "react";
 import { WEEK_CN } from "../lib/date";
-import { StarIcon } from "../lib/icons";
+import { BanIcon, StarIcon } from "../lib/icons";
 import { platShort } from "../lib/platforms";
 import { posterGlyph, posterStyle } from "../lib/poster";
 import type { AnimeItem } from "../types";
@@ -10,6 +10,7 @@ function Tag({ item }: { item: AnimeItem }) {
   if (item.badge === "独播") return <span className="tag dubo">独播</span>;
   if (item.badge === "限免") return <span className="tag mianfei">限免</span>;
   if (item.badge === "超前点映") return <span className="tag cqdy">超前点映</span>;
+  if (item.badge === "结局点映") return <span className="tag jujie">结局点映</span>;
   return null;
 }
 
@@ -17,10 +18,12 @@ interface AnimeCardProps {
   item: AnimeItem;
   followed: boolean;
   onToggleFollow: () => void;
+  blocked: boolean;
+  onToggleBlock: () => void;
   onClick: () => void;
 }
 
-export function AnimeCard({ item, followed, onToggleFollow, onClick }: AnimeCardProps) {
+export function AnimeCard({ item, followed, onToggleFollow, blocked, onToggleBlock, onClick }: AnimeCardProps) {
   const onKey = (e: KeyboardEvent) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
@@ -59,6 +62,17 @@ export function AnimeCard({ item, followed, onToggleFollow, onClick }: AnimeCard
           }}
         >
           <StarIcon />
+        </button>
+        <button
+          className={`block-btn ${blocked ? "on" : ""}`}
+          aria-label={blocked ? "取消屏蔽" : "屏蔽"}
+          title={blocked ? "取消屏蔽" : "屏蔽该剧集"}
+          onClick={(e) => {
+            e.stopPropagation();
+            onToggleBlock();
+          }}
+        >
+          <BanIcon />
         </button>
       </div>
       <div className="card-body">

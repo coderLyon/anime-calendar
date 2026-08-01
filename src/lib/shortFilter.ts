@@ -26,7 +26,18 @@ function load(): ShortFilter {
 }
 
 let config: ShortFilter = typeof localStorage !== "undefined" ? load() : DEFAULT;
+/** 被屏蔽剧集（规范化标题集合），由 BlockedProvider 同步；仅「阈值 ≤1 分钟」时参与过滤 */
+let blockedTitles = new Set<string>();
 const listeners = new Set<() => void>();
+
+function normKey(t: string): string {
+  return String(t).replace(/[·：\s-]/g, "").toLowerCase();
+}
+
+export function setBlockedTitles(titles: Iterable<string>): void {
+  blockedTitles = new Set(titles);
+  listeners.forEach((l) => l());
+}
 
 export function getShortFilter(): ShortFilter {
   return config;
@@ -63,6 +74,8 @@ export function applyShortFilter(items: AnimeItem[]): AnimeItem[] {
     if (i.duration != null && i.duration < config.thresholdSec) return false;
     // 阈值 ≤ 1 分钟时额外排除优酷名称含标点符号的条目（AI 短剧常见特征，如「XX，XX」「XX：XX」）
     if (strict && i.platform === "youku" && /[，。！？：；、]/.test(i.title)) return false;
+    // 阈值 ≤ 1 分钟时排除用户手动屏蔽的剧集
+    if (strict && blockedTitles.has(normKey(i.title))) return false;
     return true;
   });
 }

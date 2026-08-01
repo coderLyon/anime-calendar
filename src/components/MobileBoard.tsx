@@ -1,9 +1,10 @@
 import { useRef } from "react";
 import { addDays, sameDay, WEEK_CN } from "../lib/date";
-import { StarIcon } from "../lib/icons";
+import { BanIcon, StarIcon } from "../lib/icons";
 import { itemsOn } from "../lib/items";
 import { platShort } from "../lib/platforms";
 import { posterGlyph, posterStyle } from "../lib/poster";
+import { useBlocked } from "../store/blocked";
 import { useFollows } from "../store/follows";
 import { TODAY, WEEK_START } from "../store/data";
 import type { Mode, PlatformFilter } from "../types";
@@ -18,6 +19,7 @@ interface MobileBoardProps {
 
 export function MobileBoard({ platform, mode, day, onDayChange }: MobileBoardProps) {
   const { isFollowed, toggle } = useFollows();
+  const { isBlocked, toggle: toggleBlock } = useBlocked();
   const toast = useToast();
   const touchX = useRef<number | null>(null);
 
@@ -71,6 +73,7 @@ export function MobileBoard({ platform, mode, day, onDayChange }: MobileBoardPro
           : items.length
             ? items.map((item) => {
                 const followed = isFollowed(item.title);
+                const blocked = isBlocked(item.title);
                 return (
                   <article
                     key={item.id}
@@ -104,6 +107,19 @@ export function MobileBoard({ platform, mode, day, onDayChange }: MobileBoardPro
                       >
                         <StarIcon />
                       </button>
+                      <button
+                        className={`block-btn ${blocked ? "on" : ""}`}
+                        aria-label={blocked ? "取消屏蔽" : "屏蔽"}
+                        title={blocked ? "取消屏蔽" : "屏蔽该剧集"}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          const wasBlocked = isBlocked(item.title);
+                          toggleBlock(item.title);
+                          toast(wasBlocked ? `已取消屏蔽《${item.title}》` : `已屏蔽《${item.title}》，可在短剧过滤 1 分钟档生效`);
+                        }}
+                      >
+                        <BanIcon />
+                      </button>
                     </div>
                     <div className="m-info">
                       <h3 className="m-title">{item.title}</h3>
@@ -116,6 +132,8 @@ export function MobileBoard({ platform, mode, day, onDayChange }: MobileBoardPro
                         {item.svip ? <span className="tag svip">SVIP抢先</span> : null}
                         {item.badge === "独播" ? <span className="tag dubo">独播</span> : null}
                         {item.badge === "限免" ? <span className="tag mianfei">限免</span> : null}
+                        {item.badge === "超前点映" ? <span className="tag cqdy">超前点映</span> : null}
+                        {item.badge === "结局点映" ? <span className="tag jujie">结局点映</span> : null}
                       </div>
                     </div>
                   </article>

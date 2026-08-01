@@ -14,6 +14,15 @@ export function StarIcon(props: P) {
   );
 }
 
+export function BanIcon(props: P) {
+  return (
+    <svg {...base(props)}>
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="m6.2 6.2 11.6 11.6" />
+    </svg>
+  );
+}
+
 export function CalendarIcon(props: P) {
   return (
     <svg {...base(props)}>

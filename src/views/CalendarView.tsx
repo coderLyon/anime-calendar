@@ -48,6 +48,7 @@ function CalItem({ item, toast }: { item: AnimeItem; toast: (m: string) => void 
           {item.svip ? " · SVIP抢先" : ""}
           {item.badge === "独播" ? " · 独播" : ""}
           {item.badge === "超前点映" ? " · 超前点映" : ""}
+          {item.badge === "结局点映" ? " · 结局点映" : ""}
         </div>
       </div>
       <span className="cal-item-time">{item.updateTime || "更新"}</span>
@@ -272,10 +273,7 @@ function renderWeek(
                 )}
               </div>
               <div className="week-item-main">
-                <div className="cal-item-title-row">
-                  <span className={`plat-chip ${it.platform}`}>{platShort(it.platform)}</span>
-                  <span className="week-item-title">{it.title}</span>
-                </div>
+                <div className="week-item-title">{it.title}</div>
                 <div className="week-item-time">{it.episode} · {it.updateTime}</div>
               </div>
             </div>
