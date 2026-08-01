@@ -1,6 +1,6 @@
-import { dstr } from "./date";
+import { addDays, dstr } from "./date";
 import { applyShortFilter } from "./shortFilter";
-import { ITEMS } from "../store/data";
+import { ITEMS, WEEK_START } from "../store/data";
 import type { AnimeItem, PlatformFilter } from "../types";
 
 /**
@@ -20,7 +20,10 @@ export function itemsOn(date: Date, platform: PlatformFilter): AnimeItem[] {
 }
 
 export function platformCounts(): Record<PlatformFilter, number> {
-  const filtered = applyShortFilter(ITEMS);
+  // 看板计数仅统计本周（预测的下一周条目不计入，避免翻倍）
+  const weekStart = dstr(WEEK_START);
+  const weekEnd = dstr(addDays(WEEK_START, 6));
+  const filtered = applyShortFilter(ITEMS).filter((i) => i.date >= weekStart && i.date <= weekEnd);
   const counts: Record<PlatformFilter, number> = { all: filtered.length, bili: 0, tencent: 0, youku: 0, iqiyi: 0 };
   for (const item of filtered) counts[item.platform]++;
   return counts;

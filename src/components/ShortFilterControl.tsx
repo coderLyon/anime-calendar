@@ -37,7 +37,7 @@ export function ShortFilterControl() {
               </option>
             ))}
           </select>
-          {thresholdSec <= 60 ? <span className="filter-hint">已屏蔽 {blockedCount} 部（1 分钟档一并隐藏）</span> : null}
+          {blockedCount > 0 ? <span className="filter-hint">已屏蔽 {blockedCount} 部（过滤开启即隐藏）</span> : null}
         </>
       ) : null}
     </div>

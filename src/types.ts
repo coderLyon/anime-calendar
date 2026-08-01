@@ -24,6 +24,10 @@ export interface AnimeItem {
   duration?: number;
   /** 更新规则文案：腾讯每日更新卡片提供（如「每周四、五、六、日各更新1集」）；其余平台规则见剧集简介，暂不入库 */
   rule?: string;
+  /** 已完结：大结局/全X集 等标记，不参与下周排期预测 */
+  finished?: boolean;
+  /** 预测排期：由本周更新 +7 天推导的下一周条目（非平台原始数据） */
+  predicted?: boolean;
 }
 
 export interface PlatformResult {

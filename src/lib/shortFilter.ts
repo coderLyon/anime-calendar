@@ -69,13 +69,13 @@ export function useShortFilterVersion(): number {
 /** 应用短剧过滤：关闭时全部保留；开启时保留未知时长与 >= 阈值的条目 */
 export function applyShortFilter(items: AnimeItem[]): AnimeItem[] {
   if (!config.enabled) return items;
-  const strict = config.thresholdSec <= 60;
   return items.filter((i) => {
     if (i.duration != null && i.duration < config.thresholdSec) return false;
-    // 阈值 ≤ 1 分钟时额外排除优酷名称含标点符号的条目（AI 短剧常见特征，如「XX，XX」「XX：XX」）
-    if (strict && i.platform === "youku" && /[，。！？：；、]/.test(i.title)) return false;
-    // 阈值 ≤ 1 分钟时排除用户手动屏蔽的剧集
-    if (strict && blockedTitles.has(normKey(i.title))) return false;
+    // 过滤开关开启即隐藏用户手动屏蔽的剧集（任意阈值）
+    if (blockedTitles.has(normKey(i.title))) return false;
+    // 过滤开关开启即隐藏优酷名称含断句标点的条目（AI 短剧常见特征，如「XX，XX」「XX：XX」；
+    // 仅匹配 、，。：；，避免误伤「是王者啊？第六季」这类带问号的正剧标题）
+    if (i.platform === "youku" && /[，。：；、]/.test(i.title)) return false;
     return true;
   });
 }

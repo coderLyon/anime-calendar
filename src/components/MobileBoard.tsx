@@ -115,7 +115,7 @@ export function MobileBoard({ platform, mode, day, onDayChange }: MobileBoardPro
                           e.stopPropagation();
                           const wasBlocked = isBlocked(item.title);
                           toggleBlock(item.title);
-                          toast(wasBlocked ? `已取消屏蔽《${item.title}》` : `已屏蔽《${item.title}》，可在短剧过滤 1 分钟档生效`);
+                          toast(wasBlocked ? `已取消屏蔽《${item.title}》` : `已屏蔽《${item.title}》，短剧过滤开启即隐藏`);
                         }}
                       >
                         <BanIcon />
@@ -134,6 +134,8 @@ export function MobileBoard({ platform, mode, day, onDayChange }: MobileBoardPro
                         {item.badge === "限免" ? <span className="tag mianfei">限免</span> : null}
                         {item.badge === "超前点映" ? <span className="tag cqdy">超前点映</span> : null}
                         {item.badge === "结局点映" ? <span className="tag jujie">结局点映</span> : null}
+                        {item.badge === "大结局" ? <span className="tag wanjie">大结局</span> : null}
+                        {item.finished ? <span className="tag wanjie">完结</span> : null}
                       </div>
                     </div>
                   </article>

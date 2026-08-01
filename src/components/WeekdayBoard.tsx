@@ -85,7 +85,7 @@ export function WeekdayBoard({ platform, mode }: { platform: PlatformFilter; mod
                     onToggleBlock={() => {
                       const wasBlocked = isBlocked(item.title);
                       toggleBlock(item.title);
-                      toast(wasBlocked ? `已取消屏蔽《${item.title}》` : `已屏蔽《${item.title}》，可在短剧过滤 1 分钟档生效`);
+                      toast(wasBlocked ? `已取消屏蔽《${item.title}》` : `已屏蔽《${item.title}》，短剧过滤开启即隐藏`);
                     }}
                     onClick={() => openItem(item.url, item.title)}
                   />

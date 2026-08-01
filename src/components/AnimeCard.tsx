@@ -11,6 +11,8 @@ function Tag({ item }: { item: AnimeItem }) {
   if (item.badge === "限免") return <span className="tag mianfei">限免</span>;
   if (item.badge === "超前点映") return <span className="tag cqdy">超前点映</span>;
   if (item.badge === "结局点映") return <span className="tag jujie">结局点映</span>;
+  if (item.badge === "大结局") return <span className="tag wanjie">大结局</span>;
+  if (item.finished) return <span className="tag wanjie">完结</span>;
   return null;
 }
 

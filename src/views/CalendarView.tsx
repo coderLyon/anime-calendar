@@ -3,7 +3,7 @@ import { EmptyState } from "../components/EmptyState";
 import { Segmented } from "../components/Segmented";
 import { useToast } from "../components/Toast";
 import { addDays, isoWeek, sameDay, wdOf, WEEK_CN } from "../lib/date";
-import { ChevronLeftIcon, ChevronRightIcon } from "../lib/icons";
+import { ChevronLeftIcon, ChevronRightIcon, ExternalIcon } from "../lib/icons";
 import { itemsOn } from "../lib/items";
 import { platShort } from "../lib/platforms";
 import { posterGlyph, posterStyle } from "../lib/poster";
@@ -41,6 +41,7 @@ function CalItem({ item, toast }: { item: AnimeItem; toast: (m: string) => void 
         <div className="cal-item-title-row">
           <span className={`plat-chip ${item.platform}`}>{platShort(item.platform)}</span>
           <span className="cal-item-title">{item.title}</span>
+          {item.predicted ? <span className="tag predicted">预计</span> : null}
         </div>
         <div className="cal-item-meta">
           <span className={`plat-dot ${item.platform}`} />
@@ -49,9 +50,29 @@ function CalItem({ item, toast }: { item: AnimeItem; toast: (m: string) => void 
           {item.badge === "独播" ? " · 独播" : ""}
           {item.badge === "超前点映" ? " · 超前点映" : ""}
           {item.badge === "结局点映" ? " · 结局点映" : ""}
+          {item.finished ? " · 完结" : ""}
         </div>
+        {item.rule ? <div className="cal-item-rule">官方更新：{item.rule}</div> : null}
       </div>
-      <span className="cal-item-time">{item.updateTime || "更新"}</span>
+      <div className="cal-item-side">
+        <span className="cal-item-time">{item.updateTime || "更新"}</span>
+        <a
+          className="cal-item-open"
+          href={item.url && item.url !== "#" ? item.url : undefined}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => {
+            if (!item.url || item.url === "#") {
+              e.preventDefault();
+              toast(`《${item.title}》直达链接由数据管道解析后提供`);
+            } else {
+              e.stopPropagation();
+            }
+          }}
+        >
+          <ExternalIcon /> 最新集
+        </a>
+      </div>
     </div>
   );
 }
@@ -350,8 +371,13 @@ function renderMonth(
         {items.length ? <span className="cnt">{items.length}</span> : null}
         {items.length ? (
           <div className="preview" title={items.map((i) => i.title).join("、")}>
-            {items.slice(0, 5).map((i) => i.title).join(" · ")}
-            {items.length > 5 ? ` +${items.length - 5} 部` : ""}
+            {items.slice(0, 3).map((i) => (
+              <div key={i.id} className="month-line">
+                {i.updateTime ? <span className="mt">{i.updateTime}</span> : null}
+                <span className="mt-title">{i.title}</span>
+              </div>
+            ))}
+            {items.length > 3 ? <div className="month-more">+{items.length - 3} 部</div> : null}
           </div>
         ) : null}
       </div>,
