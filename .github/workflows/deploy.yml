@@ -56,6 +56,14 @@ jobs:
         timeout-minutes: 25
         run: node scripts/sync.mjs
 
+      - name: Verify today data（防复发：今天无条目时告警）
+        run: |
+          if grep -q "警告：今天" data/updates.json; then
+            echo "::warning::今天数据缺失告警：请核查抓取器星期 tab/日期映射（爱奇艺「今天」/优酷「今」）"
+          else
+            echo "today data ok"
+          fi
+
       - name: Commit data back to main
         run: |
           git config user.name "github-actions[bot]"

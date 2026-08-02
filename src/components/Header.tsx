@@ -45,15 +45,15 @@ export function Header({ page, followCount, theme, onNavigate, onToggleTheme, on
           </button>
           <button className="btn ghost" onClick={onRefresh}>
             <RefreshIcon />
-            <span>刷新</span>
+            <span className="btn-text">刷新</span>
           </button>
           <button className={`btn ghost ${page === "calendar" ? "active-nav" : ""}`} onClick={() => onNavigate("calendar")}>
             <CalendarIcon />
-            <span>追番日历</span>
+            <span className="btn-text">追番日历</span>
           </button>
           <button className="btn primary-soft" onClick={() => onNavigate("follow")}>
             <StarIcon className="star-fill" />
-            <span>追番</span>
+            <span className="btn-text">追番</span>
             <span className="count-pill">{followCount}</span>
           </button>
         </div>

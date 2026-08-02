@@ -30,7 +30,7 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
     const tab = tabs[d];
     const dayItems = lists[d];
     if (!Array.isArray(dayItems)) continue;
-        const date = tabDate(tab.date, d);
+        const date = tabDate(tab.date, d, tabs);
         const weekday = d + 1;
     for (const it of dayItems) {
       const title = String(it.title ?? it.trackInfo?.object_title ?? "").trim();
@@ -67,8 +67,12 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
   return { platform: PLATFORM, label: LABEL, items: deduped, fetchedAt: new Date().toISOString(), warnings: [] };
 }
 
-/** tab.date 形如 "07.27"；返回当年对应日期，无法解析则按当前周周一 + d */
-function tabDate(dateStr, d) {
+/**
+ * tab.date 形如 "07.27"；返回当年对应日期。
+ * 无法解析时按「今/今天」tab 锚定北京今天推算其余星期（不依赖周一索引，
+ * 避免今天≠周一时错位——优酷今天 tab 曾反复回归的根因）。
+ */
+function tabDate(dateStr, d, tabs) {
   const m = String(dateStr ?? "").match(/(\d{2})\.(\d{2})/);
   if (m) {
     const now = new Date();
@@ -76,7 +80,13 @@ function tabDate(dateStr, d) {
     const date = new Date(year, Number(m[1]) - 1, Number(m[2]));
     return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
   }
-  return ymd(addDays(mondayOfWeekBeijing(), d));
+  const todayIdx = (tabs ?? []).findIndex((t) => /^今/.test(String(t.title ?? "")));
+  const anchor = todayIdx >= 0 ? todayIdx : 0;
+  const now = new Date(Date.now() + 8 * 3600 * 1000);
+  const base = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+  const target = new Date(base);
+  target.setUTCDate(base.getUTCDate() + (d - anchor));
+  return `${target.getUTCFullYear()}-${String(target.getUTCMonth() + 1).padStart(2, "0")}-${String(target.getUTCDate()).padStart(2, "0")}`;
 }
 
 /** SVIP 抢先去重：保留 SVIP 抢先日，删除后一天同标题同集常规条目 */

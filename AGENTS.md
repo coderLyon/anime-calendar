@@ -17,7 +17,19 @@
 - 时长富集：B站季分集接口 `api.bilibili.com/pgc/view/web/season?season_id=`（毫秒，按 episode_id 匹配、正片最新集兜底）；腾讯分集接口 `pbaccess.video.qq.com/.../GetPageData`（`vsite_episode_list`，每集秒级 duration，按集数匹配、非花絮最新集兜底）；优酷 show_page 内联时长（秒/ISO 8601）优先 + 播放页 `pageMap.extra.duration` 兜底，连续请求触发 `_____tmd_____/punish` 反爬时按「慢速 1.2s + 挑战页冷却重试 + 挑战页带出真实 videoId 转播放页 + Playwright 浏览器兜底」降级；爱奇艺专辑分集接口 `pcw-api.iqiyi.com/albums/album/avlistinfo?aid=`（按集数匹配、最新集兜底）。
 - 内容类型排除：标题含「动态漫/AI动漫/泡面番」（AI 生成短剧）的条目在同步时直接丢弃并记入 `warnings`（与时长无关）；爱奇艺另以评论区「AI 关键字 + 负面情绪」启发式过滤（限流时优雅降级）；优酷/爱奇艺「时长缺失或 <1 分钟」条目追加豆瓣影视搜索甄别——精确命中且「暂无评分」丢弃（白名单保护正剧，如苏东坡与杭州的故事），未命中/查询失败保留，每次同步查询上限 10 次、间隔 2s（反爬约束，`scripts/douban.mjs`）；用户经评论区等渠道确认的 AI 短剧（如云月大陆）进人工黑名单无条件排除。
 - 腾讯更新规则：卡片下方「每周X…」规则文案入库为 `rule` 字段；SVIP 抢先去重仅限卡片文案含 SVIP 的相邻同日集重复。
-- 本地存储键：追番 `anime-calendar.follows.v1`；屏蔽 `anime-calendar.blocked.v1`；主题 `anime-calendar.theme.v1`。
+- 追番日历（日程/周/月）**不受短剧过滤影响**，按原始数据展示；月视图合并历史归档（`history.json`）实现整月数据。
+- 追番列表展示以**当前周数据富集**为准（`platformInfoFor`）：历史收藏缺腾讯更新时间/链接过期时自动补全；搜索与看板共用同一 `SearchBox`（规范化标题匹配）。
+- 更新提醒为**静默浏览器通知**（顶栏铃铛已移除）：页面打开期间加载/切前台/每 30 分钟检查，同一剧集同一天只提醒一次。
+- 本地存储键：追番 `anime-calendar.follows.v1`；屏蔽 `anime-calendar.blocked.v1`；主题 `anime-calendar.theme.v1`；短剧过滤 `anime-calendar.shortfilter.v1`（默认开、600s）；断更忽略 `anime-calendar.ignore-missed.v1`；通知去重 `anime-calendar.notified.v1`；云同步会话 `anime-calendar.session.v1`、同步队列 `anime-calendar.sync.pending.v1`、云同步红点已读 `anime-calendar.sync-seen.v1`；数据提示已关闭 `anime-calendar.warn-dismissed.v1`。
+
+## 回归防复发（硬性）
+
+爱奇艺「今天」tab 与优酷「今」tab 曾多次回归（重复点击激活 tab 清空卡片、date 字段缺失回退周一索引错位）。修改抓取器时必须遵守：
+
+1. 当天 tab 默认激活时**不得重复点击**（先读后点，空则等待容器出现再 force 点击重试）；
+2. 日期映射优先平台内联 date/week 字段；缺失时以「今/今天」tab 为锚推算，**禁止假定 tabs[0]=周一**；
+3. 腾讯集数解析必须匹配带「集/话」后缀的编号（防「第2季」误当集数）；时长优先正片 vid 精确匹配；
+4. `sync.mjs` 内置四平台「今天无真实条目」自检（写入 warnings，CI 输出 `::warning::`）；发布前运行 `scripts/verify/` 回归脚本（优酷秒级、爱奇艺/腾讯约 6 分钟，详见 `scripts/verify/README.md`）。
 
 ## 提交规范
 

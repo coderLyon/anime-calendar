@@ -19,6 +19,12 @@ import { writeHistory } from "./history.mjs";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA_FILE = join(ROOT, "data", "updates.json");
 const HISTORY_FILE = join(ROOT, "data", "history.json");
+
+/** 北京时区「今天」YYYY-MM-DD（runner 常为 UTC，勿用本地日期） */
+function beijingToday() {
+  const n = new Date(Date.now() + 8 * 3600 * 1000);
+  return `${n.getUTCFullYear()}-${String(n.getUTCMonth() + 1).padStart(2, "0")}-${String(n.getUTCDate()).padStart(2, "0")}`;
+}
 const FETCH_LIMIT = { youku: 80, default: 40 }; // 单次同步富集请求上限（计划 §9；优酷唯一标题多，放宽到 80）
 const PLATFORM_TIMEOUT_MS = { tencent: 480_000, default: 240_000 }; // 单平台抓取硬超时（防 CI 卡死；腾讯需逐集点击解析）
 
@@ -216,6 +222,11 @@ async function main() {
       result.items = sortByDateThenTime(result.items);
       result.fetchedAt = new Date().toISOString();
       delete result.error;
+      // 防复发自检：今天无真实条目时告警（爱奇艺「今天」tab、优酷「今」tab 曾反复回归）
+      const todayStr = beijingToday();
+      if (!result.items.some((i) => i.date === todayStr && !i.predicted)) {
+        result.warnings.push(`警告：今天（${todayStr}）未抓到真实条目，请核查星期 tab/日期映射（爱奇艺「今天」/优酷「今」）`);
+      }
       platforms.push(result);
       anyData = true;
       console.log(`[${p.platform}] 成功：${result.items.length} 条`);
@@ -229,6 +240,10 @@ async function main() {
       const kept = keepCurrentWeek(cleaned, fbWarnings);
       const kept2 = await doubanShortDramaFilter(kept, p.platform, fbWarnings, { log: (m) => console.log(`[${p.platform}] ${m}`) });
       const kept3 = extendNextWeek(kept2, fbWarnings);
+      const fbToday = beijingToday();
+      if (!kept3.some((i) => i.date === fbToday && !i.predicted)) {
+        fbWarnings.push(`警告：今天（${fbToday}）未抓到真实条目（回退数据），请核查星期 tab/日期映射`);
+      }
       platforms.push({
         platform: p.platform,
         label: p.label,

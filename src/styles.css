@@ -703,7 +703,7 @@ svg { display: block; }
   .btn { padding: 0 10px; height: 34px; }
   .btn.ghost span { display: none; }            /* 图标为主的紧凑按钮 */
   .btn.ghost { width: 34px; padding: 0; justify-content: center; }
-  .btn.primary-soft span:nth-last-child(2) { display: none; } /* 隐藏「追番」文字 */
+  .header-actions .btn-text { display: none; } /* 移动端 Header 按钮图标化 */
   .page-head h1 { font-size: 21px; }
   .page-head .sub { font-size: 12px; }
 
