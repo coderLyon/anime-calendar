@@ -2,12 +2,20 @@
 
 聚合哔哩哔哩国创 / 腾讯视频 / 优酷 / 爱奇艺的周更动漫信息，提供「周一~周日更新看板」「追番收藏」「日历三视图（日程 / 周 / 月）」的静态站点。
 
+![deploy](https://github.com/coderLyon/anime-calendar/actions/workflows/deploy.yml/badge.svg)
+
 ## 功能
 
 - **更新看板**：左侧星期栏 + 横向卡片（今日行高亮）；四平台 Tab（含品牌 LOGO）筛选；卡片直达最新正剧集；单日超过 12 部自动折行并显示「+N 部」展开。
-- **追番收藏与屏蔽**：卡片星标收藏/取消（localStorage，键 `anime-calendar.follows.v1`）、收藏下方「屏蔽」按钮屏蔽不想看的剧（键 `anime-calendar.blocked.v1`，短剧过滤开启即隐藏）；同标题跨平台合并；追番支持搜索、平台筛选、导出/导入 JSON。
+- **多周浏览**：周导航支持历史 8 周（懒加载 `data/history.json` 归档）+ 本周 + 下周「预计」；历史周无数据时显示空态说明。
+- **搜索与筛选**：全站标题搜索（`/` 快捷键聚焦）+ 徽章筛选（独播/SVIP抢先/限免/超前点映/结局点映/大结局/完结）+「只看连载」，与平台 Tab、短剧过滤叠加生效。
+- **断更检测**：已追番剧按官方更新规则（rule）在规则日无更新且未完结时标记「疑似断更」，可一键忽略；展示于追番列表与日历当日。
+- **追番收藏与屏蔽**：卡片星标收藏/取消、收藏下方「屏蔽」按钮屏蔽不想看的剧（短剧过滤开启即隐藏）；同标题跨平台合并；追番支持搜索、平台筛选、导出/导入 JSON、逐剧「提醒」开关。
+- **更新提醒**：Header 铃铛显示今日追番更新数，点击授权后可收浏览器通知（聚合文案）；同一剧集同一天只提醒一次；页面打开期间每 30 分钟自动检查。
+- **匿名云同步（可选）**：无账号体系——首次访问自动创建设备级匿名身份，追番/屏蔽/设置自动云端同步（Supabase + RLS）；可绑定邮箱升级跨设备；不配置则纯本地运行。
 - **追番日历**：日程（当日列表 + 明日预告，详情卡含「最新集」跳转与官方更新规则）/ 周视图（本周更新 + 当日详情）/ 月视图（每行一部并带更新时间）；范围默认「仅已追番」，可切换「全部番剧」；「回到今天」；下周为按本周排期推导的「预计」视图（完结剧不预测并标「完结」）。
-- **体验**：今日追番更新摘要、深色模式（跟随系统/手动）、加载骨架屏、抓取失败重试、warnings 提示、移动端响应式（<768px 降级为星期 Tab + 单日列表）。
+- **PWA/离线**：可安装（manifest + 图标）、Service Worker 预缓存，离线可打开最近一次看板数据。
+- **体验**：今日追番更新摘要、深色模式（跟随系统/手动）、真实「刷新」（运行时拉取最新数据，失败回退构建时数据）、相对时间（N 小时前）、卡片时长显示、加载骨架屏、抓取失败重试、warnings 提示、移动端响应式（<768px 降级为星期 Tab + 单日列表）、SEO/分享（og/sitemap/robots/404/深链）。
 
 ## 数据来源与免责声明
 
@@ -20,6 +28,7 @@ npm install
 npm run dev        # 开发服务器
 npm run build      # 类型检查 + 构建到 dist/
 npm run preview    # 本地预览构建产物
+npm test           # Vitest 单元测试
 npm run sync       # 手动同步四平台数据 → data/updates.json（需 Playwright chromium）
 ```
 
@@ -33,12 +42,24 @@ GitHub Pages 静态前端 + GitHub Actions 定时数据管道：
 Actions（cron 0 11,23 * * * UTC + workflow_dispatch + push）
   → pnpm install --frozen-lockfile → playwright install chromium
   → node scripts/sync.mjs（抓取四平台 → 时长富集（B站季分集接口 / 腾讯卡片 / 优酷 show_page+播放页 / 爱奇艺 avlistinfo 分集接口）→ 短条目保留 + AI 短剧关键词/评论区启发式兜底 + 豆瓣甄别（优酷/爱奇艺缺失时长条目，限额防反爬）→ SVIP 抢先去重 → 最新集解析（B站排期 ep 直达/黑名单回退最新正片、优酷直达剧集页 show_page、腾讯分集列表点击解析最新正片、爱奇艺 avlistinfo 正片直达）→ 下周预计排期（未完结条目 +7 天推导）→ 写 data/updates.json）
-  → vite build → actions/deploy-pages 发布 dist/
+  → 历史归档（data/history.json，滚动保留 8 周真实条目）→ git 回写 main（[skip ci] bot 提交，供前端运行时刷新与历史导航）
+  → vite build（含 PWA manifest + Service Worker）→ actions/deploy-pages 发布 dist/
 ```
 
 前端「短剧过滤」开关（默认开启、阈值可调 1/3/5/10/15 分钟）：仅隐藏展示，数据仍保留，关闭后可见全部条目；过滤开启即隐藏用户手动屏蔽的剧集，以及优酷名称含断句标点（、，。：；）的 AI 短剧条目。
 
-前端构建时读取 `data/updates.json`（结构与 `AnimeItem` 契约一致，仓库内为最近一次同步结果）。单平台抓取失败时输出 `error` 字段并沿用上次成功数据，只有完全无法产出数据时同步才退出非零。
+前端构建时读取 `data/updates.json`（结构与 `AnimeItem` 契约一致）；「刷新」按钮运行时拉取 raw.githubusercontent 最新数据（jsDelivr 兜底），对比 `generatedAt` 后更新页面。单平台抓取失败时输出 `error` 字段并沿用上次成功数据，只有完全无法产出数据时同步才退出非零。
+
+## 云同步配置（可选）
+
+不配置时站点以纯本地 localStorage 模式运行，全部功能可用。需要跨设备同步时：
+
+1. 在 [Supabase](https://supabase.com) 创建免费项目，打开 **Authentication → Sign In / Up → Providers**，开启 **Allow anonymous sign-ins**（匿名登录）。
+2. 在项目 **SQL Editor** 中执行 `supabase/schema.sql`（4 张表 + RLS 策略，匿名/邮箱用户只能读写自己的行）。
+3. 复制项目 **Project URL** 与 **anon public key**：本地写入 `.env.local`（参照 `.env.example`），CI 在仓库 Settings → Secrets and variables → Actions → Variables 注入 `VITE_SUPABASE_URL`、`VITE_SUPABASE_ANON_KEY`（公开 anon key 配合 RLS 是安全的）。
+4. 首次访问会自动创建匿名身份；设置弹层（Header 云朵图标）可绑定邮箱升级为邮箱身份，实现真正跨设备。
+
+> 隐私说明：清空浏览器站点数据后匿名身份凭证丢失、云端匿名数据无法找回，请绑定邮箱或定期在「追番」页导出 JSON。
 
 ## 目录结构
 
@@ -51,6 +72,9 @@ src/                  React 前端（tokens / 组件 / 数据契约）
   styles.css          设计 tokens 与组件样式（源自已审批 G0 原型）
 scripts/             数据管道（sync.mjs 编排 + 四平台抓取器 + shared 工具）
 data/updates.json    最近一次同步结果（npm run sync / Actions 生成）
+data/history.json    历史周归档（最近 8 周真实条目，前端多周导航懒加载）
+supabase/schema.sql  匿名云同步表结构与 RLS 策略
+tests/               Vitest 单元测试（日期/筛选/短剧过滤/断更/历史归档/同步合并）
 outputs/design/       G0 设计原型交付物（可交互原型、PNG、设计规范）
 work/                 本地中间产物（不入库）
 ```
@@ -69,4 +93,5 @@ MIT。数据版权归各平台，仅供个人追番参考，请勿商用。
 
 - M3 高保真 QA 已通过：逐屏对照台账见 `outputs/design/qa/保真度台账-M3.md`，应用截图见 `outputs/design/qa/`（与 `outputs/design/` 原型图同屏状态可逐张比对）。
 - 自动化覆盖：桌面/移动断点矩阵（375/390/360/768）、状态栅（骨架/失败/空态/深色）、追番增删与导出导入、日历三视图与范围切换、移动滑动、键盘、触控命中区、卡片最新集跳转、真实海报加载、无控制台错误。
-- 已知取舍：追番/屏蔽数据仅存本机 localStorage；平台抓取依赖对方页面结构，改版时按「失败即保留上次数据」降级并在 Actions 日志告警；「下周预计排期」为按本周排期推导的启发式预测（`predicted` 标记），以平台实际更新为准。
+- M5 迭代（迭代计划书 v1，见 `outputs/迭代计划书-v1.md`）：新增 Vitest 单测（`pnpm test`）+ 浏览器验证脚本（`work/verify-m5.mjs`：PWA/SW、搜索筛选、周导航、断更、同步状态、断点矩阵、零控制台错误）。
+- 已知取舍：平台抓取依赖对方页面结构，改版时按「失败即保留上次数据」降级并在 Actions 日志告警；「下周预计排期」为按本周排期推导的启发式预测（`predicted` 标记），以平台实际更新为准；历史归档自 M5 起逐步累积，缺失周显示空态；浏览器通知仅在网站打开时有效（无后台推送服务）。
