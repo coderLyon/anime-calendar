@@ -17,6 +17,7 @@
 - 总集数（`total` 字段）：B站 season API `total`（缺省回退已更新集数）、优酷 show_page `episodeTotal`、爱奇艺 avlistinfo `data.total`；腾讯仅「全N集」文案（连载中剧集平台未公开计划总集数，不做推断）。前端 `formatTotal` 按平台单位展示「共N集/话」。
 - 优酷直达链接：卡片 URL 一律用 `show_page/id_{showId}.html`（浏览器会落到该动漫播放页）；`previewInfo.videoId` 是预览短片（片花/预告）**不可**作为直达链接。
 - 时长富集：B站季分集接口 `api.bilibili.com/pgc/view/web/season?season_id=`（毫秒，按 episode_id 匹配、正片最新集兜底）；腾讯分集接口 `pbaccess.video.qq.com/.../GetPageData`（`vsite_episode_list`，每集秒级 duration，按集数匹配、非花絮最新集兜底）；优酷 show_page 内联时长（秒/ISO 8601）优先 + 播放页 `pageMap.extra.duration` 兜底，连续请求触发 `_____tmd_____/punish` 反爬时按「慢速 1.2s + 挑战页冷却重试 + 挑战页带出真实 videoId 转播放页 + Playwright 浏览器兜底」降级；爱奇艺专辑分集接口 `pcw-api.iqiyi.com/albums/album/avlistinfo?aid=`（按集数匹配、最新集兜底）。
+- 爱奇艺周表抓取：**频道接口优先** `prelw/portal/lw/v5/channel/cartoon`（qyMesh 包装内「追番表」模块，jmd_Mon~Sun 7 组含 title/dq_updatestatus/album_id/page_url/poster，按 block_id 映射星期、本周一 + weekday 定日期）；接口缺失或星期分组校验失败才回退浏览器逐日点击（见「回归防复发」）。专辑 ID 富集键：`albumId`（接口路径）→ 卡片 URL `album_id`（base64）→ 标题。
 - 内容类型排除：标题含「动态漫/AI动漫/泡面番」（AI 生成短剧）的条目在同步时直接丢弃并记入 `warnings`（与时长无关）；爱奇艺另以评论区「AI 关键字 + 负面情绪」启发式过滤（限流时优雅降级）；优酷/爱奇艺「时长缺失或 <1 分钟」条目追加豆瓣影视搜索甄别——精确命中且「暂无评分」丢弃（白名单保护正剧，如苏东坡与杭州的故事），未命中/查询失败保留，每次同步查询上限 10 次、间隔 2s（反爬约束，`scripts/douban.mjs`）；用户经评论区等渠道确认的 AI 短剧（如云月大陆）进人工黑名单无条件排除。
 - 腾讯更新规则：卡片下方「每周X…」规则文案入库为 `rule` 字段；SVIP 抢先去重仅限卡片文案含 SVIP 的相邻同日集重复。
 - 追番日历（日程/周/月）**不受短剧过滤影响**，按原始数据展示；月视图合并历史归档（`history.json`）实现整月数据。
@@ -44,6 +45,20 @@ Conventional Commits（`feat:` / `fix:` / `refactor:` / `chore:` / `docs:`）；
 - 除非用户明确要求不发布（如仅本地验证、草稿态），否则不得省略发布步骤。
 - 发布完成后在最终回复中给出推送哈希、Actions 运行链接与线上地址。
 
+## 发布前验证清单（硬性）
+
+发布前必须全量跑通以下回归（顺序执行，缺一不可）：
+
+1. `pnpm test` —— Vitest 47 项（日期/筛选/短剧过滤/断更/历史归档/同步合并/规则与总集数解析）；
+2. `pnpm build` —— tsc 类型检查 + vite 构建（esbuild 需读取上级目录，沙箱内若报错改用提权运行）；
+3. `node work/app-qa.mjs` —— 14 项浏览器回归（看板/过滤/追番/主题/日历/移动端/零控制台错误）；
+4. `node work/verify-m5.mjs`、`node work/verify-m5b.mjs` —— 22 项 + 25 项（PWA/同步状态/搜索筛选/断点矩阵/溢出）；
+5. `node work/m3-qa.mjs` —— 16 屏逐屏 QA（**需联网**，否则海报加载断言全挂）；
+6. `scripts/verify/`：`youku-today.mjs`（秒级）、`iqiyi-today.mjs`（接口通道秒级）、`tencent-duration.mjs`（约 6 分钟）、`data-fields.mjs`（秒级，total/rule 覆盖）；
+7. 线上抽查：部署 `state: success` + 首页/追番页无控制台错误（可复用 `work/live-check.mjs`）。
+
+沙箱限制备忘：vitest/build 因 esbuild 向上扫描目录需提权；浏览器脚本的图片断言需联网；git 写操作（add/commit/push）需提权；`work/` 下 `diag-*.mjs`、`probe-*.mjs` 为临时诊断脚本，不入库。
+
 ## 里程碑
 
 - G0 设计原型（已通过）
@@ -52,6 +67,7 @@ Conventional Commits（`feat:` / `fix:` / `refactor:` / `chore:` / `docs:`）；
 - M2 前端功能完善（追番/日历/移动端已在 M0 迁移中按审批设计落地，随 M3 统一验收）
 - M3 高保真 QA（已完成，台账 `outputs/design/qa/保真度台账-M3.md`）
 - M4 上线验证与 README 收尾（进行中/完成）
+- M5 迭代（计划书 `outputs/迭代计划书-v1.md` 已实施：匿名云同步/站内提醒/PWA/多周导航/搜索筛选/断更检测；此后为持续体验修复轮次，均需按「发布前验证清单」回归）
 
 ## 数据管道运维
 
@@ -59,3 +75,4 @@ Conventional Commits（`feat:` / `fix:` / `refactor:` / `chore:` / `docs:`）；
 - 定时任务：GitHub Actions cron `0 11,23 * * *`（UTC）= 北京 07:00/19:00；支持 `workflow_dispatch` 手动触发。
 - 单平台失败会沿用上次成功数据并写 `error` 字段；只有完全无法产出数据时才退出非零。
 - `pnpm-workspace.yaml` 的 `allowBuilds` 必须保留（esbuild 构建脚本，CI 安装依赖依赖它）。
+- GitHub Actions 版本基线为 Node 24 运行时：checkout@v7 / setup-node@v7 / cache@v6 / configure-pages@v6 / deploy-pages@v5 / upload-pages-artifact@v5 / pnpm-action-setup@v6。升级或回退时勿重新引入 Node 20 弃用警告。

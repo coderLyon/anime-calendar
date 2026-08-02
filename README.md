@@ -41,7 +41,7 @@ GitHub Pages 静态前端 + GitHub Actions 定时数据管道：
 ```
 Actions（cron 0 11,23 * * * UTC + workflow_dispatch + push）
   → pnpm install --frozen-lockfile → playwright install chromium
-  → node scripts/sync.mjs（抓取四平台（爱奇艺当天 tab 不重复点击 + 遮罩清理；优酷「今」tab 锚定日期）→ 时长/总集数/更新规则富集（B站季分集接口 total + new_ep.desc 排期 / 腾讯 GetPageData 分集接口（每集秒级 duration，按 vid/集数精确匹配；总集数仅「全N集」文案）/ 优酷 show_page episodeTotal + 星期 Tab 排期，慢速+冷却重试+Playwright 浏览器兜底 / 爱奇艺 avlistinfo 分集接口 total + 星期 Tab 排期）→ 短条目保留 + AI 短剧关键词/评论区启发式兜底 + 豆瓣甄别（优酷/爱奇艺缺失时长条目，限额防爬）→ SVIP 抢先去重 → 最新集解析（B站排期 ep 直达/黑名单回退最新正片、优酷直达剧集页 show_page、腾讯分集列表点击解析最新正片、爱奇艺 avlistinfo 正片直达）→ 下周预计排期（未完结条目 +7 天推导）→ 四平台「今天无条目」自检告警 → 写 data/updates.json）
+  → node scripts/sync.mjs（抓取四平台（爱奇艺**频道接口优先**：`prelw/portal/lw/v5/channel/cartoon` 的「追番表」模块一次性返回 jmd_Mon~Sun 整周数据，接口缺失/校验失败才回退浏览器逐日点击，避免「今天 tab」历史复发；优酷「今」tab 锚定日期）→ 时长/总集数/更新规则富集（B站季分集接口 total + new_ep.desc 排期 / 腾讯 GetPageData 分集接口（每集秒级 duration，按 vid/集数精确匹配；总集数仅「全N集」文案）/ 优酷 show_page episodeTotal + 星期 Tab 排期，慢速+冷却重试+Playwright 浏览器兜底 / 爱奇艺频道接口星期分组 + avlistinfo 分集接口 total）→ 短条目保留 + AI 短剧关键词/评论区启发式兜底 + 豆瓣甄别（优酷/爱奇艺缺失时长条目，限额防爬）→ SVIP 抢先去重 → 最新集解析（B站排期 ep 直达/黑名单回退最新正片、优酷直达剧集页 show_page、腾讯分集列表点击解析最新正片、爱奇艺 avlistinfo 正片直达）→ 下周预计排期（未完结条目 +7 天推导）→ 四平台「今天无条目」自检告警 → 写 data/updates.json）
   → 历史归档（data/history.json，滚动保留 8 周真实条目）→ git 回写 main（[skip ci] bot 提交，供前端运行时刷新与历史导航）
   → vite build（含 PWA manifest + Service Worker）→ actions/deploy-pages 发布 dist/
 ```
@@ -85,6 +85,7 @@ work/                 本地中间产物（不入库）
 - 仓库：公开仓库 `anime-calendar`，默认分支 `main`。
 - Pages：Settings → Pages → Source = **GitHub Actions**（由工作流产物部署）。
 - `vite.config.ts` 的 `base` 与仓库名一致（`/anime-calendar/`）。
+- Actions 版本基线：全部使用 Node 24 运行时（checkout@v7 / setup-node@v7 / cache@v6 / configure-pages@v6 / deploy-pages@v5 / upload-pages-artifact@v5 / pnpm-action-setup@v6），升级或回退版本时避免重新引入 Node 20 弃用警告。
 
 ## 许可
 
@@ -95,4 +96,5 @@ MIT。数据版权归各平台，仅供个人追番参考，请勿商用。
 - M3 高保真 QA 已通过：逐屏对照台账见 `outputs/design/qa/保真度台账-M3.md`，应用截图见 `outputs/design/qa/`（与 `outputs/design/` 原型图同屏状态可逐张比对）。
 - 自动化覆盖：桌面/移动断点矩阵（375/390/360/768）、状态栅（骨架/失败/空态/深色）、追番增删与导出导入、日历三视图与范围切换、移动滑动、键盘、触控命中区、卡片最新集跳转、真实海报加载、无控制台错误。
 - M5 迭代（迭代计划书 v1，见 `outputs/迭代计划书-v1.md`）：新增 Vitest 单测（`pnpm test`）+ 浏览器验证脚本（`work/verify-m5.mjs`：PWA/SW、搜索筛选、周导航、断更、同步状态、断点矩阵、零控制台错误）。
-- 已知取舍：平台抓取依赖对方页面结构，改版时按「失败即保留上次数据」降级并在 Actions 日志告警，且 `sync.mjs` 内置四平台「今天无条目」自检（CI 输出 warning），发布前运行 `scripts/verify/` 回归脚本（详见 `scripts/verify/README.md`，历史教训：爱奇艺「今天」/优酷「今」tab 多次回归）；「下周预计排期」为按本周排期推导的启发式预测（`predicted` 标记），以平台实际更新为准；历史归档自 M5 起逐步累积，缺失周显示空态；浏览器通知仅在网站打开时有效（无后台推送服务）；总集数：B站/优酷/爱奇艺可取平台计划总集数，腾讯仅已完结剧（「全N集」文案）展示，连载中剧集平台未公开计划总集数；优酷/爱奇艺更新规则为星期排期推导（无具体时间），腾讯/B站为平台原文。
+- 发布前回归清单（`AGENTS.md` 亦收录）：`pnpm test`（Vitest 47 项）→ `pnpm build` → `work/app-qa.mjs`（14 项）→ `work/verify-m5.mjs`（22 项）→ `work/verify-m5b.mjs`（25 项）→ `work/m3-qa.mjs`（16 屏，需联网验证海报）→ `scripts/verify/`（youku-today / iqiyi-today / tencent-duration / data-fields）→ 线上抽查（部署 state=success + 首页/追番页无控制台错误）。
+- 已知取舍：平台抓取依赖对方页面结构，改版时按「失败即保留上次数据」降级并在 Actions 日志告警，且 `sync.mjs` 内置四平台「今天无条目」自检（CI 输出 warning），发布前运行 `scripts/verify/` 回归脚本（详见 `scripts/verify/README.md`，历史教训：爱奇艺「今天」/优酷「今」tab 多次回归，现以频道接口优先根治）；「下周预计排期」为按本周排期推导的启发式预测（`predicted` 标记），以平台实际更新为准；历史归档自 M5 起逐步累积，缺失周显示空态；浏览器通知仅在网站打开时有效（无后台推送服务）；总集数：B站/优酷/爱奇艺可取平台计划总集数，腾讯仅已完结剧（「全N集」文案）展示，连载中剧集平台未公开计划总集数；优酷/爱奇艺更新规则为星期排期推导（无具体时间），腾讯/B站为平台原文。
