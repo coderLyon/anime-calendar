@@ -92,7 +92,7 @@ export function keepCurrentWeek(items, warnings) {
  * 精确命中且暂无评分 → 疑似 AI 短剧丢弃；精确命中且已有评分 → 保留；未命中/查询失败 → 保留。
  * 反爬约束：每次同步豆瓣查询全局上限 10 次、间隔 2s，命中验证码时 fail-open。
  */
-async function doubanShortDramaFilter(items, platform, warnings, { log }) {
+export async function doubanShortDramaFilter(items, platform, warnings, { log }) {
   if (platform !== "youku" && platform !== "iqiyi") return items;
   const suspicious = items.filter((i) => i.duration == null || (i.duration > 0 && i.duration < 60));
   if (!suspicious.length) return items;

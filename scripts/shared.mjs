@@ -171,3 +171,27 @@ export function createCache() {
 export function log(platform, msg) {
   console.log(`[${platform}] ${msg}`);
 }
+
+const WK_CN = ["一", "二", "三", "四", "五", "六", "日"];
+
+/**
+ * 每周更新规则推导（优酷/爱奇艺共用）：同一标题在星期 Tab 出现的天集合
+ * → 「每周X更新」/「每日更新」。仅表达平台排期，不含具体时间。
+ */
+export function weeklyRuleFor(items) {
+  const byTitle = new Map();
+  for (const it of items) {
+    const days = byTitle.get(it.title) ?? new Set();
+    days.add(it.weekday);
+    byTitle.set(it.title, days);
+  }
+  const out = new Map();
+  for (const [title, days] of byTitle) {
+    if (days.size >= 7) {
+      out.set(title, "每日更新");
+      continue;
+    }
+    out.set(title, `每周${[...days].sort((a, b) => a - b).map((d) => WK_CN[d - 1]).join("、")}更新`);
+  }
+  return out;
+}

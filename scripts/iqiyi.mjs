@@ -3,7 +3,7 @@
  * 入口：https://www.iqiyi.com/dongman/，逐日点击星期 tab 收集日历卡片。
  */
 import { chromium } from "playwright";
-import { addDays, createCache, httpsImg, isBlocked, mondayOfWeekBeijing, ymd } from "./shared.mjs";
+import { addDays, createCache, httpsImg, isBlocked, mondayOfWeekBeijing, weeklyRuleFor, ymd } from "./shared.mjs";
 
 export const PLATFORM = "iqiyi";
 export const LABEL = "爱奇艺";
@@ -12,6 +12,15 @@ const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
 const WEEKDAYS = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"];
 const INVALID_TEXT_RE = /即将上线|敬请期待|马上看|预约|限时/;
+const FINISHED_RE = /(大结局|完结|已完结|全\s*\d+\s*(集|话)|\d+\s*(集|话)\s*全)/;
+
+/** 卡片原文更新规则：截取「每周X…更新」片段并规整（如「每周二、六10：00各更新一集」→「每周二、六10：00更新」） */
+function ruleOf(text) {
+  const m = String(text ?? "").match(/每[周日天][^，。；;]{0,36}?更新/);
+  if (!m) return null;
+  const s = m[0].replace(/(?:免费|会员|抢先看)?\s*各?更新\s*[0-9一二两三四五六七八九十]*\s*集?$/, "更新").trim();
+  return s.length >= 3 && s.length <= 40 ? s : null;
+}
 
 export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
   let browser;
@@ -67,22 +76,23 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
 
       let cards;
       if (isActive) {
-        // 当天默认已加载：直接读取；为空时等待「追番表」模块出现，仍空才 force 点击重载
+        // 当天默认已加载：直接读取；为空时滚动+等待多次重试（禁止直接 force 点击激活 tab，
+        // 历史根因：重复点击激活 tab 触发重新加载清空卡片）
         cards = await readCards();
-        if (!cards.length) {
-          try {
-            await page.waitForSelector("[class*=followCalendarCard]", { timeout: 8000 });
-          } catch {
-            /* 容器未出现也不阻塞，继续重试读取 */
-          }
-          await page.waitForTimeout(600);
+        for (let attempt = 0; attempt < 4 && !cards.length; attempt++) {
+          await page.waitForTimeout(1200);
+          await page.evaluate(() => {
+            window.scrollBy(0, 280);
+            document.querySelector("[class*=followCalendarCard]")?.scrollIntoView({ block: "center" });
+          }).catch(() => {});
+          dismissOverlay(page);
           cards = await readCards();
-          if (!cards.length) {
-            await clickTab(page, tab);
-            await page.waitForTimeout(1800);
-            dismissOverlay(page);
-            cards = await readCards();
-          }
+        }
+        if (!cards.length) {
+          // 兜底：先切到其他星期再切回目标日（避免对激活 tab 直接 force 点击）
+          await switchAwayAndBack(page, tabLoc, d);
+          cards = await readCards();
+          if (!cards.length) log(`${label} 兜底切换后仍无卡片`);
         }
       } else {
         await clickTab(page, tab);
@@ -94,6 +104,11 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
           await page.evaluate(() => window.scrollBy(0, 260));
           await page.waitForTimeout(2500);
           cards = await readCards();
+          if (!cards.length) {
+            // 同样走「切走再切回」恢复（部分变体点击后首次渲染为空）
+            await switchAwayAndBack(page, tabLoc, d);
+            cards = await readCards();
+          }
         }
       }
 
@@ -117,12 +132,25 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
           svip: false,
           url: c.url ? httpsImg(c.url) : "",
           badge: null,
+          rule: ruleOf(c.text),
           duration: null,
         });
       }
     }
 
     if (!items.length) throw new Error("未解析到任何周更卡片");
+    // 更新规则：按星期 Tab 排期推导（平台卡片无规则文案）；已完结不生成
+    const rulesByTitle = weeklyRuleFor(items);
+    for (const it of items) {
+      if (FINISHED_RE.test(`${it.episode ?? ""} ${it.badge ?? ""}`)) {
+        // 已完结剧不展示周更规则（卡片原文可能是开播期排期，如「首播3集，每周二9:00更新」）
+        delete it.rule;
+        continue;
+      }
+      if (it.rule) continue; // 卡片原文规则优先（如「每周二、六10：00更新」）
+      const r = rulesByTitle.get(it.title);
+      if (r) it.rule = r;
+    }
     await enrichDurations(items, { fetchLimit, log });
     const filtered = await classifyAiShorts(items, { fetchLimit, log });
     if (filtered.length !== items.length) log(`AI 短剧评论判定过滤：${items.length - filtered.length} 条`);
@@ -194,12 +222,13 @@ async function enrichDurations(items, { fetchLimit, log }) {
     }
     const url = (n != null ? r.byUrl.get(n) : undefined) ?? r.latestUrl;
     if (url) it.url = url; // 正片直达（原卡片链接多为 PV/预告）
+    if (r.total != null) it.total = r.total;
   }
   log(`时长富集完成：抓取 ${fetched} 专辑，命中 ${hit}/${items.length} 条`);
 }
 
 /**
- * 拉取专辑全部分集（分页 200/页，最多 3 页覆盖年番），返回 { byDur, byUrl, latestDur, latestUrl }。
+ * 拉取专辑全部分集（分页 200/页，最多 3 页覆盖年番），返回 { byDur, byUrl, latestDur, latestUrl, total }。
  * 只保留正片：优先按 contentType===1 过滤（部分专辑末尾会混入预告/片花/PV），
  * contentType 缺失时按「第N集/话」标题兜底，避免把预告当作最新集。
  */
@@ -208,6 +237,7 @@ async function fetchAlbumDurations(aid) {
   const byUrl = new Map();
   let latestDur = null;
   let latestUrl = null;
+  let total = null;
   for (let page = 1; page <= 3; page++) {
     const res = await fetch(`https://pcw-api.iqiyi.com/albums/album/avlistinfo?aid=${encodeURIComponent(aid)}&page=${page}&size=200`, {
       headers: { "user-agent": UA, referer: "https://www.iqiyi.com/", accept: "application/json" },
@@ -216,6 +246,8 @@ async function fetchAlbumDurations(aid) {
     if (!res.ok) throw new Error(`avlistinfo HTTP ${res.status}`);
     const j = await res.json().catch(() => null);
     if (!j || j.code !== "A00000") throw new Error("avlistinfo 响应异常");
+    const t = Number(j.data?.total);
+    if (Number.isFinite(t) && t > 0) total = t;
     const list = (j.data?.epsodelist ?? []).filter((e) => {
       if (e.contentType != null && e.contentType !== "") return String(e.contentType) === "1";
       return /第\s*\d+\s*(集|话)/.test(String(e.name ?? ""));
@@ -236,7 +268,7 @@ async function fetchAlbumDurations(aid) {
     if (list.length < 200) break;
   }
   if (!byDur.size) throw new Error("分集列表无时长字段");
-  return { byDur, byUrl, latestDur, latestUrl };
+  return { byDur, byUrl, latestDur, latestUrl, total };
 }
 
 /** 评论区 AI 负面反馈特征：同一条评论同时含 AI 关键字与负面情绪词 */
@@ -324,4 +356,18 @@ async function clickTab(page, tab) {
       }
     }
   }
+}
+
+/** 切到其他星期再切回目标日：用于激活日读空/点击后未渲染时的恢复 */
+async function switchAwayAndBack(page, tabLoc, d) {
+  const count = await tabLoc.count().catch(() => 0);
+  const other = count > 1 ? tabLoc.nth((d + 1) % count) : null;
+  if (other) {
+    await clickTab(page, other).catch(() => {});
+    await page.waitForTimeout(1500);
+    dismissOverlay(page);
+  }
+  await clickTab(page, tabLoc.nth(d));
+  await page.waitForTimeout(1800);
+  dismissOverlay(page);
 }

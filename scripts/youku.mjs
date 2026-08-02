@@ -3,13 +3,14 @@
  * 入口：GET https://www.youku.com/ku/webcomic，解析 window.__INITIAL_DATA__ 的「每日更新」模块
  * （KU_FLIX_MULTI_TAB_A：tabList 7 个星期 tab + itemList 7 个数组一一对应）
  */
-import { createCache, extractAssignedObject, fetchText, httpsImg, mondayOfWeekBeijing, parseJsObject, ymd } from "./shared.mjs";
+import { createCache, extractAssignedObject, fetchText, httpsImg, mondayOfWeekBeijing, parseJsObject, weeklyRuleFor, ymd } from "./shared.mjs";
 
 export const PLATFORM = "youku";
 export const LABEL = "优酷";
 
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const FINISHED_RE = /(大结局|完结|已完结|全\s*\d+\s*(话|集)|\d+\s*(话|集)\s*全)/;
 
 export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
   const html = await fetchText("https://www.youku.com/ku/webcomic", { referer: "https://www.youku.com/" });
@@ -60,6 +61,16 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
   }
 
   if (!items.length) throw new Error("「每日更新」未解析到条目");
+
+  // 更新规则：按「每日更新」7 天 Tab 排期推导（如「每周二、四更新」/「每日更新」）；
+  // 已完结剧集不生成规则（避免把一次性放送误写成周更）
+  const rulesByTitle = weeklyRuleFor(items);
+  for (const it of items) {
+    if (it.rule) continue;
+    if (FINISHED_RE.test(`${it.episode ?? ""} ${it.badge ?? ""}`)) continue;
+    const r = rulesByTitle.get(it.title);
+    if (r) it.rule = r;
+  }
 
   const deduped = dedupSvip(items, log);
   await enrichDurations(deduped, { fetchLimit, log });
@@ -137,6 +148,13 @@ export function extractDurations(html) {
   return max >= 1 ? Math.round(max * 100) / 100 : null;
 }
 
+/** show_page 内联总集数（如 "episodeTotal":129） */
+export function extractEpisodeTotal(html) {
+  const m = String(html ?? "").match(/"episodeTotal"\s*:\s*(\d+)/);
+  const n = m ? Number(m[1]) : null;
+  return n && n > 0 ? n : null;
+}
+
 /**
  * 时长富集：show_page 页面内联时长。
  * 反爬对策（2026-08 实测：连续请求约 3~5 次后 show_page 返回 _____tmd_____/punish 挑战页）：
@@ -147,6 +165,7 @@ export function extractDurations(html) {
  */
 async function enrichDurations(items, { fetchLimit, log }) {
   const results = new Map();
+  const totals = new Map();
   const uniq = [...new Map(items.map((i) => [i.title, i])).values()].slice(0, Math.max(fetchLimit, 80));
   const failed = [];
   for (const it of uniq) {
@@ -155,6 +174,8 @@ async function enrichDurations(items, { fetchLimit, log }) {
     try {
       const pageHtml = await fetchShowPage(it.url, log);
       dur = extractDurations(pageHtml);
+      const tot = extractEpisodeTotal(pageHtml);
+      if (tot != null) totals.set(it.title, tot);
     } catch (err) {
       realVid = err?.realVid ?? null;
       log(`show_page 富集失败 ${it.title}: ${err.message}`);
@@ -184,6 +205,8 @@ async function enrichDurations(items, { fetchLimit, log }) {
         const pageHtml = await fetchShowPage(it.url, log);
         const d = extractDurations(pageHtml);
         if (d != null) results.set(it.title, d);
+        const t = extractEpisodeTotal(pageHtml);
+        if (t != null) totals.set(it.title, t);
       } catch (err) {
         log(`二次重试失败 ${it.title}: ${err.message}`);
       }
@@ -194,19 +217,21 @@ async function enrichDurations(items, { fetchLimit, log }) {
   const stillMissing = uniq.filter((it) => results.get(it.title) == null);
   if (stillMissing.length) {
     log(`仍缺时长 ${stillMissing.length} 条，启动浏览器兜底…`);
-    await enrichViaBrowser(stillMissing, results, log);
+    await enrichViaBrowser(stillMissing, results, totals, log);
   }
 
   for (const it of items) {
     const dur = results.get(it.title);
     if (dur !== undefined) it.duration = dur;
+    const tot = totals.get(it.title);
+    if (tot !== undefined) it.total = tot;
   }
   const okCount = [...results.values()].filter((v) => v != null).length;
   log(`时长富集完成：尝试 ${uniq.length} 部，成功 ${okCount} 部`);
 }
 
 /** Playwright 浏览器兜底：真实浏览器执行反爬挑战后取完整 HTML（CI 已安装 chromium） */
-async function enrichViaBrowser(items, results, log) {
+async function enrichViaBrowser(items, results, totals, log) {
   let browser;
   try {
     const { chromium } = await import("playwright");
@@ -221,12 +246,11 @@ async function enrichViaBrowser(items, results, log) {
         await page.waitForTimeout(1500);
         const html = await page.evaluate(() => document.documentElement.outerHTML);
         const dur = extractDurations(html);
-        if (dur != null) {
-          results.set(it.title, dur);
-          log(`浏览器兜底成功 ${it.title}: ${dur}s`);
-        } else {
-          log(`浏览器兜底无时长字段 ${it.title}`);
-        }
+        const tot = extractEpisodeTotal(html);
+        if (dur != null) results.set(it.title, dur);
+        if (tot != null) totals.set(it.title, tot);
+        if (dur != null || tot != null) log(`浏览器兜底成功 ${it.title}: ${dur ?? "-"}s 共${tot ?? "-"}话`);
+        else log(`浏览器兜底无时长/总集数字段 ${it.title}`);
       } catch (err) {
         log(`浏览器兜底失败 ${it.title}: ${err.message}`);
       }

@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { extractDurations } from "../scripts/youku.mjs";
 import { parseEpisodeList } from "../scripts/tencent.mjs";
+import { extractEpisodeTotal } from "../scripts/youku.mjs";
+import { weeklyRuleFor } from "../scripts/shared.mjs";
 
 describe("优酷时长提取", () => {
   it("数值秒（含小数）", () => {
@@ -27,6 +29,33 @@ describe("优酷时长提取", () => {
   it("无时长字段返回 null", () => {
     expect(extractDurations("<html>无字段</html>")).toBeNull();
     expect(extractDurations("")).toBeNull();
+  });
+
+  it("show_page 内联总集数 episodeTotal", () => {
+    expect(extractEpisodeTotal('"episodeTotal":129')).toBe(129);
+    expect(extractEpisodeTotal('"episodeTotal":0')).toBeNull();
+    expect(extractEpisodeTotal("<html>无字段</html>")).toBeNull();
+  });
+});
+
+describe("每周更新规则推导（优酷/爱奇艺共用）", () => {
+  it("单日更新", () => {
+    const items = [{ title: "仙逆", weekday: 2 }];
+    expect(weeklyRuleFor(items).get("仙逆")).toBe("每周二更新");
+  });
+
+  it("多日更新按星期排序合并", () => {
+    const items = [
+      { title: "沧元图", weekday: 1 },
+      { title: "沧元图", weekday: 5 },
+      { title: "沧元图", weekday: 1 },
+    ];
+    expect(weeklyRuleFor(items).get("沧元图")).toBe("每周一、五更新");
+  });
+
+  it("七天全覆盖 → 每日更新", () => {
+    const items = [1, 2, 3, 4, 5, 6, 7].map((weekday) => ({ title: "年番", weekday }));
+    expect(weeklyRuleFor(items).get("年番")).toBe("每日更新");
   });
 });
 

@@ -141,6 +141,8 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
                   ? `第${epMatch[3]}${epMatch[4]}`
                   : epMatch[5] ?? "更新"
               : null,
+            // 「全X集」文案 = 已完结总集数（如「全234集」）；连载中剧集平台未公开计划总集数
+            total: epMatch && epMatch[3] && epMatch[4] ? Number(epMatch[3]) : null,
             text,
           };
         });
@@ -160,6 +162,7 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
           rule: c.rule,
           poster: c.poster,
           episode: c.episode ?? "",
+          total: c.total ?? null,
           updateTime: svipSlot && svipSlot.day === weekday ? fmt(svipSlot.h, svipSlot.min) : timeOf(c.text, weekday),
           date,
           weekday,
@@ -486,6 +489,17 @@ async function enrichTencentDurations(items, { fetchLimit = 60, log = () => {} }
           if (cidOf(item) === cid && item.duration == null) item.duration = pick.duration;
         }
         ok++;
+      }
+      // 完结剧总集数兜底：分集列表从第1集起且该条目无「全X集」文案时，
+      // 以列表最大正剧集数为总集数（连载中剧集不推断，避免把「已更新N集」误作总集数）
+      const real = list.filter((x) => !x.extra && x.epNum > 0);
+      const minEp = Math.min(...real.map((x) => x.epNum));
+      const maxEp = Math.max(...real.map((x) => x.epNum));
+      const isFinale = /大结局|结局点映/.test(`${it.episode ?? ""} ${it.badge ?? ""}`);
+      if (minEp === 1 && maxEp > 0 && isFinale) {
+        for (const item of items) {
+          if (cidOf(item) === cid && item.total == null) item.total = maxEp;
+        }
       }
     } catch (err) {
       log(`GetPageData 失败 ${it.title}: ${err.message}`);
