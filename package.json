@@ -8,9 +8,11 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "test": "vitest run",
     "sync": "node scripts/sync.mjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.111.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -20,6 +22,8 @@
     "@vitejs/plugin-react": "^4.3.4",
     "playwright": "^1.49.0",
     "typescript": "~5.6.2",
-    "vite": "^6.0.5"
+    "vite": "^6.0.5",
+    "vite-plugin-pwa": "^1.3.0",
+    "vitest": "^4.1.10"
   }
 }
