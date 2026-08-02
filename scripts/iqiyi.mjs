@@ -13,6 +13,10 @@ const UA =
 const WEEKDAYS = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"];
 const INVALID_TEXT_RE = /即将上线|敬请期待|马上看|预约|限时/;
 const FINISHED_RE = /(大结局|完结|已完结|全\s*\d+\s*(集|话)|\d+\s*(集|话)\s*全)/;
+/** 频道数据接口（页面 SSR/SPA 同源数据，返回 7 个星期分组，无需点击 tab） */
+const CHANNEL_API =
+  "https://www.iqiyi.com/prelw/portal/lw/v5/channel/cartoon?lwaFastKey=Page_cartoon_1&v=17.074.25935";
+const BLOCK_WD = { jmd_Mon: 1, jmd_Tues: 2, jmd_Wed: 3, jmd_Thur: 4, jmd_Fri: 5, jmd_Sat: 6, jmd_Sun: 7 };
 
 /** 卡片原文更新规则：截取「每周X…更新」片段并规整（如「每周二、六10：00各更新一集」→「每周二、六10：00更新」） */
 function ruleOf(text) {
@@ -23,6 +27,129 @@ function ruleOf(text) {
 }
 
 export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
+  // 接口优先：一次性取回 7 个星期分组，彻底规避「今天 tab 重复点击/虚拟化缺渲染」类回归；
+  // 接口结构变化时回退浏览器逐日点击。
+  try {
+    const items = await scrapeViaChannelApi({ log });
+    return await finalizeIqiyi(items, { fetchLimit, log });
+  } catch (err) {
+    log(`频道接口不可用，回退浏览器抓取：${err.message}`);
+    return scrapeViaBrowser({ fetchLimit, log });
+  }
+}
+
+/** 频道接口抓取：解析 qyMesh.preload 包装中的追番表模块（jmd_Mon~Sun 7 组） */
+async function scrapeViaChannelApi({ log = () => {} } = {}) {
+  const res = await fetch(CHANNEL_API, {
+    headers: { "user-agent": UA, referer: "https://www.iqiyi.com/dongman/", accept: "application/json, text/plain, */*" },
+    signal: AbortSignal.timeout(20000),
+  });
+  if (!res.ok) throw new Error(`channel API HTTP ${res.status}`);
+  const text = await res.text();
+  const brace = text.indexOf("{", text.indexOf("response:"));
+  if (brace < 0) throw new Error("channel API 响应无 response JSON");
+  let depth = 0;
+  let inStr = false;
+  let quote = "";
+  let end = -1;
+  for (let i = brace; i < text.length; i++) {
+    const c = text[i];
+    if (inStr) {
+      if (c === "\\") {
+        i++;
+        continue;
+      }
+      if (c === quote) inStr = false;
+      continue;
+    }
+    if (c === '"' || c === "'") {
+      inStr = true;
+      quote = c;
+      continue;
+    }
+    if (c === "{") depth++;
+    else if (c === "}") {
+      depth--;
+      if (depth === 0) {
+        end = i + 1;
+        break;
+      }
+    }
+  }
+  if (end < 0) throw new Error("channel API 响应括号不闭合");
+  const data = JSON.parse(text.slice(brace, end));
+  const mod = (data?.items ?? []).find((it) => it.title === "追番表");
+  const groups = mod?.video ?? [];
+  if (!Array.isArray(groups) || !groups.length) throw new Error("追番表模块缺失");
+
+  const monday = mondayOfWeekBeijing();
+  const now = new Date(Date.now() + 8 * 3600 * 1000);
+  const todayWd = ((now.getUTCDay() + 6) % 7) + 1;
+  const todayBlock = Object.keys(BLOCK_WD).find((k) => BLOCK_WD[k] === todayWd);
+  const dayGroups = groups.filter((g) => BLOCK_WD[g.block_id] && (g.data?.length ?? 0) > 0);
+  const todayGroup = groups.find((g) => g.block_id === todayBlock);
+  if (dayGroups.length < 5 || !todayGroup?.data?.length) {
+    throw new Error(`星期分组不完整（${dayGroups.length} 组，今天=${todayBlock}）`);
+  }
+
+  const items = [];
+  const seen = new Set();
+  for (const g of groups) {
+    const weekday = BLOCK_WD[g.block_id];
+    if (!weekday) continue;
+    const date = ymd(addDays(monday, weekday - 1));
+    for (const c of g.data ?? []) {
+      const title = String(c.title ?? "").trim();
+      if (!title) continue;
+      const epStatus = String(c.dq_updatestatus ?? "").trim();
+      // 未开播/预约卡片无集数状态（如「成也萧河」），跳过
+      if (!epStatus || INVALID_TEXT_RE.test(`${epStatus} ${title}`)) continue;
+      const key = `${date}:${title}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      const epMatch = epStatus.match(/更新至\s*(\d+)\s*(集|话)/);
+      items.push({
+        id: `iqiyi-${date}-${title}`,
+        platform: PLATFORM,
+        title,
+        poster: httpsImg(c.image_url_normal || c.image_cover || c.album_image_url_hover),
+        episode: epMatch ? `第${epMatch[1]}${epMatch[2]}` : epStatus,
+        updateTime: "",
+        date,
+        weekday,
+        svip: false,
+        url: String(c.page_url ?? ""),
+        badge: null,
+        albumId: c.album_id != null ? String(c.album_id) : null,
+        duration: null,
+      });
+    }
+  }
+  if (!items.length) throw new Error("频道接口无有效条目");
+  log(`频道接口抓取成功：${items.length} 条（7 个星期分组）`);
+  return items;
+}
+
+/** 公共收尾：更新规则 + 时长/总集数富集 + AI 短剧评论判定 */
+async function finalizeIqiyi(items, { fetchLimit, log }) {
+  const rulesByTitle = weeklyRuleFor(items);
+  for (const it of items) {
+    if (FINISHED_RE.test(`${it.episode ?? ""} ${it.badge ?? ""}`)) {
+      delete it.rule;
+      continue;
+    }
+    if (it.rule) continue;
+    const r = rulesByTitle.get(it.title);
+    if (r) it.rule = r;
+  }
+  await enrichDurations(items, { fetchLimit, log });
+  const filtered = await classifyAiShorts(items, { fetchLimit, log });
+  if (filtered.length !== items.length) log(`AI 短剧评论判定过滤：${items.length - filtered.length} 条`);
+  return { platform: PLATFORM, label: LABEL, items: filtered, fetchedAt: new Date().toISOString(), warnings: [] };
+}
+
+/** 浏览器抓取（接口不可用时的兜底）：逐日点击星期 tab 收集日历卡片 */
+async function scrapeViaBrowser({ fetchLimit = 40, log = () => {} } = {}) {
   let browser;
   let overlayTimer;
   try {
@@ -139,22 +266,7 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
     }
 
     if (!items.length) throw new Error("未解析到任何周更卡片");
-    // 更新规则：按星期 Tab 排期推导（平台卡片无规则文案）；已完结不生成
-    const rulesByTitle = weeklyRuleFor(items);
-    for (const it of items) {
-      if (FINISHED_RE.test(`${it.episode ?? ""} ${it.badge ?? ""}`)) {
-        // 已完结剧不展示周更规则（卡片原文可能是开播期排期，如「首播3集，每周二9:00更新」）
-        delete it.rule;
-        continue;
-      }
-      if (it.rule) continue; // 卡片原文规则优先（如「每周二、六10：00更新」）
-      const r = rulesByTitle.get(it.title);
-      if (r) it.rule = r;
-    }
-    await enrichDurations(items, { fetchLimit, log });
-    const filtered = await classifyAiShorts(items, { fetchLimit, log });
-    if (filtered.length !== items.length) log(`AI 短剧评论判定过滤：${items.length - filtered.length} 条`);
-    return { platform: PLATFORM, label: LABEL, items: filtered, fetchedAt: new Date().toISOString(), warnings: [] };
+    return finalizeIqiyi(items, { fetchLimit, log });
   } finally {
     if (overlayTimer) clearInterval(overlayTimer);
     if (browser) await browser.close().catch(() => {});
@@ -195,10 +307,10 @@ function epNum(episode) {
  */
 async function enrichDurations(items, { fetchLimit, log }) {
   const cache = createCache();
-  const uniq = [...new Map(items.map((i) => [albumOf(i.url) ?? i.title, i])).values()];
+  const uniq = [...new Map(items.map((i) => [albumKeyOf(i), i])).values()];
   let fetched = 0;
   for (const it of uniq) {
-    const aid = albumOf(it.url) ?? it.title;
+    const aid = albumKeyOf(it);
     if (cache.get(aid) !== undefined) continue;
     if (fetched >= fetchLimit) break;
     fetched++;
@@ -211,7 +323,7 @@ async function enrichDurations(items, { fetchLimit, log }) {
   }
   let hit = 0;
   for (const it of items) {
-    const aid = albumOf(it.url) ?? it.title;
+    const aid = albumKeyOf(it);
     const r = cache.get(aid);
     if (!r) continue;
     const n = epNum(it.episode);
@@ -225,6 +337,11 @@ async function enrichDurations(items, { fetchLimit, log }) {
     if (r.total != null) it.total = r.total;
   }
   log(`时长富集完成：抓取 ${fetched} 专辑，命中 ${hit}/${items.length} 条`);
+}
+
+/** 专辑 ID：接口路径直接带 album_id；DOM 路径从卡片 URL 的 album_id（base64）解码 */
+function albumKeyOf(it) {
+  return it.albumId ?? albumOf(it.url) ?? it.title;
 }
 
 /**
