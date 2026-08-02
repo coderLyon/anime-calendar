@@ -944,6 +944,11 @@ svg { display: block; }
   gap: 6px;
   align-items: center;
 }
+.filter-count {
+  color: var(--ink-3);
+  font-size: 12px;
+  white-space: nowrap;
+}
 .week-nav {
   display: flex;
   align-items: center;

@@ -115,6 +115,7 @@ export function HomeView({ platform, onPlatformChange, mode, onRetry, warn, onWa
             {weekRange} · 第{isoWeek(weekStart)}周 · 数据更新于 {relativeTime(GENERATED_AT)}
             <span title={updatedAt}>（{updatedAt}）</span> · 数据源：哔哩哔哩 / 腾讯视频 / 优酷 / 爱奇艺
           </div>
+          <div className="board-meta">今日高亮 · 共 {counts.all} 条更新 · 点击卡片直达最新正剧集</div>
         </div>
         <WeekNav offset={weekOffset} min={WEEK_MIN} max={WEEK_MAX} onChange={setWeekOffset} />
       </div>
@@ -129,7 +130,7 @@ export function HomeView({ platform, onPlatformChange, mode, onRetry, warn, onWa
         <SearchBox value={query} onChange={setQuery} inputRef={searchRef} />
         <FilterChips badges={badges} ongoingOnly={ongoingOnly} onChange={(b, o) => { setBadges(b); setOngoingOnly(o); }} />
         <div className="grow" />
-        <span className="board-meta">{query || badges.size || ongoingOnly ? `匹配 ${matchedTotal} 条` : `共 ${counts.all} 条更新`}</span>
+        <span className="filter-count">{query || badges.size || ongoingOnly ? `匹配 ${matchedTotal} 条` : ""}</span>
       </div>
       {weekMissing ? <div className="board-note">该周暂无历史归档数据（归档自 M5 起逐步累积），显示为空属正常。</div> : null}
       {mode === "empty" ? (
