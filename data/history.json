@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T19:48:17.435Z",
+  "updatedAt": "2026-08-02T20:01:27.143Z",
   "weeks": [
     {
       "weekStart": "2026-08-03",
@@ -377,14 +377,14 @@
           "id": "youku-afbe218f2b834b8698e7-2026-08-03",
           "platform": "youku",
           "title": "轩辕小豆之山海奇缘",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/7b3336744fd04f2d8781ce8ee8e02cc5.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/896395a00d194bf79ff5813005f0aaf8.webp.jpg",
           "episode": "第68话",
           "updateTime": "10:00",
           "date": "2026-08-03",
           "weekday": 1,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_afbe218f2b834b8698e7.html",
-          "videoId": "XNjUzODU4OTQ5Ng==",
+          "videoId": "XNjQ1OTA2MDM0OA==",
           "badge": "逐集限免",
           "duration": 193.84,
           "rule": "每周一、四更新",
@@ -1153,14 +1153,14 @@
           "id": "youku-afbe218f2b834b8698e7-2026-08-06",
           "platform": "youku",
           "title": "轩辕小豆之山海奇缘",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/7b3336744fd04f2d8781ce8ee8e02cc5.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/896395a00d194bf79ff5813005f0aaf8.webp.jpg",
           "episode": "第68话",
           "updateTime": "10:00",
           "date": "2026-08-06",
           "weekday": 4,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_afbe218f2b834b8698e7.html",
-          "videoId": "XNjUzODU4OTQ5Ng==",
+          "videoId": "XNjQ1OTA2MDM0OA==",
           "badge": "逐集限免",
           "duration": 193.84,
           "rule": "每周一、四更新",
@@ -1575,7 +1575,7 @@
           "id": "youku-ebbc85b6c57d404792f9-2026-08-07",
           "platform": "youku",
           "title": "斗罗大陆3龙王传说 合集",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/030c8a9fc00f4d9e97dfb7b928b47a79.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/d1cf6e44aeb54fa9ab7204555aefc72d.webp.jpg",
           "episode": "第148话",
           "updateTime": "12:00",
           "date": "2026-08-07",
@@ -2600,7 +2600,7 @@
           "svip": false,
           "url": "https://www.iqiyi.com/v_1oumus5zd0c.html",
           "badge": null,
-          "rule": "每周二09:00更新",
+          "rule": "每周二更新",
           "duration": 618,
           "total": 39
         },
@@ -2616,7 +2616,7 @@
           "svip": false,
           "url": "https://www.iqiyi.com/v_zvxgzwn76s.html",
           "badge": null,
-          "rule": "每周二、六10：00更新",
+          "rule": "每周二、六更新",
           "duration": 519,
           "total": 11
         },
@@ -2632,8 +2632,8 @@
           "svip": false,
           "url": "https://www.iqiyi.com/v_217s19gbgt8.html",
           "badge": null,
-          "duration": 344,
           "rule": "每周三、五更新",
+          "duration": 344,
           "total": 3
         },
         {
@@ -2648,8 +2648,8 @@
           "svip": false,
           "url": "https://www.iqiyi.com/v_24pfonhrybs.html",
           "badge": null,
-          "duration": 1123,
           "rule": "每周三更新",
+          "duration": 1123,
           "total": 4
         },
         {
@@ -2664,8 +2664,8 @@
           "svip": false,
           "url": "https://www.iqiyi.com/v_25bq4fy52s0.html",
           "badge": null,
-          "duration": 540,
           "rule": "每周三更新",
+          "duration": 540,
           "total": 3
         },
         {
@@ -2680,7 +2680,7 @@
           "svip": false,
           "url": "https://www.iqiyi.com/v_u7762y3qwk.html",
           "badge": null,
-          "rule": "每周三周日10:00更新",
+          "rule": "每周三、日更新",
           "duration": 675,
           "total": 200
         },
@@ -2696,7 +2696,7 @@
           "svip": false,
           "url": "https://www.iqiyi.com/v_130sz2hgu8k.html",
           "badge": null,
-          "rule": "每周三、日上午9点更新",
+          "rule": "每周三、日更新",
           "duration": 577,
           "total": 18
         },
@@ -2712,7 +2712,7 @@
           "svip": false,
           "url": "https://www.iqiyi.com/v_137v61lis80.html",
           "badge": null,
-          "rule": "每周四9:00更新",
+          "rule": "每周四更新",
           "duration": 1167,
           "total": 49
         },
@@ -2728,8 +2728,8 @@
           "svip": false,
           "url": "https://www.iqiyi.com/v_1hjxu5cpcwg.html",
           "badge": null,
-          "duration": 623,
           "rule": "每周四、日更新",
+          "duration": 623,
           "total": 6
         },
         {
@@ -2744,7 +2744,7 @@
           "svip": false,
           "url": "https://www.iqiyi.com/v_1sdcx3vcpgc.html",
           "badge": null,
-          "rule": "每周四09:00更新",
+          "rule": "每周四更新",
           "duration": 540,
           "total": 187
         },
@@ -2760,7 +2760,7 @@
           "svip": false,
           "url": "https://www.iqiyi.com/v_25lf3hhfkzg.html",
           "badge": null,
-          "rule": "每周四上午10:00点更新",
+          "rule": "每周四更新",
           "duration": 582,
           "total": 4
         },
@@ -2776,7 +2776,7 @@
           "svip": false,
           "url": "https://www.iqiyi.com/v_hx1wvh4wuc.html",
           "badge": null,
-          "rule": "每周五9:00更新",
+          "rule": "每周五更新",
           "duration": 1228,
           "total": 85
         },
@@ -2792,7 +2792,7 @@
           "svip": false,
           "url": "https://www.iqiyi.com/v_217s19gbgt8.html",
           "badge": null,
-          "rule": "每周三/周五9:00更新",
+          "rule": "每周三、五更新",
           "duration": 344,
           "total": 3
         },
@@ -2808,7 +2808,7 @@
           "svip": false,
           "url": "https://www.iqiyi.com/v_1oujltu3mhk.html",
           "badge": null,
-          "rule": "每周一周五10:00更新",
+          "rule": "每周五更新",
           "duration": 643,
           "total": 203
         },
@@ -2824,8 +2824,8 @@
           "svip": false,
           "url": "https://www.iqiyi.com/v_lwooq5vjb8.html",
           "badge": null,
-          "duration": 251,
           "rule": "每周五更新",
+          "duration": 251,
           "total": 65
         },
         {
@@ -2840,7 +2840,7 @@
           "svip": false,
           "url": "https://www.iqiyi.com/v_p30xovctuw.html",
           "badge": null,
-          "rule": "每周六9:00更新",
+          "rule": "每周六更新",
           "duration": 1220,
           "total": 6
         },
@@ -2888,8 +2888,8 @@
           "svip": false,
           "url": "https://www.iqiyi.com/v_zvxgzwn76s.html",
           "badge": null,
-          "duration": 519,
           "rule": "每周二、六更新",
+          "duration": 519,
           "total": 11
         },
         {
@@ -2936,7 +2936,7 @@
           "svip": false,
           "url": "https://www.iqiyi.com/v_xu7nasv4bc.html",
           "badge": null,
-          "rule": "每周日9:00更新",
+          "rule": "每周日更新",
           "duration": 1132,
           "total": 23
         },
@@ -2952,7 +2952,7 @@
           "svip": false,
           "url": "https://www.iqiyi.com/v_u7762y3qwk.html",
           "badge": null,
-          "rule": "每周三周日10:00更新",
+          "rule": "每周三、日更新",
           "duration": 675,
           "total": 200
         },
@@ -2968,8 +2968,8 @@
           "svip": false,
           "url": "https://www.iqiyi.com/v_1hjxu5cpcwg.html",
           "badge": null,
-          "duration": 623,
           "rule": "每周四、日更新",
+          "duration": 623,
           "total": 6
         },
         {
@@ -3115,6 +3115,22 @@
           "duration": 4700,
           "total": 1,
           "finished": true
+        },
+        {
+          "id": "iqiyi-2026-08-09-启运丹田：开局签到至尊丹田",
+          "platform": "iqiyi",
+          "title": "启运丹田：开局签到至尊丹田",
+          "poster": "https://pic1.iqiyipic.com/image/20250930/ab/c2/a_100571636_m_601_m7_318_424.avif",
+          "episode": "第17集",
+          "updateTime": "",
+          "date": "2026-08-09",
+          "weekday": 7,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_130sz2hgu8k.html",
+          "badge": null,
+          "rule": "每周三、日更新",
+          "duration": 577,
+          "total": 18
         }
       ]
     },
