@@ -1,11 +1,21 @@
 import { ChevronRightIcon } from "../lib/icons";
 import { itemsOn } from "../lib/items";
+import { applyFilters, type ItemFilters } from "../lib/filters";
 import { normTitle, useFollows } from "../store/follows";
 import { TODAY } from "../store/data";
+import type { PlatformFilter } from "../types";
 
-export function TodayStrip({ onOpenCalendar }: { onOpenCalendar: () => void }) {
+export function TodayStrip({
+  platform,
+  filters,
+  onOpenCalendar,
+}: {
+  platform: PlatformFilter;
+  filters: ItemFilters;
+  onOpenCalendar: () => void;
+}) {
   const { follows } = useFollows();
-  const todayItems = itemsOn(TODAY, "all").filter((i) => follows[normTitle(i.title)]);
+  const todayItems = applyFilters(itemsOn(TODAY, platform), filters).filter((i) => follows[normTitle(i.title)]);
   return (
     <div className="today-strip">
       <span className="today-strip-label">今日追番更新 · {todayItems.length}</span>

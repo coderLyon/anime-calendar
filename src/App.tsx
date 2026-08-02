@@ -3,6 +3,9 @@ import { Header } from "./components/Header";
 import { useToast } from "./components/Toast";
 import { loadTheme, saveTheme, type Theme } from "./store/theme";
 import { useFollows } from "./store/follows";
+import { refreshFromRemote } from "./store/data";
+import { initSync, syncAll } from "./lib/sync";
+import { queueSettingsChange } from "./lib/syncQueue";
 import type { Mode, Page, PlatformFilter } from "./types";
 import { CalendarView } from "./views/CalendarView";
 import { FollowView } from "./views/FollowView";
@@ -35,27 +38,47 @@ export function App() {
     saveTheme(theme);
   }, [theme]);
 
+  useEffect(() => {
+    initSync();
+    const onVisible = () => {
+      if (document.visibilityState === "visible") void syncAll();
+    };
+    const onRemoteTheme = () => setTheme(loadTheme());
+    document.addEventListener("visibilitychange", onVisible);
+    window.addEventListener("anime-calendar:theme-remote", onRemoteTheme);
+    const iv = window.setInterval(() => void syncAll(), 30 * 60 * 1000);
+    return () => {
+      document.removeEventListener("visibilitychange", onVisible);
+      window.removeEventListener("anime-calendar:theme-remote", onRemoteTheme);
+      window.clearInterval(iv);
+    };
+  }, []);
+
   const runRefresh = useCallback(() => {
     setPage("home");
     setMode("skeleton");
-    window.setTimeout(() => {
+    void refreshFromRemote().then((ok) => {
       setMode("normal");
       setWarn(true);
-      toast("数据已更新");
-    }, 1300);
+      toast(ok ? "数据已更新" : "已使用本地数据（刷新源不可用）");
+    });
   }, [toast]);
 
   return (
     <>
+      <a className="skip-link" href="#main">跳到主要内容</a>
       <Header
         page={page}
         followCount={count}
         theme={theme}
         onNavigate={setPage}
-        onToggleTheme={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
+        onToggleTheme={() => {
+          setTheme((t) => (t === "dark" ? "light" : "dark"));
+          queueSettingsChange();
+        }}
         onRefresh={runRefresh}
       />
-      <main className="container page">
+      <main id="main" className="container page">
         {page === "home" ? (
           <HomeView
             platform={platform}

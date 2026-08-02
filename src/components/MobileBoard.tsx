@@ -2,29 +2,34 @@ import { useRef } from "react";
 import { addDays, sameDay, WEEK_CN } from "../lib/date";
 import { BanIcon, StarIcon } from "../lib/icons";
 import { itemsOn } from "../lib/items";
+import { applyFilters, type ItemFilters } from "../lib/filters";
+import { formatDuration } from "../lib/items";
 import { platShort } from "../lib/platforms";
 import { posterGlyph, posterStyle } from "../lib/poster";
 import { useBlocked } from "../store/blocked";
 import { useFollows } from "../store/follows";
-import { TODAY, WEEK_START } from "../store/data";
+import { TODAY } from "../store/data";
 import type { Mode, PlatformFilter } from "../types";
 import { useToast } from "./Toast";
 
 interface MobileBoardProps {
   platform: PlatformFilter;
   mode: Mode;
+  weekStart: Date;
+  filters: ItemFilters;
   day: number;
   onDayChange: (d: number) => void;
 }
 
-export function MobileBoard({ platform, mode, day, onDayChange }: MobileBoardProps) {
+export function MobileBoard({ platform, mode, weekStart, filters, day, onDayChange }: MobileBoardProps) {
+  const dur = (sec?: number | null) => formatDuration(sec);
   const { isFollowed, toggle } = useFollows();
   const { isBlocked, toggle: toggleBlock } = useBlocked();
   const toast = useToast();
   const touchX = useRef<number | null>(null);
 
-  const date = addDays(WEEK_START, day - 1);
-  const items = mode === "empty" ? [] : itemsOn(date, platform);
+  const date = addDays(weekStart, day - 1);
+  const items = mode === "empty" ? [] : applyFilters(itemsOn(date, platform), filters);
 
   const onTouchStart = (e: React.TouchEvent) => {
     touchX.current = e.touches[0].clientX;
@@ -42,10 +47,10 @@ export function MobileBoard({ platform, mode, day, onDayChange }: MobileBoardPro
     <div className="m-board" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
       <div className="m-tabs">
         {Array.from({ length: 7 }, (_, i) => {
-          const d = addDays(WEEK_START, i);
+          const d = addDays(weekStart, i);
           const wd = i + 1;
           const isToday = sameDay(d, TODAY);
-          const count = itemsOn(d, platform).length;
+          const count = applyFilters(itemsOn(d, platform), filters).length;
           return (
             <button key={wd} data-mday={wd} className={`m-tab ${day === wd ? "active" : ""}`} onClick={() => onDayChange(wd)}>
               <span className="dow">
@@ -126,6 +131,7 @@ export function MobileBoard({ platform, mode, day, onDayChange }: MobileBoardPro
                       <div className="m-meta">
                         <span className={`plat-dot ${item.platform}`} />
                         {item.episode}
+                        {dur(item.duration) ? ` · ${dur(item.duration)}` : ""}
                       </div>
                       <div className="m-time">{WEEK_CN[(item.weekday ?? 0) - 1] ?? ""}{item.updateTime ? ` ${item.updateTime}` : ""} 更新</div>
                       <div className="m-tags">

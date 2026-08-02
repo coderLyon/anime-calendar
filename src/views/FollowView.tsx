@@ -1,9 +1,14 @@
-import { useRef, useState } from "react";
-import { ChevronLeftIcon, DownloadIcon, ExternalIcon, SearchIcon, UploadIcon } from "../lib/icons";
+import { useMemo, useRef, useState } from "react";
+import { BellIcon, ChevronLeftIcon, DownloadIcon, ExternalIcon, SearchIcon, UploadIcon } from "../lib/icons";
+import { WEEK_CN } from "../lib/date";
 import { PLATFORMS, platShort, PlatformLogo } from "../lib/platforms";
 import { posterGlyph, posterStyle } from "../lib/poster";
 import { posterForTitle } from "../lib/items";
+import { missKey, missedWeek, type MissedEntry } from "../lib/missed";
+import { readIgnoreMissed, writeIgnoreMissed } from "../lib/sync";
+import { queueSettingsChange } from "../lib/syncQueue";
 import { useFollows } from "../store/follows";
+import { ITEMS, useDataVersion } from "../store/data";
 import type { FollowItem, Page, PlatformKey } from "../types";
 import { EmptyState } from "../components/EmptyState";
 import { useToast } from "../components/Toast";
@@ -11,11 +16,32 @@ import { useToast } from "../components/Toast";
 type Filter = PlatformKey | "all";
 
 export function FollowView({ onNavigate }: { onNavigate: (p: Page) => void }) {
+  useDataVersion();
   const { follows, count, remove, exportJson, importJson } = useFollows();
   const toast = useToast();
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<Filter>("all");
+  const [ignoreVer, setIgnoreVer] = useState(0);
   const fileRef = useRef<HTMLInputElement>(null);
+
+  const ignore = useMemo(() => new Set(readIgnoreMissed()), [ignoreVer, follows]);
+  const missedByKey = useMemo(() => {
+    const map = new Map<string, MissedEntry[]>();
+    for (const m of missedWeek(follows, ITEMS, ignore)) {
+      const list = map.get(m.key) ?? [];
+      list.push(m);
+      map.set(m.key, list);
+    }
+    return map;
+  }, [follows, ITEMS, ignore]);
+
+  const onIgnoreMissed = (key: string, date: string) => {
+    const next = new Set(readIgnoreMissed());
+    next.add(missKey(key, date));
+    writeIgnoreMissed([...next]);
+    queueSettingsChange();
+    setIgnoreVer((v) => v + 1);
+  };
 
   const list = Object.values(follows)
     .filter((f) => {
@@ -96,7 +122,15 @@ export function FollowView({ onNavigate }: { onNavigate: (p: Page) => void }) {
       </div>
       <div className="follow-list">
         {list.length
-          ? list.map((f) => <FollowItemRow key={f.key} follow={f} onRemove={() => { remove(f.key); toast("已取消追番"); }} />)
+          ? list.map((f) => (
+              <FollowItemRow
+                key={f.key}
+                follow={f}
+                missed={missedByKey.get(f.key) ?? []}
+                onRemove={() => { remove(f.key); toast("已取消追番"); }}
+                onIgnoreMissed={onIgnoreMissed}
+              />
+            ))
           : (
               <EmptyState title="没有匹配的追番" desc="试试其他关键词或平台筛选；点星标即可把想追的番收进来">
                 <button className="btn primary" onClick={() => onNavigate("home")}>
@@ -109,10 +143,22 @@ export function FollowView({ onNavigate }: { onNavigate: (p: Page) => void }) {
   );
 }
 
-function FollowItemRow({ follow, onRemove }: { follow: FollowItem; onRemove: () => void }) {
+function FollowItemRow({
+  follow,
+  missed,
+  onRemove,
+  onIgnoreMissed,
+}: {
+  follow: FollowItem;
+  missed: MissedEntry[];
+  onRemove: () => void;
+  onIgnoreMissed: (key: string, date: string) => void;
+}) {
+  const { setNotify } = useFollows();
   const latest = [...follow.platforms].sort((a, b) => (b.updateTime ?? "").localeCompare(a.updateTime ?? ""))[0];
   const poster = posterForTitle(follow.title);
   const sorted = [...follow.platforms].sort((a, b) => a.platform.localeCompare(b.platform));
+  const notifyOn = follow.notify ?? true;
   return (
     <div className="follow-item">
       <div className="fi-head">
@@ -138,7 +184,25 @@ function FollowItemRow({ follow, onRemove }: { follow: FollowItem; onRemove: () 
           <div className="fi-sub">
             {follow.platforms.length} 个平台 · 最近更新：{latest ? `${latest.episode}${latest.updateTime ? ` · ${latest.updateTime}` : ""}` : "待同步"} · 加入于 {follow.followedAt || "-"}
           </div>
+          {missed.length ? (
+            <div className="missed-row">
+              <span className="tag missed">
+                疑似断更 {missed.length > 1 ? `${missed.length} 次` : WEEK_CN[missed[0].weekday - 1]}
+              </span>
+              <button className="btn ghost sm" onClick={() => onIgnoreMissed(missed[0].key, missed[0].date)}>
+                忽略
+              </button>
+            </div>
+          ) : null}
         </div>
+        <button
+          className={`notify-btn ${notifyOn ? "on" : ""}`}
+          aria-label={notifyOn ? "关闭更新提醒" : "开启更新提醒"}
+          title={notifyOn ? "更新提醒已开启，点击关闭" : "更新提醒已关闭，点击开启"}
+          onClick={() => setNotify(follow.key, !notifyOn)}
+        >
+          <BellIcon />
+        </button>
         <button
           className="star-btn on"
           aria-label="取消追番"

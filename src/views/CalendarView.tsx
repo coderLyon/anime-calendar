@@ -1,15 +1,18 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { EmptyState } from "../components/EmptyState";
 import { Segmented } from "../components/Segmented";
 import { useToast } from "../components/Toast";
 import { addDays, isoWeek, sameDay, wdOf, WEEK_CN } from "../lib/date";
 import { ChevronLeftIcon, ChevronRightIcon, ExternalIcon } from "../lib/icons";
 import { itemsOn } from "../lib/items";
+import { missKey, missedOn } from "../lib/missed";
 import { platShort } from "../lib/platforms";
 import { posterGlyph, posterStyle } from "../lib/poster";
 import { useShortFilterVersion } from "../lib/shortFilter";
+import { readIgnoreMissed, writeIgnoreMissed } from "../lib/sync";
+import { queueSettingsChange } from "../lib/syncQueue";
 import { normTitle, useFollows } from "../store/follows";
-import { TODAY } from "../store/data";
+import { ITEMS, TODAY, useDataVersion } from "../store/data";
 import type { AnimeItem, CalScope, CalView, Page } from "../types";
 
 function openItem(item: AnimeItem, toast: (m: string) => void) {
@@ -78,6 +81,7 @@ function CalItem({ item, toast }: { item: AnimeItem; toast: (m: string) => void 
 }
 
 export function CalendarView({ onNavigate }: { onNavigate: (p: Page) => void }) {
+  useDataVersion();
   const { follows } = useFollows();
   const toast = useToast();
   useShortFilterVersion();
@@ -85,12 +89,23 @@ export function CalendarView({ onNavigate }: { onNavigate: (p: Page) => void }) 
     const v = new URLSearchParams(location.search).get("view");
     return v === "schedule" || v === "month" ? v : "week";
   });
-  const [scope, setScope] = useState<CalScope>("follow");
+  const [scope, setScope] = useState<CalScope>(() => {
+    const s = new URLSearchParams(location.search).get("scope");
+    return s === "all" ? "all" : "follow";
+  });
   const [calDate, setCalDate] = useState<Date>(() => new Date(TODAY));
   const [calMonth, setCalMonth] = useState<Date>(() => new Date(TODAY.getFullYear(), TODAY.getMonth(), 1));
   const [weekSel, setWeekSel] = useState<number>(() => wdOf(TODAY));
   const [monthSel, setMonthSel] = useState<number>(() => TODAY.getDate());
   const touchX = useRef<number | null>(null);
+
+  useEffect(() => {
+    const sp = new URLSearchParams(location.search);
+    sp.set("p", "calendar");
+    sp.set("view", view);
+    sp.set("scope", scope);
+    window.history.replaceState(null, "", `${location.pathname}?${sp.toString()}`);
+  }, [view, scope]);
 
   const scopeItems = (d: Date) => itemsOn(d, "all").filter((i) => scope === "all" || follows[normTitle(i.title)]);
 
@@ -212,6 +227,7 @@ function renderSchedule(calDate: Date, scopeItems: (d: Date) => AnimeItem[], toa
         {items.length ? items.map((it) => <CalItem key={it.id} item={it} toast={toast} />) : (
           <EmptyState title={`${calDate.getMonth() + 1}月${calDate.getDate()}日无更新`} desc="这一天暂时没有追番更新，看看明日预告吧" />
         )}
+        <MissedBlock date={calDate} />
       </div>
       <div className="cal-panel">
         <h3>
@@ -343,6 +359,7 @@ function renderWeek(
         {selItems.length ? selItems.map((it) => <CalItem key={it.id} item={it} toast={toast} />) : (
           <EmptyState title="当日无更新" desc="换一天看看" />
         )}
+        <MissedBlock date={selDate} />
       </div>
     </>
   );
@@ -411,7 +428,40 @@ function renderMonth(
         {selItems.length ? selItems.map((it) => <CalItem key={it.id} item={it} toast={toast} />) : (
           <EmptyState title="当日无更新" desc="换一天看看" />
         )}
+        <MissedBlock date={selDate} />
       </div>
     </>
+  );
+}
+
+/** 断更检测展示：已追番剧按 rule 应更新却无条目时提示，可忽略（本地 + 云端设置） */
+function MissedBlock({ date }: { date: Date }) {
+  const { follows } = useFollows();
+  useDataVersion();
+  const [ver, setVer] = useState(0);
+  const ignore = useMemo(() => new Set(readIgnoreMissed()), [ver, follows]);
+  const entries = missedOn(date, follows, ITEMS, ignore);
+  if (!entries.length) return null;
+  const ignoreOne = (key: string, ds: string) => {
+    const next = new Set(readIgnoreMissed());
+    next.add(missKey(key, ds));
+    writeIgnoreMissed([...next]);
+    queueSettingsChange();
+    setVer((v) => v + 1);
+  };
+  return (
+    <div className="missed-block">
+      <span className="missed-title">疑似断更</span>
+      {entries.map((e) => (
+        <div key={missKey(e.key, e.date)} className="missed-item">
+          <span className={`plat-dot ${e.platform}`} />
+          <strong>{e.title}</strong>
+          <span className="hint">按规则 {WEEK_CN[e.weekday - 1]} 应更新未出现</span>
+          <button className="btn ghost sm" onClick={() => ignoreOne(e.key, e.date)}>
+            忽略
+          </button>
+        </div>
+      ))}
+    </div>
   );
 }

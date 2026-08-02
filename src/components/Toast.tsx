@@ -19,7 +19,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
   return (
     <ToastContext.Provider value={show}>
       {children}
-      <div className={`toast ${msg ? "show" : ""}`}>{msg}</div>
+      <div className={`toast ${msg ? "show" : ""}`} role="status" aria-live="polite">{msg}</div>
     </ToastContext.Provider>
   );
 }

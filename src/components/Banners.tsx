@@ -2,7 +2,7 @@ import { ErrIcon, WarnIcon } from "../lib/icons";
 
 export function WarnBanner({ onClose }: { onClose: () => void }) {
   return (
-    <div className="warn-banner">
+    <div className="warn-banner" role="status" aria-live="polite">
       <WarnIcon />
       <div className="warn-text">
         <span className="warn-title">数据提示：</span>
@@ -20,7 +20,7 @@ export function WarnBanner({ onClose }: { onClose: () => void }) {
 
 export function ErrorBanner({ onRetry }: { onRetry: () => void }) {
   return (
-    <div className="err-banner">
+    <div className="err-banner" role="status" aria-live="polite">
       <ErrIcon />
       <div>
         <b>腾讯视频抓取失败</b>（网络超时）—— 当前展示上次成功数据，稍后自动重试

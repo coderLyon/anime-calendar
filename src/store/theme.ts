@@ -19,3 +19,13 @@ export function saveTheme(t: Theme): void {
     /* ignore */
   }
 }
+
+/** 远端设置合并回本地主题：写存储并广播事件，App 监听后同步 React 状态 */
+export function applyRemoteTheme(t: Theme | null): void {
+  if (t === "light" || t === "dark") saveTheme(t);
+  try {
+    window.dispatchEvent(new Event("anime-calendar:theme-remote"));
+  } catch {
+    /* ignore */
+  }
+}

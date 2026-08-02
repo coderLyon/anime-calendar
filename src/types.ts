@@ -57,6 +57,10 @@ export interface FollowItem {
   title: string;
   platforms: FollowPlatform[];
   followedAt: string;
+  /** 最近一次变更时间（ISO），云同步 LWW 合并用；旧数据缺省时用 followedAt */
+  updatedAt?: string;
+  /** 逐剧更新提醒开关（默认开启，缺省视为 true） */
+  notify?: boolean;
 }
 
 export type FollowMap = Record<string, FollowItem>;
@@ -65,3 +69,22 @@ export type Page = "home" | "follow" | "calendar";
 export type Mode = "normal" | "skeleton" | "error" | "empty";
 export type CalView = "schedule" | "week" | "month";
 export type CalScope = "follow" | "all";
+
+export interface BlockedItem {
+  key: string;
+  title: string;
+  blockedAt: string;
+}
+
+export type BlockedMap = Record<string, BlockedItem>;
+
+/** data/history.json：多周导航的历史归档（真实条目，不含 predicted） */
+export interface HistoryWeek {
+  weekStart: string;
+  items: AnimeItem[];
+}
+
+export interface HistoryFile {
+  updatedAt: string | null;
+  weeks: HistoryWeek[];
+}

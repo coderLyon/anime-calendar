@@ -1,15 +1,9 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { setBlockedTitles } from "../lib/shortFilter";
+import { onRemoteApplied, queueChange } from "../lib/syncQueue";
+import type { BlockedMap } from "../types";
 
 const BLOCKED_KEY = "anime-calendar.blocked.v1";
-
-export interface BlockedItem {
-  key: string;
-  title: string;
-  blockedAt: string;
-}
-
-export type BlockedMap = Record<string, BlockedItem>;
 
 export function normKey(t: string): string {
   return String(t).replace(/[·：\s-]/g, "").toLowerCase();
@@ -53,16 +47,26 @@ export function BlockedProvider({ children }: { children: ReactNode }) {
     setBlockedTitles(Object.keys(blocked));
   }, [blocked]);
 
+  useEffect(
+    () =>
+      onRemoteApplied(() => {
+        setBlocked(loadBlocked());
+      }),
+    [],
+  );
+
   const isBlocked = useCallback((title: string) => !!blocked[normKey(title)], [blocked]);
 
   const toggle = useCallback((title: string) => {
     const key = normKey(title);
     setBlocked((prev) => {
       if (prev[key]) {
+        queueChange("blocked", key, "delete");
         const next = { ...prev };
         delete next[key];
         return next;
       }
+      queueChange("blocked", key, "upsert");
       return {
         ...prev,
         [key]: { key, title, blockedAt: new Date().toISOString().slice(0, 10) },
@@ -71,6 +75,7 @@ export function BlockedProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const remove = useCallback((key: string) => {
+    queueChange("blocked", key, "delete");
     setBlocked((prev) => {
       const next = { ...prev };
       delete next[key];

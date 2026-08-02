@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://coderlyon.github.io/anime-calendar/sitemap.xml

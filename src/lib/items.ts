@@ -35,3 +35,10 @@ export function posterForTitle(title: string): string | undefined {
   const k = norm(title);
   return ITEMS.find((i) => norm(i.title) === k)?.poster;
 }
+
+/** 时长展示：不足 60s 显示秒，否则约 N 分钟（M5 信息增强） */
+export function formatDuration(sec?: number | null): string | null {
+  if (sec == null || sec <= 0) return null;
+  if (sec < 60) return `约${Math.round(sec)}秒`;
+  return `约${Math.round(sec / 60)}分钟`;
+}

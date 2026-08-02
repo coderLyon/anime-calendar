@@ -51,6 +51,34 @@ export function SearchIcon(props: P) {
   );
 }
 
+export function BellIcon(props: P) {
+  return (
+    <svg {...base(props)}>
+      <path d="M12 3.5a5.8 5.8 0 0 0-5.8 5.8v2.9L4.8 15h14.4l-1.4-2.8V9.3A5.8 5.8 0 0 0 12 3.5Z" />
+      <path d="M9.6 18a2.4 2.4 0 0 0 4.8 0" />
+    </svg>
+  );
+}
+
+export function CloudIcon(props: P) {
+  return (
+    <svg {...base(props)}>
+      <path d="M6.6 18.5h10.7a3.9 3.9 0 0 0 .6-7.7 6.4 6.4 0 0 0-12.2 1.7 4.1 4.1 0 0 0 .9 6Z" />
+    </svg>
+  );
+}
+
+export function ShareIcon(props: P) {
+  return (
+    <svg {...base(props)}>
+      <circle cx="18" cy="5" r="2.4" />
+      <circle cx="6" cy="12" r="2.4" />
+      <circle cx="18" cy="19" r="2.4" />
+      <path d="m8.2 10.8 7.6-4.4M8.2 13.2l7.6 4.4" />
+    </svg>
+  );
+}
+
 export function DownloadIcon(props: P) {
   return (
     <svg {...base(props)}>
