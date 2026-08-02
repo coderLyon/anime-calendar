@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-02T20:22:01.450Z",
+  "generatedAt": "2026-08-02T20:35:43.029Z",
   "platforms": [
     {
       "platform": "bili",
@@ -766,7 +766,7 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-08-02T19:55:51.729Z",
+      "fetchedAt": "2026-08-02T20:24:26.800Z",
       "warnings": [
         "已保留 2 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "1 条时长无法确认已保留（平台未提供内联时长）",
@@ -4152,9 +4152,8 @@
       "error": "超时（>240s）",
       "fetchedAt": "2026-08-02T19:31:21.596Z",
       "warnings": [
-        "已保留 124 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "过滤 100 条不在本周（2026-08-03~2026-08-09）的条目",
-        "已按豆瓣判据排除 3 条疑似 AI 短剧（时长缺失/过短且豆瓣条目暂无评分）",
+        "已保留 118 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "过滤 97 条不在本周（2026-08-03~2026-08-09）的条目",
         "已生成下周预计排期 97 条（本周未完结条目 +7 天推导，前端标「预计」）"
       ]
     },
@@ -4351,7 +4350,7 @@
           "date": "2026-08-05",
           "weekday": 3,
           "svip": false,
-          "url": "https://v.qq.com/x/page/q4102zzulqo.html",
+          "url": "https://v.qq.com/x/cover/mzc00200dc4bx7d.html",
           "badge": "独播",
           "duration": 787
         },
@@ -4560,9 +4559,9 @@
           "date": "2026-08-08",
           "weekday": 6,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/yl6lapwmmx5ivew.html",
+          "url": "https://v.qq.com/x/page/l41026t6i5z.html",
           "badge": null,
-          "duration": 552
+          "duration": 472
         },
         {
           "id": "tencent-mzc002006n62s11-2026-08-08",
@@ -4720,9 +4719,9 @@
           "date": "2026-08-09",
           "weekday": 7,
           "svip": true,
-          "url": "https://v.qq.com/x/page/a4102p9fw7c.html",
+          "url": "https://v.qq.com/x/cover/mzc00200aaogpgh.html",
           "badge": "上新",
-          "duration": 1662
+          "duration": 1280
         },
         {
           "id": "tencent-mzc00200ilydv1a-2026-08-03-pred",
@@ -4906,7 +4905,7 @@
           "date": "2026-08-12",
           "weekday": 3,
           "svip": false,
-          "url": "https://v.qq.com/x/page/q4102zzulqo.html",
+          "url": "https://v.qq.com/x/cover/mzc00200dc4bx7d.html",
           "badge": "独播",
           "duration": 787,
           "predicted": true
@@ -5110,9 +5109,9 @@
           "date": "2026-08-15",
           "weekday": 6,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/yl6lapwmmx5ivew.html",
+          "url": "https://v.qq.com/x/page/l41026t6i5z.html",
           "badge": null,
-          "duration": 552,
+          "duration": 472,
           "predicted": true
         },
         {
@@ -5280,17 +5279,15 @@
           "date": "2026-08-16",
           "weekday": 7,
           "svip": true,
-          "url": "https://v.qq.com/x/page/a4102p9fw7c.html",
+          "url": "https://v.qq.com/x/cover/mzc00200aaogpgh.html",
           "badge": "上新",
-          "duration": 1662,
+          "duration": 1280,
           "predicted": true
         }
       ],
-      "error": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://v.qq.com/channel/cartoon\", waiting until \"domcontentloaded\"\n",
-      "fetchedAt": "2026-08-02T19:38:05.816Z",
+      "fetchedAt": "2026-08-02T20:35:21.867Z",
       "warnings": [
-        "已保留 9 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "过滤 33 条不在本周（2026-08-03~2026-08-09）的条目",
+        "已保留 5 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已生成下周预计排期 33 条（本周未完结条目 +7 天推导，前端标「预计」）",
         "2 条剧集已完结，不生成下周排期"
       ]
@@ -5347,7 +5344,7 @@
           "badge": null,
           "albumId": "2302717336669401",
           "duration": 135,
-          "rule": "每周一、二、三、四、五、日更新",
+          "rule": "每日更新",
           "total": 124
         },
         {
@@ -5419,20 +5416,20 @@
           "total": 11
         },
         {
-          "id": "iqiyi-2026-08-05-大千小镇",
+          "id": "iqiyi-2026-08-04-苍绝剑尊",
           "platform": "iqiyi",
           "title": "苍绝剑尊",
           "poster": "https://pic2.iqiyipic.com/image/20260617/e9/f5/a_100817470_m_601_m2_579_772.avif",
           "episode": "第124集",
           "updateTime": "",
-          "date": "2026-08-05",
-          "weekday": 3,
+          "date": "2026-08-04",
+          "weekday": 2,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_217s19gbgt8.html",
+          "url": "https://www.iqiyi.com/v_2fxxh48mhog.html",
           "badge": null,
           "albumId": "2302717336669401",
           "duration": 135,
-          "rule": "每周一、二、三、四、五、日更新",
+          "rule": "每日更新",
           "total": 124
         },
         {
@@ -5468,6 +5465,23 @@
           "duration": 344,
           "rule": "每周三、五更新",
           "total": 3
+        },
+        {
+          "id": "iqiyi-2026-08-05-李熊猫",
+          "platform": "iqiyi",
+          "title": "李熊猫",
+          "poster": "https://pic1.iqiyipic.com/image/20260717/87/b1/a_100790293_m_601_m4_579_772.avif",
+          "episode": "第3集",
+          "updateTime": "",
+          "date": "2026-08-05",
+          "weekday": 3,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_24pfonhrybs.html",
+          "badge": null,
+          "albumId": "4198235234784001",
+          "duration": 1123,
+          "rule": "每周三更新",
+          "total": 4
         },
         {
           "id": "iqiyi-2026-08-05-界门之下",
@@ -5534,7 +5548,7 @@
           "badge": null,
           "albumId": "2302717336669401",
           "duration": 135,
-          "rule": "每周一、二、三、四、五、日更新",
+          "rule": "每日更新",
           "total": 124
         },
         {
@@ -5555,6 +5569,23 @@
           "total": 48
         },
         {
+          "id": "iqiyi-2026-08-06-逆天邪神年番",
+          "platform": "iqiyi",
+          "title": "逆天邪神年番",
+          "poster": "https://pic0.iqiyipic.com/image/20260416/ff/0b/a_100613847_m_601_m4_579_772.avif",
+          "episode": "第48集",
+          "updateTime": "",
+          "date": "2026-08-06",
+          "weekday": 4,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_137v61lis80.html",
+          "badge": null,
+          "albumId": "8837962497879001",
+          "duration": 1167,
+          "rule": "每周四更新",
+          "total": 49
+        },
+        {
           "id": "iqiyi-2026-08-06-太古神尊",
           "platform": "iqiyi",
           "title": "太古神尊",
@@ -5572,22 +5603,6 @@
           "total": 6
         },
         {
-          "id": "iqiyi-2026-08-06-太古神尊",
-          "platform": "iqiyi",
-          "title": "太古神尊",
-          "poster": "https://pic5.iqiyipic.com/image/20260714/58/dd/a_101211018_m_601_m1_318_424.avif",
-          "episode": "第5集",
-          "updateTime": "",
-          "date": "2026-08-06",
-          "weekday": 4,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1hjxu5cpcwg.html",
-          "badge": null,
-          "rule": "每周四、日更新",
-          "duration": 623,
-          "total": 6
-        },
-        {
           "id": "iqiyi-2026-08-06-丹道至尊",
           "platform": "iqiyi",
           "title": "丹道至尊",
@@ -5597,11 +5612,12 @@
           "date": "2026-08-06",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1bsc8u64b8c.html",
+          "url": "https://www.iqiyi.com/v_1sdcx3vcpgc.html",
           "badge": null,
           "albumId": "8313346033482901",
-          "duration": null,
-          "rule": "每周四更新"
+          "duration": 540,
+          "rule": "每周四更新",
+          "total": 187
         },
         {
           "id": "iqiyi-2026-08-06-是王者啊？第6季",
@@ -5613,11 +5629,12 @@
           "date": "2026-08-06",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_2129d9acnv0.html",
+          "url": "https://www.iqiyi.com/v_25lf3hhfkzg.html",
           "badge": null,
           "albumId": "8457735886072001",
-          "duration": null,
-          "rule": "每周四更新"
+          "duration": 582,
+          "rule": "每周四更新",
+          "total": 4
         },
         {
           "id": "iqiyi-2026-08-06-苍绝剑尊",
@@ -5633,7 +5650,7 @@
           "badge": null,
           "albumId": "2302717336669401",
           "duration": 135,
-          "rule": "每周一、二、三、四、五、日更新",
+          "rule": "每日更新",
           "total": 124
         },
         {
@@ -5718,7 +5735,7 @@
           "badge": null,
           "albumId": "2302717336669401",
           "duration": 135,
-          "rule": "每周一、二、三、四、五、日更新",
+          "rule": "每日更新",
           "total": 124
         },
         {
@@ -5737,40 +5754,6 @@
           "duration": 1220,
           "rule": "每周六更新",
           "total": 6
-        },
-        {
-          "id": "iqiyi-2026-08-08-绝世战魂 第2季",
-          "platform": "iqiyi",
-          "title": "名侦探柯南 普通话",
-          "poster": "https://pic7.iqiyipic.com/image/20260206/82/3b/a_50167419_m_601_m97_579_772.avif",
-          "episode": "第1269集",
-          "updateTime": "",
-          "date": "2026-08-08",
-          "weekday": 6,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_zvxgzwn76s.html",
-          "badge": null,
-          "albumId": "106741901",
-          "duration": 1497,
-          "rule": "每周六更新",
-          "total": 1269
-        },
-        {
-          "id": "iqiyi-2026-08-08-名侦探柯南",
-          "platform": "iqiyi",
-          "title": "名侦探柯南",
-          "poster": "https://pic8.iqiyipic.com/image/20241024/90/03/a_100006957_m_601_m76_579_772.avif",
-          "episode": "第1269集",
-          "updateTime": "",
-          "date": "2026-08-08",
-          "weekday": 6,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_19rrnaxilc.html",
-          "badge": null,
-          "albumId": "202134201",
-          "duration": 1497,
-          "rule": "每周六更新",
-          "total": 1269
         },
         {
           "id": "iqiyi-2026-08-08-绝世战魂 第2季",
@@ -5805,6 +5788,23 @@
           "duration": 527,
           "rule": "每周六更新",
           "total": 5
+        },
+        {
+          "id": "iqiyi-2026-08-08-苍绝剑尊",
+          "platform": "iqiyi",
+          "title": "苍绝剑尊",
+          "poster": "https://pic2.iqiyipic.com/image/20260617/e9/f5/a_100817470_m_601_m2_579_772.avif",
+          "episode": "第124集",
+          "updateTime": "",
+          "date": "2026-08-08",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_2fxxh48mhog.html",
+          "badge": null,
+          "albumId": "2302717336669401",
+          "duration": 135,
+          "rule": "每日更新",
+          "total": 124
         },
         {
           "id": "iqiyi-2026-08-09-航海王",
@@ -5875,40 +5875,6 @@
           "total": 6
         },
         {
-          "id": "iqiyi-2026-08-09-假面骑士ZZZ 普通话",
-          "platform": "iqiyi",
-          "title": "假面骑士ZZZ 普通话",
-          "poster": "https://pic1.iqiyipic.com/image/20250827/92/9d/a_100671026_m_601_579_772.avif",
-          "episode": "第46集",
-          "updateTime": "",
-          "date": "2026-08-09",
-          "weekday": 7,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_r4mwgp2j4c.html",
-          "badge": null,
-          "albumId": "5354156221318801",
-          "duration": 1383,
-          "rule": "每周日更新",
-          "total": 46
-        },
-        {
-          "id": "iqiyi-2026-08-09-假面骑士ZZZ",
-          "platform": "iqiyi",
-          "title": "假面骑士ZZZ",
-          "poster": "https://pic5.iqiyipic.com/image/20250828/17/89/a_100671031_m_601_m1_579_772.avif",
-          "episode": "第46集",
-          "updateTime": "",
-          "date": "2026-08-09",
-          "weekday": 7,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1lw4kvpauqk.html",
-          "badge": null,
-          "albumId": "3294194324425101",
-          "duration": 1374,
-          "rule": "每周日更新",
-          "total": 46
-        },
-        {
           "id": "iqiyi-2026-08-09-启运丹田：开局签到至尊丹田",
           "platform": "iqiyi",
           "title": "启运丹田：开局签到至尊丹田",
@@ -5935,24 +5901,24 @@
           "date": "2026-08-09",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1hjxu5cpcwg.html",
+          "url": "https://www.iqiyi.com/v_2fxxh48mhog.html",
           "badge": null,
           "albumId": "2302717336669401",
           "duration": 135,
-          "rule": "每周一、二、三、四、五、日更新",
+          "rule": "每日更新",
           "total": 124
         },
         {
-          "id": "iqiyi-2026-08-09-启运丹田：开局签到至尊丹田",
+          "id": "iqiyi-2026-08-03-灵武大陆-pred",
           "platform": "iqiyi",
           "title": "灵武大陆",
           "poster": "https://pic0.iqiyipic.com/image/20250416/14/a8/a_100570241_m_601_m4_579_772.avif",
           "episode": "第203集",
           "updateTime": "",
-          "date": "2026-08-09",
-          "weekday": 7,
+          "date": "2026-08-10",
+          "weekday": 1,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_130sz2hgu8k.html",
+          "url": "https://www.iqiyi.com/v_1oujltu3mhk.html",
           "badge": null,
           "albumId": "4812694274119401",
           "duration": 643,
@@ -5992,7 +5958,7 @@
           "badge": null,
           "albumId": "2302717336669401",
           "duration": 135,
-          "rule": "每周一、二、三、四、五、日更新",
+          "rule": "每日更新",
           "total": 124,
           "predicted": true
         },
@@ -6051,20 +6017,20 @@
           "predicted": true
         },
         {
-          "id": "iqiyi-2026-08-05-大千小镇-pred",
+          "id": "iqiyi-2026-08-04-苍绝剑尊-pred",
           "platform": "iqiyi",
           "title": "苍绝剑尊",
           "poster": "https://pic2.iqiyipic.com/image/20260617/e9/f5/a_100817470_m_601_m2_579_772.avif",
           "episode": "第125集",
           "updateTime": "",
-          "date": "2026-08-12",
-          "weekday": 3,
+          "date": "2026-08-11",
+          "weekday": 2,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_217s19gbgt8.html",
+          "url": "https://www.iqiyi.com/v_2fxxh48mhog.html",
           "badge": null,
           "albumId": "2302717336669401",
           "duration": 135,
-          "rule": "每周一、二、三、四、五、日更新",
+          "rule": "每日更新",
           "total": 124,
           "predicted": true
         },
@@ -6102,6 +6068,24 @@
           "duration": 344,
           "rule": "每周三、五更新",
           "total": 3,
+          "predicted": true
+        },
+        {
+          "id": "iqiyi-2026-08-05-李熊猫-pred",
+          "platform": "iqiyi",
+          "title": "李熊猫",
+          "poster": "https://pic1.iqiyipic.com/image/20260717/87/b1/a_100790293_m_601_m4_579_772.avif",
+          "episode": "第4集",
+          "updateTime": "",
+          "date": "2026-08-12",
+          "weekday": 3,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_24pfonhrybs.html",
+          "badge": null,
+          "albumId": "4198235234784001",
+          "duration": 1123,
+          "rule": "每周三更新",
+          "total": 4,
           "predicted": true
         },
         {
@@ -6172,7 +6156,7 @@
           "badge": null,
           "albumId": "2302717336669401",
           "duration": 135,
-          "rule": "每周一、二、三、四、五、日更新",
+          "rule": "每日更新",
           "total": 124,
           "predicted": true
         },
@@ -6195,6 +6179,24 @@
           "predicted": true
         },
         {
+          "id": "iqiyi-2026-08-06-逆天邪神年番-pred",
+          "platform": "iqiyi",
+          "title": "逆天邪神年番",
+          "poster": "https://pic0.iqiyipic.com/image/20260416/ff/0b/a_100613847_m_601_m4_579_772.avif",
+          "episode": "第49集",
+          "updateTime": "",
+          "date": "2026-08-13",
+          "weekday": 4,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_137v61lis80.html",
+          "badge": null,
+          "albumId": "8837962497879001",
+          "duration": 1167,
+          "rule": "每周四更新",
+          "total": 49,
+          "predicted": true
+        },
+        {
           "id": "iqiyi-2026-08-06-太古神尊-pred",
           "platform": "iqiyi",
           "title": "太古神尊",
@@ -6213,23 +6215,6 @@
           "predicted": true
         },
         {
-          "id": "iqiyi-2026-08-06-太古神尊-pred",
-          "platform": "iqiyi",
-          "title": "太古神尊",
-          "poster": "https://pic5.iqiyipic.com/image/20260714/58/dd/a_101211018_m_601_m1_318_424.avif",
-          "episode": "第6集",
-          "updateTime": "",
-          "date": "2026-08-13",
-          "weekday": 4,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1hjxu5cpcwg.html",
-          "badge": null,
-          "rule": "每周四、日更新",
-          "duration": 623,
-          "total": 6,
-          "predicted": true
-        },
-        {
           "id": "iqiyi-2026-08-06-丹道至尊-pred",
           "platform": "iqiyi",
           "title": "丹道至尊",
@@ -6239,11 +6224,12 @@
           "date": "2026-08-13",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1bsc8u64b8c.html",
+          "url": "https://www.iqiyi.com/v_1sdcx3vcpgc.html",
           "badge": null,
           "albumId": "8313346033482901",
-          "duration": null,
+          "duration": 540,
           "rule": "每周四更新",
+          "total": 187,
           "predicted": true
         },
         {
@@ -6256,11 +6242,12 @@
           "date": "2026-08-13",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_2129d9acnv0.html",
+          "url": "https://www.iqiyi.com/v_25lf3hhfkzg.html",
           "badge": null,
           "albumId": "8457735886072001",
-          "duration": null,
+          "duration": 582,
           "rule": "每周四更新",
+          "total": 4,
           "predicted": true
         },
         {
@@ -6277,7 +6264,7 @@
           "badge": null,
           "albumId": "2302717336669401",
           "duration": 135,
-          "rule": "每周一、二、三、四、五、日更新",
+          "rule": "每日更新",
           "total": 124,
           "predicted": true
         },
@@ -6367,7 +6354,7 @@
           "badge": null,
           "albumId": "2302717336669401",
           "duration": 135,
-          "rule": "每周一、二、三、四、五、日更新",
+          "rule": "每日更新",
           "total": 124,
           "predicted": true
         },
@@ -6387,42 +6374,6 @@
           "duration": 1220,
           "rule": "每周六更新",
           "total": 6,
-          "predicted": true
-        },
-        {
-          "id": "iqiyi-2026-08-08-绝世战魂 第2季-pred",
-          "platform": "iqiyi",
-          "title": "名侦探柯南 普通话",
-          "poster": "https://pic7.iqiyipic.com/image/20260206/82/3b/a_50167419_m_601_m97_579_772.avif",
-          "episode": "第1270集",
-          "updateTime": "",
-          "date": "2026-08-15",
-          "weekday": 6,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_zvxgzwn76s.html",
-          "badge": null,
-          "albumId": "106741901",
-          "duration": 1497,
-          "rule": "每周六更新",
-          "total": 1269,
-          "predicted": true
-        },
-        {
-          "id": "iqiyi-2026-08-08-名侦探柯南-pred",
-          "platform": "iqiyi",
-          "title": "名侦探柯南",
-          "poster": "https://pic8.iqiyipic.com/image/20241024/90/03/a_100006957_m_601_m76_579_772.avif",
-          "episode": "第1270集",
-          "updateTime": "",
-          "date": "2026-08-15",
-          "weekday": 6,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_19rrnaxilc.html",
-          "badge": null,
-          "albumId": "202134201",
-          "duration": 1497,
-          "rule": "每周六更新",
-          "total": 1269,
           "predicted": true
         },
         {
@@ -6459,6 +6410,24 @@
           "duration": 527,
           "rule": "每周六更新",
           "total": 5,
+          "predicted": true
+        },
+        {
+          "id": "iqiyi-2026-08-08-苍绝剑尊-pred",
+          "platform": "iqiyi",
+          "title": "苍绝剑尊",
+          "poster": "https://pic2.iqiyipic.com/image/20260617/e9/f5/a_100817470_m_601_m2_579_772.avif",
+          "episode": "第125集",
+          "updateTime": "",
+          "date": "2026-08-15",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_2fxxh48mhog.html",
+          "badge": null,
+          "albumId": "2302717336669401",
+          "duration": 135,
+          "rule": "每日更新",
+          "total": 124,
           "predicted": true
         },
         {
@@ -6534,42 +6503,6 @@
           "predicted": true
         },
         {
-          "id": "iqiyi-2026-08-09-假面骑士ZZZ 普通话-pred",
-          "platform": "iqiyi",
-          "title": "假面骑士ZZZ 普通话",
-          "poster": "https://pic1.iqiyipic.com/image/20250827/92/9d/a_100671026_m_601_579_772.avif",
-          "episode": "第47集",
-          "updateTime": "",
-          "date": "2026-08-16",
-          "weekday": 7,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_r4mwgp2j4c.html",
-          "badge": null,
-          "albumId": "5354156221318801",
-          "duration": 1383,
-          "rule": "每周日更新",
-          "total": 46,
-          "predicted": true
-        },
-        {
-          "id": "iqiyi-2026-08-09-启运丹田：开局签到至尊丹田-pred",
-          "platform": "iqiyi",
-          "title": "假面骑士ZZZ",
-          "poster": "https://pic5.iqiyipic.com/image/20250828/17/89/a_100671031_m_601_m1_579_772.avif",
-          "episode": "第47集",
-          "updateTime": "",
-          "date": "2026-08-16",
-          "weekday": 7,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_130sz2hgu8k.html",
-          "badge": null,
-          "albumId": "3294194324425101",
-          "duration": 1374,
-          "rule": "每周日更新",
-          "total": 46,
-          "predicted": true
-        },
-        {
           "id": "iqiyi-2026-08-09-启运丹田：开局签到至尊丹田-pred",
           "platform": "iqiyi",
           "title": "启运丹田：开局签到至尊丹田",
@@ -6601,54 +6534,41 @@
           "badge": null,
           "albumId": "2302717336669401",
           "duration": 135,
-          "rule": "每周一、二、三、四、五、日更新",
+          "rule": "每日更新",
           "total": 124,
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-08-02T20:22:01.450Z",
+      "fetchedAt": "2026-08-02T20:35:43.029Z",
       "warnings": [
         "内容类型排除（动态漫/AI动漫/泡面番）：全民转职：驭龙师是最弱职业？ 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：江思先生 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：师尊：这个冲师逆徒才不是圣子 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：第一御兽师 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：逆天邪神 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：我是冥府判官，你跟我谈规则 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：末世求生：我能看到隐藏提示 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：剑魔转生：这群弟弟都弱爆了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：我在诡秘世界玩嗨了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：师尊：这个冲师逆徒才不是圣子 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全球惊悚：我开启外挂自选商城 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：第一御兽师 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：顶级气运，悄悄修练千年 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：精神病面前，鬼东西算个球 动态漫画 第1季",
-        "内容类型排除（动态漫/AI动漫/泡面番）：绝世武神 动态漫画 第8季",
         "内容类型排除（动态漫/AI动漫/泡面番）：亡灵天灾：我抬手百万骨海 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：遇强则强，我的修为无上限 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：绝世武神 动态漫画 第8季",
         "内容类型排除（动态漫/AI动漫/泡面番）：遇强则强，我的修为无上限 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：只有我能用召唤术 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：斗罗大陆4终极斗罗 动态漫画 合集",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：江思先生 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：亡灵天灾：我抬手百万骨海 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：末世钞能力者 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：精神病面前，鬼东西算个球 动态漫画 第1季",
         "内容类型排除（动态漫/AI动漫/泡面番）：我是冥府判官，你跟我谈规则 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：师尊：这个冲师逆徒才不是圣子 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
-        "已保留 10 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "4 条时长无法确认已保留（平台未提供内联时长）",
-        "已排除 35 条动态漫/AI动漫/泡面番条目",
-        "已按豆瓣判据排除 2 条疑似 AI 短剧（时长缺失/过短且豆瓣条目暂无评分）",
-        "2 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
-        "已生成下周预计排期 36 条（本周未完结条目 +7 天推导，前端标「预计」）",
+        "已保留 11 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "已排除 25 条动态漫/AI动漫/泡面番条目",
+        "已生成下周预计排期 35 条（本周未完结条目 +7 天推导，前端标「预计」）",
         "1 条剧集已完结，不生成下周排期"
       ]
     }
