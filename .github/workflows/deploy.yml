@@ -51,7 +51,7 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Sync data（四平台抓取 + 清洗 + 写 data/updates.json）
-        timeout-minutes: 12
+        timeout-minutes: 25
         run: node scripts/sync.mjs
 
       - name: Build

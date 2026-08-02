@@ -4,7 +4,7 @@
  * Chromium 不可用时降级 SSR（mzTitle/coverPic，无集数无日期，仅兜底）。
  */
 import { chromium } from "playwright";
-import { createCache, isBlocked, normUrl } from "./shared.mjs";
+import { CONTENT_BLOCKLIST, createCache, normUrl } from "./shared.mjs";
 
 export const PLATFORM = "tencent";
 export const LABEL = "腾讯视频";
@@ -125,7 +125,6 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
           const rule = ruleOf(text, title);
           const epMatch = text.match(EP_RE);
           const linkMatch = params.match(linkRe);
-          const svipSlot = svipSlotOf(text);
           return {
             cid: params.match(cidRe)?.[1] ?? null,
             vid: params.match(vidRe)?.[1] ?? null,
@@ -139,17 +138,18 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
                   ? `第${epMatch[3]}${epMatch[4]}`
                   : epMatch[5] ?? "更新"
               : null,
-            updateTime: svipSlot && svipSlot.day === cfg.weekday ? fmt(svipSlot.h, svipSlot.min) : timeOf(text, cfg.weekday),
-            svip: svipSlot ? svipSlot.day === cfg.weekday : text.includes("SVIP"),
             text,
           };
         });
-      }, { epRe: EP_RE.source, badgeRe: BADGE_RE.source, weekday });
+      }, { epRe: EP_RE.source });
       for (const c of cards) {
         if (!c.cid || !c.title) continue;
         const dedupKey = `${date}:${c.cid}`;
         if (seen.has(dedupKey)) continue;
         seen.add(dedupKey);
+        // 规则解析回到 Node 侧：浏览器回调内无法访问模块作用域函数
+        const svipSlot = svipSlotOf(c.text);
+        const svip = svipSlot ? svipSlot.day === weekday : c.text.includes("SVIP");
         items.push({
           id: `tencent-${c.cid}-${date}`,
           platform: PLATFORM,
@@ -157,11 +157,12 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
           rule: c.rule,
           poster: c.poster,
           episode: c.episode ?? "",
-          updateTime: c.updateTime ?? "",
+          updateTime: svipSlot && svipSlot.day === weekday ? fmt(svipSlot.h, svipSlot.min) : timeOf(c.text, weekday),
           date,
           weekday,
-          svip: c.svip,
-          url: c.vid ? `https://v.qq.com/x/page/${c.vid}.html` : `https://v.qq.com/x/cover/${c.cid}.html`,
+          svip,
+          // 一律走封面页解析最新正片：卡片 dt-params 的 vid 可能是预告/花絮，不能作为直达链接
+          url: `https://v.qq.com/x/cover/${c.cid}.html`,
           badge: c.text.match(BADGE_RE)?.[1] ?? null,
           duration: null,
         });
@@ -255,7 +256,7 @@ function dedupMonSunSameWeek(items, log) {
   return items.filter((i) => !remove.has(i));
 }
 
-/** 最新正剧集 URL 解析（extractLatestVid）：封面页富集，读落地 vid，按 (platform, cid) 缓存 */
+/** 最新正剧集 URL 解析（extractLatestVid）：封面页分集列表「点击」解析，按 cid 缓存 */
 async function resolveLatestVideos(items, browser, { fetchLimit, log }) {
   const cache = createCache();
   const cidOf = (i) => i.id.split("-")[1];
@@ -267,7 +268,7 @@ async function resolveLatestVideos(items, browser, { fetchLimit, log }) {
     if (cache.get(cid) !== undefined) continue;
     fetched++;
     try {
-      const vid = await extractLatestVid(browser, cid, log);
+      const vid = await extractLatestVid(browser, cid, epNumOf(it.episode), log);
       cache.set(cid, vid);
       if (vid) it.url = `https://v.qq.com/x/page/${vid}.html`;
     } catch (err) {
@@ -282,43 +283,84 @@ async function resolveLatestVideos(items, browser, { fetchLimit, log }) {
   }
 }
 
-async function extractLatestVid(browser, cid, log) {
+/** 剧集文案 → 集数（「第234集 / 14集全 / Ⅱ-3」取首个数字；无法解析返回 null） */
+function epNumOf(episode) {
+  const m = String(episode ?? "").match(/(\d+)/);
+  return m ? Number(m[1]) : null;
+}
+
+/**
+ * 通过分集列表「点击」解析最新正片 vid：
+ * 1) 封面页匿名访问默认 302 到第 1 集，因此不读落地重定向；
+ * 2) 滚动到选集模块，切到最后一个数字分页区间（如 211-235）；
+ * 3) 在 `.episode-item` / `.video-item` 中筛掉「预告/小课堂/发布会/片花/花絮/幕后/访谈/见面会/先导/抢先看」
+ *    及非数字条目（如「巴巴塔宇宙小课堂01」「反派受害者联盟01」这类列表末尾的非正剧）；
+ * 4) 优先点击与卡片集数一致的条目，否则点击最大集数条目，读 SPA 落地 URL 中的 vid。
+ */
+export async function extractLatestVid(browser, cid, targetEp, log) {
   const page = await browser.newPage({ userAgent: UA });
   try {
     await page.goto(`https://v.qq.com/x/cover/${cid}.html`, { waitUntil: "domcontentloaded", timeout: 35000 });
-    await page.waitForTimeout(3500);
-    // 1) 落地重定向即最新集
-    const url = page.url();
-    const redirected = url.match(/\/x\/cover\/[^/]+\/([a-z0-9]+)\.html/);
-    if (redirected) return redirected[1];
-    // 2) 分集列表：切到最后一个数字区间，扫描取最大正剧集
-    const nums = await page.locator("text=/^\\d+-\\d+$/").allTextContents();
-    const last = nums[nums.length - 1];
-    if (last) {
-      const btn = page.locator(`text=/^${last}$/`).first();
-      await btn.click().catch(() => {});
-      await page.waitForTimeout(1800);
+    await page.waitForSelector(".episode-module-container", { timeout: 12000 }).catch(() => {});
+    await page.evaluate(() => {
+      const el = [...document.querySelectorAll("div, section, ul")].find((e) => /episode-module/.test((e.className ?? "").toString()));
+      if (el) el.scrollIntoView({ block: "center" });
+    });
+    await page.waitForTimeout(800);
+    // 切到最后一个数字分页区间（无分页则跳过）
+    const hasRange = await page.evaluate(() => {
+      const els = [...document.querySelectorAll("div, span, a, button, li")].filter((e) => /^\d+-\d+$/.test((e.textContent ?? "").trim()));
+      const last = els[els.length - 1];
+      if (last) last.click();
+      return !!last;
+    });
+    if (hasRange) await page.waitForTimeout(2000);
+    // 长剧（如名侦探柯南 1269 集）的分集列表为异步渲染：等待「第N话」或纯数字条目出现
+    await page
+      .waitForFunction(() => {
+        const items = [...document.querySelectorAll(".episode-item, .video-item.video-item-wrapper")];
+        return items.some((el) => {
+          const t = (el.textContent ?? "").replace(/\s+/g, " ").trim();
+          return /^(?:第)?\d+/.test(t) || /第\s*\d+\s*(?:集|话)/.test(t);
+        });
+      }, { timeout: 8000 })
+      .catch(() => {});
+    // 挑选目标条目（优先卡片集数，其次最大集数）并点击
+    const picked = await page.evaluate(
+      ({ target, blocked }) => {
+        const items = [...document.querySelectorAll(".episode-item, .video-item.video-item-wrapper")]
+          .map((el) => {
+            const text = (el.textContent ?? "").replace(/\s+/g, " ").trim();
+            const m1 = /^(?:第)?(\d+)(.{0,4})$/.exec(text);
+            const m2 = text.match(/第\s*(\d+)\s*(?:集|话)/);
+            const n = m1 ? Number(m1[1]) : m2 ? Number(m2[1]) : null;
+            const bad =
+              blocked.some((k) => text.includes(k)) || /剧场版|特别篇|合集篇|全\s*\d+\s*集/.test(text);
+            return { el, text, n, bad };
+          })
+          .filter((x) => x.n != null && !x.bad);
+        const hit = target != null ? items.find((x) => x.n === target) : null;
+        const pick = hit ?? items.sort((a, b) => b.n - a.n)[0];
+        if (pick) pick.el.click();
+        return pick ? { text: pick.text.slice(0, 40), n: pick.n, target: !!hit } : null;
+      },
+      { target: targetEp, blocked: CONTENT_BLOCKLIST },
+    );
+    if (!picked) {
+      log(`分集列表无可点击正片（cid=${cid}）`);
+      return null;
     }
-    const list = page.locator(".episode-list li");
-    const count = await list.count();
-    if (count) {
-      const parsed = [];
-      for (let i = 0; i < count; i++) {
-        const el = list.nth(i);
-        const text = (await el.textContent().catch(() => "")) ?? "";
-        const params = (await el.getAttribute("dt-params").catch(() => null)) ?? "";
-        const num = text.match(/(\d+)/);
-        parsed.push({ text, num: num ? Number(num[1]) : -1, params });
-      }
-      const valid = parsed.filter((p) => p.num > 0 && !isBlocked(p.text));
-      valid.sort((a, b) => b.num - a.num);
-      const top = valid[0];
-      if (top) {
-        const vid = top.params.match(/(?:^|&)vid=([^&]+)/)?.[1];
-        if (vid) return decodeURIComponent(vid);
-      }
+    await page
+      .waitForFunction((c) => /\/x\/cover\/[^/]+\/[a-z0-9]+\.html/.test(location.href), cid, { timeout: 10000 })
+      .catch(() => {});
+    const m = page.url().match(/\/x\/cover\/[^/]+\/([a-z0-9]+)\.html/);
+    if (!m) {
+      // 已选中当前集（如全集第 1 集）时 URL 不变：再等一次后放弃
+      await page.waitForTimeout(2000);
+      const m2 = page.url().match(/\/x\/cover\/[^/]+\/([a-z0-9]+)\.html/);
+      return m2 ? m2[1] : null;
     }
-    return null;
+    return m[1];
   } finally {
     await page.close().catch(() => {});
   }

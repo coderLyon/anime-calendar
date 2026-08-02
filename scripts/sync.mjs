@@ -6,8 +6,8 @@
  * 只有完全无法产出数据时才退出非零。
  */
 import { mkdirSync, readFileSync, writeFileSync } from "fs";
-import { fileURLToPath } from "url";
-import { dirname, join } from "path";
+import { fileURLToPath, pathToFileURL } from "url";
+import { dirname, join, resolve } from "path";
 import { scrape as scrapeBili } from "./bilibili.mjs";
 import { scrape as scrapeYouku } from "./youku.mjs";
 import { scrape as scrapeTencent } from "./tencent.mjs";
@@ -18,7 +18,7 @@ import { addDays, mondayOfWeekBeijing, sortByDateThenTime, ymd } from "./shared.
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA_FILE = join(ROOT, "data", "updates.json");
 const FETCH_LIMIT = 40; // 单次同步富集请求上限（计划 §9）
-const PLATFORM_TIMEOUT_MS = 240_000; // 单平台抓取硬超时（防 CI 卡死）
+const PLATFORM_TIMEOUT_MS = { tencent: 480_000, default: 240_000 }; // 单平台抓取硬超时（防 CI 卡死；腾讯需逐集点击解析）
 
 const PLATFORMS = [
   { platform: "bili", label: "哔哩哔哩", scrape: scrapeBili },
@@ -40,7 +40,7 @@ function loadPrevious() {
  * - 已知时长的短条目（<300s）**保留**并携带 duration，由前端过滤控制展示；
  * - 内容类型排除：标题含「动态漫/AI动漫/泡面番」（AI 生成短剧）的条目直接丢弃并记 warnings，与时长无关。
  */
-function cleanDuration(items, warnings) {
+export function cleanDuration(items, warnings) {
   const kept = [];
   let missing = 0;
   let dropped = 0;
@@ -67,7 +67,7 @@ function cleanDuration(items, warnings) {
 }
 
 /** 清洗层补充：仅保留当前自然周（周一~周日）内的条目 */
-function keepCurrentWeek(items, warnings) {
+export function keepCurrentWeek(items, warnings) {
   // 按北京时区计算周边界：GitHub Actions runner 为 UTC，直接用本地日期会在
   // 周一 07:00（北京）那次同步（UTC 周日 23:00）错用上一周的区间。
   const mon = mondayOfWeekBeijing();
@@ -89,8 +89,8 @@ async function doubanShortDramaFilter(items, platform, warnings, { log }) {
   const suspicious = items.filter((i) => i.duration == null || (i.duration > 0 && i.duration < 60));
   if (!suspicious.length) return items;
 
-  // 豆瓣「暂无评分」但确认为正规剧集的条目（避免误杀）：B站国创《苏东坡与杭州的故事》等
-  const UNRATED_WHITELIST = new Set(["苏东坡与杭州的故事"]);
+  // 豆瓣「暂无评分」但确认为正规剧集的条目（避免误杀）：B站国创《苏东坡与杭州的故事》、《是王者啊？第六季》等
+  const UNRATED_WHITELIST = new Set(["苏东坡与杭州的故事", "是王者啊？第六季", "是王者啊？第6季"]);
   // 用户经评论区等渠道人工确认的 AI 短剧（自动判据覆盖不到时兜底）：云月大陆评论区出现「AI漫剧」
   const CURATED_AI_SHORTS = new Set(["云月大陆"]);
   const MAX_QUERIES = 10;
@@ -172,7 +172,7 @@ function finishedOf(it) {
  * 标记 predicted 供前端显示「预计」；已完结条目标记 finished 且不生成下周排期。
  * 注意：预测为启发式（平台原始数据仅覆盖本周），不参与清洗/时长/豆瓣过滤。
  */
-function extendNextWeek(items, warnings) {
+export function extendNextWeek(items, warnings) {
   const out = [];
   let predicted = 0;
   let finished = 0;
@@ -201,9 +201,10 @@ async function main() {
 
   for (const p of PLATFORMS) {
     try {
+      const timeoutMs = PLATFORM_TIMEOUT_MS[p.platform] ?? PLATFORM_TIMEOUT_MS.default;
       const result = await Promise.race([
         p.scrape({ fetchLimit: FETCH_LIMIT, log: (m) => console.log(`[${p.platform}] ${m}`) }),
-        new Promise((_, reject) => setTimeout(() => reject(new Error(`超时（>${PLATFORM_TIMEOUT_MS / 1000}s）`)), PLATFORM_TIMEOUT_MS)),
+        new Promise((_, reject) => setTimeout(() => reject(new Error(`超时（>${timeoutMs / 1000}s）`)), timeoutMs)),
       ]);
       result.warnings = Array.isArray(result.warnings) ? result.warnings : [];
       result.items = cleanDuration(result.items, result.warnings);
@@ -254,7 +255,10 @@ async function main() {
   process.exit(0);
 }
 
-main().catch((err) => {
-  console.error("sync 失败：", err);
-  process.exit(1);
-});
+const isMain = process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href;
+if (isMain) {
+  main().catch((err) => {
+    console.error("sync 失败：", err);
+    process.exit(1);
+  });
+}

@@ -27,6 +27,13 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
     const items = [];
     const seen = new Set();
 
+    // 周历卡片常为懒加载：先滚动到「追番表」区域，空日再重试一次
+    await page.evaluate(() => {
+      const host = document.querySelector("[class*=followCalendarCard]");
+      if (host) host.scrollIntoView({ block: "center" });
+    });
+    await page.waitForTimeout(800);
+
     for (let d = 0; d < 7; d++) {
       const label = WEEKDAYS[d];
       const tab = tabLoc.filter({ hasText: label }).first();
@@ -37,7 +44,7 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
 
       // 仅取「追番表」日历卡片：优先 followCalendarCard 容器；页面存在 A/B 变体时，
       // 回退为排除「猜你喜欢」推荐区（compFuncs_simpleWrap）后取剩余卡片
-      const cards = await page.evaluate(() => {
+      const readCards = () => page.evaluate(() => {
         const host = document.querySelector("[class*=followCalendarCard]");
         const els = host
           ? [...host.querySelectorAll("[class*=filmFeed_innerwrap]")]
@@ -57,6 +64,13 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
         }
         return out;
       });
+      let cards = await readCards();
+      if (!cards.length) {
+        // 懒加载未完成：滚动触发 + 重试一次
+        await page.evaluate(() => window.scrollBy(0, 260));
+        await page.waitForTimeout(2500);
+        cards = await readCards();
+      }
 
       const date = ymd(addDays(monday, d));
       const weekday = d + 1;
@@ -158,7 +172,11 @@ async function enrichDurations(items, { fetchLimit, log }) {
   log(`时长富集完成：抓取 ${fetched} 专辑，命中 ${hit}/${items.length} 条`);
 }
 
-/** 拉取专辑全部分集（分页 200/页，最多 3 页覆盖年番），返回 { byDur, byUrl, latestDur, latestUrl } */
+/**
+ * 拉取专辑全部分集（分页 200/页，最多 3 页覆盖年番），返回 { byDur, byUrl, latestDur, latestUrl }。
+ * 只保留正片：优先按 contentType===1 过滤（部分专辑末尾会混入预告/片花/PV），
+ * contentType 缺失时按「第N集/话」标题兜底，避免把预告当作最新集。
+ */
 async function fetchAlbumDurations(aid) {
   const byDur = new Map();
   const byUrl = new Map();
@@ -172,7 +190,10 @@ async function fetchAlbumDurations(aid) {
     if (!res.ok) throw new Error(`avlistinfo HTTP ${res.status}`);
     const j = await res.json().catch(() => null);
     if (!j || j.code !== "A00000") throw new Error("avlistinfo 响应异常");
-    const list = j.data?.epsodelist ?? [];
+    const list = (j.data?.epsodelist ?? []).filter((e) => {
+      if (e.contentType != null && e.contentType !== "") return String(e.contentType) === "1";
+      return /第\s*\d+\s*(集|话)/.test(String(e.name ?? ""));
+    });
     if (!list.length) break;
     for (const ep of list) {
       const dur = parseDur(ep.duration);

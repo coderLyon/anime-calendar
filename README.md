@@ -32,7 +32,7 @@ GitHub Pages 静态前端 + GitHub Actions 定时数据管道：
 ```
 Actions（cron 0 11,23 * * * UTC + workflow_dispatch + push）
   → pnpm install --frozen-lockfile → playwright install chromium
-  → node scripts/sync.mjs（抓取四平台 → 时长富集（B站季分集接口 / 腾讯卡片 / 优酷 show_page+播放页 / 爱奇艺 avlistinfo 分集接口）→ 短条目保留 + AI 短剧关键词/评论区启发式兜底 + 豆瓣甄别（优酷/爱奇艺缺失时长条目，限额防反爬）→ SVIP 抢先去重 → 最新集解析（优酷直达剧集页 show_page、腾讯按星期匹配卡片底部更新时间与结局点映标签）→ 下周预计排期（未完结条目 +7 天推导）→ 写 data/updates.json）
+  → node scripts/sync.mjs（抓取四平台 → 时长富集（B站季分集接口 / 腾讯卡片 / 优酷 show_page+播放页 / 爱奇艺 avlistinfo 分集接口）→ 短条目保留 + AI 短剧关键词/评论区启发式兜底 + 豆瓣甄别（优酷/爱奇艺缺失时长条目，限额防反爬）→ SVIP 抢先去重 → 最新集解析（B站排期 ep 直达/黑名单回退最新正片、优酷直达剧集页 show_page、腾讯分集列表点击解析最新正片、爱奇艺 avlistinfo 正片直达）→ 下周预计排期（未完结条目 +7 天推导）→ 写 data/updates.json）
   → vite build → actions/deploy-pages 发布 dist/
 ```
 
