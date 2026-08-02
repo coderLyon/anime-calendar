@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-02T04:12:08.523Z",
+  "generatedAt": "2026-08-02T11:57:01.324Z",
   "platforms": [
     {
       "platform": "bili",
@@ -495,10 +495,10 @@
           "date": "2026-08-02",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ss73957?from_spmid=666.5.schedule.7",
+          "url": "https://www.bilibili.com/bangumi/play/ep4791311?from_spmid=666.5.schedule.7",
           "seasonId": "73957",
-          "badge": null,
-          "duration": null
+          "badge": "9.7",
+          "duration": 1752
         },
         {
           "id": "bili-4935494-pred",
@@ -1022,17 +1022,16 @@
           "date": "2026-08-09",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ss73957?from_spmid=666.5.schedule.7",
+          "url": "https://www.bilibili.com/bangumi/play/ep4791311?from_spmid=666.5.schedule.7",
           "seasonId": "73957",
-          "badge": null,
-          "duration": null,
+          "badge": "9.7",
+          "duration": 1752,
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-08-02T03:57:54.325Z",
+      "fetchedAt": "2026-08-02T11:48:20.968Z",
       "warnings": [
         "已保留 6 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "1 条时长无法确认已保留（平台未提供内联时长）",
         "已生成下周预计排期 33 条（本周未完结条目 +7 天推导，前端标「预计」）"
       ]
     },
@@ -1051,9 +1050,9 @@
           "weekday": 1,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_afbe218f2b834b8698e7.html",
-          "videoId": "XNjUzODU4OTQ5Ng==",
+          "videoId": "XNjQ1OTA2MzM1Mg==",
           "badge": "逐集限免",
-          "duration": 193.84
+          "duration": null
         },
         {
           "id": "youku-bfee6a1e0bf346578302-2026-07-27",
@@ -1068,7 +1067,7 @@
           "url": "https://www.youku.com/show_page/id_bfee6a1e0bf346578302.html",
           "videoId": "XNjU1NDYzMTI4OA==",
           "badge": "首播",
-          "duration": 180
+          "duration": null
         },
         {
           "id": "youku-ffed8094008e47acad25-2026-07-27",
@@ -1083,7 +1082,7 @@
           "url": "https://www.youku.com/show_page/id_ffed8094008e47acad25.html",
           "videoId": "XNjU0NTE4NzM2OA==",
           "badge": "SVIP",
-          "duration": 241.33
+          "duration": null
         },
         {
           "id": "youku-daaad3bb331546659410-2026-07-27",
@@ -1098,22 +1097,7 @@
           "url": "https://www.youku.com/show_page/id_daaad3bb331546659410.html",
           "videoId": "XNjU1MDk0MDI1Mg==",
           "badge": "VIP",
-          "duration": 395.37
-        },
-        {
-          "id": "youku-babb02b2839847ff901c-2026-07-27",
-          "platform": "youku",
-          "title": "一具枯骨，逆天修成仙",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/9b9678579ef0458492fd731c613e587d.webp.jpg",
-          "episode": "第292话",
-          "updateTime": "10:00",
-          "date": "2026-07-27",
-          "weekday": 1,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_babb02b2839847ff901c.html",
-          "videoId": "XNjU0ODYyMzM4NA==",
-          "badge": "VIP",
-          "duration": 128.37
+          "duration": null
         },
         {
           "id": "youku-caabc3bf10da41a38ff4-2026-07-27",
@@ -1128,7 +1112,22 @@
           "url": "https://www.youku.com/show_page/id_caabc3bf10da41a38ff4.html",
           "videoId": "XNjU0Mjg2MzA3Mg==",
           "badge": null,
-          "duration": 117.77
+          "duration": null
+        },
+        {
+          "id": "youku-cfafd913da434706ab70-2026-07-27",
+          "platform": "youku",
+          "title": "丑妻仙缘",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/11214fd0811e4dc1ba35f850f636f30f.webp.jpg",
+          "episode": "第50话",
+          "updateTime": "10:00",
+          "date": "2026-07-27",
+          "weekday": 1,
+          "svip": false,
+          "url": "https://www.youku.com/show_page/id_cfafd913da434706ab70.html",
+          "videoId": "XNjU0OTc4NjQyNA==",
+          "badge": "首播",
+          "duration": null
         },
         {
           "id": "youku-ebadea91856e40a4abc3-2026-07-27",
@@ -1141,24 +1140,9 @@
           "weekday": 1,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_ebadea91856e40a4abc3.html",
-          "videoId": "XNjU0MjMwMjc4NA==",
+          "videoId": "XNjU0NTkxMjIwNA==",
           "badge": "首播",
-          "duration": 331.07
-        },
-        {
-          "id": "youku-cbae70c33fa6433a9c1b-2026-07-27",
-          "platform": "youku",
-          "title": "三角洲：行动代号647",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/3f45db38f70543fcb7282ffd26eda03d.webp.jpg",
-          "episode": "第35话",
-          "updateTime": "10:00",
-          "date": "2026-07-27",
-          "weekday": 1,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_cbae70c33fa6433a9c1b.html",
-          "videoId": "XNjU1MDQyMDI0NA==",
-          "badge": "VIP",
-          "duration": 113.37
+          "duration": null
         },
         {
           "id": "youku-cebaa3486ff54e81bb65-2026-07-27",
@@ -1173,7 +1157,7 @@
           "url": "https://www.youku.com/show_page/id_cebaa3486ff54e81bb65.html",
           "videoId": "XNjUzOTkzODM0MA==",
           "badge": "VIP",
-          "duration": 660.04
+          "duration": null
         },
         {
           "id": "youku-caae9f722a14448fa37f-2026-07-27",
@@ -1188,7 +1172,7 @@
           "url": "https://www.youku.com/show_page/id_caae9f722a14448fa37f.html",
           "videoId": "XNjU0Mjg2MzA5Ng==",
           "badge": "VIP",
-          "duration": 154.5
+          "duration": null
         },
         {
           "id": "youku-acfb3adc43ff41128664-2026-07-27",
@@ -1203,7 +1187,7 @@
           "url": "https://www.youku.com/show_page/id_acfb3adc43ff41128664.html",
           "videoId": "XNjU1MzMwMDgwMA==",
           "badge": "SVIP",
-          "duration": 312.47
+          "duration": null
         },
         {
           "id": "youku-fbbfa201ace1459495cb-2026-07-27",
@@ -1218,29 +1202,14 @@
           "url": "https://www.youku.com/show_page/id_fbbfa201ace1459495cb.html",
           "videoId": "XNjU0ODY1NTIwNA==",
           "badge": "VIP",
-          "duration": 122.67
-        },
-        {
-          "id": "youku-aadcff01583e41cca74b-2026-07-27",
-          "platform": "youku",
-          "title": "近视驯狐王",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/669ac7a63eb54b65a0bb5e7a1fb8ced0.webp.jpg",
-          "episode": "第13话",
-          "updateTime": "10:00",
-          "date": "2026-07-27",
-          "weekday": 1,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_aadcff01583e41cca74b.html",
-          "videoId": "XNjU0MzQwODUyOA==",
-          "badge": "VIP",
-          "duration": 125.43
+          "duration": null
         },
         {
           "id": "youku-feca9dced6f74ec38285-2026-07-27",
           "platform": "youku",
           "title": "沧海行",
           "poster": "https://liangcang-material.alicdn.com/prod/upload/ce9a3f7217a64e7398ed5fce48ac1679.webp.jpg",
-          "episode": "第36话",
+          "episode": "第38话",
           "updateTime": "17:00",
           "date": "2026-07-27",
           "weekday": 1,
@@ -1248,22 +1217,22 @@
           "url": "https://www.youku.com/show_page/id_feca9dced6f74ec38285.html",
           "videoId": "XNjU1MTg4NjE4NA==",
           "badge": "VIP",
-          "duration": 168.1
+          "duration": null
         },
         {
           "id": "youku-fdca5177ae604c66bdb8-2026-07-28",
           "platform": "youku",
           "title": "一斩苍穹",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/9a11a59f40e749a79ec95c4a4f9b8186.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/bd3829bad91f471a8ed0dc53c4477acd.webp.jpg",
           "episode": "第2话",
           "updateTime": "10:00",
           "date": "2026-07-28",
           "weekday": 2,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_fdca5177ae604c66bdb8.html",
-          "videoId": "XNjU0MTY1NjIwMA==",
+          "videoId": "XNjUzOTEwOTU5Ng==",
           "badge": "独播",
-          "duration": 1534.56
+          "duration": null
         },
         {
           "id": "youku-bfee6a1e0bf346578302-2026-07-28",
@@ -1278,7 +1247,7 @@
           "url": "https://www.youku.com/show_page/id_bfee6a1e0bf346578302.html",
           "videoId": "XNjU1NDYzMTI4OA==",
           "badge": "首播",
-          "duration": 180
+          "duration": null
         },
         {
           "id": "youku-dcfc601098b54c379a57-2026-07-28",
@@ -1293,22 +1262,7 @@
           "url": "https://www.youku.com/show_page/id_dcfc601098b54c379a57.html",
           "videoId": "XNjUxMTQ1Mjk3Ng==",
           "badge": "VIP",
-          "duration": 357.08
-        },
-        {
-          "id": "youku-babb02b2839847ff901c-2026-07-28",
-          "platform": "youku",
-          "title": "一具枯骨，逆天修成仙",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/9b9678579ef0458492fd731c613e587d.webp.jpg",
-          "episode": "第292话",
-          "updateTime": "10:00",
-          "date": "2026-07-28",
-          "weekday": 2,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_babb02b2839847ff901c.html",
-          "videoId": "XNjU0ODYyMzM4NA==",
-          "badge": "VIP",
-          "duration": 128.37
+          "duration": null
         },
         {
           "id": "youku-caabc3bf10da41a38ff4-2026-07-28",
@@ -1323,7 +1277,7 @@
           "url": "https://www.youku.com/show_page/id_caabc3bf10da41a38ff4.html",
           "videoId": "XNjU0Mjg2MzA3Mg==",
           "badge": null,
-          "duration": 117.77
+          "duration": null
         },
         {
           "id": "youku-fede1c50fd6e40ccbc4f-2026-07-28",
@@ -1338,7 +1292,7 @@
           "url": "https://www.youku.com/show_page/id_fede1c50fd6e40ccbc4f.html",
           "videoId": "XNjU0MDg1OTc3Mg==",
           "badge": "独播",
-          "duration": 314.17
+          "duration": null
         },
         {
           "id": "youku-cacf63f037604089b341-2026-07-28",
@@ -1353,7 +1307,7 @@
           "url": "https://www.youku.com/show_page/id_cacf63f037604089b341.html",
           "videoId": "XNjU1NDcxMTkzNg==",
           "badge": "首播",
-          "duration": 286.87
+          "duration": null
         },
         {
           "id": "youku-ebadea91856e40a4abc3-2026-07-28",
@@ -1366,24 +1320,24 @@
           "weekday": 2,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_ebadea91856e40a4abc3.html",
-          "videoId": "XNjU0MjMwMjc4NA==",
+          "videoId": "XNjU0NTkxMjIwNA==",
           "badge": "首播",
-          "duration": 331.07
+          "duration": null
         },
         {
-          "id": "youku-cbae70c33fa6433a9c1b-2026-07-28",
+          "id": "youku-cfafd913da434706ab70-2026-07-28",
           "platform": "youku",
-          "title": "三角洲：行动代号647",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/3f45db38f70543fcb7282ffd26eda03d.webp.jpg",
-          "episode": "第35话",
+          "title": "丑妻仙缘",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/11214fd0811e4dc1ba35f850f636f30f.webp.jpg",
+          "episode": "第50话",
           "updateTime": "10:00",
           "date": "2026-07-28",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_cbae70c33fa6433a9c1b.html",
-          "videoId": "XNjU1MDQyMDI0NA==",
-          "badge": "VIP",
-          "duration": 113.37
+          "url": "https://www.youku.com/show_page/id_cfafd913da434706ab70.html",
+          "videoId": "XNjU0OTc4NjQyNA==",
+          "badge": "首播",
+          "duration": null
         },
         {
           "id": "youku-cebaa3486ff54e81bb65-2026-07-28",
@@ -1398,7 +1352,7 @@
           "url": "https://www.youku.com/show_page/id_cebaa3486ff54e81bb65.html",
           "videoId": "XNjUzOTkzODM0MA==",
           "badge": "VIP",
-          "duration": 660.04
+          "duration": null
         },
         {
           "id": "youku-caae9f722a14448fa37f-2026-07-28",
@@ -1413,50 +1367,50 @@
           "url": "https://www.youku.com/show_page/id_caae9f722a14448fa37f.html",
           "videoId": "XNjU0Mjg2MzA5Ng==",
           "badge": "VIP",
-          "duration": 154.5
+          "duration": null
         },
         {
-          "id": "youku-cebcebd964e644cf8837-2026-07-28",
+          "id": "youku-abef95f5ff0b40af9452-2026-07-28",
           "platform": "youku",
-          "title": "误入诡宗后，我成了全宗团宠",
-          "poster": "https://m.ykimg.com/058100006A59EA6670A43D14BFFA7B7E",
-          "episode": "第12话",
-          "updateTime": "11:30",
+          "title": "赶山：我有山神空间",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/510b3d8fe3f54f9abe2f27d667866120.webp.jpg",
+          "episode": "第29话",
+          "updateTime": "10:00",
           "date": "2026-07-28",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_cebcebd964e644cf8837.html",
-          "videoId": "XNjU0OTMyMjc0NA==",
+          "url": "https://www.youku.com/show_page/id_abef95f5ff0b40af9452.html",
+          "videoId": "XNjU0MTg5MTU1Ng==",
           "badge": "VIP",
-          "duration": 178.03
+          "duration": null
         },
         {
-          "id": "youku-feca9dced6f74ec38285-2026-07-28",
+          "id": "youku-edaab22fca4647389278-2026-07-28",
           "platform": "youku",
-          "title": "沧海行",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/ce9a3f7217a64e7398ed5fce48ac1679.webp.jpg",
-          "episode": "第36话",
-          "updateTime": "17:00",
+          "title": "瓦罗兰特世界赛，你让我一个黑铁当大哥",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/10f1cea85a5e43139b53cbacfb60719d.webp.jpg",
+          "episode": "第23话",
+          "updateTime": "10:30",
           "date": "2026-07-28",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_feca9dced6f74ec38285.html",
-          "videoId": "XNjU1MTg4NjE4NA==",
+          "url": "https://www.youku.com/show_page/id_edaab22fca4647389278.html",
+          "videoId": "XNjU0NDU5NTk2OA==",
           "badge": "VIP",
-          "duration": 168.1
+          "duration": null
         },
         {
           "id": "youku-badbb5792f934ddb82fd-2026-07-29",
           "platform": "youku",
           "title": "师兄啊师兄",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/45d824044c914d93bd5a626018b3a431.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/6d7dd3bc92a84a1f80d8ed9d0679fb56.webp.jpg",
           "episode": "第152话",
           "updateTime": "10:00",
           "date": "2026-07-29",
           "weekday": 3,
           "svip": true,
           "url": "https://www.youku.com/show_page/id_badbb5792f934ddb82fd.html",
-          "videoId": "XNjUyOTc0MjYwOA==",
+          "videoId": "XNjUyNTI0MzY5Mg==",
           "badge": "独播",
           "duration": null
         },
@@ -1473,22 +1427,7 @@
           "url": "https://www.youku.com/show_page/id_bfee6a1e0bf346578302.html",
           "videoId": "XNjU1NDYzMTI4OA==",
           "badge": "首播",
-          "duration": 180
-        },
-        {
-          "id": "youku-babb02b2839847ff901c-2026-07-29",
-          "platform": "youku",
-          "title": "一具枯骨，逆天修成仙",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/9b9678579ef0458492fd731c613e587d.webp.jpg",
-          "episode": "第292话",
-          "updateTime": "10:00",
-          "date": "2026-07-29",
-          "weekday": 3,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_babb02b2839847ff901c.html",
-          "videoId": "XNjU0ODYyMzM4NA==",
-          "badge": "VIP",
-          "duration": 128.37
+          "duration": null
         },
         {
           "id": "youku-caabc3bf10da41a38ff4-2026-07-29",
@@ -1503,7 +1442,7 @@
           "url": "https://www.youku.com/show_page/id_caabc3bf10da41a38ff4.html",
           "videoId": "XNjU0Mjg2MzA3Mg==",
           "badge": null,
-          "duration": 117.77
+          "duration": null
         },
         {
           "id": "youku-ebadea91856e40a4abc3-2026-07-29",
@@ -1516,9 +1455,24 @@
           "weekday": 3,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_ebadea91856e40a4abc3.html",
-          "videoId": "XNjU0MjMwMjc4NA==",
+          "videoId": "XNjU0NTkxMjIwNA==",
           "badge": "首播",
-          "duration": 331.07
+          "duration": null
+        },
+        {
+          "id": "youku-cfafd913da434706ab70-2026-07-29",
+          "platform": "youku",
+          "title": "丑妻仙缘",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/11214fd0811e4dc1ba35f850f636f30f.webp.jpg",
+          "episode": "第50话",
+          "updateTime": "10:00",
+          "date": "2026-07-29",
+          "weekday": 3,
+          "svip": false,
+          "url": "https://www.youku.com/show_page/id_cfafd913da434706ab70.html",
+          "videoId": "XNjU0OTc4NjQyNA==",
+          "badge": "首播",
+          "duration": null
         },
         {
           "id": "youku-cebaa3486ff54e81bb65-2026-07-29",
@@ -1533,7 +1487,7 @@
           "url": "https://www.youku.com/show_page/id_cebaa3486ff54e81bb65.html",
           "videoId": "XNjUzOTkzODM0MA==",
           "badge": "VIP",
-          "duration": 660.04
+          "duration": null
         },
         {
           "id": "youku-caae9f722a14448fa37f-2026-07-29",
@@ -1548,7 +1502,7 @@
           "url": "https://www.youku.com/show_page/id_caae9f722a14448fa37f.html",
           "videoId": "XNjU0Mjg2MzA5Ng==",
           "badge": "VIP",
-          "duration": 154.5
+          "duration": null
         },
         {
           "id": "youku-aceb6e01286849c99847-2026-07-29",
@@ -1578,7 +1532,7 @@
           "url": "https://www.youku.com/show_page/id_fbbfa201ace1459495cb.html",
           "videoId": "XNjU0ODY1NTIwNA==",
           "badge": "VIP",
-          "duration": 122.67
+          "duration": null
         },
         {
           "id": "youku-aadcff01583e41cca74b-2026-07-29",
@@ -1593,7 +1547,7 @@
           "url": "https://www.youku.com/show_page/id_aadcff01583e41cca74b.html",
           "videoId": "XNjU0MzQwODUyOA==",
           "badge": "VIP",
-          "duration": 125.43
+          "duration": null
         },
         {
           "id": "youku-aefb6e73b0e245dfa2ee-2026-07-29",
@@ -1609,21 +1563,6 @@
           "videoId": "XNjQ2NjYxNzY4OA==",
           "badge": "VIP",
           "duration": null
-        },
-        {
-          "id": "youku-feca9dced6f74ec38285-2026-07-29",
-          "platform": "youku",
-          "title": "沧海行",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/ce9a3f7217a64e7398ed5fce48ac1679.webp.jpg",
-          "episode": "第36话",
-          "updateTime": "17:00",
-          "date": "2026-07-29",
-          "weekday": 3,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_feca9dced6f74ec38285.html",
-          "videoId": "XNjU1MTg4NjE4NA==",
-          "badge": "VIP",
-          "duration": 168.1
         },
         {
           "id": "youku-ebce16ca30e74e53a020-2026-07-29",
@@ -1644,14 +1583,14 @@
           "id": "youku-eabedc9465724a09b03d-2026-07-30",
           "platform": "youku",
           "title": "东大高武学院",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/19468b08ae1244a4bb1a9ca9dd61a336.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/2ffad8c484fb4d0c9f991ea22d26a9b1.webp.jpg",
           "episode": "第4话",
           "updateTime": "10:00",
           "date": "2026-07-30",
           "weekday": 4,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_eabedc9465724a09b03d.html",
-          "videoId": "XNjUzODMyNTU1Mg==",
+          "videoId": "XNjUzODMyMjM0NA==",
           "badge": "独播",
           "duration": null
         },
@@ -1683,7 +1622,7 @@
           "url": "https://www.youku.com/show_page/id_bfee6a1e0bf346578302.html",
           "videoId": "XNjU1NDYzMTI4OA==",
           "badge": "首播",
-          "duration": 180
+          "duration": null
         },
         {
           "id": "youku-afbe218f2b834b8698e7-2026-07-30",
@@ -1696,9 +1635,9 @@
           "weekday": 4,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_afbe218f2b834b8698e7.html",
-          "videoId": "XNjUzODU4OTQ5Ng==",
+          "videoId": "XNjQ1OTA2MzM1Mg==",
           "badge": "逐集限免",
-          "duration": 193.84
+          "duration": null
         },
         {
           "id": "youku-daaad3bb331546659410-2026-07-30",
@@ -1713,7 +1652,7 @@
           "url": "https://www.youku.com/show_page/id_daaad3bb331546659410.html",
           "videoId": "XNjU1MDk0MDI1Mg==",
           "badge": "VIP",
-          "duration": 395.37
+          "duration": null
         },
         {
           "id": "youku-caabc3bf10da41a38ff4-2026-07-30",
@@ -1728,7 +1667,7 @@
           "url": "https://www.youku.com/show_page/id_caabc3bf10da41a38ff4.html",
           "videoId": "XNjU0Mjg2MzA3Mg==",
           "badge": null,
-          "duration": 117.77
+          "duration": null
         },
         {
           "id": "youku-cacf63f037604089b341-2026-07-30",
@@ -1743,7 +1682,7 @@
           "url": "https://www.youku.com/show_page/id_cacf63f037604089b341.html",
           "videoId": "XNjU1NDcxMTkzNg==",
           "badge": "首播",
-          "duration": 286.87
+          "duration": null
         },
         {
           "id": "youku-ebadea91856e40a4abc3-2026-07-30",
@@ -1756,9 +1695,24 @@
           "weekday": 4,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_ebadea91856e40a4abc3.html",
-          "videoId": "XNjU0MjMwMjc4NA==",
+          "videoId": "XNjU0NTkxMjIwNA==",
           "badge": "首播",
-          "duration": 331.07
+          "duration": null
+        },
+        {
+          "id": "youku-cfafd913da434706ab70-2026-07-30",
+          "platform": "youku",
+          "title": "丑妻仙缘",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/11214fd0811e4dc1ba35f850f636f30f.webp.jpg",
+          "episode": "第50话",
+          "updateTime": "10:00",
+          "date": "2026-07-30",
+          "weekday": 4,
+          "svip": false,
+          "url": "https://www.youku.com/show_page/id_cfafd913da434706ab70.html",
+          "videoId": "XNjU0OTc4NjQyNA==",
+          "badge": "首播",
+          "duration": null
         },
         {
           "id": "youku-cebaa3486ff54e81bb65-2026-07-30",
@@ -1773,7 +1727,7 @@
           "url": "https://www.youku.com/show_page/id_cebaa3486ff54e81bb65.html",
           "videoId": "XNjUzOTkzODM0MA==",
           "badge": "VIP",
-          "duration": 660.04
+          "duration": null
         },
         {
           "id": "youku-caae9f722a14448fa37f-2026-07-30",
@@ -1788,7 +1742,7 @@
           "url": "https://www.youku.com/show_page/id_caae9f722a14448fa37f.html",
           "videoId": "XNjU0Mjg2MzA5Ng==",
           "badge": "VIP",
-          "duration": 154.5
+          "duration": null
         },
         {
           "id": "youku-fbbfa201ace1459495cb-2026-07-30",
@@ -1803,7 +1757,7 @@
           "url": "https://www.youku.com/show_page/id_fbbfa201ace1459495cb.html",
           "videoId": "XNjU0ODY1NTIwNA==",
           "badge": "VIP",
-          "duration": 122.67
+          "duration": null
         },
         {
           "id": "youku-ffdd5bdcaac844a0b99b-2026-07-30",
@@ -1821,26 +1775,11 @@
           "duration": null
         },
         {
-          "id": "youku-aadcff01583e41cca74b-2026-07-30",
-          "platform": "youku",
-          "title": "近视驯狐王",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/669ac7a63eb54b65a0bb5e7a1fb8ced0.webp.jpg",
-          "episode": "第13话",
-          "updateTime": "10:00",
-          "date": "2026-07-30",
-          "weekday": 4,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_aadcff01583e41cca74b.html",
-          "videoId": "XNjU0MzQwODUyOA==",
-          "badge": "VIP",
-          "duration": 125.43
-        },
-        {
           "id": "youku-feca9dced6f74ec38285-2026-07-30",
           "platform": "youku",
           "title": "沧海行",
           "poster": "https://liangcang-material.alicdn.com/prod/upload/ce9a3f7217a64e7398ed5fce48ac1679.webp.jpg",
-          "episode": "第36话",
+          "episode": "第38话",
           "updateTime": "17:00",
           "date": "2026-07-30",
           "weekday": 4,
@@ -1848,20 +1787,20 @@
           "url": "https://www.youku.com/show_page/id_feca9dced6f74ec38285.html",
           "videoId": "XNjU1MTg4NjE4NA==",
           "badge": "VIP",
-          "duration": 168.1
+          "duration": null
         },
         {
           "id": "youku-adaec02f09f9469ab8d8-2026-07-31",
           "platform": "youku",
           "title": "沧元图",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/6f0398fba25b4693986a6c900d831671.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/3135e3dc4b484beea117563cf8c5d17e.webp.jpg",
           "episode": "第88话",
           "updateTime": "10:00",
           "date": "2026-07-31",
           "weekday": 5,
           "svip": true,
           "url": "https://www.youku.com/show_page/id_adaec02f09f9469ab8d8.html",
-          "videoId": "XNjUxOTI0OTk3Mg==",
+          "videoId": "XNjUyNjIyMDQ3Mg==",
           "badge": "独播",
           "duration": null
         },
@@ -1878,7 +1817,7 @@
           "url": "https://www.youku.com/show_page/id_bfee6a1e0bf346578302.html",
           "videoId": "XNjU1NDYzMTI4OA==",
           "badge": "首播",
-          "duration": 180
+          "duration": null
         },
         {
           "id": "youku-ffed8094008e47acad25-2026-07-31",
@@ -1893,7 +1832,7 @@
           "url": "https://www.youku.com/show_page/id_ffed8094008e47acad25.html",
           "videoId": "XNjU0NTE4NzM2OA==",
           "badge": "SVIP",
-          "duration": 241.33
+          "duration": null
         },
         {
           "id": "youku-dcfc646c60664dab978b-2026-07-31",
@@ -1911,21 +1850,6 @@
           "duration": null
         },
         {
-          "id": "youku-babb02b2839847ff901c-2026-07-31",
-          "platform": "youku",
-          "title": "一具枯骨，逆天修成仙",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/9b9678579ef0458492fd731c613e587d.webp.jpg",
-          "episode": "第292话",
-          "updateTime": "10:00",
-          "date": "2026-07-31",
-          "weekday": 5,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_babb02b2839847ff901c.html",
-          "videoId": "XNjU0ODYyMzM4NA==",
-          "badge": "VIP",
-          "duration": 128.37
-        },
-        {
           "id": "youku-caabc3bf10da41a38ff4-2026-07-31",
           "platform": "youku",
           "title": "太玄胎珠传",
@@ -1938,7 +1862,7 @@
           "url": "https://www.youku.com/show_page/id_caabc3bf10da41a38ff4.html",
           "videoId": "XNjU0Mjg2MzA3Mg==",
           "badge": null,
-          "duration": 117.77
+          "duration": null
         },
         {
           "id": "youku-fede1c50fd6e40ccbc4f-2026-07-31",
@@ -1953,7 +1877,22 @@
           "url": "https://www.youku.com/show_page/id_fede1c50fd6e40ccbc4f.html",
           "videoId": "XNjU0MDg1OTc3Mg==",
           "badge": "独播",
-          "duration": 314.17
+          "duration": null
+        },
+        {
+          "id": "youku-cfafd913da434706ab70-2026-07-31",
+          "platform": "youku",
+          "title": "丑妻仙缘",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/11214fd0811e4dc1ba35f850f636f30f.webp.jpg",
+          "episode": "第50话",
+          "updateTime": "10:00",
+          "date": "2026-07-31",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://www.youku.com/show_page/id_cfafd913da434706ab70.html",
+          "videoId": "XNjU0OTc4NjQyNA==",
+          "badge": "首播",
+          "duration": null
         },
         {
           "id": "youku-ebadea91856e40a4abc3-2026-07-31",
@@ -1966,9 +1905,9 @@
           "weekday": 5,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_ebadea91856e40a4abc3.html",
-          "videoId": "XNjU0MjMwMjc4NA==",
+          "videoId": "XNjU0NTkxMjIwNA==",
           "badge": "首播",
-          "duration": 331.07
+          "duration": null
         },
         {
           "id": "youku-cacf63f037604089b341-2026-07-31",
@@ -1983,7 +1922,7 @@
           "url": "https://www.youku.com/show_page/id_cacf63f037604089b341.html",
           "videoId": "XNjU1NDcxMTkzNg==",
           "badge": "首播",
-          "duration": 286.87
+          "duration": null
         },
         {
           "id": "youku-aceb6e01286849c99847-2026-07-31",
@@ -2013,7 +1952,7 @@
           "url": "https://www.youku.com/show_page/id_cebaa3486ff54e81bb65.html",
           "videoId": "XNjUzOTkzODM0MA==",
           "badge": "VIP",
-          "duration": 660.04
+          "duration": null
         },
         {
           "id": "youku-caae9f722a14448fa37f-2026-07-31",
@@ -2028,22 +1967,22 @@
           "url": "https://www.youku.com/show_page/id_caae9f722a14448fa37f.html",
           "videoId": "XNjU0Mjg2MzA5Ng==",
           "badge": "VIP",
-          "duration": 154.5
+          "duration": null
         },
         {
-          "id": "youku-acfb3adc43ff41128664-2026-07-31",
+          "id": "youku-edaab22fca4647389278-2026-07-31",
           "platform": "youku",
-          "title": "十二层宝塔",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/7d0b1058ce274d5f87d9e58a4ae8daf1.webp.png",
-          "episode": "第4话",
-          "updateTime": "10:00",
+          "title": "瓦罗兰特世界赛，你让我一个黑铁当大哥",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/10f1cea85a5e43139b53cbacfb60719d.webp.jpg",
+          "episode": "第23话",
+          "updateTime": "10:30",
           "date": "2026-07-31",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_acfb3adc43ff41128664.html",
-          "videoId": "XNjU1MzMwMDgwMA==",
-          "badge": "SVIP",
-          "duration": 312.47
+          "url": "https://www.youku.com/show_page/id_edaab22fca4647389278.html",
+          "videoId": "XNjU0NDU5NTk2OA==",
+          "badge": "VIP",
+          "duration": null
         },
         {
           "id": "youku-ebbc85b6c57d404792f9-2026-07-31",
@@ -2056,7 +1995,7 @@
           "weekday": 5,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_ebbc85b6c57d404792f9.html",
-          "videoId": "XNjQ3MTUyNTc2OA==",
+          "videoId": "XNjUzNzMwNDY5Ng==",
           "badge": "逐集限免",
           "duration": null
         },
@@ -2088,7 +2027,7 @@
           "url": "https://www.youku.com/show_page/id_bfee6a1e0bf346578302.html",
           "videoId": "XNjU1NDYzMTI4OA==",
           "badge": "首播",
-          "duration": 180
+          "duration": null
         },
         {
           "id": "youku-daaad3bb331546659410-2026-08-01",
@@ -2103,22 +2042,7 @@
           "url": "https://www.youku.com/show_page/id_daaad3bb331546659410.html",
           "videoId": "XNjU1MDk0MDI1Mg==",
           "badge": "VIP",
-          "duration": 395.37
-        },
-        {
-          "id": "youku-babb02b2839847ff901c-2026-08-01",
-          "platform": "youku",
-          "title": "一具枯骨，逆天修成仙",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/9b9678579ef0458492fd731c613e587d.webp.jpg",
-          "episode": "第292话",
-          "updateTime": "10:00",
-          "date": "2026-08-01",
-          "weekday": 6,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_babb02b2839847ff901c.html",
-          "videoId": "XNjU0ODYyMzM4NA==",
-          "badge": "VIP",
-          "duration": 128.37
+          "duration": null
         },
         {
           "id": "youku-caabc3bf10da41a38ff4-2026-08-01",
@@ -2133,7 +2057,7 @@
           "url": "https://www.youku.com/show_page/id_caabc3bf10da41a38ff4.html",
           "videoId": "XNjU0Mjg2MzA3Mg==",
           "badge": null,
-          "duration": 117.77
+          "duration": null
         },
         {
           "id": "youku-ebadea91856e40a4abc3-2026-08-01",
@@ -2146,9 +2070,24 @@
           "weekday": 6,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_ebadea91856e40a4abc3.html",
-          "videoId": "XNjU0MjMwMjc4NA==",
+          "videoId": "XNjU0NTkxMjIwNA==",
           "badge": "首播",
-          "duration": 331.07
+          "duration": null
+        },
+        {
+          "id": "youku-cfafd913da434706ab70-2026-08-01",
+          "platform": "youku",
+          "title": "丑妻仙缘",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/11214fd0811e4dc1ba35f850f636f30f.webp.jpg",
+          "episode": "第50话",
+          "updateTime": "10:00",
+          "date": "2026-08-01",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://www.youku.com/show_page/id_cfafd913da434706ab70.html",
+          "videoId": "XNjU0OTc4NjQyNA==",
+          "badge": "首播",
+          "duration": null
         },
         {
           "id": "youku-cebaa3486ff54e81bb65-2026-08-01",
@@ -2163,7 +2102,7 @@
           "url": "https://www.youku.com/show_page/id_cebaa3486ff54e81bb65.html",
           "videoId": "XNjUzOTkzODM0MA==",
           "badge": "VIP",
-          "duration": 660.04
+          "duration": null
         },
         {
           "id": "youku-aeba838ca57d49579712-2026-08-01",
@@ -2193,20 +2132,20 @@
           "url": "https://www.youku.com/show_page/id_caae9f722a14448fa37f.html",
           "videoId": "XNjU0Mjg2MzA5Ng==",
           "badge": "VIP",
-          "duration": 154.5
+          "duration": null
         },
         {
           "id": "youku-caab6ed59a5547a78fb1-2026-08-01",
           "platform": "youku",
           "title": "光阴之外",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/42a09017304c4b8facd8efff32b6c9f9.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/8180c30fac4246c2b72f287319d96e19.webp.jpg",
           "episode": "第33话",
           "updateTime": "18:00",
           "date": "2026-08-01",
           "weekday": 6,
           "svip": true,
           "url": "https://www.youku.com/show_page/id_caab6ed59a5547a78fb1.html",
-          "videoId": "XNjUyNTI0MjA5Ng==",
+          "videoId": "XNjUzNTM0NDMwMA==",
           "badge": "独播",
           "duration": null
         },
@@ -2253,7 +2192,7 @@
           "url": "https://www.youku.com/show_page/id_bfee6a1e0bf346578302.html",
           "videoId": "XNjU1NDYzMTI4OA==",
           "badge": "首播",
-          "duration": 180
+          "duration": null
         },
         {
           "id": "youku-ffed8094008e47acad25-2026-08-02",
@@ -2268,7 +2207,7 @@
           "url": "https://www.youku.com/show_page/id_ffed8094008e47acad25.html",
           "videoId": "XNjU0NTE4NzM2OA==",
           "badge": "SVIP",
-          "duration": 241.33
+          "duration": null
         },
         {
           "id": "youku-caabc3bf10da41a38ff4-2026-08-02",
@@ -2283,22 +2222,7 @@
           "url": "https://www.youku.com/show_page/id_caabc3bf10da41a38ff4.html",
           "videoId": "XNjU0Mjg2MzA3Mg==",
           "badge": null,
-          "duration": 117.77
-        },
-        {
-          "id": "youku-babb02b2839847ff901c-2026-08-02",
-          "platform": "youku",
-          "title": "一具枯骨，逆天修成仙",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/9b9678579ef0458492fd731c613e587d.webp.jpg",
-          "episode": "第292话",
-          "updateTime": "10:00",
-          "date": "2026-08-02",
-          "weekday": 7,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_babb02b2839847ff901c.html",
-          "videoId": "XNjU0ODYyMzM4NA==",
-          "badge": "VIP",
-          "duration": 128.37
+          "duration": null
         },
         {
           "id": "youku-ebadea91856e40a4abc3-2026-08-02",
@@ -2311,9 +2235,24 @@
           "weekday": 7,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_ebadea91856e40a4abc3.html",
-          "videoId": "XNjU0MjMwMjc4NA==",
+          "videoId": "XNjU0NTkxMjIwNA==",
           "badge": "首播",
-          "duration": 331.07
+          "duration": null
+        },
+        {
+          "id": "youku-cfafd913da434706ab70-2026-08-02",
+          "platform": "youku",
+          "title": "丑妻仙缘",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/11214fd0811e4dc1ba35f850f636f30f.webp.jpg",
+          "episode": "第50话",
+          "updateTime": "10:00",
+          "date": "2026-08-02",
+          "weekday": 7,
+          "svip": false,
+          "url": "https://www.youku.com/show_page/id_cfafd913da434706ab70.html",
+          "videoId": "XNjU0OTc4NjQyNA==",
+          "badge": "首播",
+          "duration": null
         },
         {
           "id": "youku-caae9f722a14448fa37f-2026-08-02",
@@ -2328,7 +2267,7 @@
           "url": "https://www.youku.com/show_page/id_caae9f722a14448fa37f.html",
           "videoId": "XNjU0Mjg2MzA5Ng==",
           "badge": "VIP",
-          "duration": 154.5
+          "duration": null
         },
         {
           "id": "youku-cebaa3486ff54e81bb65-2026-08-02",
@@ -2343,7 +2282,7 @@
           "url": "https://www.youku.com/show_page/id_cebaa3486ff54e81bb65.html",
           "videoId": "XNjUzOTkzODM0MA==",
           "badge": "VIP",
-          "duration": 660.04
+          "duration": null
         },
         {
           "id": "youku-acba3b0995164e0fac8b-2026-08-02",
@@ -2361,19 +2300,19 @@
           "duration": null
         },
         {
-          "id": "youku-feca9dced6f74ec38285-2026-08-02",
+          "id": "youku-bafaacf950634b35b2cf-2026-08-02",
           "platform": "youku",
-          "title": "沧海行",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/ce9a3f7217a64e7398ed5fce48ac1679.webp.jpg",
-          "episode": "第36话",
-          "updateTime": "17:00",
+          "title": "世子无双：将门逆子",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/e5cd15a4a949404589e45b568fda2a48.webp.jpg",
+          "episode": "第35话",
+          "updateTime": "10:00",
           "date": "2026-08-02",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_feca9dced6f74ec38285.html",
-          "videoId": "XNjU1MTg4NjE4NA==",
+          "url": "https://www.youku.com/show_page/id_bafaacf950634b35b2cf.html",
+          "videoId": "XNjU0MTM1NDM4NA==",
           "badge": "VIP",
-          "duration": 168.1
+          "duration": null
         },
         {
           "id": "youku-afbe218f2b834b8698e7-2026-07-27-pred",
@@ -2386,9 +2325,9 @@
           "weekday": 1,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_afbe218f2b834b8698e7.html",
-          "videoId": "XNjUzODU4OTQ5Ng==",
+          "videoId": "XNjQ1OTA2MzM1Mg==",
           "badge": "逐集限免",
-          "duration": 193.84,
+          "duration": null,
           "predicted": true
         },
         {
@@ -2404,7 +2343,7 @@
           "url": "https://www.youku.com/show_page/id_bfee6a1e0bf346578302.html",
           "videoId": "XNjU1NDYzMTI4OA==",
           "badge": "首播",
-          "duration": 180,
+          "duration": null,
           "predicted": true
         },
         {
@@ -2420,7 +2359,7 @@
           "url": "https://www.youku.com/show_page/id_ffed8094008e47acad25.html",
           "videoId": "XNjU0NTE4NzM2OA==",
           "badge": "SVIP",
-          "duration": 241.33,
+          "duration": null,
           "predicted": true
         },
         {
@@ -2436,23 +2375,7 @@
           "url": "https://www.youku.com/show_page/id_daaad3bb331546659410.html",
           "videoId": "XNjU1MDk0MDI1Mg==",
           "badge": "VIP",
-          "duration": 395.37,
-          "predicted": true
-        },
-        {
-          "id": "youku-babb02b2839847ff901c-2026-07-27-pred",
-          "platform": "youku",
-          "title": "一具枯骨，逆天修成仙",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/9b9678579ef0458492fd731c613e587d.webp.jpg",
-          "episode": "第293话",
-          "updateTime": "10:00",
-          "date": "2026-08-03",
-          "weekday": 1,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_babb02b2839847ff901c.html",
-          "videoId": "XNjU0ODYyMzM4NA==",
-          "badge": "VIP",
-          "duration": 128.37,
+          "duration": null,
           "predicted": true
         },
         {
@@ -2468,7 +2391,23 @@
           "url": "https://www.youku.com/show_page/id_caabc3bf10da41a38ff4.html",
           "videoId": "XNjU0Mjg2MzA3Mg==",
           "badge": null,
-          "duration": 117.77,
+          "duration": null,
+          "predicted": true
+        },
+        {
+          "id": "youku-cfafd913da434706ab70-2026-07-27-pred",
+          "platform": "youku",
+          "title": "丑妻仙缘",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/11214fd0811e4dc1ba35f850f636f30f.webp.jpg",
+          "episode": "第51话",
+          "updateTime": "10:00",
+          "date": "2026-08-03",
+          "weekday": 1,
+          "svip": false,
+          "url": "https://www.youku.com/show_page/id_cfafd913da434706ab70.html",
+          "videoId": "XNjU0OTc4NjQyNA==",
+          "badge": "首播",
+          "duration": null,
           "predicted": true
         },
         {
@@ -2482,25 +2421,9 @@
           "weekday": 1,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_ebadea91856e40a4abc3.html",
-          "videoId": "XNjU0MjMwMjc4NA==",
+          "videoId": "XNjU0NTkxMjIwNA==",
           "badge": "首播",
-          "duration": 331.07,
-          "predicted": true
-        },
-        {
-          "id": "youku-cbae70c33fa6433a9c1b-2026-07-27-pred",
-          "platform": "youku",
-          "title": "三角洲：行动代号647",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/3f45db38f70543fcb7282ffd26eda03d.webp.jpg",
-          "episode": "第36话",
-          "updateTime": "10:00",
-          "date": "2026-08-03",
-          "weekday": 1,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_cbae70c33fa6433a9c1b.html",
-          "videoId": "XNjU1MDQyMDI0NA==",
-          "badge": "VIP",
-          "duration": 113.37,
+          "duration": null,
           "predicted": true
         },
         {
@@ -2516,7 +2439,7 @@
           "url": "https://www.youku.com/show_page/id_cebaa3486ff54e81bb65.html",
           "videoId": "XNjUzOTkzODM0MA==",
           "badge": "VIP",
-          "duration": 660.04,
+          "duration": null,
           "predicted": true
         },
         {
@@ -2532,7 +2455,7 @@
           "url": "https://www.youku.com/show_page/id_caae9f722a14448fa37f.html",
           "videoId": "XNjU0Mjg2MzA5Ng==",
           "badge": "VIP",
-          "duration": 154.5,
+          "duration": null,
           "predicted": true
         },
         {
@@ -2548,7 +2471,7 @@
           "url": "https://www.youku.com/show_page/id_acfb3adc43ff41128664.html",
           "videoId": "XNjU1MzMwMDgwMA==",
           "badge": "SVIP",
-          "duration": 312.47,
+          "duration": null,
           "predicted": true
         },
         {
@@ -2564,23 +2487,7 @@
           "url": "https://www.youku.com/show_page/id_fbbfa201ace1459495cb.html",
           "videoId": "XNjU0ODY1NTIwNA==",
           "badge": "VIP",
-          "duration": 122.67,
-          "predicted": true
-        },
-        {
-          "id": "youku-aadcff01583e41cca74b-2026-07-27-pred",
-          "platform": "youku",
-          "title": "近视驯狐王",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/669ac7a63eb54b65a0bb5e7a1fb8ced0.webp.jpg",
-          "episode": "第14话",
-          "updateTime": "10:00",
-          "date": "2026-08-03",
-          "weekday": 1,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_aadcff01583e41cca74b.html",
-          "videoId": "XNjU0MzQwODUyOA==",
-          "badge": "VIP",
-          "duration": 125.43,
+          "duration": null,
           "predicted": true
         },
         {
@@ -2588,7 +2495,7 @@
           "platform": "youku",
           "title": "沧海行",
           "poster": "https://liangcang-material.alicdn.com/prod/upload/ce9a3f7217a64e7398ed5fce48ac1679.webp.jpg",
-          "episode": "第37话",
+          "episode": "第39话",
           "updateTime": "17:00",
           "date": "2026-08-03",
           "weekday": 1,
@@ -2596,23 +2503,23 @@
           "url": "https://www.youku.com/show_page/id_feca9dced6f74ec38285.html",
           "videoId": "XNjU1MTg4NjE4NA==",
           "badge": "VIP",
-          "duration": 168.1,
+          "duration": null,
           "predicted": true
         },
         {
           "id": "youku-fdca5177ae604c66bdb8-2026-07-28-pred",
           "platform": "youku",
           "title": "一斩苍穹",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/9a11a59f40e749a79ec95c4a4f9b8186.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/bd3829bad91f471a8ed0dc53c4477acd.webp.jpg",
           "episode": "第3话",
           "updateTime": "10:00",
           "date": "2026-08-04",
           "weekday": 2,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_fdca5177ae604c66bdb8.html",
-          "videoId": "XNjU0MTY1NjIwMA==",
+          "videoId": "XNjUzOTEwOTU5Ng==",
           "badge": "独播",
-          "duration": 1534.56,
+          "duration": null,
           "predicted": true
         },
         {
@@ -2628,7 +2535,7 @@
           "url": "https://www.youku.com/show_page/id_bfee6a1e0bf346578302.html",
           "videoId": "XNjU1NDYzMTI4OA==",
           "badge": "首播",
-          "duration": 180,
+          "duration": null,
           "predicted": true
         },
         {
@@ -2644,23 +2551,7 @@
           "url": "https://www.youku.com/show_page/id_dcfc601098b54c379a57.html",
           "videoId": "XNjUxMTQ1Mjk3Ng==",
           "badge": "VIP",
-          "duration": 357.08,
-          "predicted": true
-        },
-        {
-          "id": "youku-babb02b2839847ff901c-2026-07-28-pred",
-          "platform": "youku",
-          "title": "一具枯骨，逆天修成仙",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/9b9678579ef0458492fd731c613e587d.webp.jpg",
-          "episode": "第293话",
-          "updateTime": "10:00",
-          "date": "2026-08-04",
-          "weekday": 2,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_babb02b2839847ff901c.html",
-          "videoId": "XNjU0ODYyMzM4NA==",
-          "badge": "VIP",
-          "duration": 128.37,
+          "duration": null,
           "predicted": true
         },
         {
@@ -2676,7 +2567,7 @@
           "url": "https://www.youku.com/show_page/id_caabc3bf10da41a38ff4.html",
           "videoId": "XNjU0Mjg2MzA3Mg==",
           "badge": null,
-          "duration": 117.77,
+          "duration": null,
           "predicted": true
         },
         {
@@ -2692,7 +2583,7 @@
           "url": "https://www.youku.com/show_page/id_fede1c50fd6e40ccbc4f.html",
           "videoId": "XNjU0MDg1OTc3Mg==",
           "badge": "独播",
-          "duration": 314.17,
+          "duration": null,
           "predicted": true
         },
         {
@@ -2708,7 +2599,7 @@
           "url": "https://www.youku.com/show_page/id_cacf63f037604089b341.html",
           "videoId": "XNjU1NDcxMTkzNg==",
           "badge": "首播",
-          "duration": 286.87,
+          "duration": null,
           "predicted": true
         },
         {
@@ -2722,25 +2613,25 @@
           "weekday": 2,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_ebadea91856e40a4abc3.html",
-          "videoId": "XNjU0MjMwMjc4NA==",
+          "videoId": "XNjU0NTkxMjIwNA==",
           "badge": "首播",
-          "duration": 331.07,
+          "duration": null,
           "predicted": true
         },
         {
-          "id": "youku-cbae70c33fa6433a9c1b-2026-07-28-pred",
+          "id": "youku-cfafd913da434706ab70-2026-07-28-pred",
           "platform": "youku",
-          "title": "三角洲：行动代号647",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/3f45db38f70543fcb7282ffd26eda03d.webp.jpg",
-          "episode": "第36话",
+          "title": "丑妻仙缘",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/11214fd0811e4dc1ba35f850f636f30f.webp.jpg",
+          "episode": "第51话",
           "updateTime": "10:00",
           "date": "2026-08-04",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_cbae70c33fa6433a9c1b.html",
-          "videoId": "XNjU1MDQyMDI0NA==",
-          "badge": "VIP",
-          "duration": 113.37,
+          "url": "https://www.youku.com/show_page/id_cfafd913da434706ab70.html",
+          "videoId": "XNjU0OTc4NjQyNA==",
+          "badge": "首播",
+          "duration": null,
           "predicted": true
         },
         {
@@ -2756,7 +2647,7 @@
           "url": "https://www.youku.com/show_page/id_cebaa3486ff54e81bb65.html",
           "videoId": "XNjUzOTkzODM0MA==",
           "badge": "VIP",
-          "duration": 660.04,
+          "duration": null,
           "predicted": true
         },
         {
@@ -2772,53 +2663,53 @@
           "url": "https://www.youku.com/show_page/id_caae9f722a14448fa37f.html",
           "videoId": "XNjU0Mjg2MzA5Ng==",
           "badge": "VIP",
-          "duration": 154.5,
+          "duration": null,
           "predicted": true
         },
         {
-          "id": "youku-cebcebd964e644cf8837-2026-07-28-pred",
+          "id": "youku-abef95f5ff0b40af9452-2026-07-28-pred",
           "platform": "youku",
-          "title": "误入诡宗后，我成了全宗团宠",
-          "poster": "https://m.ykimg.com/058100006A59EA6670A43D14BFFA7B7E",
-          "episode": "第13话",
-          "updateTime": "11:30",
+          "title": "赶山：我有山神空间",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/510b3d8fe3f54f9abe2f27d667866120.webp.jpg",
+          "episode": "第30话",
+          "updateTime": "10:00",
           "date": "2026-08-04",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_cebcebd964e644cf8837.html",
-          "videoId": "XNjU0OTMyMjc0NA==",
+          "url": "https://www.youku.com/show_page/id_abef95f5ff0b40af9452.html",
+          "videoId": "XNjU0MTg5MTU1Ng==",
           "badge": "VIP",
-          "duration": 178.03,
+          "duration": null,
           "predicted": true
         },
         {
-          "id": "youku-feca9dced6f74ec38285-2026-07-28-pred",
+          "id": "youku-edaab22fca4647389278-2026-07-28-pred",
           "platform": "youku",
-          "title": "沧海行",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/ce9a3f7217a64e7398ed5fce48ac1679.webp.jpg",
-          "episode": "第37话",
-          "updateTime": "17:00",
+          "title": "瓦罗兰特世界赛，你让我一个黑铁当大哥",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/10f1cea85a5e43139b53cbacfb60719d.webp.jpg",
+          "episode": "第24话",
+          "updateTime": "10:30",
           "date": "2026-08-04",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_feca9dced6f74ec38285.html",
-          "videoId": "XNjU1MTg4NjE4NA==",
+          "url": "https://www.youku.com/show_page/id_edaab22fca4647389278.html",
+          "videoId": "XNjU0NDU5NTk2OA==",
           "badge": "VIP",
-          "duration": 168.1,
+          "duration": null,
           "predicted": true
         },
         {
           "id": "youku-badbb5792f934ddb82fd-2026-07-29-pred",
           "platform": "youku",
           "title": "师兄啊师兄",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/45d824044c914d93bd5a626018b3a431.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/6d7dd3bc92a84a1f80d8ed9d0679fb56.webp.jpg",
           "episode": "第153话",
           "updateTime": "10:00",
           "date": "2026-08-05",
           "weekday": 3,
           "svip": true,
           "url": "https://www.youku.com/show_page/id_badbb5792f934ddb82fd.html",
-          "videoId": "XNjUyOTc0MjYwOA==",
+          "videoId": "XNjUyNTI0MzY5Mg==",
           "badge": "独播",
           "duration": null,
           "predicted": true
@@ -2836,23 +2727,7 @@
           "url": "https://www.youku.com/show_page/id_bfee6a1e0bf346578302.html",
           "videoId": "XNjU1NDYzMTI4OA==",
           "badge": "首播",
-          "duration": 180,
-          "predicted": true
-        },
-        {
-          "id": "youku-babb02b2839847ff901c-2026-07-29-pred",
-          "platform": "youku",
-          "title": "一具枯骨，逆天修成仙",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/9b9678579ef0458492fd731c613e587d.webp.jpg",
-          "episode": "第293话",
-          "updateTime": "10:00",
-          "date": "2026-08-05",
-          "weekday": 3,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_babb02b2839847ff901c.html",
-          "videoId": "XNjU0ODYyMzM4NA==",
-          "badge": "VIP",
-          "duration": 128.37,
+          "duration": null,
           "predicted": true
         },
         {
@@ -2868,7 +2743,7 @@
           "url": "https://www.youku.com/show_page/id_caabc3bf10da41a38ff4.html",
           "videoId": "XNjU0Mjg2MzA3Mg==",
           "badge": null,
-          "duration": 117.77,
+          "duration": null,
           "predicted": true
         },
         {
@@ -2882,9 +2757,25 @@
           "weekday": 3,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_ebadea91856e40a4abc3.html",
-          "videoId": "XNjU0MjMwMjc4NA==",
+          "videoId": "XNjU0NTkxMjIwNA==",
           "badge": "首播",
-          "duration": 331.07,
+          "duration": null,
+          "predicted": true
+        },
+        {
+          "id": "youku-cfafd913da434706ab70-2026-07-29-pred",
+          "platform": "youku",
+          "title": "丑妻仙缘",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/11214fd0811e4dc1ba35f850f636f30f.webp.jpg",
+          "episode": "第51话",
+          "updateTime": "10:00",
+          "date": "2026-08-05",
+          "weekday": 3,
+          "svip": false,
+          "url": "https://www.youku.com/show_page/id_cfafd913da434706ab70.html",
+          "videoId": "XNjU0OTc4NjQyNA==",
+          "badge": "首播",
+          "duration": null,
           "predicted": true
         },
         {
@@ -2900,7 +2791,7 @@
           "url": "https://www.youku.com/show_page/id_cebaa3486ff54e81bb65.html",
           "videoId": "XNjUzOTkzODM0MA==",
           "badge": "VIP",
-          "duration": 660.04,
+          "duration": null,
           "predicted": true
         },
         {
@@ -2916,7 +2807,7 @@
           "url": "https://www.youku.com/show_page/id_caae9f722a14448fa37f.html",
           "videoId": "XNjU0Mjg2MzA5Ng==",
           "badge": "VIP",
-          "duration": 154.5,
+          "duration": null,
           "predicted": true
         },
         {
@@ -2948,7 +2839,7 @@
           "url": "https://www.youku.com/show_page/id_fbbfa201ace1459495cb.html",
           "videoId": "XNjU0ODY1NTIwNA==",
           "badge": "VIP",
-          "duration": 122.67,
+          "duration": null,
           "predicted": true
         },
         {
@@ -2964,7 +2855,7 @@
           "url": "https://www.youku.com/show_page/id_aadcff01583e41cca74b.html",
           "videoId": "XNjU0MzQwODUyOA==",
           "badge": "VIP",
-          "duration": 125.43,
+          "duration": null,
           "predicted": true
         },
         {
@@ -2981,22 +2872,6 @@
           "videoId": "XNjQ2NjYxNzY4OA==",
           "badge": "VIP",
           "duration": null,
-          "predicted": true
-        },
-        {
-          "id": "youku-feca9dced6f74ec38285-2026-07-29-pred",
-          "platform": "youku",
-          "title": "沧海行",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/ce9a3f7217a64e7398ed5fce48ac1679.webp.jpg",
-          "episode": "第37话",
-          "updateTime": "17:00",
-          "date": "2026-08-05",
-          "weekday": 3,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_feca9dced6f74ec38285.html",
-          "videoId": "XNjU1MTg4NjE4NA==",
-          "badge": "VIP",
-          "duration": 168.1,
           "predicted": true
         },
         {
@@ -3019,14 +2894,14 @@
           "id": "youku-eabedc9465724a09b03d-2026-07-30-pred",
           "platform": "youku",
           "title": "东大高武学院",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/19468b08ae1244a4bb1a9ca9dd61a336.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/2ffad8c484fb4d0c9f991ea22d26a9b1.webp.jpg",
           "episode": "第5话",
           "updateTime": "10:00",
           "date": "2026-08-06",
           "weekday": 4,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_eabedc9465724a09b03d.html",
-          "videoId": "XNjUzODMyNTU1Mg==",
+          "videoId": "XNjUzODMyMjM0NA==",
           "badge": "独播",
           "duration": null,
           "predicted": true
@@ -3060,7 +2935,7 @@
           "url": "https://www.youku.com/show_page/id_bfee6a1e0bf346578302.html",
           "videoId": "XNjU1NDYzMTI4OA==",
           "badge": "首播",
-          "duration": 180,
+          "duration": null,
           "predicted": true
         },
         {
@@ -3074,9 +2949,9 @@
           "weekday": 4,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_afbe218f2b834b8698e7.html",
-          "videoId": "XNjUzODU4OTQ5Ng==",
+          "videoId": "XNjQ1OTA2MzM1Mg==",
           "badge": "逐集限免",
-          "duration": 193.84,
+          "duration": null,
           "predicted": true
         },
         {
@@ -3092,7 +2967,7 @@
           "url": "https://www.youku.com/show_page/id_daaad3bb331546659410.html",
           "videoId": "XNjU1MDk0MDI1Mg==",
           "badge": "VIP",
-          "duration": 395.37,
+          "duration": null,
           "predicted": true
         },
         {
@@ -3108,7 +2983,7 @@
           "url": "https://www.youku.com/show_page/id_caabc3bf10da41a38ff4.html",
           "videoId": "XNjU0Mjg2MzA3Mg==",
           "badge": null,
-          "duration": 117.77,
+          "duration": null,
           "predicted": true
         },
         {
@@ -3124,7 +2999,7 @@
           "url": "https://www.youku.com/show_page/id_cacf63f037604089b341.html",
           "videoId": "XNjU1NDcxMTkzNg==",
           "badge": "首播",
-          "duration": 286.87,
+          "duration": null,
           "predicted": true
         },
         {
@@ -3138,9 +3013,25 @@
           "weekday": 4,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_ebadea91856e40a4abc3.html",
-          "videoId": "XNjU0MjMwMjc4NA==",
+          "videoId": "XNjU0NTkxMjIwNA==",
           "badge": "首播",
-          "duration": 331.07,
+          "duration": null,
+          "predicted": true
+        },
+        {
+          "id": "youku-cfafd913da434706ab70-2026-07-30-pred",
+          "platform": "youku",
+          "title": "丑妻仙缘",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/11214fd0811e4dc1ba35f850f636f30f.webp.jpg",
+          "episode": "第51话",
+          "updateTime": "10:00",
+          "date": "2026-08-06",
+          "weekday": 4,
+          "svip": false,
+          "url": "https://www.youku.com/show_page/id_cfafd913da434706ab70.html",
+          "videoId": "XNjU0OTc4NjQyNA==",
+          "badge": "首播",
+          "duration": null,
           "predicted": true
         },
         {
@@ -3156,7 +3047,7 @@
           "url": "https://www.youku.com/show_page/id_cebaa3486ff54e81bb65.html",
           "videoId": "XNjUzOTkzODM0MA==",
           "badge": "VIP",
-          "duration": 660.04,
+          "duration": null,
           "predicted": true
         },
         {
@@ -3172,7 +3063,7 @@
           "url": "https://www.youku.com/show_page/id_caae9f722a14448fa37f.html",
           "videoId": "XNjU0Mjg2MzA5Ng==",
           "badge": "VIP",
-          "duration": 154.5,
+          "duration": null,
           "predicted": true
         },
         {
@@ -3188,7 +3079,7 @@
           "url": "https://www.youku.com/show_page/id_fbbfa201ace1459495cb.html",
           "videoId": "XNjU0ODY1NTIwNA==",
           "badge": "VIP",
-          "duration": 122.67,
+          "duration": null,
           "predicted": true
         },
         {
@@ -3208,27 +3099,11 @@
           "predicted": true
         },
         {
-          "id": "youku-aadcff01583e41cca74b-2026-07-30-pred",
-          "platform": "youku",
-          "title": "近视驯狐王",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/669ac7a63eb54b65a0bb5e7a1fb8ced0.webp.jpg",
-          "episode": "第14话",
-          "updateTime": "10:00",
-          "date": "2026-08-06",
-          "weekday": 4,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_aadcff01583e41cca74b.html",
-          "videoId": "XNjU0MzQwODUyOA==",
-          "badge": "VIP",
-          "duration": 125.43,
-          "predicted": true
-        },
-        {
           "id": "youku-feca9dced6f74ec38285-2026-07-30-pred",
           "platform": "youku",
           "title": "沧海行",
           "poster": "https://liangcang-material.alicdn.com/prod/upload/ce9a3f7217a64e7398ed5fce48ac1679.webp.jpg",
-          "episode": "第37话",
+          "episode": "第39话",
           "updateTime": "17:00",
           "date": "2026-08-06",
           "weekday": 4,
@@ -3236,21 +3111,21 @@
           "url": "https://www.youku.com/show_page/id_feca9dced6f74ec38285.html",
           "videoId": "XNjU1MTg4NjE4NA==",
           "badge": "VIP",
-          "duration": 168.1,
+          "duration": null,
           "predicted": true
         },
         {
           "id": "youku-adaec02f09f9469ab8d8-2026-07-31-pred",
           "platform": "youku",
           "title": "沧元图",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/6f0398fba25b4693986a6c900d831671.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/3135e3dc4b484beea117563cf8c5d17e.webp.jpg",
           "episode": "第89话",
           "updateTime": "10:00",
           "date": "2026-08-07",
           "weekday": 5,
           "svip": true,
           "url": "https://www.youku.com/show_page/id_adaec02f09f9469ab8d8.html",
-          "videoId": "XNjUxOTI0OTk3Mg==",
+          "videoId": "XNjUyNjIyMDQ3Mg==",
           "badge": "独播",
           "duration": null,
           "predicted": true
@@ -3268,7 +3143,7 @@
           "url": "https://www.youku.com/show_page/id_bfee6a1e0bf346578302.html",
           "videoId": "XNjU1NDYzMTI4OA==",
           "badge": "首播",
-          "duration": 180,
+          "duration": null,
           "predicted": true
         },
         {
@@ -3284,7 +3159,7 @@
           "url": "https://www.youku.com/show_page/id_ffed8094008e47acad25.html",
           "videoId": "XNjU0NTE4NzM2OA==",
           "badge": "SVIP",
-          "duration": 241.33,
+          "duration": null,
           "predicted": true
         },
         {
@@ -3304,22 +3179,6 @@
           "predicted": true
         },
         {
-          "id": "youku-babb02b2839847ff901c-2026-07-31-pred",
-          "platform": "youku",
-          "title": "一具枯骨，逆天修成仙",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/9b9678579ef0458492fd731c613e587d.webp.jpg",
-          "episode": "第293话",
-          "updateTime": "10:00",
-          "date": "2026-08-07",
-          "weekday": 5,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_babb02b2839847ff901c.html",
-          "videoId": "XNjU0ODYyMzM4NA==",
-          "badge": "VIP",
-          "duration": 128.37,
-          "predicted": true
-        },
-        {
           "id": "youku-caabc3bf10da41a38ff4-2026-07-31-pred",
           "platform": "youku",
           "title": "太玄胎珠传",
@@ -3332,7 +3191,7 @@
           "url": "https://www.youku.com/show_page/id_caabc3bf10da41a38ff4.html",
           "videoId": "XNjU0Mjg2MzA3Mg==",
           "badge": null,
-          "duration": 117.77,
+          "duration": null,
           "predicted": true
         },
         {
@@ -3348,7 +3207,23 @@
           "url": "https://www.youku.com/show_page/id_fede1c50fd6e40ccbc4f.html",
           "videoId": "XNjU0MDg1OTc3Mg==",
           "badge": "独播",
-          "duration": 314.17,
+          "duration": null,
+          "predicted": true
+        },
+        {
+          "id": "youku-cfafd913da434706ab70-2026-07-31-pred",
+          "platform": "youku",
+          "title": "丑妻仙缘",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/11214fd0811e4dc1ba35f850f636f30f.webp.jpg",
+          "episode": "第51话",
+          "updateTime": "10:00",
+          "date": "2026-08-07",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://www.youku.com/show_page/id_cfafd913da434706ab70.html",
+          "videoId": "XNjU0OTc4NjQyNA==",
+          "badge": "首播",
+          "duration": null,
           "predicted": true
         },
         {
@@ -3362,9 +3237,9 @@
           "weekday": 5,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_ebadea91856e40a4abc3.html",
-          "videoId": "XNjU0MjMwMjc4NA==",
+          "videoId": "XNjU0NTkxMjIwNA==",
           "badge": "首播",
-          "duration": 331.07,
+          "duration": null,
           "predicted": true
         },
         {
@@ -3380,7 +3255,7 @@
           "url": "https://www.youku.com/show_page/id_cacf63f037604089b341.html",
           "videoId": "XNjU1NDcxMTkzNg==",
           "badge": "首播",
-          "duration": 286.87,
+          "duration": null,
           "predicted": true
         },
         {
@@ -3412,7 +3287,7 @@
           "url": "https://www.youku.com/show_page/id_cebaa3486ff54e81bb65.html",
           "videoId": "XNjUzOTkzODM0MA==",
           "badge": "VIP",
-          "duration": 660.04,
+          "duration": null,
           "predicted": true
         },
         {
@@ -3428,23 +3303,23 @@
           "url": "https://www.youku.com/show_page/id_caae9f722a14448fa37f.html",
           "videoId": "XNjU0Mjg2MzA5Ng==",
           "badge": "VIP",
-          "duration": 154.5,
+          "duration": null,
           "predicted": true
         },
         {
-          "id": "youku-acfb3adc43ff41128664-2026-07-31-pred",
+          "id": "youku-edaab22fca4647389278-2026-07-31-pred",
           "platform": "youku",
-          "title": "十二层宝塔",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/7d0b1058ce274d5f87d9e58a4ae8daf1.webp.png",
-          "episode": "第5话",
-          "updateTime": "10:00",
+          "title": "瓦罗兰特世界赛，你让我一个黑铁当大哥",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/10f1cea85a5e43139b53cbacfb60719d.webp.jpg",
+          "episode": "第24话",
+          "updateTime": "10:30",
           "date": "2026-08-07",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_acfb3adc43ff41128664.html",
-          "videoId": "XNjU1MzMwMDgwMA==",
-          "badge": "SVIP",
-          "duration": 312.47,
+          "url": "https://www.youku.com/show_page/id_edaab22fca4647389278.html",
+          "videoId": "XNjU0NDU5NTk2OA==",
+          "badge": "VIP",
+          "duration": null,
           "predicted": true
         },
         {
@@ -3458,7 +3333,7 @@
           "weekday": 5,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_ebbc85b6c57d404792f9.html",
-          "videoId": "XNjQ3MTUyNTc2OA==",
+          "videoId": "XNjUzNzMwNDY5Ng==",
           "badge": "逐集限免",
           "duration": null,
           "predicted": true
@@ -3492,7 +3367,7 @@
           "url": "https://www.youku.com/show_page/id_bfee6a1e0bf346578302.html",
           "videoId": "XNjU1NDYzMTI4OA==",
           "badge": "首播",
-          "duration": 180,
+          "duration": null,
           "predicted": true
         },
         {
@@ -3508,23 +3383,7 @@
           "url": "https://www.youku.com/show_page/id_daaad3bb331546659410.html",
           "videoId": "XNjU1MDk0MDI1Mg==",
           "badge": "VIP",
-          "duration": 395.37,
-          "predicted": true
-        },
-        {
-          "id": "youku-babb02b2839847ff901c-2026-08-01-pred",
-          "platform": "youku",
-          "title": "一具枯骨，逆天修成仙",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/9b9678579ef0458492fd731c613e587d.webp.jpg",
-          "episode": "第293话",
-          "updateTime": "10:00",
-          "date": "2026-08-08",
-          "weekday": 6,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_babb02b2839847ff901c.html",
-          "videoId": "XNjU0ODYyMzM4NA==",
-          "badge": "VIP",
-          "duration": 128.37,
+          "duration": null,
           "predicted": true
         },
         {
@@ -3540,7 +3399,7 @@
           "url": "https://www.youku.com/show_page/id_caabc3bf10da41a38ff4.html",
           "videoId": "XNjU0Mjg2MzA3Mg==",
           "badge": null,
-          "duration": 117.77,
+          "duration": null,
           "predicted": true
         },
         {
@@ -3554,9 +3413,25 @@
           "weekday": 6,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_ebadea91856e40a4abc3.html",
-          "videoId": "XNjU0MjMwMjc4NA==",
+          "videoId": "XNjU0NTkxMjIwNA==",
           "badge": "首播",
-          "duration": 331.07,
+          "duration": null,
+          "predicted": true
+        },
+        {
+          "id": "youku-cfafd913da434706ab70-2026-08-01-pred",
+          "platform": "youku",
+          "title": "丑妻仙缘",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/11214fd0811e4dc1ba35f850f636f30f.webp.jpg",
+          "episode": "第51话",
+          "updateTime": "10:00",
+          "date": "2026-08-08",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://www.youku.com/show_page/id_cfafd913da434706ab70.html",
+          "videoId": "XNjU0OTc4NjQyNA==",
+          "badge": "首播",
+          "duration": null,
           "predicted": true
         },
         {
@@ -3572,7 +3447,7 @@
           "url": "https://www.youku.com/show_page/id_cebaa3486ff54e81bb65.html",
           "videoId": "XNjUzOTkzODM0MA==",
           "badge": "VIP",
-          "duration": 660.04,
+          "duration": null,
           "predicted": true
         },
         {
@@ -3604,21 +3479,21 @@
           "url": "https://www.youku.com/show_page/id_caae9f722a14448fa37f.html",
           "videoId": "XNjU0Mjg2MzA5Ng==",
           "badge": "VIP",
-          "duration": 154.5,
+          "duration": null,
           "predicted": true
         },
         {
           "id": "youku-caab6ed59a5547a78fb1-2026-08-01-pred",
           "platform": "youku",
           "title": "光阴之外",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/42a09017304c4b8facd8efff32b6c9f9.webp.jpg",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/8180c30fac4246c2b72f287319d96e19.webp.jpg",
           "episode": "第34话",
           "updateTime": "18:00",
           "date": "2026-08-08",
           "weekday": 6,
           "svip": true,
           "url": "https://www.youku.com/show_page/id_caab6ed59a5547a78fb1.html",
-          "videoId": "XNjUyNTI0MjA5Ng==",
+          "videoId": "XNjUzNTM0NDMwMA==",
           "badge": "独播",
           "duration": null,
           "predicted": true
@@ -3668,7 +3543,7 @@
           "url": "https://www.youku.com/show_page/id_bfee6a1e0bf346578302.html",
           "videoId": "XNjU1NDYzMTI4OA==",
           "badge": "首播",
-          "duration": 180,
+          "duration": null,
           "predicted": true
         },
         {
@@ -3684,7 +3559,7 @@
           "url": "https://www.youku.com/show_page/id_ffed8094008e47acad25.html",
           "videoId": "XNjU0NTE4NzM2OA==",
           "badge": "SVIP",
-          "duration": 241.33,
+          "duration": null,
           "predicted": true
         },
         {
@@ -3700,23 +3575,7 @@
           "url": "https://www.youku.com/show_page/id_caabc3bf10da41a38ff4.html",
           "videoId": "XNjU0Mjg2MzA3Mg==",
           "badge": null,
-          "duration": 117.77,
-          "predicted": true
-        },
-        {
-          "id": "youku-babb02b2839847ff901c-2026-08-02-pred",
-          "platform": "youku",
-          "title": "一具枯骨，逆天修成仙",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/9b9678579ef0458492fd731c613e587d.webp.jpg",
-          "episode": "第293话",
-          "updateTime": "10:00",
-          "date": "2026-08-09",
-          "weekday": 7,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_babb02b2839847ff901c.html",
-          "videoId": "XNjU0ODYyMzM4NA==",
-          "badge": "VIP",
-          "duration": 128.37,
+          "duration": null,
           "predicted": true
         },
         {
@@ -3730,9 +3589,25 @@
           "weekday": 7,
           "svip": false,
           "url": "https://www.youku.com/show_page/id_ebadea91856e40a4abc3.html",
-          "videoId": "XNjU0MjMwMjc4NA==",
+          "videoId": "XNjU0NTkxMjIwNA==",
           "badge": "首播",
-          "duration": 331.07,
+          "duration": null,
+          "predicted": true
+        },
+        {
+          "id": "youku-cfafd913da434706ab70-2026-08-02-pred",
+          "platform": "youku",
+          "title": "丑妻仙缘",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/11214fd0811e4dc1ba35f850f636f30f.webp.jpg",
+          "episode": "第51话",
+          "updateTime": "10:00",
+          "date": "2026-08-09",
+          "weekday": 7,
+          "svip": false,
+          "url": "https://www.youku.com/show_page/id_cfafd913da434706ab70.html",
+          "videoId": "XNjU0OTc4NjQyNA==",
+          "badge": "首播",
+          "duration": null,
           "predicted": true
         },
         {
@@ -3748,7 +3623,7 @@
           "url": "https://www.youku.com/show_page/id_caae9f722a14448fa37f.html",
           "videoId": "XNjU0Mjg2MzA5Ng==",
           "badge": "VIP",
-          "duration": 154.5,
+          "duration": null,
           "predicted": true
         },
         {
@@ -3764,7 +3639,7 @@
           "url": "https://www.youku.com/show_page/id_cebaa3486ff54e81bb65.html",
           "videoId": "XNjUzOTkzODM0MA==",
           "badge": "VIP",
-          "duration": 660.04,
+          "duration": null,
           "predicted": true
         },
         {
@@ -3784,31 +3659,30 @@
           "predicted": true
         },
         {
-          "id": "youku-feca9dced6f74ec38285-2026-08-02-pred",
+          "id": "youku-bafaacf950634b35b2cf-2026-08-02-pred",
           "platform": "youku",
-          "title": "沧海行",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/ce9a3f7217a64e7398ed5fce48ac1679.webp.jpg",
-          "episode": "第37话",
-          "updateTime": "17:00",
+          "title": "世子无双：将门逆子",
+          "poster": "https://liangcang-material.alicdn.com/prod/upload/e5cd15a4a949404589e45b568fda2a48.webp.jpg",
+          "episode": "第36话",
+          "updateTime": "10:00",
           "date": "2026-08-09",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.youku.com/show_page/id_feca9dced6f74ec38285.html",
-          "videoId": "XNjU1MTg4NjE4NA==",
+          "url": "https://www.youku.com/show_page/id_bafaacf950634b35b2cf.html",
+          "videoId": "XNjU0MTM1NDM4NA==",
           "badge": "VIP",
-          "duration": 168.1,
+          "duration": null,
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-08-02T03:58:41.073Z",
+      "fetchedAt": "2026-08-02T11:49:43.801Z",
       "warnings": [
-        "已保留 53 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "25 条时长无法确认已保留（平台未提供内联时长）",
-        "已按人工确认黑名单排除 2 条 AI 短剧（评论区等渠道确认，如云月大陆）",
-        "已按豆瓣判据排除 10 条疑似 AI 短剧（时长缺失/过短且豆瓣条目暂无评分）",
-        "4 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
-        "10 条时长缺失条目超出豆瓣查询配额，已保留",
-        "已生成下周预计排期 89 条（本周未完结条目 +7 天推导，前端标「预计」）"
+        "101 条时长无法确认已保留（平台未提供内联时长）",
+        "已按人工确认黑名单排除 1 条 AI 短剧（评论区等渠道确认，如云月大陆）",
+        "已按豆瓣判据排除 15 条疑似 AI 短剧（时长缺失/过短且豆瓣条目暂无评分）",
+        "13 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
+        "30 条时长缺失条目超出豆瓣查询配额，已保留",
+        "已生成下周预计排期 85 条（本周未完结条目 +7 天推导，前端标「预计」）"
       ]
     },
     {
@@ -4158,7 +4032,7 @@
           "date": "2026-07-31",
           "weekday": 5,
           "svip": true,
-          "url": "https://v.qq.com/x/page/s41024iuy8k.html",
+          "url": "https://v.qq.com/x/cover/mzc00200xf3rir6.html",
           "badge": "独播",
           "duration": null
         },
@@ -4234,7 +4108,7 @@
           "weekday": 6,
           "svip": false,
           "url": "https://v.qq.com/x/page/h4102ixcpxr.html",
-          "badge": "上新",
+          "badge": "高清修复",
           "duration": null
         },
         {
@@ -4302,14 +4176,14 @@
           "platform": "tencent",
           "title": "仙逆",
           "rule": "VIP用户每周一10点更新1集，SVIP权益加码，可抢先1天看更新集（周日18:00）",
-          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200aaogpgh1785067738162/750?imageMogr2/thumbnail/400x",
-          "episode": "第151集",
+          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200aaogpgh1785646957787/750?imageMogr2/thumbnail/400x",
+          "episode": "第152集",
           "updateTime": "18:00",
           "date": "2026-08-02",
           "weekday": 7,
           "svip": true,
-          "url": "https://v.qq.com/x/page/h4102mkas2q.html",
-          "badge": "独播",
+          "url": "https://v.qq.com/x/page/a4102p9fw7c.html",
+          "badge": "上新",
           "duration": null
         },
         {
@@ -4643,7 +4517,7 @@
           "date": "2026-08-07",
           "weekday": 5,
           "svip": true,
-          "url": "https://v.qq.com/x/page/s41024iuy8k.html",
+          "url": "https://v.qq.com/x/cover/mzc00200xf3rir6.html",
           "badge": "独播",
           "duration": null,
           "predicted": true
@@ -4724,7 +4598,7 @@
           "weekday": 6,
           "svip": false,
           "url": "https://v.qq.com/x/page/h4102ixcpxr.html",
-          "badge": "上新",
+          "badge": "高清修复",
           "duration": null,
           "predicted": true
         },
@@ -4797,19 +4671,19 @@
           "platform": "tencent",
           "title": "仙逆",
           "rule": "VIP用户每周一10点更新1集，SVIP权益加码，可抢先1天看更新集（周日18:00）",
-          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200aaogpgh1785067738162/750?imageMogr2/thumbnail/400x",
-          "episode": "第152集",
+          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200aaogpgh1785646957787/750?imageMogr2/thumbnail/400x",
+          "episode": "第153集",
           "updateTime": "18:00",
           "date": "2026-08-09",
           "weekday": 7,
           "svip": true,
-          "url": "https://v.qq.com/x/page/h4102mkas2q.html",
-          "badge": "独播",
+          "url": "https://v.qq.com/x/page/a4102p9fw7c.html",
+          "badge": "上新",
           "duration": null,
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-08-02T04:05:12.803Z",
+      "fetchedAt": "2026-08-02T11:56:16.019Z",
       "warnings": [
         "33 条时长无法确认已保留（平台未提供内联时长）",
         "已生成下周预计排期 31 条（本周未完结条目 +7 天推导，前端标「预计」）",
@@ -5562,25 +5436,11 @@
           "predicted": true
         }
       ],
+      "error": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.iqiyi.com/dongman/\", waiting until \"domcontentloaded\"\n",
       "fetchedAt": "2026-08-02T04:12:08.523Z",
       "warnings": [
-        "内容类型排除（动态漫/AI动漫/泡面番）：斗罗大陆4终极斗罗 动态漫画 合集",
-        "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：全民诡异：开局掌握零元购 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：全民诡异：开局掌握零元购 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：全民诡异：开局掌握零元购 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：斗罗大陆5重生唐三 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：全民转职：我组建了BOSS军团 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：逆天邪神 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：全民诡异：开局掌握零元购 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：全民诡异：开局掌握零元购 动态漫画",
-        "已保留 4 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "已排除 15 条动态漫/AI动漫/泡面番条目",
+        "已保留 8 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "过滤 24 条不在本周（2026-07-27~2026-08-02）的条目",
         "已生成下周预计排期 24 条（本周未完结条目 +7 天推导，前端标「预计」）",
         "3 条剧集已完结，不生成下周排期"
       ]
