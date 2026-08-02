@@ -23,6 +23,12 @@
 
 Conventional Commits（`feat:` / `fix:` / `refactor:` / `chore:` / `docs:`）；主干开发，多人协作时功能分支 + squash merge。
 
+## 发布流程（默认自动执行）
+
+- 任何代码 / 数据 / 文档修改完成后，默认**必须自行发布**：提交（Conventional Commits）→ 推送 `main` → 触发 GitHub Actions → 确认部署 `state: success` 且线上页面可访问后，再向用户交付。
+- 除非用户明确要求不发布（如仅本地验证、草稿态），否则不得省略发布步骤。
+- 发布完成后在最终回复中给出推送哈希、Actions 运行链接与线上地址。
+
 ## 里程碑
 
 - G0 设计原型（已通过）
