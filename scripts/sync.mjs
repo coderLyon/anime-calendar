@@ -14,9 +14,11 @@ import { scrape as scrapeTencent } from "./tencent.mjs";
 import { scrape as scrapeIqiyi } from "./iqiyi.mjs";
 import { doubanLookup } from "./douban.mjs";
 import { addDays, mondayOfWeekBeijing, sortByDateThenTime, ymd } from "./shared.mjs";
+import { writeHistory } from "./history.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA_FILE = join(ROOT, "data", "updates.json");
+const HISTORY_FILE = join(ROOT, "data", "history.json");
 const FETCH_LIMIT = 40; // 单次同步富集请求上限（计划 §9）
 const PLATFORM_TIMEOUT_MS = { tencent: 480_000, default: 240_000 }; // 单平台抓取硬超时（防 CI 卡死；腾讯需逐集点击解析）
 
@@ -243,6 +245,12 @@ async function main() {
   mkdirSync(dirname(DATA_FILE), { recursive: true });
   writeFileSync(DATA_FILE, JSON.stringify(output, null, 2), "utf8");
   console.log(`已写入 ${DATA_FILE}（${platforms.reduce((n, x) => n + x.items.length, 0)} 条）`);
+  try {
+    writeHistory(DATA_FILE, HISTORY_FILE);
+  } catch (err) {
+    // 历史归档失败不影响 updates.json 发布（仅历史周导航暂缺数据）
+    console.error(`history 归档失败（继续部署）：${err.message}`);
+  }
 
   const failed = platforms.filter((x) => x.error);
   if (failed.length) console.error(`失败平台告警：${failed.map((x) => `${x.platform}(${x.error})`).join("；")}`);

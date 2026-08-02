@@ -9,7 +9,7 @@ on:
     branches: [main]
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -53,6 +53,18 @@ jobs:
       - name: Sync data（四平台抓取 + 清洗 + 写 data/updates.json）
         timeout-minutes: 25
         run: node scripts/sync.mjs
+
+      - name: Commit data back to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/updates.json data/history.json
+          if git diff --cached --quiet; then
+            echo "no data changes"
+          else
+            git commit -m "chore(data): sync updates [skip ci]"
+            git push origin HEAD:main
+          fi
 
       - name: Build
         run: pnpm build
