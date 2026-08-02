@@ -8,6 +8,9 @@ import { createCache, extractAssignedObject, fetchText, httpsImg, mondayOfWeekBe
 export const PLATFORM = "youku";
 export const LABEL = "优酷";
 
+const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
 export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
   const html = await fetchText("https://www.youku.com/ku/webcomic", { referer: "https://www.youku.com/" });
   const dataText = extractAssignedObject(html, "__INITIAL_DATA__");
@@ -102,50 +105,128 @@ function dedupSvip(items, log) {
   return items;
 }
 
-/** 时长富集：show_page 页面内联时长（缺失时尽力而为，失败记 warnings） */
+/**
+ * 从 show_page HTML 提取时长（秒）：
+ * - 支持数值秒（含小数，如 "duration":174.04）、数值毫秒（duration_msec / ≥300000 视为毫秒）、
+ *   ISO 8601（"PT5M49.5S" / "PT1H2M3S"）；
+ * - 页面字段较多时取最大值（通常是正片集时长；AI 漫剧单集可不足 1 分钟）。
+ */
+export function extractDurations(html) {
+  const raw = [
+    ...[...html.matchAll(/"duration"\s*:\s*(\d+(?:\.\d+)?)/g)],
+    ...[...html.matchAll(/"videoDuration"\s*:\s*(\d+(?:\.\d+)?)/g)],
+    ...[...html.matchAll(/"duration_msec"\s*:\s*(\d+(?:\.\d+)?)/g)],
+  ].map((m) => Number(m[1]));
+  for (const m of html.matchAll(/"duration"\s*:\s*"PT(?:(\d+)H)?(?:(\d+)M)?(?:([\d.]+)S)?"/g)) {
+    if (!m[1] && !m[2] && !m[3]) continue;
+    raw.push((m[1] ? Number(m[1]) * 3600 : 0) + (m[2] ? Number(m[2]) * 60 : 0) + (m[3] ? Number(m[3]) : 0));
+  }
+  if (!raw.length) return null;
+  const max = Math.max(...raw);
+  if (max >= 300000) return Math.round(max / 1000); // 毫秒字段（≥5 分钟）
+  return max >= 1 ? Math.round(max * 100) / 100 : null;
+}
+
+/**
+ * 时长富集：show_page 页面内联时长。
+ * 反爬对策（2026-08 实测：连续请求约 3~5 次后 show_page 返回 _____tmd_____/punish 挑战页）：
+ * 1) 慢速（1.2s）请求 + 命中挑战页后长冷却重试；
+ * 2) 挑战页带出真实 videoId（v_show/id_xxx），转播放页兜底；
+ * 3) 首轮失败者冷却后二次重试；
+ * 4) 仍失败者走 Playwright 浏览器加载（CI 已装 chromium），执行挑战后取完整 HTML。
+ */
 async function enrichDurations(items, { fetchLimit, log }) {
-  const cache = createCache();
-  const uniq = [...new Map(items.map((i) => [i.title, i])).values()];
-  let fetched = 0;
+  const results = new Map();
+  const uniq = [...new Map(items.map((i) => [i.title, i])).values()].slice(0, Math.max(fetchLimit, 80));
+  const failed = [];
   for (const it of uniq) {
-    if (cache.get(it.title) !== undefined) continue;
-    if (fetched >= fetchLimit) break;
     let dur = null;
+    let realVid = null;
     try {
-      const pageHtml = await fetchShowPage(it.url);
-      const all = [
-        ...[...pageHtml.matchAll(/"duration"\s*:\s*(\d+)/g)],
-        ...[...pageHtml.matchAll(/"videoDuration"\s*:\s*(\d+)/g)],
-        ...[...pageHtml.matchAll(/"duration_msec"\s*:\s*(\d+)/g)],
-      ].map((m) => Number(m[1]));
-      // ISO 8601 形式："duration":"PT0M59.47S" / "PT9M59.73000000000002S"
-      for (const m of pageHtml.matchAll(/"duration"\s*:\s*"PT(?:(\d+)M)?([\d.]+)S"/g)) {
-        all.push(Number(m[2]) + (m[1] ? Number(m[1]) * 60 : 0));
-      }
-      const max = all.length ? Math.max(...all) : 0;
-      if (max >= 300000) dur = Math.round(max / 1000); // 毫秒字段（≥5 分钟）
-      else if (max >= 1) dur = max; // 秒字段（AI 漫剧单集可不足 1 分钟，如 "duration":59.47）
+      const pageHtml = await fetchShowPage(it.url, log);
+      dur = extractDurations(pageHtml);
     } catch (err) {
+      realVid = err?.realVid ?? null;
       log(`show_page 富集失败 ${it.title}: ${err.message}`);
     }
-    // 播放页兜底：show_page 未取到时长且条目带 videoId 时，走 v_show 播放页（概率性风控，内置重试）
-    if (dur == null && it.videoId) {
-      try {
-        dur = await fetchPlayerDuration(it.videoId);
-      } catch (err) {
-        log(`播放页兜底失败 ${it.title}: ${err.message}`);
+    // 播放页兜底：优先挑战页带出的真实 videoId，其次条目 previewInfo.videoId（预览短片，仅作兜底）
+    if (dur == null) {
+      const vid = realVid ?? it.videoId;
+      if (vid) {
+        try {
+          dur = await fetchPlayerDuration(vid);
+        } catch (err) {
+          log(`播放页兜底失败 ${it.title}: ${err.message}`);
+        }
       }
     }
-    cache.set(it.title, dur);
-    fetched++;
-    // 请求间隔 400ms，降低连续请求触发优酷降级（缺字段/限流）的概率
-    await new Promise((r) => setTimeout(r, 400));
+    results.set(it.title, dur ?? null);
+    if (dur == null) failed.push(it);
+    await sleep(1200);
   }
+
+  if (failed.length) {
+    log(`首轮 ${failed.length} 条未取到时长，冷却 12s 后二次重试…`);
+    await sleep(12000);
+    for (const it of failed) {
+      if (results.get(it.title) != null) continue;
+      try {
+        const pageHtml = await fetchShowPage(it.url, log);
+        const d = extractDurations(pageHtml);
+        if (d != null) results.set(it.title, d);
+      } catch (err) {
+        log(`二次重试失败 ${it.title}: ${err.message}`);
+      }
+      await sleep(1500);
+    }
+  }
+
+  const stillMissing = uniq.filter((it) => results.get(it.title) == null);
+  if (stillMissing.length) {
+    log(`仍缺时长 ${stillMissing.length} 条，启动浏览器兜底…`);
+    await enrichViaBrowser(stillMissing, results, log);
+  }
+
   for (const it of items) {
-    const dur = cache.get(it.title);
+    const dur = results.get(it.title);
     if (dur !== undefined) it.duration = dur;
   }
-  log(`时长富集完成：抓取 ${fetched} 页`);
+  const okCount = [...results.values()].filter((v) => v != null).length;
+  log(`时长富集完成：尝试 ${uniq.length} 部，成功 ${okCount} 部`);
+}
+
+/** Playwright 浏览器兜底：真实浏览器执行反爬挑战后取完整 HTML（CI 已安装 chromium） */
+async function enrichViaBrowser(items, results, log) {
+  let browser;
+  try {
+    const { chromium } = await import("playwright");
+    browser = await chromium.launch({ headless: true });
+    const ctx = await browser.newContext({ userAgent: UA, locale: "zh-CN", viewport: { width: 1280, height: 900 } });
+    const page = await ctx.newPage();
+    for (const it of items) {
+      if (results.get(it.title) != null) continue;
+      try {
+        await page.goto(it.url, { waitUntil: "domcontentloaded", timeout: 35000 });
+        await page.waitForFunction(() => document.documentElement.outerHTML.length > 50000, null, { timeout: 25000 }).catch(() => {});
+        await page.waitForTimeout(1500);
+        const html = await page.evaluate(() => document.documentElement.outerHTML);
+        const dur = extractDurations(html);
+        if (dur != null) {
+          results.set(it.title, dur);
+          log(`浏览器兜底成功 ${it.title}: ${dur}s`);
+        } else {
+          log(`浏览器兜底无时长字段 ${it.title}`);
+        }
+      } catch (err) {
+        log(`浏览器兜底失败 ${it.title}: ${err.message}`);
+      }
+      await page.waitForTimeout(1200);
+    }
+  } catch (err) {
+    log(`浏览器兜底不可用：${err.message}`);
+  } finally {
+    if (browser) await browser.close().catch(() => {});
+  }
 }
 
 /** 解析 "MM:SS" / "HH:MM:SS" / 秒数 为秒 */
@@ -185,22 +266,21 @@ async function fetchPlayerDuration(videoId) {
   throw lastErr ?? new Error("播放页时长获取失败");
 }
 
-/** show_page 抓取：失败或缺少时长字段时退避重试（优酷对连续请求偶发限流/缺字段） */
-async function fetchShowPage(url) {
+/** show_page 抓取：失败或命中反爬挑战页时冷却重试；挑战页带出真实 videoId 供播放页兜底 */
+async function fetchShowPage(url, log = () => {}) {
   let lastErr;
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
-      const html = await fetchText(url, { referer: "https://www.youku.com/ku/webcomic", timeout: 15000 });
-      if (/duration/.test(html)) return html;
-      // 风控页无 duration 且短小：重试只会加重风控，立即失败
-      if (html.length < 10000 || html.includes("_____tmd_____")) throw new Error("页面命中风控");
-      throw new Error("页面缺少 duration 字段");
+      const html = await fetchText(url, { referer: "https://www.youku.com/ku/webcomic", timeout: 20000 });
+      if (html.length > 10000 && !html.includes("_____tmd_____")) return html;
+      const err = new Error("页面命中反爬挑战");
+      err.realVid = html.match(/v_show\/id_([A-Za-z0-9=]+)/)?.[1] ?? null;
+      throw err;
     } catch (err) {
       lastErr = err;
     }
-    // 风控/降级响应重试无益，提前结束
-    if (/风控/.test(String(lastErr.message))) break;
-    if (attempt < 2) await new Promise((r) => setTimeout(r, 900 * (attempt + 1)));
+    log(`show_page 命中反爬挑战（第 ${attempt + 1} 次），冷却 ${8 + attempt * 4}s 后重试`);
+    await sleep((8 + attempt * 4) * 1000);
   }
   throw lastErr ?? new Error("show_page 抓取失败");
 }

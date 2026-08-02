@@ -13,6 +13,9 @@ const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
 const BADGE_RE = /(限免|独播|上新|结局点映|大结局|高清修复|超前点映)/;
 const EP_RE = /更新至\s*([0-9]+|[一二三四五六七八九十百千]+|Ⅱ[0-9]+)\s*(集|话)|全\s*([0-9]+)\s*(集)|(大结局|完结)/;
+const EP_LIST_URL =
+  "https://pbaccess.video.qq.com/trpc.universal_backend_service.page_server_rpc.PageServer/GetPageData?video_appid=3000010&vplatform=2&vversion_name=8.2.96";
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const WK = { 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 日: 7, 天: 7, 末: 6 };
 const fmt = (h, min) => `${String(h).padStart(2, "0")}:${String(min ?? 0).padStart(2, "0")}`;
@@ -172,6 +175,7 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
 
     const deduped = dedupPipeline(items, log);
     await resolveLatestVideos(deduped, browser, { fetchLimit, log });
+    await enrichTencentDurations(deduped, { log });
     return { platform: PLATFORM, label: LABEL, items: deduped, fetchedAt: new Date().toISOString(), warnings: [] };
   } finally {
     if (browser) await browser.close().catch(() => {});
@@ -382,4 +386,106 @@ function dayDiff(a, b) {
 
 function toYmd(d) {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+
+/**
+ * 解析 GetPageData（vsite_episode_list）响应 → 每集时长列表。
+ * 字段：item_id=vid、play_title「无上神帝 第601话」、union_title「无上神帝_601」、duration=秒。
+ */
+export function parseEpisodeList(text) {
+  const out = [];
+  try {
+    const json = JSON.parse(text);
+    for (const mod of json?.data?.module_list_datas ?? []) {
+      for (const md of mod?.module_datas ?? []) {
+        for (const it of md?.item_data_lists?.item_datas ?? []) {
+          const p = it?.item_params ?? {};
+          if (!it.item_id || p.duration == null || String(p.duration).trim() === "") continue;
+          const playTitle = String(p.play_title ?? "");
+          const unionTitle = String(p.union_title ?? "");
+          const epNum = Number(playTitle.match(/第\s*(\d+)/)?.[1] ?? unionTitle.match(/_(\d+)\s*$/)?.[1] ?? -1);
+          out.push({
+            vid: it.item_id,
+            title: playTitle || unionTitle,
+            epNum,
+            duration: Number(p.duration),
+            extra: /预告|片花|彩蛋|花絮|采访|抢先看|先导/.test(`${playTitle} ${unionTitle}`),
+          });
+        }
+      }
+    }
+  } catch {
+    /* 解析失败返回空列表 */
+  }
+  return out;
+}
+
+async function fetchEpisodeList(cid, vid) {
+  const res = await fetch(EP_LIST_URL, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      origin: "https://v.qq.com",
+      referer: "https://v.qq.com/",
+      "user-agent": UA,
+    },
+    body: JSON.stringify({
+      has_cache: 1,
+      page_params: {
+        req_from: "web_vsite",
+        page_id: "vsite_episode_list",
+        page_type: "detail_operation",
+        id_type: "1",
+        page_size: "",
+        cid,
+        vid,
+        lid: "",
+        page_num: "",
+        page_context: "",
+        detail_page_type: "1",
+      },
+    }),
+    signal: AbortSignal.timeout(20000),
+  });
+  if (!res.ok) throw new Error(`GetPageData HTTP ${res.status}`);
+  return parseEpisodeList(await res.text());
+}
+
+/**
+ * 腾讯时长富集：GetPageData 分集接口返回每集秒级 duration。
+ * 按条目集数匹配（如第601集 ↔ 第601话），匹配不到回退「非花絮/预告的最新集」；
+ * 同 cid 复用一次请求，请求间隔 300ms，失败仅告警不影响发布。
+ */
+async function enrichTencentDurations(items, { fetchLimit = 60, log = () => {} } = {}) {
+  const cidOf = (i) => i.id.split("-")[1];
+  const vidOf = (i) => i.url?.match(/\/x\/page\/([a-z0-9]+)\.html/i)?.[1] ?? null;
+  const need = items.filter((i) => i.duration == null);
+  if (!need.length) return;
+  const uniq = [...new Map(need.map((i) => [cidOf(i), i])).values()].slice(0, fetchLimit);
+  let ok = 0;
+  for (const it of uniq) {
+    const cid = cidOf(it);
+    try {
+      const list = await fetchEpisodeList(cid, vidOf(it) ?? "");
+      if (!list.length) {
+        log(`GetPageData 空列表 ${it.title}`);
+        continue;
+      }
+      const epNum = epNumOf(it.episode);
+      const pick =
+        (epNum > 0 ? list.find((x) => x.epNum === epNum && !x.extra) ?? list.find((x) => x.epNum === epNum) : null) ??
+        [...list].reverse().find((x) => !x.extra) ??
+        list[list.length - 1];
+      if (pick && pick.duration > 0) {
+        for (const item of items) {
+          if (cidOf(item) === cid && item.duration == null) item.duration = pick.duration;
+        }
+        ok++;
+      }
+    } catch (err) {
+      log(`GetPageData 失败 ${it.title}: ${err.message}`);
+    }
+    await sleep(300);
+  }
+  log(`腾讯时长富集：${ok}/${uniq.length} 个 cid 获取到时长`);
 }

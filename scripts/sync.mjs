@@ -19,7 +19,7 @@ import { writeHistory } from "./history.mjs";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA_FILE = join(ROOT, "data", "updates.json");
 const HISTORY_FILE = join(ROOT, "data", "history.json");
-const FETCH_LIMIT = 40; // 单次同步富集请求上限（计划 §9）
+const FETCH_LIMIT = { youku: 80, default: 40 }; // 单次同步富集请求上限（计划 §9；优酷唯一标题多，放宽到 80）
 const PLATFORM_TIMEOUT_MS = { tencent: 480_000, default: 240_000 }; // 单平台抓取硬超时（防 CI 卡死；腾讯需逐集点击解析）
 
 const PLATFORMS = [
@@ -205,7 +205,7 @@ async function main() {
     try {
       const timeoutMs = PLATFORM_TIMEOUT_MS[p.platform] ?? PLATFORM_TIMEOUT_MS.default;
       const result = await Promise.race([
-        p.scrape({ fetchLimit: FETCH_LIMIT, log: (m) => console.log(`[${p.platform}] ${m}`) }),
+        p.scrape({ fetchLimit: FETCH_LIMIT[p.platform] ?? FETCH_LIMIT.default, log: (m) => console.log(`[${p.platform}] ${m}`) }),
         new Promise((_, reject) => setTimeout(() => reject(new Error(`超时（>${timeoutMs / 1000}s）`)), timeoutMs)),
       ]);
       result.warnings = Array.isArray(result.warnings) ? result.warnings : [];
