@@ -19,6 +19,8 @@ concurrency:
 
 jobs:
   deploy:
+    # CI 数据回写产生的 bot 提交（[skip ci]）不应再次触发部署，防止循环
+    if: ${{ !(github.event_name == 'push' && contains(github.event.head_commit.message, '[skip ci]')) }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
