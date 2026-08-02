@@ -7,7 +7,7 @@ export function WarnBanner({ onClose }: { onClose: () => void }) {
       <div className="warn-text">
         <span className="warn-title">数据提示：</span>
         <span className="warn-body">
-          已默认过滤时长不足 5 分钟（&lt;300 秒）的短剧条目（可在工具栏「短剧过滤」调整阈值或关闭），
+          已默认过滤时长不足 10 分钟（&lt;600 秒）的短剧条目（可在工具栏「短剧过滤」调整阈值或关闭），
           并已排除动态漫/AI动漫/泡面番内容；详情见同步日志 warnings
         </span>
       </div>

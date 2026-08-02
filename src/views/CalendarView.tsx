@@ -2,10 +2,11 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { EmptyState } from "../components/EmptyState";
 import { Segmented } from "../components/Segmented";
 import { useToast } from "../components/Toast";
-import { addDays, isoWeek, sameDay, wdOf, WEEK_CN } from "../lib/date";
-import { ChevronLeftIcon, ChevronRightIcon, ExternalIcon } from "../lib/icons";
-import { itemsOn } from "../lib/items";
+import { addDays, dstr, isoWeek, sameDay, wdOf, WEEK_CN } from "../lib/date";
+import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon, ExternalIcon } from "../lib/icons";
+import { calendarItemsOn } from "../lib/items";
 import { badgeHas } from "../lib/filters";
+import { loadHistoryFile } from "../lib/history";
 import { missKey, missedOn } from "../lib/missed";
 import { platShort } from "../lib/platforms";
 import { posterGlyph, posterStyle } from "../lib/poster";
@@ -14,7 +15,7 @@ import { readIgnoreMissed, writeIgnoreMissed } from "../lib/sync";
 import { queueSettingsChange } from "../lib/syncQueue";
 import { normTitle, useFollows } from "../store/follows";
 import { ITEMS, TODAY, useDataVersion } from "../store/data";
-import type { AnimeItem, CalScope, CalView, Page } from "../types";
+import type { AnimeItem, CalScope, CalView, HistoryFile, Page } from "../types";
 
 function openItem(item: AnimeItem, toast: (m: string) => void) {
   if (item.url && item.url !== "#") {
@@ -99,6 +100,12 @@ export function CalendarView({ onNavigate }: { onNavigate: (p: Page) => void }) 
   const [weekSel, setWeekSel] = useState<number>(() => wdOf(TODAY));
   const [monthSel, setMonthSel] = useState<number>(() => TODAY.getDate());
   const touchX = useRef<number | null>(null);
+  const [hist, setHist] = useState<HistoryFile | null>(null);
+
+  useEffect(() => {
+    // 月视图整月数据：历史归档（懒加载）+ 本周/下周
+    void loadHistoryFile().then(setHist);
+  }, []);
 
   useEffect(() => {
     const sp = new URLSearchParams(location.search);
@@ -108,7 +115,20 @@ export function CalendarView({ onNavigate }: { onNavigate: (p: Page) => void }) 
     window.history.replaceState(null, "", `${location.pathname}?${sp.toString()}`);
   }, [view, scope]);
 
-  const scopeItems = (d: Date) => itemsOn(d, "all").filter((i) => scope === "all" || follows[normTitle(i.title)]);
+  // 追番日历不受短剧过滤/屏蔽影响，展示原始全部条目
+  const scopeItems = (d: Date) => calendarItemsOn(d, "all").filter((i) => scope === "all" || follows[normTitle(i.title)]);
+
+  const monthItems = (d: Date) => {
+    const base = scopeItems(d);
+    const wk = dstr(mondayOf(d));
+    const hw = hist?.weeks.find((w) => w.weekStart === wk);
+    if (!hw) return base;
+    const merged = [...base];
+    for (const h of hw.items) {
+      if (h.date === dstr(d) && !merged.some((x) => x.id === h.id)) merged.push(h);
+    }
+    return scope === "all" ? merged : merged.filter((i) => follows[normTitle(i.title)]);
+  };
 
   const backToday = () => {
     setCalDate(new Date(TODAY));
@@ -156,7 +176,7 @@ export function CalendarView({ onNavigate }: { onNavigate: (p: Page) => void }) 
           <div className="sub">{sub} · 范围默认为「仅已追番」，可切换「全部番剧」</div>
         </div>
         <button className="btn ghost" onClick={() => onNavigate("home")}>
-          <ChevronLeftIcon /> 返回看板
+          <ChevronLeftIcon /> <span className="btn-text">返回看板</span>
         </button>
       </div>
       <div className="cal-head">
@@ -172,7 +192,7 @@ export function CalendarView({ onNavigate }: { onNavigate: (p: Page) => void }) 
             {view === "month" ? (
               <>
                 <div className="d">{calMonth.getFullYear()}年{calMonth.getMonth() + 1}月</div>
-                <div className="week">本月 {monthTotal(calMonth, scopeItems)} 部更新</div>
+                <div className="week">本月 {monthTotal(calMonth, monthItems)} 部更新</div>
               </>
             ) : view === "week" ? (
               <>
@@ -193,13 +213,15 @@ export function CalendarView({ onNavigate }: { onNavigate: (p: Page) => void }) 
           <button className="nav-btn" aria-label="下一页" onClick={() => step(1)}>
             <ChevronRightIcon />
           </button>
-          <button className="btn ghost sm" onClick={backToday}>回到今天</button>
+          <button className="btn ghost sm" aria-label="回到今天" onClick={backToday}>
+            <CalendarIcon /> <span className="btn-text">回到今天</span>
+          </button>
         </div>
       </div>
 
       {view === "schedule" ? renderSchedule(calDate, scopeItems, toast) : null}
       {view === "week" ? renderWeek(calDate, weekSel, setWeekSel, scopeItems, toast) : null}
-      {view === "month" ? renderMonth(calMonth, monthSel, setMonthSel, scopeItems, toast) : null}
+      {view === "month" ? renderMonth(calMonth, monthSel, setMonthSel, monthItems, toast) : null}
     </div>
   );
 }

@@ -11,7 +11,7 @@
 - `CONTENT_BLOCKLIST`（小课堂/发布会/预告/片花/花絮/幕后/访谈/见面会/先导/抢先看）**只影响最新集解析**，不参与周表过滤；周表按平台原始更新数据展示。
 - 追番日历与「今日追番更新」默认**仅已追番**，可切换全部番剧。
 - 下周排期预测：同步在清洗/豆瓣过滤后，对本周**未完结**条目按同星期同时段 +7 天生成「预计」排期（`predicted: true`，前端标「预计」）；已完结（大结局/结局点映/全X集/X集全）条目标记 `finished: true` 且不预测；预测条目不参与时长/豆瓣过滤，看板计数仅统计本周真实数据。
-- 短剧过滤（前端开关）：同步**保留**全部已知时长条目（含 <300s 短条目）；前端「短剧过滤」默认开启、阈值默认 300s 可调（1/3/5/10/15 分钟，localStorage 键 `anime-calendar.shortfilter.v1`），关闭时展示全部；**过滤开关开启即隐藏**用户手动屏蔽的剧集（localStorage 键 `anime-calendar.blocked.v1`，卡片收藏按钮下方「屏蔽」按钮维护）与优酷名称含断句标点（、，。：；，不匹配 ？！以免误伤「是王者啊？第六季」等正剧）的条目。
+- 短剧过滤（前端开关）：同步**保留**全部已知时长条目（含 <300s 短条目）；前端「短剧过滤」默认开启、阈值默认 600s（10 分钟）可调（1/3/5/10/15 分钟，localStorage 键 `anime-calendar.shortfilter.v1`），关闭时展示全部；**过滤开关开启即隐藏**用户手动屏蔽的剧集（localStorage 键 `anime-calendar.blocked.v1`，卡片收藏按钮下方「屏蔽」按钮维护）与优酷名称含断句标点（、，。：；，不匹配 ？！以免误伤「是王者啊？第六季」等正剧）的条目；**追番日历（日程/周/月）不受短剧过滤影响**，按原始数据展示。
 - 腾讯更新时间：卡片底部规则文案按「星期匹配」解析——SVIP 抢先日取 SVIP 时间（如周一 18:00），VIP 常规日取 VIP 时间（如周二 10:00），避免用错档期。
 - 优酷直达链接：卡片 URL 一律用 `show_page/id_{showId}.html`（浏览器会落到该动漫播放页）；`previewInfo.videoId` 是预览短片（片花/预告）**不可**作为直达链接。
 - 时长富集：B站季分集接口 `api.bilibili.com/pgc/view/web/season?season_id=`（毫秒，按 episode_id 匹配、正片最新集兜底）；腾讯分集接口 `pbaccess.video.qq.com/.../GetPageData`（`vsite_episode_list`，每集秒级 duration，按集数匹配、非花絮最新集兜底）；优酷 show_page 内联时长（秒/ISO 8601）优先 + 播放页 `pageMap.extra.duration` 兜底，连续请求触发 `_____tmd_____/punish` 反爬时按「慢速 1.2s + 挑战页冷却重试 + 挑战页带出真实 videoId 转播放页 + Playwright 浏览器兜底」降级；爱奇艺专辑分集接口 `pcw-api.iqiyi.com/albums/album/avlistinfo?aid=`（按集数匹配、最新集兜底）。

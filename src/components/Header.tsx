@@ -1,7 +1,6 @@
 import { CalendarIcon, MoonIcon, RefreshIcon, StarIcon, SunIcon } from "../lib/icons";
 import type { Theme } from "../store/theme";
 import type { Page } from "../types";
-import { NotificationBell } from "./NotificationBell";
 import { SyncStatus } from "./SyncStatus";
 
 interface HeaderProps {
@@ -40,7 +39,6 @@ export function Header({ page, followCount, theme, onNavigate, onToggleTheme, on
         </a>
         <div className="header-actions">
           <SyncStatus />
-          <NotificationBell />
           <button className="icon-btn" title={theme === "dark" ? "切换浅色模式" : "切换深色模式"} onClick={onToggleTheme}>
             <MoonIcon className="ic-moon" />
             <SunIcon className="ic-sun" />

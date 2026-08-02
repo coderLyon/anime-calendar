@@ -36,7 +36,7 @@ export function TodayStrip({
           : <span className="empty-note">今日没有追番更新 · 在看板点星标即可加入追番日历</span>}
       </div>
       <button className="btn ghost sm" onClick={onOpenCalendar}>
-        追番日历 <ChevronRightIcon />
+        <span className="btn-text">追番日历</span> <ChevronRightIcon />
       </button>
     </div>
   );

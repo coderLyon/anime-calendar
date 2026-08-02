@@ -46,7 +46,7 @@ Actions（cron 0 11,23 * * * UTC + workflow_dispatch + push）
   → vite build（含 PWA manifest + Service Worker）→ actions/deploy-pages 发布 dist/
 ```
 
-前端「短剧过滤」开关（默认开启、阈值可调 1/3/5/10/15 分钟）：仅隐藏展示，数据仍保留，关闭后可见全部条目；过滤开启即隐藏用户手动屏蔽的剧集，以及优酷名称含断句标点（、，。：；）的 AI 短剧条目。
+前端「短剧过滤」开关（默认开启、阈值默认 10 分钟、可调 1/3/5/10/15 分钟）：仅隐藏展示，数据仍保留，关闭后可见全部条目；过滤开启即隐藏用户手动屏蔽的剧集，以及优酷名称含断句标点（、，。：；）的 AI 短剧条目；追番日历（日程/周/月）不受短剧过滤影响，按原始数据展示。
 
 前端构建时读取 `data/updates.json`（结构与 `AnimeItem` 契约一致）；「刷新」按钮运行时拉取 raw.githubusercontent 最新数据（jsDelivr 兜底），对比 `generatedAt` 后更新页面。单平台抓取失败时输出 `error` 字段并沿用上次成功数据，只有完全无法产出数据时同步才退出非零。
 

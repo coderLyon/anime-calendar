@@ -11,20 +11,41 @@ const LABEL: Record<string, string> = {
   error: "同步异常",
 };
 
+const SEEN_KEY = "anime-calendar.sync-seen.v1";
+
 /** Header 轻量同步状态：无账号体系，仅提示数据归属（本机 / 云端匿名身份） */
 export function SyncStatus() {
   const status = useSyncStatus();
   const [open, setOpen] = useState(false);
+  const [seen, setSeen] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem(SEEN_KEY) === "1";
+    } catch {
+      return true;
+    }
+  });
+  const openPanel = () => {
+    setOpen(true);
+    if (!seen) {
+      try {
+        localStorage.setItem(SEEN_KEY, "1");
+      } catch {
+        /* ignore */
+      }
+      setSeen(true);
+    }
+  };
   return (
     <>
       <button
         className="icon-btn sync-status"
         title={`云同步：${LABEL[status]}`}
         aria-label={`云同步状态：${LABEL[status]}`}
-        onClick={() => setOpen(true)}
+        onClick={openPanel}
       >
         <CloudIcon className={`sync-${status}`} />
         <span className={`sync-dot dot-${status}`} aria-hidden="true" />
+        {!seen ? <span className="sync-red-dot" aria-hidden="true" /> : null}
       </button>
       {open ? <SyncPanel onClose={() => setOpen(false)} /> : null}
     </>

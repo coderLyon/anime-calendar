@@ -6,7 +6,10 @@ import { useFollows } from "./store/follows";
 import { refreshFromRemote } from "./store/data";
 import { initSync, syncAll } from "./lib/sync";
 import { queueSettingsChange } from "./lib/syncQueue";
+import { showTodayNotifications } from "./lib/notify";
 import type { Mode, Page, PlatformFilter } from "./types";
+
+const WARN_DISMISS_KEY = "anime-calendar.warn-dismissed.v1";
 import { CalendarView } from "./views/CalendarView";
 import { FollowView } from "./views/FollowView";
 import { HomeView } from "./views/HomeView";
@@ -17,7 +20,7 @@ function param(name: string): string | null {
 
 export function App() {
   const toast = useToast();
-  const { count } = useFollows();
+  const { count, follows } = useFollows();
   const [page, setPage] = useState<Page>(() => {
     const p = param("p");
     return p === "follow" || p === "calendar" ? p : "home";
@@ -27,7 +30,14 @@ export function App() {
     const s = param("state");
     return s === "skeleton" || s === "error" || s === "empty" ? s : "normal";
   });
-  const [warn, setWarn] = useState<boolean>(() => param("warn") !== "0");
+  const [warn, setWarn] = useState<boolean>(() => {
+    if (param("warn") === "0") return false;
+    try {
+      return localStorage.getItem(WARN_DISMISS_KEY) !== "1";
+    } catch {
+      return true;
+    }
+  });
   const [theme, setTheme] = useState<Theme>(() => {
     const t = param("theme");
     return t === "dark" || t === "light" ? t : loadTheme();
@@ -54,15 +64,39 @@ export function App() {
     };
   }, []);
 
+  // 站内/浏览器通知自动检查（铃铛已移除，保留静默提醒）：加载后、切回前台、每 30 分钟
+  useEffect(() => {
+    const check = () => {
+      if (document.visibilityState === "visible") showTodayNotifications(follows);
+    };
+    const t = window.setTimeout(() => showTodayNotifications(follows), 2500);
+    const onVis = () => check();
+    document.addEventListener("visibilitychange", onVis);
+    const iv = window.setInterval(() => showTodayNotifications(follows), 30 * 60 * 1000);
+    return () => {
+      window.clearTimeout(t);
+      document.removeEventListener("visibilitychange", onVis);
+      window.clearInterval(iv);
+    };
+  }, [follows]);
+
   const runRefresh = useCallback(() => {
     setPage("home");
     setMode("skeleton");
     void refreshFromRemote().then((ok) => {
       setMode("normal");
-      setWarn(true);
       toast(ok ? "数据已更新" : "已使用本地数据（刷新源不可用）");
     });
   }, [toast]);
+
+  const onWarnClose = useCallback(() => {
+    try {
+      localStorage.setItem(WARN_DISMISS_KEY, "1");
+    } catch {
+      /* ignore */
+    }
+    setWarn(false);
+  }, []);
 
   return (
     <>
@@ -86,7 +120,7 @@ export function App() {
             mode={mode}
             onRetry={runRefresh}
             warn={warn}
-            onWarnClose={() => setWarn(false)}
+            onWarnClose={onWarnClose}
             onNavigate={setPage}
           />
         ) : null}

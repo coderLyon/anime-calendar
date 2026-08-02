@@ -99,4 +99,27 @@ describe("断更检测", () => {
     const lastWeek = svipItems.map((i) => ({ ...i, id: "sv2", date: dstr(addDays(WEEK_START, -7)) }));
     expect(missedOn(sunday, svipFollows, lastWeek, new Set())).toHaveLength(1);
   });
+
+  it("SVIP 抢先日先于 VIP 日（周三抢先/周四VIP）也不误报", () => {
+    const wed = addDays(WEEK_START, 2);
+    const thu = addDays(WEEK_START, 3);
+    const items: AnimeItem[] = [
+      {
+        id: "pl",
+        platform: "tencent",
+        title: "盘龙",
+        episode: "第10集",
+        updateTime: "10:00",
+        date: dstr(thu),
+        weekday: 4,
+        svip: false,
+        rule: "VIP用户每周四10点更新1集，SVIP用户每周三18点抢先看",
+        finished: false,
+      },
+    ];
+    const follows: FollowMap = {
+      盘龙: { key: "盘龙", title: "盘龙", platforms: [{ platform: "tencent", url: "#", episode: "第10集" }], followedAt: "2026-08-01" },
+    };
+    expect(missedOn(wed, follows, items, new Set())).toHaveLength(0);
+  });
 });

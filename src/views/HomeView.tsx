@@ -12,7 +12,7 @@ import { WeekdayBoard } from "../components/WeekdayBoard";
 import { addDays, dstr, isoWeek, relativeTime, wdOf } from "../lib/date";
 import { applyFilters, type BadgeKey, type ItemFilters } from "../lib/filters";
 import { loadHistoryFile } from "../lib/history";
-import { itemsOn, platformCounts } from "../lib/items";
+import { itemsOn, platformCounts, rawWeekTotal } from "../lib/items";
 import { applyShortFilter, useShortFilterVersion } from "../lib/shortFilter";
 import { GENERATED_AT, TODAY, WEEK_START, useDataVersion } from "../store/data";
 import type { HistoryFile, Mode, Page, PlatformFilter } from "../types";
@@ -115,7 +115,7 @@ export function HomeView({ platform, onPlatformChange, mode, onRetry, warn, onWa
             {weekRange} · 第{isoWeek(weekStart)}周 · 数据更新于 {relativeTime(GENERATED_AT)}
             <span title={updatedAt}>（{updatedAt}）</span> · 数据源：哔哩哔哩 / 腾讯视频 / 优酷 / 爱奇艺
           </div>
-          <div className="board-meta">今日高亮 · 共 {counts.all} 条更新 · 点击卡片直达最新正剧集</div>
+          <div className="board-meta">今日高亮 · 共 {rawWeekTotal()} 条更新 · 点击卡片直达最新正剧集</div>
         </div>
         <WeekNav offset={weekOffset} min={WEEK_MIN} max={WEEK_MAX} onChange={setWeekOffset} />
       </div>

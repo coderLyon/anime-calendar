@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import type { AnimeItem } from "../types";
 
 const KEY = "anime-calendar.shortfilter.v1";
-const DEFAULT = { enabled: true, thresholdSec: 300 };
+const DEFAULT = { enabled: true, thresholdSec: 600 }; // 默认过滤 10 分钟（用户确认）
 
 export interface ShortFilter {
   enabled: boolean;
