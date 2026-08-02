@@ -64,6 +64,9 @@ jobs:
             echo "today data ok"
           fi
 
+      - name: Verify data fields（总集数/更新规则覆盖，不足时告警）
+        run: node scripts/verify/data-fields.mjs
+
       - name: Commit data back to main
         run: |
           git config user.name "github-actions[bot]"

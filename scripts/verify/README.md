@@ -7,6 +7,7 @@
 | `node scripts/verify/youku-today.mjs` | 优酷「今」tab 锚定今天、7 天 tab 日期连续不错位 | 秒级 |
 | `node scripts/verify/iqiyi-today.mjs` | 爱奇艺「今天」tab（激活日不重复点击）当天有数据 | 约 6 分钟 |
 | `node scripts/verify/tencent-duration.mjs` | 腾讯 GetPageData 时长匹配（季号不误当集数、斩神/茶啊二中 >300s） | 约 6 分钟 |
+| `node scripts/verify/data-fields.mjs` | 同步后 total（总集数）与 rule（更新规则）覆盖度 + 非法值检查（CI 同款，不足时 `::warning::` 不阻断） | 秒级 |
 
 历史教训：爱奇艺「今天」tab 与优酷「今」tab 曾多次回归（重复点击激活 tab 导致卡片清空、date 字段缺失回退周一索引导致错位）。任何抓取器改动都不得破坏以下约定：
 
@@ -14,3 +15,5 @@
 2. 日期映射优先平台内联 date/week 字段；缺失时以「今/今天」tab 为锚推算，禁止直接假定 tabs[0]=周一；
 3. 腾讯集数解析必须匹配「第N集/话」（带后缀），禁止把「第2季」当集数；
 4. 时长匹配优先正片 vid 精确命中，其次按集数，禁止直接取列表末项（可能为预告/花絮）。
+5. 总集数：B站 season API `total`、优酷 `episodeTotal`、爱奇艺 avlistinfo `total`；腾讯仅「全N集」文案，禁止对连载中剧集推断（避免把「已更新N集」误作总集数）。
+6. 更新规则：腾讯卡片原文、B站 `new_ep.desc`、优酷/爱奇艺按星期 Tab 推导（仅未完结剧），禁止给已完结剧生成周更规则。

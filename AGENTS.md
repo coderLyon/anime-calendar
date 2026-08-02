@@ -11,14 +11,16 @@
 - `CONTENT_BLOCKLIST`（小课堂/发布会/预告/片花/花絮/幕后/访谈/见面会/先导/抢先看）**只影响最新集解析**，不参与周表过滤；周表按平台原始更新数据展示。
 - 追番日历与「今日追番更新」默认**仅已追番**，可切换全部番剧。
 - 下周排期预测：同步在清洗/豆瓣过滤后，对本周**未完结**条目按同星期同时段 +7 天生成「预计」排期（`predicted: true`，前端标「预计」）；已完结（大结局/结局点映/全X集/X集全）条目标记 `finished: true` 且不预测；预测条目不参与时长/豆瓣过滤，看板计数仅统计本周真实数据。
-- 短剧过滤（前端开关）：同步**保留**全部已知时长条目（含 <300s 短条目）；前端「短剧过滤」默认开启、阈值默认 600s（10 分钟）可调（1/3/5/10/15 分钟，localStorage 键 `anime-calendar.shortfilter.v1`），关闭时展示全部；**过滤开关开启即隐藏**用户手动屏蔽的剧集（localStorage 键 `anime-calendar.blocked.v1`，卡片收藏按钮下方「屏蔽」按钮维护）与优酷名称含断句标点（、，。：；，不匹配 ？！以免误伤「是王者啊？第六季」等正剧）的条目；**追番日历（日程/周/月）不受短剧过滤影响**，按原始数据展示。
+- 短剧过滤（前端开关）：同步**保留**全部已知时长条目（含 <300s 短条目）；前端「短剧过滤」默认开启、阈值默认 600s（10 分钟）可调（1/3/5/10/15 分钟，localStorage 键 `anime-calendar.shortfilter.v1`），关闭时展示全部；**过滤开关开启即隐藏**用户手动屏蔽的剧集（localStorage 键 `anime-calendar.blocked.v1`，卡片收藏按钮下方「屏蔽」按钮维护）与优酷名称含断句标点（、，。：；，不匹配 ？！以免误伤「是王者啊？第六季」等正剧）的条目；控件统计文案「已过滤 X 部」= 当前周真实条目（排除 predicted）中被过滤隐藏的去重剧部数（时长不足 + 手动屏蔽 + 优酷标点，与 `applyShortFilter` 判定一致），其中手动屏蔽单独标注；**追番日历（日程/周/月）不受短剧过滤影响**，按原始数据展示。
+- 更新规则（`rule` 字段）：腾讯卡片底部原文；B站取季接口 `new_ep.desc`（如「连载中, 每周一、六 9:00更新」，去掉「连载中,」前缀）；优酷/爱奇艺按星期 Tab 排期推导「每周X更新」/「每日更新」（仅未完结剧，已完结不生成）。
 - 腾讯更新时间：卡片底部规则文案按「星期匹配」解析——SVIP 抢先日取 SVIP 时间（如周一 18:00），VIP 常规日取 VIP 时间（如周二 10:00），避免用错档期。
+- 总集数（`total` 字段）：B站 season API `total`（缺省回退已更新集数）、优酷 show_page `episodeTotal`、爱奇艺 avlistinfo `data.total`；腾讯仅「全N集」文案（连载中剧集平台未公开计划总集数，不做推断）。前端 `formatTotal` 按平台单位展示「共N集/话」。
 - 优酷直达链接：卡片 URL 一律用 `show_page/id_{showId}.html`（浏览器会落到该动漫播放页）；`previewInfo.videoId` 是预览短片（片花/预告）**不可**作为直达链接。
 - 时长富集：B站季分集接口 `api.bilibili.com/pgc/view/web/season?season_id=`（毫秒，按 episode_id 匹配、正片最新集兜底）；腾讯分集接口 `pbaccess.video.qq.com/.../GetPageData`（`vsite_episode_list`，每集秒级 duration，按集数匹配、非花絮最新集兜底）；优酷 show_page 内联时长（秒/ISO 8601）优先 + 播放页 `pageMap.extra.duration` 兜底，连续请求触发 `_____tmd_____/punish` 反爬时按「慢速 1.2s + 挑战页冷却重试 + 挑战页带出真实 videoId 转播放页 + Playwright 浏览器兜底」降级；爱奇艺专辑分集接口 `pcw-api.iqiyi.com/albums/album/avlistinfo?aid=`（按集数匹配、最新集兜底）。
 - 内容类型排除：标题含「动态漫/AI动漫/泡面番」（AI 生成短剧）的条目在同步时直接丢弃并记入 `warnings`（与时长无关）；爱奇艺另以评论区「AI 关键字 + 负面情绪」启发式过滤（限流时优雅降级）；优酷/爱奇艺「时长缺失或 <1 分钟」条目追加豆瓣影视搜索甄别——精确命中且「暂无评分」丢弃（白名单保护正剧，如苏东坡与杭州的故事），未命中/查询失败保留，每次同步查询上限 10 次、间隔 2s（反爬约束，`scripts/douban.mjs`）；用户经评论区等渠道确认的 AI 短剧（如云月大陆）进人工黑名单无条件排除。
 - 腾讯更新规则：卡片下方「每周X…」规则文案入库为 `rule` 字段；SVIP 抢先去重仅限卡片文案含 SVIP 的相邻同日集重复。
 - 追番日历（日程/周/月）**不受短剧过滤影响**，按原始数据展示；月视图合并历史归档（`history.json`）实现整月数据。
-- 追番列表展示以**当前周数据富集**为准（`platformInfoFor`）：历史收藏缺腾讯更新时间/链接过期时自动补全；搜索与看板共用同一 `SearchBox`（规范化标题匹配）。
+- 追番列表展示以**当前周数据富集**为准（`platformInfoFor`）：历史收藏缺腾讯更新时间/链接过期时自动补全；搜索与看板共用同一 `SearchBox`（规范化标题匹配）；封面取 `FollowItem.poster`（收藏时持久化）→ 当前周数据 → 历史归档（懒加载 history.json）兜底，保证已完结/历史剧集仍有封面。
 - 更新提醒为**静默浏览器通知**（顶栏铃铛已移除）：页面打开期间加载/切前台/每 30 分钟检查，同一剧集同一天只提醒一次。
 - 本地存储键：追番 `anime-calendar.follows.v1`；屏蔽 `anime-calendar.blocked.v1`；主题 `anime-calendar.theme.v1`；短剧过滤 `anime-calendar.shortfilter.v1`（默认开、600s）；断更忽略 `anime-calendar.ignore-missed.v1`；通知去重 `anime-calendar.notified.v1`；云同步会话 `anime-calendar.session.v1`、同步队列 `anime-calendar.sync.pending.v1`、云同步红点已读 `anime-calendar.sync-seen.v1`；数据提示已关闭 `anime-calendar.warn-dismissed.v1`。
 
