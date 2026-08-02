@@ -3,6 +3,7 @@ import { addDays, sameDay, WEEK_CN } from "../lib/date";
 import { BanIcon, StarIcon } from "../lib/icons";
 import { itemsOn } from "../lib/items";
 import { applyFilters, type ItemFilters } from "../lib/filters";
+import { badgeHas } from "../lib/filters";
 import { formatDuration } from "../lib/items";
 import { platShort } from "../lib/platforms";
 import { posterGlyph, posterStyle } from "../lib/poster";
@@ -136,11 +137,11 @@ export function MobileBoard({ platform, mode, weekStart, filters, day, onDayChan
                       <div className="m-time">{WEEK_CN[(item.weekday ?? 0) - 1] ?? ""}{item.updateTime ? ` ${item.updateTime}` : ""} 更新</div>
                       <div className="m-tags">
                         {item.svip ? <span className="tag svip">SVIP抢先</span> : null}
-                        {item.badge === "独播" ? <span className="tag dubo">独播</span> : null}
-                        {item.badge === "限免" ? <span className="tag mianfei">限免</span> : null}
-                        {item.badge === "超前点映" ? <span className="tag cqdy">超前点映</span> : null}
-                        {item.badge === "结局点映" ? <span className="tag jujie">结局点映</span> : null}
-                        {item.badge === "大结局" ? <span className="tag wanjie">大结局</span> : null}
+                        {badgeHas(item, "独播") ? <span className="tag dubo">独播</span> : null}
+                        {badgeHas(item, "限免") ? <span className="tag mianfei">限免</span> : null}
+                        {badgeHas(item, "超前点映") ? <span className="tag cqdy">超前点映</span> : null}
+                        {badgeHas(item, "结局点映") ? <span className="tag jujie">结局点映</span> : null}
+                        {badgeHas(item, "大结局") ? <span className="tag wanjie">大结局</span> : null}
                         {item.finished ? <span className="tag wanjie">完结</span> : null}
                       </div>
                     </div>

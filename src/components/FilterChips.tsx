@@ -1,6 +1,6 @@
 import type { BadgeKey } from "../lib/filters";
 
-const BADGES: BadgeKey[] = ["独播", "SVIP抢先", "限免", "超前点映", "结局点映", "大结局", "完结"];
+const BADGES: BadgeKey[] = ["独播", "SVIP抢先", "限免", "点映", "完结"];
 
 export function FilterChips({
   badges,

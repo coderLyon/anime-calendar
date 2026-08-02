@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { BellIcon } from "../lib/icons";
-import { showTodayNotifications, todayFollowedNotifyItems } from "../lib/notify";
+import { showTodayNotifications, todayFollowedNotifyItems, unnotifiedTodayCount, useNotifiedVersion } from "../lib/notify";
 import { useToast } from "./Toast";
 import { useFollows } from "../store/follows";
 import { useDataVersion } from "../store/data";
@@ -12,7 +12,9 @@ export function NotificationBell() {
   const { follows } = useFollows();
   useDataVersion();
   useShortFilterVersion();
+  useNotifiedVersion();
   const todayCount = todayFollowedNotifyItems(follows).length;
+  const unnotified = unnotifiedTodayCount(follows);
   const [supported] = useState(() => typeof window !== "undefined" && "Notification" in window);
 
   useEffect(() => {
@@ -59,7 +61,7 @@ export function NotificationBell() {
       onClick={onClick}
     >
       <BellIcon />
-      {todayCount > 0 ? <span className="bell-badge">{todayCount > 99 ? "99+" : todayCount}</span> : null}
+      {unnotified > 0 ? <span className="bell-badge">{unnotified > 99 ? "99+" : unnotified}</span> : null}
     </button>
   );
 }

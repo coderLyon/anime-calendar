@@ -4,6 +4,7 @@ import { normTitle } from "../store/follows";
 import { TODAY } from "../store/data";
 import { logNotified } from "./sync";
 import type { AnimeItem, FollowMap } from "../types";
+import { useEffect, useState } from "react";
 
 /** 站内/浏览器更新提醒（迭代计划书 M5）：同一剧集同一天只提醒一次 */
 const NOTIFIED_KEY = "anime-calendar.notified.v1";
@@ -31,6 +32,22 @@ export function markNotified(date: string, keys: string[]): void {
   } catch {
     /* ignore */
   }
+  notifiedListeners.forEach((l) => l());
+}
+
+const notifiedListeners = new Set<() => void>();
+
+/** 订阅「已提醒」变更：角标在通知触发后自动归零 */
+export function useNotifiedVersion(): number {
+  const [v, setV] = useState(0);
+  useEffect(() => {
+    const l = () => setV((x) => x + 1);
+    notifiedListeners.add(l);
+    return () => {
+      notifiedListeners.delete(l);
+    };
+  }, []);
+  return v;
 }
 
 /** 今日已追番且未关闭逐剧提醒的条目（角标计数） */
@@ -54,6 +71,13 @@ export function pendingNotifications(follows: FollowMap): AnimeItem[] {
   const date = dstr(TODAY);
   const done = new Set(readNotified()[date] ?? []);
   return todayFollowedNotifyItems(follows).filter((i) => timePassed(i.updateTime) && !done.has(normTitle(i.title)));
+}
+
+/** 今日已追番但当天尚未提醒过的条数（铃铛角标） */
+export function unnotifiedTodayCount(follows: FollowMap): number {
+  const date = dstr(TODAY);
+  const done = new Set(readNotified()[date] ?? []);
+  return todayFollowedNotifyItems(follows).filter((i) => !done.has(normTitle(i.title))).length;
 }
 
 /** 聚合提醒一次；返回触发条数（未授权/已提醒过返回 0） */

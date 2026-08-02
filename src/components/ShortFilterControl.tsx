@@ -1,6 +1,7 @@
 import { getShortFilter, setShortFilter, useShortFilterVersion } from "../lib/shortFilter";
 import { queueSettingsChange } from "../lib/syncQueue";
-import { useBlocked } from "../store/blocked";
+import { normKey, useBlocked } from "../store/blocked";
+import { ITEMS } from "../store/data";
 
 const PRESETS = [
   { label: "1 分钟", sec: 60 },
@@ -12,8 +13,13 @@ const PRESETS = [
 
 export function ShortFilterControl() {
   useShortFilterVersion();
-  const { count: blockedCount } = useBlocked();
+  const { blocked } = useBlocked();
   const { enabled, thresholdSec } = getShortFilter();
+  // 只统计「当前数据中确实会被屏蔽隐藏」的剧集数，避免把历史/已下架屏蔽项算进去
+  const blockedInData = new Set<string>();
+  for (const it of ITEMS) {
+    if (blocked[normKey(it.title)]) blockedInData.add(normKey(it.title));
+  }
   const cur = PRESETS.find((p) => p.sec === thresholdSec) ?? { label: `${Math.round(thresholdSec / 60)} 分钟`, sec: thresholdSec };
   const change = (next: { enabled?: boolean; thresholdSec?: number }) => {
     setShortFilter({ enabled: next.enabled ?? enabled, thresholdSec: next.thresholdSec ?? thresholdSec });
@@ -43,7 +49,7 @@ export function ShortFilterControl() {
               </option>
             ))}
           </select>
-          {blockedCount > 0 ? <span className="filter-hint">已屏蔽 {blockedCount} 部（过滤开启即隐藏）</span> : null}
+          {blockedInData.size > 0 ? <span className="filter-hint">已屏蔽 {blockedInData.size} 部（当前数据，过滤开启即隐藏）</span> : null}
         </>
       ) : null}
     </div>

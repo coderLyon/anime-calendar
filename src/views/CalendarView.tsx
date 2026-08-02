@@ -5,6 +5,7 @@ import { useToast } from "../components/Toast";
 import { addDays, isoWeek, sameDay, wdOf, WEEK_CN } from "../lib/date";
 import { ChevronLeftIcon, ChevronRightIcon, ExternalIcon } from "../lib/icons";
 import { itemsOn } from "../lib/items";
+import { badgeHas } from "../lib/filters";
 import { missKey, missedOn } from "../lib/missed";
 import { platShort } from "../lib/platforms";
 import { posterGlyph, posterStyle } from "../lib/poster";
@@ -50,9 +51,9 @@ function CalItem({ item, toast }: { item: AnimeItem; toast: (m: string) => void 
           <span className={`plat-dot ${item.platform}`} />
           {item.episode}
           {item.svip ? " · SVIP抢先" : ""}
-          {item.badge === "独播" ? " · 独播" : ""}
-          {item.badge === "超前点映" ? " · 超前点映" : ""}
-          {item.badge === "结局点映" ? " · 结局点映" : ""}
+          {badgeHas(item, "独播") ? " · 独播" : ""}
+          {badgeHas(item, "超前点映") ? " · 超前点映" : ""}
+          {badgeHas(item, "结局点映") ? " · 结局点映" : ""}
           {item.finished ? " · 完结" : ""}
         </div>
         {item.rule ? <div className="cal-item-rule">官方更新：{item.rule}</div> : null}

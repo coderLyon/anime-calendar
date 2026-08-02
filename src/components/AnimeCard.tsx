@@ -1,6 +1,7 @@
 import type { KeyboardEvent } from "react";
 import { WEEK_CN } from "../lib/date";
 import { BanIcon, StarIcon } from "../lib/icons";
+import { badgeHas } from "../lib/filters";
 import { formatDuration } from "../lib/items";
 import { platShort } from "../lib/platforms";
 import { posterGlyph, posterStyle } from "../lib/poster";
@@ -8,11 +9,11 @@ import type { AnimeItem } from "../types";
 
 function Tag({ item }: { item: AnimeItem }) {
   if (item.svip) return <span className="tag svip">SVIP抢先</span>;
-  if (item.badge === "独播") return <span className="tag dubo">独播</span>;
-  if (item.badge === "限免") return <span className="tag mianfei">限免</span>;
-  if (item.badge === "超前点映") return <span className="tag cqdy">超前点映</span>;
-  if (item.badge === "结局点映") return <span className="tag jujie">结局点映</span>;
-  if (item.badge === "大结局") return <span className="tag wanjie">大结局</span>;
+  if (badgeHas(item, "独播")) return <span className="tag dubo">独播</span>;
+  if (badgeHas(item, "限免")) return <span className="tag mianfei">限免</span>;
+  if (badgeHas(item, "超前点映")) return <span className="tag cqdy">超前点映</span>;
+  if (badgeHas(item, "结局点映")) return <span className="tag jujie">结局点映</span>;
+  if (badgeHas(item, "大结局")) return <span className="tag wanjie">大结局</span>;
   if (item.finished) return <span className="tag wanjie">完结</span>;
   return null;
 }

@@ -21,7 +21,14 @@ describe("搜索与筛选", () => {
     expect(itemBadges(item({ svip: true }))).toContain("SVIP抢先");
     expect(itemBadges(item({ badge: "独播" }))).toContain("独播");
     expect(itemBadges(item({ finished: true }))).toContain("完结");
-    expect(itemBadges(item({ badge: "结局点映", finished: true }))).toEqual(["结局点映", "完结"]);
+    // 点映合并为一个维度；大结局并入完结
+    expect(itemBadges(item({ badge: "结局点映", finished: true }))).toEqual(["点映", "完结"]);
+    expect(itemBadges(item({ badge: "大结局" }))).toEqual(["完结"]);
+    expect(itemBadges(item({ badge: "超前点映" }))).toEqual(["点映"]);
+    // 限免变体（限免中 / 逐集限免）与多徽章写法都能命中
+    expect(itemBadges(item({ badge: "限免中" }))).toContain("限免");
+    expect(itemBadges(item({ badge: "逐集限免" }))).toContain("限免");
+    expect(itemBadges(item({ badge: "独播、限免中" }))).toEqual(["独播", "限免"]);
   });
 
   it("标题搜索忽略标点与大小写", () => {
@@ -30,9 +37,11 @@ describe("搜索与筛选", () => {
   });
 
   it("徽章筛选为或关系", () => {
-    const f = F({ badges: new Set(["独播", "限免"]) });
+    const f = F({ badges: new Set(["独播", "点映"]) });
     expect(matchesFilters(item({ badge: "独播" }), f)).toBe(true);
-    expect(matchesFilters(item({ badge: "限免" }), f)).toBe(true);
+    expect(matchesFilters(item({ badge: "结局点映" }), f)).toBe(true);
+    expect(matchesFilters(item({ badge: "超前点映" }), f)).toBe(true);
+    expect(matchesFilters(item({ badge: "逐集限免" }), F({ badges: new Set(["限免"]) }))).toBe(true);
     expect(matchesFilters(item({ svip: true }), f)).toBe(false);
   });
 
@@ -46,10 +55,10 @@ describe("搜索与筛选", () => {
   it("applyFilters 组合生效", () => {
     const list = [
       item({ title: "仙逆", svip: true }),
-      item({ title: "吞噬星空", badge: "独播" }),
+      item({ title: "吞噬星空", badge: "独播、限免中" }),
       item({ title: "凡人修仙传", finished: true }),
     ];
-    const out = applyFilters(list, F({ badges: new Set(["独播"]) }));
+    const out = applyFilters(list, F({ badges: new Set(["限免"]) }));
     expect(out.map((i) => i.title)).toEqual(["吞噬星空"]);
     expect(applyFilters(list, F({ query: "修仙" })).map((i) => i.title)).toEqual(["凡人修仙传"]);
   });

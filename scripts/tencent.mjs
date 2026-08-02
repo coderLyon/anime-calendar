@@ -11,7 +11,7 @@ export const LABEL = "腾讯视频";
 
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
-const BADGE_RE = /(限免|独播|上新|结局点映|大结局|高清修复|超前点映)/;
+const BADGE_RE = /(限免|独播|上新|结局点映|大结局|高清修复|超前点映)/g;
 const EP_RE = /更新至\s*([0-9]+|[一二三四五六七八九十百千]+|Ⅱ[0-9]+)\s*(集|话)|全\s*([0-9]+)\s*(集)|(大结局|完结)/;
 const EP_LIST_URL =
   "https://pbaccess.video.qq.com/trpc.universal_backend_service.page_server_rpc.PageServer/GetPageData?video_appid=3000010&vplatform=2&vversion_name=8.2.96";
@@ -166,7 +166,10 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
           svip,
           // 一律走封面页解析最新正片：卡片 dt-params 的 vid 可能是预告/花絮，不能作为直达链接
           url: `https://v.qq.com/x/cover/${c.cid}.html`,
-          badge: c.text.match(BADGE_RE)?.[1] ?? null,
+          badge: (() => {
+            const ms = [...c.text.matchAll(BADGE_RE)].map((m) => m[1]);
+            return ms.length ? [...new Set(ms)].join("、") : null;
+          })(),
           duration: null,
         });
       }

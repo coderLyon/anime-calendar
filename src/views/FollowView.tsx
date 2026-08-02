@@ -155,7 +155,6 @@ function FollowItemRow({
   onIgnoreMissed: (key: string, date: string) => void;
 }) {
   const { setNotify } = useFollows();
-  const latest = [...follow.platforms].sort((a, b) => (b.updateTime ?? "").localeCompare(a.updateTime ?? ""))[0];
   const poster = posterForTitle(follow.title);
   const sorted = [...follow.platforms].sort((a, b) => a.platform.localeCompare(b.platform));
   const notifyOn = follow.notify ?? true;
@@ -177,12 +176,15 @@ function FollowItemRow({
           )}
         </div>
         <div className="fi-info">
-          <div className="fi-title">
+          <div className="fi-title-row">
+            {sorted.map((p) => (
+              <span key={p.platform} className={`plat-chip ${p.platform}`}>{platShort(p.platform)}</span>
+            ))}
             {follow.title}
             {follow.platforms.length > 1 ? <span className="tag dubo">{follow.platforms.length} 平台</span> : null}
           </div>
           <div className="fi-sub">
-            {follow.platforms.length} 个平台 · 最近更新：{latest ? `${latest.episode}${latest.updateTime ? ` · ${latest.updateTime}` : ""}` : "待同步"} · 加入于 {follow.followedAt || "-"}
+            共 {follow.platforms.length} 个平台 · 加入于 {follow.followedAt || "-"}
           </div>
           {missed.length ? (
             <div className="missed-row">
@@ -195,40 +197,36 @@ function FollowItemRow({
             </div>
           ) : null}
         </div>
-        <button
-          className={`notify-btn ${notifyOn ? "on" : ""}`}
-          aria-label={notifyOn ? "关闭更新提醒" : "开启更新提醒"}
-          title={notifyOn ? "更新提醒已开启，点击关闭" : "更新提醒已关闭，点击开启"}
-          onClick={() => setNotify(follow.key, !notifyOn)}
-        >
-          <BellIcon />
-        </button>
-        <button
-          className="star-btn on"
-          aria-label="取消追番"
-          onClick={onRemove}
-        >
-          <StarFill />
-        </button>
+        <div className="fi-actions">
+          <button
+            className={`notify-btn ${notifyOn ? "on" : ""}`}
+            aria-label={notifyOn ? "关闭更新提醒" : "开启更新提醒"}
+            title={notifyOn ? "更新提醒已开启，点击关闭" : "更新提醒已关闭，点击开启"}
+            onClick={() => setNotify(follow.key, !notifyOn)}
+          >
+            <BellIcon />
+          </button>
+          <button className="star-btn on" aria-label="取消追番" onClick={onRemove}>
+            <StarFill />
+          </button>
+        </div>
       </div>
-      <div className="fi-body">
+      <div className="fi-links">
         {sorted.map((p) => (
-          <div key={p.platform} className="fi-plat">
-            <span className={`plat-chip ${p.platform}`}>{platShort(p.platform)}</span>
-            <span className="plat-info">
-              <strong>{p.episode}{p.updateTime ? ` · ${p.updateTime}` : ""}</strong>
-            </span>
-            <a
-              href={p.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => {
-                if (p.url === "#") e.preventDefault();
-              }}
-            >
-              最新集 <ExternalIcon />
-            </a>
-          </div>
+          <a
+            key={p.platform}
+            className="fi-link"
+            href={p.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => {
+              if (p.url === "#") e.preventDefault();
+            }}
+          >
+            <span className={`plat-dot ${p.platform}`} />
+            <span className="fi-link-meta">{p.episode}{p.updateTime ? ` · ${p.updateTime}` : ""}</span>
+            <span className="fi-link-go">最新集 <ExternalIcon /></span>
+          </a>
         ))}
       </div>
     </div>

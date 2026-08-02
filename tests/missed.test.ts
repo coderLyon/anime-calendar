@@ -72,4 +72,31 @@ describe("断更检测", () => {
     const late = addDays(WEEK_START, 3); // 周四，无规则
     expect(missedOn(late, follows, items, new Set())).toHaveLength(0);
   });
+
+  it("SVIP 抢先剧：常规日无条目不算断更（本周已提前更新）", () => {
+    // 周日 SVIP 抢先、周二 VIP 常规：周日已有条目时周二不再误报
+    const sunday = addDays(WEEK_START, 6);
+    const tuesday = addDays(WEEK_START, 1);
+    const svipItems: AnimeItem[] = [
+      {
+        id: "sv",
+        platform: "tencent",
+        title: "吞噬星空",
+        episode: "第234集",
+        updateTime: "18:00",
+        date: dstr(sunday),
+        weekday: 7,
+        svip: true,
+        rule: "每周日18点SVIP抢先看，周二10点更新",
+        finished: false,
+      },
+    ];
+    const svipFollows: FollowMap = {
+      吞噬星空: { key: "吞噬星空", title: "吞噬星空", platforms: [{ platform: "tencent", url: "#", episode: "第234集" }], followedAt: "2026-08-01" },
+    };
+    expect(missedOn(tuesday, svipFollows, svipItems, new Set())).toHaveLength(0);
+    // 若本周尚无任何条目（规则条目落在上周），则仍判定断更
+    const lastWeek = svipItems.map((i) => ({ ...i, id: "sv2", date: dstr(addDays(WEEK_START, -7)) }));
+    expect(missedOn(sunday, svipFollows, lastWeek, new Set())).toHaveLength(1);
+  });
 });

@@ -119,7 +119,7 @@ export function HomeView({ platform, onPlatformChange, mode, onRetry, warn, onWa
         </div>
         <WeekNav offset={weekOffset} min={WEEK_MIN} max={WEEK_MAX} onChange={setWeekOffset} />
       </div>
-      {weekOffset === 0 ? <TodayStrip platform={platform} filters={filters} onOpenCalendar={() => onNavigate("calendar")} /> : null}
+      {weekOffset === 0 ? <TodayStrip filters={filters} onOpenCalendar={() => onNavigate("calendar")} /> : null}
       <div className="toolbar">
         <PlatformTabs platform={platform} mode={mode} counts={counts} onChange={onPlatformChange} />
         <ShortFilterControl />

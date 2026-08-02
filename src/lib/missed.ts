@@ -64,6 +64,7 @@ function ruleFor(follow: { key: string; platforms: { platform: PlatformKey }[] }
 export function missedOn(date: Date, follows: FollowMap, items: AnimeItem[], ignore: Set<string>): MissedEntry[] {
   const wd = wdOf(date);
   const ds = dstr(date);
+  const weekStart = dstr(WEEK_START);
   const out: MissedEntry[] = [];
   for (const f of Object.values(follows)) {
     const info = ruleFor(f, items);
@@ -72,6 +73,15 @@ export function missedOn(date: Date, follows: FollowMap, items: AnimeItem[], ign
     if (!rule || !rule.days.has(wd)) continue;
     const has = items.some((i) => i.platform === info.platform && normTitle(i.title) === f.key && i.date === ds);
     if (has) continue;
+    // SVIP 抢先剧（如「每周日18点SVIP抢先看，周二10点更新」）：周表只展示 SVIP 抢先日条目，
+    // VIP 常规日无条目属预期（同一集已提前更新）；本周内已有该剧任意更新即不算断更，
+    // 与 SVIP/VIP 日期先后顺序无关（抢先日可能落在上周日，周表只覆盖本周一~周日）。
+    if (/SVIP|抢先/.test(info.rule)) {
+      const hasAnyThisWeek = items.some(
+        (i) => i.platform === info.platform && normTitle(i.title) === f.key && i.date >= weekStart && i.date <= dstr(TODAY),
+      );
+      if (hasAnyThisWeek) continue;
+    }
     const ig = `${f.key}:${ds}`;
     if (ignore.has(ig)) continue;
     out.push({ key: f.key, title: f.title, platform: info.platform, date: ds, weekday: wd, rule: info.rule });
