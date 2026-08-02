@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from "vitest";
-import { applyShortFilter, setBlockedTitles, setShortFilter } from "../src/lib/shortFilter";
+import { applyShortFilter, hiddenStats, setBlockedTitles, setShortFilter } from "../src/lib/shortFilter";
 import type { AnimeItem } from "../src/types";
 
 const item = (over: Partial<AnimeItem> = {}): AnimeItem => ({
@@ -38,5 +38,18 @@ describe("短剧过滤", () => {
   it("优酷断句标点标题隐藏", () => {
     expect(applyShortFilter([item({ platform: "youku", title: "开局签到，无敌" })])).toHaveLength(0);
     expect(applyShortFilter([item({ platform: "youku", title: "是王者啊？第六季" })])).toHaveLength(1);
+  });
+
+  it("hiddenStats 与过滤判定一致（去重、排除 predicted、区分手动屏蔽）", () => {
+    const list = [
+      item({ id: "a", title: "短剧A", duration: 120 }),
+      item({ id: "a2", title: "短剧A", duration: 120, predicted: true }),
+      item({ id: "b", title: "屏蔽剧", duration: 900 }),
+      item({ id: "c", title: "优酷，标点", platform: "youku", duration: 900 }),
+      item({ id: "d", title: "长剧", duration: 900 }),
+    ];
+    const blocked = new Set(["屏蔽剧"]);
+    expect(hiddenStats(list, 300, blocked)).toEqual({ hidden: 3, manual: 1 });
+    expect(hiddenStats([], 300, blocked)).toEqual({ hidden: 0, manual: 0 });
   });
 });

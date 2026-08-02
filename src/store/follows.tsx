@@ -71,6 +71,7 @@ export function FollowsProvider({ children }: { children: ReactNode }) {
         [key]: {
           key,
           title: item.title,
+          poster: item.poster,
           platforms: [{ platform: item.platform, episode: item.episode, updateTime: item.updateTime, url: item.url ?? "#" }],
           followedAt: new Date().toISOString().slice(0, 10),
           updatedAt: new Date().toISOString(),

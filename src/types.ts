@@ -22,8 +22,13 @@ export interface AnimeItem {
   badge?: string | null;
   /** 秒；<300（不足 5 分钟）会被清洗层丢弃 */
   duration?: number;
-  /** 更新规则文案：腾讯每日更新卡片提供（如「每周四、五、六、日各更新1集」）；其余平台规则见剧集简介，暂不入库 */
+  /**
+   * 更新规则文案：腾讯卡片原文；B站取季接口 new_ep.desc（如「连载中, 每周一、六 9:00更新」）；
+   * 优酷/爱奇艺按星期 Tab 排期推导（如「每周二更新」/「每日更新」）。
+   */
   rule?: string;
+  /** 总集数：B站 season API total / 优酷 episodeTotal / 爱奇艺 avlistinfo total / 腾讯「全N集」文案 */
+  total?: number;
   /** 已完结：大结局/全X集 等标记，不参与下周排期预测 */
   finished?: boolean;
   /** 预测排期：由本周更新 +7 天推导的下一周条目（非平台原始数据） */
@@ -59,6 +64,8 @@ export interface FollowItem {
   followedAt: string;
   /** 最近一次变更时间（ISO），云同步 LWW 合并用；旧数据缺省时用 followedAt */
   updatedAt?: string;
+  /** 追番时的海报 URL（历史收藏可能不在当前周数据，靠它兜底展示封面） */
+  poster?: string;
   /** 逐剧更新提醒开关（默认开启，缺省视为 true） */
   notify?: boolean;
 }

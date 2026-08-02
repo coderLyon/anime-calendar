@@ -4,7 +4,7 @@ import { Segmented } from "../components/Segmented";
 import { useToast } from "../components/Toast";
 import { addDays, dstr, isoWeek, sameDay, wdOf, WEEK_CN } from "../lib/date";
 import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon, ExternalIcon } from "../lib/icons";
-import { calendarItemsOn } from "../lib/items";
+import { calendarItemsOn, formatTotal } from "../lib/items";
 import { badgeHas } from "../lib/filters";
 import { loadHistoryFile } from "../lib/history";
 import { missKey, missedOn } from "../lib/missed";
@@ -51,6 +51,7 @@ function CalItem({ item, toast }: { item: AnimeItem; toast: (m: string) => void 
         <div className="cal-item-meta">
           <span className={`plat-dot ${item.platform}`} />
           {item.episode}
+          {formatTotal(item) ? ` · ${formatTotal(item)}` : ""}
           {item.svip ? " · SVIP抢先" : ""}
           {badgeHas(item, "独播") ? " · 独播" : ""}
           {badgeHas(item, "超前点映") ? " · 超前点映" : ""}

@@ -39,11 +39,11 @@ export function rawWeekTotal(): number {
 export function platformInfoFor(
   title: string,
   platform: PlatformKey,
-): { episode: string; updateTime: string; url?: string; rule?: string } | null {
+): { episode: string; updateTime: string; url?: string; rule?: string; total?: number } | null {
   const k = normTitle(title);
   const it = ITEMS.find((i) => !i.predicted && i.platform === platform && normTitle(i.title) === k);
   if (!it) return null;
-  return { episode: it.episode, updateTime: it.updateTime ?? "", url: it.url, rule: it.rule };
+  return { episode: it.episode, updateTime: it.updateTime ?? "", url: it.url, rule: it.rule, total: it.total };
 }
 
 export function platformCounts(): Record<PlatformFilter, number> {
@@ -68,4 +68,12 @@ export function formatDuration(sec?: number | null): string | null {
   if (sec == null || sec <= 0) return null;
   if (sec < 60) return `约${Math.round(sec)}秒`;
   return `约${Math.round(sec / 60)}分钟`;
+}
+
+/** 总集数展示：B站/优酷用「话」，腾讯/爱奇艺用「集」 */
+export function formatTotal(item: { platform: PlatformKey; total?: number | null }): string | null {
+  const n = Number(item.total);
+  if (!Number.isFinite(n) || n <= 0) return null;
+  const unit = item.platform === "bili" || item.platform === "youku" ? "话" : "集";
+  return `共${n}${unit}`;
 }

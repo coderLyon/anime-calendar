@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { BellIcon, ChevronLeftIcon, DownloadIcon, ExternalIcon, UploadIcon } from "../lib/icons";
 import { WEEK_CN } from "../lib/date";
 import { PLATFORMS, platShort, PlatformLogo } from "../lib/platforms";
@@ -12,6 +12,8 @@ import { ITEMS, useDataVersion } from "../store/data";
 import { SearchBox } from "../components/SearchBox";
 import { EmptyState } from "../components/EmptyState";
 import { useToast } from "../components/Toast";
+import { loadHistoryFile } from "../lib/history";
+import { formatTotal } from "../lib/items";
 import type { FollowItem, Page, PlatformKey } from "../types";
 
 type Filter = PlatformKey | "all";
@@ -23,7 +25,24 @@ export function FollowView({ onNavigate }: { onNavigate: (p: Page) => void }) {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<Filter>("all");
   const [ignoreVer, setIgnoreVer] = useState(0);
+  const [hist, setHist] = useState<import("../types").HistoryFile | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
+
+  // 历史归档懒加载：追番列表兜底展示已完结/历史剧集的海报
+  useEffect(() => {
+    void loadHistoryFile().then(setHist);
+  }, []);
+
+  const histPosters = useMemo(() => {
+    const m = new Map<string, string>();
+    for (const w of hist?.weeks ?? []) {
+      for (const i of w.items) {
+        const k = `${i.platform}|${normTitle(i.title)}`;
+        if (i.poster && !m.has(k)) m.set(k, i.poster);
+      }
+    }
+    return m;
+  }, [hist]);
 
   const ignore = useMemo(() => new Set(readIgnoreMissed()), [ignoreVer, follows]);
   const missedByKey = useMemo(() => {
@@ -88,7 +107,7 @@ export function FollowView({ onNavigate }: { onNavigate: (p: Page) => void }) {
         </div>
         <div className="page-actions">
           <button className="btn ghost" onClick={() => onNavigate("home")}>
-            <ChevronLeftIcon /> 返回看板
+            <ChevronLeftIcon /> <span className="btn-text">返回看板</span>
           </button>
           <button className="btn ghost" onClick={onExport}>
             <DownloadIcon /> <span className="btn-text">导出</span>
@@ -127,6 +146,7 @@ export function FollowView({ onNavigate }: { onNavigate: (p: Page) => void }) {
                 key={f.key}
                 follow={f}
                 missed={missedByKey.get(f.key) ?? []}
+                posterMap={histPosters}
                 onRemove={() => { remove(f.key); toast("已取消追番"); }}
                 onIgnoreMissed={onIgnoreMissed}
               />
@@ -149,22 +169,25 @@ interface EnrichedPlatform {
   updateTime: string;
   url?: string;
   rule?: string;
+  total?: number;
 }
 
 function FollowItemRow({
   follow,
   missed,
+  posterMap,
   onRemove,
   onIgnoreMissed,
 }: {
   follow: FollowItem;
   missed: MissedEntry[];
+  posterMap: Map<string, string>;
   onRemove: () => void;
   onIgnoreMissed: (key: string, date: string) => void;
 }) {
   const { setNotify } = useFollows();
   const notifyOn = follow.notify ?? true;
-  const poster = posterForTitle(follow.title);
+  const poster = follow.poster ?? posterForTitle(follow.title) ?? posterFromMap(follow, posterMap);
 
   // 用当前周数据补全展示（历史收藏可能缺腾讯更新时间、链接过期）
   const enriched: EnrichedPlatform[] = follow.platforms.map((p) => {
@@ -175,11 +198,13 @@ function FollowItemRow({
       updateTime: info?.updateTime ?? p.updateTime ?? "",
       url: info?.url ?? p.url,
       rule: info?.rule,
+      total: info?.total,
     };
   });
   const sorted = [...enriched].sort((a, b) => a.platform.localeCompare(b.platform));
   const main = [...sorted].sort((a, b) => b.updateTime.localeCompare(a.updateTime))[0] ?? sorted[0];
   const others = sorted.filter((p) => p !== main);
+  const mainTotal = formatTotal(main);
 
   const openUrl = (p: EnrichedPlatform): string | undefined => (p.url && p.url !== "#" ? p.url : undefined);
 
@@ -199,17 +224,37 @@ function FollowItemRow({
           ) : (
             <span className="ph-glyph">{posterGlyph(follow.title)}</span>
           )}
+          <button
+            className="star-btn on"
+            aria-label="取消追番"
+            title="取消追番"
+            onClick={(e) => {
+              e.stopPropagation();
+              onRemove();
+            }}
+          >
+            <StarFill />
+          </button>
         </div>
         <div className="fi-main">
           <div className="cal-item-title-row fi-title-row">
             <span className={`plat-chip ${main.platform}`}>{platShort(main.platform)}</span>
             <span className="fi-title-text">{follow.title}</span>
             {sorted.length > 1 ? <span className="tag dubo">{sorted.length} 平台</span> : null}
+            <button
+              className={`notify-btn ${notifyOn ? "on" : ""}`}
+              aria-label={notifyOn ? "关闭更新提醒" : "开启更新提醒"}
+              title={notifyOn ? "更新提醒已开启，点击关闭" : "更新提醒已关闭，点击开启"}
+              onClick={() => setNotify(follow.key, !notifyOn)}
+            >
+              <BellIcon />
+            </button>
           </div>
           <div className="cal-item-meta fi-meta">
             <span className={`plat-dot ${main.platform}`} />
             {main.episode}
             {main.updateTime ? ` · ${main.updateTime}` : ""}
+            {mainTotal ? ` · ${mainTotal}` : ""}
             {missed.length ? ` · 疑似断更${missed.length > 1 ? ` ${missed.length} 次` : ` ${WEEK_CN[missed[0].weekday - 1]}`}` : ""}
           </div>
           {main.rule ? <div className="cal-item-rule fi-rule">官方更新：{main.rule}</div> : null}
@@ -235,19 +280,6 @@ function FollowItemRow({
             <ExternalIcon /> 最新集
           </a>
         </div>
-        <div className="fi-actions">
-          <button
-            className={`notify-btn ${notifyOn ? "on" : ""}`}
-            aria-label={notifyOn ? "关闭更新提醒" : "开启更新提醒"}
-            title={notifyOn ? "更新提醒已开启，点击关闭" : "更新提醒已关闭，点击开启"}
-            onClick={() => setNotify(follow.key, !notifyOn)}
-          >
-            <BellIcon />
-          </button>
-          <button className="star-btn on" aria-label="取消追番" onClick={onRemove}>
-            <StarFill />
-          </button>
-        </div>
       </div>
       {others.length ? (
         <div className="fi-links">
@@ -271,6 +303,29 @@ function FollowItemRow({
       ) : null}
     </div>
   );
+}
+
+/**
+ * 历史归档海报兜底：先精确匹配（同平台），再允许同平台规范化标题互相包含
+ * （跨季/别名差异，如追番「镖人」↔ 归档「镖人 第2季」；限制长度差避免误配）。
+ */
+function posterFromMap(follow: FollowItem, posterMap: Map<string, string>): string | undefined {
+  const k = normTitle(follow.title);
+  for (const p of follow.platforms) {
+    const exact = posterMap.get(`${p.platform}|${k}`);
+    if (exact) return exact;
+  }
+  for (const p of follow.platforms) {
+    const prefix = `${p.platform}|`;
+    for (const [key, url] of posterMap) {
+      if (!key.startsWith(prefix)) continue;
+      const t = key.slice(prefix.length);
+      if (t.length < 2 || k.length < 2) continue;
+      const contains = t.includes(k) || k.includes(t);
+      if (contains && Math.abs(t.length - k.length) <= 6) return url;
+    }
+  }
+  return undefined;
 }
 
 function StarFill() {

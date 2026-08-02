@@ -30,13 +30,18 @@ let config: ShortFilter = typeof localStorage !== "undefined" ? load() : DEFAULT
 let blockedTitles = new Set<string>();
 const listeners = new Set<() => void>();
 
-function normKey(t: string): string {
+export function normKey(t: string): string {
   return String(t).replace(/[·：\s-]/g, "").toLowerCase();
 }
 
 export function setBlockedTitles(titles: Iterable<string>): void {
   blockedTitles = new Set(titles);
   listeners.forEach((l) => l());
+}
+
+/** 当前手动屏蔽标题集合（规范化键），供过滤统计使用 */
+export function getBlockedTitles(): Set<string> {
+  return blockedTitles;
 }
 
 export function getShortFilter(): ShortFilter {
@@ -78,4 +83,35 @@ export function applyShortFilter(items: AnimeItem[]): AnimeItem[] {
     if (i.platform === "youku" && /[，。：；、]/.test(i.title)) return false;
     return true;
   });
+}
+
+export interface HiddenStats {
+  /** 开启过滤时实际被隐藏的剧部数（当前周真实条目，去重，含时长/手动屏蔽/优酷标点） */
+  hidden: number;
+  /** 其中因用户手动屏蔽而隐藏的部数 */
+  manual: number;
+}
+
+/**
+ * 过滤命中统计：与 applyShortFilter 判定保持一致（真实条目，排除 predicted），
+ * 供「短剧过滤」控件显示「已过滤 X 部」。
+ */
+export function hiddenStats(items: AnimeItem[], thresholdSec: number, blockedKeys: Set<string>): HiddenStats {
+  const hidden = new Set<string>();
+  const manual = new Set<string>();
+  for (const i of items) {
+    if (i.predicted) continue;
+    const k = normKey(i.title);
+    if (blockedKeys.has(k)) {
+      hidden.add(k);
+      manual.add(k);
+      continue;
+    }
+    if (i.duration != null && i.duration < thresholdSec) {
+      hidden.add(k);
+      continue;
+    }
+    if (i.platform === "youku" && /[，。：；、]/.test(i.title)) hidden.add(k);
+  }
+  return { hidden: hidden.size, manual: manual.size };
 }

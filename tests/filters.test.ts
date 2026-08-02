@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { applyFilters, itemBadges, matchesFilters, type ItemFilters } from "../src/lib/filters";
+import { formatTotal } from "../src/lib/items";
 import type { AnimeItem } from "../src/types";
 
 const item = (over: Partial<AnimeItem> = {}): AnimeItem => ({
@@ -61,5 +62,14 @@ describe("搜索与筛选", () => {
     const out = applyFilters(list, F({ badges: new Set(["限免"]) }));
     expect(out.map((i) => i.title)).toEqual(["吞噬星空"]);
     expect(applyFilters(list, F({ query: "修仙" })).map((i) => i.title)).toEqual(["凡人修仙传"]);
+  });
+
+  it("formatTotal 按平台单位展示总集数", () => {
+    expect(formatTotal({ platform: "bili", total: 34 })).toBe("共34话");
+    expect(formatTotal({ platform: "youku", total: 90 })).toBe("共90话");
+    expect(formatTotal({ platform: "tencent", total: 234 })).toBe("共234集");
+    expect(formatTotal({ platform: "iqiyi", total: 203 })).toBe("共203集");
+    expect(formatTotal({ platform: "bili", total: 0 })).toBeNull();
+    expect(formatTotal({ platform: "bili", total: undefined })).toBeNull();
   });
 });

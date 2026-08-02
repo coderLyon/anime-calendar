@@ -179,7 +179,7 @@ svg { display: block; }
 }
 
 /* ---------- Tabs ---------- */
-.tab-row { display: flex; align-items: center; gap: var(--s2); overflow-x: auto; flex-wrap: nowrap; scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; }
+.tab-row { display: flex; align-items: center; gap: var(--s2); overflow-x: auto; overflow-y: hidden; flex-wrap: nowrap; scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; }
 .tab-row::-webkit-scrollbar { height: 5px; display: block; }
 .tab-row::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 3px; }
 .tab-row::-webkit-scrollbar-track { background: transparent; }
@@ -532,18 +532,27 @@ svg { display: block; }
 .follow-item.open { border-color: var(--accent); }
 .fi-row { display: flex; align-items: center; gap: var(--s3); padding: var(--s3) var(--s4); }
 .fi-row .notify-btn { flex: none; }
-.fi-row .star-btn { position: static; width: 30px; height: 30px; flex: none; margin-left: 2px; background: transparent; box-shadow: none; color: #F5A623; }
-.fi-row .star-btn::before { display: none; }
-.fi-row .star-btn svg { fill: #F5A623; stroke: #F5A623; }
 .fi-row .poster { width: 44px; aspect-ratio: 3/4; border-radius: 7px; flex: none; }
 .fi-row .poster .ph-glyph { font-size: 12px; }
+.fi-row .poster .star-btn {
+  position: absolute; top: 2px; right: 2px; z-index: 3;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: rgba(255, 255, 255, .92); color: #F5A623;
+  display: grid; place-items: center; box-shadow: 0 1px 5px rgba(0, 0, 0, .18);
+}
+.fi-row .poster .star-btn::before { display: none; }
+.fi-row .poster .star-btn svg { width: 13px; height: 13px; fill: #F5A623; stroke: #F5A623; }
+.fi-title-row .notify-btn {
+  width: 26px; height: 26px; padding: 0; flex: none; margin-left: auto;
+  display: grid; place-items: center; border-radius: 8px;
+}
+.fi-title-row .notify-btn svg { width: 16px; height: 16px; }
 .fi-main { flex: 1; min-width: 0; }
 .fi-title-row { display: flex; align-items: center; gap: 6px; min-width: 0; }
 .fi-title-text { font-size: 13.5px; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
 .fi-meta { margin-top: 2px; }
 .fi-rule { margin-top: 3px; }
 .fi-side { flex: none; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
-.fi-actions { display: flex; flex-direction: column; gap: 2px; flex: none; }
 .fi-links { display: flex; flex-wrap: wrap; gap: 6px 8px; padding: 0 var(--s4) var(--s3); }
 .fi-link {
   display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--ink-2);
@@ -710,7 +719,18 @@ svg { display: block; }
   .board { display: none; }          /* 周看板降级 */
   .m-board { display: block; }
   .toolbar { margin-bottom: var(--s3); }
-  .toolbar .tab-row { margin-right: -16px; padding-right: 4px; }
+  /* 站点选择：整行横向滚动、禁止纵向滚动，与追番列表行为一致 */
+  .toolbar .tab-row {
+    flex: 1 1 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin-right: 0;
+    padding-right: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--line-strong) transparent;
+  }
   .board-meta { display: none; }
 
   /* 移动端：操作按钮图标化（回到本周/回到今天/返回看板/导出/导入/追番日历） */
@@ -745,7 +765,7 @@ svg { display: block; }
   .cal-date-title { min-width: 0; font-size: 18px; }
   .cal-controls { width: 100%; display: flex; gap: 8px; }
   .cal-controls .segmented { flex: 1; }
-  .cal-controls .segmented button { flex: 1; }
+  .cal-controls .segmented button { flex: 1; padding: 0 8px; font-size: 12px; white-space: nowrap; }
   .week-grid { display: none; }
   .cal-mobile-week { display: block; }
 
@@ -817,29 +837,6 @@ svg { display: block; }
   align-items: center;
   gap: 4px;
   position: relative;
-}
-.sync-dot {
-  position: absolute;
-  top: 3px;
-  right: 3px;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--ink-3);
-  border: 1.5px solid var(--surface);
-}
-.sync-dot.dot-idle {
-  background: var(--success);
-}
-.sync-dot.dot-syncing {
-  background: var(--accent);
-  animation: sync-blink 1s ease-in-out infinite;
-}
-.sync-dot.dot-offline {
-  background: var(--warn);
-}
-.sync-dot.dot-error {
-  background: var(--danger);
 }
 @keyframes sync-blink {
   50% {

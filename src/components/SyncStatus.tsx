@@ -44,7 +44,6 @@ export function SyncStatus() {
         onClick={openPanel}
       >
         <CloudIcon className={`sync-${status}`} />
-        <span className={`sync-dot dot-${status}`} aria-hidden="true" />
         {!seen ? <span className="sync-red-dot" aria-hidden="true" /> : null}
       </button>
       {open ? <SyncPanel onClose={() => setOpen(false)} /> : null}

@@ -4,7 +4,7 @@ import { BanIcon, StarIcon } from "../lib/icons";
 import { itemsOn } from "../lib/items";
 import { applyFilters, type ItemFilters } from "../lib/filters";
 import { badgeHas } from "../lib/filters";
-import { formatDuration } from "../lib/items";
+import { formatDuration, formatTotal } from "../lib/items";
 import { platShort } from "../lib/platforms";
 import { posterGlyph, posterStyle } from "../lib/poster";
 import { useBlocked } from "../store/blocked";
@@ -133,6 +133,7 @@ export function MobileBoard({ platform, mode, weekStart, filters, day, onDayChan
                         <span className={`plat-dot ${item.platform}`} />
                         {item.episode}
                         {dur(item.duration) ? ` · ${dur(item.duration)}` : ""}
+                        {formatTotal(item) ? ` · ${formatTotal(item)}` : ""}
                       </div>
                       <div className="m-time">{WEEK_CN[(item.weekday ?? 0) - 1] ?? ""}{item.updateTime ? ` ${item.updateTime}` : ""} 更新</div>
                       <div className="m-tags">

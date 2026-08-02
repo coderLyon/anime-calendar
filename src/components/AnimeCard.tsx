@@ -2,7 +2,7 @@ import type { KeyboardEvent } from "react";
 import { WEEK_CN } from "../lib/date";
 import { BanIcon, StarIcon } from "../lib/icons";
 import { badgeHas } from "../lib/filters";
-import { formatDuration } from "../lib/items";
+import { formatDuration, formatTotal } from "../lib/items";
 import { platShort } from "../lib/platforms";
 import { posterGlyph, posterStyle } from "../lib/poster";
 import type { AnimeItem } from "../types";
@@ -29,6 +29,7 @@ interface AnimeCardProps {
 
 export function AnimeCard({ item, followed, onToggleFollow, blocked, onToggleBlock, onClick }: AnimeCardProps) {
   const dur = formatDuration(item.duration);
+  const total = formatTotal(item);
   const onKey = (e: KeyboardEvent) => {
     // 星标/屏蔽按钮自身处理键盘事件，避免冒泡到整卡连带打开剧集链接
     if (e.target !== e.currentTarget) return;
@@ -89,6 +90,7 @@ export function AnimeCard({ item, followed, onToggleFollow, blocked, onToggleBlo
           {item.episode} · {WEEK_CN[(item.weekday ?? 0) - 1] ?? ""}
           {item.updateTime ? ` ${item.updateTime}` : ""}
           {dur ? ` · ${dur}` : ""}
+          {total ? ` · ${total}` : ""}
         </div>
         <div className="card-tags">
           <Tag item={item} />
