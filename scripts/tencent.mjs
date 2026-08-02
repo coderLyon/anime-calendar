@@ -406,7 +406,8 @@ export function parseEpisodeList(text) {
           if (!it.item_id || p.duration == null || String(p.duration).trim() === "") continue;
           const playTitle = String(p.play_title ?? "");
           const unionTitle = String(p.union_title ?? "");
-          const epNum = Number(playTitle.match(/第\s*(\d+)/)?.[1] ?? unionTitle.match(/_(\d+)\s*$/)?.[1] ?? -1);
+          // 注意「斩神之凡尘神域 第2季 第08话」：必须匹配带「集/话」后缀的集数，避免把季号当集数
+          const epNum = Number(playTitle.match(/第\s*(\d+)\s*[集话]/)?.[1] ?? unionTitle.match(/_(\d+)\s*$/)?.[1] ?? -1);
           out.push({
             vid: it.item_id,
             title: playTitle || unionTitle,
@@ -476,6 +477,7 @@ async function enrichTencentDurations(items, { fetchLimit = 60, log = () => {} }
       }
       const epNum = epNumOf(it.episode);
       const pick =
+        (vidOf(it) ? list.find((x) => x.vid === vidOf(it)) : null) ??
         (epNum > 0 ? list.find((x) => x.epNum === epNum && !x.extra) ?? list.find((x) => x.epNum === epNum) : null) ??
         [...list].reverse().find((x) => !x.extra) ??
         list[list.length - 1];

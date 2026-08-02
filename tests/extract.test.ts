@@ -63,6 +63,28 @@ describe("腾讯分集时长解析", () => {
     expect(list.find((x) => x.title.includes("预告"))?.extra).toBe(true);
   });
 
+  it("季号不会误当集数（斩神之凡尘神域 第2季 第08话 → 8）", () => {
+    const sample = JSON.stringify({
+      data: {
+        module_list_datas: [
+          {
+            module_datas: [
+              {
+                item_data_lists: {
+                  item_datas: [
+                    { item_id: "v1", item_params: { play_title: "斩神之凡尘神域 第2季 第08话", union_title: "斩神之凡尘神域 第2季_8", duration: "900" } },
+                  ],
+                },
+              },
+            ],
+          },
+        ],
+      },
+    });
+    const list = parseEpisodeList(sample);
+    expect(list[0]?.epNum).toBe(8);
+  });
+
   it("损坏响应返回空列表", () => {
     expect(parseEpisodeList("not json")).toEqual([]);
     expect(parseEpisodeList("{}")).toEqual([]);

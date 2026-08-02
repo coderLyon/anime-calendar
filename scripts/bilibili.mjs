@@ -103,6 +103,8 @@ async function enrichDurations(items, { fetchLimit, log }) {
     if (!it.seasonId) continue;
     const r = cache.get(it.seasonId);
     if (!r) continue;
+    // 封面统一为该季官方封面（square_cover/cover），避免个别条目取到剧集帧/错误图
+    if (r.cover) it.poster = httpsImg(r.cover);
     const epId = String(it.id.replace(/^bili-/, ""));
     const dur = r.byEp.get(epId) ?? r.latest;
     if (dur != null && dur > 0) {
@@ -114,7 +116,7 @@ async function enrichDurations(items, { fetchLimit, log }) {
   return latestIds;
 }
 
-/** 季分集时长：返回 { byEp: Map<episode_id,秒>, latest, latestId }；badge=预告 的条目同样可取时长 */
+/** 季分集时长：返回 { byEp, latest, latestId, cover }；badge=预告 的条目同样可取时长 */
 async function fetchSeasonDurations(seasonId) {
   const text = await fetchText(`https://api.bilibili.com/pgc/view/web/season?season_id=${encodeURIComponent(seasonId)}`, {
     referer: "https://www.bilibili.com/",
@@ -141,5 +143,5 @@ async function fetchSeasonDurations(seasonId) {
     }
   }
   if (!byEp.size) throw new Error("季分集无时长字段");
-  return { byEp, latest, latestId };
+  return { byEp, latest, latestId, cover: payload.cover ?? payload.square_cover ?? null };
 }

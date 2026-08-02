@@ -15,33 +15,33 @@ const INVALID_TEXT_RE = /即将上线|敬请期待|马上看|预约|限时/;
 
 export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
   let browser;
+  let overlayTimer;
   try {
     browser = await launchBrowser();
     const page = await browser.newPage({ viewport: { width: 1440, height: 1400 }, userAgent: UA });
     await page.goto("https://www.iqiyi.com/dongman/", { waitUntil: "domcontentloaded", timeout: 45000 });
     await page.waitForTimeout(5000);
     dismissOverlay(page);
+    // 登录/推荐弹窗会周期性出现并拦截点击：定时清除
+    overlayTimer = setInterval(() => dismissOverlay(page), 800);
+    // 「追番表」模块懒加载：滚动到星期 tab 栏触发渲染（避免激活日读空）
+    await page.evaluate(() => {
+      const el = document.querySelector("[class*=videoCards_tab_btn]");
+      if (el) el.scrollIntoView({ block: "center" });
+    });
+    await page.waitForTimeout(1200);
 
     const tabLoc = page.locator("[class*=videoCards_tab_btn]");
     const monday = mondayOfWeekBeijing();
     const items = [];
     const seen = new Set();
 
-    // 周历卡片常为懒加载：先滚动到「追番表」区域，空日再重试一次
-    await page.evaluate(() => {
-      const host = document.querySelector("[class*=followCalendarCard]");
-      if (host) host.scrollIntoView({ block: "center" });
-    });
-    await page.waitForTimeout(800);
-
     for (let d = 0; d < 7; d++) {
       const label = WEEKDAYS[d];
       const tab = tabLoc.filter({ hasText: label }).first();
       if (!(await tab.count())) continue;
-      await tab.click();
-      await page.waitForTimeout(1300);
-      dismissOverlay(page);
-
+      // 当天 tab 默认已激活：重复点击会触发重新加载导致卡片清空（周一/周日缺数据的根因）
+      const isActive = await tab.evaluate((el) => /active/.test(el.className || "")).catch(() => false);
       // 仅取「追番表」日历卡片：优先 followCalendarCard 容器；页面存在 A/B 变体时，
       // 回退为排除「猜你喜欢」推荐区（compFuncs_simpleWrap）后取剩余卡片
       const readCards = () => page.evaluate(() => {
@@ -64,12 +64,37 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
         }
         return out;
       });
-      let cards = await readCards();
-      if (!cards.length) {
-        // 懒加载未完成：滚动触发 + 重试一次
-        await page.evaluate(() => window.scrollBy(0, 260));
-        await page.waitForTimeout(2500);
+
+      let cards;
+      if (isActive) {
+        // 当天默认已加载：直接读取；为空时等待「追番表」模块出现，仍空才 force 点击重载
         cards = await readCards();
+        if (!cards.length) {
+          try {
+            await page.waitForSelector("[class*=followCalendarCard]", { timeout: 8000 });
+          } catch {
+            /* 容器未出现也不阻塞，继续重试读取 */
+          }
+          await page.waitForTimeout(600);
+          cards = await readCards();
+          if (!cards.length) {
+            await clickTab(page, tab);
+            await page.waitForTimeout(1800);
+            dismissOverlay(page);
+            cards = await readCards();
+          }
+        }
+      } else {
+        await clickTab(page, tab);
+        await page.waitForTimeout(1500);
+        dismissOverlay(page);
+        cards = await readCards();
+        if (!cards.length) {
+          // 懒加载未完成：滚动触发 + 重试一次
+          await page.evaluate(() => window.scrollBy(0, 260));
+          await page.waitForTimeout(2500);
+          cards = await readCards();
+        }
       }
 
       const date = ymd(addDays(monday, d));
@@ -103,6 +128,7 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
     if (filtered.length !== items.length) log(`AI 短剧评论判定过滤：${items.length - filtered.length} 条`);
     return { platform: PLATFORM, label: LABEL, items: filtered, fetchedAt: new Date().toISOString(), warnings: [] };
   } finally {
+    if (overlayTimer) clearInterval(overlayTimer);
     if (browser) await browser.close().catch(() => {});
   }
 }
@@ -276,6 +302,26 @@ async function launchBrowser() {
 
 function dismissOverlay(page) {
   page.evaluate(() => {
-    document.querySelectorAll("[class*=fullCover]").forEach((el) => el.remove());
+    document.querySelectorAll("[class*=fullCover], [class*=popwin], [class*=popup], [class*=modal]").forEach((el) => el.remove());
   }).catch(() => {});
+}
+
+/** 点击星期 tab：清除遮罩后点击，失败 force 重试（弹窗拦截时兜底） */
+async function clickTab(page, tab) {
+  for (let i = 0; i < 3; i++) {
+    dismissOverlay(page);
+    try {
+      await tab.click({ timeout: 5000 });
+      return;
+    } catch {
+      await new Promise((r) => setTimeout(r, 600));
+      dismissOverlay(page);
+      try {
+        await tab.click({ force: true, timeout: 5000 });
+        return;
+      } catch {
+        /* 最后一轮重试 */
+      }
+    }
+  }
 }
