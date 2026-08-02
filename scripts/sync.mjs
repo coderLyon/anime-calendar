@@ -13,7 +13,7 @@ import { scrape as scrapeYouku } from "./youku.mjs";
 import { scrape as scrapeTencent } from "./tencent.mjs";
 import { scrape as scrapeIqiyi } from "./iqiyi.mjs";
 import { doubanLookup } from "./douban.mjs";
-import { addDays, sortByDateThenTime, ymd } from "./shared.mjs";
+import { addDays, mondayOfWeekBeijing, sortByDateThenTime, ymd } from "./shared.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA_FILE = join(ROOT, "data", "updates.json");
@@ -68,10 +68,10 @@ function cleanDuration(items, warnings) {
 
 /** 清洗层补充：仅保留当前自然周（周一~周日）内的条目 */
 function keepCurrentWeek(items, warnings) {
-  const now = new Date();
-  const mon = new Date(now.getFullYear(), now.getMonth(), now.getDate() - ((now.getDay() + 6) % 7));
-  const sun = new Date(mon);
-  sun.setDate(mon.getDate() + 6);
+  // 按北京时区计算周边界：GitHub Actions runner 为 UTC，直接用本地日期会在
+  // 周一 07:00（北京）那次同步（UTC 周日 23:00）错用上一周的区间。
+  const mon = mondayOfWeekBeijing();
+  const sun = addDays(mon, 6);
   const min = ymd(mon);
   const max = ymd(sun);
   const kept = items.filter((i) => i.date >= min && i.date <= max);

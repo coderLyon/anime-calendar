@@ -4159,7 +4159,7 @@
           "updateTime": "10:00",
           "date": "2026-07-30",
           "weekday": 4,
-          "svip": true,
+          "svip": false,
           "url": "https://v.qq.com/x/page/b410244r1ub.html",
           "badge": "结局点映",
           "duration": null,

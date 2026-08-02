@@ -4,14 +4,13 @@ export interface PlatformInfo {
   key: PlatformKey;
   name: string;
   short: string;
-  color: string;
 }
 
 export const PLATFORMS: PlatformInfo[] = [
-  { key: "bili", name: "哔哩哔哩", short: "B站", color: "#FB7299" },
-  { key: "tencent", name: "腾讯视频", short: "腾讯", color: "#FF8A00" },
-  { key: "youku", name: "优酷", short: "优酷", color: "#F03E3E" },
-  { key: "iqiyi", name: "爱奇艺", short: "爱奇艺", color: "#00A356" },
+  { key: "bili", name: "哔哩哔哩", short: "B站" },
+  { key: "tencent", name: "腾讯视频", short: "腾讯" },
+  { key: "youku", name: "优酷", short: "优酷" },
+  { key: "iqiyi", name: "爱奇艺", short: "爱奇艺" },
 ];
 
 export const PLAT_MAP = Object.fromEntries(PLATFORMS.map((p) => [p.key, p])) as Record<PlatformKey, PlatformInfo>;

@@ -3,7 +3,7 @@
  * 入口：https://www.iqiyi.com/dongman/，逐日点击星期 tab 收集日历卡片。
  */
 import { chromium } from "playwright";
-import { addDays, createCache, httpsImg, isBlocked, ymd } from "./shared.mjs";
+import { addDays, createCache, httpsImg, isBlocked, mondayOfWeekBeijing, ymd } from "./shared.mjs";
 
 export const PLATFORM = "iqiyi";
 export const LABEL = "爱奇艺";
@@ -23,8 +23,7 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
     dismissOverlay(page);
 
     const tabLoc = page.locator("[class*=videoCards_tab_btn]");
-    const today = new Date();
-    const monday = addDays(new Date(today.getFullYear(), today.getMonth(), today.getDate()), -(((today.getDay() + 6) % 7)));
+    const monday = mondayOfWeekBeijing();
     const items = [];
     const seen = new Set();
 

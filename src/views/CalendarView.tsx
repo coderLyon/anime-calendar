@@ -116,7 +116,7 @@ export function CalendarView({ onNavigate }: { onNavigate: (p: Page) => void }) 
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  });
+  }, [view]);
 
   const onTouchStart = (e: React.TouchEvent) => {
     touchX.current = e.touches[0].clientX;
@@ -250,7 +250,7 @@ function renderSchedule(calDate: Date, scopeItems: (d: Date) => AnimeItem[], toa
             </div>
           ))
         ) : (
-          <div style={{ fontSize: 12.5, color: "var(--ink-3)", padding: "12px 4px" }}>明日暂无更新</div>
+          <div className="cal-empty-note">明日暂无更新</div>
         )}
       </div>
     </div>
@@ -299,7 +299,7 @@ function renderWeek(
               </div>
             </div>
           ))}
-          {items.length > 4 ? <div style={{ fontSize: 11, color: "var(--ink-3)", padding: "2px 4px" }}>+{items.length - 4} 部</div> : null}
+          {items.length > 4 ? <div className="week-more">+{items.length - 4} 部</div> : null}
         </div>
       </div>
     );
@@ -311,7 +311,7 @@ function renderWeek(
   return (
     <>
       <div className="cal-layout">
-        <div className="cal-panel" style={{ gridColumn: "1 / -1" }}>
+        <div className="cal-panel full">
           <h3>
             本周更新 <span className="hint">点击任意一天查看当日列表 · 今日列高亮</span>
           </h3>
@@ -336,7 +336,7 @@ function renderWeek(
           </div>
         </div>
       </div>
-      <div className="cal-panel" style={{ marginTop: "var(--s4)" }}>
+      <div className="cal-panel detail">
         <h3>
           {WEEK_CN[weekSel - 1]} · {selDate.getMonth() + 1}月{selDate.getDate()}日 详情 <span className="hint">{selItems.length} 部</span>
         </h3>
@@ -392,7 +392,7 @@ function renderMonth(
   return (
     <>
       <div className="cal-layout">
-        <div className="cal-panel" style={{ gridColumn: "1 / -1" }}>
+        <div className="cal-panel full">
           <h3>
             {calMonth.getMonth() + 1}月更新日历 <span className="hint">角标 = 当日更新数 · 点击日期查看详情</span>
           </h3>
@@ -404,7 +404,7 @@ function renderMonth(
           </div>
         </div>
       </div>
-      <div className="cal-panel" style={{ marginTop: "var(--s4)" }}>
+      <div className="cal-panel detail">
         <h3>
           {selDate.getMonth() + 1}月{selDate.getDate()}日 · {WEEK_CN[wdOf(selDate) - 1]} 详情 <span className="hint">{selItems.length} 部</span>
         </h3>

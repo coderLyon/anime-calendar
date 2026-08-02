@@ -14,6 +14,52 @@ const UA =
 const BADGE_RE = /(限免|独播|上新|结局点映|大结局|高清修复|超前点映)/;
 const EP_RE = /更新至\s*([0-9]+|[一二三四五六七八九十百千]+|Ⅱ[0-9]+)\s*(集|话)|全\s*([0-9]+)\s*(集)|(大结局|完结)/;
 
+const WK = { 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 日: 7, 天: 7, 末: 6 };
+const fmt = (h, min) => `${String(h).padStart(2, "0")}:${String(min ?? 0).padStart(2, "0")}`;
+
+/** 解析卡片底部更新规则 → [{days:Set<1..7>, h, min}]（「每周一、五10:00更新」/「每周二18点抢先看」/「每日0点更新」） */
+function timeCandidates(t) {
+  const out = [];
+  for (const m of t.matchAll(/每?周([一二三四五六日天末])([^。；;0-9]{0,6}?)(\d{1,2})[:：点](\d{2})?/g)) {
+    const days = new Set([WK[m[1]]]);
+    for (const ch of m[2]) { const w = WK[ch]; if (w) days.add(w); }
+    out.push({ days, h: Number(m[3]), min: m[4] ? Number(m[4]) : 0 });
+  }
+  for (const m of t.matchAll(/每[日天][^。；;0-9]{0,14}?(\d{1,2})[:：点](\d{2})?/g)) {
+    out.push({ days: new Set([1, 2, 3, 4, 5, 6, 7]), h: Number(m[1]), min: m[2] ? Number(m[2]) : 0 });
+  }
+  return out;
+}
+
+/** 取与卡片星期匹配的时间；无匹配时退回文案首个时间 */
+function timeOf(t, weekday) {
+  const hit = timeCandidates(t).find((c) => c.days.has(weekday));
+  if (hit) return fmt(hit.h, hit.min);
+  const m = t.match(/([01]?\d|2[0-3])[:：点](\d{2})?/);
+  return m ? fmt(Number(m[1]), m[2] ? Number(m[2]) : 0) : "";
+}
+
+/**
+ * 识别 SVIP 抢先档期：找出与「SVIP/抢先」同句的（星期, 时间）组合；
+ * 一句话里同时出现 VIP 与 SVIP 档期时，取时间更晚者（SVIP 抢先档通常晚于 VIP 常规档，如 18:00 vs 10:00）。
+ * 返回 { day, h, min } 或 null（无法识别时由调用方回退为文案含 SVIP 即判定）。
+ */
+export function svipSlotOf(t) {
+  if (!/SVIP/.test(t)) return null;
+  let best = null;
+  for (const m of t.matchAll(/每?周([一二三四五六日天末])([^。；;0-9]{0,6}?)(\d{1,2})[:：点](\d{2})?/g)) {
+    const day = WK[m[1]];
+    const h = Number(m[3]);
+    const min = m[4] ? Number(m[4]) : 0;
+    const clauseStart = Math.max(t.lastIndexOf("。", m.index), t.lastIndexOf("；", m.index), t.lastIndexOf(";", m.index)) + 1;
+    const clause = t.slice(clauseStart, m.index + m[0].length);
+    if (!/SVIP|抢先/.test(clause)) continue;
+    const time = h * 60 + min;
+    if (!best || time > best.time) best = { day, h, min, time };
+  }
+  return best;
+}
+
 export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
   let browser;
   try {
@@ -69,28 +115,6 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
           const rule = (t2 > 0 ? seg.slice(0, t2) : seg).trim();
           return /每周/.test(rule) ? rule.slice(0, 100) : null;
         };
-        // 卡片底部更新时间：优先取「与卡片星期匹配」的时间（SVIP 抢先日为 18:00 等，不能用 VIP 的 10:00）
-        const WK = { 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 日: 7, 天: 7, 末: 6 };
-        const fmt = (h, min) => `${String(h).padStart(2, "0")}:${String(min ?? 0).padStart(2, "0")}`;
-        // 「每周一、五10:00更新」/「每周二18点抢先看」/「每日0点更新」→ [{days:Set<1..7>, h, min}]
-        const timeCandidates = (t) => {
-          const out = [];
-          for (const m of t.matchAll(/每?周([一二三四五六日天末])([^。；;0-9]{0,6}?)(\d{1,2})[:：点](\d{2})?/g)) {
-            const days = new Set([WK[m[1]]]);
-            for (const ch of m[2]) { const w = WK[ch]; if (w) days.add(w); }
-            out.push({ days, h: Number(m[3]), min: m[4] ? Number(m[4]) : 0 });
-          }
-          for (const m of t.matchAll(/每[日天][^。；;0-9]{0,14}?(\d{1,2})[:：点](\d{2})?/g)) {
-            out.push({ days: new Set([1, 2, 3, 4, 5, 6, 7]), h: Number(m[1]), min: m[2] ? Number(m[2]) : 0 });
-          }
-          return out;
-        };
-        const timeOf = (t, weekday) => {
-          const hit = timeCandidates(t).find((c) => c.days.has(weekday));
-          if (hit) return fmt(hit.h, hit.min);
-          const m = t.match(/([01]?\d|2[0-3])[:：点](\d{2})?/);
-          return m ? fmt(Number(m[1]), m[2] ? Number(m[2]) : 0) : "";
-        };
         return els.map((c) => {
           const paramsEl = c.querySelector(".banner-card__poster-container");
           const params = paramsEl?.getAttribute("dt-params") ?? c.getAttribute("dt-params") ?? "";
@@ -101,6 +125,7 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
           const rule = ruleOf(text, title);
           const epMatch = text.match(EP_RE);
           const linkMatch = params.match(linkRe);
+          const svipSlot = svipSlotOf(text);
           return {
             cid: params.match(cidRe)?.[1] ?? null,
             vid: params.match(vidRe)?.[1] ?? null,
@@ -114,7 +139,8 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
                   ? `第${epMatch[3]}${epMatch[4]}`
                   : epMatch[5] ?? "更新"
               : null,
-            updateTime: timeOf(text, cfg.weekday),
+            updateTime: svipSlot && svipSlot.day === cfg.weekday ? fmt(svipSlot.h, svipSlot.min) : timeOf(text, cfg.weekday),
+            svip: svipSlot ? svipSlot.day === cfg.weekday : text.includes("SVIP"),
             text,
           };
         });
@@ -134,7 +160,7 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
           updateTime: c.updateTime ?? "",
           date,
           weekday,
-          svip: c.text.includes("SVIP"),
+          svip: c.svip,
           url: c.vid ? `https://v.qq.com/x/page/${c.vid}.html` : `https://v.qq.com/x/cover/${c.cid}.html`,
           badge: c.text.match(BADGE_RE)?.[1] ?? null,
           duration: null,

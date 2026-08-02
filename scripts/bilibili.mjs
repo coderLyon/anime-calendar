@@ -8,9 +8,11 @@ import {
   extractAssignedObject,
   fetchText,
   httpsImg,
+  mondayOfWeekBeijing,
   normUrl,
   parseJsObject,
   ymd,
+  ymdBeijing,
 } from "./shared.mjs";
 
 export const PLATFORM = "bili";
@@ -26,7 +28,7 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
 
   const items = [];
   const seen = new Set();
-  const weekMonday = mondayOf(new Date());
+  const weekMonday = mondayOfWeekBeijing();
 
   for (const mod of modules) {
     for (const dayItem of mod.items ?? []) {
@@ -38,7 +40,7 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
         if (seen.has(dedupKey)) continue;
         seen.add(dedupKey);
         const date =
-          ep.pub_ts && ep.pub_ts > 0 ? ymd(new Date(ep.pub_ts * 1000)) : ymd(addDays(weekMonday, dow - 1));
+          ep.pub_ts && ep.pub_ts > 0 ? ymdBeijing(new Date(ep.pub_ts * 1000)) : ymd(addDays(weekMonday, dow - 1));
         const url = ep.link ? normUrl(ep.link) : `https://www.bilibili.com/bangumi/play/ep${ep.episode_id}`;
         items.push({
           id: `bili-${ep.episode_id}`,
@@ -124,9 +126,4 @@ async function fetchSeasonDurations(seasonId) {
   }
   if (!byEp.size) throw new Error("季分集无时长字段");
   return { byEp, latest };
-}
-
-function mondayOf(d) {
-  const day = ((d.getDay() + 6) % 7); // 0=周一
-  return addDays(new Date(d.getFullYear(), d.getMonth(), d.getDate()), -day);
 }

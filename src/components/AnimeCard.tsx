@@ -27,6 +27,8 @@ interface AnimeCardProps {
 
 export function AnimeCard({ item, followed, onToggleFollow, blocked, onToggleBlock, onClick }: AnimeCardProps) {
   const onKey = (e: KeyboardEvent) => {
+    // 星标/屏蔽按钮自身处理键盘事件，避免冒泡到整卡连带打开剧集链接
+    if (e.target !== e.currentTarget) return;
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       onClick();

@@ -96,6 +96,26 @@ export function ymd(d) {
   return `${d.getFullYear()}-${m}-${day}`;
 }
 
+/** 北京时区（UTC+8）墙上时间：返回的 Date 的 UTC 分量即北京日历时间（任意 runner 时区结果一致） */
+export function beijingWall(d = new Date()) {
+  return new Date(d.getTime() + 8 * 3600 * 1000);
+}
+
+/** 北京日历日期（yyyy-MM-dd） */
+export function ymdBeijing(d = new Date()) {
+  const w = beijingWall(d);
+  const m = String(w.getUTCMonth() + 1).padStart(2, "0");
+  const day = String(w.getUTCDate()).padStart(2, "0");
+  return `${w.getUTCFullYear()}-${m}-${day}`;
+}
+
+/** 北京时区「当前周」的周一（Date.UTC 构造，保证任意时区下 ymd/addDays 结果一致） */
+export function mondayOfWeekBeijing(d = new Date()) {
+  const w = beijingWall(d);
+  const dow = (w.getUTCDay() + 6) % 7; // 0=周一
+  return new Date(Date.UTC(w.getUTCFullYear(), w.getUTCMonth(), w.getUTCDate() - dow));
+}
+
 export function addDays(d, n) {
   const x = new Date(d);
   x.setDate(x.getDate() + n);

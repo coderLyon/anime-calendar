@@ -57,7 +57,7 @@ export function FollowView({ onNavigate }: { onNavigate: (p: Page) => void }) {
           <h1>追番列表</h1>
           <div className="sub">共 {count} 部 · 仅保存在本机（localStorage），支持导出/导入 JSON 备份</div>
         </div>
-        <div style={{ display: "flex", gap: 8 }}>
+        <div className="page-actions">
           <button className="btn ghost" onClick={() => onNavigate("home")}>
             <ChevronLeftIcon /> 返回看板
           </button>
@@ -173,7 +173,7 @@ function FollowItemRow({ follow, onRemove }: { follow: FollowItem; onRemove: () 
 
 function StarFill() {
   return (
-    <svg viewBox="0 0 24 24" style={{ fill: "#F5A623", stroke: "#F5A623" }}>
+    <svg viewBox="0 0 24 24">
       <path d="m12 3.2 2.7 5.6 6.1.8-4.5 4.3 1.1 6-5.4-2.9-5.4 2.9 1.1-6L3.2 9.6l6.1-.8Z" />
     </svg>
   );

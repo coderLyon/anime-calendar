@@ -61,9 +61,9 @@ export function MobileBoard({ platform, mode, day, onDayChange }: MobileBoardPro
       <div className="m-list">
         {mode === "skeleton"
           ? Array.from({ length: 4 }, (_, k) => (
-              <div key={k} className="m-card" style={{ padding: 0, overflow: "hidden" }}>
-                <div className="sk-poster" style={{ width: 92, flex: "none", aspectRatio: "3/4" }} />
-                <div className="sk-lines" style={{ flex: 1, justifyContent: "center" }}>
+              <div key={k} className="m-card sk-card">
+                <div className="sk-poster" />
+                <div className="sk-lines">
                   <div className="sk-line w90" />
                   <div className="sk-line w60" />
                   <div className="sk-line w90" />

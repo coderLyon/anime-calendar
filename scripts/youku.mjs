@@ -3,7 +3,7 @@
  * 入口：GET https://www.youku.com/ku/webcomic，解析 window.__INITIAL_DATA__ 的「每日更新」模块
  * （KU_FLIX_MULTI_TAB_A：tabList 7 个星期 tab + itemList 7 个数组一一对应）
  */
-import { createCache, extractAssignedObject, fetchText, httpsImg, parseJsObject } from "./shared.mjs";
+import { createCache, extractAssignedObject, fetchText, httpsImg, mondayOfWeekBeijing, parseJsObject, ymd } from "./shared.mjs";
 
 export const PLATFORM = "youku";
 export const LABEL = "优酷";
@@ -73,10 +73,7 @@ function tabDate(dateStr, d) {
     const date = new Date(year, Number(m[1]) - 1, Number(m[2]));
     return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
   }
-  const today = new Date();
-  const monday = new Date(today.getFullYear(), today.getMonth(), today.getDate() - ((today.getDay() + 6) % 7));
-  const date = new Date(monday.getFullYear(), monday.getMonth(), monday.getDate() + d);
-  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+  return ymd(addDays(mondayOfWeekBeijing(), d));
 }
 
 /** SVIP 抢先去重：保留 SVIP 抢先日，删除后一天同标题同集常规条目 */

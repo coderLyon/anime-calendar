@@ -1,9 +1,9 @@
 ﻿/* ============================================================
-   杩界暘鏃ュ巻 路 G0 璁捐鍘熷瀷
-   Design tokens + 缁勪欢搴?+ 鍝嶅簲寮忚鍒?   ============================================================ */
+   追番日历 · G0 设计原型
+   Design tokens + 组件库 + 响应式规则   ============================================================ */
 
 :root {
-  /* 鑹叉澘 */
+  /* 色板 */
   --bg: #F4F5F7;
   --surface: #FFFFFF;
   --surface-2: #F9FAFB;
@@ -14,14 +14,14 @@
   --line: #E6E8EC;
   --line-strong: #D2D7DE;
 
-  /* 鍝佺墝鑹诧紙搴旂敤绾э級 */
+  /* 品牌色（应用级） */
   --accent: #4F5BD5;
   --accent-strong: #3D47BC;
   --accent-soft: #EDEFFD;
   --accent-ink: #3D47BC;
   --on-accent: #FFFFFF;
 
-  /* 鍥涘钩鍙板搧鐗岃壊 */
+  /* 四平台品牌色 */
   --bili: #FB7299;
   --bili-soft: #FEEFF4;
   --tencent: #FF8A00;
@@ -31,7 +31,7 @@
   --iqiyi: #00A356;
   --iqiyi-soft: #E7F6EE;
 
-  /* 璇箟鑹?*/
+  /* 语义色 */
   --success: #12924A;
   --success-soft: #E8F6EE;
   --warn: #B45309;
@@ -41,22 +41,22 @@
   --danger-soft: #FDEBEA;
   --danger-line: #F5C6C2;
 
-  /* 鍦嗚 */
+  /* 圆角 */
   --r-s: 8px;
   --r-m: 12px;
   --r-l: 16px;
   --r-xl: 22px;
 
-  /* 闃村奖 */
+  /* 阴影 */
   --shadow-sm: 0 1px 2px rgba(23,26,31,.05), 0 1px 3px rgba(23,26,31,.06);
   --shadow-md: 0 10px 24px -12px rgba(23,26,31,.18);
   --shadow-lg: 0 24px 48px -20px rgba(23,26,31,.28);
 
-  /* 闂磋窛 */
+  /* 间距 */
   --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px;
   --s5: 20px; --s6: 24px; --s7: 32px; --s8: 48px;
 
-  /* 瀛椾綋 */
+  /* 字体 */
   --font: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --f-caption: 12px; --f-body: 13px; --f-body-lg: 15px; --f-title: 16px; --f-h3: 20px; --f-h2: 26px; --f-h1: 32px;
 
@@ -212,6 +212,7 @@ svg { display: block; }
 .page-head .sub { font-size: 13px; color: var(--ink-3); margin-top: 4px; }
 .toolbar { display: flex; align-items: center; gap: var(--s3); flex-wrap: wrap; margin-bottom: var(--s5); }
 .toolbar .grow { flex: 1; }
+.page-actions { display: flex; gap: var(--s2); }
 .board-meta { font-size: 12px; color: var(--ink-3); }
 .short-filter { display: inline-flex; align-items: center; gap: 6px; }
 .short-filter .filter-hint { font-size: 11px; color: var(--ink-3); }
@@ -220,7 +221,7 @@ svg { display: block; }
   background: var(--surface); color: var(--ink-2); font-size: 12px; padding: 0 8px;
 }
 
-/* ---------- Weekly board (desktop)锛氬乏渚ф槦鏈?+ 妯悜鍗＄墖 ---------- */
+/* ---------- Weekly board (desktop)：左侧星期栏 + 横向卡片 ---------- */
 .board { display: flex; flex-direction: column; gap: var(--s3); }
 .day-row {
   display: flex; align-items: stretch; gap: var(--s3);
@@ -413,13 +414,16 @@ svg { display: block; }
 .m-card .poster .plat-chip { font-size: 9.5px; height: 18px; padding: 0 6px; top: 6px; left: 6px; }
 .m-card .star-btn { width: 26px; height: 26px; top: 6px; right: 6px; }
 .m-card .block-btn { width: 26px; height: 26px; top: 38px; right: 6px; }
+.m-card.sk-card { padding: 0; overflow: hidden; }
+.m-card.sk-card .sk-poster { width: 92px; flex: none; }
+.m-card.sk-card .sk-lines { flex: 1; justify-content: center; }
 .m-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; padding: 2px 0; }
 .m-title { font-size: 15px; font-weight: 700; line-height: 1.35; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
 .m-meta { font-size: 12px; color: var(--ink-2); display: flex; align-items: center; gap: 5px; }
 .m-time { font-size: 12px; color: var(--ink-3); }
 .m-tags { display: flex; gap: 4px; flex-wrap: nowrap; overflow: hidden; margin-top: auto; }
 
-/* 浠婃棩鏇存柊鎽樿妯箙 */
+/* 今日更新摘要 */
 .today-strip {
   display: flex; align-items: center; gap: 12px;
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-l);
@@ -559,8 +563,11 @@ svg { display: block; }
 
 .cal-layout { display: grid; grid-template-columns: minmax(0,1.55fr) minmax(280px,.9fr); gap: var(--s5); margin-top: var(--s5); align-items: start; }
 .cal-panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-xl); padding: var(--s5); box-shadow: var(--shadow-sm); }
+.cal-panel.full { grid-column: 1 / -1; }
+.cal-panel.detail { margin-top: var(--s4); }
 .cal-panel h3 { font-size: 14px; font-weight: 700; margin-bottom: var(--s3); display: flex; align-items: center; justify-content: space-between; }
 .cal-panel h3 .hint { font-size: 11.5px; color: var(--ink-3); font-weight: 500; }
+.cal-empty-note { font-size: 12.5px; color: var(--ink-3); padding: 12px 4px; }
 
 .cal-item {
   display: flex; align-items: center; gap: var(--s3);
@@ -619,6 +626,7 @@ svg { display: block; }
 .week-item-main { flex: 1; min-width: 0; }
 .week-item-title { font-size: 11.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .week-item-time { font-size: 10px; color: var(--ink-3); }
+.week-more { font-size: 11px; color: var(--ink-3); padding: 2px 4px; }
 
 /* Month view */
 .month-grid { display: grid; grid-template-columns: repeat(7, minmax(0,1fr)); gap: var(--s2); }
@@ -671,7 +679,7 @@ svg { display: block; }
   .card:hover, .m-card:hover, .cal-item:hover, .week-item:hover { transform: none; box-shadow: var(--shadow-sm); }
 }
 
-/* ---------- Responsive: 绉诲姩绔?< 768px ---------- */
+/* ---------- Responsive: 移动端 < 768px ---------- */
 @media (max-width: 767px) {
   .container { padding: 0 var(--s4); }
   .page { padding-top: var(--s4); padding-bottom: var(--s7); }
@@ -681,15 +689,13 @@ svg { display: block; }
   .brand-sub { display: none; }
   .header-actions { gap: 2px; }
   .btn { padding: 0 10px; height: 34px; }
-  .btn.ghost span { display: none; }            /* 鍥炬爣涓轰富鐨勭揣鍑戞寜閽?*/
+  .btn.ghost span { display: none; }            /* 图标为主的紧凑按钮 */
   .btn.ghost { width: 34px; padding: 0; justify-content: center; }
-  .btn.primary-soft span:nth-last-child(2) { display: none; } /* 闅愯棌鈥滆拷鐣€濇枃瀛?*/
-  #calendarBtn span { display: none; }
-  #calendarBtn { width: 34px; padding: 0; justify-content: center; }
+  .btn.primary-soft span:nth-last-child(2) { display: none; } /* 隐藏「追番」文字 */
   .page-head h1 { font-size: 21px; }
   .page-head .sub { font-size: 12px; }
 
-  .board { display: none; }          /* 鍛ㄧ湅鏉块檷绾?*/
+  .board { display: none; }          /* 周看板降级 */
   .m-board { display: block; }
   .toolbar { margin-bottom: var(--s3); }
   .toolbar .tab-row { margin-right: -16px; padding-right: 4px; }
@@ -724,7 +730,7 @@ svg { display: block; }
   .search-box { max-width: none; min-width: 0; }
 }
 
-/* ---------- 骞虫澘 768鈥?023 ---------- */
+/* ---------- 平板 768–1023 ---------- */
 @media (min-width: 768px) and (max-width: 1023px) {
   .board { gap: 10px; }
   .day-row { padding: 10px; }
