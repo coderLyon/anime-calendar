@@ -40,6 +40,12 @@ export function updateTimeOf(desc, weekday) {
   return fallback ? `${String(Number(fallback[1])).padStart(2, "0")}:${(fallback[2] ?? "00").padStart(2, "0")}` : "";
 }
 
+/** 毫秒时间戳 → 北京 HH:MM（爱奇艺 avlistinfo issueTime 用） */
+export function fmtHmBeijing(ms) {
+  const d = new Date(Number(ms) + 8 * 3600 * 1000);
+  return `${String(d.getUTCHours()).padStart(2, "0")}:${String(d.getUTCMinutes()).padStart(2, "0")}`;
+}
+
 /** 卡片原文更新规则：截取「每周X…更新」片段并规整（如「每周二、六10：00各更新一集」→「每周二、六10：00更新」） */
 function ruleOf(text) {
   const m = String(text ?? "").match(/每[周日天][^，。；;]{0,36}?更新/);
@@ -401,6 +407,8 @@ async function enrichDurations(items, { fetchLimit, log }) {
     const url = (n != null ? r.byUrl.get(n) : undefined) ?? r.latestUrl;
     if (url) it.url = url; // 正片直达（原卡片链接多为 PV/预告）
     if (r.total != null) it.total = r.total;
+    // 更新时间兜底：desc 规则文本缺失时取最新正片 issueTime（北京时间 HH:MM，CI 也可用）
+    if (!it.updateTime && r.latestIssueTime != null) it.updateTime = fmtHmBeijing(r.latestIssueTime);
   }
   log(`时长富集完成：抓取 ${fetched} 专辑，命中 ${hit}/${items.length} 条`);
 }
@@ -411,7 +419,7 @@ function albumKeyOf(it) {
 }
 
 /**
- * 拉取专辑全部分集（分页 200/页，最多 3 页覆盖年番），返回 { byDur, byUrl, latestDur, latestUrl, total }。
+ * 拉取专辑全部分集（分页 200/页，最多 3 页覆盖年番），返回 { byDur, byUrl, latestDur, latestUrl, total, latestIssueTime }。
  * 只保留正片：优先按 contentType===1 过滤（部分专辑末尾会混入预告/片花/PV），
  * contentType 缺失时按「第N集/话」标题兜底，避免把预告当作最新集。
  */
@@ -421,6 +429,7 @@ async function fetchAlbumDurations(aid) {
   let latestDur = null;
   let latestUrl = null;
   let total = null;
+  let latestIssueTime = null;
   for (let page = 1; page <= 3; page++) {
     const res = await fetch(`https://pcw-api.iqiyi.com/albums/album/avlistinfo?aid=${encodeURIComponent(aid)}&page=${page}&size=200`, {
       headers: { "user-agent": UA, referer: "https://www.iqiyi.com/", accept: "application/json" },
@@ -447,11 +456,13 @@ async function fetchAlbumDurations(aid) {
         latestUrl = url; // 列表有序，最后一项即最新集
       }
       if (dur != null && dur > 0) latestDur = dur;
+      const issue = Number(ep.issueTime);
+      if (Number.isFinite(issue) && issue > 0) latestIssueTime = issue;
     }
     if (list.length < 200) break;
   }
   if (!byDur.size) throw new Error("分集列表无时长字段");
-  return { byDur, byUrl, latestDur, latestUrl, total };
+  return { byDur, byUrl, latestDur, latestUrl, total, latestIssueTime };
 }
 
 /** 评论区 AI 负面反馈特征：同一条评论同时含 AI 关键字与负面情绪词 */

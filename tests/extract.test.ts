@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { extractDurations } from "../scripts/youku.mjs";
 import { parseEpisodeList } from "../scripts/tencent.mjs";
 import { extractEpisodeTotal } from "../scripts/youku.mjs";
-import { updateTimeOf } from "../scripts/iqiyi.mjs";
+import { fmtHmBeijing, updateTimeOf } from "../scripts/iqiyi.mjs";
 import { weeklyRuleFor } from "../scripts/shared.mjs";
 
 describe("优酷时长提取", () => {
@@ -74,6 +74,11 @@ describe("爱奇艺更新时间解析", () => {
     expect(updateTimeOf("7月20日9:00上线", 1)).toBe("09:00");
     expect(updateTimeOf("每日更新", 1)).toBe("");
     expect(updateTimeOf("", 1)).toBe("");
+  });
+
+  it("issueTime 毫秒 → 北京 HH:MM", () => {
+    expect(fmtHmBeijing(1785120199000)).toBe("10:43");
+    expect(fmtHmBeijing(Date.UTC(2026, 7, 4, 1, 30))).toBe("09:30");
   });
 });
 

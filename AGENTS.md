@@ -18,7 +18,7 @@
 - 总集数（`total` 字段）：B站 season API `total`（缺省回退已更新集数）、优酷 show_page `episodeTotal`、爱奇艺 avlistinfo `data.total`；腾讯仅「全N集」文案（连载中剧集平台未公开计划总集数，不做推断）。前端 `formatTotal` 按平台单位展示「共N集/话」。
 - 优酷直达链接：卡片 URL 一律用 `show_page/id_{showId}.html`（浏览器会落到该动漫播放页）；`previewInfo.videoId` 是预览短片（片花/预告）**不可**作为直达链接。
 - 时长富集：B站季分集接口 `api.bilibili.com/pgc/view/web/season?season_id=`（毫秒，按 episode_id 匹配、正片最新集兜底）；腾讯分集接口 `pbaccess.video.qq.com/.../GetPageData`（`vsite_episode_list`，每集秒级 duration，按集数匹配、非花絮最新集兜底）；优酷 show_page 内联时长（秒/ISO 8601）优先 + 播放页 `pageMap.extra.duration` 兜底，连续请求触发 `_____tmd_____/punish` 反爬时按「慢速 1.2s + 挑战页冷却重试 + 挑战页带出真实 videoId 转播放页 + Playwright 浏览器兜底」降级；爱奇艺专辑分集接口 `pcw-api.iqiyi.com/albums/album/avlistinfo?aid=`（按集数匹配、最新集兜底）。
-- 爱奇艺周表抓取：**频道接口优先** `mesh.if.iqiyi.com/portal/lw/v7/channel/cartoon`（JSON 内「追番表」模块，jmd_Mon~Sun 7 组含 title/dq_updatestatus/album_id/tv_id/page_url/poster；按 block_id 映射星期、本周一 + weekday 定日期）；卡片 desc 为 A/B 下发（含「每周二09:00更新1集」类文本，可解析 `updateTime` 与带时间规则），缺失时浏览器逐日读取追番表卡片补时（`enrichUpdateTimes`，失败留空不阻断）；接口整体失败才回退浏览器逐日点击（见「回归防复发」）。专辑 ID 富集键：`albumId`（接口路径）→ 卡片 URL `album_id`（base64）→ 标题。
+- 爱奇艺周表抓取：**频道接口优先** `mesh.if.iqiyi.com/portal/lw/v7/channel/cartoon`（JSON 内「追番表」模块，jmd_Mon~Sun 7 组含 title/dq_updatestatus/album_id/tv_id/page_url/poster；按 block_id 映射星期、本周一 + weekday 定日期）；卡片 desc 为 A/B 下发（含「每周二09:00更新1集」类文本，可解析 `updateTime` 与带时间规则）；`updateTime` 三级来源：desc 规则文本（A/B，优先）→ 浏览器逐日读取追番表卡片补时（`enrichUpdateTimes`，CI 数据中心 IP 可能被反爬拦截）→ avlistinfo 最新正片 `issueTime`（北京时间 HH:MM，纯 fetch，CI 可靠；多日更剧各星期显示同一最新集发布时间，属已知近似）；接口整体失败才回退浏览器逐日点击（见「回归防复发」）。专辑 ID 富集键：`albumId`（接口路径）→ 卡片 URL `album_id`（base64）→ 标题。
 - 内容类型排除：标题含「动态漫/AI动漫/泡面番」（AI 生成短剧）的条目在同步时直接丢弃并记入 `warnings`（与时长无关）；爱奇艺另以评论区「AI 关键字 + 负面情绪」启发式过滤（限流时优雅降级）；优酷/爱奇艺「时长缺失或 <1 分钟」条目追加豆瓣影视搜索甄别——精确命中且「暂无评分」丢弃（白名单保护正剧，如苏东坡与杭州的故事），未命中/查询失败保留，每次同步查询上限 10 次、间隔 2s（反爬约束，`scripts/douban.mjs`）；用户经评论区等渠道确认的 AI 短剧（如云月大陆）进人工黑名单无条件排除。
 - 腾讯更新规则：卡片下方「每周X…」规则文案入库为 `rule` 字段；SVIP 抢先去重仅限卡片文案含 SVIP 的相邻同日集重复。
 - 追番日历（日程/周/月）**不受短剧过滤影响**，按原始数据展示；月视图合并历史归档（`history.json`）实现整月数据。
@@ -50,7 +50,7 @@ Conventional Commits（`feat:` / `fix:` / `refactor:` / `chore:` / `docs:`）；
 
 发布前必须全量跑通以下回归（顺序执行，缺一不可）：
 
-1. `pnpm test` —— Vitest 53 项（日期/筛选/短剧过滤/断更/历史归档/同步合并/规则与总集数解析/追番平台级标记/爱奇艺更新时间解析）；
+1. `pnpm test` —— Vitest 54 项（日期/筛选/短剧过滤/断更/历史归档/同步合并/规则与总集数解析/追番平台级标记/爱奇艺更新时间解析）；
 2. `pnpm build` —— tsc 类型检查 + vite 构建（esbuild 需读取上级目录，沙箱内若报错改用提权运行）；
 3. `node work/app-qa.mjs` —— 14 项浏览器回归（看板/过滤/追番/主题/日历/移动端/零控制台错误）；
 4. `node work/verify-m5.mjs`、`node work/verify-m5b.mjs` —— 22 项 + 25 项（PWA/同步状态/搜索筛选/断点矩阵/溢出）；
