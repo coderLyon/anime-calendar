@@ -50,7 +50,7 @@ jobs:
           key: pw-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
 
       - name: Install Playwright chromium
-        run: npx playwright install --with-deps chromium
+        run: pnpm exec playwright install --with-deps chromium
 
       - name: Sync data（四平台抓取 + 清洗 + 写 data/updates.json）
         timeout-minutes: 25
@@ -67,6 +67,15 @@ jobs:
       - name: Verify data fields（总集数/更新规则覆盖，不足时告警）
         run: node scripts/verify/data-fields.mjs
 
+      - name: Test
+        run: pnpm test
+
+      - name: Build
+        run: pnpm build
+        env:
+          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY }}
+
       - name: Commit data back to main
         run: |
           git config user.name "github-actions[bot]"
@@ -78,9 +87,6 @@ jobs:
             git commit -m "chore(data): sync updates [skip ci]"
             git push origin HEAD:main
           fi
-
-      - name: Build
-        run: pnpm build
 
       - name: Configure Pages
         uses: actions/configure-pages@v6

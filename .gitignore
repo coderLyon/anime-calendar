@@ -18,8 +18,9 @@ data/*.json
 !data/history.json
 
 # 本地环境变量（模板见 .env.example）
-.env.local
-.env.*.local
+.env
+.env.*
+!.env.example
 
 # 原型缓存规避副本（冗余，以主文件 anime-calendar-prototype.html 为准）
 outputs/design/anime-calendar-prototype-v*.html

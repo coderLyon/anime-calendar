@@ -52,13 +52,13 @@ Conventional Commits（`feat:` / `fix:` / `refactor:` / `chore:` / `docs:`）；
 
 1. `pnpm test` —— Vitest 54 项（日期/筛选/短剧过滤/断更/历史归档/同步合并/规则与总集数解析/追番平台级标记/爱奇艺更新时间解析）；
 2. `pnpm build` —— tsc 类型检查 + vite 构建（esbuild 需读取上级目录，沙箱内若报错改用提权运行）；
-3. `node work/app-qa.mjs` —— 14 项浏览器回归（看板/过滤/追番/主题/日历/移动端/零控制台错误）；
-4. `node work/verify-m5.mjs`、`node work/verify-m5b.mjs` —— 22 项 + 25 项（PWA/同步状态/搜索筛选/断点矩阵/溢出）；
-5. `node work/m3-qa.mjs` —— 16 屏逐屏 QA（**需联网**，否则海报加载断言全挂）；
+3. `pnpm run qa:app` —— 14 项浏览器回归（看板/过滤/追番/主题/日历/移动端/零控制台错误）；
+4. `pnpm run qa:m5`、`pnpm run qa:m5b` —— 21 项 + 26 项（PWA/同步状态/搜索筛选/断点矩阵/溢出）；
+5. `pnpm run qa:m3` —— 16 屏逐屏 QA（**需联网**，否则海报加载断言全挂）；
 6. `scripts/verify/`：`youku-today.mjs`（秒级）、`iqiyi-today.mjs`（接口通道秒级）、`tencent-duration.mjs`（约 6 分钟）、`data-fields.mjs`（秒级，total/rule 覆盖）；
-7. 线上抽查：部署 `state: success` + 首页/追番页无控制台错误（可复用 `work/live-check.mjs`）。
+7. 线上抽查：部署 `state: success` + 首页/追番页无控制台错误（`pnpm run qa:live`）。
 
-沙箱限制备忘：vitest/build 因 esbuild 向上扫描目录需提权；浏览器脚本的图片断言需联网；git 写操作（add/commit/push）需提权；`work/` 下 `diag-*.mjs`、`probe-*.mjs` 为临时诊断脚本，不入库。
+浏览器回归前先运行 `pnpm exec playwright install chromium`，并在独立终端保持 `pnpm run qa:serve` 运行。沙箱限制备忘：vitest/build 因 esbuild 向上扫描目录需提权；浏览器脚本的图片断言需联网；git 写操作（add/commit/push）需提权；`work/` 下 `diag-*.mjs`、`probe-*.mjs` 为临时诊断脚本，不入库。
 
 ## 里程碑
 

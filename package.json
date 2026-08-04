@@ -9,7 +9,13 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "sync": "node scripts/sync.mjs"
+    "sync": "node scripts/sync.mjs",
+    "qa:serve": "node scripts/qa/serve.mjs dist 4173",
+    "qa:app": "node scripts/qa/app-qa.mjs",
+    "qa:m5": "node scripts/qa/verify-m5.mjs",
+    "qa:m5b": "node scripts/qa/verify-m5b.mjs",
+    "qa:m3": "node scripts/qa/m3-qa.mjs",
+    "qa:live": "node scripts/qa/live-check.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.111.0",

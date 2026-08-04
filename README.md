@@ -34,6 +34,8 @@ npm run sync       # 手动同步四平台数据 → data/updates.json（需 Pla
 
 > 包管理器说明：仓库使用 pnpm（`pnpm install` / `pnpm run build` / `pnpm run sync`）；npm 命令同样可用。
 
+首次运行浏览器回归时安装 Chromium：`pnpm exec playwright install chromium`。构建后在一个终端运行 `pnpm run qa:serve`，再按需运行 `pnpm run qa:app`、`pnpm run qa:m5`、`pnpm run qa:m5b` 或 `pnpm run qa:m3`。
+
 ## 架构
 
 GitHub Pages 静态前端 + GitHub Actions 定时数据管道：
@@ -42,8 +44,8 @@ GitHub Pages 静态前端 + GitHub Actions 定时数据管道：
 Actions（cron 0 11,23 * * * UTC + workflow_dispatch + push）
   → pnpm install --frozen-lockfile → playwright install chromium
   → node scripts/sync.mjs（抓取四平台（爱奇艺**频道接口优先**：`mesh.if.iqiyi.com/portal/lw/v7/channel/cartoon` 的「追番表」模块一次性返回 jmd_Mon~Sun 整周数据，更新时间取 desc 规则文本 → 浏览器补时 → avlistinfo 最新集 issueTime 三级兜底；接口整体失败才回退浏览器逐日点击；优酷「今」tab 锚定日期）→ 时长/总集数/更新规则富集（B站季分集接口 total + new_ep.desc 排期 / 腾讯 GetPageData 分集接口（每集秒级 duration，按 vid/集数精确匹配；总集数仅「全N集」文案）/ 优酷 show_page episodeTotal + 星期 Tab 排期，慢速+冷却重试+Playwright 浏览器兜底 / 爱奇艺频道接口星期分组 + avlistinfo 分集接口 total + issueTime）→ 短条目保留 + AI 短剧关键词/评论区启发式兜底 + 豆瓣甄别（优酷/爱奇艺缺失时长条目，限额防爬）→ SVIP 抢先去重 → 最新集解析（B站排期 ep 直达/黑名单回退最新正片、优酷直达剧集页 show_page、腾讯分集列表点击解析最新正片、爱奇艺 avlistinfo 正片直达）→ 下周预计排期（未完结条目 +7 天推导）→ 四平台「今天无条目」自检告警 → 写 data/updates.json）
-  → 历史归档（data/history.json，滚动保留 8 周真实条目）→ git 回写 main（[skip ci] bot 提交，供前端运行时刷新与历史导航）
-  → vite build（含 PWA manifest + Service Worker）→ actions/deploy-pages 发布 dist/
+  → 历史归档（data/history.json，滚动保留 8 周真实条目）→ pnpm test → vite build（含 PWA manifest + Service Worker）
+  → git 回写 main（[skip ci] bot 提交，供前端运行时刷新与历史导航）→ actions/deploy-pages 发布 dist/
 ```
 
 前端「短剧过滤」开关（默认开启、阈值默认 10 分钟、可调 1/3/5/10/15 分钟）：仅隐藏展示，数据仍保留，关闭后可见全部条目；过滤开启即隐藏用户手动屏蔽的剧集，以及优酷名称含断句标点（、，。：；）的 AI 短剧条目；控件显示「已过滤 X 部」（当前周真实条目中实际被隐藏的去重剧部数，手动屏蔽单独标注）；追番日历（日程/周/月）不受短剧过滤影响，按原始数据展示。
@@ -72,6 +74,7 @@ src/                  React 前端（tokens / 组件 / 数据契约）
   styles.css          设计 tokens 与组件样式（源自已审批 G0 原型）
 scripts/             数据管道（sync.mjs 编排 + 四平台抓取器 + shared 工具）
 scripts/verify/      抓取器防复发回归脚本（优酷今天/爱奇艺今天/腾讯时长）
+scripts/qa/          可移植的本地/线上浏览器回归脚本
 data/updates.json    最近一次同步结果（npm run sync / Actions 生成）
 data/history.json    历史周归档（最近 8 周真实条目，前端多周导航懒加载）
 supabase/schema.sql  匿名云同步表结构与 RLS 策略
