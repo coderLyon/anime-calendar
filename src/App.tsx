@@ -98,6 +98,12 @@ export function App() {
     setWarn(false);
   }, []);
 
+  // 页面切换：回到顶部，避免浏览器按新页面高度钳制滚动位置造成的跳动
+  const navigate = useCallback((p: Page) => {
+    setPage(p);
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
+
   return (
     <>
       <a className="skip-link" href="#main">跳到主要内容</a>
@@ -105,7 +111,7 @@ export function App() {
         page={page}
         followCount={count}
         theme={theme}
-        onNavigate={setPage}
+        onNavigate={navigate}
         onToggleTheme={() => {
           setTheme((t) => (t === "dark" ? "light" : "dark"));
           queueSettingsChange();
@@ -121,11 +127,11 @@ export function App() {
             onRetry={runRefresh}
             warn={warn}
             onWarnClose={onWarnClose}
-            onNavigate={setPage}
+            onNavigate={navigate}
           />
         ) : null}
-        {page === "follow" ? <FollowView onNavigate={setPage} /> : null}
-        {page === "calendar" ? <CalendarView onNavigate={setPage} /> : null}
+        {page === "follow" ? <FollowView onNavigate={navigate} /> : null}
+        {page === "calendar" ? <CalendarView onNavigate={navigate} /> : null}
       </main>
     </>
   );

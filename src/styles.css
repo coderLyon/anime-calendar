@@ -97,7 +97,17 @@
 
 /* ---------- Reset / base ---------- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { -webkit-text-size-adjust: 100%; }
+html {
+  -webkit-text-size-adjust: 100%;
+  /* 页面高度跨视口阈值时滚动条出现/消失会导致内容水平位移（切换页面抖动根因） */
+}
+/* 桌面经典滚动条：固定 gutter 防抖动；移动端为 overlay 滚动条，不预留空间 */
+@media (min-width: 768px) {
+  html {
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+  }
+}
 body {
   font-family: var(--font);
   background: var(--bg);
@@ -445,6 +455,9 @@ svg { display: block; }
 }
 .today-strip-body a:hover { color: var(--accent-ink); }
 .today-strip-body .plat-dot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
+.today-strip-body .today-ep { font-size: 11px; color: var(--ink-2); font-weight: 500; }
+.today-strip-body .today-time { font-size: 11px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.today-strip-body .tag { height: 16px; font-size: 9.5px; padding: 0 5px; }
 .today-strip .empty-note { font-size: 12.5px; color: var(--ink-3); }
 
 /* ---------- Empty / skeleton / error ---------- */

@@ -1,6 +1,7 @@
 import { ChevronRightIcon } from "../lib/icons";
 import { itemsOn } from "../lib/items";
 import { applyFilters, type ItemFilters } from "../lib/filters";
+import { badgeHas } from "../lib/filters";
 import { useFollows } from "../store/follows";
 import { TODAY } from "../store/data";
 
@@ -31,6 +32,11 @@ export function TodayStrip({
               >
                 <span className={`plat-dot ${i.platform}`} />
                 {i.title}
+                <span className="today-ep">{i.episode}</span>
+                {i.updateTime ? <span className="today-time">{i.updateTime}</span> : null}
+                {badgeHas(i, "大结局") ? <span className="tag wanjie">大结局</span> : null}
+                {badgeHas(i, "结局点映") ? <span className="tag jujie">结局点映</span> : null}
+                {i.finished && !badgeHas(i, "大结局") && !badgeHas(i, "结局点映") ? <span className="tag wanjie">完结</span> : null}
               </a>
             ))
           : <span className="empty-note">今日没有追番更新 · 在看板点星标即可加入追番日历</span>}
