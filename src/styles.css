@@ -833,9 +833,6 @@ svg { display: block; }
 
 /* ---------- M5：同步状态 / 通知铃铛 / 弹层 ---------- */
 .sync-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
   position: relative;
 }
 @keyframes sync-blink {

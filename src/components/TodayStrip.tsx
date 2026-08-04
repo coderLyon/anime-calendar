@@ -1,7 +1,7 @@
 import { ChevronRightIcon } from "../lib/icons";
 import { itemsOn } from "../lib/items";
 import { applyFilters, type ItemFilters } from "../lib/filters";
-import { normTitle, useFollows } from "../store/follows";
+import { useFollows } from "../store/follows";
 import { TODAY } from "../store/data";
 
 export function TodayStrip({
@@ -11,9 +11,9 @@ export function TodayStrip({
   filters: ItemFilters;
   onOpenCalendar: () => void;
 }) {
-  const { follows } = useFollows();
+  const { isFollowedOn } = useFollows();
   // 「今日追番更新」始终统计全部平台已追番条目（不受首页平台 Tab 影响），搜索/徽章筛选仍生效
-  const todayItems = applyFilters(itemsOn(TODAY, "all"), filters).filter((i) => follows[normTitle(i.title)]);
+  const todayItems = applyFilters(itemsOn(TODAY, "all"), filters).filter((i) => isFollowedOn(i.platform, i.title));
   return (
     <div className="today-strip">
       <span className="today-strip-label">今日追番更新 · {todayItems.length}</span>

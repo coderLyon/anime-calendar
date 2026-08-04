@@ -1,4 +1,4 @@
-/** 优酷防复发：tab[0]「今」=北京今天；7 天 tab 日期连续不错位（秒级，纯 fetch） */
+/** 优酷防复发：按标题定位「今/今天」tab = 北京今天；7 天 tab 日期连续不错位（秒级，纯 fetch） */
 import { fetchText, extractAssignedObject, parseJsObject } from "../shared.mjs";
 
 const html = await fetchText("https://www.youku.com/ku/webcomic", { referer: "https://www.youku.com/" });
@@ -21,12 +21,14 @@ const parse = (s) => {
 const dates = tabs.map((t) => parse(t.date));
 console.log("tab titles:", tabs.map((t) => t.title).join(","));
 console.log("tab dates:", dates.join(","));
-if (!/^今/.test(String(tabs[0].title ?? ""))) {
-  console.error("FAIL: tab[0] 不是「今/今天」");
+// 页面存在多种 tab 变体（如「一,今,三,四,五,六,日」）：按标题定位，不假定 index 0
+const todayIdx = tabs.findIndex((t) => /^今/.test(String(t.title ?? "")));
+if (todayIdx < 0) {
+  console.error("FAIL: 未找到「今/今天」tab");
   process.exit(1);
 }
-if (dates[0] !== today) {
-  console.error(`FAIL: tab[0] 日期 ${dates[0]} ≠ 北京今天 ${today}`);
+if (dates[todayIdx] !== today) {
+  console.error(`FAIL: 「今」tab 日期 ${dates[todayIdx]} ≠ 北京今天 ${today}`);
   process.exit(1);
 }
 for (let i = 1; i < 7; i++) {

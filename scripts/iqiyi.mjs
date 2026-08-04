@@ -13,10 +13,32 @@ const UA =
 const WEEKDAYS = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"];
 const INVALID_TEXT_RE = /即将上线|敬请期待|马上看|预约|限时/;
 const FINISHED_RE = /(大结局|完结|已完结|全\s*\d+\s*(集|话)|\d+\s*(集|话)\s*全)/;
-/** 频道数据接口（页面 SSR/SPA 同源数据，返回 7 个星期分组，无需点击 tab） */
+/**
+ * 频道数据接口（页面 SPA 同源数据，返回 7 个星期分组，无需点击 tab）。
+ * 用 v7（mesh.if.iqiyi.com）：卡片 desc 带更新规则文本（如「每周二09:00免费更新1集」），
+ * 可解析更新时间；v5（prelw…v5）同名接口无 desc 时间字段。
+ */
 const CHANNEL_API =
-  "https://www.iqiyi.com/prelw/portal/lw/v5/channel/cartoon?lwaFastKey=Page_cartoon_1&v=17.074.25935";
+  "https://mesh.if.iqiyi.com/portal/lw/v7/channel/cartoon?uid=0&vip=0&auth=&v=17.074.25935&width=1440&platformcode=b6c13e26323c537d";
 const BLOCK_WD = { jmd_Mon: 1, jmd_Tues: 2, jmd_Wed: 3, jmd_Thur: 4, jmd_Fri: 5, jmd_Sat: 6, jmd_Sun: 7 };
+const WK_NUM = { 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 日: 7, 天: 7, 末: 6 };
+
+/** 规则文案 → 该星期对应的更新时间（如「每周二、六10：00各更新一集」+ 周六 → 10:00；无匹配取首个时间） */
+export function updateTimeOf(desc, weekday) {
+  const t = String(desc ?? "");
+  for (const m of t.matchAll(/每?周([一二三四五六日天末])([^。；;0-9]{0,6}?)(\d{1,2})[:：点](\d{2})?/g)) {
+    const days = new Set([WK_NUM[m[1]]]);
+    for (const ch of m[2]) {
+      const w = WK_NUM[ch];
+      if (w) days.add(w);
+    }
+    if (days.has(weekday)) {
+      return `${String(Number(m[3])).padStart(2, "0")}:${(m[4] ?? "00").padStart(2, "0")}`;
+    }
+  }
+  const fallback = t.match(/([01]?\d|2[0-3])[:：点](\d{2})?/);
+  return fallback ? `${String(Number(fallback[1])).padStart(2, "0")}:${(fallback[2] ?? "00").padStart(2, "0")}` : "";
+}
 
 /** 卡片原文更新规则：截取「每周X…更新」片段并规整（如「每周二、六10：00各更新一集」→「每周二、六10：00更新」） */
 function ruleOf(text) {
@@ -31,6 +53,8 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
   // 接口结构变化时回退浏览器逐日点击。
   try {
     const items = await scrapeViaChannelApi({ log });
+    // v7 接口 desc 为 A/B 下发（命中率低）：缺更新时间时用浏览器对星期卡片补时（失败留空）
+    await enrichUpdateTimes(items, { log });
     return await finalizeIqiyi(items, { fetchLimit, log });
   } catch (err) {
     log(`频道接口不可用，回退浏览器抓取：${err.message}`);
@@ -38,7 +62,70 @@ export async function scrape({ fetchLimit = 40, log = () => {} } = {}) {
   }
 }
 
-/** 频道接口抓取：解析 qyMesh.preload 包装中的追番表模块（jmd_Mon~Sun 7 组） */
+/** 浏览器补时：逐日读取追番表卡片文本，为缺失 updateTime 的条目解析「每周X HH:MM」 */
+async function enrichUpdateTimes(items, { log = () => {} } = {}) {
+  const missing = items.filter((i) => !i.updateTime);
+  if (!missing.length) return;
+  let browser;
+  let overlayTimer;
+  try {
+    browser = await launchBrowser();
+    const page = await browser.newPage({ viewport: { width: 1440, height: 1400 }, userAgent: UA });
+    await page.goto("https://www.iqiyi.com/dongman/", { waitUntil: "domcontentloaded", timeout: 45000 });
+    await page.waitForTimeout(5000);
+    dismissOverlay(page);
+    overlayTimer = setInterval(() => dismissOverlay(page), 800);
+    await page.evaluate(() => {
+      const el = document.querySelector("[class*=videoCards_tab_btn]");
+      if (el) el.scrollIntoView({ block: "center" });
+    });
+    await page.waitForTimeout(1200);
+
+    const tabLoc = page.locator("[class*=videoCards_tab_btn]");
+    const descByDay = new Map();
+    const norm = (t) => String(t).replace(/[\s·．:：]/g, "").toLowerCase();
+    for (let d = 0; d < 7; d++) {
+      const label = WEEKDAYS[d];
+      const tab = tabLoc.filter({ hasText: label }).first();
+      if (!(await tab.count())) continue;
+      const isActive = await tab.evaluate((el) => /active/.test(el.className || "")).catch(() => false);
+      if (!isActive) {
+        await clickTab(page, tab);
+        await page.waitForTimeout(1200);
+        dismissOverlay(page);
+        // 确认切换成功，避免把上一日残留卡片误映射到当前星期
+        const nowActive = await tab.evaluate((el) => /active/.test(el.className || "")).catch(() => false);
+        if (!nowActive) {
+          log(`补时跳过 ${label}（tab 切换未生效）`);
+          continue;
+        }
+      }
+      const cards = await readIqiyiCards(page);
+      if (cards.length) descByDay.set(d + 1, new Map(cards.map((c) => [norm(c.title), c.text])));
+    }
+    let hit = 0;
+    for (const it of missing) {
+      const text = descByDay.get(it.weekday)?.get(norm(it.title));
+      if (text) {
+        const t = updateTimeOf(text, it.weekday);
+        if (t) {
+          it.updateTime = t;
+          hit++;
+        }
+        // 有原文规则（含时间）时优先使用，未完结剧的最终清理在 finalizeIqiyi 完成
+        it.rule = ruleOf(text) ?? it.rule;
+      }
+    }
+    log(`浏览器补时：${hit}/${missing.length} 条`);
+  } catch (err) {
+    log(`浏览器补时不可用（保持空时间）：${err.message}`);
+  } finally {
+    if (overlayTimer) clearInterval(overlayTimer);
+    if (browser) await browser.close().catch(() => {});
+  }
+}
+
+/** 频道接口抓取：解析 v7 JSON 中的追番表模块（jmd_Mon~Sun 7 组） */
 async function scrapeViaChannelApi({ log = () => {} } = {}) {
   const res = await fetch(CHANNEL_API, {
     headers: { "user-agent": UA, referer: "https://www.iqiyi.com/dongman/", accept: "application/json, text/plain, */*" },
@@ -46,38 +133,12 @@ async function scrapeViaChannelApi({ log = () => {} } = {}) {
   });
   if (!res.ok) throw new Error(`channel API HTTP ${res.status}`);
   const text = await res.text();
-  const brace = text.indexOf("{", text.indexOf("response:"));
-  if (brace < 0) throw new Error("channel API 响应无 response JSON");
-  let depth = 0;
-  let inStr = false;
-  let quote = "";
-  let end = -1;
-  for (let i = brace; i < text.length; i++) {
-    const c = text[i];
-    if (inStr) {
-      if (c === "\\") {
-        i++;
-        continue;
-      }
-      if (c === quote) inStr = false;
-      continue;
-    }
-    if (c === '"' || c === "'") {
-      inStr = true;
-      quote = c;
-      continue;
-    }
-    if (c === "{") depth++;
-    else if (c === "}") {
-      depth--;
-      if (depth === 0) {
-        end = i + 1;
-        break;
-      }
-    }
+  let data;
+  try {
+    data = JSON.parse(text);
+  } catch {
+    throw new Error("channel API 响应非 JSON");
   }
-  if (end < 0) throw new Error("channel API 响应括号不闭合");
-  const data = JSON.parse(text.slice(brace, end));
   const mod = (data?.items ?? []).find((it) => it.title === "追番表");
   const groups = mod?.video ?? [];
   if (!Array.isArray(groups) || !groups.length) throw new Error("追番表模块缺失");
@@ -114,13 +175,15 @@ async function scrapeViaChannelApi({ log = () => {} } = {}) {
         title,
         poster: httpsImg(c.image_url_normal || c.image_cover || c.album_image_url_hover),
         episode: epMatch ? `第${epMatch[1]}${epMatch[2]}` : epStatus,
-        updateTime: "",
+        updateTime: updateTimeOf(c.desc, weekday),
         date,
         weekday,
         svip: false,
         url: String(c.page_url ?? ""),
         badge: null,
         albumId: c.album_id != null ? String(c.album_id) : null,
+        tvId: c.tv_id != null ? String(c.tv_id) : null,
+        rule: ruleOf(c.desc),
         duration: null,
       });
     }
@@ -178,28 +241,7 @@ async function scrapeViaBrowser({ fetchLimit = 40, log = () => {} } = {}) {
       if (!(await tab.count())) continue;
       // 当天 tab 默认已激活：重复点击会触发重新加载导致卡片清空（周一/周日缺数据的根因）
       const isActive = await tab.evaluate((el) => /active/.test(el.className || "")).catch(() => false);
-      // 仅取「追番表」日历卡片：优先 followCalendarCard 容器；页面存在 A/B 变体时，
-      // 回退为排除「猜你喜欢」推荐区（compFuncs_simpleWrap）后取剩余卡片
-      const readCards = () => page.evaluate(() => {
-        const host = document.querySelector("[class*=followCalendarCard]");
-        const els = host
-          ? [...host.querySelectorAll("[class*=filmFeed_innerwrap]")]
-          : [...document.querySelectorAll("[class*=filmFeed_innerwrap]")].filter((el) => !el.closest("[class*=compFuncs_simpleWrap]"));
-        const out = [];
-        for (const el of els) {
-          if (!el.querySelector('[data-ai-entity="文案区"]') || !el.querySelector("img")) continue;
-          const anchors = [...el.querySelectorAll("a[href]")];
-          // 标题锚点 href 含 ext_params=a%3Dtitl（即 a=titl）；匹配失败时回退首个锚点
-          const titleA = anchors.find((a) => a.getAttribute("href")?.includes("a%3Dtitl")) ?? anchors[0];
-          const title = titleA?.textContent?.trim() ?? "";
-          const contentEl = el.querySelector("[data-content]");
-          const text = (el.textContent ?? "").replace(/\s+/g, " ");
-          const img = el.querySelector("img");
-          const href = anchors[0]?.getAttribute("href") ?? null;
-          out.push({ title, episode: contentEl?.getAttribute("data-content") ?? "", poster: img?.getAttribute("src") ?? img?.getAttribute("data-src") ?? "", url: href, text });
-        }
-        return out;
-      });
+      const readCards = () => readIqiyiCards(page);
 
       let cards;
       if (isActive) {
@@ -253,7 +295,7 @@ async function scrapeViaBrowser({ fetchLimit = 40, log = () => {} } = {}) {
           title: c.title,
           poster: httpsImg(c.poster),
           episode: epMatch ? `第${epMatch[1]}${epMatch[2]}` : c.episode,
-          updateTime: "",
+          updateTime: updateTimeOf(c.text, weekday),
           date,
           weekday,
           svip: false,
@@ -271,6 +313,30 @@ async function scrapeViaBrowser({ fetchLimit = 40, log = () => {} } = {}) {
     if (overlayTimer) clearInterval(overlayTimer);
     if (browser) await browser.close().catch(() => {});
   }
+}
+
+/** 读取「追番表」日历卡片：优先 followCalendarCard 容器；A/B 变体回退排除「猜你喜欢」推荐区 */
+export async function readIqiyiCards(page) {
+  return page.evaluate(() => {
+    const host = document.querySelector("[class*=followCalendarCard]");
+    const els = host
+      ? [...host.querySelectorAll("[class*=filmFeed_innerwrap]")]
+      : [...document.querySelectorAll("[class*=filmFeed_innerwrap]")].filter((el) => !el.closest("[class*=compFuncs_simpleWrap]"));
+    const out = [];
+    for (const el of els) {
+      if (!el.querySelector('[data-ai-entity="文案区"]') || !el.querySelector("img")) continue;
+      const anchors = [...el.querySelectorAll("a[href]")];
+      // 标题锚点 href 含 ext_params=a%3Dtitl（即 a=titl）；匹配失败时回退首个锚点
+      const titleA = anchors.find((a) => a.getAttribute("href")?.includes("a%3Dtitl")) ?? anchors[0];
+      const title = titleA?.textContent?.trim() ?? "";
+      const contentEl = el.querySelector("[data-content]");
+      const text = (el.textContent ?? "").replace(/\s+/g, " ");
+      const img = el.querySelector("img");
+      const href = anchors[0]?.getAttribute("href") ?? null;
+      out.push({ title, episode: contentEl?.getAttribute("data-content") ?? "", poster: img?.getAttribute("src") ?? img?.getAttribute("data-src") ?? "", url: href, text });
+    }
+    return out;
+  });
 }
 
 /** 卡片 URL 中的 album_id（base64）解码为数字专辑 ID */
@@ -409,7 +475,7 @@ async function classifyAiShorts(items, { fetchLimit, log }) {
       cache.set(it.title, false);
       continue;
     }
-    const tvId = tvOf(it.url);
+    const tvId = it.tvId ?? tvOf(it.url);
     if (!tvId) {
       cache.set(it.title, false);
       continue;

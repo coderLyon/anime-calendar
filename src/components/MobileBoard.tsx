@@ -24,7 +24,7 @@ interface MobileBoardProps {
 
 export function MobileBoard({ platform, mode, weekStart, filters, day, onDayChange }: MobileBoardProps) {
   const dur = (sec?: number | null) => formatDuration(sec);
-  const { isFollowed, toggle } = useFollows();
+  const { isFollowedOn, toggle } = useFollows();
   const { isBlocked, toggle: toggleBlock } = useBlocked();
   const toast = useToast();
   const touchX = useRef<number | null>(null);
@@ -78,7 +78,7 @@ export function MobileBoard({ platform, mode, weekStart, filters, day, onDayChan
             ))
           : items.length
             ? items.map((item) => {
-                const followed = isFollowed(item.title);
+                const followed = isFollowedOn(item.platform, item.title);
                 const blocked = isBlocked(item.title);
                 return (
                   <article

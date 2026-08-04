@@ -24,7 +24,7 @@ export function WeekdayBoard({
   filters: ItemFilters;
 }) {
   const [expanded, setExpanded] = useState<Set<number>>(() => new Set());
-  const { isFollowed, toggle } = useFollows();
+  const { isFollowedOn, toggle } = useFollows();
   const { isBlocked, toggle: toggleBlock } = useBlocked();
   const toast = useToast();
 
@@ -90,7 +90,7 @@ export function WeekdayBoard({
                   <AnimeCard
                     key={item.id}
                     item={item}
-                    followed={isFollowed(item.title)}
+                    followed={isFollowedOn(item.platform, item.title)}
                     onToggleFollow={() => toggle(item)}
                     blocked={isBlocked(item.title)}
                     onToggleBlock={() => {

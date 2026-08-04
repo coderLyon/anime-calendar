@@ -54,7 +54,8 @@ export function useNotifiedVersion(): number {
 export function todayFollowedNotifyItems(follows: FollowMap): AnimeItem[] {
   return itemsOn(TODAY, "all").filter((i) => {
     const f = follows[normTitle(i.title)];
-    return !!f && (f.notify ?? true);
+    // 仅提醒用户实际标记的平台（同标题跨平台不自动互标）
+    return !!f && f.platforms.some((p) => p.platform === i.platform) && (f.notify ?? true);
   });
 }
 

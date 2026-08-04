@@ -13,7 +13,7 @@ import { posterGlyph, posterStyle } from "../lib/poster";
 import { useShortFilterVersion } from "../lib/shortFilter";
 import { readIgnoreMissed, writeIgnoreMissed } from "../lib/sync";
 import { queueSettingsChange } from "../lib/syncQueue";
-import { normTitle, useFollows } from "../store/follows";
+import { useFollows } from "../store/follows";
 import { ITEMS, TODAY, useDataVersion } from "../store/data";
 import type { AnimeItem, CalScope, CalView, HistoryFile, Page } from "../types";
 
@@ -85,7 +85,7 @@ function CalItem({ item, toast }: { item: AnimeItem; toast: (m: string) => void 
 
 export function CalendarView({ onNavigate }: { onNavigate: (p: Page) => void }) {
   useDataVersion();
-  const { follows } = useFollows();
+  const { isFollowedOn } = useFollows();
   const toast = useToast();
   useShortFilterVersion();
   const [view, setView] = useState<CalView>(() => {
@@ -117,7 +117,8 @@ export function CalendarView({ onNavigate }: { onNavigate: (p: Page) => void }) 
   }, [view, scope]);
 
   // 追番日历不受短剧过滤/屏蔽影响，展示原始全部条目
-  const scopeItems = (d: Date) => calendarItemsOn(d, "all").filter((i) => scope === "all" || follows[normTitle(i.title)]);
+  // 追番范围按「平台 + 标题」精确匹配：同标题跨平台不自动互标（用户标记哪个平台就只显示哪个）
+  const scopeItems = (d: Date) => calendarItemsOn(d, "all").filter((i) => scope === "all" || isFollowedOn(i.platform, i.title));
 
   const monthItems = (d: Date) => {
     const base = scopeItems(d);
@@ -128,7 +129,7 @@ export function CalendarView({ onNavigate }: { onNavigate: (p: Page) => void }) 
     for (const h of hw.items) {
       if (h.date === dstr(d) && !merged.some((x) => x.id === h.id)) merged.push(h);
     }
-    return scope === "all" ? merged : merged.filter((i) => follows[normTitle(i.title)]);
+    return scope === "all" ? merged : merged.filter((i) => isFollowedOn(i.platform, i.title));
   };
 
   const backToday = () => {

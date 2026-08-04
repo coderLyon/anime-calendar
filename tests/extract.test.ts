@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { extractDurations } from "../scripts/youku.mjs";
 import { parseEpisodeList } from "../scripts/tencent.mjs";
 import { extractEpisodeTotal } from "../scripts/youku.mjs";
+import { updateTimeOf } from "../scripts/iqiyi.mjs";
 import { weeklyRuleFor } from "../scripts/shared.mjs";
 
 describe("优酷时长提取", () => {
@@ -56,6 +57,23 @@ describe("每周更新规则推导（优酷/爱奇艺共用）", () => {
   it("七天全覆盖 → 每日更新", () => {
     const items = [1, 2, 3, 4, 5, 6, 7].map((weekday) => ({ title: "年番", weekday }));
     expect(weeklyRuleFor(items).get("年番")).toBe("每日更新");
+  });
+});
+
+describe("爱奇艺更新时间解析", () => {
+  it("按星期匹配规则文案中的时间", () => {
+    expect(updateTimeOf("每周二09:00免费更新1集", 2)).toBe("09:00");
+    expect(updateTimeOf("每周二、六10：00各更新一集", 6)).toBe("10:00");
+    expect(updateTimeOf("每周二、六10：00各更新一集", 2)).toBe("10:00");
+    expect(updateTimeOf("每周一周五10:00更新一集", 1)).toBe("10:00");
+    expect(updateTimeOf("每周一周五10:00更新一集", 5)).toBe("10:00");
+  });
+
+  it("无星期匹配时取首个时间，无时间返回空串", () => {
+    expect(updateTimeOf("首播3集，每周二9:00更新1集，会员抢先看2集", 3)).toBe("09:00");
+    expect(updateTimeOf("7月20日9:00上线", 1)).toBe("09:00");
+    expect(updateTimeOf("每日更新", 1)).toBe("");
+    expect(updateTimeOf("", 1)).toBe("");
   });
 });
 
