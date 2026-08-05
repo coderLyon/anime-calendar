@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-04T20:23:58.234Z",
+  "updatedAt": "2026-08-05T00:11:41.704Z",
   "weeks": [
     {
       "weekStart": "2026-08-03",
@@ -2010,9 +2010,9 @@
           "date": "2026-08-03",
           "weekday": 1,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200ilydv1a.html",
+          "url": "https://v.qq.com/x/page/r41024w13dj.html",
           "badge": "独播",
-          "duration": 470
+          "duration": 468
         },
         {
           "id": "tencent-mzc00200azkttu2-2026-08-03",
@@ -2026,9 +2026,9 @@
           "date": "2026-08-03",
           "weekday": 1,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200azkttu2.html",
+          "url": "https://v.qq.com/x/page/u41024vzmfn.html",
           "badge": "独播",
-          "duration": 703
+          "duration": 715
         },
         {
           "id": "tencent-mzc002004ufhdj8-2026-08-03",
@@ -2123,9 +2123,9 @@
           "date": "2026-08-04",
           "weekday": 2,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200cu8uq8c.html",
+          "url": "https://v.qq.com/x/page/v4102psjhq3.html",
           "badge": "独播",
-          "duration": 594
+          "duration": 589
         },
         {
           "id": "tencent-mzc00200y0aavbe-2026-08-04",
@@ -2300,9 +2300,9 @@
           "date": "2026-08-07",
           "weekday": 5,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200ilydv1a.html",
+          "url": "https://v.qq.com/x/page/r41024w13dj.html",
           "badge": "独播",
-          "duration": 470
+          "duration": 468
         },
         {
           "id": "tencent-mzc00200azkttu2-2026-08-07",
@@ -2316,9 +2316,9 @@
           "date": "2026-08-07",
           "weekday": 5,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200azkttu2.html",
+          "url": "https://v.qq.com/x/page/u41024vzmfn.html",
           "badge": "独播",
-          "duration": 703
+          "duration": 715
         },
         {
           "id": "tencent-mzc002006u77lmr-2026-08-07",
@@ -2428,9 +2428,9 @@
           "date": "2026-08-08",
           "weekday": 6,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200cu8uq8c.html",
+          "url": "https://v.qq.com/x/page/v4102psjhq3.html",
           "badge": "独播",
-          "duration": 594
+          "duration": 589
         },
         {
           "id": "tencent-mzc002006u77lmr-2026-08-08",
@@ -2460,9 +2460,9 @@
           "date": "2026-08-08",
           "weekday": 6,
           "svip": false,
-          "url": "https://v.qq.com/x/page/h4102ixcpxr.html",
+          "url": "https://v.qq.com/x/cover/hzgtnf6tbvfekfv.html",
           "badge": "高清修复",
-          "duration": 1488
+          "duration": 1474
         },
         {
           "id": "tencent-mzc002002qg0pbc-2026-08-09",
