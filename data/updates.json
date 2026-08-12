@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T11:52:32.180Z",
+  "generatedAt": "2026-08-12T23:45:43.659Z",
   "platforms": [
     {
       "platform": "bili",
@@ -567,7 +567,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep5054168",
           "seasonId": "262354",
-          "badge": "8.7",
+          "badge": "8.6",
           "duration": 1133,
           "total": 24,
           "rule": "每周日 09:00更新"
@@ -1281,7 +1281,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep5054168",
           "seasonId": "262354",
-          "badge": "8.7",
+          "badge": "8.6",
           "duration": 1133,
           "total": 24,
           "rule": "每周日 09:00更新",
@@ -1409,7 +1409,7 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-08-12T11:42:49.322Z",
+      "fetchedAt": "2026-08-12T23:35:07.589Z",
       "warnings": [
         "已保留 11 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "2 条时长无法确认已保留（平台未提供内联时长）",
@@ -4464,10 +4464,11 @@
           "predicted": true
         }
       ],
+      "error": "超时（>240s）",
       "fetchedAt": "2026-08-12T11:46:10.366Z",
       "warnings": [
-        "已保留 83 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "已按豆瓣判据排除 11 条疑似 AI 短剧（时长缺失/过短且豆瓣条目暂无评分）",
+        "已保留 144 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "过滤 87 条不在本周（2026-08-10~2026-08-16）的条目",
         "4 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
         "已生成下周预计排期 87 条（本周未完结条目 +7 天推导，前端标「预计」）"
       ]
@@ -4896,22 +4897,6 @@
           "duration": 782
         },
         {
-          "id": "tencent-mzc002006n62s11-2026-08-15",
-          "platform": "tencent",
-          "title": "炼气十万年",
-          "rule": "每周二、周六10点更新",
-          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc002006n62s111722876262898/750?imageMogr2/thumbnail/400x",
-          "episode": "第367集",
-          "total": null,
-          "updateTime": "10:00",
-          "date": "2026-08-15",
-          "weekday": 6,
-          "svip": false,
-          "url": "https://v.qq.com/x/page/w41027s4w09.html",
-          "badge": "独播",
-          "duration": 755
-        },
-        {
           "id": "tencent-yl6lapwmmx5ivew-2026-08-15",
           "platform": "tencent",
           "title": "妖神记",
@@ -4926,6 +4911,22 @@
           "url": "https://v.qq.com/x/page/t41022dlqj8.html",
           "badge": null,
           "duration": 472
+        },
+        {
+          "id": "tencent-mzc002006n62s11-2026-08-15",
+          "platform": "tencent",
+          "title": "炼气十万年",
+          "rule": "每周二、周六10点更新",
+          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc002006n62s111722876262898/750?imageMogr2/thumbnail/400x",
+          "episode": "第367集",
+          "total": null,
+          "updateTime": "10:00",
+          "date": "2026-08-15",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://v.qq.com/x/page/w41027s4w09.html",
+          "badge": "独播",
+          "duration": 755
         },
         {
           "id": "tencent-mzc00200cu8uq8c-2026-08-15",
@@ -5431,23 +5432,6 @@
           "predicted": true
         },
         {
-          "id": "tencent-mzc002006n62s11-2026-08-15-pred",
-          "platform": "tencent",
-          "title": "炼气十万年",
-          "rule": "每周二、周六10点更新",
-          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc002006n62s111722876262898/750?imageMogr2/thumbnail/400x",
-          "episode": "第368集",
-          "total": null,
-          "updateTime": "10:00",
-          "date": "2026-08-22",
-          "weekday": 6,
-          "svip": false,
-          "url": "https://v.qq.com/x/page/w41027s4w09.html",
-          "badge": "独播",
-          "duration": 755,
-          "predicted": true
-        },
-        {
           "id": "tencent-yl6lapwmmx5ivew-2026-08-15-pred",
           "platform": "tencent",
           "title": "妖神记",
@@ -5462,6 +5446,23 @@
           "url": "https://v.qq.com/x/page/t41022dlqj8.html",
           "badge": null,
           "duration": 472,
+          "predicted": true
+        },
+        {
+          "id": "tencent-mzc002006n62s11-2026-08-15-pred",
+          "platform": "tencent",
+          "title": "炼气十万年",
+          "rule": "每周二、周六10点更新",
+          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc002006n62s111722876262898/750?imageMogr2/thumbnail/400x",
+          "episode": "第368集",
+          "total": null,
+          "updateTime": "10:00",
+          "date": "2026-08-22",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://v.qq.com/x/page/w41027s4w09.html",
+          "badge": "独播",
+          "duration": 755,
           "predicted": true
         },
         {
@@ -5584,7 +5585,7 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-08-12T11:51:45.160Z",
+      "fetchedAt": "2026-08-12T23:44:56.031Z",
       "warnings": [
         "已保留 1 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已生成下周预计排期 32 条（本周未完结条目 +7 天推导，前端标「预计」）",
@@ -5735,7 +5736,7 @@
           "badge": null,
           "albumId": "3088839867418901",
           "tvId": "8042213980073400",
-          "rule": "每周二、五、六、日更新",
+          "rule": "每周二、五、六更新",
           "duration": 411,
           "total": 18
         },
@@ -6095,7 +6096,7 @@
           "badge": null,
           "albumId": "3088839867418901",
           "tvId": "8042213980073400",
-          "rule": "每周二、五、六、日更新",
+          "rule": "每周二、五、六更新",
           "duration": 411,
           "total": 18
         },
@@ -6221,7 +6222,7 @@
           "badge": null,
           "albumId": "3088839867418901",
           "tvId": "8042213980073400",
-          "rule": "每周二、五、六、日更新",
+          "rule": "每周二、五、六更新",
           "duration": 411,
           "total": 18
         },
@@ -6350,24 +6351,6 @@
           "rule": "每周三、日更新",
           "duration": 600,
           "total": 21
-        },
-        {
-          "id": "iqiyi-2026-08-16-掌门低调点",
-          "platform": "iqiyi",
-          "title": "掌门低调点",
-          "poster": "https://pic4.iqiyipic.com/image/20260729/a0/d5/a_101285221_m_601_318_424.avif",
-          "episode": "第18集",
-          "updateTime": "09:00",
-          "date": "2026-08-16",
-          "weekday": 7,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_27k11z298pw.html",
-          "badge": null,
-          "albumId": "3088839867418901",
-          "tvId": "8042213980073400",
-          "rule": "每周二、五、六、日更新",
-          "duration": 411,
-          "total": 18
         },
         {
           "id": "iqiyi-2026-08-16-都市古仙医",
@@ -6533,7 +6516,7 @@
           "badge": null,
           "albumId": "3088839867418901",
           "tvId": "8042213980073400",
-          "rule": "每周二、五、六、日更新",
+          "rule": "每周二、五、六更新",
           "duration": 411,
           "total": 18,
           "predicted": true
@@ -6913,7 +6896,7 @@
           "badge": null,
           "albumId": "3088839867418901",
           "tvId": "8042213980073400",
-          "rule": "每周二、五、六、日更新",
+          "rule": "每周二、五、六更新",
           "duration": 411,
           "total": 18,
           "predicted": true
@@ -7046,7 +7029,7 @@
           "badge": null,
           "albumId": "3088839867418901",
           "tvId": "8042213980073400",
-          "rule": "每周二、五、六、日更新",
+          "rule": "每周二、五、六更新",
           "duration": 411,
           "total": 18,
           "predicted": true
@@ -7185,25 +7168,6 @@
           "predicted": true
         },
         {
-          "id": "iqiyi-2026-08-16-掌门低调点-pred",
-          "platform": "iqiyi",
-          "title": "掌门低调点",
-          "poster": "https://pic4.iqiyipic.com/image/20260729/a0/d5/a_101285221_m_601_318_424.avif",
-          "episode": "第19集",
-          "updateTime": "09:00",
-          "date": "2026-08-23",
-          "weekday": 7,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_27k11z298pw.html",
-          "badge": null,
-          "albumId": "3088839867418901",
-          "tvId": "8042213980073400",
-          "rule": "每周二、五、六、日更新",
-          "duration": 411,
-          "total": 18,
-          "predicted": true
-        },
-        {
           "id": "iqiyi-2026-08-16-都市古仙医-pred",
           "platform": "iqiyi",
           "title": "都市古仙医",
@@ -7242,9 +7206,8 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-08-12T11:52:32.180Z",
+      "fetchedAt": "2026-08-12T23:45:43.658Z",
       "warnings": [
-        "内容类型排除（动态漫/AI动漫/泡面番）：遇强则强，我的修为无上限 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：亡灵天灾：我抬手百万骨海 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：末世钞能力者 动态漫画",
@@ -7262,9 +7225,10 @@
         "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：遇强则强，我的修为无上限 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：遇强则强，我的修为无上限 动态漫画",
         "已保留 8 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已排除 18 条动态漫/AI动漫/泡面番条目",
-        "已生成下周预计排期 44 条（本周未完结条目 +7 天推导，前端标「预计」）",
+        "已生成下周预计排期 43 条（本周未完结条目 +7 天推导，前端标「预计」）",
         "1 条剧集已完结，不生成下周排期"
       ]
     }

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-12T11:52:32.187Z",
+  "updatedAt": "2026-08-12T23:45:43.668Z",
   "weeks": [
     {
       "weekStart": "2026-08-10",
@@ -387,7 +387,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep5054168",
           "seasonId": "262354",
-          "badge": "8.7",
+          "badge": "8.6",
           "duration": 1133,
           "total": 24,
           "rule": "每周日 09:00更新"
@@ -2564,7 +2564,7 @@
           "badge": null,
           "albumId": "3088839867418901",
           "tvId": "8042213980073400",
-          "rule": "每周二、五、六、日更新",
+          "rule": "每周二、五、六更新",
           "duration": 411,
           "total": 18
         },
@@ -2852,7 +2852,7 @@
           "badge": null,
           "albumId": "3088839867418901",
           "tvId": "8042213980073400",
-          "rule": "每周二、五、六、日更新",
+          "rule": "每周二、五、六更新",
           "duration": 411,
           "total": 18
         },
@@ -2960,7 +2960,7 @@
           "badge": null,
           "albumId": "3088839867418901",
           "tvId": "8042213980073400",
-          "rule": "每周二、五、六、日更新",
+          "rule": "每周二、五、六更新",
           "duration": 411,
           "total": 18
         },
