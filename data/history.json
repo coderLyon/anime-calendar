@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-17T11:31:40.353Z",
+  "updatedAt": "2026-08-17T23:29:49.684Z",
   "weeks": [
     {
       "weekStart": "2026-08-17",
@@ -58,16 +58,17 @@
           "id": "bili-5472199",
           "platform": "bili",
           "title": "公主驾到，天才厨子已超神！",
-          "poster": "https://i0.hdslb.com/bfs/bangumi/image/4766bd4a732abb2d2408eb0187a9c648f76d4176.jpg",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/6c62bdc586cdba56673a1641cd559292702b1f4a.jpg",
           "episode": "第1话~第5话",
           "updateTime": "23:00",
           "date": "2026-08-17",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ss284272?from_spmid=666.5.schedule.3",
+          "url": "https://www.bilibili.com/bangumi/play/ep5472199?from_spmid=666.5.schedule.3",
           "seasonId": "284272",
           "badge": null,
-          "duration": null
+          "duration": 346,
+          "total": 17
         },
         {
           "id": "bili-3065343",
@@ -346,7 +347,7 @@
           "date": "2026-08-21",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ss283870?from_spmid=666.5.schedule.4",
+          "url": "https://www.bilibili.com/bangumi/play/ss283870?from_spmid=666.5.schedule.5",
           "seasonId": "283870",
           "badge": null,
           "duration": null
@@ -405,16 +406,17 @@
           "id": "bili-5472201",
           "platform": "bili",
           "title": "公主驾到，天才厨子已超神！",
-          "poster": "https://i0.hdslb.com/bfs/bangumi/image/4766bd4a732abb2d2408eb0187a9c648f76d4176.jpg",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/6c62bdc586cdba56673a1641cd559292702b1f4a.jpg",
           "episode": "第6话",
           "updateTime": "23:00",
           "date": "2026-08-21",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ss284272?from_spmid=666.5.schedule.8",
+          "url": "https://www.bilibili.com/bangumi/play/ep5472200",
           "seasonId": "284272",
           "badge": null,
-          "duration": null
+          "duration": 318,
+          "total": 17
         },
         {
           "id": "bili-5442737",
@@ -445,7 +447,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4723795",
           "seasonId": "252364",
-          "badge": "9.8",
+          "badge": "9.9",
           "duration": 549,
           "total": 12,
           "rule": "每周六10:00更新"
@@ -529,7 +531,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4883704",
           "seasonId": "264970",
-          "badge": "8.2",
+          "badge": "8.3",
           "duration": 1374,
           "total": 16,
           "rule": "每周日09:00更新"
@@ -2186,7 +2188,7 @@
           "date": "2026-08-18",
           "weekday": 2,
           "svip": false,
-          "url": "https://v.qq.com/x/page/k410252pxjg.html",
+          "url": "https://v.qq.com/x/cover/mzc00200u94ke3h.html",
           "badge": "独播",
           "duration": 588
         },
@@ -3716,6 +3718,86 @@
           "duration": 125.43,
           "rule": "每周一、三、日更新",
           "total": 60
+        },
+        {
+          "id": "bili-5512256",
+          "platform": "bili",
+          "title": "无良系统变向导，我被四个哨兵拿捏了",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/748726fd8faf7c11a6898a4b37c129c526e09e61.jpg",
+          "episode": "第1话~第6话",
+          "updateTime": "12:00",
+          "date": "2026-08-18",
+          "weekday": 2,
+          "svip": false,
+          "url": "https://www.bilibili.com/bangumi/play/ss285345?from_spmid=666.5.schedule.3",
+          "seasonId": "285345",
+          "badge": null,
+          "duration": null
+        },
+        {
+          "id": "bili-5512272",
+          "platform": "bili",
+          "title": "重生警犬后，我成了名侦探？",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/16f401824d45308e0c3f6d5f39cc1f2fca31f94c.jpg",
+          "episode": "第14话",
+          "updateTime": "10:00",
+          "date": "2026-08-21",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://www.bilibili.com/bangumi/play/ep5085365",
+          "seasonId": "263296",
+          "badge": "2.6",
+          "duration": 331,
+          "total": 16,
+          "rule": "首播5集，每周五、周日更新1集"
+        },
+        {
+          "id": "bili-5512276",
+          "platform": "bili",
+          "title": "气运世界杯，我能复制所有球星技能",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/2f46c4f70b11280384789781f09a2e3f4c04851c.jpg",
+          "episode": "第10话",
+          "updateTime": "10:00",
+          "date": "2026-08-22",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://www.bilibili.com/bangumi/play/ep5085411",
+          "seasonId": "263605",
+          "badge": null,
+          "duration": 385,
+          "total": 17
+        },
+        {
+          "id": "bili-5512260",
+          "platform": "bili",
+          "title": "无良系统变向导，我被四个哨兵拿捏了",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/748726fd8faf7c11a6898a4b37c129c526e09e61.jpg",
+          "episode": "第7话",
+          "updateTime": "12:00",
+          "date": "2026-08-22",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://www.bilibili.com/bangumi/play/ss285345?from_spmid=666.5.schedule.6",
+          "seasonId": "285345",
+          "badge": null,
+          "duration": null
+        },
+        {
+          "id": "bili-5512273",
+          "platform": "bili",
+          "title": "重生警犬后，我成了名侦探？",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/16f401824d45308e0c3f6d5f39cc1f2fca31f94c.jpg",
+          "episode": "第15话",
+          "updateTime": "10:00",
+          "date": "2026-08-23",
+          "weekday": 7,
+          "svip": false,
+          "url": "https://www.bilibili.com/bangumi/play/ep5085365",
+          "seasonId": "263296",
+          "badge": "2.6",
+          "duration": 331,
+          "total": 16,
+          "rule": "首播5集，每周五、周日更新1集"
         }
       ]
     },

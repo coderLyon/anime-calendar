@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-17T11:31:40.343Z",
+  "generatedAt": "2026-08-17T23:29:49.674Z",
   "platforms": [
     {
       "platform": "bili",
@@ -59,16 +59,17 @@
           "id": "bili-5472199",
           "platform": "bili",
           "title": "公主驾到，天才厨子已超神！",
-          "poster": "https://i0.hdslb.com/bfs/bangumi/image/4766bd4a732abb2d2408eb0187a9c648f76d4176.jpg",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/6c62bdc586cdba56673a1641cd559292702b1f4a.jpg",
           "episode": "第1话~第5话",
           "updateTime": "23:00",
           "date": "2026-08-17",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ss284272?from_spmid=666.5.schedule.3",
+          "url": "https://www.bilibili.com/bangumi/play/ep5472199?from_spmid=666.5.schedule.3",
           "seasonId": "284272",
           "badge": null,
-          "duration": null
+          "duration": 346,
+          "total": 17
         },
         {
           "id": "bili-3065343",
@@ -120,6 +121,21 @@
           "duration": 719,
           "total": 25,
           "rule": "每周二、周五12:00更新"
+        },
+        {
+          "id": "bili-5512256",
+          "platform": "bili",
+          "title": "无良系统变向导，我被四个哨兵拿捏了",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/748726fd8faf7c11a6898a4b37c129c526e09e61.jpg",
+          "episode": "第1话~第6话",
+          "updateTime": "12:00",
+          "date": "2026-08-18",
+          "weekday": 2,
+          "svip": false,
+          "url": "https://www.bilibili.com/bangumi/play/ss285345?from_spmid=666.5.schedule.3",
+          "seasonId": "285345",
+          "badge": null,
+          "duration": null
         },
         {
           "id": "bili-5390841",
@@ -321,6 +337,23 @@
           "rule": "每周五10:00更新"
         },
         {
+          "id": "bili-5512272",
+          "platform": "bili",
+          "title": "重生警犬后，我成了名侦探？",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/16f401824d45308e0c3f6d5f39cc1f2fca31f94c.jpg",
+          "episode": "第14话",
+          "updateTime": "10:00",
+          "date": "2026-08-21",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://www.bilibili.com/bangumi/play/ep5085365",
+          "seasonId": "263296",
+          "badge": "2.6",
+          "duration": 331,
+          "total": 16,
+          "rule": "首播5集，每周五、周日更新1集"
+        },
+        {
           "id": "bili-5137673",
           "platform": "bili",
           "title": "时光代理人 第三季",
@@ -347,7 +380,7 @@
           "date": "2026-08-21",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ss283870?from_spmid=666.5.schedule.4",
+          "url": "https://www.bilibili.com/bangumi/play/ss283870?from_spmid=666.5.schedule.5",
           "seasonId": "283870",
           "badge": null,
           "duration": null
@@ -406,16 +439,17 @@
           "id": "bili-5472201",
           "platform": "bili",
           "title": "公主驾到，天才厨子已超神！",
-          "poster": "https://i0.hdslb.com/bfs/bangumi/image/4766bd4a732abb2d2408eb0187a9c648f76d4176.jpg",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/6c62bdc586cdba56673a1641cd559292702b1f4a.jpg",
           "episode": "第6话",
           "updateTime": "23:00",
           "date": "2026-08-21",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ss284272?from_spmid=666.5.schedule.8",
+          "url": "https://www.bilibili.com/bangumi/play/ep5472200",
           "seasonId": "284272",
           "badge": null,
-          "duration": null
+          "duration": 318,
+          "total": 17
         },
         {
           "id": "bili-5442737",
@@ -446,10 +480,26 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4723795",
           "seasonId": "252364",
-          "badge": "9.8",
+          "badge": "9.9",
           "duration": 549,
           "total": 12,
           "rule": "每周六10:00更新"
+        },
+        {
+          "id": "bili-5512276",
+          "platform": "bili",
+          "title": "气运世界杯，我能复制所有球星技能",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/2f46c4f70b11280384789781f09a2e3f4c04851c.jpg",
+          "episode": "第10话",
+          "updateTime": "10:00",
+          "date": "2026-08-22",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://www.bilibili.com/bangumi/play/ep5085411",
+          "seasonId": "263605",
+          "badge": null,
+          "duration": 385,
+          "total": 17
         },
         {
           "id": "bili-3854812",
@@ -503,6 +553,21 @@
           "rule": "每周六 12:00更新"
         },
         {
+          "id": "bili-5512260",
+          "platform": "bili",
+          "title": "无良系统变向导，我被四个哨兵拿捏了",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/748726fd8faf7c11a6898a4b37c129c526e09e61.jpg",
+          "episode": "第7话",
+          "updateTime": "12:00",
+          "date": "2026-08-22",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://www.bilibili.com/bangumi/play/ss285345?from_spmid=666.5.schedule.6",
+          "seasonId": "285345",
+          "badge": null,
+          "duration": null
+        },
+        {
           "id": "bili-5390858",
           "platform": "bili",
           "title": "霸王龙雷奇之雷奇知多少",
@@ -530,10 +595,27 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4883704",
           "seasonId": "264970",
-          "badge": "8.2",
+          "badge": "8.3",
           "duration": 1374,
           "total": 16,
           "rule": "每周日09:00更新"
+        },
+        {
+          "id": "bili-5512273",
+          "platform": "bili",
+          "title": "重生警犬后，我成了名侦探？",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/16f401824d45308e0c3f6d5f39cc1f2fca31f94c.jpg",
+          "episode": "第15话",
+          "updateTime": "10:00",
+          "date": "2026-08-23",
+          "weekday": 7,
+          "svip": false,
+          "url": "https://www.bilibili.com/bangumi/play/ep5085365",
+          "seasonId": "263296",
+          "badge": "2.6",
+          "duration": 331,
+          "total": 16,
+          "rule": "首播5集，每周五、周日更新1集"
         },
         {
           "id": "bili-5326359",
@@ -690,16 +772,17 @@
           "id": "bili-5472199-pred",
           "platform": "bili",
           "title": "公主驾到，天才厨子已超神！",
-          "poster": "https://i0.hdslb.com/bfs/bangumi/image/4766bd4a732abb2d2408eb0187a9c648f76d4176.jpg",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/6c62bdc586cdba56673a1641cd559292702b1f4a.jpg",
           "episode": "第2话",
           "updateTime": "23:00",
           "date": "2026-08-24",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ss284272?from_spmid=666.5.schedule.3",
+          "url": "https://www.bilibili.com/bangumi/play/ep5472199?from_spmid=666.5.schedule.3",
           "seasonId": "284272",
           "badge": null,
-          "duration": null,
+          "duration": 346,
+          "total": 17,
           "predicted": true
         },
         {
@@ -754,6 +837,22 @@
           "duration": 719,
           "total": 25,
           "rule": "每周二、周五12:00更新",
+          "predicted": true
+        },
+        {
+          "id": "bili-5512256-pred",
+          "platform": "bili",
+          "title": "无良系统变向导，我被四个哨兵拿捏了",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/748726fd8faf7c11a6898a4b37c129c526e09e61.jpg",
+          "episode": "第2话",
+          "updateTime": "12:00",
+          "date": "2026-08-25",
+          "weekday": 2,
+          "svip": false,
+          "url": "https://www.bilibili.com/bangumi/play/ss285345?from_spmid=666.5.schedule.3",
+          "seasonId": "285345",
+          "badge": null,
+          "duration": null,
           "predicted": true
         },
         {
@@ -968,6 +1067,24 @@
           "predicted": true
         },
         {
+          "id": "bili-5512272-pred",
+          "platform": "bili",
+          "title": "重生警犬后，我成了名侦探？",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/16f401824d45308e0c3f6d5f39cc1f2fca31f94c.jpg",
+          "episode": "第15话",
+          "updateTime": "10:00",
+          "date": "2026-08-28",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://www.bilibili.com/bangumi/play/ep5085365",
+          "seasonId": "263296",
+          "badge": "2.6",
+          "duration": 331,
+          "total": 16,
+          "rule": "首播5集，每周五、周日更新1集",
+          "predicted": true
+        },
+        {
           "id": "bili-5137673-pred",
           "platform": "bili",
           "title": "时光代理人 第三季",
@@ -995,7 +1112,7 @@
           "date": "2026-08-28",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ss283870?from_spmid=666.5.schedule.4",
+          "url": "https://www.bilibili.com/bangumi/play/ss283870?from_spmid=666.5.schedule.5",
           "seasonId": "283870",
           "badge": null,
           "duration": null,
@@ -1058,16 +1175,17 @@
           "id": "bili-5472201-pred",
           "platform": "bili",
           "title": "公主驾到，天才厨子已超神！",
-          "poster": "https://i0.hdslb.com/bfs/bangumi/image/4766bd4a732abb2d2408eb0187a9c648f76d4176.jpg",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/6c62bdc586cdba56673a1641cd559292702b1f4a.jpg",
           "episode": "第7话",
           "updateTime": "23:00",
           "date": "2026-08-28",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ss284272?from_spmid=666.5.schedule.8",
+          "url": "https://www.bilibili.com/bangumi/play/ep5472200",
           "seasonId": "284272",
           "badge": null,
-          "duration": null,
+          "duration": 318,
+          "total": 17,
           "predicted": true
         },
         {
@@ -1100,10 +1218,27 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4723795",
           "seasonId": "252364",
-          "badge": "9.8",
+          "badge": "9.9",
           "duration": 549,
           "total": 12,
           "rule": "每周六10:00更新",
+          "predicted": true
+        },
+        {
+          "id": "bili-5512276-pred",
+          "platform": "bili",
+          "title": "气运世界杯，我能复制所有球星技能",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/2f46c4f70b11280384789781f09a2e3f4c04851c.jpg",
+          "episode": "第11话",
+          "updateTime": "10:00",
+          "date": "2026-08-29",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://www.bilibili.com/bangumi/play/ep5085411",
+          "seasonId": "263605",
+          "badge": null,
+          "duration": 385,
+          "total": 17,
           "predicted": true
         },
         {
@@ -1161,6 +1296,22 @@
           "predicted": true
         },
         {
+          "id": "bili-5512260-pred",
+          "platform": "bili",
+          "title": "无良系统变向导，我被四个哨兵拿捏了",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/748726fd8faf7c11a6898a4b37c129c526e09e61.jpg",
+          "episode": "第8话",
+          "updateTime": "12:00",
+          "date": "2026-08-29",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://www.bilibili.com/bangumi/play/ss285345?from_spmid=666.5.schedule.6",
+          "seasonId": "285345",
+          "badge": null,
+          "duration": null,
+          "predicted": true
+        },
+        {
           "id": "bili-5390858-pred",
           "platform": "bili",
           "title": "霸王龙雷奇之雷奇知多少",
@@ -1189,10 +1340,28 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4883704",
           "seasonId": "264970",
-          "badge": "8.2",
+          "badge": "8.3",
           "duration": 1374,
           "total": 16,
           "rule": "每周日09:00更新",
+          "predicted": true
+        },
+        {
+          "id": "bili-5512273-pred",
+          "platform": "bili",
+          "title": "重生警犬后，我成了名侦探？",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/16f401824d45308e0c3f6d5f39cc1f2fca31f94c.jpg",
+          "episode": "第16话",
+          "updateTime": "10:00",
+          "date": "2026-08-30",
+          "weekday": 7,
+          "svip": false,
+          "url": "https://www.bilibili.com/bangumi/play/ep5085365",
+          "seasonId": "263296",
+          "badge": "2.6",
+          "duration": 331,
+          "total": 16,
+          "rule": "首播5集，每周五、周日更新1集",
           "predicted": true
         },
         {
@@ -1300,11 +1469,11 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-08-17T11:20:24.409Z",
+      "fetchedAt": "2026-08-17T23:17:34.703Z",
       "warnings": [
         "已保留 9 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "3 条时长无法确认已保留（平台未提供内联时长）",
-        "已生成下周预计排期 38 条（本周未完结条目 +7 天推导，前端标「预计」）"
+        "已生成下周预计排期 43 条（本周未完结条目 +7 天推导，前端标「预计」）"
       ]
     },
     {
@@ -4318,10 +4487,11 @@
           "predicted": true
         }
       ],
+      "error": "超时（>240s）",
       "fetchedAt": "2026-08-17T11:24:08.397Z",
       "warnings": [
-        "已保留 78 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "已按豆瓣判据排除 6 条疑似 AI 短剧（时长缺失/过短且豆瓣条目暂无评分）",
+        "已保留 144 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "过滤 86 条不在本周（2026-08-17~2026-08-23）的条目",
         "4 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
         "已生成下周预计排期 86 条（本周未完结条目 +7 天推导，前端标「预计」）"
       ]
@@ -4439,7 +4609,7 @@
           "date": "2026-08-18",
           "weekday": 2,
           "svip": false,
-          "url": "https://v.qq.com/x/page/k410252pxjg.html",
+          "url": "https://v.qq.com/x/cover/mzc00200u94ke3h.html",
           "badge": "独播",
           "duration": 588
         },
@@ -5006,7 +5176,7 @@
           "date": "2026-08-25",
           "weekday": 2,
           "svip": false,
-          "url": "https://v.qq.com/x/page/k410252pxjg.html",
+          "url": "https://v.qq.com/x/cover/mzc00200u94ke3h.html",
           "badge": "独播",
           "duration": 588,
           "predicted": true
@@ -5471,7 +5641,7 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-08-17T11:30:51.591Z",
+      "fetchedAt": "2026-08-17T23:28:55.236Z",
       "warnings": [
         "已保留 2 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已生成下周预计排期 33 条（本周未完结条目 +7 天推导，前端标「预计」）",
@@ -7036,12 +7206,8 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-08-17T11:31:40.343Z",
+      "fetchedAt": "2026-08-17T23:29:49.674Z",
       "warnings": [
-        "内容类型排除（动态漫/AI动漫/泡面番）：全民转职：驭龙师是最弱职业？ 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：第一御兽师 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：末世求生：我能看到隐藏提示 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全球惊悚：我开启外挂自选商城 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：第一御兽师 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：亡灵天灾：我抬手百万骨海 动态漫画",
@@ -7052,8 +7218,11 @@
         "内容类型排除（动态漫/AI动漫/泡面番）：亡灵天灾：我抬手百万骨海 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：末世钞能力者 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：全民转职：驭龙师是最弱职业？ 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：第一御兽师 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：末世求生：我能看到隐藏提示 动态漫画",
         "已保留 8 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "已排除 14 条动态漫/AI动漫/泡面番条目",
+        "已排除 13 条动态漫/AI动漫/泡面番条目",
         "已生成下周预计排期 41 条（本周未完结条目 +7 天推导，前端标「预计」）",
         "2 条剧集已完结，不生成下周排期"
       ]
