@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T11:33:36.871Z",
+  "generatedAt": "2026-08-21T23:30:34.240Z",
   "platforms": [
     {
       "platform": "bili",
@@ -117,7 +117,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4368416?from_spmid=666.5.schedule.2",
           "seasonId": "118920",
-          "badge": "9.2",
+          "badge": "9.1",
           "duration": 649,
           "total": 25,
           "rule": "每周二、周五12:00更新"
@@ -314,7 +314,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep5137673?from_spmid=666.5.schedule.3",
           "seasonId": "105212",
-          "badge": "9.2",
+          "badge": "9.3",
           "duration": 1295,
           "total": 12,
           "rule": "每周五11:00更新，每周四18:00超大会员抢先看"
@@ -415,7 +415,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep5137673?from_spmid=666.5.schedule.4",
           "seasonId": "105212",
-          "badge": "9.2",
+          "badge": "9.3",
           "duration": 1295,
           "total": 12,
           "rule": "每周五11:00更新，每周四18:00超大会员抢先看"
@@ -449,7 +449,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4368417?from_spmid=666.5.schedule.6",
           "seasonId": "118920",
-          "badge": "9.2",
+          "badge": "9.1",
           "duration": 712,
           "total": 25,
           "rule": "每周二、周五12:00更新"
@@ -497,10 +497,10 @@
           "date": "2026-08-21",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep5472200",
+          "url": "https://www.bilibili.com/bangumi/play/ep5472201?from_spmid=666.5.schedule.9",
           "seasonId": "284272",
           "badge": null,
-          "duration": 318,
+          "duration": 280,
           "total": 17
         },
         {
@@ -665,7 +665,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4883704",
           "seasonId": "264970",
-          "badge": "7.9",
+          "badge": "8.0",
           "duration": 1374,
           "total": 16,
           "rule": "每周日09:00更新"
@@ -903,7 +903,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4368416?from_spmid=666.5.schedule.2",
           "seasonId": "118920",
-          "badge": "9.2",
+          "badge": "9.1",
           "duration": 649,
           "total": 25,
           "rule": "每周二、周五12:00更新",
@@ -1112,7 +1112,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep5137673?from_spmid=666.5.schedule.3",
           "seasonId": "105212",
-          "badge": "9.2",
+          "badge": "9.3",
           "duration": 1295,
           "total": 12,
           "rule": "每周五11:00更新，每周四18:00超大会员抢先看",
@@ -1219,7 +1219,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep5137673?from_spmid=666.5.schedule.4",
           "seasonId": "105212",
-          "badge": "9.2",
+          "badge": "9.3",
           "duration": 1295,
           "total": 12,
           "rule": "每周五11:00更新，每周四18:00超大会员抢先看",
@@ -1255,7 +1255,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4368417?from_spmid=666.5.schedule.6",
           "seasonId": "118920",
-          "badge": "9.2",
+          "badge": "9.1",
           "duration": 712,
           "total": 25,
           "rule": "每周二、周五12:00更新",
@@ -1306,10 +1306,10 @@
           "date": "2026-08-28",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep5472200",
+          "url": "https://www.bilibili.com/bangumi/play/ep5472201?from_spmid=666.5.schedule.9",
           "seasonId": "284272",
           "badge": null,
-          "duration": 318,
+          "duration": 280,
           "total": 17,
           "predicted": true
         },
@@ -1484,7 +1484,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4883704",
           "seasonId": "264970",
-          "badge": "7.9",
+          "badge": "8.0",
           "duration": 1374,
           "total": 16,
           "rule": "每周日09:00更新",
@@ -1613,9 +1613,9 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-08-21T11:20:41.739Z",
+      "fetchedAt": "2026-08-21T23:18:31.639Z",
       "warnings": [
-        "已保留 12 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "已保留 13 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已生成下周预计排期 47 条（本周未完结条目 +7 天推导，前端标「预计」）"
       ]
     },
@@ -4787,7 +4787,7 @@
           "date": "2026-08-18",
           "weekday": 2,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200u94ke3h.html",
+          "url": "https://v.qq.com/x/page/l4102f1k87s.html",
           "badge": "独播",
           "duration": 521
         },
@@ -5354,7 +5354,7 @@
           "date": "2026-08-25",
           "weekday": 2,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200u94ke3h.html",
+          "url": "https://v.qq.com/x/page/l4102f1k87s.html",
           "badge": "独播",
           "duration": 521,
           "predicted": true
@@ -5819,7 +5819,7 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-08-21T11:32:47.124Z",
+      "fetchedAt": "2026-08-21T23:29:43.852Z",
       "warnings": [
         "已保留 1 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已生成下周预计排期 33 条（本周未完结条目 +7 天推导，前端标「预计」）",
@@ -7514,10 +7514,8 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-08-21T11:33:36.871Z",
+      "fetchedAt": "2026-08-21T23:30:34.240Z",
       "warnings": [
-        "内容类型排除（动态漫/AI动漫/泡面番）：亡灵天灾：我抬手百万骨海 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：末世钞能力者 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民转职：驭龙师是最弱职业？ 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：第一御兽师 动态漫画",
@@ -7528,6 +7526,8 @@
         "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：遇强则强，我的修为无上限 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：遇强则强，我的修为无上限 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：亡灵天灾：我抬手百万骨海 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：末世钞能力者 动态漫画",
         "已保留 8 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已排除 12 条动态漫/AI动漫/泡面番条目",
         "已生成下周预计排期 45 条（本周未完结条目 +7 天推导，前端标「预计」）",

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-21T11:33:36.882Z",
+  "updatedAt": "2026-08-21T23:30:34.253Z",
   "weeks": [
     {
       "weekStart": "2026-08-17",
@@ -116,7 +116,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4368416?from_spmid=666.5.schedule.2",
           "seasonId": "118920",
-          "badge": "9.2",
+          "badge": "9.1",
           "duration": 649,
           "total": 25,
           "rule": "每周二、周五12:00更新"
@@ -330,7 +330,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep5137673?from_spmid=666.5.schedule.4",
           "seasonId": "105212",
-          "badge": "9.2",
+          "badge": "9.3",
           "duration": 1295,
           "total": 12,
           "rule": "每周五11:00更新，每周四18:00超大会员抢先看"
@@ -364,7 +364,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4368417?from_spmid=666.5.schedule.6",
           "seasonId": "118920",
-          "badge": "9.2",
+          "badge": "9.1",
           "duration": 712,
           "total": 25,
           "rule": "每周二、周五12:00更新"
@@ -412,10 +412,10 @@
           "date": "2026-08-21",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep5472200",
+          "url": "https://www.bilibili.com/bangumi/play/ep5472201?from_spmid=666.5.schedule.9",
           "seasonId": "284272",
           "badge": null,
-          "duration": 318,
+          "duration": 280,
           "total": 17
         },
         {
@@ -531,7 +531,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4883704",
           "seasonId": "264970",
-          "badge": "7.9",
+          "badge": "8.0",
           "duration": 1374,
           "total": 16,
           "rule": "每周日09:00更新"
@@ -2188,7 +2188,7 @@
           "date": "2026-08-18",
           "weekday": 2,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200u94ke3h.html",
+          "url": "https://v.qq.com/x/page/l4102f1k87s.html",
           "badge": "独播",
           "duration": 521
         },
