@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T11:28:13.257Z",
+  "generatedAt": "2026-08-22T23:26:39.542Z",
   "platforms": [
     {
       "platform": "bili",
@@ -432,7 +432,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep5450363?from_spmid=666.5.schedule.5",
           "seasonId": "283870",
-          "badge": "9.5",
+          "badge": "9.7",
           "duration": 382,
           "total": 40,
           "rule": "每周四、周五11:00更新"
@@ -1237,7 +1237,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep5450363?from_spmid=666.5.schedule.5",
           "seasonId": "283870",
-          "badge": "9.5",
+          "badge": "9.7",
           "duration": 382,
           "total": 40,
           "rule": "每周四、周五11:00更新",
@@ -1613,7 +1613,7 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-08-22T11:16:28.541Z",
+      "fetchedAt": "2026-08-22T23:15:20.427Z",
       "warnings": [
         "已保留 14 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已生成下周预计排期 47 条（本周未完结条目 +7 天推导，前端标「预计」）"
@@ -4412,10 +4412,11 @@
           "predicted": true
         }
       ],
+      "error": "超时（>240s）",
       "fetchedAt": "2026-08-22T11:20:33.976Z",
       "warnings": [
-        "已保留 69 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "已按豆瓣判据排除 6 条疑似 AI 短剧（时长缺失/过短且豆瓣条目暂无评分）",
+        "已保留 126 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "过滤 80 条不在本周（2026-08-17~2026-08-23）的条目",
         "6 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
         "已生成下周预计排期 80 条（本周未完结条目 +7 天推导，前端标「预计」）"
       ]
@@ -4538,22 +4539,6 @@
           "duration": 521
         },
         {
-          "id": "tencent-mzc00200cu8uq8c-2026-08-18",
-          "platform": "tencent",
-          "title": "万界独尊",
-          "rule": "每周二、六10点更1集",
-          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200cu8uq8c1781927332273/750?imageMogr2/thumbnail/400x",
-          "episode": "第476集",
-          "total": null,
-          "updateTime": "10:00",
-          "date": "2026-08-18",
-          "weekday": 2,
-          "svip": false,
-          "url": "https://v.qq.com/x/page/y4102m09wv3.html",
-          "badge": "独播",
-          "duration": 589
-        },
-        {
           "id": "tencent-7q544xyrava3vxf-2026-08-18",
           "platform": "tencent",
           "title": "武神主宰",
@@ -4568,6 +4553,22 @@
           "url": "https://v.qq.com/x/page/r4102uwjb6n.html",
           "badge": "独播",
           "duration": 471
+        },
+        {
+          "id": "tencent-mzc00200cu8uq8c-2026-08-18",
+          "platform": "tencent",
+          "title": "万界独尊",
+          "rule": "每周二、六10点更1集",
+          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200cu8uq8c1781927332273/750?imageMogr2/thumbnail/400x",
+          "episode": "第476集",
+          "total": null,
+          "updateTime": "10:00",
+          "date": "2026-08-18",
+          "weekday": 2,
+          "svip": false,
+          "url": "https://v.qq.com/x/page/y4102m09wv3.html",
+          "badge": "独播",
+          "duration": 589
         },
         {
           "id": "tencent-mzc00200k76ocxb-2026-08-18",
@@ -4913,14 +4914,14 @@
           "title": "名侦探柯南[普通话版]",
           "rule": "每周六19：30更1集，第1251集3月7日播出",
           "poster": "https://puui.qpic.cn/vcover_hz_pic/0/hzgtnf6tbvfekfv1603590782205/750?imageMogr2/thumbnail/400x",
-          "episode": "第1269集",
+          "episode": "第1270集",
           "total": null,
           "updateTime": "19:30",
           "date": "2026-08-22",
           "weekday": 6,
           "svip": false,
           "url": "https://v.qq.com/x/page/h4102ixcpxr.html",
-          "badge": "高清修复",
+          "badge": "上新",
           "duration": 1488
         },
         {
@@ -5106,23 +5107,6 @@
           "predicted": true
         },
         {
-          "id": "tencent-mzc00200cu8uq8c-2026-08-18-pred",
-          "platform": "tencent",
-          "title": "万界独尊",
-          "rule": "每周二、六10点更1集",
-          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200cu8uq8c1781927332273/750?imageMogr2/thumbnail/400x",
-          "episode": "第477集",
-          "total": null,
-          "updateTime": "10:00",
-          "date": "2026-08-25",
-          "weekday": 2,
-          "svip": false,
-          "url": "https://v.qq.com/x/page/y4102m09wv3.html",
-          "badge": "独播",
-          "duration": 589,
-          "predicted": true
-        },
-        {
           "id": "tencent-7q544xyrava3vxf-2026-08-18-pred",
           "platform": "tencent",
           "title": "武神主宰",
@@ -5137,6 +5121,23 @@
           "url": "https://v.qq.com/x/page/r4102uwjb6n.html",
           "badge": "独播",
           "duration": 471,
+          "predicted": true
+        },
+        {
+          "id": "tencent-mzc00200cu8uq8c-2026-08-18-pred",
+          "platform": "tencent",
+          "title": "万界独尊",
+          "rule": "每周二、六10点更1集",
+          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200cu8uq8c1781927332273/750?imageMogr2/thumbnail/400x",
+          "episode": "第477集",
+          "total": null,
+          "updateTime": "10:00",
+          "date": "2026-08-25",
+          "weekday": 2,
+          "svip": false,
+          "url": "https://v.qq.com/x/page/y4102m09wv3.html",
+          "badge": "独播",
+          "duration": 589,
           "predicted": true
         },
         {
@@ -5468,14 +5469,14 @@
           "title": "名侦探柯南[普通话版]",
           "rule": "每周六19：30更1集，第1251集3月7日播出",
           "poster": "https://puui.qpic.cn/vcover_hz_pic/0/hzgtnf6tbvfekfv1603590782205/750?imageMogr2/thumbnail/400x",
-          "episode": "第1270集",
+          "episode": "第1271集",
           "total": null,
           "updateTime": "19:30",
           "date": "2026-08-29",
           "weekday": 6,
           "svip": false,
           "url": "https://v.qq.com/x/page/h4102ixcpxr.html",
-          "badge": "高清修复",
+          "badge": "上新",
           "duration": 1488,
           "predicted": true
         },
@@ -5565,7 +5566,7 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-08-22T11:27:23.250Z",
+      "fetchedAt": "2026-08-22T23:25:55.928Z",
       "warnings": [
         "已保留 1 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已生成下周预计排期 33 条（本周未完结条目 +7 天推导，前端标「预计」）",
@@ -7297,7 +7298,7 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-08-22T11:28:13.257Z",
+      "fetchedAt": "2026-08-22T23:26:39.542Z",
       "warnings": [
         "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民转职：驭龙师是最弱职业？ 动态漫画",

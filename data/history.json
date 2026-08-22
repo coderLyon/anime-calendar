@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-22T11:28:13.267Z",
+  "updatedAt": "2026-08-22T23:26:39.552Z",
   "weeks": [
     {
       "weekStart": "2026-08-17",
@@ -347,7 +347,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep5450363?from_spmid=666.5.schedule.5",
           "seasonId": "283870",
-          "badge": "9.5",
+          "badge": "9.7",
           "duration": 382,
           "total": 40,
           "rule": "每周四、周五11:00更新"
@@ -2582,14 +2582,14 @@
           "title": "名侦探柯南[普通话版]",
           "rule": "每周六19：30更1集，第1251集3月7日播出",
           "poster": "https://puui.qpic.cn/vcover_hz_pic/0/hzgtnf6tbvfekfv1603590782205/750?imageMogr2/thumbnail/400x",
-          "episode": "第1269集",
+          "episode": "第1270集",
           "total": null,
           "updateTime": "19:30",
           "date": "2026-08-22",
           "weekday": 6,
           "svip": false,
           "url": "https://v.qq.com/x/page/h4102ixcpxr.html",
-          "badge": "高清修复",
+          "badge": "上新",
           "duration": 1488
         },
         {
