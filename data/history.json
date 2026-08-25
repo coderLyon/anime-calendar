@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-25T11:28:07.924Z",
+  "updatedAt": "2026-08-25T23:32:48.637Z",
   "weeks": [
     {
       "weekStart": "2026-08-24",
@@ -500,7 +500,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4883705",
           "seasonId": "264970",
-          "badge": "8.1",
+          "badge": "8.2",
           "duration": 1443,
           "total": 16,
           "rule": "每周日09:00更新"
@@ -3215,15 +3215,15 @@
           "title": "狼狼少女蓝之沉睡之章",
           "rule": null,
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200k76ocxb1786345242189/750?imageMogr2/thumbnail/400x",
-          "episode": "第14集",
+          "episode": "第15集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-08-24",
           "weekday": 1,
           "svip": false,
-          "url": "https://v.qq.com/x/page/w4102s6wnu2.html",
+          "url": "https://v.qq.com/x/page/i4102efl054.html",
           "badge": "上新",
-          "duration": 379
+          "duration": 349
         },
         {
           "id": "tencent-mzc002004ufhdj8-2026-08-24",
@@ -3233,14 +3233,13 @@
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc002004ufhdj81770806493318/750?imageMogr2/thumbnail/400x",
           "episode": "第160集",
           "total": 160,
-          "updateTime": "10:00",
+          "updateTime": "",
           "date": "2026-08-24",
           "weekday": 1,
           "svip": false,
           "url": "https://v.qq.com/x/page/i41013p1qx3.html",
-          "badge": "结局点映",
-          "duration": 72,
-          "finished": true
+          "badge": null,
+          "duration": 72
         },
         {
           "id": "tencent-324olz7ilvo2j5f-2026-08-24",
@@ -3264,13 +3263,13 @@
           "title": "炼气十万年",
           "rule": "每周二、周六10点更新",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc002006n62s111722876262898/750?imageMogr2/thumbnail/400x",
-          "episode": "第370集",
+          "episode": "第371集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-08-25",
           "weekday": 2,
           "svip": false,
-          "url": "https://v.qq.com/x/page/g4102ym29yf.html",
+          "url": "https://v.qq.com/x/page/c4102axmxij.html",
           "badge": "独播",
           "duration": 755
         },
@@ -3280,15 +3279,15 @@
           "title": "武神主宰",
           "rule": "每周二、日10：00更1集",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/7q544xyrava3vxf1781927016720/750?imageMogr2/thumbnail/400x",
-          "episode": "第685集",
+          "episode": "第686集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-08-25",
           "weekday": 2,
           "svip": false,
-          "url": "https://v.qq.com/x/page/y4102n8fgq3.html",
+          "url": "https://v.qq.com/x/page/k4102g7smtt.html",
           "badge": "独播",
-          "duration": 471
+          "duration": 475
         },
         {
           "id": "tencent-mzc00200u94ke3h-2026-08-25",
@@ -3296,15 +3295,15 @@
           "title": "万古神帝",
           "rule": "7月21日起每周二10:00更新2集",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200u94ke3h1781936212043/750?imageMogr2/thumbnail/400x",
-          "episode": "第11集",
+          "episode": "第13集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-08-25",
           "weekday": 2,
           "svip": false,
-          "url": "https://v.qq.com/x/page/l4102f1k87s.html",
-          "badge": "独播",
-          "duration": 521
+          "url": "https://v.qq.com/x/page/s4102ifzkx2.html",
+          "badge": "上新",
+          "duration": 634
         },
         {
           "id": "tencent-mzc00200cu8uq8c-2026-08-25",
@@ -3312,13 +3311,13 @@
           "title": "万界独尊",
           "rule": "每周二、六10点更1集",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200cu8uq8c1781927332273/750?imageMogr2/thumbnail/400x",
-          "episode": "第476集",
+          "episode": "第477集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-08-25",
           "weekday": 2,
           "svip": false,
-          "url": "https://v.qq.com/x/page/y4102m09wv3.html",
+          "url": "https://v.qq.com/x/page/b4102k9my1o.html",
           "badge": "独播",
           "duration": 589
         },
@@ -3328,15 +3327,15 @@
           "title": "狼狼少女蓝之沉睡之章",
           "rule": null,
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200k76ocxb1786345242189/750?imageMogr2/thumbnail/400x",
-          "episode": "第14集",
+          "episode": "第15集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-08-25",
           "weekday": 2,
           "svip": false,
-          "url": "https://v.qq.com/x/page/w4102s6wnu2.html",
+          "url": "https://v.qq.com/x/page/i4102efl054.html",
           "badge": "上新",
-          "duration": 379
+          "duration": 349
         },
         {
           "id": "tencent-mzc00200y0aavbe-2026-08-25",
@@ -3344,15 +3343,15 @@
           "title": "一念永恒 完结季",
           "rule": "每周三会员更新1集，7月28日起，每周二18点更新SVIP提前看",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200y0aavbe1786443736362/750?imageMogr2/thumbnail/400x",
-          "episode": "第07集",
+          "episode": "第08集",
           "total": null,
           "updateTime": "18:00",
           "date": "2026-08-25",
           "weekday": 2,
           "svip": true,
-          "url": "https://v.qq.com/x/page/e410203li7y.html",
-          "badge": "独播",
-          "duration": 1176
+          "url": "https://v.qq.com/x/page/h41029ni3b0.html",
+          "badge": "上新",
+          "duration": 1257
         },
         {
           "id": "tencent-mzc00200n53vkqc-2026-08-25",
@@ -3360,15 +3359,15 @@
           "title": "遮天",
           "rule": "VIP会员每周三10点更新。SVIP会员每周二18点抢先看（4月3日加更一集）",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200n53vkqc1781928899834/750?imageMogr2/thumbnail/400x",
-          "episode": "第176集",
+          "episode": "第177集",
           "total": null,
           "updateTime": "18:00",
           "date": "2026-08-25",
           "weekday": 2,
           "svip": true,
-          "url": "https://v.qq.com/x/page/w4102bv52os.html",
-          "badge": "独播",
-          "duration": 1444
+          "url": "https://v.qq.com/x/page/g4102xqttfr.html",
+          "badge": "上新",
+          "duration": 1392
         },
         {
           "id": "tencent-mzc00200s6u45af-2026-08-26",
@@ -3408,15 +3407,15 @@
           "title": "狼狼少女蓝之沉睡之章",
           "rule": null,
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200k76ocxb1786345242189/750?imageMogr2/thumbnail/400x",
-          "episode": "第14集",
+          "episode": "第15集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-08-26",
           "weekday": 3,
           "svip": false,
-          "url": "https://v.qq.com/x/page/w4102s6wnu2.html",
+          "url": "https://v.qq.com/x/page/i4102efl054.html",
           "badge": "上新",
-          "duration": 379
+          "duration": 349
         },
         {
           "id": "tencent-mzc002000iis17y-2026-08-27",
@@ -3458,15 +3457,15 @@
           "title": "狼狼少女蓝之沉睡之章",
           "rule": null,
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200k76ocxb1786345242189/750?imageMogr2/thumbnail/400x",
-          "episode": "第14集",
+          "episode": "第15集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-08-27",
           "weekday": 4,
           "svip": false,
-          "url": "https://v.qq.com/x/page/w4102s6wnu2.html",
+          "url": "https://v.qq.com/x/page/i4102efl054.html",
           "badge": "上新",
-          "duration": 379
+          "duration": 349
         },
         {
           "id": "tencent-mzc00200w9z1axf-2026-08-27",
@@ -3554,15 +3553,15 @@
           "title": "狼狼少女蓝之沉睡之章",
           "rule": null,
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200k76ocxb1786345242189/750?imageMogr2/thumbnail/400x",
-          "episode": "第14集",
+          "episode": "第15集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-08-28",
           "weekday": 5,
           "svip": false,
-          "url": "https://v.qq.com/x/page/w4102s6wnu2.html",
+          "url": "https://v.qq.com/x/page/i4102efl054.html",
           "badge": "上新",
-          "duration": 379
+          "duration": 349
         },
         {
           "id": "tencent-mzc00200xf3rir6-2026-08-28",
@@ -3618,13 +3617,13 @@
           "title": "炼气十万年",
           "rule": "每周二、周六10点更新",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc002006n62s111722876262898/750?imageMogr2/thumbnail/400x",
-          "episode": "第370集",
+          "episode": "第371集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-08-29",
           "weekday": 6,
           "svip": false,
-          "url": "https://v.qq.com/x/page/g4102ym29yf.html",
+          "url": "https://v.qq.com/x/page/c4102axmxij.html",
           "badge": "独播",
           "duration": 755
         },
@@ -3634,13 +3633,13 @@
           "title": "万界独尊",
           "rule": "每周二、六10点更1集",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200cu8uq8c1781927332273/750?imageMogr2/thumbnail/400x",
-          "episode": "第476集",
+          "episode": "第477集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-08-29",
           "weekday": 6,
           "svip": false,
-          "url": "https://v.qq.com/x/page/y4102m09wv3.html",
+          "url": "https://v.qq.com/x/page/b4102k9my1o.html",
           "badge": "独播",
           "duration": 589
         },
@@ -3682,15 +3681,15 @@
           "title": "武神主宰",
           "rule": "每周二、日10：00更1集",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/7q544xyrava3vxf1781927016720/750?imageMogr2/thumbnail/400x",
-          "episode": "第685集",
+          "episode": "第686集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-08-30",
           "weekday": 7,
           "svip": false,
-          "url": "https://v.qq.com/x/page/y4102n8fgq3.html",
+          "url": "https://v.qq.com/x/page/k4102g7smtt.html",
           "badge": "独播",
-          "duration": 471
+          "duration": 475
         },
         {
           "id": "tencent-mzc00200pntcqa9-2026-08-30",
@@ -3704,9 +3703,9 @@
           "date": "2026-08-30",
           "weekday": 7,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200pntcqa9.html",
+          "url": "https://v.qq.com/x/page/m4102n712fv.html",
           "badge": null,
-          "duration": 1373
+          "duration": 1359
         },
         {
           "id": "tencent-mzc00200aaogpgh-2026-08-30",
@@ -3721,7 +3720,7 @@
           "weekday": 7,
           "svip": true,
           "url": "https://v.qq.com/x/page/c4102dl08wn.html",
-          "badge": "上新",
+          "badge": "独播",
           "duration": 1321
         },
         {
@@ -3797,7 +3796,7 @@
           "title": "杯雪",
           "poster": "https://pic5.iqiyipic.com/image/20260812/db/9b/a_100569309_m_601_m7_318_424.avif",
           "episode": "1集全",
-          "updateTime": "13:44",
+          "updateTime": "14:07",
           "date": "2026-08-25",
           "weekday": 2,
           "svip": false,
@@ -3808,6 +3807,22 @@
           "duration": 5706,
           "total": 1,
           "finished": true
+        },
+        {
+          "id": "tencent-mzc002004ufhdj8-2026-08-25",
+          "platform": "tencent",
+          "title": "破茧纪元",
+          "rule": null,
+          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc002004ufhdj81770806493318/750?imageMogr2/thumbnail/400x",
+          "episode": "第160集",
+          "total": 160,
+          "updateTime": "",
+          "date": "2026-08-25",
+          "weekday": 2,
+          "svip": false,
+          "url": "https://v.qq.com/x/page/i41013p1qx3.html",
+          "badge": null,
+          "duration": 72
         }
       ]
     },
