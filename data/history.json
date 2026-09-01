@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-31T18:00:26.053Z",
+  "updatedAt": "2026-09-01T01:45:12.770Z",
   "weeks": [
     {
       "weekStart": "2026-08-31",
@@ -48,10 +48,10 @@
           "date": "2026-09-01",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep3065346",
+          "url": "https://www.bilibili.com/bangumi/play/ep3065347?from_spmid=666.5.schedule.0",
           "seasonId": "148433",
           "badge": null,
-          "duration": 427,
+          "duration": 440,
           "total": 60,
           "rule": "每周二、四9:00更新"
         },
@@ -65,10 +65,10 @@
           "date": "2026-09-01",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep5096193",
+          "url": "https://www.bilibili.com/bangumi/play/ep5096194?from_spmid=666.5.schedule.1",
           "seasonId": "272443",
           "badge": null,
-          "duration": 421,
+          "duration": 410,
           "total": 40,
           "rule": "每周二、周五09:00更新"
         },
@@ -133,10 +133,10 @@
           "date": "2026-09-03",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep3065346",
+          "url": "https://www.bilibili.com/bangumi/play/ep3065347",
           "seasonId": "148433",
           "badge": null,
-          "duration": 427,
+          "duration": 440,
           "total": 60,
           "rule": "每周二、四9:00更新"
         },
@@ -184,10 +184,10 @@
           "date": "2026-09-04",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep5096193",
+          "url": "https://www.bilibili.com/bangumi/play/ep5096194",
           "seasonId": "272443",
           "badge": null,
-          "duration": 421,
+          "duration": 410,
           "total": 40,
           "rule": "每周二、周五09:00更新"
         },
@@ -614,7 +614,7 @@
           "date": "2026-09-02",
           "weekday": 3,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200dc4bx7d.html",
+          "url": "https://v.qq.com/x/page/s4102309lv8.html",
           "badge": "独播",
           "duration": 785
         },
@@ -711,9 +711,9 @@
           "date": "2026-09-03",
           "weekday": 4,
           "svip": true,
-          "url": "https://v.qq.com/x/page/r4102qxtum1.html",
+          "url": "https://v.qq.com/x/cover/mcv8hkc8zk8lnov.html",
           "badge": "独播",
-          "duration": 1240
+          "duration": 1224
         },
         {
           "id": "tencent-mzc00200r33k6xc-2026-09-04",
@@ -807,9 +807,9 @@
           "date": "2026-09-05",
           "weekday": 6,
           "svip": false,
-          "url": "https://v.qq.com/x/page/l41021u6gwv.html",
+          "url": "https://v.qq.com/x/cover/mzc0020027yzd9e.html",
           "badge": "独播",
-          "duration": 1431
+          "duration": 1361
         },
         {
           "id": "tencent-mzc002002qg0pbc-2026-09-05",
@@ -887,9 +887,9 @@
           "date": "2026-09-05",
           "weekday": 6,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/hzgtnf6tbvfekfv.html",
+          "url": "https://v.qq.com/x/page/h4102ixcpxr.html",
           "badge": "高清修复",
-          "duration": 1474
+          "duration": 1488
         },
         {
           "id": "tencent-mzc0020027yzd9e-2026-09-06",
@@ -903,9 +903,9 @@
           "date": "2026-09-06",
           "weekday": 7,
           "svip": false,
-          "url": "https://v.qq.com/x/page/l41021u6gwv.html",
+          "url": "https://v.qq.com/x/cover/mzc0020027yzd9e.html",
           "badge": "独播",
-          "duration": 1431
+          "duration": 1361
         },
         {
           "id": "tencent-mzc00200pntcqa9-2026-09-06",
@@ -967,9 +967,9 @@
           "date": "2026-09-06",
           "weekday": 7,
           "svip": true,
-          "url": "https://v.qq.com/x/cover/mzc00200aaogpgh.html",
+          "url": "https://v.qq.com/x/page/m4102z7l7hw.html",
           "badge": "上新",
-          "duration": 1280
+          "duration": 1492
         },
         {
           "id": "iqiyi-2026-08-31-成也萧河",
@@ -1012,36 +1012,36 @@
           "platform": "iqiyi",
           "title": "三角洲：造物主玩家",
           "poster": "https://pic7.iqiyipic.com/image/20260714/e9/42/a_101207578_m_601_m1_318_424.avif",
-          "episode": "第12集",
+          "episode": "第13集",
           "updateTime": "09:00",
           "date": "2026-08-31",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1dcp5lj0bdk.html",
+          "url": "https://www.iqiyi.com/v_ktlp0rp5bc.html",
           "badge": null,
           "albumId": "4511882081238301",
           "tvId": "4385942046266600",
           "rule": "每周一、二、三更新",
-          "duration": 412,
-          "total": 12
+          "duration": 424,
+          "total": 14
         },
         {
           "id": "iqiyi-2026-08-31-苍绝剑尊",
           "platform": "iqiyi",
           "title": "苍绝剑尊",
           "poster": "https://pic2.iqiyipic.com/image/20260617/e9/f5/a_100817470_m_601_m2_318_424.avif",
-          "episode": "第153集",
+          "episode": "第154集",
           "updateTime": "09:00",
           "date": "2026-08-31",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_12ibtig44no.html",
+          "url": "https://www.iqiyi.com/v_1b8535jnrnc.html",
           "badge": null,
           "albumId": "2302717336669401",
           "tvId": "2448711523819000",
           "rule": "每周一、二、三、四、五更新",
           "duration": 146,
-          "total": 153
+          "total": 154
         },
         {
           "id": "iqiyi-2026-08-31-灵武大陆",
@@ -1084,36 +1084,36 @@
           "platform": "iqiyi",
           "title": "三角洲：造物主玩家",
           "poster": "https://pic7.iqiyipic.com/image/20260714/e9/42/a_101207578_m_601_m1_318_424.avif",
-          "episode": "第12集",
+          "episode": "第13集",
           "updateTime": "09:00",
           "date": "2026-09-01",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1dcp5lj0bdk.html",
+          "url": "https://www.iqiyi.com/v_ktlp0rp5bc.html",
           "badge": null,
           "albumId": "4511882081238301",
           "tvId": "4385942046266600",
           "rule": "每周一、二、三更新",
-          "duration": 412,
-          "total": 12
+          "duration": 424,
+          "total": 14
         },
         {
           "id": "iqiyi-2026-09-01-苍绝剑尊",
           "platform": "iqiyi",
           "title": "苍绝剑尊",
           "poster": "https://pic2.iqiyipic.com/image/20260617/e9/f5/a_100817470_m_601_m2_318_424.avif",
-          "episode": "第153集",
+          "episode": "第154集",
           "updateTime": "09:00",
           "date": "2026-09-01",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_12ibtig44no.html",
+          "url": "https://www.iqiyi.com/v_1b8535jnrnc.html",
           "badge": null,
           "albumId": "2302717336669401",
           "tvId": "2448711523819000",
           "rule": "每周一、二、三、四、五更新",
           "duration": 146,
-          "total": 153
+          "total": 154
         },
         {
           "id": "iqiyi-2026-09-01-绝世战魂 第2季",
@@ -1138,18 +1138,18 @@
           "platform": "iqiyi",
           "title": "我的坟冢能滋养修为",
           "poster": "https://pic9.iqiyipic.com/image/20260804/00/8b/a_101207644_m_601_m3_318_424.avif",
-          "episode": "第12集",
-          "updateTime": "10:04",
+          "episode": "第13集",
+          "updateTime": "09:00",
           "date": "2026-09-01",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1cd4btpfxpc.html",
+          "url": "https://www.iqiyi.com/v_1c0ffgs84lo.html",
           "badge": null,
           "albumId": "6597513285259501",
           "tvId": "7370801165534500",
           "rule": "每周二、三、四更新",
-          "duration": 401,
-          "total": 12
+          "duration": 428,
+          "total": 13
         },
         {
           "id": "iqiyi-2026-09-02-李熊猫",
@@ -1192,18 +1192,18 @@
           "platform": "iqiyi",
           "title": "三角洲：造物主玩家",
           "poster": "https://pic7.iqiyipic.com/image/20260714/e9/42/a_101207578_m_601_m1_318_424.avif",
-          "episode": "第12集",
+          "episode": "第13集",
           "updateTime": "09:00",
           "date": "2026-09-02",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1dcp5lj0bdk.html",
+          "url": "https://www.iqiyi.com/v_ktlp0rp5bc.html",
           "badge": null,
           "albumId": "4511882081238301",
           "tvId": "4385942046266600",
           "rule": "每周一、二、三更新",
-          "duration": 412,
-          "total": 12
+          "duration": 424,
+          "total": 14
         },
         {
           "id": "iqiyi-2026-09-02-启运丹田：开局签到至尊丹田",
@@ -1228,18 +1228,18 @@
           "platform": "iqiyi",
           "title": "苍绝剑尊",
           "poster": "https://pic2.iqiyipic.com/image/20260617/e9/f5/a_100817470_m_601_m2_318_424.avif",
-          "episode": "第153集",
+          "episode": "第154集",
           "updateTime": "09:00",
           "date": "2026-09-02",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_12ibtig44no.html",
+          "url": "https://www.iqiyi.com/v_1b8535jnrnc.html",
           "badge": null,
           "albumId": "2302717336669401",
           "tvId": "2448711523819000",
           "rule": "每周一、二、三、四、五更新",
           "duration": 146,
-          "total": 153
+          "total": 154
         },
         {
           "id": "iqiyi-2026-09-02-都市古仙医",
@@ -1264,18 +1264,18 @@
           "platform": "iqiyi",
           "title": "我的坟冢能滋养修为",
           "poster": "https://pic9.iqiyipic.com/image/20260804/00/8b/a_101207644_m_601_m3_318_424.avif",
-          "episode": "第12集",
-          "updateTime": "10:04",
+          "episode": "第13集",
+          "updateTime": "09:00",
           "date": "2026-09-02",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1cd4btpfxpc.html",
+          "url": "https://www.iqiyi.com/v_1c0ffgs84lo.html",
           "badge": null,
           "albumId": "6597513285259501",
           "tvId": "7370801165534500",
           "rule": "每周二、三、四更新",
-          "duration": 401,
-          "total": 12
+          "duration": 428,
+          "total": 13
         },
         {
           "id": "iqiyi-2026-09-03-丹道至尊",
@@ -1354,36 +1354,36 @@
           "platform": "iqiyi",
           "title": "苍绝剑尊",
           "poster": "https://pic2.iqiyipic.com/image/20260617/e9/f5/a_100817470_m_601_m2_318_424.avif",
-          "episode": "第153集",
+          "episode": "第154集",
           "updateTime": "09:00",
           "date": "2026-09-03",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_12ibtig44no.html",
+          "url": "https://www.iqiyi.com/v_1b8535jnrnc.html",
           "badge": null,
           "albumId": "2302717336669401",
           "tvId": "2448711523819000",
           "rule": "每周一、二、三、四、五更新",
           "duration": 146,
-          "total": 153
+          "total": 154
         },
         {
           "id": "iqiyi-2026-09-03-我的坟冢能滋养修为",
           "platform": "iqiyi",
           "title": "我的坟冢能滋养修为",
           "poster": "https://pic9.iqiyipic.com/image/20260804/00/8b/a_101207644_m_601_m3_318_424.avif",
-          "episode": "第12集",
-          "updateTime": "10:04",
+          "episode": "第13集",
+          "updateTime": "09:00",
           "date": "2026-09-03",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1cd4btpfxpc.html",
+          "url": "https://www.iqiyi.com/v_1c0ffgs84lo.html",
           "badge": null,
           "albumId": "6597513285259501",
           "tvId": "7370801165534500",
           "rule": "每周二、三、四更新",
-          "duration": 401,
-          "total": 12
+          "duration": 428,
+          "total": 13
         },
         {
           "id": "iqiyi-2026-09-03-雪王来了！",
@@ -1462,18 +1462,18 @@
           "platform": "iqiyi",
           "title": "苍绝剑尊",
           "poster": "https://pic2.iqiyipic.com/image/20260617/e9/f5/a_100817470_m_601_m2_318_424.avif",
-          "episode": "第153集",
+          "episode": "第154集",
           "updateTime": "09:00",
           "date": "2026-09-04",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_12ibtig44no.html",
+          "url": "https://www.iqiyi.com/v_1b8535jnrnc.html",
           "badge": null,
           "albumId": "2302717336669401",
           "tvId": "2448711523819000",
           "rule": "每周一、二、三、四、五更新",
           "duration": 146,
-          "total": 153
+          "total": 154
         },
         {
           "id": "iqiyi-2026-09-04-灵武大陆",
