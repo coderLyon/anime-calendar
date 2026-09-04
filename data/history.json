@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-03T15:02:18.624Z",
+  "updatedAt": "2026-09-04T00:56:29.250Z",
   "weeks": [
     {
       "weekStart": "2026-08-31",
@@ -169,7 +169,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep5137675",
           "seasonId": "105212",
-          "badge": "8.9",
+          "badge": "8.8",
           "duration": 1406,
           "total": 12,
           "rule": "每周五11:00更新，每周四18:00超大会员抢先看"
@@ -356,7 +356,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4883706",
           "seasonId": "264970",
-          "badge": "8.2",
+          "badge": "8.1",
           "duration": 1466,
           "total": 16,
           "rule": "每周日09:00更新"
@@ -598,9 +598,9 @@
           "date": "2026-09-02",
           "weekday": 3,
           "svip": false,
-          "url": "https://v.qq.com/x/page/i4100wv31p9.html",
+          "url": "https://v.qq.com/x/cover/mzc00200s6u45af.html",
           "badge": "独播",
-          "duration": 1273
+          "duration": 1393
         },
         {
           "id": "tencent-mzc00200dc4bx7d-2026-09-02",
@@ -743,7 +743,7 @@
           "date": "2026-09-04",
           "weekday": 5,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200plj2c14.html",
+          "url": "https://v.qq.com/x/page/a4102ci3uzf.html",
           "badge": "独播",
           "duration": 1158
         },
@@ -919,9 +919,9 @@
           "date": "2026-09-06",
           "weekday": 7,
           "svip": false,
-          "url": "https://v.qq.com/x/page/s4102n5d2qa.html",
+          "url": "https://v.qq.com/x/cover/mzc00200pntcqa9.html",
           "badge": null,
-          "duration": 1359
+          "duration": 1373
         },
         {
           "id": "tencent-mzc00200stwyax5-2026-09-06",
@@ -1174,18 +1174,18 @@
           "platform": "iqiyi",
           "title": "大千小镇",
           "poster": "https://pic0.iqiyipic.com/image/20260708/5d/85/a_101189109_m_601_m3_318_424.avif",
-          "episode": "第12集",
+          "episode": "第13集",
           "updateTime": "08:50",
           "date": "2026-09-02",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1r5xp7s2lzg.html",
+          "url": "https://www.iqiyi.com/v_1oz0qoum99g.html",
           "badge": null,
           "albumId": "8639827533500001",
           "tvId": "1988268327400200",
           "rule": "每周三、五更新",
-          "duration": 332,
-          "total": 12
+          "duration": 333,
+          "total": 13
         },
         {
           "id": "iqiyi-2026-09-02-三角洲：造物主玩家",
@@ -1419,25 +1419,25 @@
           "tvId": "4984357767210100",
           "rule": "每周五更新",
           "duration": 1251,
-          "total": 89
+          "total": 90
         },
         {
           "id": "iqiyi-2026-09-04-大千小镇",
           "platform": "iqiyi",
           "title": "大千小镇",
           "poster": "https://pic0.iqiyipic.com/image/20260708/5d/85/a_101189109_m_601_m3_318_424.avif",
-          "episode": "第12集",
+          "episode": "第13集",
           "updateTime": "08:50",
           "date": "2026-09-04",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1r5xp7s2lzg.html",
+          "url": "https://www.iqiyi.com/v_1oz0qoum99g.html",
           "badge": null,
           "albumId": "8639827533500001",
           "tvId": "1988268327400200",
           "rule": "每周三、五更新",
-          "duration": 332,
-          "total": 12
+          "duration": 333,
+          "total": 13
         },
         {
           "id": "iqiyi-2026-09-04-我家小师叔不可能这么强",
@@ -1499,7 +1499,7 @@
           "title": "缔灵爱水心缠",
           "poster": "https://pic7.iqiyipic.com/image/20260718/53/b4/a_101238659_m_601_m1_318_424.avif",
           "episode": "第5集",
-          "updateTime": "10:03",
+          "updateTime": "00:00",
           "date": "2026-09-04",
           "weekday": 5,
           "svip": false,
