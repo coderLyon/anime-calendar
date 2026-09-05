@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T14:54:19.727Z",
+  "generatedAt": "2026-09-05T00:46:28.624Z",
   "platforms": [
     {
       "platform": "bili",
@@ -203,7 +203,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep5137675?from_spmid=666.5.schedule.2",
           "seasonId": "105212",
-          "badge": "8.8",
+          "badge": "8.7",
           "duration": 1406,
           "total": 12,
           "rule": "每周五11:00更新，每周四18:00超大会员抢先看"
@@ -270,7 +270,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep5091037?from_spmid=666.5.schedule.2",
           "seasonId": "263198",
-          "badge": "7.1",
+          "badge": "7.2",
           "duration": 940,
           "total": 20,
           "rule": "每周五10:00更新"
@@ -287,7 +287,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep5137675?from_spmid=666.5.schedule.3",
           "seasonId": "105212",
-          "badge": "8.8",
+          "badge": "8.7",
           "duration": 1406,
           "total": 12,
           "rule": "每周五11:00更新，每周四18:00超大会员抢先看"
@@ -353,7 +353,7 @@
           "date": "2026-09-04",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep5472202",
+          "url": "https://www.bilibili.com/bangumi/play/ep5810046?from_spmid=666.5.schedule.7",
           "seasonId": "284272",
           "badge": null,
           "duration": 403,
@@ -784,7 +784,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep5137675?from_spmid=666.5.schedule.2",
           "seasonId": "105212",
-          "badge": "8.8",
+          "badge": "8.7",
           "duration": 1406,
           "total": 12,
           "rule": "每周五11:00更新，每周四18:00超大会员抢先看",
@@ -855,7 +855,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep5091037?from_spmid=666.5.schedule.2",
           "seasonId": "263198",
-          "badge": "7.1",
+          "badge": "7.2",
           "duration": 940,
           "total": 20,
           "rule": "每周五10:00更新",
@@ -873,7 +873,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep5137675?from_spmid=666.5.schedule.3",
           "seasonId": "105212",
-          "badge": "8.8",
+          "badge": "8.7",
           "duration": 1406,
           "total": 12,
           "rule": "每周五11:00更新，每周四18:00超大会员抢先看",
@@ -943,7 +943,7 @@
           "date": "2026-09-11",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep5472202",
+          "url": "https://www.bilibili.com/bangumi/play/ep5810046?from_spmid=666.5.schedule.7",
           "seasonId": "284272",
           "badge": null,
           "duration": 403,
@@ -1180,7 +1180,7 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-09-04T14:42:39.299Z",
+      "fetchedAt": "2026-09-05T00:34:01.623Z",
       "warnings": [
         "已保留 4 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已生成下周预计排期 34 条（本周未完结条目 +7 天推导，前端标「预计」）"
@@ -4241,10 +4241,11 @@
           "predicted": true
         }
       ],
+      "error": "超时（>240s）",
       "fetchedAt": "2026-09-04T14:46:34.027Z",
       "warnings": [
-        "已保留 69 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "已按豆瓣判据排除 5 条疑似 AI 短剧（时长缺失/过短且豆瓣条目暂无评分）",
+        "已保留 128 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "过滤 88 条不在本周（2026-08-31~2026-09-06）的条目",
         "4 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
         "已生成下周预计排期 88 条（本周未完结条目 +7 天推导，前端标「预计」）"
       ]
@@ -5344,7 +5345,7 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-09-04T14:53:27.858Z",
+      "fetchedAt": "2026-09-05T00:45:36.498Z",
       "warnings": [
         "已生成下周预计排期 32 条（本周未完结条目 +7 天推导，前端标「预计」）",
         "2 条剧集已完结，不生成下周排期"
@@ -5535,6 +5536,24 @@
           "total": 14
         },
         {
+          "id": "iqiyi-2026-09-02-大千小镇",
+          "platform": "iqiyi",
+          "title": "大千小镇",
+          "poster": "https://pic0.iqiyipic.com/image/20260708/5d/85/a_101189109_m_601_m3_318_424.avif",
+          "episode": "第13集",
+          "updateTime": "00:17",
+          "date": "2026-09-02",
+          "weekday": 3,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1oz0qoum99g.html",
+          "badge": null,
+          "albumId": "8639827533500001",
+          "tvId": "1988268327400200",
+          "rule": "每周三、五更新",
+          "duration": 333,
+          "total": 13
+        },
+        {
           "id": "iqiyi-2026-09-02-李熊猫",
           "platform": "iqiyi",
           "title": "李熊猫",
@@ -5551,24 +5570,6 @@
           "rule": "每周三更新",
           "duration": 1186,
           "total": 9
-        },
-        {
-          "id": "iqiyi-2026-09-02-大千小镇",
-          "platform": "iqiyi",
-          "title": "大千小镇",
-          "poster": "https://pic0.iqiyipic.com/image/20260708/5d/85/a_101189109_m_601_m3_318_424.avif",
-          "episode": "第13集",
-          "updateTime": "08:50",
-          "date": "2026-09-02",
-          "weekday": 3,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1oz0qoum99g.html",
-          "badge": null,
-          "albumId": "8639827533500001",
-          "tvId": "1988268327400200",
-          "rule": "每周三、五更新",
-          "duration": 333,
-          "total": 13
         },
         {
           "id": "iqiyi-2026-09-02-我的坟冢能滋养修为",
@@ -5625,24 +5626,6 @@
           "total": 209
         },
         {
-          "id": "iqiyi-2026-09-02-启运丹田：开局签到至尊丹田",
-          "platform": "iqiyi",
-          "title": "启运丹田：开局签到至尊丹田",
-          "poster": "https://pic1.iqiyipic.com/image/20250930/ab/c2/a_100571636_m_601_m7_318_424.avif",
-          "episode": "第26集",
-          "updateTime": "13:46",
-          "date": "2026-09-02",
-          "weekday": 3,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_jpe0suz1rg.html",
-          "badge": null,
-          "albumId": "7424546274231301",
-          "tvId": "3746615865091500",
-          "rule": "每周三、日更新",
-          "duration": 582,
-          "total": 27
-        },
-        {
           "id": "iqiyi-2026-09-02-三角洲：造物主玩家",
           "platform": "iqiyi",
           "title": "三角洲：造物主玩家",
@@ -5659,6 +5642,24 @@
           "rule": "每周一、二、三更新",
           "duration": 353,
           "total": 14
+        },
+        {
+          "id": "iqiyi-2026-09-02-启运丹田：开局签到至尊丹田",
+          "platform": "iqiyi",
+          "title": "启运丹田：开局签到至尊丹田",
+          "poster": "https://pic1.iqiyipic.com/image/20250930/ab/c2/a_100571636_m_601_m7_318_424.avif",
+          "episode": "第26集",
+          "updateTime": "23:55",
+          "date": "2026-09-02",
+          "weekday": 3,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_jpe0suz1rg.html",
+          "badge": null,
+          "albumId": "7424546274231301",
+          "tvId": "3746615865091500",
+          "rule": "每周三、日更新",
+          "duration": 582,
+          "total": 27
         },
         {
           "id": "iqiyi-2026-09-03-逆天邪神年番",
@@ -5792,7 +5793,7 @@
           "title": "大千小镇",
           "poster": "https://pic0.iqiyipic.com/image/20260708/5d/85/a_101189109_m_601_m3_318_424.avif",
           "episode": "第13集",
-          "updateTime": "08:50",
+          "updateTime": "00:17",
           "date": "2026-09-04",
           "weekday": 5,
           "svip": false,
@@ -6152,7 +6153,7 @@
           "title": "启运丹田：开局签到至尊丹田",
           "poster": "https://pic1.iqiyipic.com/image/20250930/ab/c2/a_100571636_m_601_m7_318_424.avif",
           "episode": "第26集",
-          "updateTime": "13:46",
+          "updateTime": "23:55",
           "date": "2026-09-06",
           "weekday": 7,
           "svip": false,
@@ -6355,6 +6356,25 @@
           "predicted": true
         },
         {
+          "id": "iqiyi-2026-09-02-大千小镇-pred",
+          "platform": "iqiyi",
+          "title": "大千小镇",
+          "poster": "https://pic0.iqiyipic.com/image/20260708/5d/85/a_101189109_m_601_m3_318_424.avif",
+          "episode": "第14集",
+          "updateTime": "00:17",
+          "date": "2026-09-09",
+          "weekday": 3,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1oz0qoum99g.html",
+          "badge": null,
+          "albumId": "8639827533500001",
+          "tvId": "1988268327400200",
+          "rule": "每周三、五更新",
+          "duration": 333,
+          "total": 13,
+          "predicted": true
+        },
+        {
           "id": "iqiyi-2026-09-02-李熊猫-pred",
           "platform": "iqiyi",
           "title": "李熊猫",
@@ -6371,25 +6391,6 @@
           "rule": "每周三更新",
           "duration": 1186,
           "total": 9,
-          "predicted": true
-        },
-        {
-          "id": "iqiyi-2026-09-02-大千小镇-pred",
-          "platform": "iqiyi",
-          "title": "大千小镇",
-          "poster": "https://pic0.iqiyipic.com/image/20260708/5d/85/a_101189109_m_601_m3_318_424.avif",
-          "episode": "第14集",
-          "updateTime": "08:50",
-          "date": "2026-09-09",
-          "weekday": 3,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1oz0qoum99g.html",
-          "badge": null,
-          "albumId": "8639827533500001",
-          "tvId": "1988268327400200",
-          "rule": "每周三、五更新",
-          "duration": 333,
-          "total": 13,
           "predicted": true
         },
         {
@@ -6450,25 +6451,6 @@
           "predicted": true
         },
         {
-          "id": "iqiyi-2026-09-02-启运丹田：开局签到至尊丹田-pred",
-          "platform": "iqiyi",
-          "title": "启运丹田：开局签到至尊丹田",
-          "poster": "https://pic1.iqiyipic.com/image/20250930/ab/c2/a_100571636_m_601_m7_318_424.avif",
-          "episode": "第27集",
-          "updateTime": "13:46",
-          "date": "2026-09-09",
-          "weekday": 3,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_jpe0suz1rg.html",
-          "badge": null,
-          "albumId": "7424546274231301",
-          "tvId": "3746615865091500",
-          "rule": "每周三、日更新",
-          "duration": 582,
-          "total": 27,
-          "predicted": true
-        },
-        {
           "id": "iqiyi-2026-09-02-三角洲：造物主玩家-pred",
           "platform": "iqiyi",
           "title": "三角洲：造物主玩家",
@@ -6485,6 +6467,25 @@
           "rule": "每周一、二、三更新",
           "duration": 353,
           "total": 14,
+          "predicted": true
+        },
+        {
+          "id": "iqiyi-2026-09-02-启运丹田：开局签到至尊丹田-pred",
+          "platform": "iqiyi",
+          "title": "启运丹田：开局签到至尊丹田",
+          "poster": "https://pic1.iqiyipic.com/image/20250930/ab/c2/a_100571636_m_601_m7_318_424.avif",
+          "episode": "第27集",
+          "updateTime": "23:55",
+          "date": "2026-09-09",
+          "weekday": 3,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_jpe0suz1rg.html",
+          "badge": null,
+          "albumId": "7424546274231301",
+          "tvId": "3746615865091500",
+          "rule": "每周三、日更新",
+          "duration": 582,
+          "total": 27,
           "predicted": true
         },
         {
@@ -6626,7 +6627,7 @@
           "title": "大千小镇",
           "poster": "https://pic0.iqiyipic.com/image/20260708/5d/85/a_101189109_m_601_m3_318_424.avif",
           "episode": "第14集",
-          "updateTime": "08:50",
+          "updateTime": "00:17",
           "date": "2026-09-11",
           "weekday": 5,
           "svip": false,
@@ -7006,7 +7007,7 @@
           "title": "启运丹田：开局签到至尊丹田",
           "poster": "https://pic1.iqiyipic.com/image/20250930/ab/c2/a_100571636_m_601_m7_318_424.avif",
           "episode": "第27集",
-          "updateTime": "13:46",
+          "updateTime": "23:55",
           "date": "2026-09-13",
           "weekday": 7,
           "svip": false,
@@ -7020,12 +7021,8 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-09-04T14:54:19.727Z",
+      "fetchedAt": "2026-09-05T00:46:28.624Z",
       "warnings": [
-        "内容类型排除（动态漫/AI动漫/泡面番）：亡灵天灾：我抬手百万骨海 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：末世钞能力者 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：全民末日：我！病毒君王 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：神级奸商：全服求我别薅了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
@@ -7037,6 +7034,10 @@
         "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：神级奸商：全服求我别薅了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：亡灵天灾：我抬手百万骨海 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：末世钞能力者 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：全民末日：我！病毒君王 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "已保留 8 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已排除 16 条动态漫/AI动漫/泡面番条目",
