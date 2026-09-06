@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T13:50:53.500Z",
+  "updatedAt": "2026-09-06T00:42:22.173Z",
   "weeks": [
     {
       "weekStart": "2026-08-31",
@@ -288,7 +288,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4723798?from_spmid=666.5.schedule.1",
           "seasonId": "252364",
-          "badge": "9.9",
+          "badge": "9.8",
           "duration": 621,
           "total": 12,
           "rule": "每周六10:00更新"
@@ -306,7 +306,7 @@
           "url": "https://www.bilibili.com/bangumi/play/ep3854814?from_spmid=666.5.schedule.3",
           "seasonId": "28747",
           "badge": "9.7",
-          "duration": 1171,
+          "duration": 1170,
           "total": 297,
           "rule": "6月13日起 每周六11:00"
         },
@@ -582,7 +582,7 @@
           "date": "2026-09-02",
           "weekday": 3,
           "svip": false,
-          "url": "https://v.qq.com/x/page/z41028ggr4e.html",
+          "url": "https://v.qq.com/x/cover/mzc002007ust3jd.html",
           "badge": "独播",
           "duration": 963
         },
@@ -663,7 +663,7 @@
           "date": "2026-09-03",
           "weekday": 4,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc0020082u0tna.html",
+          "url": "https://v.qq.com/x/page/e41021hp4z2.html",
           "badge": "独播",
           "duration": 1454
         },
@@ -711,9 +711,9 @@
           "date": "2026-09-03",
           "weekday": 4,
           "svip": true,
-          "url": "https://v.qq.com/x/cover/mcv8hkc8zk8lnov.html",
+          "url": "https://v.qq.com/x/page/d4102z3lz4d.html",
           "badge": "独播",
-          "duration": 1224
+          "duration": 1312
         },
         {
           "id": "tencent-mzc00200r33k6xc-2026-09-04",
@@ -727,7 +727,7 @@
           "date": "2026-09-04",
           "weekday": 5,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200r33k6xc.html",
+          "url": "https://v.qq.com/x/page/s41020abtr1.html",
           "badge": "独播",
           "duration": 580
         },
@@ -935,7 +935,7 @@
           "date": "2026-09-06",
           "weekday": 7,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200stwyax5.html",
+          "url": "https://v.qq.com/x/page/u4102p4trez.html",
           "badge": "独播、大结局",
           "duration": 1575,
           "finished": true

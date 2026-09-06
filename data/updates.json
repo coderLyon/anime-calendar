@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T13:50:53.489Z",
+  "generatedAt": "2026-09-06T00:42:22.157Z",
   "platforms": [
     {
       "platform": "bili",
@@ -388,7 +388,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4723798?from_spmid=666.5.schedule.1",
           "seasonId": "252364",
-          "badge": "9.9",
+          "badge": "9.8",
           "duration": 621,
           "total": 12,
           "rule": "每周六10:00更新"
@@ -422,7 +422,7 @@
           "url": "https://www.bilibili.com/bangumi/play/ep3854814?from_spmid=666.5.schedule.3",
           "seasonId": "28747",
           "badge": "9.7",
-          "duration": 1171,
+          "duration": 1170,
           "total": 297,
           "rule": "6月13日起 每周六11:00"
         },
@@ -980,7 +980,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4723798?from_spmid=666.5.schedule.1",
           "seasonId": "252364",
-          "badge": "9.9",
+          "badge": "9.8",
           "duration": 621,
           "total": 12,
           "rule": "每周六10:00更新",
@@ -1016,7 +1016,7 @@
           "url": "https://www.bilibili.com/bangumi/play/ep3854814?from_spmid=666.5.schedule.3",
           "seasonId": "28747",
           "badge": "9.7",
-          "duration": 1171,
+          "duration": 1170,
           "total": 297,
           "rule": "6月13日起 每周六11:00",
           "predicted": true
@@ -1180,7 +1180,7 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-09-05T13:39:24.079Z",
+      "fetchedAt": "2026-09-06T00:30:27.147Z",
       "warnings": [
         "已保留 4 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已生成下周预计排期 34 条（本周未完结条目 +7 天推导，前端标「预计」）"
@@ -4134,10 +4134,11 @@
           "predicted": true
         }
       ],
+      "error": "超时（>240s）",
       "fetchedAt": "2026-09-05T13:42:59.453Z",
       "warnings": [
-        "已保留 68 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "已按豆瓣判据排除 5 条疑似 AI 短剧（时长缺失/过短且豆瓣条目暂无评分）",
+        "已保留 126 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "过滤 85 条不在本周（2026-08-31~2026-09-06）的条目",
         "4 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
         "已生成下周预计排期 85 条（本周未完结条目 +7 天推导，前端标「预计」）"
       ]
@@ -4227,6 +4228,22 @@
           "duration": 733
         },
         {
+          "id": "tencent-7q544xyrava3vxf-2026-09-01",
+          "platform": "tencent",
+          "title": "武神主宰",
+          "rule": "每周二、日10：00更1集",
+          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/7q544xyrava3vxf1781927016720/750?imageMogr2/thumbnail/400x",
+          "episode": "第688集",
+          "total": null,
+          "updateTime": "10:00",
+          "date": "2026-09-01",
+          "weekday": 2,
+          "svip": false,
+          "url": "https://v.qq.com/x/page/o4102anbyju.html",
+          "badge": "独播",
+          "duration": 475
+        },
+        {
           "id": "tencent-mzc00200cu8uq8c-2026-09-01",
           "platform": "tencent",
           "title": "万界独尊",
@@ -4259,22 +4276,6 @@
           "duration": 541
         },
         {
-          "id": "tencent-7q544xyrava3vxf-2026-09-01",
-          "platform": "tencent",
-          "title": "武神主宰",
-          "rule": "每周二、日10：00更1集",
-          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/7q544xyrava3vxf1781927016720/750?imageMogr2/thumbnail/400x",
-          "episode": "第688集",
-          "total": null,
-          "updateTime": "10:00",
-          "date": "2026-09-01",
-          "weekday": 2,
-          "svip": false,
-          "url": "https://v.qq.com/x/page/o4102anbyju.html",
-          "badge": "独播",
-          "duration": 475
-        },
-        {
           "id": "tencent-mzc00200y0aavbe-2026-09-01",
           "platform": "tencent",
           "title": "一念永恒 完结季",
@@ -4302,7 +4303,7 @@
           "date": "2026-09-02",
           "weekday": 3,
           "svip": false,
-          "url": "https://v.qq.com/x/page/z41028ggr4e.html",
+          "url": "https://v.qq.com/x/cover/mzc002007ust3jd.html",
           "badge": "独播",
           "duration": 963
         },
@@ -4399,7 +4400,7 @@
           "date": "2026-09-03",
           "weekday": 4,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc0020082u0tna.html",
+          "url": "https://v.qq.com/x/page/e41021hp4z2.html",
           "badge": "独播",
           "duration": 1454
         },
@@ -4431,9 +4432,9 @@
           "date": "2026-09-03",
           "weekday": 4,
           "svip": true,
-          "url": "https://v.qq.com/x/cover/mcv8hkc8zk8lnov.html",
+          "url": "https://v.qq.com/x/page/d4102z3lz4d.html",
           "badge": "独播",
-          "duration": 1224
+          "duration": 1312
         },
         {
           "id": "tencent-mzc00200r33k6xc-2026-09-04",
@@ -4447,7 +4448,7 @@
           "date": "2026-09-04",
           "weekday": 5,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200r33k6xc.html",
+          "url": "https://v.qq.com/x/page/s41020abtr1.html",
           "badge": "独播",
           "duration": 580
         },
@@ -4639,7 +4640,7 @@
           "date": "2026-09-06",
           "weekday": 7,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200stwyax5.html",
+          "url": "https://v.qq.com/x/page/u4102p4trez.html",
           "badge": "独播、大结局",
           "duration": 1575,
           "finished": true
@@ -4762,6 +4763,23 @@
           "predicted": true
         },
         {
+          "id": "tencent-7q544xyrava3vxf-2026-09-01-pred",
+          "platform": "tencent",
+          "title": "武神主宰",
+          "rule": "每周二、日10：00更1集",
+          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/7q544xyrava3vxf1781927016720/750?imageMogr2/thumbnail/400x",
+          "episode": "第689集",
+          "total": null,
+          "updateTime": "10:00",
+          "date": "2026-09-08",
+          "weekday": 2,
+          "svip": false,
+          "url": "https://v.qq.com/x/page/o4102anbyju.html",
+          "badge": "独播",
+          "duration": 475,
+          "predicted": true
+        },
+        {
           "id": "tencent-mzc00200cu8uq8c-2026-09-01-pred",
           "platform": "tencent",
           "title": "万界独尊",
@@ -4796,23 +4814,6 @@
           "predicted": true
         },
         {
-          "id": "tencent-7q544xyrava3vxf-2026-09-01-pred",
-          "platform": "tencent",
-          "title": "武神主宰",
-          "rule": "每周二、日10：00更1集",
-          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/7q544xyrava3vxf1781927016720/750?imageMogr2/thumbnail/400x",
-          "episode": "第689集",
-          "total": null,
-          "updateTime": "10:00",
-          "date": "2026-09-08",
-          "weekday": 2,
-          "svip": false,
-          "url": "https://v.qq.com/x/page/o4102anbyju.html",
-          "badge": "独播",
-          "duration": 475,
-          "predicted": true
-        },
-        {
           "id": "tencent-mzc00200y0aavbe-2026-09-01-pred",
           "platform": "tencent",
           "title": "一念永恒 完结季",
@@ -4841,7 +4842,7 @@
           "date": "2026-09-09",
           "weekday": 3,
           "svip": false,
-          "url": "https://v.qq.com/x/page/z41028ggr4e.html",
+          "url": "https://v.qq.com/x/cover/mzc002007ust3jd.html",
           "badge": "独播",
           "duration": 963,
           "predicted": true
@@ -4926,7 +4927,7 @@
           "date": "2026-09-10",
           "weekday": 4,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc0020082u0tna.html",
+          "url": "https://v.qq.com/x/page/e41021hp4z2.html",
           "badge": "独播",
           "duration": 1454,
           "predicted": true
@@ -4960,9 +4961,9 @@
           "date": "2026-09-10",
           "weekday": 4,
           "svip": true,
-          "url": "https://v.qq.com/x/cover/mcv8hkc8zk8lnov.html",
+          "url": "https://v.qq.com/x/page/d4102z3lz4d.html",
           "badge": "独播",
-          "duration": 1224,
+          "duration": 1312,
           "predicted": true
         },
         {
@@ -4977,7 +4978,7 @@
           "date": "2026-09-11",
           "weekday": 5,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200r33k6xc.html",
+          "url": "https://v.qq.com/x/page/s41020abtr1.html",
           "badge": "独播",
           "duration": 580,
           "predicted": true
@@ -5204,7 +5205,7 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-09-05T13:50:10.142Z",
+      "fetchedAt": "2026-09-06T00:41:29.318Z",
       "warnings": [
         "已生成下周预计排期 31 条（本周未完结条目 +7 天推导，前端标「预计」）",
         "2 条剧集已完结，不生成下周排期"
@@ -6917,10 +6918,8 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-09-05T13:50:53.489Z",
+      "fetchedAt": "2026-09-06T00:42:22.157Z",
       "warnings": [
-        "内容类型排除（动态漫/AI动漫/泡面番）：神级奸商：全服求我别薅了 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民转职：驭龙师是最弱职业？ 动态漫画",
@@ -6934,6 +6933,8 @@
         "内容类型排除（动态漫/AI动漫/泡面番）：亡灵天灾：我抬手百万骨海 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：末世钞能力者 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民末日：我！病毒君王 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：神级奸商：全服求我别薅了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "已保留 11 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已排除 16 条动态漫/AI动漫/泡面番条目",
