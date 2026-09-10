@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-09T15:11:54.791Z",
+  "updatedAt": "2026-09-10T00:58:01.332Z",
   "weeks": [
     {
       "weekStart": "2026-09-07",
@@ -100,7 +100,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4809960?from_spmid=666.5.schedule.0",
           "seasonId": "262397",
-          "badge": "9.3",
+          "badge": "9.2",
           "duration": 1192,
           "total": 18,
           "rule": "每周三 09:00更新"
@@ -2038,7 +2038,7 @@
           "date": "2026-09-08",
           "weekday": 2,
           "svip": true,
-          "url": "https://v.qq.com/x/cover/mzc00200y0aavbe.html",
+          "url": "https://v.qq.com/x/page/r4102ii6xqf.html",
           "badge": "上新",
           "duration": 1271
         },
@@ -2739,36 +2739,36 @@
           "platform": "iqiyi",
           "title": "逆天邪神年番",
           "poster": "https://pic0.iqiyipic.com/image/20260827/ff/0b/a_100613847_m_601_m5_318_424.avif",
-          "episode": "第53集",
+          "episode": "第54集",
           "updateTime": "08:50",
           "date": "2026-09-10",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_11yl3fdxvdg.html",
+          "url": "https://www.iqiyi.com/v_2fk0xlq8xu4.html",
           "badge": null,
           "albumId": "8837962497879001",
           "tvId": "2466359171364600",
           "rule": "每周四更新",
-          "duration": 1201,
-          "total": 54
+          "duration": 1133,
+          "total": 55
         },
         {
           "id": "iqiyi-2026-09-10-丹道至尊",
           "platform": "iqiyi",
           "title": "丹道至尊",
           "poster": "https://pic1.iqiyipic.com/image/20250409/5e/c4/a_100554260_m_601_m13_318_424.avif",
-          "episode": "第191集",
+          "episode": "第192集",
           "updateTime": "08:50",
           "date": "2026-09-10",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_yh4odz7sjc.html",
+          "url": "https://www.iqiyi.com/v_jz3b0n2094.html",
           "badge": null,
           "albumId": "8313346033482901",
           "tvId": "4868043719502000",
           "rule": "每周四更新",
-          "duration": 534,
-          "total": 192
+          "duration": 569,
+          "total": 193
         },
         {
           "id": "iqiyi-2026-09-10-太古神尊",
