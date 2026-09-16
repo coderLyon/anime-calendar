@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-15T15:37:31.821Z",
+  "updatedAt": "2026-09-16T01:04:18.548Z",
   "weeks": [
     {
       "weekStart": "2026-09-14",
@@ -948,7 +948,7 @@
           "title": "苍绝剑尊",
           "poster": "https://pic2.iqiyipic.com/image/20260617/e9/f5/a_100817470_m_601_m2_318_424.avif",
           "episode": "第168集",
-          "updateTime": "09:00",
+          "updateTime": "09:01",
           "date": "2026-09-14",
           "weekday": 1,
           "svip": false,
@@ -958,7 +958,7 @@
           "tvId": "2448711523819000",
           "rule": "每日更新",
           "duration": 125,
-          "total": 168
+          "total": 169
         },
         {
           "id": "iqiyi-2026-09-15-九阳武神",
@@ -1012,7 +1012,7 @@
           "tvId": "4040208566074000",
           "rule": "每周二、三、四更新",
           "duration": 294,
-          "total": 4
+          "total": 5
         },
         {
           "id": "iqiyi-2026-09-15-我的坟冢能滋养修为",
@@ -1020,7 +1020,7 @@
           "title": "我的坟冢能滋养修为",
           "poster": "https://pic9.iqiyipic.com/image/20260804/00/8b/a_101207644_m_601_m3_318_424.avif",
           "episode": "第19集",
-          "updateTime": "10:47",
+          "updateTime": "09:01",
           "date": "2026-09-15",
           "weekday": 2,
           "svip": false,
@@ -1030,7 +1030,7 @@
           "tvId": "7370801165534500",
           "rule": "每周二更新",
           "duration": 520,
-          "total": 19
+          "total": 20
         },
         {
           "id": "iqiyi-2026-09-15-苍绝剑尊",
@@ -1038,7 +1038,7 @@
           "title": "苍绝剑尊",
           "poster": "https://pic2.iqiyipic.com/image/20260617/e9/f5/a_100817470_m_601_m2_318_424.avif",
           "episode": "第168集",
-          "updateTime": "09:00",
+          "updateTime": "09:01",
           "date": "2026-09-15",
           "weekday": 2,
           "svip": false,
@@ -1048,7 +1048,7 @@
           "tvId": "2448711523819000",
           "rule": "每日更新",
           "duration": 125,
-          "total": 168
+          "total": 169
         },
         {
           "id": "iqiyi-2026-09-15-绝世战魂 第2季",
@@ -1073,36 +1073,36 @@
           "platform": "iqiyi",
           "title": "李熊猫",
           "poster": "https://pic1.iqiyipic.com/image/20260814/87/b1/a_100790293_m_601_m5_318_424.avif",
-          "episode": "第9集",
+          "episode": "第10集",
           "updateTime": "08:50",
           "date": "2026-09-16",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_xv74146z9w.html",
+          "url": "https://www.iqiyi.com/v_qc8uirqx98.html",
           "badge": null,
           "albumId": "4198235234784001",
           "tvId": "6948861929648000",
           "rule": "每周三更新",
-          "duration": 1191,
-          "total": 10
+          "duration": 1215,
+          "total": 11
         },
         {
           "id": "iqiyi-2026-09-16-大千小镇",
           "platform": "iqiyi",
           "title": "大千小镇",
           "poster": "https://pic0.iqiyipic.com/image/20260708/5d/85/a_101189109_m_601_m3_318_424.avif",
-          "episode": "第15集",
+          "episode": "第16集",
           "updateTime": "08:50",
           "date": "2026-09-16",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1r47o3gzuq8.html",
+          "url": "https://www.iqiyi.com/v_1nvopta5fvw.html",
           "badge": null,
           "albumId": "8639827533500001",
           "tvId": "1988268327400200",
           "rule": "每周三、五更新",
-          "duration": 333,
-          "total": 15
+          "duration": 308,
+          "total": 16
         },
         {
           "id": "iqiyi-2026-09-16-三角洲：造物主玩家",
@@ -1138,7 +1138,7 @@
           "tvId": "4040208566074000",
           "rule": "每周二、三、四更新",
           "duration": 294,
-          "total": 4
+          "total": 5
         },
         {
           "id": "iqiyi-2026-09-16-启运丹田：开局签到至尊丹田",
@@ -1146,7 +1146,7 @@
           "title": "启运丹田：开局签到至尊丹田",
           "poster": "https://pic1.iqiyipic.com/image/20250930/ab/c2/a_100571636_m_601_m7_318_424.avif",
           "episode": "第29集",
-          "updateTime": "09:00",
+          "updateTime": "09:01",
           "date": "2026-09-16",
           "weekday": 3,
           "svip": false,
@@ -1164,7 +1164,7 @@
           "title": "苍绝剑尊",
           "poster": "https://pic2.iqiyipic.com/image/20260617/e9/f5/a_100817470_m_601_m2_318_424.avif",
           "episode": "第168集",
-          "updateTime": "09:00",
+          "updateTime": "09:01",
           "date": "2026-09-16",
           "weekday": 3,
           "svip": false,
@@ -1174,7 +1174,7 @@
           "tvId": "2448711523819000",
           "rule": "每日更新",
           "duration": 125,
-          "total": 168
+          "total": 169
         },
         {
           "id": "iqiyi-2026-09-16-都市古仙医",
@@ -1264,7 +1264,7 @@
           "tvId": "4040208566074000",
           "rule": "每周二、三、四更新",
           "duration": 294,
-          "total": 4
+          "total": 5
         },
         {
           "id": "iqiyi-2026-09-17-苍绝剑尊",
@@ -1272,7 +1272,7 @@
           "title": "苍绝剑尊",
           "poster": "https://pic2.iqiyipic.com/image/20260617/e9/f5/a_100817470_m_601_m2_318_424.avif",
           "episode": "第168集",
-          "updateTime": "09:00",
+          "updateTime": "09:01",
           "date": "2026-09-17",
           "weekday": 4,
           "svip": false,
@@ -1282,7 +1282,7 @@
           "tvId": "2448711523819000",
           "rule": "每日更新",
           "duration": 125,
-          "total": 168
+          "total": 169
         },
         {
           "id": "iqiyi-2026-09-17-雪王来了！",
@@ -1343,18 +1343,18 @@
           "platform": "iqiyi",
           "title": "大千小镇",
           "poster": "https://pic0.iqiyipic.com/image/20260708/5d/85/a_101189109_m_601_m3_318_424.avif",
-          "episode": "第15集",
+          "episode": "第16集",
           "updateTime": "08:50",
           "date": "2026-09-18",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1r47o3gzuq8.html",
+          "url": "https://www.iqiyi.com/v_1nvopta5fvw.html",
           "badge": null,
           "albumId": "8639827533500001",
           "tvId": "1988268327400200",
           "rule": "每周三、五更新",
-          "duration": 333,
-          "total": 15
+          "duration": 308,
+          "total": 16
         },
         {
           "id": "iqiyi-2026-09-18-苍绝剑尊",
@@ -1362,7 +1362,7 @@
           "title": "苍绝剑尊",
           "poster": "https://pic2.iqiyipic.com/image/20260617/e9/f5/a_100817470_m_601_m2_318_424.avif",
           "episode": "第168集",
-          "updateTime": "09:00",
+          "updateTime": "09:01",
           "date": "2026-09-18",
           "weekday": 5,
           "svip": false,
@@ -1372,7 +1372,7 @@
           "tvId": "2448711523819000",
           "rule": "每日更新",
           "duration": 125,
-          "total": 168
+          "total": 169
         },
         {
           "id": "iqiyi-2026-09-18-缔灵爱水心缠",
@@ -1452,7 +1452,7 @@
           "title": "苍绝剑尊",
           "poster": "https://pic2.iqiyipic.com/image/20260617/e9/f5/a_100817470_m_601_m2_318_424.avif",
           "episode": "第168集",
-          "updateTime": "09:00",
+          "updateTime": "09:01",
           "date": "2026-09-19",
           "weekday": 6,
           "svip": false,
@@ -1462,7 +1462,7 @@
           "tvId": "2448711523819000",
           "rule": "每日更新",
           "duration": 125,
-          "total": 168
+          "total": 169
         },
         {
           "id": "iqiyi-2026-09-19-深渊之上",
@@ -1578,7 +1578,7 @@
           "title": "启运丹田：开局签到至尊丹田",
           "poster": "https://pic1.iqiyipic.com/image/20250930/ab/c2/a_100571636_m_601_m7_318_424.avif",
           "episode": "第29集",
-          "updateTime": "09:00",
+          "updateTime": "09:01",
           "date": "2026-09-20",
           "weekday": 7,
           "svip": false,
@@ -1596,7 +1596,7 @@
           "title": "苍绝剑尊",
           "poster": "https://pic2.iqiyipic.com/image/20260617/e9/f5/a_100817470_m_601_m2_318_424.avif",
           "episode": "第168集",
-          "updateTime": "09:00",
+          "updateTime": "09:01",
           "date": "2026-09-20",
           "weekday": 7,
           "svip": false,
@@ -1606,7 +1606,7 @@
           "tvId": "2448711523819000",
           "rule": "每日更新",
           "duration": 125,
-          "total": 168
+          "total": 169
         },
         {
           "id": "iqiyi-2026-09-20-都市古仙医",
