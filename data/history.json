@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-17T15:36:58.661Z",
+  "updatedAt": "2026-09-18T01:08:49.275Z",
   "weeks": [
     {
       "weekStart": "2026-09-14",
@@ -134,7 +134,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep5137677",
           "seasonId": "105212",
-          "badge": "8.5",
+          "badge": "8.4",
           "duration": 1530,
           "total": 12,
           "rule": "每周五11:00更新，每周四18:00超大会员抢先看"
@@ -865,9 +865,9 @@
           "date": "2026-09-20",
           "weekday": 7,
           "svip": true,
-          "url": "https://v.qq.com/x/cover/mzc00200aaogpgh.html",
+          "url": "https://v.qq.com/x/page/u4102xwaxjp.html",
           "badge": "独播",
-          "duration": 1280
+          "duration": 1408
         },
         {
           "id": "iqiyi-2026-09-14-灵武大陆",
@@ -957,7 +957,7 @@
           "tvId": "2448711523819000",
           "rule": "每日更新",
           "duration": 133,
-          "total": 170
+          "total": 171
         },
         {
           "id": "iqiyi-2026-09-15-九阳武神",
@@ -1047,7 +1047,7 @@
           "tvId": "2448711523819000",
           "rule": "每日更新",
           "duration": 133,
-          "total": 170
+          "total": 171
         },
         {
           "id": "iqiyi-2026-09-15-绝世战魂 第2季",
@@ -1055,7 +1055,7 @@
           "title": "绝世战魂 第2季",
           "poster": "https://pic5.iqiyipic.com/image/20260611/f5/71/a_100852832_m_601_m2_318_424.avif",
           "episode": "第24集",
-          "updateTime": "10:01",
+          "updateTime": "06:19",
           "date": "2026-09-15",
           "weekday": 2,
           "svip": false,
@@ -1090,18 +1090,18 @@
           "platform": "iqiyi",
           "title": "大千小镇",
           "poster": "https://pic0.iqiyipic.com/image/20260708/5d/85/a_101189109_m_601_m3_318_424.avif",
-          "episode": "第16集",
+          "episode": "第17集",
           "updateTime": "08:50",
           "date": "2026-09-16",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1nvopta5fvw.html",
+          "url": "https://www.iqiyi.com/v_1f4nytzuccs.html",
           "badge": null,
           "albumId": "8639827533500001",
           "tvId": "1988268327400200",
           "rule": "每周三、五更新",
-          "duration": 308,
-          "total": 16
+          "duration": 350,
+          "total": 17
         },
         {
           "id": "iqiyi-2026-09-16-三角洲：造物主玩家",
@@ -1173,7 +1173,7 @@
           "tvId": "2448711523819000",
           "rule": "每日更新",
           "duration": 133,
-          "total": 170
+          "total": 171
         },
         {
           "id": "iqiyi-2026-09-16-都市古仙医",
@@ -1181,7 +1181,7 @@
           "title": "都市古仙医",
           "poster": "https://pic2.iqiyipic.com/image/20260717/4d/a6/a_100572131_m_601_m8_318_424.avif",
           "episode": "第213集",
-          "updateTime": "09:30",
+          "updateTime": "06:50",
           "date": "2026-09-16",
           "weekday": 3,
           "svip": false,
@@ -1281,7 +1281,7 @@
           "tvId": "2448711523819000",
           "rule": "每日更新",
           "duration": 133,
-          "total": 170
+          "total": 171
         },
         {
           "id": "iqiyi-2026-09-17-雪王来了！",
@@ -1324,36 +1324,36 @@
           "platform": "iqiyi",
           "title": "大主宰年番",
           "poster": "https://pic4.iqiyipic.com/image/20260710/d1/1e/a_100459186_m_601_m39_318_424.avif",
-          "episode": "第90集",
+          "episode": "第91集",
           "updateTime": "08:50",
           "date": "2026-09-18",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1nbde90lkk4.html",
+          "url": "https://www.iqiyi.com/v_1iivuwsoyig.html",
           "badge": null,
           "albumId": "5305224104606401",
           "tvId": "4984357767210100",
           "rule": "每周五更新",
-          "duration": 1256,
-          "total": 91
+          "duration": 1270,
+          "total": 92
         },
         {
           "id": "iqiyi-2026-09-18-大千小镇",
           "platform": "iqiyi",
           "title": "大千小镇",
           "poster": "https://pic0.iqiyipic.com/image/20260708/5d/85/a_101189109_m_601_m3_318_424.avif",
-          "episode": "第16集",
+          "episode": "第17集",
           "updateTime": "08:50",
           "date": "2026-09-18",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1nvopta5fvw.html",
+          "url": "https://www.iqiyi.com/v_1f4nytzuccs.html",
           "badge": null,
           "albumId": "8639827533500001",
           "tvId": "1988268327400200",
           "rule": "每周三、五更新",
-          "duration": 308,
-          "total": 16
+          "duration": 350,
+          "total": 17
         },
         {
           "id": "iqiyi-2026-09-18-苍绝剑尊",
@@ -1371,7 +1371,7 @@
           "tvId": "2448711523819000",
           "rule": "每日更新",
           "duration": 133,
-          "total": 170
+          "total": 171
         },
         {
           "id": "iqiyi-2026-09-18-缔灵爱水心缠",
@@ -1379,7 +1379,7 @@
           "title": "缔灵爱水心缠",
           "poster": "https://pic7.iqiyipic.com/image/20260718/53/b4/a_101238659_m_601_m1_318_424.avif",
           "episode": "第7集",
-          "updateTime": "10:00",
+          "updateTime": "00:00",
           "date": "2026-09-18",
           "weekday": 5,
           "svip": false,
@@ -1461,7 +1461,7 @@
           "tvId": "2448711523819000",
           "rule": "每日更新",
           "duration": 133,
-          "total": 170
+          "total": 171
         },
         {
           "id": "iqiyi-2026-09-19-深渊之上",
@@ -1487,7 +1487,7 @@
           "title": "绝世战魂 第2季",
           "poster": "https://pic5.iqiyipic.com/image/20260611/f5/71/a_100852832_m_601_m2_318_424.avif",
           "episode": "第24集",
-          "updateTime": "10:01",
+          "updateTime": "06:19",
           "date": "2026-09-19",
           "weekday": 6,
           "svip": false,
@@ -1605,7 +1605,7 @@
           "tvId": "2448711523819000",
           "rule": "每日更新",
           "duration": 133,
-          "total": 170
+          "total": 171
         },
         {
           "id": "iqiyi-2026-09-20-都市古仙医",
@@ -1613,7 +1613,7 @@
           "title": "都市古仙医",
           "poster": "https://pic2.iqiyipic.com/image/20260717/4d/a6/a_100572131_m_601_m8_318_424.avif",
           "episode": "第213集",
-          "updateTime": "09:30",
+          "updateTime": "06:50",
           "date": "2026-09-20",
           "weekday": 7,
           "svip": false,
