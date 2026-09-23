@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T01:22:21.026Z",
+  "generatedAt": "2026-09-23T15:29:24.062Z",
   "platforms": [
     {
       "platform": "bili",
@@ -100,10 +100,10 @@
           "date": "2026-09-23",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep4407941",
+          "url": "https://www.bilibili.com/bangumi/play/ep4407942?from_spmid=666.5.schedule.1",
           "seasonId": "39947",
           "badge": "9.8",
-          "duration": 371,
+          "duration": 368,
           "total": 72,
           "rule": "每周三10:00更新"
         },
@@ -117,14 +117,14 @@
           "date": "2026-09-23",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep6158878",
+          "url": "https://www.bilibili.com/bangumi/play/ep6158884?from_spmid=666.5.schedule.2",
           "seasonId": "247422",
           "badge": null,
           "duration": 797,
           "total": 52
         },
         {
-          "id": "bili-5450377",
+          "id": "bili-6388737",
           "platform": "bili",
           "title": "雪王来了！",
           "poster": "https://i0.hdslb.com/bfs/bangumi/image/0d62cdccd8fded354a11ef83cbfb051537a13daf.jpg",
@@ -201,7 +201,7 @@
           "date": "2026-09-25",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep6158878",
+          "url": "https://www.bilibili.com/bangumi/play/ep6158884",
           "seasonId": "247422",
           "badge": null,
           "duration": 797,
@@ -242,7 +242,7 @@
           "rule": "每周五11:00更新，每周四18:00超大会员抢先看"
         },
         {
-          "id": "bili-5450378",
+          "id": "bili-6389162",
           "platform": "bili",
           "title": "雪王来了！",
           "poster": "https://i0.hdslb.com/bfs/bangumi/image/0d62cdccd8fded354a11ef83cbfb051537a13daf.jpg",
@@ -307,6 +307,23 @@
           "badge": null,
           "duration": 399,
           "total": 17
+        },
+        {
+          "id": "bili-6254505",
+          "platform": "bili",
+          "title": "万古至尊：李云霄传",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/8c017a8453e42b688eb49556c9280fbb2d0d890d.png",
+          "episode": "第22话",
+          "updateTime": "09:00",
+          "date": "2026-09-26",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://www.bilibili.com/bangumi/play/ep6253376",
+          "seasonId": "119017",
+          "badge": null,
+          "duration": 674,
+          "total": 34,
+          "rule": "每周一、六 9:00更新"
         },
         {
           "id": "bili-6158482",
@@ -556,10 +573,10 @@
           "date": "2026-09-30",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep4407941",
+          "url": "https://www.bilibili.com/bangumi/play/ep4407942?from_spmid=666.5.schedule.1",
           "seasonId": "39947",
           "badge": "9.8",
-          "duration": 371,
+          "duration": 368,
           "total": 72,
           "rule": "每周三10:00更新",
           "predicted": true
@@ -574,7 +591,7 @@
           "date": "2026-09-30",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep6158878",
+          "url": "https://www.bilibili.com/bangumi/play/ep6158884?from_spmid=666.5.schedule.2",
           "seasonId": "247422",
           "badge": null,
           "duration": 797,
@@ -582,7 +599,7 @@
           "predicted": true
         },
         {
-          "id": "bili-5450377-pred",
+          "id": "bili-6388737-pred",
           "platform": "bili",
           "title": "雪王来了！",
           "poster": "https://i0.hdslb.com/bfs/bangumi/image/0d62cdccd8fded354a11ef83cbfb051537a13daf.jpg",
@@ -663,7 +680,7 @@
           "date": "2026-10-02",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep6158878",
+          "url": "https://www.bilibili.com/bangumi/play/ep6158884",
           "seasonId": "247422",
           "badge": null,
           "duration": 797,
@@ -707,7 +724,7 @@
           "predicted": true
         },
         {
-          "id": "bili-5450378-pred",
+          "id": "bili-6389162-pred",
           "platform": "bili",
           "title": "雪王来了！",
           "poster": "https://i0.hdslb.com/bfs/bangumi/image/0d62cdccd8fded354a11ef83cbfb051537a13daf.jpg",
@@ -775,6 +792,24 @@
           "badge": null,
           "duration": 399,
           "total": 17,
+          "predicted": true
+        },
+        {
+          "id": "bili-6254505-pred",
+          "platform": "bili",
+          "title": "万古至尊：李云霄传",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/8c017a8453e42b688eb49556c9280fbb2d0d890d.png",
+          "episode": "第23话",
+          "updateTime": "09:00",
+          "date": "2026-10-03",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://www.bilibili.com/bangumi/play/ep6253376",
+          "seasonId": "119017",
+          "badge": null,
+          "duration": 674,
+          "total": 34,
+          "rule": "每周一、六 9:00更新",
           "predicted": true
         },
         {
@@ -935,10 +970,10 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-09-23T01:10:04.865Z",
+      "fetchedAt": "2026-09-23T15:15:48.738Z",
       "warnings": [
         "已保留 4 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "已生成下周预计排期 27 条（本周未完结条目 +7 天推导，前端标「预计」）"
+        "已生成下周预计排期 28 条（本周未完结条目 +7 天推导，前端标「预计」）"
       ]
     },
     {
@@ -3736,10 +3771,11 @@
           "predicted": true
         }
       ],
+      "error": "超时（>240s）",
       "fetchedAt": "2026-09-23T01:13:34.311Z",
       "warnings": [
-        "已保留 70 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "已按豆瓣判据排除 7 条疑似 AI 短剧（时长缺失/过短且豆瓣条目暂无评分）",
+        "已保留 126 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "过滤 80 条不在本周（2026-09-21~2026-09-27）的条目",
         "5 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
         "已生成下周预计排期 80 条（本周未完结条目 +7 天推导，前端标「预计」）"
       ]
@@ -5196,24 +5232,6 @@
           "total": 26
         },
         {
-          "id": "iqiyi-2026-09-23-李熊猫",
-          "platform": "iqiyi",
-          "title": "李熊猫",
-          "poster": "https://pic1.iqiyipic.com/image/20260814/87/b1/a_100790293_m_601_m5_318_424.avif",
-          "episode": "第11集",
-          "updateTime": "08:50",
-          "date": "2026-09-23",
-          "weekday": 3,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_ck7d69crz8.html",
-          "badge": null,
-          "albumId": "4198235234784001",
-          "tvId": "6948861929648000",
-          "rule": "每周三更新",
-          "duration": 1173,
-          "total": 12
-        },
-        {
           "id": "iqiyi-2026-09-23-大千小镇",
           "platform": "iqiyi",
           "title": "大千小镇",
@@ -5290,18 +5308,36 @@
           "platform": "iqiyi",
           "title": "都市古仙医",
           "poster": "https://pic2.iqiyipic.com/image/20260717/4d/a6/a_100572131_m_601_m8_318_424.avif",
-          "episode": "第214集",
+          "episode": "第215集",
           "updateTime": "09:30",
           "date": "2026-09-23",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_2bmwiysr8a8.html",
+          "url": "https://www.iqiyi.com/v_1a81zifqd5s.html",
           "badge": null,
           "albumId": "3784317657367801",
           "tvId": "5873959692828900",
           "rule": "每周三、日更新",
-          "duration": 698,
-          "total": 214
+          "duration": 665,
+          "total": 215
+        },
+        {
+          "id": "iqiyi-2026-09-23-李熊猫",
+          "platform": "iqiyi",
+          "title": "李熊猫",
+          "poster": "https://pic1.iqiyipic.com/image/20260814/87/b1/a_100790293_m_601_m5_318_424.avif",
+          "episode": "第11集",
+          "updateTime": "10:26",
+          "date": "2026-09-23",
+          "weekday": 3,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_ck7d69crz8.html",
+          "badge": null,
+          "albumId": "4198235234784001",
+          "tvId": "6948861929648000",
+          "rule": "每周三更新",
+          "duration": 1173,
+          "total": 12
         },
         {
           "id": "iqiyi-2026-09-24-逆天邪神年番",
@@ -5668,18 +5704,18 @@
           "platform": "iqiyi",
           "title": "都市古仙医",
           "poster": "https://pic2.iqiyipic.com/image/20260717/4d/a6/a_100572131_m_601_m8_318_424.avif",
-          "episode": "第214集",
+          "episode": "第215集",
           "updateTime": "09:30",
           "date": "2026-09-27",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_2bmwiysr8a8.html",
+          "url": "https://www.iqiyi.com/v_1a81zifqd5s.html",
           "badge": null,
           "albumId": "3784317657367801",
           "tvId": "5873959692828900",
           "rule": "每周三、日更新",
-          "duration": 698,
-          "total": 214
+          "duration": 665,
+          "total": 215
         },
         {
           "id": "iqiyi-2026-09-27-深渊之上",
@@ -5890,25 +5926,6 @@
           "predicted": true
         },
         {
-          "id": "iqiyi-2026-09-23-李熊猫-pred",
-          "platform": "iqiyi",
-          "title": "李熊猫",
-          "poster": "https://pic1.iqiyipic.com/image/20260814/87/b1/a_100790293_m_601_m5_318_424.avif",
-          "episode": "第12集",
-          "updateTime": "08:50",
-          "date": "2026-09-30",
-          "weekday": 3,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_ck7d69crz8.html",
-          "badge": null,
-          "albumId": "4198235234784001",
-          "tvId": "6948861929648000",
-          "rule": "每周三更新",
-          "duration": 1173,
-          "total": 12,
-          "predicted": true
-        },
-        {
           "id": "iqiyi-2026-09-23-大千小镇-pred",
           "platform": "iqiyi",
           "title": "大千小镇",
@@ -5989,18 +6006,37 @@
           "platform": "iqiyi",
           "title": "都市古仙医",
           "poster": "https://pic2.iqiyipic.com/image/20260717/4d/a6/a_100572131_m_601_m8_318_424.avif",
-          "episode": "第215集",
+          "episode": "第216集",
           "updateTime": "09:30",
           "date": "2026-09-30",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_2bmwiysr8a8.html",
+          "url": "https://www.iqiyi.com/v_1a81zifqd5s.html",
           "badge": null,
           "albumId": "3784317657367801",
           "tvId": "5873959692828900",
           "rule": "每周三、日更新",
-          "duration": 698,
-          "total": 214,
+          "duration": 665,
+          "total": 215,
+          "predicted": true
+        },
+        {
+          "id": "iqiyi-2026-09-23-李熊猫-pred",
+          "platform": "iqiyi",
+          "title": "李熊猫",
+          "poster": "https://pic1.iqiyipic.com/image/20260814/87/b1/a_100790293_m_601_m5_318_424.avif",
+          "episode": "第12集",
+          "updateTime": "10:26",
+          "date": "2026-09-30",
+          "weekday": 3,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_ck7d69crz8.html",
+          "badge": null,
+          "albumId": "4198235234784001",
+          "tvId": "6948861929648000",
+          "rule": "每周三更新",
+          "duration": 1173,
+          "total": 12,
           "predicted": true
         },
         {
@@ -6388,18 +6424,18 @@
           "platform": "iqiyi",
           "title": "都市古仙医",
           "poster": "https://pic2.iqiyipic.com/image/20260717/4d/a6/a_100572131_m_601_m8_318_424.avif",
-          "episode": "第215集",
+          "episode": "第216集",
           "updateTime": "09:30",
           "date": "2026-10-04",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_2bmwiysr8a8.html",
+          "url": "https://www.iqiyi.com/v_1a81zifqd5s.html",
           "badge": null,
           "albumId": "3784317657367801",
           "tvId": "5873959692828900",
           "rule": "每周三、日更新",
-          "duration": 698,
-          "total": 214,
+          "duration": 665,
+          "total": 215,
           "predicted": true
         },
         {
@@ -6422,7 +6458,7 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-09-23T01:22:21.026Z",
+      "fetchedAt": "2026-09-23T15:29:24.062Z",
       "warnings": [
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：亡灵天灾：我抬手百万骨海 动态漫画",
