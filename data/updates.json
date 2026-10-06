@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T02:52:14.216Z",
+  "generatedAt": "2026-10-06T17:14:43.782Z",
   "platforms": [
     {
       "platform": "bili",
@@ -66,10 +66,10 @@
           "date": "2026-10-06",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep6504016",
+          "url": "https://www.bilibili.com/bangumi/play/ep6504017?from_spmid=666.5.schedule.1",
           "seasonId": "34149",
           "badge": "9.3",
-          "duration": 85,
+          "duration": 48,
           "total": 200,
           "rule": "每周二、四、六，21:00更新"
         },
@@ -167,10 +167,10 @@
           "date": "2026-10-08",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep6504016",
+          "url": "https://www.bilibili.com/bangumi/play/ep6504017",
           "seasonId": "34149",
           "badge": "9.3",
-          "duration": 85,
+          "duration": 48,
           "total": 200,
           "rule": "每周二、四、六，21:00更新"
         },
@@ -384,10 +384,10 @@
           "date": "2026-10-10",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep6504016",
+          "url": "https://www.bilibili.com/bangumi/play/ep6504017",
           "seasonId": "34149",
           "badge": "9.3",
-          "duration": 85,
+          "duration": 48,
           "total": 200,
           "rule": "每周二、四、六，21:00更新"
         },
@@ -403,7 +403,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4883711",
           "seasonId": "264970",
-          "badge": "7.5",
+          "badge": "7.4",
           "duration": 1365,
           "total": 16,
           "rule": "每周日09:00更新"
@@ -489,10 +489,10 @@
           "date": "2026-10-13",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep6504016",
+          "url": "https://www.bilibili.com/bangumi/play/ep6504017?from_spmid=666.5.schedule.1",
           "seasonId": "34149",
           "badge": "9.3",
-          "duration": 85,
+          "duration": 48,
           "total": 200,
           "rule": "每周二、四、六，21:00更新",
           "predicted": true
@@ -596,10 +596,10 @@
           "date": "2026-10-15",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep6504016",
+          "url": "https://www.bilibili.com/bangumi/play/ep6504017",
           "seasonId": "34149",
           "badge": "9.3",
-          "duration": 85,
+          "duration": 48,
           "total": 200,
           "rule": "每周二、四、六，21:00更新",
           "predicted": true
@@ -826,10 +826,10 @@
           "date": "2026-10-17",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep6504016",
+          "url": "https://www.bilibili.com/bangumi/play/ep6504017",
           "seasonId": "34149",
           "badge": "9.3",
-          "duration": 85,
+          "duration": 48,
           "total": 200,
           "rule": "每周二、四、六，21:00更新",
           "predicted": true
@@ -846,7 +846,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4883711",
           "seasonId": "264970",
-          "badge": "7.5",
+          "badge": "7.4",
           "duration": 1365,
           "total": 16,
           "rule": "每周日09:00更新",
@@ -871,7 +871,7 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-10-06T02:39:08.220Z",
+      "fetchedAt": "2026-10-06T17:01:44.675Z",
       "warnings": [
         "已保留 5 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已生成下周预计排期 25 条（本周未完结条目 +7 天推导，前端标「预计」）"
@@ -3893,9 +3893,10 @@
       "warnings": [
         "已保留 128 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "过滤 84 条不在本周（2026-10-05~2026-10-11）的条目",
-        "11 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
+        "10 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
+        "1 条豆瓣查询失败（反爬/网络），已保留",
         "已生成下周预计排期 84 条（本周未完结条目 +7 天推导，前端标「预计」）",
-        "警告：今天（2026-10-06）未抓到真实条目（回退数据），请核查星期 tab/日期映射"
+        "警告：今天（2026-10-07）未抓到真实条目（回退数据），请核查星期 tab/日期映射"
       ]
     },
     {
@@ -5201,7 +5202,7 @@
         "已保留 14 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "过滤 38 条不在本周（2026-10-05~2026-10-11）的条目",
         "已生成下周预计排期 38 条（本周未完结条目 +7 天推导，前端标「预计」）",
-        "警告：今天（2026-10-06）未抓到真实条目（回退数据），请核查星期 tab/日期映射"
+        "警告：今天（2026-10-07）未抓到真实条目（回退数据），请核查星期 tab/日期映射"
       ]
     },
     {
@@ -5411,18 +5412,18 @@
           "platform": "iqiyi",
           "title": "致亲爱的千夏小姐",
           "poster": "https://pic7.iqiyipic.com/image/20260922/5c/5c/a_101530050_m_601_m1_318_424.avif",
-          "episode": "第4集",
+          "episode": "第5集",
           "updateTime": "11:00",
           "date": "2026-10-06",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_16o36nwpjx4.html",
+          "url": "https://www.iqiyi.com/v_2aeybvecwxg.html",
           "badge": null,
           "albumId": "5597212473179101",
           "tvId": "5314850098112300",
           "rule": "每周二、六更新",
-          "duration": 563,
-          "total": 4
+          "duration": 538,
+          "total": 5
         },
         {
           "id": "iqiyi-2026-10-07-李熊猫",
@@ -5564,7 +5565,7 @@
           "badge": null,
           "albumId": "4917778000178301",
           "tvId": "8891707613017600",
-          "rule": "每周四、六、日更新",
+          "rule": "每周四、日更新",
           "duration": 373,
           "total": 7
         },
@@ -5767,60 +5768,6 @@
           "total": 189
         },
         {
-          "id": "iqiyi-2026-10-10-天道第一序列",
-          "platform": "iqiyi",
-          "title": "天道第一序列",
-          "poster": "https://pic8.iqiyipic.com/image/20260922/37/7a/a_101521125_m_601_m1_318_424.avif",
-          "episode": "36集全",
-          "updateTime": "10:00",
-          "date": "2026-10-10",
-          "weekday": 6,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_16lhw1aol14.html",
-          "badge": null,
-          "albumId": "7175072695606101",
-          "tvId": "6871854008516600",
-          "duration": 227,
-          "total": 36,
-          "finished": true
-        },
-        {
-          "id": "iqiyi-2026-10-10-神兽学院",
-          "platform": "iqiyi",
-          "title": "神兽学院",
-          "poster": "https://pic9.iqiyipic.com/image/20260930/d8/a7/a_101536117_m_601_m5_318_424.avif",
-          "episode": "第7集",
-          "updateTime": "10:00",
-          "date": "2026-10-10",
-          "weekday": 6,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1irua3rk0zc.html",
-          "badge": null,
-          "albumId": "4917778000178301",
-          "tvId": "8891707613017600",
-          "rule": "每周四、六、日更新",
-          "duration": 373,
-          "total": 7
-        },
-        {
-          "id": "iqiyi-2026-10-10-2049：超能猩云队",
-          "platform": "iqiyi",
-          "title": "2049：超能猩云队",
-          "poster": "https://pic2.iqiyipic.com/image/20260921/47/b5/a_101415581_m_601_m1_318_424.avif",
-          "episode": "25集全",
-          "updateTime": "10:00",
-          "date": "2026-10-10",
-          "weekday": 6,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_240ulms7wgs.html",
-          "badge": null,
-          "albumId": "1129148701489801",
-          "tvId": "7554497144781400",
-          "duration": 780,
-          "total": 25,
-          "finished": true
-        },
-        {
           "id": "iqiyi-2026-10-10-深渊之上",
           "platform": "iqiyi",
           "title": "深渊之上",
@@ -5879,18 +5826,18 @@
           "platform": "iqiyi",
           "title": "致亲爱的千夏小姐",
           "poster": "https://pic7.iqiyipic.com/image/20260922/5c/5c/a_101530050_m_601_m1_318_424.avif",
-          "episode": "第4集",
+          "episode": "第5集",
           "updateTime": "11:00",
           "date": "2026-10-10",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_16o36nwpjx4.html",
+          "url": "https://www.iqiyi.com/v_2aeybvecwxg.html",
           "badge": null,
           "albumId": "5597212473179101",
           "tvId": "5314850098112300",
           "rule": "每周二、六更新",
-          "duration": 563,
-          "total": 4
+          "duration": 538,
+          "total": 5
         },
         {
           "id": "iqiyi-2026-10-11-财神窦占龙",
@@ -6014,7 +5961,7 @@
           "badge": null,
           "albumId": "4917778000178301",
           "tvId": "8891707613017600",
-          "rule": "每周四、六、日更新",
+          "rule": "每周四、日更新",
           "duration": 373,
           "total": 7
         },
@@ -6229,18 +6176,18 @@
           "platform": "iqiyi",
           "title": "致亲爱的千夏小姐",
           "poster": "https://pic7.iqiyipic.com/image/20260922/5c/5c/a_101530050_m_601_m1_318_424.avif",
-          "episode": "第5集",
+          "episode": "第6集",
           "updateTime": "11:00",
           "date": "2026-10-13",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_16o36nwpjx4.html",
+          "url": "https://www.iqiyi.com/v_2aeybvecwxg.html",
           "badge": null,
           "albumId": "5597212473179101",
           "tvId": "5314850098112300",
           "rule": "每周二、六更新",
-          "duration": 563,
-          "total": 4,
+          "duration": 538,
+          "total": 5,
           "predicted": true
         },
         {
@@ -6390,7 +6337,7 @@
           "badge": null,
           "albumId": "4917778000178301",
           "tvId": "8891707613017600",
-          "rule": "每周四、六、日更新",
+          "rule": "每周四、日更新",
           "duration": 373,
           "total": 7,
           "predicted": true
@@ -6605,25 +6552,6 @@
           "predicted": true
         },
         {
-          "id": "iqiyi-2026-10-10-神兽学院-pred",
-          "platform": "iqiyi",
-          "title": "神兽学院",
-          "poster": "https://pic9.iqiyipic.com/image/20260930/d8/a7/a_101536117_m_601_m5_318_424.avif",
-          "episode": "第8集",
-          "updateTime": "10:00",
-          "date": "2026-10-17",
-          "weekday": 6,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1irua3rk0zc.html",
-          "badge": null,
-          "albumId": "4917778000178301",
-          "tvId": "8891707613017600",
-          "rule": "每周四、六、日更新",
-          "duration": 373,
-          "total": 7,
-          "predicted": true
-        },
-        {
           "id": "iqiyi-2026-10-10-深渊之上-pred",
           "platform": "iqiyi",
           "title": "深渊之上",
@@ -6685,18 +6613,18 @@
           "platform": "iqiyi",
           "title": "致亲爱的千夏小姐",
           "poster": "https://pic7.iqiyipic.com/image/20260922/5c/5c/a_101530050_m_601_m1_318_424.avif",
-          "episode": "第5集",
+          "episode": "第6集",
           "updateTime": "11:00",
           "date": "2026-10-17",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_16o36nwpjx4.html",
+          "url": "https://www.iqiyi.com/v_2aeybvecwxg.html",
           "badge": null,
           "albumId": "5597212473179101",
           "tvId": "5314850098112300",
           "rule": "每周二、六更新",
-          "duration": 563,
-          "total": 4,
+          "duration": 538,
+          "total": 5,
           "predicted": true
         },
         {
@@ -6808,7 +6736,7 @@
           "badge": null,
           "albumId": "4917778000178301",
           "tvId": "8891707613017600",
-          "rule": "每周四、六、日更新",
+          "rule": "每周四、日更新",
           "duration": 373,
           "total": 7,
           "predicted": true
@@ -6852,12 +6780,8 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-10-06T02:52:14.216Z",
+      "fetchedAt": "2026-10-06T17:14:43.782Z",
       "warnings": [
-        "内容类型排除（动态漫/AI动漫/泡面番）：亡灵天灾：我抬手百万骨海 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：神级奸商：全服求我别薅了 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：亡灵天灾：我抬手百万骨海 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：末世钞能力者 动态漫画",
@@ -6868,10 +6792,14 @@
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全球御鬼：我的体内有亿只鬼 动态漫画",
-        "已保留 13 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "内容类型排除（动态漫/AI动漫/泡面番）：亡灵天灾：我抬手百万骨海 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：神级奸商：全服求我别薅了 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
+        "已保留 12 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已排除 14 条动态漫/AI动漫/泡面番条目",
-        "已生成下周预计排期 41 条（本周未完结条目 +7 天推导，前端标「预计」）",
-        "7 条剧集已完结，不生成下周排期"
+        "已生成下周预计排期 40 条（本周未完结条目 +7 天推导，前端标「预计」）",
+        "5 条剧集已完结，不生成下周排期"
       ]
     }
   ]

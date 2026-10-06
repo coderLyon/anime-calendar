@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-06T02:52:14.227Z",
+  "updatedAt": "2026-10-06T17:14:43.791Z",
   "weeks": [
     {
       "weekStart": "2026-10-05",
@@ -65,10 +65,10 @@
           "date": "2026-10-06",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep6504016",
+          "url": "https://www.bilibili.com/bangumi/play/ep6504017?from_spmid=666.5.schedule.1",
           "seasonId": "34149",
           "badge": "9.3",
-          "duration": 85,
+          "duration": 48,
           "total": 200,
           "rule": "每周二、四、六，21:00更新"
         },
@@ -166,10 +166,10 @@
           "date": "2026-10-08",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep6504016",
+          "url": "https://www.bilibili.com/bangumi/play/ep6504017",
           "seasonId": "34149",
           "badge": "9.3",
-          "duration": 85,
+          "duration": 48,
           "total": 200,
           "rule": "每周二、四、六，21:00更新"
         },
@@ -366,10 +366,10 @@
           "date": "2026-10-10",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep6504016",
+          "url": "https://www.bilibili.com/bangumi/play/ep6504017",
           "seasonId": "34149",
           "badge": "9.3",
-          "duration": 85,
+          "duration": 48,
           "total": 200,
           "rule": "每周二、四、六，21:00更新"
         },
@@ -385,7 +385,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4883711",
           "seasonId": "264970",
-          "badge": "7.5",
+          "badge": "7.4",
           "duration": 1365,
           "total": 16,
           "rule": "每周日09:00更新"
@@ -610,18 +610,18 @@
           "platform": "iqiyi",
           "title": "致亲爱的千夏小姐",
           "poster": "https://pic7.iqiyipic.com/image/20260922/5c/5c/a_101530050_m_601_m1_318_424.avif",
-          "episode": "第4集",
+          "episode": "第5集",
           "updateTime": "11:00",
           "date": "2026-10-06",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_16o36nwpjx4.html",
+          "url": "https://www.iqiyi.com/v_2aeybvecwxg.html",
           "badge": null,
           "albumId": "5597212473179101",
           "tvId": "5314850098112300",
           "rule": "每周二、六更新",
-          "duration": 563,
-          "total": 4
+          "duration": 538,
+          "total": 5
         },
         {
           "id": "iqiyi-2026-10-07-李熊猫",
@@ -763,7 +763,7 @@
           "badge": null,
           "albumId": "4917778000178301",
           "tvId": "8891707613017600",
-          "rule": "每周四、六、日更新",
+          "rule": "每周四、日更新",
           "duration": 373,
           "total": 7
         },
@@ -1132,18 +1132,18 @@
           "platform": "iqiyi",
           "title": "致亲爱的千夏小姐",
           "poster": "https://pic7.iqiyipic.com/image/20260922/5c/5c/a_101530050_m_601_m1_318_424.avif",
-          "episode": "第4集",
+          "episode": "第5集",
           "updateTime": "11:00",
           "date": "2026-10-10",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_16o36nwpjx4.html",
+          "url": "https://www.iqiyi.com/v_2aeybvecwxg.html",
           "badge": null,
           "albumId": "5597212473179101",
           "tvId": "5314850098112300",
           "rule": "每周二、六更新",
-          "duration": 563,
-          "total": 4
+          "duration": 538,
+          "total": 5
         },
         {
           "id": "iqiyi-2026-10-11-财神窦占龙",
@@ -1267,7 +1267,7 @@
           "badge": null,
           "albumId": "4917778000178301",
           "tvId": "8891707613017600",
-          "rule": "每周四、六、日更新",
+          "rule": "每周四、日更新",
           "duration": 373,
           "total": 7
         },
