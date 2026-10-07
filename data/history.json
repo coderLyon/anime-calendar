@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T02:11:23.276Z",
+  "updatedAt": "2026-10-07T17:51:33.781Z",
   "weeks": [
     {
       "weekStart": "2026-10-05",
@@ -99,10 +99,10 @@
           "date": "2026-10-07",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep4407943",
+          "url": "https://www.bilibili.com/bangumi/play/ep4407944?from_spmid=666.5.schedule.1",
           "seasonId": "39947",
           "badge": "9.8",
-          "duration": 393,
+          "duration": 356,
           "total": 72,
           "rule": "每周三10:00更新"
         },
@@ -116,10 +116,10 @@
           "date": "2026-10-07",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep6400574",
+          "url": "https://www.bilibili.com/bangumi/play/ep6400575?from_spmid=666.5.schedule.2",
           "seasonId": "247422",
           "badge": null,
-          "duration": 796,
+          "duration": 795,
           "total": 52
         },
         {
@@ -200,10 +200,10 @@
           "date": "2026-10-09",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep6400574",
+          "url": "https://www.bilibili.com/bangumi/play/ep6400575",
           "seasonId": "247422",
           "badge": null,
-          "duration": 796,
+          "duration": 795,
           "total": 52
         },
         {
@@ -385,7 +385,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep4883711",
           "seasonId": "264970",
-          "badge": "7.4",
+          "badge": "7.3",
           "duration": 1365,
           "total": 16,
           "rule": "每周日09:00更新"
@@ -448,17 +448,17 @@
           "platform": "iqiyi",
           "title": "界门之下",
           "poster": "https://pic8.iqiyipic.com/image/20260713/83/88/a_101207391_m_601_m1_318_424.avif",
-          "episode": "第17集",
-          "updateTime": "09:00",
+          "episode": "第18集",
+          "updateTime": "12:18",
           "date": "2026-10-05",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1q3sp50des0.html",
+          "url": "https://www.iqiyi.com/v_1de1j65e4wo.html",
           "badge": null,
           "albumId": "2212072595881401",
           "tvId": "3056753236569800",
           "rule": "每周一、三更新",
-          "duration": 631,
+          "duration": 677,
           "total": 19
         },
         {
@@ -664,17 +664,17 @@
           "platform": "iqiyi",
           "title": "界门之下",
           "poster": "https://pic8.iqiyipic.com/image/20260713/83/88/a_101207391_m_601_m1_318_424.avif",
-          "episode": "第17集",
-          "updateTime": "09:00",
+          "episode": "第18集",
+          "updateTime": "12:18",
           "date": "2026-10-07",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1q3sp50des0.html",
+          "url": "https://www.iqiyi.com/v_1de1j65e4wo.html",
           "badge": null,
           "albumId": "2212072595881401",
           "tvId": "3056753236569800",
           "rule": "每周一、三更新",
-          "duration": 631,
+          "duration": 677,
           "total": 19
         },
         {
@@ -763,7 +763,7 @@
           "badge": null,
           "albumId": "4917778000178301",
           "tvId": "8891707613017600",
-          "rule": "每周四、日更新",
+          "rule": "每周四更新",
           "duration": 373,
           "total": 7
         },
