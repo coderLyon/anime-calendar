@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T15:52:53.801Z",
+  "generatedAt": "2026-10-15T01:23:47.778Z",
   "platforms": [
     {
       "platform": "bili",
@@ -935,7 +935,7 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-10-14T15:40:49.669Z",
+      "fetchedAt": "2026-10-15T01:10:40.971Z",
       "warnings": [
         "已保留 3 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已生成下周预计排期 27 条（本周未完结条目 +7 天推导，前端标「预计」）"
@@ -4183,12 +4183,12 @@
           "predicted": true
         }
       ],
+      "error": "超时（>240s）",
       "fetchedAt": "2026-10-14T15:44:27.069Z",
       "warnings": [
-        "已保留 78 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "已按豆瓣判据排除 4 条疑似 AI 短剧（时长缺失/过短且豆瓣条目暂无评分）",
-        "10 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
-        "1 条时长缺失条目超出豆瓣查询配额，已保留",
+        "已保留 148 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "过滤 93 条不在本周（2026-10-12~2026-10-18）的条目",
+        "11 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
         "已生成下周预计排期 93 条（本周未完结条目 +7 天推导，前端标「预计」）"
       ]
     },
@@ -5517,9 +5517,11 @@
           "predicted": true
         }
       ],
+      "error": "超时（>480s）",
       "fetchedAt": "2026-10-14T15:52:15.251Z",
       "warnings": [
-        "已保留 6 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "已保留 12 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "过滤 40 条不在本周（2026-10-12~2026-10-18）的条目",
         "已生成下周预计排期 40 条（本周未完结条目 +7 天推导，前端标「预计」）"
       ]
     },
@@ -5613,7 +5615,7 @@
           "badge": null,
           "albumId": "6205254185739201",
           "tvId": "8776997896902500",
-          "rule": "每周一、二、三、四、五、六更新",
+          "rule": "每日更新",
           "duration": 245,
           "total": 27
         },
@@ -5649,7 +5651,7 @@
           "badge": null,
           "albumId": "5829840569014601",
           "tvId": "7876165649891300",
-          "rule": "每周二、三更新",
+          "rule": "每周二、三、日更新",
           "duration": 308,
           "total": 6
         },
@@ -5685,7 +5687,7 @@
           "badge": null,
           "albumId": "6205254185739201",
           "tvId": "8776997896902500",
-          "rule": "每周一、二、三、四、五、六更新",
+          "rule": "每日更新",
           "duration": 245,
           "total": 27
         },
@@ -5811,7 +5813,7 @@
           "badge": null,
           "albumId": "5829840569014601",
           "tvId": "7876165649891300",
-          "rule": "每周二、三更新",
+          "rule": "每周二、三、日更新",
           "duration": 308,
           "total": 6
         },
@@ -5865,7 +5867,7 @@
           "badge": null,
           "albumId": "6205254185739201",
           "tvId": "8776997896902500",
-          "rule": "每周一、二、三、四、五、六更新",
+          "rule": "每日更新",
           "duration": 245,
           "total": 27
         },
@@ -5888,22 +5890,40 @@
           "total": 8
         },
         {
+          "id": "iqiyi-2026-10-15-逆天邪神年番",
+          "platform": "iqiyi",
+          "title": "逆天邪神年番",
+          "poster": "https://pic0.iqiyipic.com/image/20261008/ff/0b/a_100613847_m_601_m6_318_424.avif",
+          "episode": "第59集",
+          "updateTime": "08:50",
+          "date": "2026-10-15",
+          "weekday": 4,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_rlma2nav88.html",
+          "badge": null,
+          "albumId": "8837962497879001",
+          "tvId": "2466359171364600",
+          "rule": "每周四更新",
+          "duration": 1182,
+          "total": 60
+        },
+        {
           "id": "iqiyi-2026-10-15-太古神尊",
           "platform": "iqiyi",
           "title": "太古神尊",
           "poster": "https://pic5.iqiyipic.com/image/20260714/58/dd/a_101211018_m_601_m1_318_424.avif",
-          "episode": "第25集",
+          "episode": "第26集",
           "updateTime": "09:00",
           "date": "2026-10-15",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_24zwue4t2f0.html",
+          "url": "https://www.iqiyi.com/v_nkni821byk.html",
           "badge": null,
           "albumId": "4862428556681501",
           "tvId": "8585280258960200",
           "rule": "每周四、日更新",
           "duration": 623,
-          "total": 26
+          "total": 27
         },
         {
           "id": "iqiyi-2026-10-15-苍绝剑尊",
@@ -5937,7 +5957,7 @@
           "badge": null,
           "albumId": "6205254185739201",
           "tvId": "8776997896902500",
-          "rule": "每周一、二、三、四、五、六更新",
+          "rule": "每日更新",
           "duration": 245,
           "total": 27
         },
@@ -5976,24 +5996,6 @@
           "rule": "每周四、五更新",
           "duration": 426,
           "total": 20
-        },
-        {
-          "id": "iqiyi-2026-10-15-逆天邪神年番",
-          "platform": "iqiyi",
-          "title": "逆天邪神年番",
-          "poster": "https://pic0.iqiyipic.com/image/20261008/ff/0b/a_100613847_m_601_m6_318_424.avif",
-          "episode": "第58集",
-          "updateTime": "15:37",
-          "date": "2026-10-15",
-          "weekday": 4,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_m9h59fzy24.html",
-          "badge": null,
-          "albumId": "8837962497879001",
-          "tvId": "2466359171364600",
-          "rule": "每周四更新",
-          "duration": 1166,
-          "total": 59
         },
         {
           "id": "iqiyi-2026-10-15-重明诀",
@@ -6117,7 +6119,7 @@
           "badge": null,
           "albumId": "6205254185739201",
           "tvId": "8776997896902500",
-          "rule": "每周一、二、三、四、五、六更新",
+          "rule": "每日更新",
           "duration": 245,
           "total": 27
         },
@@ -6225,7 +6227,7 @@
           "badge": null,
           "albumId": "6205254185739201",
           "tvId": "8776997896902500",
-          "rule": "每周一、二、三、四、五、六更新",
+          "rule": "每日更新",
           "duration": 245,
           "total": 27
         },
@@ -6360,18 +6362,36 @@
           "platform": "iqiyi",
           "title": "太古神尊",
           "poster": "https://pic5.iqiyipic.com/image/20260714/58/dd/a_101211018_m_601_m1_318_424.avif",
-          "episode": "第25集",
+          "episode": "第26集",
           "updateTime": "09:00",
           "date": "2026-10-18",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_24zwue4t2f0.html",
+          "url": "https://www.iqiyi.com/v_nkni821byk.html",
           "badge": null,
           "albumId": "4862428556681501",
           "tvId": "8585280258960200",
           "rule": "每周四、日更新",
           "duration": 623,
-          "total": 26
+          "total": 27
+        },
+        {
+          "id": "iqiyi-2026-10-18-大唐猫妖",
+          "platform": "iqiyi",
+          "title": "大唐猫妖",
+          "poster": "https://pic3.iqiyipic.com/image/20261014/de/67/a_101588183_m_601_m4_318_424.avif",
+          "episode": "第6集",
+          "updateTime": "09:00",
+          "date": "2026-10-18",
+          "weekday": 7,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1bbkul9iucs.html",
+          "badge": null,
+          "albumId": "5829840569014601",
+          "tvId": "7876165649891300",
+          "rule": "每周二、三、日更新",
+          "duration": 308,
+          "total": 6
         },
         {
           "id": "iqiyi-2026-10-18-苍绝剑尊",
@@ -6390,6 +6410,24 @@
           "rule": "每日更新",
           "duration": 176,
           "total": 197
+        },
+        {
+          "id": "iqiyi-2026-10-18-开心锤锤Story：逆天仙尊",
+          "platform": "iqiyi",
+          "title": "开心锤锤Story：逆天仙尊",
+          "poster": "https://pic8.iqiyipic.com/image/20261008/bd/54/a_101626741_m_601_318_424.avif",
+          "episode": "第27集",
+          "updateTime": "10:00",
+          "date": "2026-10-18",
+          "weekday": 7,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_10txccmjqxg.html",
+          "badge": null,
+          "albumId": "6205254185739201",
+          "tvId": "8776997896902500",
+          "rule": "每日更新",
+          "duration": 245,
+          "total": 27
         },
         {
           "id": "iqiyi-2026-10-18-肥志百科  第15季",
@@ -6553,7 +6591,7 @@
           "badge": null,
           "albumId": "6205254185739201",
           "tvId": "8776997896902500",
-          "rule": "每周一、二、三、四、五、六更新",
+          "rule": "每日更新",
           "duration": 245,
           "total": 27,
           "predicted": true
@@ -6591,7 +6629,7 @@
           "badge": null,
           "albumId": "5829840569014601",
           "tvId": "7876165649891300",
-          "rule": "每周二、三更新",
+          "rule": "每周二、三、日更新",
           "duration": 308,
           "total": 6,
           "predicted": true
@@ -6629,7 +6667,7 @@
           "badge": null,
           "albumId": "6205254185739201",
           "tvId": "8776997896902500",
-          "rule": "每周一、二、三、四、五、六更新",
+          "rule": "每日更新",
           "duration": 245,
           "total": 27,
           "predicted": true
@@ -6762,7 +6800,7 @@
           "badge": null,
           "albumId": "5829840569014601",
           "tvId": "7876165649891300",
-          "rule": "每周二、三更新",
+          "rule": "每周二、三、日更新",
           "duration": 308,
           "total": 6,
           "predicted": true
@@ -6819,7 +6857,7 @@
           "badge": null,
           "albumId": "6205254185739201",
           "tvId": "8776997896902500",
-          "rule": "每周一、二、三、四、五、六更新",
+          "rule": "每日更新",
           "duration": 245,
           "total": 27,
           "predicted": true
@@ -6844,22 +6882,41 @@
           "predicted": true
         },
         {
+          "id": "iqiyi-2026-10-15-逆天邪神年番-pred",
+          "platform": "iqiyi",
+          "title": "逆天邪神年番",
+          "poster": "https://pic0.iqiyipic.com/image/20261008/ff/0b/a_100613847_m_601_m6_318_424.avif",
+          "episode": "第60集",
+          "updateTime": "08:50",
+          "date": "2026-10-22",
+          "weekday": 4,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_rlma2nav88.html",
+          "badge": null,
+          "albumId": "8837962497879001",
+          "tvId": "2466359171364600",
+          "rule": "每周四更新",
+          "duration": 1182,
+          "total": 60,
+          "predicted": true
+        },
+        {
           "id": "iqiyi-2026-10-15-太古神尊-pred",
           "platform": "iqiyi",
           "title": "太古神尊",
           "poster": "https://pic5.iqiyipic.com/image/20260714/58/dd/a_101211018_m_601_m1_318_424.avif",
-          "episode": "第26集",
+          "episode": "第27集",
           "updateTime": "09:00",
           "date": "2026-10-22",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_24zwue4t2f0.html",
+          "url": "https://www.iqiyi.com/v_nkni821byk.html",
           "badge": null,
           "albumId": "4862428556681501",
           "tvId": "8585280258960200",
           "rule": "每周四、日更新",
           "duration": 623,
-          "total": 26,
+          "total": 27,
           "predicted": true
         },
         {
@@ -6895,7 +6952,7 @@
           "badge": null,
           "albumId": "6205254185739201",
           "tvId": "8776997896902500",
-          "rule": "每周一、二、三、四、五、六更新",
+          "rule": "每日更新",
           "duration": 245,
           "total": 27,
           "predicted": true
@@ -6936,25 +6993,6 @@
           "rule": "每周四、五更新",
           "duration": 426,
           "total": 20,
-          "predicted": true
-        },
-        {
-          "id": "iqiyi-2026-10-15-逆天邪神年番-pred",
-          "platform": "iqiyi",
-          "title": "逆天邪神年番",
-          "poster": "https://pic0.iqiyipic.com/image/20261008/ff/0b/a_100613847_m_601_m6_318_424.avif",
-          "episode": "第59集",
-          "updateTime": "15:37",
-          "date": "2026-10-22",
-          "weekday": 4,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_m9h59fzy24.html",
-          "badge": null,
-          "albumId": "8837962497879001",
-          "tvId": "2466359171364600",
-          "rule": "每周四更新",
-          "duration": 1166,
-          "total": 59,
           "predicted": true
         },
         {
@@ -7085,7 +7123,7 @@
           "badge": null,
           "albumId": "6205254185739201",
           "tvId": "8776997896902500",
-          "rule": "每周一、二、三、四、五、六更新",
+          "rule": "每日更新",
           "duration": 245,
           "total": 27,
           "predicted": true
@@ -7199,7 +7237,7 @@
           "badge": null,
           "albumId": "6205254185739201",
           "tvId": "8776997896902500",
-          "rule": "每周一、二、三、四、五、六更新",
+          "rule": "每日更新",
           "duration": 245,
           "total": 27,
           "predicted": true
@@ -7342,18 +7380,37 @@
           "platform": "iqiyi",
           "title": "太古神尊",
           "poster": "https://pic5.iqiyipic.com/image/20260714/58/dd/a_101211018_m_601_m1_318_424.avif",
-          "episode": "第26集",
+          "episode": "第27集",
           "updateTime": "09:00",
           "date": "2026-10-25",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_24zwue4t2f0.html",
+          "url": "https://www.iqiyi.com/v_nkni821byk.html",
           "badge": null,
           "albumId": "4862428556681501",
           "tvId": "8585280258960200",
           "rule": "每周四、日更新",
           "duration": 623,
-          "total": 26,
+          "total": 27,
+          "predicted": true
+        },
+        {
+          "id": "iqiyi-2026-10-18-大唐猫妖-pred",
+          "platform": "iqiyi",
+          "title": "大唐猫妖",
+          "poster": "https://pic3.iqiyipic.com/image/20261014/de/67/a_101588183_m_601_m4_318_424.avif",
+          "episode": "第7集",
+          "updateTime": "09:00",
+          "date": "2026-10-25",
+          "weekday": 7,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1bbkul9iucs.html",
+          "badge": null,
+          "albumId": "5829840569014601",
+          "tvId": "7876165649891300",
+          "rule": "每周二、三、日更新",
+          "duration": 308,
+          "total": 6,
           "predicted": true
         },
         {
@@ -7373,6 +7430,25 @@
           "rule": "每日更新",
           "duration": 176,
           "total": 197,
+          "predicted": true
+        },
+        {
+          "id": "iqiyi-2026-10-18-开心锤锤Story：逆天仙尊-pred",
+          "platform": "iqiyi",
+          "title": "开心锤锤Story：逆天仙尊",
+          "poster": "https://pic8.iqiyipic.com/image/20261008/bd/54/a_101626741_m_601_318_424.avif",
+          "episode": "第28集",
+          "updateTime": "10:00",
+          "date": "2026-10-25",
+          "weekday": 7,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_10txccmjqxg.html",
+          "badge": null,
+          "albumId": "6205254185739201",
+          "tvId": "8776997896902500",
+          "rule": "每日更新",
+          "duration": 245,
+          "total": 27,
           "predicted": true
         },
         {
@@ -7452,7 +7528,7 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-10-14T15:52:53.801Z",
+      "fetchedAt": "2026-10-15T01:23:47.778Z",
       "warnings": [
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
@@ -7467,9 +7543,9 @@
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：神级奸商：全服求我别薅了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
-        "已保留 15 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "已保留 16 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已排除 13 条动态漫/AI动漫/泡面番条目",
-        "已生成下周预计排期 52 条（本周未完结条目 +7 天推导，前端标「预计」）"
+        "已生成下周预计排期 54 条（本周未完结条目 +7 天推导，前端标「预计」）"
       ]
     }
   ]
