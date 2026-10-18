@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T14:06:25.542Z",
+  "generatedAt": "2026-10-18T00:46:29.068Z",
   "platforms": [
     {
       "platform": "bili",
@@ -970,7 +970,7 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-10-17T14:01:18.569Z",
+      "fetchedAt": "2026-10-18T00:33:28.232Z",
       "warnings": [
         "已保留 4 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已生成下周预计排期 28 条（本周未完结条目 +7 天推导，前端标「预计」）"
@@ -5352,7 +5352,7 @@
           "predicted": true
         }
       ],
-      "error": "page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://v.qq.com/channel/cartoon\nCall log:\n  - navigating to \"https://v.qq.com/channel/cartoon\", waiting until \"domcontentloaded\"\n",
+      "error": "超时（>480s）",
       "fetchedAt": "2026-10-14T15:52:15.251Z",
       "warnings": [
         "已保留 12 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
@@ -5635,24 +5635,6 @@
           "total": 200
         },
         {
-          "id": "iqiyi-2026-10-14-开心锤锤Story：逆天仙尊",
-          "platform": "iqiyi",
-          "title": "开心锤锤Story：逆天仙尊",
-          "poster": "https://pic8.iqiyipic.com/image/20261008/bd/54/a_101626741_m_601_318_424.avif",
-          "episode": "第45集",
-          "updateTime": "10:01",
-          "date": "2026-10-14",
-          "weekday": 3,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1qch0fmsnko.html",
-          "badge": null,
-          "albumId": "6205254185739201",
-          "tvId": "8776997896902500",
-          "rule": "每周三、四、五、六、日更新",
-          "duration": 241,
-          "total": 45
-        },
-        {
           "id": "iqiyi-2026-10-14-大千小镇",
           "platform": "iqiyi",
           "title": "大千小镇",
@@ -5792,7 +5774,7 @@
           "badge": null,
           "albumId": "6205254185739201",
           "tvId": "8776997896902500",
-          "rule": "每周三、四、五、六、日更新",
+          "rule": "每周四、五、六、日更新",
           "duration": 241,
           "total": 45
         },
@@ -5882,7 +5864,7 @@
           "badge": null,
           "albumId": "6205254185739201",
           "tvId": "8776997896902500",
-          "rule": "每周三、四、五、六、日更新",
+          "rule": "每周四、五、六、日更新",
           "duration": 241,
           "total": 45
         },
@@ -6080,7 +6062,7 @@
           "badge": null,
           "albumId": "6205254185739201",
           "tvId": "8776997896902500",
-          "rule": "每周三、四、五、六、日更新",
+          "rule": "每周四、五、六、日更新",
           "duration": 241,
           "total": 45
         },
@@ -6278,7 +6260,7 @@
           "badge": null,
           "albumId": "6205254185739201",
           "tvId": "8776997896902500",
-          "rule": "每周三、四、五、六、日更新",
+          "rule": "每周四、五、六、日更新",
           "duration": 241,
           "total": 45
         },
@@ -6622,25 +6604,6 @@
           "predicted": true
         },
         {
-          "id": "iqiyi-2026-10-14-开心锤锤Story：逆天仙尊-pred",
-          "platform": "iqiyi",
-          "title": "开心锤锤Story：逆天仙尊",
-          "poster": "https://pic8.iqiyipic.com/image/20261008/bd/54/a_101626741_m_601_318_424.avif",
-          "episode": "第46集",
-          "updateTime": "10:01",
-          "date": "2026-10-21",
-          "weekday": 3,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1qch0fmsnko.html",
-          "badge": null,
-          "albumId": "6205254185739201",
-          "tvId": "8776997896902500",
-          "rule": "每周三、四、五、六、日更新",
-          "duration": 241,
-          "total": 45,
-          "predicted": true
-        },
-        {
           "id": "iqiyi-2026-10-14-大千小镇-pred",
           "platform": "iqiyi",
           "title": "大千小镇",
@@ -6787,7 +6750,7 @@
           "badge": null,
           "albumId": "6205254185739201",
           "tvId": "8776997896902500",
-          "rule": "每周三、四、五、六、日更新",
+          "rule": "每周四、五、六、日更新",
           "duration": 241,
           "total": 45,
           "predicted": true
@@ -6882,7 +6845,7 @@
           "badge": null,
           "albumId": "6205254185739201",
           "tvId": "8776997896902500",
-          "rule": "每周三、四、五、六、日更新",
+          "rule": "每周四、五、六、日更新",
           "duration": 241,
           "total": 45,
           "predicted": true
@@ -7091,7 +7054,7 @@
           "badge": null,
           "albumId": "6205254185739201",
           "tvId": "8776997896902500",
-          "rule": "每周三、四、五、六、日更新",
+          "rule": "每周四、五、六、日更新",
           "duration": 241,
           "total": 45,
           "predicted": true
@@ -7300,7 +7263,7 @@
           "badge": null,
           "albumId": "6205254185739201",
           "tvId": "8776997896902500",
-          "rule": "每周三、四、五、六、日更新",
+          "rule": "每周四、五、六、日更新",
           "duration": 241,
           "total": 45,
           "predicted": true
@@ -7363,10 +7326,8 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-10-17T14:06:25.542Z",
+      "fetchedAt": "2026-10-18T00:46:29.068Z",
       "warnings": [
-        "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：神级奸商：全服求我别薅了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
@@ -7377,9 +7338,11 @@
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：末世钞能力者 动态漫画",
-        "已保留 15 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：神级奸商：全服求我别薅了 动态漫画",
+        "已保留 14 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已排除 12 条动态漫/AI动漫/泡面番条目",
-        "已生成下周预计排期 54 条（本周未完结条目 +7 天推导，前端标「预计」）"
+        "已生成下周预计排期 53 条（本周未完结条目 +7 天推导，前端标「预计」）"
       ]
     }
   ]
