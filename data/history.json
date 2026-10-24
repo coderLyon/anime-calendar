@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T15:49:49.801Z",
+  "updatedAt": "2026-10-24T01:33:09.211Z",
   "weeks": [
     {
       "weekStart": "2026-10-19",
@@ -117,7 +117,7 @@
           "svip": false,
           "url": "https://www.bilibili.com/bangumi/play/ep5137682?from_spmid=666.5.schedule.2",
           "seasonId": "105212",
-          "badge": "8.4",
+          "badge": "8.5",
           "duration": 1620,
           "total": 12,
           "rule": "每周五11:00更新，每周四18:00超大会员抢先看"
@@ -249,10 +249,10 @@
           "date": "2026-10-24",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep6912307",
+          "url": "https://www.bilibili.com/bangumi/play/ep6953177?from_spmid=666.5.schedule.0",
           "seasonId": "119017",
           "badge": null,
-          "duration": 700,
+          "duration": 696,
           "total": 34,
           "rule": "每周一、六 9:00更新"
         },
@@ -375,7 +375,7 @@
           "tvId": "2448711523819000",
           "rule": "每日更新",
           "duration": 124,
-          "total": 206
+          "total": 207
         },
         {
           "id": "iqiyi-2026-10-19-灵武大陆",
@@ -447,7 +447,7 @@
           "tvId": "2448711523819000",
           "rule": "每日更新",
           "duration": 124,
-          "total": 206
+          "total": 207
         },
         {
           "id": "iqiyi-2026-10-20-绝世战魂 第2季",
@@ -563,7 +563,7 @@
           "title": "菌灵天下",
           "poster": "https://pic9.iqiyipic.com/image/20261010/11/27/a_101638101_m_601_m2_318_424.avif",
           "episode": "第4集",
-          "updateTime": "11:45",
+          "updateTime": "09:00",
           "date": "2026-10-21",
           "weekday": 3,
           "svip": false,
@@ -591,7 +591,7 @@
           "tvId": "2448711523819000",
           "rule": "每日更新",
           "duration": 124,
-          "total": 206
+          "total": 207
         },
         {
           "id": "iqiyi-2026-10-21-都市古仙医  第2季",
@@ -699,7 +699,7 @@
           "tvId": "2448711523819000",
           "rule": "每日更新",
           "duration": 124,
-          "total": 206
+          "total": 207
         },
         {
           "id": "iqiyi-2026-10-22-神兽学院",
@@ -771,7 +771,7 @@
           "tvId": "2448711523819000",
           "rule": "每日更新",
           "duration": 124,
-          "total": 206
+          "total": 207
         },
         {
           "id": "iqiyi-2026-10-23-开心锤锤Story：逆天仙尊",
@@ -933,25 +933,25 @@
           "tvId": "2448711523819000",
           "rule": "每日更新",
           "duration": 124,
-          "total": 206
+          "total": 207
         },
         {
           "id": "iqiyi-2026-10-24-择日飞升",
           "platform": "iqiyi",
           "title": "择日飞升",
           "poster": "https://pic5.iqiyipic.com/image/20260704/41/14/a_100571652_m_601_m8_318_424.avif",
-          "episode": "第16集",
-          "updateTime": "09:39",
+          "episode": "第17集",
+          "updateTime": "08:50",
           "date": "2026-10-24",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_un3t9m71b0.html",
+          "url": "https://www.iqiyi.com/v_1c5lgjkecp0.html",
           "badge": null,
           "albumId": "7909856612089201",
           "tvId": "6838163042599200",
           "rule": "每周六更新",
-          "duration": 1194,
-          "total": 17
+          "duration": 1120,
+          "total": 18
         },
         {
           "id": "iqiyi-2026-10-24-开心锤锤Story：逆天仙尊",
@@ -1131,7 +1131,7 @@
           "tvId": "2448711523819000",
           "rule": "每日更新",
           "duration": 124,
-          "total": 206
+          "total": 207
         },
         {
           "id": "iqiyi-2026-10-25-都市古仙医  第2季",
@@ -3385,7 +3385,7 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 151,
-          "total": 10
+          "total": 11
         },
         {
           "id": "iqiyi-2026-10-21-高危禁药 我却越喝越强",
@@ -3403,7 +3403,7 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 151,
-          "total": 10
+          "total": 11
         },
         {
           "id": "iqiyi-2026-10-22-高危禁药 我却越喝越强",
@@ -3421,7 +3421,7 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 151,
-          "total": 10
+          "total": 11
         },
         {
           "id": "iqiyi-2026-10-23-高危禁药 我却越喝越强",
@@ -3439,7 +3439,7 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 151,
-          "total": 10
+          "total": 11
         },
         {
           "id": "bili-7008315",
@@ -3591,7 +3591,7 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 151,
-          "total": 10
+          "total": 11
         },
         {
           "id": "bili-7064457",
@@ -3787,7 +3787,7 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 151,
-          "total": 10
+          "total": 11
         },
         {
           "id": "bili-7099040",
@@ -3870,7 +3870,7 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 151,
-          "total": 10
+          "total": 11
         },
         {
           "id": "iqiyi-2026-10-23-宗门修仙传",
@@ -3886,9 +3886,9 @@
           "badge": null,
           "albumId": "5232227012476201",
           "tvId": "3348741605549300",
-          "rule": "每周五、六更新",
+          "rule": "每周二、五、六更新",
           "duration": 248,
-          "total": 3
+          "total": 4
         },
         {
           "id": "iqiyi-2026-10-24-宗门修仙传",
@@ -3904,9 +3904,9 @@
           "badge": null,
           "albumId": "5232227012476201",
           "tvId": "3348741605549300",
-          "rule": "每周五、六更新",
+          "rule": "每周二、五、六更新",
           "duration": 248,
-          "total": 3
+          "total": 4
         },
         {
           "id": "bili-7154342",
@@ -3924,6 +3924,24 @@
           "duration": 399,
           "total": 181,
           "rule": "10月4日起 每周日10:00"
+        },
+        {
+          "id": "iqiyi-2026-10-20-宗门修仙传",
+          "platform": "iqiyi",
+          "title": "宗门修仙传",
+          "poster": "https://pic9.iqiyipic.com/image/20261019/81/ed/a_101682180_m_601_m1_318_424.avif",
+          "episode": "第3集",
+          "updateTime": "09:00",
+          "date": "2026-10-20",
+          "weekday": 2,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1n8vded56yk.html",
+          "badge": null,
+          "albumId": "5232227012476201",
+          "tvId": "3348741605549300",
+          "rule": "每周二、五、六更新",
+          "duration": 248,
+          "total": 4
         }
       ]
     },
