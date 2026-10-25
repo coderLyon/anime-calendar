@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T14:28:25.502Z",
+  "updatedAt": "2026-10-25T00:56:42.248Z",
   "weeks": [
     {
       "weekStart": "2026-10-19",
@@ -1066,18 +1066,18 @@
           "platform": "iqiyi",
           "title": "财神窦占龙",
           "poster": "https://pic2.iqiyipic.com/image/20260904/df/e6/a_100614442_m_601_m5_318_424.avif",
-          "episode": "第12集",
+          "episode": "第13集",
           "updateTime": "08:50",
           "date": "2026-10-25",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_l7jbo5xp4o.html",
+          "url": "https://www.iqiyi.com/v_j34wapgz7s.html",
           "badge": null,
           "albumId": "5560312844176701",
           "tvId": "6968113910081300",
           "rule": "每周日更新",
-          "duration": 1399,
-          "total": 13
+          "duration": 1327,
+          "total": 14
         },
         {
           "id": "iqiyi-2026-10-25-太古神尊",
@@ -2787,9 +2787,9 @@
           "date": "2026-10-19",
           "weekday": 1,
           "svip": false,
-          "url": "https://v.qq.com/x/page/n4102q4v41t.html",
+          "url": "https://v.qq.com/x/cover/mzc00200ilydv1a.html",
           "badge": "独播",
-          "duration": 469
+          "duration": 470
         },
         {
           "id": "tencent-mzc00200azkttu2-2026-10-19",
@@ -2963,7 +2963,7 @@
           "date": "2026-10-21",
           "weekday": 3,
           "svip": true,
-          "url": "https://v.qq.com/x/page/w4102ul703a.html",
+          "url": "https://v.qq.com/x/cover/mzc00200gkkin7o.html",
           "badge": "上新",
           "duration": 1182
         },
@@ -2995,9 +2995,9 @@
           "date": "2026-10-21",
           "weekday": 3,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200dc4bx7d.html",
+          "url": "https://v.qq.com/x/page/c4102vqbqso.html",
           "badge": "独播",
-          "duration": 812
+          "duration": 789
         },
         {
           "id": "tencent-mzc0020082u0tna-2026-10-21",
@@ -3059,7 +3059,7 @@
           "date": "2026-10-22",
           "weekday": 4,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200wqewdyv.html",
+          "url": "https://v.qq.com/x/page/i4102ck4kkr.html",
           "badge": null,
           "duration": 1110
         },
@@ -3091,7 +3091,7 @@
           "date": "2026-10-23",
           "weekday": 5,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200wqewdyv.html",
+          "url": "https://v.qq.com/x/page/i4102ck4kkr.html",
           "badge": null,
           "duration": 1110
         },
@@ -3107,9 +3107,9 @@
           "date": "2026-10-23",
           "weekday": 5,
           "svip": false,
-          "url": "https://v.qq.com/x/page/n4102q4v41t.html",
+          "url": "https://v.qq.com/x/cover/mzc00200ilydv1a.html",
           "badge": "独播",
-          "duration": 469
+          "duration": 470
         },
         {
           "id": "tencent-mzc00200azkttu2-2026-10-23",
@@ -3203,7 +3203,7 @@
           "date": "2026-10-24",
           "weekday": 6,
           "svip": true,
-          "url": "https://v.qq.com/x/page/w4102ul703a.html",
+          "url": "https://v.qq.com/x/cover/mzc00200gkkin7o.html",
           "badge": "上新",
           "duration": 1182
         },

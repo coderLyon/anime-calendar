@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T14:28:25.487Z",
+  "generatedAt": "2026-10-25T00:56:42.233Z",
   "platforms": [
     {
       "platform": "bili",
@@ -867,7 +867,7 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-10-24T14:16:40.095Z",
+      "fetchedAt": "2026-10-25T00:44:27.889Z",
       "warnings": [
         "已保留 4 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已生成下周预计排期 25 条（本周未完结条目 +7 天推导，前端标「预计」）"
@@ -4099,10 +4099,11 @@
           "predicted": true
         }
       ],
+      "error": "超时（>240s）",
       "fetchedAt": "2026-10-24T14:20:20.466Z",
       "warnings": [
-        "已保留 79 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "已按豆瓣判据排除 3 条疑似 AI 短剧（时长缺失/过短且豆瓣条目暂无评分）",
+        "已保留 152 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "过滤 93 条不在本周（2026-10-19~2026-10-25）的条目",
         "19 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
         "已生成下周预计排期 93 条（本周未完结条目 +7 天推导，前端标「预计」）"
       ]
@@ -4123,9 +4124,9 @@
           "date": "2026-10-19",
           "weekday": 1,
           "svip": false,
-          "url": "https://v.qq.com/x/page/n4102q4v41t.html",
+          "url": "https://v.qq.com/x/cover/mzc00200ilydv1a.html",
           "badge": "独播",
-          "duration": 469
+          "duration": 470
         },
         {
           "id": "tencent-mzc00200azkttu2-2026-10-19",
@@ -4299,7 +4300,7 @@
           "date": "2026-10-21",
           "weekday": 3,
           "svip": true,
-          "url": "https://v.qq.com/x/page/w4102ul703a.html",
+          "url": "https://v.qq.com/x/cover/mzc00200gkkin7o.html",
           "badge": "上新",
           "duration": 1182
         },
@@ -4331,9 +4332,9 @@
           "date": "2026-10-21",
           "weekday": 3,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200dc4bx7d.html",
+          "url": "https://v.qq.com/x/page/c4102vqbqso.html",
           "badge": "独播",
-          "duration": 812
+          "duration": 789
         },
         {
           "id": "tencent-mzc0020082u0tna-2026-10-21",
@@ -4379,7 +4380,7 @@
           "date": "2026-10-22",
           "weekday": 4,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200wqewdyv.html",
+          "url": "https://v.qq.com/x/page/i4102ck4kkr.html",
           "badge": null,
           "duration": 1110
         },
@@ -4460,7 +4461,7 @@
           "date": "2026-10-23",
           "weekday": 5,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200wqewdyv.html",
+          "url": "https://v.qq.com/x/page/i4102ck4kkr.html",
           "badge": null,
           "duration": 1110
         },
@@ -4476,9 +4477,9 @@
           "date": "2026-10-23",
           "weekday": 5,
           "svip": false,
-          "url": "https://v.qq.com/x/page/n4102q4v41t.html",
+          "url": "https://v.qq.com/x/cover/mzc00200ilydv1a.html",
           "badge": "独播",
-          "duration": 469
+          "duration": 470
         },
         {
           "id": "tencent-mzc00200r33k6xc-2026-10-23",
@@ -4588,7 +4589,7 @@
           "date": "2026-10-24",
           "weekday": 6,
           "svip": true,
-          "url": "https://v.qq.com/x/page/w4102ul703a.html",
+          "url": "https://v.qq.com/x/cover/mzc00200gkkin7o.html",
           "badge": "上新",
           "duration": 1182
         },
@@ -4765,9 +4766,9 @@
           "date": "2026-10-26",
           "weekday": 1,
           "svip": false,
-          "url": "https://v.qq.com/x/page/n4102q4v41t.html",
+          "url": "https://v.qq.com/x/cover/mzc00200ilydv1a.html",
           "badge": "独播",
-          "duration": 469,
+          "duration": 470,
           "predicted": true
         },
         {
@@ -4952,7 +4953,7 @@
           "date": "2026-10-28",
           "weekday": 3,
           "svip": true,
-          "url": "https://v.qq.com/x/page/w4102ul703a.html",
+          "url": "https://v.qq.com/x/cover/mzc00200gkkin7o.html",
           "badge": "上新",
           "duration": 1182,
           "predicted": true
@@ -4986,9 +4987,9 @@
           "date": "2026-10-28",
           "weekday": 3,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200dc4bx7d.html",
+          "url": "https://v.qq.com/x/page/c4102vqbqso.html",
           "badge": "独播",
-          "duration": 812,
+          "duration": 789,
           "predicted": true
         },
         {
@@ -5037,7 +5038,7 @@
           "date": "2026-10-29",
           "weekday": 4,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200wqewdyv.html",
+          "url": "https://v.qq.com/x/page/i4102ck4kkr.html",
           "badge": null,
           "duration": 1110,
           "predicted": true
@@ -5105,7 +5106,7 @@
           "date": "2026-10-30",
           "weekday": 5,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc00200wqewdyv.html",
+          "url": "https://v.qq.com/x/page/i4102ck4kkr.html",
           "badge": null,
           "duration": 1110,
           "predicted": true
@@ -5122,9 +5123,9 @@
           "date": "2026-10-30",
           "weekday": 5,
           "svip": false,
-          "url": "https://v.qq.com/x/page/n4102q4v41t.html",
+          "url": "https://v.qq.com/x/cover/mzc00200ilydv1a.html",
           "badge": "独播",
-          "duration": 469,
+          "duration": 470,
           "predicted": true
         },
         {
@@ -5241,7 +5242,7 @@
           "date": "2026-10-31",
           "weekday": 6,
           "svip": true,
-          "url": "https://v.qq.com/x/page/w4102ul703a.html",
+          "url": "https://v.qq.com/x/cover/mzc00200gkkin7o.html",
           "badge": "上新",
           "duration": 1182,
           "predicted": true
@@ -5400,7 +5401,7 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-10-24T14:27:45.199Z",
+      "fetchedAt": "2026-10-25T00:56:04.022Z",
       "warnings": [
         "已保留 4 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已生成下周预计排期 38 条（本周未完结条目 +7 天推导，前端标「预计」）",
@@ -5626,42 +5627,6 @@
           "rule": "每周二、三、日更新",
           "duration": 308,
           "total": 12
-        },
-        {
-          "id": "iqiyi-2026-10-21-重明诀",
-          "platform": "iqiyi",
-          "title": "重明诀",
-          "poster": "https://pic6.iqiyipic.com/image/20261019/87/4e/a_101633147_m_601_m3_318_424.avif",
-          "episode": "15集全",
-          "updateTime": "00:41",
-          "date": "2026-10-21",
-          "weekday": 3,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_29saj99e5w0.html",
-          "badge": null,
-          "albumId": "7103679935163601",
-          "tvId": "2508071797087600",
-          "duration": 678,
-          "total": 15,
-          "finished": true
-        },
-        {
-          "id": "iqiyi-2026-10-21-她偏爱戎装",
-          "platform": "iqiyi",
-          "title": "她偏爱戎装",
-          "poster": "https://pic1.iqiyipic.com/image/20261014/05/3e/a_101659982_m_601_m1_318_424.avif",
-          "episode": "第6集",
-          "updateTime": "08:23",
-          "date": "2026-10-21",
-          "weekday": 3,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1lw7rpo56xc.html",
-          "badge": null,
-          "albumId": "2347638624148301",
-          "tvId": "3365587088331100",
-          "rule": "每周三更新",
-          "duration": 436,
-          "total": 6
         },
         {
           "id": "iqiyi-2026-10-21-李熊猫",
@@ -6244,18 +6209,18 @@
           "platform": "iqiyi",
           "title": "财神窦占龙",
           "poster": "https://pic2.iqiyipic.com/image/20260904/df/e6/a_100614442_m_601_m5_318_424.avif",
-          "episode": "第12集",
+          "episode": "第13集",
           "updateTime": "08:50",
           "date": "2026-10-25",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_l7jbo5xp4o.html",
+          "url": "https://www.iqiyi.com/v_j34wapgz7s.html",
           "badge": null,
           "albumId": "5560312844176701",
           "tvId": "6968113910081300",
           "rule": "每周日更新",
-          "duration": 1399,
-          "total": 13
+          "duration": 1327,
+          "total": 14
         },
         {
           "id": "iqiyi-2026-10-25-太古神尊",
@@ -6609,25 +6574,6 @@
           "rule": "每周二、三、日更新",
           "duration": 308,
           "total": 12,
-          "predicted": true
-        },
-        {
-          "id": "iqiyi-2026-10-21-她偏爱戎装-pred",
-          "platform": "iqiyi",
-          "title": "她偏爱戎装",
-          "poster": "https://pic1.iqiyipic.com/image/20261014/05/3e/a_101659982_m_601_m1_318_424.avif",
-          "episode": "第7集",
-          "updateTime": "08:23",
-          "date": "2026-10-28",
-          "weekday": 3,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1lw7rpo56xc.html",
-          "badge": null,
-          "albumId": "2347638624148301",
-          "tvId": "3365587088331100",
-          "rule": "每周三更新",
-          "duration": 436,
-          "total": 6,
           "predicted": true
         },
         {
@@ -7224,18 +7170,18 @@
           "platform": "iqiyi",
           "title": "财神窦占龙",
           "poster": "https://pic2.iqiyipic.com/image/20260904/df/e6/a_100614442_m_601_m5_318_424.avif",
-          "episode": "第13集",
+          "episode": "第14集",
           "updateTime": "08:50",
           "date": "2026-11-01",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_l7jbo5xp4o.html",
+          "url": "https://www.iqiyi.com/v_j34wapgz7s.html",
           "badge": null,
           "albumId": "5560312844176701",
           "tvId": "6968113910081300",
           "rule": "每周日更新",
-          "duration": 1399,
-          "total": 13,
+          "duration": 1327,
+          "total": 14,
           "predicted": true
         },
         {
@@ -7372,10 +7318,8 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-10-24T14:28:25.486Z",
+      "fetchedAt": "2026-10-25T00:56:42.233Z",
       "warnings": [
-        "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：神级奸商：全服求我别薅了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
@@ -7386,10 +7330,12 @@
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：末世钞能力者 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：神级奸商：全服求我别薅了 动态漫画",
         "已保留 20 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已排除 12 条动态漫/AI动漫/泡面番条目",
-        "已生成下周预计排期 52 条（本周未完结条目 +7 天推导，前端标「预计」）",
-        "2 条剧集已完结，不生成下周排期"
+        "已生成下周预计排期 51 条（本周未完结条目 +7 天推导，前端标「预计」）",
+        "1 条剧集已完结，不生成下周排期"
       ]
     }
   ]
