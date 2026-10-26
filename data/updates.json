@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T01:13:25.784Z",
+  "generatedAt": "2026-10-26T17:19:14.257Z",
   "platforms": [
     {
       "platform": "bili",
@@ -593,10 +593,11 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-10-26T01:01:44.114Z",
+      "fetchedAt": "2026-10-26T17:06:05.993Z",
       "warnings": [
         "已保留 1 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "已生成下周预计排期 17 条（本周未完结条目 +7 天推导，前端标「预计」）"
+        "已生成下周预计排期 17 条（本周未完结条目 +7 天推导，前端标「预计」）",
+        "警告：今天（2026-10-27）未抓到真实条目，请核查星期 tab/日期映射（爱奇艺「今天」/优酷「今」）"
       ]
     },
     {
@@ -3718,11 +3719,13 @@
           "predicted": true
         }
       ],
+      "error": "超时（>240s）",
       "fetchedAt": "2026-10-26T01:05:18.097Z",
       "warnings": [
-        "已保留 76 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "已按豆瓣判据排除 3 条疑似 AI 短剧（时长缺失/过短且豆瓣条目暂无评分）",
-        "19 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
+        "已保留 146 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "过滤 90 条不在本周（2026-10-26~2026-11-01）的条目",
+        "15 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
+        "4 条豆瓣查询失败（反爬/网络），已保留",
         "已生成下周预计排期 90 条（本周未完结条目 +7 天推导，前端标「预计」）"
       ]
     },
@@ -4986,9 +4989,11 @@
           "predicted": true
         }
       ],
+      "error": "超时（>480s）",
       "fetchedAt": "2026-10-26T01:12:48.039Z",
       "warnings": [
-        "已保留 6 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "已保留 12 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "过滤 37 条不在本周（2026-10-26~2026-11-01）的条目",
         "已生成下周预计排期 37 条（本周未完结条目 +7 天推导，前端标「预计」）",
         "2 条剧集已完结，不生成下周排期"
       ]
@@ -5074,18 +5079,18 @@
           "platform": "iqiyi",
           "title": "灵武大陆",
           "poster": "https://pic0.iqiyipic.com/image/20250416/14/a8/a_100570241_m_601_m4_318_424.avif",
-          "episode": "第226集",
+          "episode": "第227集",
           "updateTime": "09:30",
           "date": "2026-10-26",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_oyt6m999g8.html",
+          "url": "https://www.iqiyi.com/v_20xc7j0fpvw.html",
           "badge": null,
           "albumId": "4812694274119401",
           "tvId": "8873257797298000",
           "rule": "每周一、五更新",
-          "duration": 649,
-          "total": 227
+          "duration": 615,
+          "total": 228
         },
         {
           "id": "iqiyi-2026-10-27-九阳武神",
@@ -5337,7 +5342,7 @@
           "tvId": "5547478194102700",
           "rule": "每周三、日更新",
           "duration": 492,
-          "total": 4
+          "total": 5
         },
         {
           "id": "iqiyi-2026-10-29-她偏爱戎装",
@@ -5353,7 +5358,7 @@
           "badge": null,
           "albumId": "2347638624148301",
           "tvId": "3365587088331100",
-          "rule": "每周四更新",
+          "rule": "每周四、五更新",
           "duration": 436,
           "total": 6
         },
@@ -5412,24 +5417,6 @@
           "total": 209
         },
         {
-          "id": "iqiyi-2026-10-29-神兽学院",
-          "platform": "iqiyi",
-          "title": "神兽学院",
-          "poster": "https://pic9.iqiyipic.com/image/20260930/d8/a7/a_101536117_m_601_m5_318_424.avif",
-          "episode": "12集全",
-          "updateTime": "10:00",
-          "date": "2026-10-29",
-          "weekday": 4,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_deig5s8ndc.html",
-          "badge": null,
-          "albumId": "4917778000178301",
-          "tvId": "8891707613017600",
-          "duration": 373,
-          "total": 12,
-          "finished": true
-        },
-        {
           "id": "iqiyi-2026-10-29-逆天邪神年番",
           "platform": "iqiyi",
           "title": "逆天邪神年番",
@@ -5453,7 +5440,7 @@
           "title": "雪王来了！",
           "poster": "https://pic5.iqiyipic.com/image/20260917/91/db/a_101341775_m_601_m3_318_424.avif",
           "episode": "第23集",
-          "updateTime": "11:00",
+          "updateTime": "15:53",
           "date": "2026-10-29",
           "weekday": 4,
           "svip": false,
@@ -5464,6 +5451,24 @@
           "rule": "每周四、五更新",
           "duration": 375,
           "total": 24
+        },
+        {
+          "id": "iqiyi-2026-10-30-她偏爱戎装",
+          "platform": "iqiyi",
+          "title": "她偏爱戎装",
+          "poster": "https://pic1.iqiyipic.com/image/20261014/05/3e/a_101659982_m_601_m1_318_424.avif",
+          "episode": "第6集",
+          "updateTime": "08:23",
+          "date": "2026-10-30",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1lw7rpo56xc.html",
+          "badge": null,
+          "albumId": "2347638624148301",
+          "tvId": "3365587088331100",
+          "rule": "每周四、五更新",
+          "duration": 436,
+          "total": 6
         },
         {
           "id": "iqiyi-2026-10-30-大主宰年番",
@@ -5578,18 +5583,18 @@
           "platform": "iqiyi",
           "title": "灵武大陆",
           "poster": "https://pic0.iqiyipic.com/image/20250416/14/a8/a_100570241_m_601_m4_318_424.avif",
-          "episode": "第226集",
+          "episode": "第227集",
           "updateTime": "09:30",
           "date": "2026-10-30",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_oyt6m999g8.html",
+          "url": "https://www.iqiyi.com/v_20xc7j0fpvw.html",
           "badge": null,
           "albumId": "4812694274119401",
           "tvId": "8873257797298000",
           "rule": "每周一、五更新",
-          "duration": 649,
-          "total": 227
+          "duration": 615,
+          "total": 228
         },
         {
           "id": "iqiyi-2026-10-30-缔灵爱水心缠",
@@ -5615,7 +5620,7 @@
           "title": "雪王来了！",
           "poster": "https://pic5.iqiyipic.com/image/20260917/91/db/a_101341775_m_601_m3_318_424.avif",
           "episode": "第23集",
-          "updateTime": "11:00",
+          "updateTime": "15:53",
           "date": "2026-10-30",
           "weekday": 5,
           "svip": false,
@@ -5772,24 +5777,6 @@
           "total": 18
         },
         {
-          "id": "iqiyi-2026-10-31-深渊之上",
-          "platform": "iqiyi",
-          "title": "深渊之上",
-          "poster": "https://pic1.iqiyipic.com/image/20260819/64/e3/a_101368437_m_601_m1_318_424.avif",
-          "episode": "第20集",
-          "updateTime": "18:00",
-          "date": "2026-10-31",
-          "weekday": 6,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_2boc34k9si0.html",
-          "badge": null,
-          "albumId": "8184999497859001",
-          "tvId": "8619773390483800",
-          "rule": "每周六、日更新",
-          "duration": 247,
-          "total": 20
-        },
-        {
           "id": "iqiyi-2026-11-01-财神窦占龙",
           "platform": "iqiyi",
           "title": "财神窦占龙",
@@ -5895,7 +5882,7 @@
           "tvId": "5547478194102700",
           "rule": "每周三、日更新",
           "duration": 492,
-          "total": 4
+          "total": 5
         },
         {
           "id": "iqiyi-2026-11-01-肥志百科  第15季",
@@ -5932,24 +5919,6 @@
           "rule": "每周六、日更新",
           "duration": 586,
           "total": 10
-        },
-        {
-          "id": "iqiyi-2026-11-01-深渊之上",
-          "platform": "iqiyi",
-          "title": "深渊之上",
-          "poster": "https://pic1.iqiyipic.com/image/20260819/64/e3/a_101368437_m_601_m1_318_424.avif",
-          "episode": "第20集",
-          "updateTime": "18:00",
-          "date": "2026-11-01",
-          "weekday": 7,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_2boc34k9si0.html",
-          "badge": null,
-          "albumId": "8184999497859001",
-          "tvId": "8619773390483800",
-          "rule": "每周六、日更新",
-          "duration": 247,
-          "total": 20
         },
         {
           "id": "iqiyi-2026-10-26-成也萧河-pred",
@@ -6032,18 +6001,18 @@
           "platform": "iqiyi",
           "title": "灵武大陆",
           "poster": "https://pic0.iqiyipic.com/image/20250416/14/a8/a_100570241_m_601_m4_318_424.avif",
-          "episode": "第227集",
+          "episode": "第228集",
           "updateTime": "09:30",
           "date": "2026-11-02",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_oyt6m999g8.html",
+          "url": "https://www.iqiyi.com/v_20xc7j0fpvw.html",
           "badge": null,
           "albumId": "4812694274119401",
           "tvId": "8873257797298000",
           "rule": "每周一、五更新",
-          "duration": 649,
-          "total": 227,
+          "duration": 615,
+          "total": 228,
           "predicted": true
         },
         {
@@ -6309,7 +6278,7 @@
           "tvId": "5547478194102700",
           "rule": "每周三、日更新",
           "duration": 492,
-          "total": 4,
+          "total": 5,
           "predicted": true
         },
         {
@@ -6326,7 +6295,7 @@
           "badge": null,
           "albumId": "2347638624148301",
           "tvId": "3365587088331100",
-          "rule": "每周四更新",
+          "rule": "每周四、五更新",
           "duration": 436,
           "total": 6,
           "predicted": true
@@ -6413,7 +6382,7 @@
           "title": "雪王来了！",
           "poster": "https://pic5.iqiyipic.com/image/20260917/91/db/a_101341775_m_601_m3_318_424.avif",
           "episode": "第24集",
-          "updateTime": "11:00",
+          "updateTime": "15:53",
           "date": "2026-11-05",
           "weekday": 4,
           "svip": false,
@@ -6424,6 +6393,25 @@
           "rule": "每周四、五更新",
           "duration": 375,
           "total": 24,
+          "predicted": true
+        },
+        {
+          "id": "iqiyi-2026-10-30-她偏爱戎装-pred",
+          "platform": "iqiyi",
+          "title": "她偏爱戎装",
+          "poster": "https://pic1.iqiyipic.com/image/20261014/05/3e/a_101659982_m_601_m1_318_424.avif",
+          "episode": "第7集",
+          "updateTime": "08:23",
+          "date": "2026-11-06",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1lw7rpo56xc.html",
+          "badge": null,
+          "albumId": "2347638624148301",
+          "tvId": "3365587088331100",
+          "rule": "每周四、五更新",
+          "duration": 436,
+          "total": 6,
           "predicted": true
         },
         {
@@ -6545,18 +6533,18 @@
           "platform": "iqiyi",
           "title": "灵武大陆",
           "poster": "https://pic0.iqiyipic.com/image/20250416/14/a8/a_100570241_m_601_m4_318_424.avif",
-          "episode": "第227集",
+          "episode": "第228集",
           "updateTime": "09:30",
           "date": "2026-11-06",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_oyt6m999g8.html",
+          "url": "https://www.iqiyi.com/v_20xc7j0fpvw.html",
           "badge": null,
           "albumId": "4812694274119401",
           "tvId": "8873257797298000",
           "rule": "每周一、五更新",
-          "duration": 649,
-          "total": 227,
+          "duration": 615,
+          "total": 228,
           "predicted": true
         },
         {
@@ -6584,7 +6572,7 @@
           "title": "雪王来了！",
           "poster": "https://pic5.iqiyipic.com/image/20260917/91/db/a_101341775_m_601_m3_318_424.avif",
           "episode": "第24集",
-          "updateTime": "11:00",
+          "updateTime": "15:53",
           "date": "2026-11-06",
           "weekday": 5,
           "svip": false,
@@ -6750,25 +6738,6 @@
           "predicted": true
         },
         {
-          "id": "iqiyi-2026-10-31-深渊之上-pred",
-          "platform": "iqiyi",
-          "title": "深渊之上",
-          "poster": "https://pic1.iqiyipic.com/image/20260819/64/e3/a_101368437_m_601_m1_318_424.avif",
-          "episode": "第21集",
-          "updateTime": "18:00",
-          "date": "2026-11-07",
-          "weekday": 6,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_2boc34k9si0.html",
-          "badge": null,
-          "albumId": "8184999497859001",
-          "tvId": "8619773390483800",
-          "rule": "每周六、日更新",
-          "duration": 247,
-          "total": 20,
-          "predicted": true
-        },
-        {
           "id": "iqiyi-2026-11-01-财神窦占龙-pred",
           "platform": "iqiyi",
           "title": "财神窦占龙",
@@ -6879,7 +6848,7 @@
           "tvId": "5547478194102700",
           "rule": "每周三、日更新",
           "duration": 492,
-          "total": 4,
+          "total": 5,
           "predicted": true
         },
         {
@@ -6919,31 +6888,10 @@
           "duration": 586,
           "total": 10,
           "predicted": true
-        },
-        {
-          "id": "iqiyi-2026-11-01-深渊之上-pred",
-          "platform": "iqiyi",
-          "title": "深渊之上",
-          "poster": "https://pic1.iqiyipic.com/image/20260819/64/e3/a_101368437_m_601_m1_318_424.avif",
-          "episode": "第21集",
-          "updateTime": "18:00",
-          "date": "2026-11-08",
-          "weekday": 7,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_2boc34k9si0.html",
-          "badge": null,
-          "albumId": "8184999497859001",
-          "tvId": "8619773390483800",
-          "rule": "每周六、日更新",
-          "duration": 247,
-          "total": 20,
-          "predicted": true
         }
       ],
-      "fetchedAt": "2026-10-26T01:13:25.784Z",
+      "fetchedAt": "2026-10-26T17:19:14.257Z",
       "warnings": [
-        "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：全球御鬼：我的体内有亿只鬼 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：神级奸商：全服求我别薅了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
@@ -6954,10 +6902,11 @@
         "内容类型排除（动态漫/AI动漫/泡面番）：神级奸商：全服求我别薅了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
-        "已保留 20 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：全球御鬼：我的体内有亿只鬼 动态漫画",
+        "已保留 18 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已排除 12 条动态漫/AI动漫/泡面番条目",
-        "已生成下周预计排期 52 条（本周未完结条目 +7 天推导，前端标「预计」）",
-        "1 条剧集已完结，不生成下周排期"
+        "已生成下周预计排期 51 条（本周未完结条目 +7 天推导，前端标「预计」）"
       ]
     }
   ]

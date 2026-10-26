@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T01:13:25.795Z",
+  "updatedAt": "2026-10-26T17:19:14.268Z",
   "weeks": [
     {
       "weekStart": "2026-10-26",
@@ -2504,18 +2504,18 @@
           "platform": "iqiyi",
           "title": "灵武大陆",
           "poster": "https://pic0.iqiyipic.com/image/20250416/14/a8/a_100570241_m_601_m4_318_424.avif",
-          "episode": "第226集",
+          "episode": "第227集",
           "updateTime": "09:30",
           "date": "2026-10-26",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_oyt6m999g8.html",
+          "url": "https://www.iqiyi.com/v_20xc7j0fpvw.html",
           "badge": null,
           "albumId": "4812694274119401",
           "tvId": "8873257797298000",
           "rule": "每周一、五更新",
-          "duration": 649,
-          "total": 227
+          "duration": 615,
+          "total": 228
         },
         {
           "id": "iqiyi-2026-10-27-九阳武神",
@@ -2767,7 +2767,7 @@
           "tvId": "5547478194102700",
           "rule": "每周三、日更新",
           "duration": 492,
-          "total": 4
+          "total": 5
         },
         {
           "id": "iqiyi-2026-10-29-她偏爱戎装",
@@ -2783,7 +2783,7 @@
           "badge": null,
           "albumId": "2347638624148301",
           "tvId": "3365587088331100",
-          "rule": "每周四更新",
+          "rule": "每周四、五更新",
           "duration": 436,
           "total": 6
         },
@@ -2883,7 +2883,7 @@
           "title": "雪王来了！",
           "poster": "https://pic5.iqiyipic.com/image/20260917/91/db/a_101341775_m_601_m3_318_424.avif",
           "episode": "第23集",
-          "updateTime": "11:00",
+          "updateTime": "15:53",
           "date": "2026-10-29",
           "weekday": 4,
           "svip": false,
@@ -3008,18 +3008,18 @@
           "platform": "iqiyi",
           "title": "灵武大陆",
           "poster": "https://pic0.iqiyipic.com/image/20250416/14/a8/a_100570241_m_601_m4_318_424.avif",
-          "episode": "第226集",
+          "episode": "第227集",
           "updateTime": "09:30",
           "date": "2026-10-30",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_oyt6m999g8.html",
+          "url": "https://www.iqiyi.com/v_20xc7j0fpvw.html",
           "badge": null,
           "albumId": "4812694274119401",
           "tvId": "8873257797298000",
           "rule": "每周一、五更新",
-          "duration": 649,
-          "total": 227
+          "duration": 615,
+          "total": 228
         },
         {
           "id": "iqiyi-2026-10-30-缔灵爱水心缠",
@@ -3045,7 +3045,7 @@
           "title": "雪王来了！",
           "poster": "https://pic5.iqiyipic.com/image/20260917/91/db/a_101341775_m_601_m3_318_424.avif",
           "episode": "第23集",
-          "updateTime": "11:00",
+          "updateTime": "15:53",
           "date": "2026-10-30",
           "weekday": 5,
           "svip": false,
@@ -3325,7 +3325,7 @@
           "tvId": "5547478194102700",
           "rule": "每周三、日更新",
           "duration": 492,
-          "total": 4
+          "total": 5
         },
         {
           "id": "iqiyi-2026-11-01-肥志百科  第15季",
@@ -3380,6 +3380,24 @@
           "rule": "每周六、日更新",
           "duration": 247,
           "total": 20
+        },
+        {
+          "id": "iqiyi-2026-10-30-她偏爱戎装",
+          "platform": "iqiyi",
+          "title": "她偏爱戎装",
+          "poster": "https://pic1.iqiyipic.com/image/20261014/05/3e/a_101659982_m_601_m1_318_424.avif",
+          "episode": "第6集",
+          "updateTime": "08:23",
+          "date": "2026-10-30",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1lw7rpo56xc.html",
+          "badge": null,
+          "albumId": "2347638624148301",
+          "tvId": "3365587088331100",
+          "rule": "每周四、五更新",
+          "duration": 436,
+          "total": 6
         }
       ]
     },
