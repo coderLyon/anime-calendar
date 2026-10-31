@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T02:10:40.228Z",
+  "updatedAt": "2026-10-31T16:10:29.281Z",
   "weeks": [
     {
       "weekStart": "2026-10-26",
@@ -216,11 +216,11 @@
           "date": "2026-10-31",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep3854821",
+          "url": "https://www.bilibili.com/bangumi/play/ep3854822?from_spmid=666.5.schedule.1",
           "seasonId": "28747",
           "badge": "9.7",
-          "duration": 1275,
-          "total": 311,
+          "duration": 1224,
+          "total": 313,
           "rule": "6月13日起 每周六11:00"
         },
         {
@@ -2531,7 +2531,7 @@
           "tvId": "7405294296526200",
           "rule": "每周二更新",
           "duration": 600,
-          "total": 52
+          "total": 53
         },
         {
           "id": "iqiyi-2026-10-27-大唐猫妖",
@@ -3168,18 +3168,18 @@
           "platform": "iqiyi",
           "title": "致亲爱的千夏小姐",
           "poster": "https://pic7.iqiyipic.com/image/20261012/5c/5c/a_101530050_m_601_m2_318_424.avif",
-          "episode": "第11集",
+          "episode": "12集全",
           "updateTime": "11:00",
           "date": "2026-10-31",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_2bpflcngpps.html",
+          "url": "https://www.iqiyi.com/v_1oppbrl76qg.html",
           "badge": null,
           "albumId": "5597212473179101",
           "tvId": "5314850098112300",
-          "rule": "每周六更新",
-          "duration": 505,
-          "total": 11
+          "duration": 503,
+          "total": 12,
+          "finished": true
         },
         {
           "id": "iqiyi-2026-10-31-择日飞升",
@@ -3267,7 +3267,7 @@
           "badge": null,
           "albumId": "5829840569014601",
           "tvId": "7876165649891300",
-          "rule": "每周三、日更新",
+          "rule": "每周日更新",
           "duration": 346,
           "total": 18
         },
@@ -3492,10 +3492,10 @@
           "date": "2026-10-31",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep7254234",
+          "url": "https://www.bilibili.com/bangumi/play/ep7254235?from_spmid=666.5.schedule.2",
           "seasonId": "34149",
           "badge": "9.3",
-          "duration": 73,
+          "duration": 77,
           "total": 200,
           "rule": "每周二、四、六，21:00更新"
         },
@@ -3830,7 +3830,25 @@
           "badge": null,
           "albumId": "3784317657367801",
           "tvId": "5873959692828900",
-          "rule": "每周日更新",
+          "rule": "每周三、日更新",
+          "duration": 492,
+          "total": 225
+        },
+        {
+          "id": "iqiyi-2026-10-28-都市古仙医",
+          "platform": "iqiyi",
+          "title": "都市古仙医",
+          "poster": "https://pic2.iqiyipic.com/image/20260717/4d/a6/a_100572131_m_601_m8_318_424.avif",
+          "episode": "第224集",
+          "updateTime": "14:00",
+          "date": "2026-10-28",
+          "weekday": 3,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1v6u22h4up8.html",
+          "badge": null,
+          "albumId": "3784317657367801",
+          "tvId": "5873959692828900",
+          "rule": "每周三、日更新",
           "duration": 492,
           "total": 225
         }
