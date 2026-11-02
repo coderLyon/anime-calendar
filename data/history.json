@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-02T02:15:08.515Z",
+  "updatedAt": "2026-11-02T20:49:45.669Z",
   "weeks": [
     {
       "weekStart": "2026-11-02",
@@ -186,7 +186,7 @@
           "badge": "9.9",
           "duration": 686,
           "total": 45,
-          "rule": "每周五12:00"
+          "rule": "每周五12:00更新1集，每周二12:00更新下集预告"
         },
         {
           "id": "bili-5723186",
@@ -296,15 +296,15 @@
           "title": "无上神帝",
           "rule": "每周一、五10:00更新1集，新篇章3月9日开始更新",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200ilydv1a1781927184923/750?imageMogr2/thumbnail/400x",
-          "episode": "第653集",
+          "episode": "第654集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-02",
           "weekday": 1,
           "svip": false,
-          "url": "https://v.qq.com/x/page/i41027zdj24.html",
+          "url": "https://v.qq.com/x/page/v41026lsunv.html",
           "badge": "独播",
-          "duration": 468
+          "duration": 469
         },
         {
           "id": "tencent-mzc00200azkttu2-2026-11-02",
@@ -312,13 +312,13 @@
           "title": "逆天至尊",
           "rule": "每周一、五10点更1集，新篇章3月9日开始更新",
           "poster": "https://puui.qpic.cn/vcover_hz_pic/0/mzc00200azkttu21691465584683/750?imageMogr2/thumbnail/400x",
-          "episode": "第562集",
+          "episode": "第563集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-02",
           "weekday": 1,
           "svip": false,
-          "url": "https://v.qq.com/x/page/s4102d5c4fm.html",
+          "url": "https://v.qq.com/x/page/m4102m3engm.html",
           "badge": "独播",
           "duration": 715
         },
@@ -327,16 +327,16 @@
           "platform": "tencent",
           "title": "吞噬星空",
           "rule": "VIP用户每周二10点更新。SVIP会员权益加码，抢先1天看更新集（每周一18:00）",
-          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/324olz7ilvo2j5f1793002666187/750?imageMogr2/thumbnail/400x",
-          "episode": "第247集",
+          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/324olz7ilvo2j5f1793601583397/750?imageMogr2/thumbnail/400x",
+          "episode": "第248集",
           "total": null,
           "updateTime": "18:00",
           "date": "2026-11-02",
           "weekday": 1,
           "svip": true,
-          "url": "https://v.qq.com/x/page/w4102dew8p0.html",
-          "badge": "独播",
-          "duration": 1301
+          "url": "https://v.qq.com/x/page/b4102smbxtn.html",
+          "badge": "上新",
+          "duration": 1284
         },
         {
           "id": "tencent-mzc002006n62s11-2026-11-03",
@@ -479,7 +479,7 @@
           "weekday": 3,
           "svip": true,
           "url": "https://v.qq.com/x/page/c410262ryof.html",
-          "badge": "上新",
+          "badge": "独播",
           "duration": 1248
         },
         {
@@ -608,7 +608,7 @@
           "weekday": 4,
           "svip": false,
           "url": "https://v.qq.com/x/page/l4102e0x9gx.html",
-          "badge": "上新",
+          "badge": null,
           "duration": 263
         },
         {
@@ -633,15 +633,15 @@
           "title": "无上神帝",
           "rule": "每周一、五10:00更新1集，新篇章3月9日开始更新",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200ilydv1a1781927184923/750?imageMogr2/thumbnail/400x",
-          "episode": "第653集",
+          "episode": "第654集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-06",
           "weekday": 5,
           "svip": false,
-          "url": "https://v.qq.com/x/page/i41027zdj24.html",
+          "url": "https://v.qq.com/x/page/v41026lsunv.html",
           "badge": "独播",
-          "duration": 468
+          "duration": 469
         },
         {
           "id": "tencent-mzc00200r33k6xc-2026-11-06",
@@ -665,13 +665,13 @@
           "title": "逆天至尊",
           "rule": "每周一、五10点更1集，新篇章3月9日开始更新",
           "poster": "https://puui.qpic.cn/vcover_hz_pic/0/mzc00200azkttu21691465584683/750?imageMogr2/thumbnail/400x",
-          "episode": "第562集",
+          "episode": "第563集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-06",
           "weekday": 5,
           "svip": false,
-          "url": "https://v.qq.com/x/page/s4102d5c4fm.html",
+          "url": "https://v.qq.com/x/page/m4102m3engm.html",
           "badge": "独播",
           "duration": 715
         },
@@ -752,7 +752,7 @@
           "weekday": 6,
           "svip": true,
           "url": "https://v.qq.com/x/page/c410262ryof.html",
-          "badge": "上新",
+          "badge": "独播",
           "duration": 1248
         },
         {
@@ -849,7 +849,7 @@
           "weekday": 6,
           "svip": true,
           "url": "https://v.qq.com/x/page/m4102pfvc97.html",
-          "badge": "上新",
+          "badge": "独播",
           "duration": 1350
         },
         {
@@ -881,7 +881,7 @@
           "weekday": 7,
           "svip": false,
           "url": "https://v.qq.com/x/page/l4102e0x9gx.html",
-          "badge": "上新",
+          "badge": null,
           "duration": 263
         },
         {
@@ -913,7 +913,7 @@
           "weekday": 7,
           "svip": false,
           "url": "https://v.qq.com/x/page/d410269smzu.html",
-          "badge": "上新",
+          "badge": null,
           "duration": 237
         },
         {
@@ -1000,7 +1000,7 @@
           "badge": null,
           "albumId": "2302717336669401",
           "tvId": "2448711523819000",
-          "rule": "每日更新",
+          "rule": "每周一、二、三、四、六、日更新",
           "duration": 133,
           "total": 216
         },
@@ -1072,7 +1072,7 @@
           "badge": null,
           "albumId": "2302717336669401",
           "tvId": "2448711523819000",
-          "rule": "每日更新",
+          "rule": "每周一、二、三、四、六、日更新",
           "duration": 133,
           "total": 216
         },
@@ -1216,7 +1216,7 @@
           "badge": null,
           "albumId": "2302717336669401",
           "tvId": "2448711523819000",
-          "rule": "每日更新",
+          "rule": "每周一、二、三、四、六、日更新",
           "duration": 133,
           "total": 216
         },
@@ -1306,7 +1306,7 @@
           "badge": null,
           "albumId": "2302717336669401",
           "tvId": "2448711523819000",
-          "rule": "每日更新",
+          "rule": "每周一、二、三、四、六、日更新",
           "duration": 133,
           "total": 216
         },
@@ -1630,7 +1630,7 @@
           "badge": null,
           "albumId": "2302717336669401",
           "tvId": "2448711523819000",
-          "rule": "每日更新",
+          "rule": "每周一、二、三、四、六、日更新",
           "duration": 133,
           "total": 216
         },
@@ -1792,7 +1792,7 @@
           "badge": null,
           "albumId": "2302717336669401",
           "tvId": "2448711523819000",
-          "rule": "每日更新",
+          "rule": "每周一、二、三、四、六、日更新",
           "duration": 133,
           "total": 216
         },
@@ -1831,6 +1831,132 @@
           "rule": "每周日更新",
           "duration": 411,
           "total": 6
+        },
+        {
+          "id": "iqiyi-2026-11-02-都市怪谈录",
+          "platform": "iqiyi",
+          "title": "都市怪谈录",
+          "poster": "https://pic6.iqiyipic.com/image/20260916/25/3c/a_101494481_m_601_318_424.avif",
+          "episode": "第35集",
+          "updateTime": "12:00",
+          "date": "2026-11-02",
+          "weekday": 1,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1wrek1uzkvc.html",
+          "badge": null,
+          "albumId": "2844981449721601",
+          "tvId": "1719542768689300",
+          "rule": "每日更新",
+          "duration": 187,
+          "total": 35
+        },
+        {
+          "id": "iqiyi-2026-11-03-都市怪谈录",
+          "platform": "iqiyi",
+          "title": "都市怪谈录",
+          "poster": "https://pic6.iqiyipic.com/image/20260916/25/3c/a_101494481_m_601_318_424.avif",
+          "episode": "第35集",
+          "updateTime": "12:00",
+          "date": "2026-11-03",
+          "weekday": 2,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1wrek1uzkvc.html",
+          "badge": null,
+          "albumId": "2844981449721601",
+          "tvId": "1719542768689300",
+          "rule": "每日更新",
+          "duration": 187,
+          "total": 35
+        },
+        {
+          "id": "iqiyi-2026-11-04-都市怪谈录",
+          "platform": "iqiyi",
+          "title": "都市怪谈录",
+          "poster": "https://pic6.iqiyipic.com/image/20260916/25/3c/a_101494481_m_601_318_424.avif",
+          "episode": "第35集",
+          "updateTime": "12:00",
+          "date": "2026-11-04",
+          "weekday": 3,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1wrek1uzkvc.html",
+          "badge": null,
+          "albumId": "2844981449721601",
+          "tvId": "1719542768689300",
+          "rule": "每日更新",
+          "duration": 187,
+          "total": 35
+        },
+        {
+          "id": "iqiyi-2026-11-05-都市怪谈录",
+          "platform": "iqiyi",
+          "title": "都市怪谈录",
+          "poster": "https://pic6.iqiyipic.com/image/20260916/25/3c/a_101494481_m_601_318_424.avif",
+          "episode": "第35集",
+          "updateTime": "12:00",
+          "date": "2026-11-05",
+          "weekday": 4,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1wrek1uzkvc.html",
+          "badge": null,
+          "albumId": "2844981449721601",
+          "tvId": "1719542768689300",
+          "rule": "每日更新",
+          "duration": 187,
+          "total": 35
+        },
+        {
+          "id": "iqiyi-2026-11-06-都市怪谈录",
+          "platform": "iqiyi",
+          "title": "都市怪谈录",
+          "poster": "https://pic6.iqiyipic.com/image/20260916/25/3c/a_101494481_m_601_318_424.avif",
+          "episode": "第35集",
+          "updateTime": "12:00",
+          "date": "2026-11-06",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1wrek1uzkvc.html",
+          "badge": null,
+          "albumId": "2844981449721601",
+          "tvId": "1719542768689300",
+          "rule": "每日更新",
+          "duration": 187,
+          "total": 35
+        },
+        {
+          "id": "iqiyi-2026-11-07-都市怪谈录",
+          "platform": "iqiyi",
+          "title": "都市怪谈录",
+          "poster": "https://pic6.iqiyipic.com/image/20260916/25/3c/a_101494481_m_601_318_424.avif",
+          "episode": "第35集",
+          "updateTime": "12:00",
+          "date": "2026-11-07",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1wrek1uzkvc.html",
+          "badge": null,
+          "albumId": "2844981449721601",
+          "tvId": "1719542768689300",
+          "rule": "每日更新",
+          "duration": 187,
+          "total": 35
+        },
+        {
+          "id": "iqiyi-2026-11-08-都市怪谈录",
+          "platform": "iqiyi",
+          "title": "都市怪谈录",
+          "poster": "https://pic6.iqiyipic.com/image/20260916/25/3c/a_101494481_m_601_318_424.avif",
+          "episode": "第35集",
+          "updateTime": "12:00",
+          "date": "2026-11-08",
+          "weekday": 7,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1wrek1uzkvc.html",
+          "badge": null,
+          "albumId": "2844981449721601",
+          "tvId": "1719542768689300",
+          "rule": "每日更新",
+          "duration": 187,
+          "total": 35
         }
       ]
     },
