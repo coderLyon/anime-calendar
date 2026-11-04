@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T02:57:13.434Z",
+  "generatedAt": "2026-11-04T18:36:07.787Z",
   "platforms": [
     {
       "platform": "bili",
@@ -106,7 +106,7 @@
           "total": 52
         },
         {
-          "id": "bili-5450389",
+          "id": "bili-7513239",
           "platform": "bili",
           "title": "雪王来了！",
           "poster": "https://i0.hdslb.com/bfs/bangumi/image/0d62cdccd8fded354a11ef83cbfb051537a13daf.jpg",
@@ -449,7 +449,7 @@
           "predicted": true
         },
         {
-          "id": "bili-5450389-pred",
+          "id": "bili-7513239-pred",
           "platform": "bili",
           "title": "雪王来了！",
           "poster": "https://i0.hdslb.com/bfs/bangumi/image/0d62cdccd8fded354a11ef83cbfb051537a13daf.jpg",
@@ -700,7 +700,7 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-11-04T02:52:06.320Z",
+      "fetchedAt": "2026-11-04T18:23:06.376Z",
       "warnings": [
         "已保留 3 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已生成下周预计排期 20 条（本周未完结条目 +7 天推导，前端标「预计」）"
@@ -1130,23 +1130,6 @@
           "duration": 121.93,
           "rule": "每周二更新",
           "total": 350
-        },
-        {
-          "id": "youku-acdcff87d50540308db8-2026-11-03",
-          "platform": "youku",
-          "title": "那年那兔那些事儿长征篇",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/d809e774f74f47dda5b2223c2e3e7698.webp.jpg",
-          "episode": "第4话",
-          "updateTime": "12:00",
-          "date": "2026-11-03",
-          "weekday": 2,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_acdcff87d50540308db8.html",
-          "videoId": "XNjU4NDg1MDkzMg==",
-          "badge": null,
-          "duration": 34.36,
-          "rule": "每周二、六更新",
-          "total": 12
         },
         {
           "id": "youku-badbb5792f934ddb82fd-2026-11-04",
@@ -2032,23 +2015,6 @@
           "total": 1321
         },
         {
-          "id": "youku-acdcff87d50540308db8-2026-11-07",
-          "platform": "youku",
-          "title": "那年那兔那些事儿长征篇",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/d809e774f74f47dda5b2223c2e3e7698.webp.jpg",
-          "episode": "第4话",
-          "updateTime": "12:00",
-          "date": "2026-11-07",
-          "weekday": 6,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_acdcff87d50540308db8.html",
-          "videoId": "XNjU4NDg1MDkzMg==",
-          "badge": null,
-          "duration": 34.36,
-          "rule": "每周二、六更新",
-          "total": 12
-        },
-        {
           "id": "youku-cc003400962411de83b1-2026-11-07",
           "platform": "youku",
           "title": "名侦探柯南",
@@ -2712,24 +2678,6 @@
           "duration": 121.93,
           "rule": "每周二更新",
           "total": 350,
-          "predicted": true
-        },
-        {
-          "id": "youku-acdcff87d50540308db8-2026-11-03-pred",
-          "platform": "youku",
-          "title": "那年那兔那些事儿长征篇",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/d809e774f74f47dda5b2223c2e3e7698.webp.jpg",
-          "episode": "第5话",
-          "updateTime": "12:00",
-          "date": "2026-11-10",
-          "weekday": 2,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_acdcff87d50540308db8.html",
-          "videoId": "XNjU4NDg1MDkzMg==",
-          "badge": null,
-          "duration": 34.36,
-          "rule": "每周二、六更新",
-          "total": 12,
           "predicted": true
         },
         {
@@ -3668,24 +3616,6 @@
           "predicted": true
         },
         {
-          "id": "youku-acdcff87d50540308db8-2026-11-07-pred",
-          "platform": "youku",
-          "title": "那年那兔那些事儿长征篇",
-          "poster": "https://liangcang-material.alicdn.com/prod/upload/d809e774f74f47dda5b2223c2e3e7698.webp.jpg",
-          "episode": "第5话",
-          "updateTime": "12:00",
-          "date": "2026-11-14",
-          "weekday": 6,
-          "svip": false,
-          "url": "https://www.youku.com/show_page/id_acdcff87d50540308db8.html",
-          "videoId": "XNjU4NDg1MDkzMg==",
-          "badge": null,
-          "duration": 34.36,
-          "rule": "每周二、六更新",
-          "total": 12,
-          "predicted": true
-        },
-        {
           "id": "youku-cc003400962411de83b1-2026-11-07-pred",
           "platform": "youku",
           "title": "名侦探柯南",
@@ -3919,12 +3849,14 @@
           "predicted": true
         }
       ],
+      "error": "超时（>240s）",
       "fetchedAt": "2026-11-04T02:55:42.234Z",
       "warnings": [
-        "已保留 75 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "已按豆瓣判据排除 4 条疑似 AI 短剧（时长缺失/过短且豆瓣条目暂无评分）",
-        "6 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
-        "已生成下周预计排期 92 条（本周未完结条目 +7 天推导，前端标「预计」）"
+        "已保留 142 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "过滤 92 条不在本周（2026-11-02~2026-11-08）的条目",
+        "已按豆瓣判据排除 2 条疑似 AI 短剧（时长缺失/过短且豆瓣条目暂无评分）",
+        "4 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
+        "已生成下周预计排期 90 条（本周未完结条目 +7 天推导，前端标「预计」）"
       ]
     },
     {
@@ -5220,7 +5152,7 @@
           "predicted": true
         }
       ],
-      "error": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://v.qq.com/channel/cartoon\", waiting until \"domcontentloaded\"\n",
+      "error": "超时（>480s）",
       "fetchedAt": "2026-11-02T20:49:02.927Z",
       "warnings": [
         "已保留 12 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
@@ -5301,7 +5233,7 @@
           "badge": null,
           "albumId": "2302717336669401",
           "tvId": "2448711523819000",
-          "rule": "每周一、二、三、四、日更新",
+          "rule": "每周一、二、三、四更新",
           "duration": 133,
           "total": 218
         },
@@ -5321,7 +5253,7 @@
           "tvId": "1719542768689300",
           "rule": "每日更新",
           "duration": 195,
-          "total": 36
+          "total": 37
         },
         {
           "id": "iqiyi-2026-11-02-灵武大陆",
@@ -5391,7 +5323,7 @@
           "badge": null,
           "albumId": "2302717336669401",
           "tvId": "2448711523819000",
-          "rule": "每周一、二、三、四、日更新",
+          "rule": "每周一、二、三、四更新",
           "duration": 133,
           "total": 218
         },
@@ -5429,7 +5361,7 @@
           "tvId": "1719542768689300",
           "rule": "每日更新",
           "duration": 195,
-          "total": 36
+          "total": 37
         },
         {
           "id": "iqiyi-2026-11-04-李熊猫",
@@ -5466,24 +5398,6 @@
           "rule": "每周三、五更新",
           "duration": 317,
           "total": 30
-        },
-        {
-          "id": "iqiyi-2026-11-04-都市古仙医",
-          "platform": "iqiyi",
-          "title": "都市古仙医",
-          "poster": "https://pic2.iqiyipic.com/image/20260717/4d/a6/a_100572131_m_601_m8_318_424.avif",
-          "episode": "第226集",
-          "updateTime": "08:55",
-          "date": "2026-11-04",
-          "weekday": 3,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1ndci9cf330.html",
-          "badge": null,
-          "albumId": "3784317657367801",
-          "tvId": "5873959692828900",
-          "rule": "每周三、日更新",
-          "duration": 586,
-          "total": 226
         },
         {
           "id": "iqiyi-2026-11-04-菌灵天下",
@@ -5535,7 +5449,7 @@
           "badge": null,
           "albumId": "2302717336669401",
           "tvId": "2448711523819000",
-          "rule": "每周一、二、三、四、日更新",
+          "rule": "每周一、二、三、四更新",
           "duration": 133,
           "total": 218
         },
@@ -5555,7 +5469,25 @@
           "tvId": "1719542768689300",
           "rule": "每日更新",
           "duration": 195,
-          "total": 36
+          "total": 37
+        },
+        {
+          "id": "iqiyi-2026-11-04-都市古仙医",
+          "platform": "iqiyi",
+          "title": "都市古仙医",
+          "poster": "https://pic2.iqiyipic.com/image/20260717/4d/a6/a_100572131_m_601_m8_318_424.avif",
+          "episode": "第226集",
+          "updateTime": "15:25",
+          "date": "2026-11-04",
+          "weekday": 3,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1ndci9cf330.html",
+          "badge": null,
+          "albumId": "3784317657367801",
+          "tvId": "5873959692828900",
+          "rule": "每周三、日更新",
+          "duration": 586,
+          "total": 226
         },
         {
           "id": "iqiyi-2026-11-05-逆天邪神年番",
@@ -5643,7 +5575,7 @@
           "badge": null,
           "albumId": "2302717336669401",
           "tvId": "2448711523819000",
-          "rule": "每周一、二、三、四、日更新",
+          "rule": "每周一、二、三、四更新",
           "duration": 133,
           "total": 218
         },
@@ -5681,25 +5613,7 @@
           "tvId": "1719542768689300",
           "rule": "每日更新",
           "duration": 195,
-          "total": 36
-        },
-        {
-          "id": "iqiyi-2026-11-06-大主宰年番",
-          "platform": "iqiyi",
-          "title": "大主宰年番",
-          "poster": "https://pic4.iqiyipic.com/image/20260710/d1/1e/a_100459186_m_601_m39_318_424.avif",
-          "episode": "第97集",
-          "updateTime": "08:50",
-          "date": "2026-11-06",
-          "weekday": 5,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_11oq75no1pw.html",
-          "badge": null,
-          "albumId": "5305224104606401",
-          "tvId": "4984357767210100",
-          "rule": "每周五更新",
-          "duration": 1334,
-          "total": 98
+          "total": 37
         },
         {
           "id": "iqiyi-2026-11-06-大千小镇",
@@ -5843,7 +5757,7 @@
           "tvId": "1719542768689300",
           "rule": "每日更新",
           "duration": 195,
-          "total": 36
+          "total": 37
         },
         {
           "id": "iqiyi-2026-11-06-灵武大陆",
@@ -5882,12 +5796,30 @@
           "total": 78
         },
         {
+          "id": "iqiyi-2026-11-06-大主宰年番",
+          "platform": "iqiyi",
+          "title": "大主宰年番",
+          "poster": "https://pic4.iqiyipic.com/image/20260710/d1/1e/a_100459186_m_601_m39_318_424.avif",
+          "episode": "第97集",
+          "updateTime": "18:35",
+          "date": "2026-11-06",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_11oq75no1pw.html",
+          "badge": null,
+          "albumId": "5305224104606401",
+          "tvId": "4984357767210100",
+          "rule": "每周五更新",
+          "duration": 1334,
+          "total": 98
+        },
+        {
           "id": "iqiyi-2026-11-07-择日飞升",
           "platform": "iqiyi",
           "title": "择日飞升",
           "poster": "https://pic5.iqiyipic.com/image/20260704/41/14/a_100571652_m_601_m8_318_424.avif",
           "episode": "第18集",
-          "updateTime": "08:50",
+          "updateTime": "00:17",
           "date": "2026-11-07",
           "weekday": 6,
           "svip": false,
@@ -6005,7 +5937,7 @@
           "tvId": "1719542768689300",
           "rule": "每日更新",
           "duration": 195,
-          "total": 36
+          "total": 37
         },
         {
           "id": "iqiyi-2026-11-08-财神窦占龙",
@@ -6026,24 +5958,6 @@
           "total": 15
         },
         {
-          "id": "iqiyi-2026-11-08-都市古仙医",
-          "platform": "iqiyi",
-          "title": "都市古仙医",
-          "poster": "https://pic2.iqiyipic.com/image/20260717/4d/a6/a_100572131_m_601_m8_318_424.avif",
-          "episode": "第226集",
-          "updateTime": "08:55",
-          "date": "2026-11-08",
-          "weekday": 7,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1ndci9cf330.html",
-          "badge": null,
-          "albumId": "3784317657367801",
-          "tvId": "5873959692828900",
-          "rule": "每周三、日更新",
-          "duration": 586,
-          "total": 226
-        },
-        {
           "id": "iqiyi-2026-11-08-太古神尊",
           "platform": "iqiyi",
           "title": "太古神尊",
@@ -6062,24 +5976,6 @@
           "total": 32
         },
         {
-          "id": "iqiyi-2026-11-08-大唐猫妖",
-          "platform": "iqiyi",
-          "title": "大唐猫妖",
-          "poster": "https://pic3.iqiyipic.com/image/20261014/de/67/a_101588183_m_601_m4_318_424.avif",
-          "episode": "20集全",
-          "updateTime": "09:00",
-          "date": "2026-11-08",
-          "weekday": 7,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_kddvvls4z4.html",
-          "badge": null,
-          "albumId": "5829840569014601",
-          "tvId": "7876165649891300",
-          "duration": 334,
-          "total": 20,
-          "finished": true
-        },
-        {
           "id": "iqiyi-2026-11-08-高危禁药 我却越喝越强",
           "platform": "iqiyi",
           "title": "高危禁药 我却越喝越强",
@@ -6096,24 +5992,6 @@
           "rule": "每日更新",
           "duration": 126,
           "total": 22
-        },
-        {
-          "id": "iqiyi-2026-11-08-苍绝剑尊",
-          "platform": "iqiyi",
-          "title": "苍绝剑尊",
-          "poster": "https://pic2.iqiyipic.com/image/20260617/e9/f5/a_100817470_m_601_m2_318_424.avif",
-          "episode": "第218集",
-          "updateTime": "09:00",
-          "date": "2026-11-08",
-          "weekday": 7,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1i9si2h4gl8.html",
-          "badge": null,
-          "albumId": "2302717336669401",
-          "tvId": "2448711523819000",
-          "rule": "每周一、二、三、四、日更新",
-          "duration": 133,
-          "total": 218
         },
         {
           "id": "iqiyi-2026-11-08-绝世武神 第九季",
@@ -6167,7 +6045,25 @@
           "tvId": "1719542768689300",
           "rule": "每日更新",
           "duration": 195,
-          "total": 36
+          "total": 37
+        },
+        {
+          "id": "iqiyi-2026-11-08-都市古仙医",
+          "platform": "iqiyi",
+          "title": "都市古仙医",
+          "poster": "https://pic2.iqiyipic.com/image/20260717/4d/a6/a_100572131_m_601_m8_318_424.avif",
+          "episode": "第226集",
+          "updateTime": "15:25",
+          "date": "2026-11-08",
+          "weekday": 7,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1ndci9cf330.html",
+          "badge": null,
+          "albumId": "3784317657367801",
+          "tvId": "5873959692828900",
+          "rule": "每周三、日更新",
+          "duration": 586,
+          "total": 226
         },
         {
           "id": "iqiyi-2026-11-02-界门之下-pred",
@@ -6221,7 +6117,7 @@
           "badge": null,
           "albumId": "2302717336669401",
           "tvId": "2448711523819000",
-          "rule": "每周一、二、三、四、日更新",
+          "rule": "每周一、二、三、四更新",
           "duration": 133,
           "total": 218,
           "predicted": true
@@ -6242,7 +6138,7 @@
           "tvId": "1719542768689300",
           "rule": "每日更新",
           "duration": 195,
-          "total": 36,
+          "total": 37,
           "predicted": true
         },
         {
@@ -6316,7 +6212,7 @@
           "badge": null,
           "albumId": "2302717336669401",
           "tvId": "2448711523819000",
-          "rule": "每周一、二、三、四、日更新",
+          "rule": "每周一、二、三、四更新",
           "duration": 133,
           "total": 218,
           "predicted": true
@@ -6356,7 +6252,7 @@
           "tvId": "1719542768689300",
           "rule": "每日更新",
           "duration": 195,
-          "total": 36,
+          "total": 37,
           "predicted": true
         },
         {
@@ -6395,25 +6291,6 @@
           "rule": "每周三、五更新",
           "duration": 317,
           "total": 30,
-          "predicted": true
-        },
-        {
-          "id": "iqiyi-2026-11-04-都市古仙医-pred",
-          "platform": "iqiyi",
-          "title": "都市古仙医",
-          "poster": "https://pic2.iqiyipic.com/image/20260717/4d/a6/a_100572131_m_601_m8_318_424.avif",
-          "episode": "第227集",
-          "updateTime": "08:55",
-          "date": "2026-11-11",
-          "weekday": 3,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1ndci9cf330.html",
-          "badge": null,
-          "albumId": "3784317657367801",
-          "tvId": "5873959692828900",
-          "rule": "每周三、日更新",
-          "duration": 586,
-          "total": 226,
           "predicted": true
         },
         {
@@ -6468,7 +6345,7 @@
           "badge": null,
           "albumId": "2302717336669401",
           "tvId": "2448711523819000",
-          "rule": "每周一、二、三、四、日更新",
+          "rule": "每周一、二、三、四更新",
           "duration": 133,
           "total": 218,
           "predicted": true
@@ -6489,7 +6366,26 @@
           "tvId": "1719542768689300",
           "rule": "每日更新",
           "duration": 195,
-          "total": 36,
+          "total": 37,
+          "predicted": true
+        },
+        {
+          "id": "iqiyi-2026-11-04-都市古仙医-pred",
+          "platform": "iqiyi",
+          "title": "都市古仙医",
+          "poster": "https://pic2.iqiyipic.com/image/20260717/4d/a6/a_100572131_m_601_m8_318_424.avif",
+          "episode": "第227集",
+          "updateTime": "15:25",
+          "date": "2026-11-11",
+          "weekday": 3,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1ndci9cf330.html",
+          "badge": null,
+          "albumId": "3784317657367801",
+          "tvId": "5873959692828900",
+          "rule": "每周三、日更新",
+          "duration": 586,
+          "total": 226,
           "predicted": true
         },
         {
@@ -6582,7 +6478,7 @@
           "badge": null,
           "albumId": "2302717336669401",
           "tvId": "2448711523819000",
-          "rule": "每周一、二、三、四、日更新",
+          "rule": "每周一、二、三、四更新",
           "duration": 133,
           "total": 218,
           "predicted": true
@@ -6622,26 +6518,7 @@
           "tvId": "1719542768689300",
           "rule": "每日更新",
           "duration": 195,
-          "total": 36,
-          "predicted": true
-        },
-        {
-          "id": "iqiyi-2026-11-06-大主宰年番-pred",
-          "platform": "iqiyi",
-          "title": "大主宰年番",
-          "poster": "https://pic4.iqiyipic.com/image/20260710/d1/1e/a_100459186_m_601_m39_318_424.avif",
-          "episode": "第98集",
-          "updateTime": "08:50",
-          "date": "2026-11-13",
-          "weekday": 5,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_11oq75no1pw.html",
-          "badge": null,
-          "albumId": "5305224104606401",
-          "tvId": "4984357767210100",
-          "rule": "每周五更新",
-          "duration": 1334,
-          "total": 98,
+          "total": 37,
           "predicted": true
         },
         {
@@ -6793,7 +6670,7 @@
           "tvId": "1719542768689300",
           "rule": "每日更新",
           "duration": 195,
-          "total": 36,
+          "total": 37,
           "predicted": true
         },
         {
@@ -6835,12 +6712,31 @@
           "predicted": true
         },
         {
+          "id": "iqiyi-2026-11-06-大主宰年番-pred",
+          "platform": "iqiyi",
+          "title": "大主宰年番",
+          "poster": "https://pic4.iqiyipic.com/image/20260710/d1/1e/a_100459186_m_601_m39_318_424.avif",
+          "episode": "第98集",
+          "updateTime": "18:35",
+          "date": "2026-11-13",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_11oq75no1pw.html",
+          "badge": null,
+          "albumId": "5305224104606401",
+          "tvId": "4984357767210100",
+          "rule": "每周五更新",
+          "duration": 1334,
+          "total": 98,
+          "predicted": true
+        },
+        {
           "id": "iqiyi-2026-11-07-择日飞升-pred",
           "platform": "iqiyi",
           "title": "择日飞升",
           "poster": "https://pic5.iqiyipic.com/image/20260704/41/14/a_100571652_m_601_m8_318_424.avif",
           "episode": "第19集",
-          "updateTime": "08:50",
+          "updateTime": "00:17",
           "date": "2026-11-14",
           "weekday": 6,
           "svip": false,
@@ -6964,7 +6860,7 @@
           "tvId": "1719542768689300",
           "rule": "每日更新",
           "duration": 195,
-          "total": 36,
+          "total": 37,
           "predicted": true
         },
         {
@@ -6984,25 +6880,6 @@
           "rule": "每周日更新",
           "duration": 1390,
           "total": 15,
-          "predicted": true
-        },
-        {
-          "id": "iqiyi-2026-11-08-都市古仙医-pred",
-          "platform": "iqiyi",
-          "title": "都市古仙医",
-          "poster": "https://pic2.iqiyipic.com/image/20260717/4d/a6/a_100572131_m_601_m8_318_424.avif",
-          "episode": "第227集",
-          "updateTime": "08:55",
-          "date": "2026-11-15",
-          "weekday": 7,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1ndci9cf330.html",
-          "badge": null,
-          "albumId": "3784317657367801",
-          "tvId": "5873959692828900",
-          "rule": "每周三、日更新",
-          "duration": 586,
-          "total": 226,
           "predicted": true
         },
         {
@@ -7041,25 +6918,6 @@
           "rule": "每日更新",
           "duration": 126,
           "total": 22,
-          "predicted": true
-        },
-        {
-          "id": "iqiyi-2026-11-08-苍绝剑尊-pred",
-          "platform": "iqiyi",
-          "title": "苍绝剑尊",
-          "poster": "https://pic2.iqiyipic.com/image/20260617/e9/f5/a_100817470_m_601_m2_318_424.avif",
-          "episode": "第219集",
-          "updateTime": "09:00",
-          "date": "2026-11-15",
-          "weekday": 7,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1i9si2h4gl8.html",
-          "badge": null,
-          "albumId": "2302717336669401",
-          "tvId": "2448711523819000",
-          "rule": "每周一、二、三、四、日更新",
-          "duration": 133,
-          "total": 218,
           "predicted": true
         },
         {
@@ -7116,13 +6974,31 @@
           "tvId": "1719542768689300",
           "rule": "每日更新",
           "duration": 195,
-          "total": 36,
+          "total": 37,
+          "predicted": true
+        },
+        {
+          "id": "iqiyi-2026-11-08-都市古仙医-pred",
+          "platform": "iqiyi",
+          "title": "都市古仙医",
+          "poster": "https://pic2.iqiyipic.com/image/20260717/4d/a6/a_100572131_m_601_m8_318_424.avif",
+          "episode": "第227集",
+          "updateTime": "15:25",
+          "date": "2026-11-15",
+          "weekday": 7,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1ndci9cf330.html",
+          "badge": null,
+          "albumId": "3784317657367801",
+          "tvId": "5873959692828900",
+          "rule": "每周三、日更新",
+          "duration": 586,
+          "total": 226,
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-11-04T02:57:13.434Z",
+      "fetchedAt": "2026-11-04T18:36:07.787Z",
       "warnings": [
-        "内容类型排除（动态漫/AI动漫/泡面番）：我真没想重生啊 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：末世钞能力者 动态漫画",
@@ -7137,10 +7013,11 @@
         "内容类型排除（动态漫/AI动漫/泡面番）：神级奸商：全服求我别薅了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：我真没想重生啊 动态漫画",
-        "已保留 22 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "内容类型排除（动态漫/AI动漫/泡面番）：我真没想重生啊 动态漫画",
+        "已保留 21 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已排除 15 条动态漫/AI动漫/泡面番条目",
-        "已生成下周预计排期 50 条（本周未完结条目 +7 天推导，前端标「预计」）",
-        "2 条剧集已完结，不生成下周排期"
+        "已生成下周预计排期 49 条（本周未完结条目 +7 天推导，前端标「预计」）",
+        "1 条剧集已完结，不生成下周排期"
       ]
     }
   ]
