@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T16:54:39.225Z",
+  "updatedAt": "2026-11-08T02:10:29.142Z",
   "weeks": [
     {
       "weekStart": "2026-11-02",
@@ -241,7 +241,7 @@
           "id": "bili-3854823",
           "platform": "bili",
           "title": "凡人修仙传",
-          "poster": "https://i0.hdslb.com/bfs/bangumi/image/e498647cae38ac05efb4f1119b36e8e911b22b34.png",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/19a2d01429bcba6b31791277c016e0d1aa465974.png",
           "episode": "第199话",
           "updateTime": "11:00",
           "date": "2026-11-07",
@@ -250,7 +250,9 @@
           "url": "https://www.bilibili.com/bangumi/play/ep3854823?from_spmid=666.5.schedule.1",
           "seasonId": "28747",
           "badge": "9.7",
-          "duration": null
+          "duration": 1266,
+          "total": 315,
+          "rule": "6月13日起 每周六11:00"
         },
         {
           "id": "bili-4883716",
@@ -262,10 +264,10 @@
           "date": "2026-11-08",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep4883715",
+          "url": "https://www.bilibili.com/bangumi/play/ep4883716?from_spmid=666.5.schedule.0",
           "seasonId": "264970",
           "badge": "7.2",
-          "duration": 1382,
+          "duration": 1401,
           "total": 16,
           "rule": "每周日09:00更新"
         },
@@ -356,15 +358,15 @@
           "title": "武神主宰",
           "rule": "每周二、日10：00更1集",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/7q544xyrava3vxf1781927016720/750?imageMogr2/thumbnail/400x",
-          "episode": "第706集",
+          "episode": "第707集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-03",
           "weekday": 2,
           "svip": false,
-          "url": "https://v.qq.com/x/page/x4102zqnbdz.html",
+          "url": "https://v.qq.com/x/page/a4102y1onil.html",
           "badge": "独播",
-          "duration": 471
+          "duration": 466
         },
         {
           "id": "tencent-mzc00200cu8uq8c-2026-11-03",
@@ -780,7 +782,7 @@
           "weekday": 6,
           "svip": false,
           "url": "https://v.qq.com/x/page/v4102me9isa.html",
-          "badge": "上新",
+          "badge": null,
           "duration": 1458
         },
         {
@@ -846,7 +848,7 @@
           "svip": true,
           "url": "https://v.qq.com/x/page/l4102ber3ei.html",
           "badge": "上新",
-          "duration": 1361
+          "duration": 1421
         },
         {
           "id": "tencent-hzgtnf6tbvfekfv-2026-11-07",
@@ -870,15 +872,15 @@
           "title": "斗罗大陆·角色篇",
           "rule": "每周日10点更新1集",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200f8ujhnz1791078878221/750?imageMogr2/thumbnail/400x",
-          "episode": "第05集",
+          "episode": "第06集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-08",
           "weekday": 7,
           "svip": false,
-          "url": "https://v.qq.com/x/page/l4102e0x9gx.html",
-          "badge": null,
-          "duration": 263
+          "url": "https://v.qq.com/x/page/u4102dyupbr.html",
+          "badge": "上新",
+          "duration": 222
         },
         {
           "id": "tencent-7q544xyrava3vxf-2026-11-08",
@@ -886,15 +888,15 @@
           "title": "武神主宰",
           "rule": "每周二、日10：00更1集",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/7q544xyrava3vxf1781927016720/750?imageMogr2/thumbnail/400x",
-          "episode": "第706集",
+          "episode": "第707集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-08",
           "weekday": 7,
           "svip": false,
-          "url": "https://v.qq.com/x/page/x4102zqnbdz.html",
+          "url": "https://v.qq.com/x/page/a4102y1onil.html",
           "badge": "独播",
-          "duration": 471
+          "duration": 466
         },
         {
           "id": "tencent-mzc00200zwijdv3-2026-11-08",
@@ -902,14 +904,14 @@
           "title": "方言永恒",
           "rule": "每周日10点更新1集",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200zwijdv31789377954887/750?imageMogr2/thumbnail/400x",
-          "episode": "第10集",
+          "episode": "第11集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-08",
           "weekday": 7,
           "svip": false,
           "url": "https://v.qq.com/x/page/d410269smzu.html",
-          "badge": null,
+          "badge": "上新",
           "duration": 237
         },
         {
@@ -980,7 +982,7 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 125,
-          "total": 25
+          "total": 26
         },
         {
           "id": "iqiyi-2026-11-02-苍绝剑尊",
@@ -1052,7 +1054,7 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 125,
-          "total": 25
+          "total": 26
         },
         {
           "id": "iqiyi-2026-11-03-苍绝剑尊",
@@ -1149,18 +1151,18 @@
           "platform": "iqiyi",
           "title": "都市古仙医",
           "poster": "https://pic2.iqiyipic.com/image/20260717/4d/a6/a_100572131_m_601_m8_318_424.avif",
-          "episode": "第226集",
-          "updateTime": "15:25",
+          "episode": "第227集",
+          "updateTime": "08:55",
           "date": "2026-11-04",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1ndci9cf330.html",
+          "url": "https://www.iqiyi.com/v_pqy7o0317k.html",
           "badge": null,
           "albumId": "3784317657367801",
           "tvId": "5873959692828900",
           "rule": "每周三、日更新",
-          "duration": 586,
-          "total": 226
+          "duration": 571,
+          "total": 227
         },
         {
           "id": "iqiyi-2026-11-04-菌灵天下",
@@ -1196,7 +1198,7 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 125,
-          "total": 25
+          "total": 26
         },
         {
           "id": "iqiyi-2026-11-04-苍绝剑尊",
@@ -1239,18 +1241,18 @@
           "platform": "iqiyi",
           "title": "太古神尊",
           "poster": "https://pic5.iqiyipic.com/image/20260714/58/dd/a_101211018_m_601_m1_318_424.avif",
-          "episode": "第32集",
+          "episode": "第33集",
           "updateTime": "09:00",
           "date": "2026-11-05",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_a2uvxocwd0.html",
+          "url": "https://www.iqiyi.com/v_exrm86v3vc.html",
           "badge": null,
           "albumId": "4862428556681501",
           "tvId": "8585280258960200",
           "rule": "每周四、日更新",
           "duration": 623,
-          "total": 33
+          "total": 34
         },
         {
           "id": "iqiyi-2026-11-05-她偏爱戎装",
@@ -1286,25 +1288,25 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 125,
-          "total": 25
+          "total": 26
         },
         {
           "id": "iqiyi-2026-11-05-苍绝剑尊",
           "platform": "iqiyi",
           "title": "苍绝剑尊",
           "poster": "https://pic2.iqiyipic.com/image/20260617/e9/f5/a_100817470_m_601_m2_318_424.avif",
-          "episode": "第221集",
+          "episode": "第222集",
           "updateTime": "09:00",
           "date": "2026-11-05",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_22cqmglcbwo.html",
+          "url": "https://www.iqiyi.com/v_pw6j7g5ry0.html",
           "badge": null,
           "albumId": "2302717336669401",
           "tvId": "2448711523819000",
           "rule": "每周四更新",
-          "duration": 127,
-          "total": 221
+          "duration": 123,
+          "total": 222
         },
         {
           "id": "iqiyi-2026-11-05-雪王来了！",
@@ -1430,7 +1432,7 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 125,
-          "total": 25
+          "total": 26
         },
         {
           "id": "iqiyi-2026-11-06-苍绝剑尊",
@@ -1610,7 +1612,7 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 125,
-          "total": 25
+          "total": 26
         },
         {
           "id": "iqiyi-2026-11-07-苍绝剑尊",
@@ -1635,18 +1637,18 @@
           "platform": "iqiyi",
           "title": "绝世武神 第九季",
           "poster": "https://pic9.iqiyipic.com/image/20261030/7f/2a/a_101506824_m_601_m1_318_424.avif",
-          "episode": "第13集",
+          "episode": "第14集",
           "updateTime": "10:00",
           "date": "2026-11-07",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_v0d2p7jk70.html",
+          "url": "https://www.iqiyi.com/v_22ms470t2uc.html",
           "badge": null,
           "albumId": "5492128747131801",
           "tvId": "2876265921094300",
           "rule": "每周六、日更新",
-          "duration": 595,
-          "total": 13
+          "duration": 603,
+          "total": 14
         },
         {
           "id": "iqiyi-2026-11-07-绝世战魂 第2季",
@@ -1689,54 +1691,54 @@
           "platform": "iqiyi",
           "title": "财神窦占龙",
           "poster": "https://pic2.iqiyipic.com/image/20260904/df/e6/a_100614442_m_601_m5_318_424.avif",
-          "episode": "第14集",
+          "episode": "第15集",
           "updateTime": "08:50",
           "date": "2026-11-08",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1u2saur7510.html",
+          "url": "https://www.iqiyi.com/v_20qcj472yyk.html",
           "badge": null,
           "albumId": "5560312844176701",
           "tvId": "6968113910081300",
           "rule": "每周日更新",
-          "duration": 1390,
-          "total": 15
+          "duration": 1410,
+          "total": 16
         },
         {
           "id": "iqiyi-2026-11-08-都市古仙医",
           "platform": "iqiyi",
           "title": "都市古仙医",
           "poster": "https://pic2.iqiyipic.com/image/20260717/4d/a6/a_100572131_m_601_m8_318_424.avif",
-          "episode": "第226集",
-          "updateTime": "15:25",
+          "episode": "第227集",
+          "updateTime": "08:55",
           "date": "2026-11-08",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1ndci9cf330.html",
+          "url": "https://www.iqiyi.com/v_pqy7o0317k.html",
           "badge": null,
           "albumId": "3784317657367801",
           "tvId": "5873959692828900",
           "rule": "每周三、日更新",
-          "duration": 586,
-          "total": 226
+          "duration": 571,
+          "total": 227
         },
         {
           "id": "iqiyi-2026-11-08-太古神尊",
           "platform": "iqiyi",
           "title": "太古神尊",
           "poster": "https://pic5.iqiyipic.com/image/20260714/58/dd/a_101211018_m_601_m1_318_424.avif",
-          "episode": "第32集",
+          "episode": "第33集",
           "updateTime": "09:00",
           "date": "2026-11-08",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_a2uvxocwd0.html",
+          "url": "https://www.iqiyi.com/v_exrm86v3vc.html",
           "badge": null,
           "albumId": "4862428556681501",
           "tvId": "8585280258960200",
           "rule": "每周四、日更新",
           "duration": 623,
-          "total": 33
+          "total": 34
         },
         {
           "id": "iqiyi-2026-11-08-大唐猫妖",
@@ -1772,7 +1774,7 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 125,
-          "total": 25
+          "total": 26
         },
         {
           "id": "iqiyi-2026-11-08-苍绝剑尊",
@@ -1797,36 +1799,36 @@
           "platform": "iqiyi",
           "title": "绝世武神 第九季",
           "poster": "https://pic9.iqiyipic.com/image/20261030/7f/2a/a_101506824_m_601_m1_318_424.avif",
-          "episode": "第13集",
+          "episode": "第14集",
           "updateTime": "10:00",
           "date": "2026-11-08",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_v0d2p7jk70.html",
+          "url": "https://www.iqiyi.com/v_22ms470t2uc.html",
           "badge": null,
           "albumId": "5492128747131801",
           "tvId": "2876265921094300",
           "rule": "每周六、日更新",
-          "duration": 595,
-          "total": 13
+          "duration": 603,
+          "total": 14
         },
         {
           "id": "iqiyi-2026-11-08-肥志百科  第15季",
           "platform": "iqiyi",
           "title": "肥志百科  第15季",
           "poster": "https://pic0.iqiyipic.com/image/20260929/61/f1/a_101572572_m_601_m1_318_424.avif",
-          "episode": "第6集",
+          "episode": "第7集",
           "updateTime": "10:00",
           "date": "2026-11-08",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1zry0sr3h58.html",
+          "url": "https://www.iqiyi.com/v_27i8m2fim8c.html",
           "badge": null,
           "albumId": "1900832246980701",
           "tvId": "3666399281150300",
           "rule": "每周日更新",
-          "duration": 411,
-          "total": 6
+          "duration": 370,
+          "total": 7
         },
         {
           "id": "iqiyi-2026-11-02-都市怪谈录",
@@ -3720,72 +3722,72 @@
           "platform": "iqiyi",
           "title": "我都大帝了怎么还被抢婚",
           "poster": "https://pic2.iqiyipic.com/image/20261030/88/0b/a_101736208_m_601_318_424.avif",
-          "episode": "第6集",
+          "episode": "第8集",
           "updateTime": "09:00",
           "date": "2026-11-05",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1nlmv7q2dck.html",
+          "url": "https://www.iqiyi.com/v_1b7qg6jmnps.html",
           "badge": null,
           "albumId": "3425749523459801",
           "tvId": "7974029883456300",
           "rule": "每周一、四、五、六、日更新",
           "duration": 239,
-          "total": 6
+          "total": 8
         },
         {
           "id": "iqiyi-2026-11-06-我都大帝了怎么还被抢婚",
           "platform": "iqiyi",
           "title": "我都大帝了怎么还被抢婚",
           "poster": "https://pic2.iqiyipic.com/image/20261030/88/0b/a_101736208_m_601_318_424.avif",
-          "episode": "第6集",
+          "episode": "第8集",
           "updateTime": "09:00",
           "date": "2026-11-06",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1nlmv7q2dck.html",
+          "url": "https://www.iqiyi.com/v_1b7qg6jmnps.html",
           "badge": null,
           "albumId": "3425749523459801",
           "tvId": "7974029883456300",
           "rule": "每周一、四、五、六、日更新",
           "duration": 239,
-          "total": 6
+          "total": 8
         },
         {
           "id": "iqiyi-2026-11-07-我都大帝了怎么还被抢婚",
           "platform": "iqiyi",
           "title": "我都大帝了怎么还被抢婚",
           "poster": "https://pic2.iqiyipic.com/image/20261030/88/0b/a_101736208_m_601_318_424.avif",
-          "episode": "第6集",
+          "episode": "第8集",
           "updateTime": "09:00",
           "date": "2026-11-07",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1nlmv7q2dck.html",
+          "url": "https://www.iqiyi.com/v_1b7qg6jmnps.html",
           "badge": null,
           "albumId": "3425749523459801",
           "tvId": "7974029883456300",
           "rule": "每周一、四、五、六、日更新",
           "duration": 239,
-          "total": 6
+          "total": 8
         },
         {
           "id": "iqiyi-2026-11-08-我都大帝了怎么还被抢婚",
           "platform": "iqiyi",
           "title": "我都大帝了怎么还被抢婚",
           "poster": "https://pic2.iqiyipic.com/image/20261030/88/0b/a_101736208_m_601_318_424.avif",
-          "episode": "第6集",
+          "episode": "第8集",
           "updateTime": "09:00",
           "date": "2026-11-08",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1nlmv7q2dck.html",
+          "url": "https://www.iqiyi.com/v_1b7qg6jmnps.html",
           "badge": null,
           "albumId": "3425749523459801",
           "tvId": "7974029883456300",
           "rule": "每周一、四、五、六、日更新",
           "duration": 239,
-          "total": 6
+          "total": 8
         },
         {
           "id": "bili-7540368",
@@ -3809,36 +3811,36 @@
           "platform": "iqiyi",
           "title": "我都大帝了怎么还被抢婚",
           "poster": "https://pic2.iqiyipic.com/image/20261030/88/0b/a_101736208_m_601_318_424.avif",
-          "episode": "第6集",
+          "episode": "第8集",
           "updateTime": "09:00",
           "date": "2026-11-02",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1nlmv7q2dck.html",
+          "url": "https://www.iqiyi.com/v_1b7qg6jmnps.html",
           "badge": null,
           "albumId": "3425749523459801",
           "tvId": "7974029883456300",
           "rule": "每周一、四、五、六、日更新",
           "duration": 239,
-          "total": 6
+          "total": 8
         },
         {
           "id": "iqiyi-2026-11-02-末世后的酒店",
           "platform": "iqiyi",
           "title": "末世后的酒店",
           "poster": "https://pic8.iqiyipic.com/image/20261103/7d/95/a_101748502_m_601_m1_318_424.avif",
-          "episode": "第7集",
+          "episode": "第10集",
           "updateTime": "09:00",
           "date": "2026-11-02",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_2ebo3wx8aeo.html",
+          "url": "https://www.iqiyi.com/v_1py5cf566zk.html",
           "badge": null,
           "albumId": "4572846685667501",
           "tvId": "8923794247157900",
           "rule": "每周一、四、五、六、日更新",
-          "duration": 188,
-          "total": 7
+          "duration": 198,
+          "total": 10
         },
         {
           "id": "iqiyi-2026-11-04-末世后的酒店",
@@ -3863,72 +3865,72 @@
           "platform": "iqiyi",
           "title": "末世后的酒店",
           "poster": "https://pic8.iqiyipic.com/image/20261103/7d/95/a_101748502_m_601_m1_318_424.avif",
-          "episode": "第7集",
+          "episode": "第10集",
           "updateTime": "09:00",
           "date": "2026-11-05",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_2ebo3wx8aeo.html",
+          "url": "https://www.iqiyi.com/v_1py5cf566zk.html",
           "badge": null,
           "albumId": "4572846685667501",
           "tvId": "8923794247157900",
           "rule": "每周一、四、五、六、日更新",
-          "duration": 188,
-          "total": 7
+          "duration": 198,
+          "total": 10
         },
         {
           "id": "iqiyi-2026-11-06-末世后的酒店",
           "platform": "iqiyi",
           "title": "末世后的酒店",
           "poster": "https://pic8.iqiyipic.com/image/20261103/7d/95/a_101748502_m_601_m1_318_424.avif",
-          "episode": "第7集",
+          "episode": "第10集",
           "updateTime": "09:00",
           "date": "2026-11-06",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_2ebo3wx8aeo.html",
+          "url": "https://www.iqiyi.com/v_1py5cf566zk.html",
           "badge": null,
           "albumId": "4572846685667501",
           "tvId": "8923794247157900",
           "rule": "每周一、四、五、六、日更新",
-          "duration": 188,
-          "total": 7
+          "duration": 198,
+          "total": 10
         },
         {
           "id": "iqiyi-2026-11-07-末世后的酒店",
           "platform": "iqiyi",
           "title": "末世后的酒店",
           "poster": "https://pic8.iqiyipic.com/image/20261103/7d/95/a_101748502_m_601_m1_318_424.avif",
-          "episode": "第7集",
+          "episode": "第10集",
           "updateTime": "09:00",
           "date": "2026-11-07",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_2ebo3wx8aeo.html",
+          "url": "https://www.iqiyi.com/v_1py5cf566zk.html",
           "badge": null,
           "albumId": "4572846685667501",
           "tvId": "8923794247157900",
           "rule": "每周一、四、五、六、日更新",
-          "duration": 188,
-          "total": 7
+          "duration": 198,
+          "total": 10
         },
         {
           "id": "iqiyi-2026-11-08-末世后的酒店",
           "platform": "iqiyi",
           "title": "末世后的酒店",
           "poster": "https://pic8.iqiyipic.com/image/20261103/7d/95/a_101748502_m_601_m1_318_424.avif",
-          "episode": "第7集",
+          "episode": "第10集",
           "updateTime": "09:00",
           "date": "2026-11-08",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_2ebo3wx8aeo.html",
+          "url": "https://www.iqiyi.com/v_1py5cf566zk.html",
           "badge": null,
           "albumId": "4572846685667501",
           "tvId": "8923794247157900",
           "rule": "每周一、四、五、六、日更新",
-          "duration": 188,
-          "total": 7
+          "duration": 198,
+          "total": 10
         },
         {
           "id": "bili-7583454",
