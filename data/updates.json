@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T02:42:08.254Z",
+  "generatedAt": "2026-11-11T18:23:42.936Z",
   "platforms": [
     {
       "platform": "bili",
@@ -87,7 +87,7 @@
           "total": 52
         },
         {
-          "id": "bili-5450391",
+          "id": "bili-7744266",
           "platform": "bili",
           "title": "雪王来了！",
           "poster": "https://i0.hdslb.com/bfs/bangumi/image/0d62cdccd8fded354a11ef83cbfb051537a13daf.jpg",
@@ -376,7 +376,7 @@
           "predicted": true
         },
         {
-          "id": "bili-5450391-pred",
+          "id": "bili-7744266-pred",
           "platform": "bili",
           "title": "雪王来了！",
           "poster": "https://i0.hdslb.com/bfs/bangumi/image/0d62cdccd8fded354a11ef83cbfb051537a13daf.jpg",
@@ -591,7 +591,7 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-11-11T02:29:08.993Z",
+      "fetchedAt": "2026-11-11T18:18:00.604Z",
       "warnings": [
         "已保留 4 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已生成下周预计排期 17 条（本周未完结条目 +7 天推导，前端标「预计」）"
@@ -3799,9 +3799,10 @@
       "warnings": [
         "已保留 138 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "过滤 89 条不在本周（2026-11-09~2026-11-15）的条目",
-        "7 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
+        "6 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
+        "1 条豆瓣查询失败（反爬/网络），已保留",
         "已生成下周预计排期 89 条（本周未完结条目 +7 天推导，前端标「预计」）",
-        "警告：今天（2026-11-11）未抓到真实条目（回退数据），请核查星期 tab/日期映射"
+        "警告：今天（2026-11-12）未抓到真实条目（回退数据），请核查星期 tab/日期映射"
       ]
     },
     {
@@ -4965,7 +4966,7 @@
           "predicted": true
         }
       ],
-      "error": "超时（>480s）",
+      "error": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://v.qq.com/channel/cartoon\", waiting until \"domcontentloaded\"\n",
       "fetchedAt": "2026-11-10T18:36:18.938Z",
       "warnings": [
         "已保留 6 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
@@ -5100,7 +5101,7 @@
           "badge": null,
           "albumId": "2844981449721601",
           "tvId": "1719542768689300",
-          "rule": "每周一、二、日更新",
+          "rule": "每周一、二更新",
           "duration": 173,
           "total": 43
         },
@@ -5190,7 +5191,7 @@
           "badge": null,
           "albumId": "2844981449721601",
           "tvId": "1719542768689300",
-          "rule": "每周一、二、日更新",
+          "rule": "每周一、二更新",
           "duration": 173,
           "total": 43
         },
@@ -5319,6 +5320,24 @@
           "rule": "每日更新",
           "duration": 128,
           "total": 29
+        },
+        {
+          "id": "iqiyi-2026-11-11-打卡修仙万念执灯",
+          "platform": "iqiyi",
+          "title": "打卡修仙万念执灯",
+          "poster": "https://pic1.iqiyipic.com/image/20261111/4c/95/a_101785573_m_601_m1_318_424.avif",
+          "episode": "第3集",
+          "updateTime": "11:00",
+          "date": "2026-11-11",
+          "weekday": 3,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_26254rg67ks.html",
+          "badge": null,
+          "albumId": "1707510277686201",
+          "tvId": "1308031689133400",
+          "rule": "每周三、五、六、日更新",
+          "duration": 300,
+          "total": 3
         },
         {
           "id": "iqiyi-2026-11-12-逆天邪神年番",
@@ -5609,6 +5628,24 @@
           "total": 18
         },
         {
+          "id": "iqiyi-2026-11-13-打卡修仙万念执灯",
+          "platform": "iqiyi",
+          "title": "打卡修仙万念执灯",
+          "poster": "https://pic1.iqiyipic.com/image/20261111/4c/95/a_101785573_m_601_m1_318_424.avif",
+          "episode": "第3集",
+          "updateTime": "11:00",
+          "date": "2026-11-13",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_26254rg67ks.html",
+          "badge": null,
+          "albumId": "1707510277686201",
+          "tvId": "1308031689133400",
+          "rule": "每周三、五、六、日更新",
+          "duration": 300,
+          "total": 3
+        },
+        {
           "id": "iqiyi-2026-11-13-雪王来了！",
           "platform": "iqiyi",
           "title": "雪王来了！",
@@ -5753,6 +5790,24 @@
           "total": 40
         },
         {
+          "id": "iqiyi-2026-11-14-打卡修仙万念执灯",
+          "platform": "iqiyi",
+          "title": "打卡修仙万念执灯",
+          "poster": "https://pic1.iqiyipic.com/image/20261111/4c/95/a_101785573_m_601_m1_318_424.avif",
+          "episode": "第3集",
+          "updateTime": "11:00",
+          "date": "2026-11-14",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_26254rg67ks.html",
+          "badge": null,
+          "albumId": "1707510277686201",
+          "tvId": "1308031689133400",
+          "rule": "每周三、五、六、日更新",
+          "duration": 300,
+          "total": 3
+        },
+        {
           "id": "iqiyi-2026-11-14-万人嫌我转修无情道",
           "platform": "iqiyi",
           "title": "万人嫌我转修无情道",
@@ -5825,42 +5880,6 @@
           "total": 34
         },
         {
-          "id": "iqiyi-2026-11-15-我都大帝了怎么还被抢婚",
-          "platform": "iqiyi",
-          "title": "我都大帝了怎么还被抢婚",
-          "poster": "https://pic2.iqiyipic.com/image/20261030/88/0b/a_101736208_m_601_318_424.avif",
-          "episode": "14集全",
-          "updateTime": "09:00",
-          "date": "2026-11-15",
-          "weekday": 7,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1rv6i2esyq8.html",
-          "badge": null,
-          "albumId": "3425749523459801",
-          "tvId": "7974029883456300",
-          "duration": 260,
-          "total": 14,
-          "finished": true
-        },
-        {
-          "id": "iqiyi-2026-11-15-末世后的酒店",
-          "platform": "iqiyi",
-          "title": "末世后的酒店",
-          "poster": "https://pic8.iqiyipic.com/image/20261103/7d/95/a_101748502_m_601_m1_318_424.avif",
-          "episode": "20集全",
-          "updateTime": "09:00",
-          "date": "2026-11-15",
-          "weekday": 7,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1pv2jg07xz8.html",
-          "badge": null,
-          "albumId": "4572846685667501",
-          "tvId": "8923794247157900",
-          "duration": 198,
-          "total": 20,
-          "finished": true
-        },
-        {
           "id": "iqiyi-2026-11-15-高危禁药 我却越喝越强",
           "platform": "iqiyi",
           "title": "高危禁药 我却越喝越强",
@@ -5915,22 +5934,22 @@
           "total": 7
         },
         {
-          "id": "iqiyi-2026-11-15-都市怪谈录",
+          "id": "iqiyi-2026-11-15-打卡修仙万念执灯",
           "platform": "iqiyi",
-          "title": "都市怪谈录",
-          "poster": "https://pic6.iqiyipic.com/image/20260916/25/3c/a_101494481_m_601_318_424.avif",
-          "episode": "第43集",
-          "updateTime": "12:00",
+          "title": "打卡修仙万念执灯",
+          "poster": "https://pic1.iqiyipic.com/image/20261111/4c/95/a_101785573_m_601_m1_318_424.avif",
+          "episode": "第3集",
+          "updateTime": "11:00",
           "date": "2026-11-15",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1269579yw9c.html",
+          "url": "https://www.iqiyi.com/v_26254rg67ks.html",
           "badge": null,
-          "albumId": "2844981449721601",
-          "tvId": "1719542768689300",
-          "rule": "每周一、二、日更新",
-          "duration": 173,
-          "total": 43
+          "albumId": "1707510277686201",
+          "tvId": "1308031689133400",
+          "rule": "每周三、五、六、日更新",
+          "duration": 300,
+          "total": 3
         },
         {
           "id": "iqiyi-2026-11-09-界门之下-pred",
@@ -6022,7 +6041,7 @@
           "badge": null,
           "albumId": "2844981449721601",
           "tvId": "1719542768689300",
-          "rule": "每周一、二、日更新",
+          "rule": "每周一、二更新",
           "duration": 173,
           "total": 43,
           "predicted": true
@@ -6117,7 +6136,7 @@
           "badge": null,
           "albumId": "2844981449721601",
           "tvId": "1719542768689300",
-          "rule": "每周一、二、日更新",
+          "rule": "每周一、二更新",
           "duration": 173,
           "total": 43,
           "predicted": true
@@ -6234,6 +6253,25 @@
           "rule": "每日更新",
           "duration": 128,
           "total": 29,
+          "predicted": true
+        },
+        {
+          "id": "iqiyi-2026-11-11-打卡修仙万念执灯-pred",
+          "platform": "iqiyi",
+          "title": "打卡修仙万念执灯",
+          "poster": "https://pic1.iqiyipic.com/image/20261111/4c/95/a_101785573_m_601_m1_318_424.avif",
+          "episode": "第4集",
+          "updateTime": "11:00",
+          "date": "2026-11-18",
+          "weekday": 3,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_26254rg67ks.html",
+          "badge": null,
+          "albumId": "1707510277686201",
+          "tvId": "1308031689133400",
+          "rule": "每周三、五、六、日更新",
+          "duration": 300,
+          "total": 3,
           "predicted": true
         },
         {
@@ -6541,6 +6579,25 @@
           "predicted": true
         },
         {
+          "id": "iqiyi-2026-11-13-打卡修仙万念执灯-pred",
+          "platform": "iqiyi",
+          "title": "打卡修仙万念执灯",
+          "poster": "https://pic1.iqiyipic.com/image/20261111/4c/95/a_101785573_m_601_m1_318_424.avif",
+          "episode": "第4集",
+          "updateTime": "11:00",
+          "date": "2026-11-20",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_26254rg67ks.html",
+          "badge": null,
+          "albumId": "1707510277686201",
+          "tvId": "1308031689133400",
+          "rule": "每周三、五、六、日更新",
+          "duration": 300,
+          "total": 3,
+          "predicted": true
+        },
+        {
           "id": "iqiyi-2026-11-13-雪王来了！-pred",
           "platform": "iqiyi",
           "title": "雪王来了！",
@@ -6693,6 +6750,25 @@
           "predicted": true
         },
         {
+          "id": "iqiyi-2026-11-14-打卡修仙万念执灯-pred",
+          "platform": "iqiyi",
+          "title": "打卡修仙万念执灯",
+          "poster": "https://pic1.iqiyipic.com/image/20261111/4c/95/a_101785573_m_601_m1_318_424.avif",
+          "episode": "第4集",
+          "updateTime": "11:00",
+          "date": "2026-11-21",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_26254rg67ks.html",
+          "badge": null,
+          "albumId": "1707510277686201",
+          "tvId": "1308031689133400",
+          "rule": "每周三、五、六、日更新",
+          "duration": 300,
+          "total": 3,
+          "predicted": true
+        },
+        {
           "id": "iqiyi-2026-11-14-万人嫌我转修无情道-pred",
           "platform": "iqiyi",
           "title": "万人嫌我转修无情道",
@@ -6826,28 +6902,27 @@
           "predicted": true
         },
         {
-          "id": "iqiyi-2026-11-15-都市怪谈录-pred",
+          "id": "iqiyi-2026-11-15-打卡修仙万念执灯-pred",
           "platform": "iqiyi",
-          "title": "都市怪谈录",
-          "poster": "https://pic6.iqiyipic.com/image/20260916/25/3c/a_101494481_m_601_318_424.avif",
-          "episode": "第44集",
-          "updateTime": "12:00",
+          "title": "打卡修仙万念执灯",
+          "poster": "https://pic1.iqiyipic.com/image/20261111/4c/95/a_101785573_m_601_m1_318_424.avif",
+          "episode": "第4集",
+          "updateTime": "11:00",
           "date": "2026-11-22",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1269579yw9c.html",
+          "url": "https://www.iqiyi.com/v_26254rg67ks.html",
           "badge": null,
-          "albumId": "2844981449721601",
-          "tvId": "1719542768689300",
-          "rule": "每周一、二、日更新",
-          "duration": 173,
-          "total": 43,
+          "albumId": "1707510277686201",
+          "tvId": "1308031689133400",
+          "rule": "每周三、五、六、日更新",
+          "duration": 300,
+          "total": 3,
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-11-11T02:42:08.254Z",
+      "fetchedAt": "2026-11-11T18:23:42.936Z",
       "warnings": [
-        "内容类型排除（动态漫/AI动漫/泡面番）：我真没想重生啊 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：末世钞能力者 动态漫画",
@@ -6862,10 +6937,11 @@
         "内容类型排除（动态漫/AI动漫/泡面番）：神级奸商：全服求我别薅了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：我真没想重生啊 动态漫画",
-        "已保留 23 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "内容类型排除（动态漫/AI动漫/泡面番）：我真没想重生啊 动态漫画",
+        "已保留 20 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已排除 15 条动态漫/AI动漫/泡面番条目",
-        "已生成下周预计排期 48 条（本周未完结条目 +7 天推导，前端标「预计」）",
-        "5 条剧集已完结，不生成下周排期"
+        "已生成下周预计排期 51 条（本周未完结条目 +7 天推导，前端标「预计」）",
+        "3 条剧集已完结，不生成下周排期"
       ]
     }
   ]
