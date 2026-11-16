@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T02:37:43.708Z",
+  "generatedAt": "2026-11-16T20:57:26.004Z",
   "platforms": [
     {
       "platform": "bili",
@@ -352,11 +352,11 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-11-16T02:32:19.458Z",
+      "fetchedAt": "2026-11-16T20:46:45.323Z",
       "warnings": [
         "已保留 2 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已生成下周预计排期 10 条（本周未完结条目 +7 天推导，前端标「预计」）",
-        "警告：今天（2026-11-16）未抓到真实条目，请核查星期 tab/日期映射（爱奇艺「今天」/优酷「今」）"
+        "警告：今天（2026-11-17）未抓到真实条目，请核查星期 tab/日期映射（爱奇艺「今天」/优酷「今」）"
       ]
     },
     {
@@ -3561,9 +3561,10 @@
       "warnings": [
         "已保留 138 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "过滤 89 条不在本周（2026-11-16~2026-11-22）的条目",
-        "7 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
+        "6 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
+        "1 条豆瓣查询失败（反爬/网络），已保留",
         "已生成下周预计排期 89 条（本周未完结条目 +7 天推导，前端标「预计」）",
-        "警告：今天（2026-11-16）未抓到真实条目（回退数据），请核查星期 tab/日期映射"
+        "警告：今天（2026-11-17）未抓到真实条目（回退数据），请核查星期 tab/日期映射"
       ]
     },
     {
@@ -3576,13 +3577,13 @@
           "title": "无上神帝",
           "rule": "每周一、五10:00更新1集，新篇章3月9日开始更新",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200ilydv1a1781927184923/750?imageMogr2/thumbnail/400x",
-          "episode": "第656集",
+          "episode": "第658集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-16",
           "weekday": 1,
           "svip": false,
-          "url": "https://v.qq.com/x/page/a4102a7ydob.html",
+          "url": "https://v.qq.com/x/page/a4102iuzbqh.html",
           "badge": "独播",
           "duration": 468
         },
@@ -3592,13 +3593,13 @@
           "title": "逆天至尊",
           "rule": "每周一、五10点更1集，新篇章3月9日开始更新",
           "poster": "https://puui.qpic.cn/vcover_hz_pic/0/mzc00200azkttu21691465584683/750?imageMogr2/thumbnail/400x",
-          "episode": "第566集",
+          "episode": "第567集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-16",
           "weekday": 1,
           "svip": false,
-          "url": "https://v.qq.com/x/page/v4102gdqhm8.html",
+          "url": "https://v.qq.com/x/page/e4102rr5dpn.html",
           "badge": "独播",
           "duration": 715
         },
@@ -3607,16 +3608,16 @@
           "platform": "tencent",
           "title": "吞噬星空",
           "rule": "VIP用户每周二10点更新。SVIP会员权益加码，抢先1天看更新集（每周一18:00）",
-          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/324olz7ilvo2j5f1794214305854/750?imageMogr2/thumbnail/400x",
-          "episode": "第249集",
+          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/324olz7ilvo2j5f1794816461493/750?imageMogr2/thumbnail/400x",
+          "episode": "第250集",
           "total": null,
           "updateTime": "18:00",
           "date": "2026-11-16",
           "weekday": 1,
           "svip": true,
-          "url": "https://v.qq.com/x/page/o4102j4wv0z.html",
-          "badge": "独播",
-          "duration": 1289
+          "url": "https://v.qq.com/x/page/j4102d7zizh.html",
+          "badge": "上新",
+          "duration": 1367
         },
         {
           "id": "tencent-mzc002006n62s11-2026-11-17",
@@ -3743,7 +3744,7 @@
           "weekday": 3,
           "svip": true,
           "url": "https://v.qq.com/x/page/d4102a581wy.html",
-          "badge": "上新",
+          "badge": "独播",
           "duration": 1341
         },
         {
@@ -3790,7 +3791,7 @@
           "date": "2026-11-18",
           "weekday": 3,
           "svip": true,
-          "url": "https://v.qq.com/x/cover/mzc0020082u0tna.html",
+          "url": "https://v.qq.com/x/page/p4102g20fp0.html",
           "badge": "独播",
           "duration": 1295
         },
@@ -3865,15 +3866,31 @@
           "title": "无上神帝",
           "rule": "每周一、五10:00更新1集，新篇章3月9日开始更新",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200ilydv1a1781927184923/750?imageMogr2/thumbnail/400x",
-          "episode": "第656集",
+          "episode": "第658集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-20",
           "weekday": 5,
           "svip": false,
-          "url": "https://v.qq.com/x/page/a4102a7ydob.html",
+          "url": "https://v.qq.com/x/page/a4102iuzbqh.html",
           "badge": "独播",
           "duration": 468
+        },
+        {
+          "id": "tencent-mzc00200azkttu2-2026-11-20",
+          "platform": "tencent",
+          "title": "逆天至尊",
+          "rule": "每周一、五10点更1集，新篇章3月9日开始更新",
+          "poster": "https://puui.qpic.cn/vcover_hz_pic/0/mzc00200azkttu21691465584683/750?imageMogr2/thumbnail/400x",
+          "episode": "第567集",
+          "total": null,
+          "updateTime": "10:00",
+          "date": "2026-11-20",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://v.qq.com/x/page/e4102rr5dpn.html",
+          "badge": "独播",
+          "duration": 715
         },
         {
           "id": "tencent-mzc00200r33k6xc-2026-11-20",
@@ -3890,22 +3907,6 @@
           "url": "https://v.qq.com/x/page/t4102urjsnv.html",
           "badge": "独播",
           "duration": 439
-        },
-        {
-          "id": "tencent-mzc00200azkttu2-2026-11-20",
-          "platform": "tencent",
-          "title": "逆天至尊",
-          "rule": "每周一、五10点更1集，新篇章3月9日开始更新",
-          "poster": "https://puui.qpic.cn/vcover_hz_pic/0/mzc00200azkttu21691465584683/750?imageMogr2/thumbnail/400x",
-          "episode": "第566集",
-          "total": null,
-          "updateTime": "10:00",
-          "date": "2026-11-20",
-          "weekday": 5,
-          "svip": false,
-          "url": "https://v.qq.com/x/page/v4102gdqhm8.html",
-          "badge": "独播",
-          "duration": 715
         },
         {
           "id": "tencent-mzc00200d3knq49-2026-11-20",
@@ -3951,9 +3952,9 @@
           "date": "2026-11-20",
           "weekday": 5,
           "svip": true,
-          "url": "https://v.qq.com/x/cover/mzc00200xf3rir6.html",
+          "url": "https://v.qq.com/x/page/w4102w7xszx.html",
           "badge": "独播",
-          "duration": 1294
+          "duration": 1277
         },
         {
           "id": "tencent-mzc00200gkkin7o-2026-11-21",
@@ -3968,7 +3969,7 @@
           "weekday": 6,
           "svip": true,
           "url": "https://v.qq.com/x/page/d4102a581wy.html",
-          "badge": "上新",
+          "badge": "独播",
           "duration": 1341
         },
         {
@@ -3983,7 +3984,7 @@
           "date": "2026-11-21",
           "weekday": 6,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc002002qg0pbc.html",
+          "url": "https://v.qq.com/x/page/a41028i21a0.html",
           "badge": "独播",
           "duration": 845
         },
@@ -4004,22 +4005,6 @@
           "duration": 1451
         },
         {
-          "id": "tencent-mzc002006n62s11-2026-11-21",
-          "platform": "tencent",
-          "title": "炼气十万年",
-          "rule": "每周二、周六10点更新",
-          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc002006n62s111722876262898/750?imageMogr2/thumbnail/400x",
-          "episode": "第394集",
-          "total": null,
-          "updateTime": "10:00",
-          "date": "2026-11-21",
-          "weekday": 6,
-          "svip": false,
-          "url": "https://v.qq.com/x/page/x41020pu1mk.html",
-          "badge": "独播",
-          "duration": 738
-        },
-        {
           "id": "tencent-yl6lapwmmx5ivew-2026-11-21",
           "platform": "tencent",
           "title": "妖神记",
@@ -4035,6 +4020,22 @@
           "badge": "结局点映、大结局",
           "duration": 472,
           "finished": true
+        },
+        {
+          "id": "tencent-mzc002006n62s11-2026-11-21",
+          "platform": "tencent",
+          "title": "炼气十万年",
+          "rule": "每周二、周六10点更新",
+          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc002006n62s111722876262898/750?imageMogr2/thumbnail/400x",
+          "episode": "第394集",
+          "total": null,
+          "updateTime": "10:00",
+          "date": "2026-11-21",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://v.qq.com/x/page/x41020pu1mk.html",
+          "badge": "独播",
+          "duration": 738
         },
         {
           "id": "tencent-mzc00200cu8uq8c-2026-11-21",
@@ -4106,13 +4107,13 @@
           "title": "无上神帝",
           "rule": "每周一、五10:00更新1集，新篇章3月9日开始更新",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200ilydv1a1781927184923/750?imageMogr2/thumbnail/400x",
-          "episode": "第657集",
+          "episode": "第659集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-23",
           "weekday": 1,
           "svip": false,
-          "url": "https://v.qq.com/x/page/a4102a7ydob.html",
+          "url": "https://v.qq.com/x/page/a4102iuzbqh.html",
           "badge": "独播",
           "duration": 468,
           "predicted": true
@@ -4123,13 +4124,13 @@
           "title": "逆天至尊",
           "rule": "每周一、五10点更1集，新篇章3月9日开始更新",
           "poster": "https://puui.qpic.cn/vcover_hz_pic/0/mzc00200azkttu21691465584683/750?imageMogr2/thumbnail/400x",
-          "episode": "第567集",
+          "episode": "第568集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-23",
           "weekday": 1,
           "svip": false,
-          "url": "https://v.qq.com/x/page/v4102gdqhm8.html",
+          "url": "https://v.qq.com/x/page/e4102rr5dpn.html",
           "badge": "独播",
           "duration": 715,
           "predicted": true
@@ -4139,16 +4140,16 @@
           "platform": "tencent",
           "title": "吞噬星空",
           "rule": "VIP用户每周二10点更新。SVIP会员权益加码，抢先1天看更新集（每周一18:00）",
-          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/324olz7ilvo2j5f1794214305854/750?imageMogr2/thumbnail/400x",
-          "episode": "第250集",
+          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/324olz7ilvo2j5f1794816461493/750?imageMogr2/thumbnail/400x",
+          "episode": "第251集",
           "total": null,
           "updateTime": "18:00",
           "date": "2026-11-23",
           "weekday": 1,
           "svip": true,
-          "url": "https://v.qq.com/x/page/o4102j4wv0z.html",
-          "badge": "独播",
-          "duration": 1289,
+          "url": "https://v.qq.com/x/page/j4102d7zizh.html",
+          "badge": "上新",
+          "duration": 1367,
           "predicted": true
         },
         {
@@ -4283,7 +4284,7 @@
           "weekday": 3,
           "svip": true,
           "url": "https://v.qq.com/x/page/d4102a581wy.html",
-          "badge": "上新",
+          "badge": "独播",
           "duration": 1341,
           "predicted": true
         },
@@ -4333,7 +4334,7 @@
           "date": "2026-11-25",
           "weekday": 3,
           "svip": true,
-          "url": "https://v.qq.com/x/cover/mzc0020082u0tna.html",
+          "url": "https://v.qq.com/x/page/p4102g20fp0.html",
           "badge": "独播",
           "duration": 1295,
           "predicted": true
@@ -4395,15 +4396,32 @@
           "title": "无上神帝",
           "rule": "每周一、五10:00更新1集，新篇章3月9日开始更新",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200ilydv1a1781927184923/750?imageMogr2/thumbnail/400x",
-          "episode": "第657集",
+          "episode": "第659集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-27",
           "weekday": 5,
           "svip": false,
-          "url": "https://v.qq.com/x/page/a4102a7ydob.html",
+          "url": "https://v.qq.com/x/page/a4102iuzbqh.html",
           "badge": "独播",
           "duration": 468,
+          "predicted": true
+        },
+        {
+          "id": "tencent-mzc00200azkttu2-2026-11-20-pred",
+          "platform": "tencent",
+          "title": "逆天至尊",
+          "rule": "每周一、五10点更1集，新篇章3月9日开始更新",
+          "poster": "https://puui.qpic.cn/vcover_hz_pic/0/mzc00200azkttu21691465584683/750?imageMogr2/thumbnail/400x",
+          "episode": "第568集",
+          "total": null,
+          "updateTime": "10:00",
+          "date": "2026-11-27",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://v.qq.com/x/page/e4102rr5dpn.html",
+          "badge": "独播",
+          "duration": 715,
           "predicted": true
         },
         {
@@ -4421,23 +4439,6 @@
           "url": "https://v.qq.com/x/page/t4102urjsnv.html",
           "badge": "独播",
           "duration": 439,
-          "predicted": true
-        },
-        {
-          "id": "tencent-mzc00200azkttu2-2026-11-20-pred",
-          "platform": "tencent",
-          "title": "逆天至尊",
-          "rule": "每周一、五10点更1集，新篇章3月9日开始更新",
-          "poster": "https://puui.qpic.cn/vcover_hz_pic/0/mzc00200azkttu21691465584683/750?imageMogr2/thumbnail/400x",
-          "episode": "第567集",
-          "total": null,
-          "updateTime": "10:00",
-          "date": "2026-11-27",
-          "weekday": 5,
-          "svip": false,
-          "url": "https://v.qq.com/x/page/v4102gdqhm8.html",
-          "badge": "独播",
-          "duration": 715,
           "predicted": true
         },
         {
@@ -4486,9 +4487,9 @@
           "date": "2026-11-27",
           "weekday": 5,
           "svip": true,
-          "url": "https://v.qq.com/x/cover/mzc00200xf3rir6.html",
+          "url": "https://v.qq.com/x/page/w4102w7xszx.html",
           "badge": "独播",
-          "duration": 1294,
+          "duration": 1277,
           "predicted": true
         },
         {
@@ -4504,7 +4505,7 @@
           "weekday": 6,
           "svip": true,
           "url": "https://v.qq.com/x/page/d4102a581wy.html",
-          "badge": "上新",
+          "badge": "独播",
           "duration": 1341,
           "predicted": true
         },
@@ -4520,7 +4521,7 @@
           "date": "2026-11-28",
           "weekday": 6,
           "svip": false,
-          "url": "https://v.qq.com/x/cover/mzc002002qg0pbc.html",
+          "url": "https://v.qq.com/x/page/a41028i21a0.html",
           "badge": "独播",
           "duration": 845,
           "predicted": true
@@ -4628,11 +4629,9 @@
           "predicted": true
         }
       ],
-      "error": "page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://v.qq.com/channel/cartoon\nCall log:\n  - navigating to \"https://v.qq.com/channel/cartoon\", waiting until \"domcontentloaded\"\n",
-      "fetchedAt": "2026-11-15T17:43:56.524Z",
+      "fetchedAt": "2026-11-16T20:56:50.351Z",
       "warnings": [
-        "已保留 2 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "过滤 31 条不在本周（2026-11-16~2026-11-22）的条目",
+        "已保留 1 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已生成下周预计排期 31 条（本周未完结条目 +7 天推导，前端标「预计」）",
         "2 条剧集已完结，不生成下周排期"
       ]
@@ -4660,24 +4659,6 @@
           "finished": true
         },
         {
-          "id": "iqiyi-2026-11-16-高危禁药 我却越喝越强",
-          "platform": "iqiyi",
-          "title": "高危禁药 我却越喝越强",
-          "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
-          "episode": "第33集",
-          "updateTime": "09:00",
-          "date": "2026-11-16",
-          "weekday": 1,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_2aux5hxkh3o.html",
-          "badge": null,
-          "albumId": "7588188107173301",
-          "tvId": "5780908455762200",
-          "rule": "每日更新",
-          "duration": 134,
-          "total": 33
-        },
-        {
           "id": "iqiyi-2026-11-16-灵武大陆",
           "platform": "iqiyi",
           "title": "灵武大陆",
@@ -4694,6 +4675,24 @@
           "rule": "每周一、五更新",
           "duration": 613,
           "total": 234
+        },
+        {
+          "id": "iqiyi-2026-11-16-高危禁药 我却越喝越强",
+          "platform": "iqiyi",
+          "title": "高危禁药 我却越喝越强",
+          "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
+          "episode": "第34集",
+          "updateTime": "14:06",
+          "date": "2026-11-16",
+          "weekday": 1,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1ro9yb3lblw.html",
+          "badge": null,
+          "albumId": "7588188107173301",
+          "tvId": "5780908455762200",
+          "rule": "每日更新",
+          "duration": 137,
+          "total": 34
         },
         {
           "id": "iqiyi-2026-11-17-宗门修仙传",
@@ -4714,24 +4713,6 @@
           "total": 13
         },
         {
-          "id": "iqiyi-2026-11-17-高危禁药 我却越喝越强",
-          "platform": "iqiyi",
-          "title": "高危禁药 我却越喝越强",
-          "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
-          "episode": "第33集",
-          "updateTime": "09:00",
-          "date": "2026-11-17",
-          "weekday": 2,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_2aux5hxkh3o.html",
-          "badge": null,
-          "albumId": "7588188107173301",
-          "tvId": "5780908455762200",
-          "rule": "每日更新",
-          "duration": 134,
-          "total": 33
-        },
-        {
           "id": "iqiyi-2026-11-17-万人嫌我转修无情道",
           "platform": "iqiyi",
           "title": "万人嫌我转修无情道",
@@ -4748,6 +4729,24 @@
           "rule": "每周二、四、六更新",
           "duration": 1126,
           "total": 7
+        },
+        {
+          "id": "iqiyi-2026-11-17-高危禁药 我却越喝越强",
+          "platform": "iqiyi",
+          "title": "高危禁药 我却越喝越强",
+          "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
+          "episode": "第34集",
+          "updateTime": "14:06",
+          "date": "2026-11-17",
+          "weekday": 2,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1ro9yb3lblw.html",
+          "badge": null,
+          "albumId": "7588188107173301",
+          "tvId": "5780908455762200",
+          "rule": "每日更新",
+          "duration": 137,
+          "total": 34
         },
         {
           "id": "iqiyi-2026-11-18-大千小镇",
@@ -4804,22 +4803,40 @@
           "total": 7
         },
         {
+          "id": "iqiyi-2026-11-18-小魔女蒙娜.",
+          "platform": "iqiyi",
+          "title": "小魔女蒙娜.",
+          "poster": "https://pic5.iqiyipic.com/image/20261023/b0/11/a_101702949_m_601_318_424.avif",
+          "episode": "第16集",
+          "updateTime": "10:00",
+          "date": "2026-11-18",
+          "weekday": 3,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1asotftlo88.html",
+          "badge": null,
+          "albumId": "6808482903208101",
+          "tvId": "6345633212573600",
+          "rule": "每周三更新",
+          "duration": 1382,
+          "total": 16
+        },
+        {
           "id": "iqiyi-2026-11-18-高危禁药 我却越喝越强",
           "platform": "iqiyi",
           "title": "高危禁药 我却越喝越强",
           "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
-          "episode": "第33集",
-          "updateTime": "09:00",
+          "episode": "第34集",
+          "updateTime": "14:06",
           "date": "2026-11-18",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_2aux5hxkh3o.html",
+          "url": "https://www.iqiyi.com/v_1ro9yb3lblw.html",
           "badge": null,
           "albumId": "7588188107173301",
           "tvId": "5780908455762200",
           "rule": "每日更新",
-          "duration": 134,
-          "total": 33
+          "duration": 137,
+          "total": 34
         },
         {
           "id": "iqiyi-2026-11-19-逆天邪神年番",
@@ -4876,24 +4893,6 @@
           "total": 15
         },
         {
-          "id": "iqiyi-2026-11-19-高危禁药 我却越喝越强",
-          "platform": "iqiyi",
-          "title": "高危禁药 我却越喝越强",
-          "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
-          "episode": "第33集",
-          "updateTime": "09:00",
-          "date": "2026-11-19",
-          "weekday": 4,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_2aux5hxkh3o.html",
-          "badge": null,
-          "albumId": "7588188107173301",
-          "tvId": "5780908455762200",
-          "rule": "每日更新",
-          "duration": 134,
-          "total": 33
-        },
-        {
           "id": "iqiyi-2026-11-19-万人嫌我转修无情道",
           "platform": "iqiyi",
           "title": "万人嫌我转修无情道",
@@ -4928,6 +4927,24 @@
           "rule": "每周四、五更新",
           "duration": 422,
           "total": 30
+        },
+        {
+          "id": "iqiyi-2026-11-19-高危禁药 我却越喝越强",
+          "platform": "iqiyi",
+          "title": "高危禁药 我却越喝越强",
+          "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
+          "episode": "第34集",
+          "updateTime": "14:06",
+          "date": "2026-11-19",
+          "weekday": 4,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1ro9yb3lblw.html",
+          "badge": null,
+          "albumId": "7588188107173301",
+          "tvId": "5780908455762200",
+          "rule": "每日更新",
+          "duration": 137,
+          "total": 34
         },
         {
           "id": "iqiyi-2026-11-20-打卡修仙万念执灯",
@@ -4984,24 +5001,6 @@
           "total": 33
         },
         {
-          "id": "iqiyi-2026-11-20-替嫁王妃宠王记",
-          "platform": "iqiyi",
-          "title": "替嫁王妃宠王记",
-          "poster": "https://pic9.iqiyipic.com/image/20261103/70/d1/a_101752065_m_601_m1_318_424.avif",
-          "episode": "16集全",
-          "updateTime": "09:00",
-          "date": "2026-11-20",
-          "weekday": 5,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1jx0xfvd938.html",
-          "badge": null,
-          "albumId": "7671613355335601",
-          "tvId": "2868244262857400",
-          "duration": 185,
-          "total": 16,
-          "finished": true
-        },
-        {
           "id": "iqiyi-2026-11-20-宗门修仙传",
           "platform": "iqiyi",
           "title": "宗门修仙传",
@@ -5056,24 +5055,6 @@
           "total": 15
         },
         {
-          "id": "iqiyi-2026-11-20-高危禁药 我却越喝越强",
-          "platform": "iqiyi",
-          "title": "高危禁药 我却越喝越强",
-          "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
-          "episode": "第33集",
-          "updateTime": "09:00",
-          "date": "2026-11-20",
-          "weekday": 5,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_2aux5hxkh3o.html",
-          "badge": null,
-          "albumId": "7588188107173301",
-          "tvId": "5780908455762200",
-          "rule": "每日更新",
-          "duration": 134,
-          "total": 33
-        },
-        {
           "id": "iqiyi-2026-11-20-灵武大陆",
           "platform": "iqiyi",
           "title": "灵武大陆",
@@ -5126,6 +5107,24 @@
           "rule": "每周四、五更新",
           "duration": 422,
           "total": 30
+        },
+        {
+          "id": "iqiyi-2026-11-20-高危禁药 我却越喝越强",
+          "platform": "iqiyi",
+          "title": "高危禁药 我却越喝越强",
+          "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
+          "episode": "第34集",
+          "updateTime": "14:06",
+          "date": "2026-11-20",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1ro9yb3lblw.html",
+          "badge": null,
+          "albumId": "7588188107173301",
+          "tvId": "5780908455762200",
+          "rule": "每日更新",
+          "duration": 137,
+          "total": 34
         },
         {
           "id": "iqiyi-2026-11-20-开心锤锤世界",
@@ -5218,30 +5217,12 @@
           "total": 15
         },
         {
-          "id": "iqiyi-2026-11-21-高危禁药 我却越喝越强",
-          "platform": "iqiyi",
-          "title": "高危禁药 我却越喝越强",
-          "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
-          "episode": "第33集",
-          "updateTime": "09:00",
-          "date": "2026-11-21",
-          "weekday": 6,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_2aux5hxkh3o.html",
-          "badge": null,
-          "albumId": "7588188107173301",
-          "tvId": "5780908455762200",
-          "rule": "每日更新",
-          "duration": 134,
-          "total": 33
-        },
-        {
           "id": "iqiyi-2026-11-21-绝世武神 第九季",
           "platform": "iqiyi",
           "title": "绝世武神 第九季",
           "poster": "https://pic9.iqiyipic.com/image/20261030/7f/2a/a_101506824_m_601_m1_318_424.avif",
           "episode": "第16集",
-          "updateTime": "10:35",
+          "updateTime": "10:38",
           "date": "2026-11-21",
           "weekday": 6,
           "svip": false,
@@ -5270,6 +5251,24 @@
           "rule": "每周二、四、六更新",
           "duration": 1126,
           "total": 7
+        },
+        {
+          "id": "iqiyi-2026-11-21-高危禁药 我却越喝越强",
+          "platform": "iqiyi",
+          "title": "高危禁药 我却越喝越强",
+          "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
+          "episode": "第34集",
+          "updateTime": "14:06",
+          "date": "2026-11-21",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1ro9yb3lblw.html",
+          "badge": null,
+          "albumId": "7588188107173301",
+          "tvId": "5780908455762200",
+          "rule": "每日更新",
+          "duration": 137,
+          "total": 34
         },
         {
           "id": "iqiyi-2026-11-22-打卡修仙万念执灯",
@@ -5344,24 +5343,6 @@
           "total": 36
         },
         {
-          "id": "iqiyi-2026-11-22-高危禁药 我却越喝越强",
-          "platform": "iqiyi",
-          "title": "高危禁药 我却越喝越强",
-          "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
-          "episode": "第33集",
-          "updateTime": "09:00",
-          "date": "2026-11-22",
-          "weekday": 7,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_2aux5hxkh3o.html",
-          "badge": null,
-          "albumId": "7588188107173301",
-          "tvId": "5780908455762200",
-          "rule": "每日更新",
-          "duration": 134,
-          "total": 33
-        },
-        {
           "id": "iqiyi-2026-11-22-肥志百科  第15季",
           "platform": "iqiyi",
           "title": "肥志百科  第15季",
@@ -5385,7 +5366,7 @@
           "title": "绝世武神 第九季",
           "poster": "https://pic9.iqiyipic.com/image/20261030/7f/2a/a_101506824_m_601_m1_318_424.avif",
           "episode": "第16集",
-          "updateTime": "10:35",
+          "updateTime": "10:38",
           "date": "2026-11-22",
           "weekday": 7,
           "svip": false,
@@ -5398,23 +5379,22 @@
           "total": 16
         },
         {
-          "id": "iqiyi-2026-11-16-高危禁药 我却越喝越强-pred",
+          "id": "iqiyi-2026-11-22-高危禁药 我却越喝越强",
           "platform": "iqiyi",
           "title": "高危禁药 我却越喝越强",
           "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
           "episode": "第34集",
-          "updateTime": "09:00",
-          "date": "2026-11-23",
-          "weekday": 1,
+          "updateTime": "14:06",
+          "date": "2026-11-22",
+          "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_2aux5hxkh3o.html",
+          "url": "https://www.iqiyi.com/v_1ro9yb3lblw.html",
           "badge": null,
           "albumId": "7588188107173301",
           "tvId": "5780908455762200",
           "rule": "每日更新",
-          "duration": 134,
-          "total": 33,
-          "predicted": true
+          "duration": 137,
+          "total": 34
         },
         {
           "id": "iqiyi-2026-11-16-灵武大陆-pred",
@@ -5433,6 +5413,25 @@
           "rule": "每周一、五更新",
           "duration": 613,
           "total": 234,
+          "predicted": true
+        },
+        {
+          "id": "iqiyi-2026-11-16-高危禁药 我却越喝越强-pred",
+          "platform": "iqiyi",
+          "title": "高危禁药 我却越喝越强",
+          "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
+          "episode": "第35集",
+          "updateTime": "14:06",
+          "date": "2026-11-23",
+          "weekday": 1,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1ro9yb3lblw.html",
+          "badge": null,
+          "albumId": "7588188107173301",
+          "tvId": "5780908455762200",
+          "rule": "每日更新",
+          "duration": 137,
+          "total": 34,
           "predicted": true
         },
         {
@@ -5455,25 +5454,6 @@
           "predicted": true
         },
         {
-          "id": "iqiyi-2026-11-17-高危禁药 我却越喝越强-pred",
-          "platform": "iqiyi",
-          "title": "高危禁药 我却越喝越强",
-          "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
-          "episode": "第34集",
-          "updateTime": "09:00",
-          "date": "2026-11-24",
-          "weekday": 2,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_2aux5hxkh3o.html",
-          "badge": null,
-          "albumId": "7588188107173301",
-          "tvId": "5780908455762200",
-          "rule": "每日更新",
-          "duration": 134,
-          "total": 33,
-          "predicted": true
-        },
-        {
           "id": "iqiyi-2026-11-17-万人嫌我转修无情道-pred",
           "platform": "iqiyi",
           "title": "万人嫌我转修无情道",
@@ -5490,6 +5470,25 @@
           "rule": "每周二、四、六更新",
           "duration": 1126,
           "total": 7,
+          "predicted": true
+        },
+        {
+          "id": "iqiyi-2026-11-17-高危禁药 我却越喝越强-pred",
+          "platform": "iqiyi",
+          "title": "高危禁药 我却越喝越强",
+          "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
+          "episode": "第35集",
+          "updateTime": "14:06",
+          "date": "2026-11-24",
+          "weekday": 2,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1ro9yb3lblw.html",
+          "badge": null,
+          "albumId": "7588188107173301",
+          "tvId": "5780908455762200",
+          "rule": "每日更新",
+          "duration": 137,
+          "total": 34,
           "predicted": true
         },
         {
@@ -5550,22 +5549,41 @@
           "predicted": true
         },
         {
+          "id": "iqiyi-2026-11-18-小魔女蒙娜.-pred",
+          "platform": "iqiyi",
+          "title": "小魔女蒙娜.",
+          "poster": "https://pic5.iqiyipic.com/image/20261023/b0/11/a_101702949_m_601_318_424.avif",
+          "episode": "第17集",
+          "updateTime": "10:00",
+          "date": "2026-11-25",
+          "weekday": 3,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1asotftlo88.html",
+          "badge": null,
+          "albumId": "6808482903208101",
+          "tvId": "6345633212573600",
+          "rule": "每周三更新",
+          "duration": 1382,
+          "total": 16,
+          "predicted": true
+        },
+        {
           "id": "iqiyi-2026-11-18-高危禁药 我却越喝越强-pred",
           "platform": "iqiyi",
           "title": "高危禁药 我却越喝越强",
           "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
-          "episode": "第34集",
-          "updateTime": "09:00",
+          "episode": "第35集",
+          "updateTime": "14:06",
           "date": "2026-11-25",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_2aux5hxkh3o.html",
+          "url": "https://www.iqiyi.com/v_1ro9yb3lblw.html",
           "badge": null,
           "albumId": "7588188107173301",
           "tvId": "5780908455762200",
           "rule": "每日更新",
-          "duration": 134,
-          "total": 33,
+          "duration": 137,
+          "total": 34,
           "predicted": true
         },
         {
@@ -5626,25 +5644,6 @@
           "predicted": true
         },
         {
-          "id": "iqiyi-2026-11-19-高危禁药 我却越喝越强-pred",
-          "platform": "iqiyi",
-          "title": "高危禁药 我却越喝越强",
-          "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
-          "episode": "第34集",
-          "updateTime": "09:00",
-          "date": "2026-11-26",
-          "weekday": 4,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_2aux5hxkh3o.html",
-          "badge": null,
-          "albumId": "7588188107173301",
-          "tvId": "5780908455762200",
-          "rule": "每日更新",
-          "duration": 134,
-          "total": 33,
-          "predicted": true
-        },
-        {
           "id": "iqiyi-2026-11-19-万人嫌我转修无情道-pred",
           "platform": "iqiyi",
           "title": "万人嫌我转修无情道",
@@ -5680,6 +5679,25 @@
           "rule": "每周四、五更新",
           "duration": 422,
           "total": 30,
+          "predicted": true
+        },
+        {
+          "id": "iqiyi-2026-11-19-高危禁药 我却越喝越强-pred",
+          "platform": "iqiyi",
+          "title": "高危禁药 我却越喝越强",
+          "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
+          "episode": "第35集",
+          "updateTime": "14:06",
+          "date": "2026-11-26",
+          "weekday": 4,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1ro9yb3lblw.html",
+          "badge": null,
+          "albumId": "7588188107173301",
+          "tvId": "5780908455762200",
+          "rule": "每日更新",
+          "duration": 137,
+          "total": 34,
           "predicted": true
         },
         {
@@ -5797,25 +5815,6 @@
           "predicted": true
         },
         {
-          "id": "iqiyi-2026-11-20-高危禁药 我却越喝越强-pred",
-          "platform": "iqiyi",
-          "title": "高危禁药 我却越喝越强",
-          "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
-          "episode": "第34集",
-          "updateTime": "09:00",
-          "date": "2026-11-27",
-          "weekday": 5,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_2aux5hxkh3o.html",
-          "badge": null,
-          "albumId": "7588188107173301",
-          "tvId": "5780908455762200",
-          "rule": "每日更新",
-          "duration": 134,
-          "total": 33,
-          "predicted": true
-        },
-        {
           "id": "iqiyi-2026-11-20-灵武大陆-pred",
           "platform": "iqiyi",
           "title": "灵武大陆",
@@ -5870,6 +5869,25 @@
           "rule": "每周四、五更新",
           "duration": 422,
           "total": 30,
+          "predicted": true
+        },
+        {
+          "id": "iqiyi-2026-11-20-高危禁药 我却越喝越强-pred",
+          "platform": "iqiyi",
+          "title": "高危禁药 我却越喝越强",
+          "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
+          "episode": "第35集",
+          "updateTime": "14:06",
+          "date": "2026-11-27",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1ro9yb3lblw.html",
+          "badge": null,
+          "albumId": "7588188107173301",
+          "tvId": "5780908455762200",
+          "rule": "每日更新",
+          "duration": 137,
+          "total": 34,
           "predicted": true
         },
         {
@@ -5968,31 +5986,12 @@
           "predicted": true
         },
         {
-          "id": "iqiyi-2026-11-21-高危禁药 我却越喝越强-pred",
-          "platform": "iqiyi",
-          "title": "高危禁药 我却越喝越强",
-          "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
-          "episode": "第34集",
-          "updateTime": "09:00",
-          "date": "2026-11-28",
-          "weekday": 6,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_2aux5hxkh3o.html",
-          "badge": null,
-          "albumId": "7588188107173301",
-          "tvId": "5780908455762200",
-          "rule": "每日更新",
-          "duration": 134,
-          "total": 33,
-          "predicted": true
-        },
-        {
           "id": "iqiyi-2026-11-21-绝世武神 第九季-pred",
           "platform": "iqiyi",
           "title": "绝世武神 第九季",
           "poster": "https://pic9.iqiyipic.com/image/20261030/7f/2a/a_101506824_m_601_m1_318_424.avif",
           "episode": "第17集",
-          "updateTime": "10:35",
+          "updateTime": "10:38",
           "date": "2026-11-28",
           "weekday": 6,
           "svip": false,
@@ -6022,6 +6021,25 @@
           "rule": "每周二、四、六更新",
           "duration": 1126,
           "total": 7,
+          "predicted": true
+        },
+        {
+          "id": "iqiyi-2026-11-21-高危禁药 我却越喝越强-pred",
+          "platform": "iqiyi",
+          "title": "高危禁药 我却越喝越强",
+          "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
+          "episode": "第35集",
+          "updateTime": "14:06",
+          "date": "2026-11-28",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1ro9yb3lblw.html",
+          "badge": null,
+          "albumId": "7588188107173301",
+          "tvId": "5780908455762200",
+          "rule": "每日更新",
+          "duration": 137,
+          "total": 34,
           "predicted": true
         },
         {
@@ -6082,25 +6100,6 @@
           "predicted": true
         },
         {
-          "id": "iqiyi-2026-11-22-高危禁药 我却越喝越强-pred",
-          "platform": "iqiyi",
-          "title": "高危禁药 我却越喝越强",
-          "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
-          "episode": "第34集",
-          "updateTime": "09:00",
-          "date": "2026-11-29",
-          "weekday": 7,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_2aux5hxkh3o.html",
-          "badge": null,
-          "albumId": "7588188107173301",
-          "tvId": "5780908455762200",
-          "rule": "每日更新",
-          "duration": 134,
-          "total": 33,
-          "predicted": true
-        },
-        {
           "id": "iqiyi-2026-11-22-肥志百科  第15季-pred",
           "platform": "iqiyi",
           "title": "肥志百科  第15季",
@@ -6125,7 +6124,7 @@
           "title": "绝世武神 第九季",
           "poster": "https://pic9.iqiyipic.com/image/20261030/7f/2a/a_101506824_m_601_m1_318_424.avif",
           "episode": "第17集",
-          "updateTime": "10:35",
+          "updateTime": "10:38",
           "date": "2026-11-29",
           "weekday": 7,
           "svip": false,
@@ -6137,13 +6136,29 @@
           "duration": 620,
           "total": 16,
           "predicted": true
+        },
+        {
+          "id": "iqiyi-2026-11-22-高危禁药 我却越喝越强-pred",
+          "platform": "iqiyi",
+          "title": "高危禁药 我却越喝越强",
+          "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
+          "episode": "第35集",
+          "updateTime": "14:06",
+          "date": "2026-11-29",
+          "weekday": 7,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1ro9yb3lblw.html",
+          "badge": null,
+          "albumId": "7588188107173301",
+          "tvId": "5780908455762200",
+          "rule": "每日更新",
+          "duration": 137,
+          "total": 34,
+          "predicted": true
         }
       ],
-      "fetchedAt": "2026-11-16T02:37:43.708Z",
+      "fetchedAt": "2026-11-16T20:57:26.004Z",
       "warnings": [
-        "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：全球御鬼：我的体内有亿只鬼 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：我真没想重生啊 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：神级奸商：全服求我别薅了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
@@ -6156,10 +6171,13 @@
         "内容类型排除（动态漫/AI动漫/泡面番）：神级奸商：全服求我别薅了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
-        "已保留 15 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：全球御鬼：我的体内有亿只鬼 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：我真没想重生啊 动态漫画",
+        "已保留 14 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已排除 15 条动态漫/AI动漫/泡面番条目",
-        "已生成下周预计排期 39 条（本周未完结条目 +7 天推导，前端标「预计」）",
-        "3 条剧集已完结，不生成下周排期"
+        "已生成下周预计排期 40 条（本周未完结条目 +7 天推导，前端标「预计」）",
+        "2 条剧集已完结，不生成下周排期"
       ]
     }
   ]
