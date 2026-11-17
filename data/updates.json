@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T05:08:41.592Z",
+  "generatedAt": "2026-11-17T19:44:19.860Z",
   "platforms": [
     {
       "platform": "bili",
@@ -9,16 +9,18 @@
           "id": "bili-7954159",
           "platform": "bili",
           "title": "我是不白吃",
-          "poster": "https://i0.hdslb.com/bfs/bangumi/image/8ac62df8d1d0c5db8e844f34ca6d3d00548633c2.jpg",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/205c8d7027e989044ae7711879c2f66f14bfa206.jpg",
           "episode": "第1106话",
           "updateTime": "19:00",
           "date": "2026-11-17",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ss34149?from_spmid=666.5.schedule.0",
+          "url": "https://www.bilibili.com/bangumi/play/ep7954159?from_spmid=666.5.schedule.0",
           "seasonId": "34149",
           "badge": "9.3",
-          "duration": null
+          "duration": 65,
+          "total": 200,
+          "rule": "每周二、四、六，21:00更新"
         },
         {
           "id": "bili-6528758",
@@ -57,16 +59,18 @@
           "id": "bili-7954160",
           "platform": "bili",
           "title": "我是不白吃",
-          "poster": "https://i0.hdslb.com/bfs/bangumi/image/8ac62df8d1d0c5db8e844f34ca6d3d00548633c2.jpg",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/205c8d7027e989044ae7711879c2f66f14bfa206.jpg",
           "episode": "第1107话",
           "updateTime": "19:00",
           "date": "2026-11-19",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ss34149?from_spmid=666.5.schedule.1",
+          "url": "https://www.bilibili.com/bangumi/play/ep7954159",
           "seasonId": "34149",
           "badge": "9.3",
-          "duration": null
+          "duration": 65,
+          "total": 200,
+          "rule": "每周二、四、六，21:00更新"
         },
         {
           "id": "bili-6645414",
@@ -190,16 +194,18 @@
           "id": "bili-7954161",
           "platform": "bili",
           "title": "我是不白吃",
-          "poster": "https://i0.hdslb.com/bfs/bangumi/image/8ac62df8d1d0c5db8e844f34ca6d3d00548633c2.jpg",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/205c8d7027e989044ae7711879c2f66f14bfa206.jpg",
           "episode": "第1108话",
           "updateTime": "19:00",
           "date": "2026-11-21",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ss34149?from_spmid=666.5.schedule.1",
+          "url": "https://www.bilibili.com/bangumi/play/ep7954159",
           "seasonId": "34149",
           "badge": "9.3",
-          "duration": null
+          "duration": 65,
+          "total": 200,
+          "rule": "每周二、四、六，21:00更新"
         },
         {
           "id": "bili-6613856",
@@ -222,16 +228,18 @@
           "id": "bili-7954159-pred",
           "platform": "bili",
           "title": "我是不白吃",
-          "poster": "https://i0.hdslb.com/bfs/bangumi/image/8ac62df8d1d0c5db8e844f34ca6d3d00548633c2.jpg",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/205c8d7027e989044ae7711879c2f66f14bfa206.jpg",
           "episode": "第1107话",
           "updateTime": "19:00",
           "date": "2026-11-24",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ss34149?from_spmid=666.5.schedule.0",
+          "url": "https://www.bilibili.com/bangumi/play/ep7954159?from_spmid=666.5.schedule.0",
           "seasonId": "34149",
           "badge": "9.3",
-          "duration": null,
+          "duration": 65,
+          "total": 200,
+          "rule": "每周二、四、六，21:00更新",
           "predicted": true
         },
         {
@@ -273,16 +281,18 @@
           "id": "bili-7954160-pred",
           "platform": "bili",
           "title": "我是不白吃",
-          "poster": "https://i0.hdslb.com/bfs/bangumi/image/8ac62df8d1d0c5db8e844f34ca6d3d00548633c2.jpg",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/205c8d7027e989044ae7711879c2f66f14bfa206.jpg",
           "episode": "第1108话",
           "updateTime": "19:00",
           "date": "2026-11-26",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ss34149?from_spmid=666.5.schedule.1",
+          "url": "https://www.bilibili.com/bangumi/play/ep7954159",
           "seasonId": "34149",
           "badge": "9.3",
-          "duration": null,
+          "duration": 65,
+          "total": 200,
+          "rule": "每周二、四、六，21:00更新",
           "predicted": true
         },
         {
@@ -414,16 +424,18 @@
           "id": "bili-7954161-pred",
           "platform": "bili",
           "title": "我是不白吃",
-          "poster": "https://i0.hdslb.com/bfs/bangumi/image/8ac62df8d1d0c5db8e844f34ca6d3d00548633c2.jpg",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/205c8d7027e989044ae7711879c2f66f14bfa206.jpg",
           "episode": "第1109话",
           "updateTime": "19:00",
           "date": "2026-11-28",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ss34149?from_spmid=666.5.schedule.1",
+          "url": "https://www.bilibili.com/bangumi/play/ep7954159",
           "seasonId": "34149",
           "badge": "9.3",
-          "duration": null,
+          "duration": 65,
+          "total": 200,
+          "rule": "每周二、四、六，21:00更新",
           "predicted": true
         },
         {
@@ -445,10 +457,9 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-11-17T04:55:43.946Z",
+      "fetchedAt": "2026-11-17T19:31:42.873Z",
       "warnings": [
-        "已保留 2 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "3 条时长无法确认已保留（平台未提供内联时长）",
+        "已保留 5 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已生成下周预计排期 13 条（本周未完结条目 +7 天推导，前端标「预计」）"
       ]
     },
@@ -3654,9 +3665,10 @@
       "warnings": [
         "已保留 138 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "过滤 89 条不在本周（2026-11-16~2026-11-22）的条目",
-        "7 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
+        "6 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
+        "1 条豆瓣查询失败（反爬/网络），已保留",
         "已生成下周预计排期 89 条（本周未完结条目 +7 天推导，前端标「预计」）",
-        "警告：今天（2026-11-17）未抓到真实条目（回退数据），请核查星期 tab/日期映射"
+        "警告：今天（2026-11-18）未抓到真实条目（回退数据），请核查星期 tab/日期映射"
       ]
     },
     {
@@ -3717,13 +3729,13 @@
           "title": "炼气十万年",
           "rule": "每周二、周六10点更新",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc002006n62s111722876262898/750?imageMogr2/thumbnail/400x",
-          "episode": "第394集",
+          "episode": "第395集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-17",
           "weekday": 2,
           "svip": false,
-          "url": "https://v.qq.com/x/page/x41020pu1mk.html",
+          "url": "https://v.qq.com/x/page/l4102cqqlhs.html",
           "badge": "独播",
           "duration": 738
         },
@@ -3733,15 +3745,15 @@
           "title": "武神主宰",
           "rule": "每周二、日10：00更1集",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/7q544xyrava3vxf1781927016720/750?imageMogr2/thumbnail/400x",
-          "episode": "第709集",
+          "episode": "第710集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-17",
           "weekday": 2,
           "svip": false,
-          "url": "https://v.qq.com/x/page/t4102f7cd7z.html",
+          "url": "https://v.qq.com/x/page/q41021gxxz9.html",
           "badge": "独播",
-          "duration": 477
+          "duration": 478
         },
         {
           "id": "tencent-mzc00200cu8uq8c-2026-11-17",
@@ -3749,13 +3761,13 @@
           "title": "万界独尊",
           "rule": "每周二、六10点更1集",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200cu8uq8c1781927332273/750?imageMogr2/thumbnail/400x",
-          "episode": "第500集",
+          "episode": "第501集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-17",
           "weekday": 2,
           "svip": false,
-          "url": "https://v.qq.com/x/page/x4102dg2vav.html",
+          "url": "https://v.qq.com/x/page/x4102cmyhwz.html",
           "badge": "独播",
           "duration": 469
         },
@@ -3765,15 +3777,15 @@
           "title": "万古神帝",
           "rule": "7月21日起每周二10:00更新2集",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200u94ke3h1781936212043/750?imageMogr2/thumbnail/400x",
-          "episode": "第35集",
+          "episode": "第37集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-17",
           "weekday": 2,
           "svip": false,
-          "url": "https://v.qq.com/x/page/o4102pjnal4.html",
-          "badge": "独播",
-          "duration": 579
+          "url": "https://v.qq.com/x/page/o4102ld03cd.html",
+          "badge": "上新",
+          "duration": 510
         },
         {
           "id": "tencent-mzc00200n53vkqc-2026-11-17",
@@ -3781,15 +3793,15 @@
           "title": "遮天",
           "rule": "VIP会员每周三10点更新。SVIP会员每周二18点抢先看（9月1日加更一集）",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200n53vkqc1781928899834/750?imageMogr2/thumbnail/400x",
-          "episode": "第189集",
+          "episode": "第190集",
           "total": null,
           "updateTime": "18:00",
           "date": "2026-11-17",
           "weekday": 2,
           "svip": true,
-          "url": "https://v.qq.com/x/page/j4102ifyeql.html",
-          "badge": "独播",
-          "duration": 1448
+          "url": "https://v.qq.com/x/page/o4103l8rsr4.html",
+          "badge": "上新",
+          "duration": 1386
         },
         {
           "id": "tencent-mzc00200y0aavbe-2026-11-17",
@@ -3797,15 +3809,15 @@
           "title": "一念永恒 完结季",
           "rule": "每周三会员更新1集，每周二18点更新SVIP提前看",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200y0aavbe1787715350810/750?imageMogr2/thumbnail/400x",
-          "episode": "第19集",
+          "episode": "第20集",
           "total": null,
           "updateTime": "18:00",
           "date": "2026-11-17",
           "weekday": 2,
           "svip": true,
-          "url": "https://v.qq.com/x/page/q4102irim1f.html",
-          "badge": "独播",
-          "duration": 1257
+          "url": "https://v.qq.com/x/page/r4103b5lln5.html",
+          "badge": "上新",
+          "duration": 1296
         },
         {
           "id": "tencent-mzc00200s6u45af-2026-11-18",
@@ -3835,7 +3847,7 @@
           "date": "2026-11-18",
           "weekday": 3,
           "svip": true,
-          "url": "https://v.qq.com/x/page/d4102a581wy.html",
+          "url": "https://v.qq.com/x/cover/mzc00200gkkin7o.html",
           "badge": "独播",
           "duration": 1341
         },
@@ -4060,7 +4072,7 @@
           "date": "2026-11-21",
           "weekday": 6,
           "svip": true,
-          "url": "https://v.qq.com/x/page/d4102a581wy.html",
+          "url": "https://v.qq.com/x/cover/mzc00200gkkin7o.html",
           "badge": "独播",
           "duration": 1341
         },
@@ -4097,6 +4109,22 @@
           "duration": 1451
         },
         {
+          "id": "tencent-mzc002006n62s11-2026-11-21",
+          "platform": "tencent",
+          "title": "炼气十万年",
+          "rule": "每周二、周六10点更新",
+          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc002006n62s111722876262898/750?imageMogr2/thumbnail/400x",
+          "episode": "第395集",
+          "total": null,
+          "updateTime": "10:00",
+          "date": "2026-11-21",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://v.qq.com/x/page/l4102cqqlhs.html",
+          "badge": "独播",
+          "duration": 738
+        },
+        {
           "id": "tencent-yl6lapwmmx5ivew-2026-11-21",
           "platform": "tencent",
           "title": "妖神记",
@@ -4114,34 +4142,18 @@
           "finished": true
         },
         {
-          "id": "tencent-mzc002006n62s11-2026-11-21",
-          "platform": "tencent",
-          "title": "炼气十万年",
-          "rule": "每周二、周六10点更新",
-          "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc002006n62s111722876262898/750?imageMogr2/thumbnail/400x",
-          "episode": "第394集",
-          "total": null,
-          "updateTime": "10:00",
-          "date": "2026-11-21",
-          "weekday": 6,
-          "svip": false,
-          "url": "https://v.qq.com/x/page/x41020pu1mk.html",
-          "badge": "独播",
-          "duration": 738
-        },
-        {
           "id": "tencent-mzc00200cu8uq8c-2026-11-21",
           "platform": "tencent",
           "title": "万界独尊",
           "rule": "每周二、六10点更1集",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200cu8uq8c1781927332273/750?imageMogr2/thumbnail/400x",
-          "episode": "第500集",
+          "episode": "第501集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-21",
           "weekday": 6,
           "svip": false,
-          "url": "https://v.qq.com/x/page/x4102dg2vav.html",
+          "url": "https://v.qq.com/x/page/x4102cmyhwz.html",
           "badge": "独播",
           "duration": 469
         },
@@ -4167,15 +4179,15 @@
           "title": "武神主宰",
           "rule": "每周二、日10：00更1集",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/7q544xyrava3vxf1781927016720/750?imageMogr2/thumbnail/400x",
-          "episode": "第709集",
+          "episode": "第710集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-22",
           "weekday": 7,
           "svip": false,
-          "url": "https://v.qq.com/x/page/t4102f7cd7z.html",
+          "url": "https://v.qq.com/x/page/q41021gxxz9.html",
           "badge": "独播",
-          "duration": 477
+          "duration": 478
         },
         {
           "id": "tencent-mzc00200aaogpgh-2026-11-22",
@@ -4190,7 +4202,7 @@
           "weekday": 7,
           "svip": true,
           "url": "https://v.qq.com/x/page/d4102fysvp1.html",
-          "badge": "上新",
+          "badge": "独播",
           "duration": 1414
         },
         {
@@ -4250,13 +4262,13 @@
           "title": "炼气十万年",
           "rule": "每周二、周六10点更新",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc002006n62s111722876262898/750?imageMogr2/thumbnail/400x",
-          "episode": "第395集",
+          "episode": "第396集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-24",
           "weekday": 2,
           "svip": false,
-          "url": "https://v.qq.com/x/page/x41020pu1mk.html",
+          "url": "https://v.qq.com/x/page/l4102cqqlhs.html",
           "badge": "独播",
           "duration": 738,
           "predicted": true
@@ -4267,15 +4279,15 @@
           "title": "武神主宰",
           "rule": "每周二、日10：00更1集",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/7q544xyrava3vxf1781927016720/750?imageMogr2/thumbnail/400x",
-          "episode": "第710集",
+          "episode": "第711集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-24",
           "weekday": 2,
           "svip": false,
-          "url": "https://v.qq.com/x/page/t4102f7cd7z.html",
+          "url": "https://v.qq.com/x/page/q41021gxxz9.html",
           "badge": "独播",
-          "duration": 477,
+          "duration": 478,
           "predicted": true
         },
         {
@@ -4284,13 +4296,13 @@
           "title": "万界独尊",
           "rule": "每周二、六10点更1集",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200cu8uq8c1781927332273/750?imageMogr2/thumbnail/400x",
-          "episode": "第501集",
+          "episode": "第502集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-24",
           "weekday": 2,
           "svip": false,
-          "url": "https://v.qq.com/x/page/x4102dg2vav.html",
+          "url": "https://v.qq.com/x/page/x4102cmyhwz.html",
           "badge": "独播",
           "duration": 469,
           "predicted": true
@@ -4301,15 +4313,15 @@
           "title": "万古神帝",
           "rule": "7月21日起每周二10:00更新2集",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200u94ke3h1781936212043/750?imageMogr2/thumbnail/400x",
-          "episode": "第36集",
+          "episode": "第38集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-24",
           "weekday": 2,
           "svip": false,
-          "url": "https://v.qq.com/x/page/o4102pjnal4.html",
-          "badge": "独播",
-          "duration": 579,
+          "url": "https://v.qq.com/x/page/o4102ld03cd.html",
+          "badge": "上新",
+          "duration": 510,
           "predicted": true
         },
         {
@@ -4318,15 +4330,15 @@
           "title": "遮天",
           "rule": "VIP会员每周三10点更新。SVIP会员每周二18点抢先看（9月1日加更一集）",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200n53vkqc1781928899834/750?imageMogr2/thumbnail/400x",
-          "episode": "第190集",
+          "episode": "第191集",
           "total": null,
           "updateTime": "18:00",
           "date": "2026-11-24",
           "weekday": 2,
           "svip": true,
-          "url": "https://v.qq.com/x/page/j4102ifyeql.html",
-          "badge": "独播",
-          "duration": 1448,
+          "url": "https://v.qq.com/x/page/o4103l8rsr4.html",
+          "badge": "上新",
+          "duration": 1386,
           "predicted": true
         },
         {
@@ -4335,15 +4347,15 @@
           "title": "一念永恒 完结季",
           "rule": "每周三会员更新1集，每周二18点更新SVIP提前看",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200y0aavbe1787715350810/750?imageMogr2/thumbnail/400x",
-          "episode": "第20集",
+          "episode": "第21集",
           "total": null,
           "updateTime": "18:00",
           "date": "2026-11-24",
           "weekday": 2,
           "svip": true,
-          "url": "https://v.qq.com/x/page/q4102irim1f.html",
-          "badge": "独播",
-          "duration": 1257,
+          "url": "https://v.qq.com/x/page/r4103b5lln5.html",
+          "badge": "上新",
+          "duration": 1296,
           "predicted": true
         },
         {
@@ -4375,7 +4387,7 @@
           "date": "2026-11-25",
           "weekday": 3,
           "svip": true,
-          "url": "https://v.qq.com/x/page/d4102a581wy.html",
+          "url": "https://v.qq.com/x/cover/mzc00200gkkin7o.html",
           "badge": "独播",
           "duration": 1341,
           "predicted": true
@@ -4596,7 +4608,7 @@
           "date": "2026-11-28",
           "weekday": 6,
           "svip": true,
-          "url": "https://v.qq.com/x/page/d4102a581wy.html",
+          "url": "https://v.qq.com/x/cover/mzc00200gkkin7o.html",
           "badge": "独播",
           "duration": 1341,
           "predicted": true
@@ -4641,13 +4653,13 @@
           "title": "炼气十万年",
           "rule": "每周二、周六10点更新",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc002006n62s111722876262898/750?imageMogr2/thumbnail/400x",
-          "episode": "第395集",
+          "episode": "第396集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-28",
           "weekday": 6,
           "svip": false,
-          "url": "https://v.qq.com/x/page/x41020pu1mk.html",
+          "url": "https://v.qq.com/x/page/l4102cqqlhs.html",
           "badge": "独播",
           "duration": 738,
           "predicted": true
@@ -4658,13 +4670,13 @@
           "title": "万界独尊",
           "rule": "每周二、六10点更1集",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc00200cu8uq8c1781927332273/750?imageMogr2/thumbnail/400x",
-          "episode": "第501集",
+          "episode": "第502集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-28",
           "weekday": 6,
           "svip": false,
-          "url": "https://v.qq.com/x/page/x4102dg2vav.html",
+          "url": "https://v.qq.com/x/page/x4102cmyhwz.html",
           "badge": "独播",
           "duration": 469,
           "predicted": true
@@ -4692,15 +4704,15 @@
           "title": "武神主宰",
           "rule": "每周二、日10：00更1集",
           "poster": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/7q544xyrava3vxf1781927016720/750?imageMogr2/thumbnail/400x",
-          "episode": "第710集",
+          "episode": "第711集",
           "total": null,
           "updateTime": "10:00",
           "date": "2026-11-29",
           "weekday": 7,
           "svip": false,
-          "url": "https://v.qq.com/x/page/t4102f7cd7z.html",
+          "url": "https://v.qq.com/x/page/q41021gxxz9.html",
           "badge": "独播",
-          "duration": 477,
+          "duration": 478,
           "predicted": true
         },
         {
@@ -4716,16 +4728,14 @@
           "weekday": 7,
           "svip": true,
           "url": "https://v.qq.com/x/page/d4102fysvp1.html",
-          "badge": "上新",
+          "badge": "独播",
           "duration": 1414,
           "predicted": true
         }
       ],
-      "error": "超时（>480s）",
-      "fetchedAt": "2026-11-16T20:56:50.351Z",
+      "fetchedAt": "2026-11-17T19:43:42.555Z",
       "warnings": [
-        "已保留 2 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
-        "过滤 31 条不在本周（2026-11-16~2026-11-22）的条目",
+        "已保留 1 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已生成下周预计排期 31 条（本周未完结条目 +7 天推导，前端标「预计」）",
         "2 条剧集已完结，不生成下周排期"
       ]
@@ -4855,8 +4865,8 @@
           "url": "https://www.iqiyi.com/v_1vu549kcw1g.html",
           "badge": null,
           "albumId": "3282161836721701",
-          "tvId": "7795949065318300",
-          "rule": "每周二、三、四、五更新",
+          "tvId": "5888398679487200",
+          "rule": "每周二、三、四、五、六更新",
           "duration": 222,
           "total": 15
         },
@@ -4894,7 +4904,7 @@
           "tvId": "5873959692828900",
           "rule": "每周三、日更新",
           "duration": 464,
-          "total": 229
+          "total": 230
         },
         {
           "id": "iqiyi-2026-11-18-菌灵天下",
@@ -4963,8 +4973,8 @@
           "url": "https://www.iqiyi.com/v_1vu549kcw1g.html",
           "badge": null,
           "albumId": "3282161836721701",
-          "tvId": "7795949065318300",
-          "rule": "每周二、三、四、五更新",
+          "tvId": "5888398679487200",
+          "rule": "每周二、三、四、五、六更新",
           "duration": 222,
           "total": 15
         },
@@ -5107,8 +5117,8 @@
           "url": "https://www.iqiyi.com/v_1vu549kcw1g.html",
           "badge": null,
           "albumId": "3282161836721701",
-          "tvId": "7795949065318300",
-          "rule": "每周二、三、四、五更新",
+          "tvId": "5888398679487200",
+          "rule": "每周二、三、四、五、六更新",
           "duration": 222,
           "total": 15
         },
@@ -5257,24 +5267,6 @@
           "total": 234
         },
         {
-          "id": "iqiyi-2026-11-20-缔灵爱水心缠",
-          "platform": "iqiyi",
-          "title": "缔灵爱水心缠",
-          "poster": "https://pic7.iqiyipic.com/image/20260718/53/b4/a_101238659_m_601_m1_318_424.avif",
-          "episode": "第16集",
-          "updateTime": "10:00",
-          "date": "2026-11-20",
-          "weekday": 5,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_29c8ktl6ujo.html",
-          "badge": null,
-          "albumId": "2455128847735701",
-          "tvId": "8641431868327600",
-          "rule": "每周五更新",
-          "duration": 934,
-          "total": 19
-        },
-        {
           "id": "iqiyi-2026-11-20-诸天万界游：开局大圣求我加好友",
           "platform": "iqiyi",
           "title": "诸天万界游：开局大圣求我加好友",
@@ -5291,6 +5283,24 @@
           "rule": "每周四、五、六、日更新",
           "duration": 195,
           "total": 7
+        },
+        {
+          "id": "iqiyi-2026-11-20-缔灵爱水心缠",
+          "platform": "iqiyi",
+          "title": "缔灵爱水心缠",
+          "poster": "https://pic7.iqiyipic.com/image/20260718/53/b4/a_101238659_m_601_m1_318_424.avif",
+          "episode": "第16集",
+          "updateTime": "10:00",
+          "date": "2026-11-20",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_29c8ktl6ujo.html",
+          "badge": null,
+          "albumId": "2455128847735701",
+          "tvId": "8641431868327600",
+          "rule": "每周五更新",
+          "duration": 934,
+          "total": 19
         },
         {
           "id": "iqiyi-2026-11-20-雪王来了！",
@@ -5323,8 +5333,8 @@
           "url": "https://www.iqiyi.com/v_1vu549kcw1g.html",
           "badge": null,
           "albumId": "3282161836721701",
-          "tvId": "7795949065318300",
-          "rule": "每周二、三、四、五更新",
+          "tvId": "5888398679487200",
+          "rule": "每周二、三、四、五、六更新",
           "duration": 222,
           "total": 15
         },
@@ -5491,6 +5501,24 @@
           "total": 8
         },
         {
+          "id": "iqiyi-2026-11-21-开心锤锤Story：不扫兴侦探社",
+          "platform": "iqiyi",
+          "title": "开心锤锤Story：不扫兴侦探社",
+          "poster": "https://pic4.iqiyipic.com/image/20261111/7b/ac/a_101784971_m_601_m1_318_424.avif",
+          "episode": "第15集",
+          "updateTime": "12:00",
+          "date": "2026-11-21",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1vu549kcw1g.html",
+          "badge": null,
+          "albumId": "3282161836721701",
+          "tvId": "5888398679487200",
+          "rule": "每周二、三、四、五、六更新",
+          "duration": 222,
+          "total": 15
+        },
+        {
           "id": "iqiyi-2026-11-22-打卡修仙万念执灯",
           "platform": "iqiyi",
           "title": "打卡修仙万念执灯",
@@ -5542,7 +5570,7 @@
           "tvId": "5873959692828900",
           "rule": "每周三、日更新",
           "duration": 464,
-          "total": 229
+          "total": 230
         },
         {
           "id": "iqiyi-2026-11-22-太古神尊",
@@ -5581,24 +5609,6 @@
           "total": 35
         },
         {
-          "id": "iqiyi-2026-11-22-肥志百科  第15季",
-          "platform": "iqiyi",
-          "title": "肥志百科  第15季",
-          "poster": "https://pic0.iqiyipic.com/image/20260929/61/f1/a_101572572_m_601_m1_318_424.avif",
-          "episode": "第8集",
-          "updateTime": "10:00",
-          "date": "2026-11-22",
-          "weekday": 7,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1t53is4xyd8.html",
-          "badge": null,
-          "albumId": "1900832246980701",
-          "tvId": "3666399281150300",
-          "rule": "每周日更新",
-          "duration": 386,
-          "total": 8
-        },
-        {
           "id": "iqiyi-2026-11-22-诸天万界游：开局大圣求我加好友",
           "platform": "iqiyi",
           "title": "诸天万界游：开局大圣求我加好友",
@@ -5615,6 +5625,24 @@
           "rule": "每周四、五、六、日更新",
           "duration": 195,
           "total": 7
+        },
+        {
+          "id": "iqiyi-2026-11-22-肥志百科  第15季",
+          "platform": "iqiyi",
+          "title": "肥志百科  第15季",
+          "poster": "https://pic0.iqiyipic.com/image/20260929/61/f1/a_101572572_m_601_m1_318_424.avif",
+          "episode": "第8集",
+          "updateTime": "10:00",
+          "date": "2026-11-22",
+          "weekday": 7,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1t53is4xyd8.html",
+          "badge": null,
+          "albumId": "1900832246980701",
+          "tvId": "3666399281150300",
+          "rule": "每周日更新",
+          "duration": 386,
+          "total": 8
         },
         {
           "id": "iqiyi-2026-11-22-绝世武神 第九季",
@@ -5742,8 +5770,8 @@
           "url": "https://www.iqiyi.com/v_1vu549kcw1g.html",
           "badge": null,
           "albumId": "3282161836721701",
-          "tvId": "7795949065318300",
-          "rule": "每周二、三、四、五更新",
+          "tvId": "5888398679487200",
+          "rule": "每周二、三、四、五、六更新",
           "duration": 222,
           "total": 15,
           "predicted": true
@@ -5783,7 +5811,7 @@
           "tvId": "5873959692828900",
           "rule": "每周三、日更新",
           "duration": 464,
-          "total": 229,
+          "total": 230,
           "predicted": true
         },
         {
@@ -5856,8 +5884,8 @@
           "url": "https://www.iqiyi.com/v_1vu549kcw1g.html",
           "badge": null,
           "albumId": "3282161836721701",
-          "tvId": "7795949065318300",
-          "rule": "每周二、三、四、五更新",
+          "tvId": "5888398679487200",
+          "rule": "每周二、三、四、五、六更新",
           "duration": 222,
           "total": 15,
           "predicted": true
@@ -6008,8 +6036,8 @@
           "url": "https://www.iqiyi.com/v_1vu549kcw1g.html",
           "badge": null,
           "albumId": "3282161836721701",
-          "tvId": "7795949065318300",
-          "rule": "每周二、三、四、五更新",
+          "tvId": "5888398679487200",
+          "rule": "每周二、三、四、五、六更新",
           "duration": 222,
           "total": 15,
           "predicted": true
@@ -6167,25 +6195,6 @@
           "predicted": true
         },
         {
-          "id": "iqiyi-2026-11-20-缔灵爱水心缠-pred",
-          "platform": "iqiyi",
-          "title": "缔灵爱水心缠",
-          "poster": "https://pic7.iqiyipic.com/image/20260718/53/b4/a_101238659_m_601_m1_318_424.avif",
-          "episode": "第17集",
-          "updateTime": "10:00",
-          "date": "2026-11-27",
-          "weekday": 5,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_29c8ktl6ujo.html",
-          "badge": null,
-          "albumId": "2455128847735701",
-          "tvId": "8641431868327600",
-          "rule": "每周五更新",
-          "duration": 934,
-          "total": 19,
-          "predicted": true
-        },
-        {
           "id": "iqiyi-2026-11-20-诸天万界游：开局大圣求我加好友-pred",
           "platform": "iqiyi",
           "title": "诸天万界游：开局大圣求我加好友",
@@ -6202,6 +6211,25 @@
           "rule": "每周四、五、六、日更新",
           "duration": 195,
           "total": 7,
+          "predicted": true
+        },
+        {
+          "id": "iqiyi-2026-11-20-缔灵爱水心缠-pred",
+          "platform": "iqiyi",
+          "title": "缔灵爱水心缠",
+          "poster": "https://pic7.iqiyipic.com/image/20260718/53/b4/a_101238659_m_601_m1_318_424.avif",
+          "episode": "第17集",
+          "updateTime": "10:00",
+          "date": "2026-11-27",
+          "weekday": 5,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_29c8ktl6ujo.html",
+          "badge": null,
+          "albumId": "2455128847735701",
+          "tvId": "8641431868327600",
+          "rule": "每周五更新",
+          "duration": 934,
+          "total": 19,
           "predicted": true
         },
         {
@@ -6236,8 +6264,8 @@
           "url": "https://www.iqiyi.com/v_1vu549kcw1g.html",
           "badge": null,
           "albumId": "3282161836721701",
-          "tvId": "7795949065318300",
-          "rule": "每周二、三、四、五更新",
+          "tvId": "5888398679487200",
+          "rule": "每周二、三、四、五、六更新",
           "duration": 222,
           "total": 15,
           "predicted": true
@@ -6414,6 +6442,25 @@
           "predicted": true
         },
         {
+          "id": "iqiyi-2026-11-21-开心锤锤Story：不扫兴侦探社-pred",
+          "platform": "iqiyi",
+          "title": "开心锤锤Story：不扫兴侦探社",
+          "poster": "https://pic4.iqiyipic.com/image/20261111/7b/ac/a_101784971_m_601_m1_318_424.avif",
+          "episode": "第16集",
+          "updateTime": "12:00",
+          "date": "2026-11-28",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1vu549kcw1g.html",
+          "badge": null,
+          "albumId": "3282161836721701",
+          "tvId": "5888398679487200",
+          "rule": "每周二、三、四、五、六更新",
+          "duration": 222,
+          "total": 15,
+          "predicted": true
+        },
+        {
           "id": "iqiyi-2026-11-22-打卡修仙万念执灯-pred",
           "platform": "iqiyi",
           "title": "打卡修仙万念执灯",
@@ -6448,7 +6495,7 @@
           "tvId": "5873959692828900",
           "rule": "每周三、日更新",
           "duration": 464,
-          "total": 229,
+          "total": 230,
           "predicted": true
         },
         {
@@ -6490,25 +6537,6 @@
           "predicted": true
         },
         {
-          "id": "iqiyi-2026-11-22-肥志百科  第15季-pred",
-          "platform": "iqiyi",
-          "title": "肥志百科  第15季",
-          "poster": "https://pic0.iqiyipic.com/image/20260929/61/f1/a_101572572_m_601_m1_318_424.avif",
-          "episode": "第9集",
-          "updateTime": "10:00",
-          "date": "2026-11-29",
-          "weekday": 7,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1t53is4xyd8.html",
-          "badge": null,
-          "albumId": "1900832246980701",
-          "tvId": "3666399281150300",
-          "rule": "每周日更新",
-          "duration": 386,
-          "total": 8,
-          "predicted": true
-        },
-        {
           "id": "iqiyi-2026-11-22-诸天万界游：开局大圣求我加好友-pred",
           "platform": "iqiyi",
           "title": "诸天万界游：开局大圣求我加好友",
@@ -6525,6 +6553,25 @@
           "rule": "每周四、五、六、日更新",
           "duration": 195,
           "total": 7,
+          "predicted": true
+        },
+        {
+          "id": "iqiyi-2026-11-22-肥志百科  第15季-pred",
+          "platform": "iqiyi",
+          "title": "肥志百科  第15季",
+          "poster": "https://pic0.iqiyipic.com/image/20260929/61/f1/a_101572572_m_601_m1_318_424.avif",
+          "episode": "第9集",
+          "updateTime": "10:00",
+          "date": "2026-11-29",
+          "weekday": 7,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_1t53is4xyd8.html",
+          "badge": null,
+          "albumId": "1900832246980701",
+          "tvId": "3666399281150300",
+          "rule": "每周日更新",
+          "duration": 386,
+          "total": 8,
           "predicted": true
         },
         {
@@ -6547,12 +6594,8 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-11-17T05:08:41.592Z",
+      "fetchedAt": "2026-11-17T19:44:19.860Z",
       "warnings": [
-        "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：神级奸商：全服求我别薅了 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
-        "内容类型排除（动态漫/AI动漫/泡面番）：我真没想重生啊 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：我真没想重生啊 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
@@ -6564,9 +6607,13 @@
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全球御鬼：我的体内有亿只鬼 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：我真没想重生啊 动态漫画",
-        "已保留 22 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：神级奸商：全服求我别薅了 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
+        "内容类型排除（动态漫/AI动漫/泡面番）：我真没想重生啊 动态漫画",
+        "已保留 23 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已排除 15 条动态漫/AI动漫/泡面番条目",
-        "已生成下周预计排期 48 条（本周未完结条目 +7 天推导，前端标「预计」）",
+        "已生成下周预计排期 49 条（本周未完结条目 +7 天推导，前端标「预计」）",
         "2 条剧集已完结，不生成下周排期"
       ]
     }
