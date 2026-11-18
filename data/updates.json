@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T04:11:47.533Z",
+  "generatedAt": "2026-11-18T19:26:19.011Z",
   "platforms": [
     {
       "platform": "bili",
@@ -39,7 +39,7 @@
           "total": 52
         },
         {
-          "id": "bili-5450393",
+          "id": "bili-8009003",
           "platform": "bili",
           "title": "雪王来了！",
           "poster": "https://i0.hdslb.com/bfs/bangumi/image/0d62cdccd8fded354a11ef83cbfb051537a13daf.jpg",
@@ -260,7 +260,7 @@
           "predicted": true
         },
         {
-          "id": "bili-5450393-pred",
+          "id": "bili-8009003-pred",
           "platform": "bili",
           "title": "雪王来了！",
           "poster": "https://i0.hdslb.com/bfs/bangumi/image/0d62cdccd8fded354a11ef83cbfb051537a13daf.jpg",
@@ -457,7 +457,7 @@
           "predicted": true
         }
       ],
-      "fetchedAt": "2026-11-18T03:59:50.350Z",
+      "fetchedAt": "2026-11-18T19:13:22.870Z",
       "warnings": [
         "已保留 5 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已生成下周预计排期 13 条（本周未完结条目 +7 天推导，前端标「预计」）"
@@ -3665,9 +3665,10 @@
       "warnings": [
         "已保留 138 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "过滤 89 条不在本周（2026-11-16~2026-11-22）的条目",
-        "7 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
+        "6 条时长缺失条目豆瓣未精确命中，已保留（避免别名/收录差异误伤）",
+        "1 条豆瓣查询失败（反爬/网络），已保留",
         "已生成下周预计排期 89 条（本周未完结条目 +7 天推导，前端标「预计」）",
-        "警告：今天（2026-11-18）未抓到真实条目（回退数据），请核查星期 tab/日期映射"
+        "警告：今天（2026-11-19）未抓到真实条目（回退数据），请核查星期 tab/日期映射"
       ]
     },
     {
@@ -4732,9 +4733,11 @@
           "predicted": true
         }
       ],
+      "error": "超时（>480s）",
       "fetchedAt": "2026-11-18T04:11:11.310Z",
       "warnings": [
-        "已保留 1 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "已保留 2 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "过滤 31 条不在本周（2026-11-16~2026-11-22）的条目",
         "已生成下周预计排期 31 条（本周未完结条目 +7 天推导，前端标「预计」）",
         "2 条剧集已完结，不生成下周排期"
       ]
@@ -4865,7 +4868,7 @@
           "badge": null,
           "albumId": "3282161836721701",
           "tvId": "5888398679487200",
-          "rule": "每周二、三、四、五、六更新",
+          "rule": "每周二、三、四、五、六、日更新",
           "duration": 167,
           "total": 21
         },
@@ -4924,24 +4927,6 @@
           "total": 36
         },
         {
-          "id": "iqiyi-2026-11-18-小魔女蒙娜.",
-          "platform": "iqiyi",
-          "title": "小魔女蒙娜.",
-          "poster": "https://pic5.iqiyipic.com/image/20261023/b0/11/a_101702949_m_601_318_424.avif",
-          "episode": "第16集",
-          "updateTime": "10:00",
-          "date": "2026-11-18",
-          "weekday": 3,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1asotftlo88.html",
-          "badge": null,
-          "albumId": "6808482903208101",
-          "tvId": "6345633212573600",
-          "rule": "每周三更新",
-          "duration": 1382,
-          "total": 16
-        },
-        {
           "id": "iqiyi-2026-11-18-大千小镇",
           "platform": "iqiyi",
           "title": "大千小镇",
@@ -4973,9 +4958,27 @@
           "badge": null,
           "albumId": "3282161836721701",
           "tvId": "5888398679487200",
-          "rule": "每周二、三、四、五、六更新",
+          "rule": "每周二、三、四、五、六、日更新",
           "duration": 167,
           "total": 21
+        },
+        {
+          "id": "iqiyi-2026-11-18-小魔女蒙娜.",
+          "platform": "iqiyi",
+          "title": "小魔女蒙娜.",
+          "poster": "https://pic5.iqiyipic.com/image/20261023/b0/11/a_101702949_m_601_318_424.avif",
+          "episode": "第19集",
+          "updateTime": "16:26",
+          "date": "2026-11-18",
+          "weekday": 3,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_r5y8i3fulo.html",
+          "badge": null,
+          "albumId": "6808482903208101",
+          "tvId": "6345633212573600",
+          "rule": "每周三更新",
+          "duration": 1382,
+          "total": 19
         },
         {
           "id": "iqiyi-2026-11-19-逆天邪神年番",
@@ -5117,7 +5120,7 @@
           "badge": null,
           "albumId": "3282161836721701",
           "tvId": "5888398679487200",
-          "rule": "每周二、三、四、五、六更新",
+          "rule": "每周二、三、四、五、六、日更新",
           "duration": 167,
           "total": 21
         },
@@ -5333,7 +5336,7 @@
           "badge": null,
           "albumId": "3282161836721701",
           "tvId": "5888398679487200",
-          "rule": "每周二、三、四、五、六更新",
+          "rule": "每周二、三、四、五、六、日更新",
           "duration": 167,
           "total": 21
         },
@@ -5513,7 +5516,7 @@
           "badge": null,
           "albumId": "3282161836721701",
           "tvId": "5888398679487200",
-          "rule": "每周二、三、四、五、六更新",
+          "rule": "每周二、三、四、五、六、日更新",
           "duration": 167,
           "total": 21
         },
@@ -5534,24 +5537,6 @@
           "rule": "每周五、六、日更新",
           "duration": 249,
           "total": 6
-        },
-        {
-          "id": "iqiyi-2026-11-22-财神窦占龙",
-          "platform": "iqiyi",
-          "title": "财神窦占龙",
-          "poster": "https://pic2.iqiyipic.com/image/20260904/df/e6/a_100614442_m_601_m5_318_424.avif",
-          "episode": "16集全",
-          "updateTime": "08:50",
-          "date": "2026-11-22",
-          "weekday": 7,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_24zc09h9skk.html",
-          "badge": null,
-          "albumId": "5560312844176701",
-          "tvId": "6968113910081300",
-          "duration": 1634,
-          "total": 16,
-          "finished": true
         },
         {
           "id": "iqiyi-2026-11-22-都市古仙医",
@@ -5662,6 +5647,24 @@
           "total": 16
         },
         {
+          "id": "iqiyi-2026-11-22-开心锤锤Story：不扫兴侦探社",
+          "platform": "iqiyi",
+          "title": "开心锤锤Story：不扫兴侦探社",
+          "poster": "https://pic4.iqiyipic.com/image/20261111/7b/ac/a_101784971_m_601_m1_318_424.avif",
+          "episode": "第21集",
+          "updateTime": "12:00",
+          "date": "2026-11-22",
+          "weekday": 7,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_vrgtwty7jw.html",
+          "badge": null,
+          "albumId": "3282161836721701",
+          "tvId": "5888398679487200",
+          "rule": "每周二、三、四、五、六、日更新",
+          "duration": 167,
+          "total": 21
+        },
+        {
           "id": "iqiyi-2026-11-16-高危禁药 我却越喝越强-pred",
           "platform": "iqiyi",
           "title": "高危禁药 我却越喝越强",
@@ -5770,7 +5773,7 @@
           "badge": null,
           "albumId": "3282161836721701",
           "tvId": "5888398679487200",
-          "rule": "每周二、三、四、五、六更新",
+          "rule": "每周二、三、四、五、六、日更新",
           "duration": 167,
           "total": 21,
           "predicted": true
@@ -5833,25 +5836,6 @@
           "predicted": true
         },
         {
-          "id": "iqiyi-2026-11-18-小魔女蒙娜.-pred",
-          "platform": "iqiyi",
-          "title": "小魔女蒙娜.",
-          "poster": "https://pic5.iqiyipic.com/image/20261023/b0/11/a_101702949_m_601_318_424.avif",
-          "episode": "第17集",
-          "updateTime": "10:00",
-          "date": "2026-11-25",
-          "weekday": 3,
-          "svip": false,
-          "url": "https://www.iqiyi.com/v_1asotftlo88.html",
-          "badge": null,
-          "albumId": "6808482903208101",
-          "tvId": "6345633212573600",
-          "rule": "每周三更新",
-          "duration": 1382,
-          "total": 16,
-          "predicted": true
-        },
-        {
           "id": "iqiyi-2026-11-18-大千小镇-pred",
           "platform": "iqiyi",
           "title": "大千小镇",
@@ -5884,9 +5868,28 @@
           "badge": null,
           "albumId": "3282161836721701",
           "tvId": "5888398679487200",
-          "rule": "每周二、三、四、五、六更新",
+          "rule": "每周二、三、四、五、六、日更新",
           "duration": 167,
           "total": 21,
+          "predicted": true
+        },
+        {
+          "id": "iqiyi-2026-11-18-小魔女蒙娜.-pred",
+          "platform": "iqiyi",
+          "title": "小魔女蒙娜.",
+          "poster": "https://pic5.iqiyipic.com/image/20261023/b0/11/a_101702949_m_601_318_424.avif",
+          "episode": "第20集",
+          "updateTime": "16:26",
+          "date": "2026-11-25",
+          "weekday": 3,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_r5y8i3fulo.html",
+          "badge": null,
+          "albumId": "6808482903208101",
+          "tvId": "6345633212573600",
+          "rule": "每周三更新",
+          "duration": 1382,
+          "total": 19,
           "predicted": true
         },
         {
@@ -6036,7 +6039,7 @@
           "badge": null,
           "albumId": "3282161836721701",
           "tvId": "5888398679487200",
-          "rule": "每周二、三、四、五、六更新",
+          "rule": "每周二、三、四、五、六、日更新",
           "duration": 167,
           "total": 21,
           "predicted": true
@@ -6264,7 +6267,7 @@
           "badge": null,
           "albumId": "3282161836721701",
           "tvId": "5888398679487200",
-          "rule": "每周二、三、四、五、六更新",
+          "rule": "每周二、三、四、五、六、日更新",
           "duration": 167,
           "total": 21,
           "predicted": true
@@ -6454,7 +6457,7 @@
           "badge": null,
           "albumId": "3282161836721701",
           "tvId": "5888398679487200",
-          "rule": "每周二、三、四、五、六更新",
+          "rule": "每周二、三、四、五、六、日更新",
           "duration": 167,
           "total": 21,
           "predicted": true
@@ -6591,11 +6594,29 @@
           "duration": 620,
           "total": 16,
           "predicted": true
+        },
+        {
+          "id": "iqiyi-2026-11-22-开心锤锤Story：不扫兴侦探社-pred",
+          "platform": "iqiyi",
+          "title": "开心锤锤Story：不扫兴侦探社",
+          "poster": "https://pic4.iqiyipic.com/image/20261111/7b/ac/a_101784971_m_601_m1_318_424.avif",
+          "episode": "第22集",
+          "updateTime": "12:00",
+          "date": "2026-11-29",
+          "weekday": 7,
+          "svip": false,
+          "url": "https://www.iqiyi.com/v_vrgtwty7jw.html",
+          "badge": null,
+          "albumId": "3282161836721701",
+          "tvId": "5888398679487200",
+          "rule": "每周二、三、四、五、六、日更新",
+          "duration": 167,
+          "total": 21,
+          "predicted": true
         }
       ],
-      "fetchedAt": "2026-11-18T04:11:47.533Z",
+      "fetchedAt": "2026-11-18T19:26:19.011Z",
       "warnings": [
-        "内容类型排除（动态漫/AI动漫/泡面番）：我真没想重生啊 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：全民御兽：开局山海经，我横扫全球 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：末世钞能力者 动态漫画",
@@ -6610,10 +6631,11 @@
         "内容类型排除（动态漫/AI动漫/泡面番）：神级奸商：全服求我别薅了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：原来我早就无敌了 动态漫画",
         "内容类型排除（动态漫/AI动漫/泡面番）：我真没想重生啊 动态漫画",
-        "已保留 23 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
+        "内容类型排除（动态漫/AI动漫/泡面番）：我真没想重生啊 动态漫画",
+        "已保留 24 条不足 5 分钟（<300 秒）的短条目，前端「过滤短剧」默认隐藏可调整",
         "已排除 15 条动态漫/AI动漫/泡面番条目",
-        "已生成下周预计排期 49 条（本周未完结条目 +7 天推导，前端标「预计」）",
-        "2 条剧集已完结，不生成下周排期"
+        "已生成下周预计排期 50 条（本周未完结条目 +7 天推导，前端标「预计」）",
+        "1 条剧集已完结，不生成下周排期"
       ]
     }
   ]
