@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T21:11:14.957Z",
+  "updatedAt": "2026-11-25T05:18:09.368Z",
   "weeks": [
     {
       "weekStart": "2026-11-23",
@@ -14,10 +14,10 @@
           "date": "2026-11-25",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep6645414",
+          "url": "https://www.bilibili.com/bangumi/play/ep6645443?from_spmid=666.5.schedule.0",
           "seasonId": "247422",
           "badge": "9.1",
-          "duration": 798,
+          "duration": 796,
           "total": 52
         },
         {
@@ -47,10 +47,10 @@
           "date": "2026-11-27",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep6645414",
+          "url": "https://www.bilibili.com/bangumi/play/ep6645443",
           "seasonId": "247422",
           "badge": "9.1",
-          "duration": 798,
+          "duration": 796,
           "total": 52
         },
         {
@@ -161,7 +161,7 @@
           "title": "高危禁药 我却越喝越强",
           "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
           "episode": "第42集",
-          "updateTime": "15:49",
+          "updateTime": "09:00",
           "date": "2026-11-23",
           "weekday": 1,
           "svip": false,
@@ -171,7 +171,7 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 143,
-          "total": 42
+          "total": 43
         },
         {
           "id": "iqiyi-2026-11-23-灵武大陆",
@@ -250,18 +250,18 @@
           "platform": "iqiyi",
           "title": "小魔女蒙娜.",
           "poster": "https://pic5.iqiyipic.com/image/20261023/b0/11/a_101702949_m_601_318_424.avif",
-          "episode": "第20集",
+          "episode": "第23集",
           "updateTime": "10:00",
           "date": "2026-11-23",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1ya23o6jlww.html",
+          "url": "https://www.iqiyi.com/v_174y80cxm0o.html",
           "badge": null,
           "albumId": "6808482903208101",
           "tvId": "6345633212573600",
           "rule": "每周一、三更新",
           "duration": 1382,
-          "total": 20
+          "total": 23
         },
         {
           "id": "iqiyi-2026-11-24-高危禁药 我却越喝越强",
@@ -269,7 +269,7 @@
           "title": "高危禁药 我却越喝越强",
           "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
           "episode": "第42集",
-          "updateTime": "15:49",
+          "updateTime": "09:00",
           "date": "2026-11-24",
           "weekday": 2,
           "svip": false,
@@ -279,7 +279,7 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 143,
-          "total": 42
+          "total": 43
         },
         {
           "id": "iqiyi-2026-11-24-万人嫌我转修无情道",
@@ -322,35 +322,35 @@
           "platform": "iqiyi",
           "title": "大千小镇",
           "poster": "https://pic0.iqiyipic.com/image/20260708/5d/85/a_101189109_m_601_m3_318_424.avif",
-          "episode": "第35集",
-          "updateTime": "15:52",
+          "episode": "第36集",
+          "updateTime": "09:44",
           "date": "2026-11-25",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_17flnbav67c.html",
+          "url": "https://www.iqiyi.com/v_u1yux1acxs.html",
           "badge": null,
           "albumId": "8639827533500001",
           "tvId": "1988268327400200",
           "rule": "每周三、五更新",
-          "duration": 327,
-          "total": 35
+          "duration": 308,
+          "total": 36
         },
         {
           "id": "iqiyi-2026-11-25-都市古仙医",
           "platform": "iqiyi",
           "title": "都市古仙医",
           "poster": "https://pic2.iqiyipic.com/image/20260717/4d/a6/a_100572131_m_601_m8_318_424.avif",
-          "episode": "第231集",
-          "updateTime": "08:55",
+          "episode": "第232集",
+          "updateTime": "10:36",
           "date": "2026-11-25",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1231vepsaz8.html",
+          "url": "https://www.iqiyi.com/v_26xia2nssog.html",
           "badge": null,
           "albumId": "3784317657367801",
           "tvId": "5873959692828900",
           "rule": "每周三、日更新",
-          "duration": 614,
+          "duration": 452,
           "total": 232
         },
         {
@@ -358,18 +358,18 @@
           "platform": "iqiyi",
           "title": "菌灵天下",
           "poster": "https://pic9.iqiyipic.com/image/20261010/11/27/a_101638101_m_601_m2_318_424.avif",
-          "episode": "第8集",
+          "episode": "第9集",
           "updateTime": "09:00",
           "date": "2026-11-25",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_u6y2z3jxbw.html",
+          "url": "https://www.iqiyi.com/v_1w9687b7fgs.html",
           "badge": null,
           "albumId": "5153614759402501",
           "tvId": "7949964907926400",
           "rule": "每周三更新",
-          "duration": 544,
-          "total": 8
+          "duration": 466,
+          "total": 9
         },
         {
           "id": "iqiyi-2026-11-25-高危禁药 我却越喝越强",
@@ -377,7 +377,7 @@
           "title": "高危禁药 我却越喝越强",
           "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
           "episode": "第42集",
-          "updateTime": "15:49",
+          "updateTime": "09:00",
           "date": "2026-11-25",
           "weekday": 3,
           "svip": false,
@@ -387,7 +387,7 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 143,
-          "total": 42
+          "total": 43
         },
         {
           "id": "iqiyi-2026-11-25-异世界战纪",
@@ -412,36 +412,36 @@
           "platform": "iqiyi",
           "title": "小魔女蒙娜.",
           "poster": "https://pic5.iqiyipic.com/image/20261023/b0/11/a_101702949_m_601_318_424.avif",
-          "episode": "第20集",
+          "episode": "第23集",
           "updateTime": "10:00",
           "date": "2026-11-25",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1ya23o6jlww.html",
+          "url": "https://www.iqiyi.com/v_174y80cxm0o.html",
           "badge": null,
           "albumId": "6808482903208101",
           "tvId": "6345633212573600",
           "rule": "每周一、三更新",
           "duration": 1382,
-          "total": 20
+          "total": 23
         },
         {
           "id": "iqiyi-2026-11-25-凌天独尊",
           "platform": "iqiyi",
           "title": "凌天独尊",
           "poster": "https://pic2.iqiyipic.com/image/20261123/a0/c7/a_100630974_m_601_m3_318_424.avif",
-          "episode": "第60集",
-          "updateTime": "16:36",
+          "episode": "第63集",
+          "updateTime": "09:00",
           "date": "2026-11-25",
           "weekday": 3,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_21kuluol35w.html",
+          "url": "https://www.iqiyi.com/v_290uyi9dzu8.html",
           "badge": null,
           "albumId": "7493532537133801",
           "tvId": "1410708916450700",
           "rule": "每周三更新",
-          "duration": 604,
-          "total": 62
+          "duration": 606,
+          "total": 64
         },
         {
           "id": "iqiyi-2026-11-26-逆天邪神年番",
@@ -485,7 +485,7 @@
           "title": "高危禁药 我却越喝越强",
           "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
           "episode": "第42集",
-          "updateTime": "15:49",
+          "updateTime": "09:00",
           "date": "2026-11-26",
           "weekday": 4,
           "svip": false,
@@ -495,7 +495,7 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 143,
-          "total": 42
+          "total": 43
         },
         {
           "id": "iqiyi-2026-11-26-诸天万界游：开局大圣求我加好友",
@@ -592,18 +592,18 @@
           "platform": "iqiyi",
           "title": "大千小镇",
           "poster": "https://pic0.iqiyipic.com/image/20260708/5d/85/a_101189109_m_601_m3_318_424.avif",
-          "episode": "第35集",
-          "updateTime": "15:52",
+          "episode": "第36集",
+          "updateTime": "09:44",
           "date": "2026-11-27",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_17flnbav67c.html",
+          "url": "https://www.iqiyi.com/v_u1yux1acxs.html",
           "badge": null,
           "albumId": "8639827533500001",
           "tvId": "1988268327400200",
           "rule": "每周三、五更新",
-          "duration": 327,
-          "total": 35
+          "duration": 308,
+          "total": 36
         },
         {
           "id": "iqiyi-2026-11-27-宗门修仙传",
@@ -665,7 +665,7 @@
           "title": "高危禁药 我却越喝越强",
           "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
           "episode": "第42集",
-          "updateTime": "15:49",
+          "updateTime": "09:00",
           "date": "2026-11-27",
           "weekday": 5,
           "svip": false,
@@ -675,7 +675,7 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 143,
-          "total": 42
+          "total": 43
         },
         {
           "id": "iqiyi-2026-11-27-灵武大陆",
@@ -863,7 +863,7 @@
           "title": "高危禁药 我却越喝越强",
           "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
           "episode": "第42集",
-          "updateTime": "15:49",
+          "updateTime": "09:00",
           "date": "2026-11-28",
           "weekday": 6,
           "svip": false,
@@ -873,7 +873,7 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 143,
-          "total": 42
+          "total": 43
         },
         {
           "id": "iqiyi-2026-11-28-绝世武神 第九季",
@@ -988,17 +988,17 @@
           "platform": "iqiyi",
           "title": "都市古仙医",
           "poster": "https://pic2.iqiyipic.com/image/20260717/4d/a6/a_100572131_m_601_m8_318_424.avif",
-          "episode": "第231集",
-          "updateTime": "08:55",
+          "episode": "第232集",
+          "updateTime": "10:36",
           "date": "2026-11-29",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_1231vepsaz8.html",
+          "url": "https://www.iqiyi.com/v_26xia2nssog.html",
           "badge": null,
           "albumId": "3784317657367801",
           "tvId": "5873959692828900",
           "rule": "每周三、日更新",
-          "duration": 614,
+          "duration": 452,
           "total": 232
         },
         {
@@ -1025,7 +1025,7 @@
           "title": "高危禁药 我却越喝越强",
           "poster": "https://pic8.iqiyipic.com/image/20261019/4b/95/a_101670755_m_601_m1_318_424.avif",
           "episode": "第42集",
-          "updateTime": "15:49",
+          "updateTime": "09:00",
           "date": "2026-11-29",
           "weekday": 7,
           "svip": false,
@@ -1035,7 +1035,7 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 143,
-          "total": 42
+          "total": 43
         },
         {
           "id": "iqiyi-2026-11-29-绝世武神 第九季",
@@ -1981,6 +1981,40 @@
           "rule": "每日更新",
           "duration": 107,
           "total": 36
+        },
+        {
+          "id": "bili-8067161",
+          "platform": "bili",
+          "title": "我是不白吃",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/205c8d7027e989044ae7711879c2f66f14bfa206.jpg",
+          "episode": "第1109话",
+          "updateTime": "19:00",
+          "date": "2026-11-25",
+          "weekday": 3,
+          "svip": false,
+          "url": "https://www.bilibili.com/bangumi/play/ep7954161",
+          "seasonId": "34149",
+          "badge": "9.3",
+          "duration": 75,
+          "total": 200,
+          "rule": "每周三、周六19:00更新"
+        },
+        {
+          "id": "bili-8067162",
+          "platform": "bili",
+          "title": "我是不白吃",
+          "poster": "https://i0.hdslb.com/bfs/bangumi/image/205c8d7027e989044ae7711879c2f66f14bfa206.jpg",
+          "episode": "第1110话",
+          "updateTime": "19:00",
+          "date": "2026-11-28",
+          "weekday": 6,
+          "svip": false,
+          "url": "https://www.bilibili.com/bangumi/play/ep7954161",
+          "seasonId": "34149",
+          "badge": "9.3",
+          "duration": 75,
+          "total": 200,
+          "rule": "每周三、周六19:00更新"
         }
       ]
     },
