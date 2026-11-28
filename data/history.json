@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T19:58:24.568Z",
+  "updatedAt": "2026-11-28T04:41:49.651Z",
   "weeks": [
     {
       "weekStart": "2026-11-23",
@@ -131,11 +131,11 @@
           "date": "2026-11-28",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.bilibili.com/bangumi/play/ep3854825",
+          "url": "https://www.bilibili.com/bangumi/play/ep3854826?from_spmid=666.5.schedule.0",
           "seasonId": "28747",
           "badge": "9.7",
-          "duration": 1244,
-          "total": 319,
+          "duration": 1171,
+          "total": 321,
           "rule": "6月13日起 每周六11:00"
         },
         {
@@ -171,7 +171,7 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 135,
-          "total": 45
+          "total": 46
         },
         {
           "id": "iqiyi-2026-11-23-灵武大陆",
@@ -196,18 +196,18 @@
           "platform": "iqiyi",
           "title": "诸天万界游：开局大圣求我加好友",
           "poster": "https://pic3.iqiyipic.com/image/20261111/5a/d3/a_101770757_m_601_m1_318_424.avif",
-          "episode": "第14集",
+          "episode": "第15集",
           "updateTime": "10:00",
           "date": "2026-11-23",
           "weekday": 1,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_ggxscak6t8.html",
+          "url": "https://www.iqiyi.com/v_17kgvuvexd0.html",
           "badge": null,
           "albumId": "4978742604605501",
           "tvId": "4328186105672200",
           "rule": "每周一、四、五、六、日更新",
           "duration": 184,
-          "total": 14
+          "total": 15
         },
         {
           "id": "iqiyi-2026-11-23-开心锤锤Story：不扫兴侦探社",
@@ -279,25 +279,25 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 135,
-          "total": 45
+          "total": 46
         },
         {
           "id": "iqiyi-2026-11-24-万人嫌我转修无情道",
           "platform": "iqiyi",
           "title": "万人嫌我转修无情道",
           "poster": "https://pic0.iqiyipic.com/image/20261102/b5/31/a_101731139_m_601_m1_318_424.avif",
-          "episode": "第11集",
+          "episode": "第12集",
           "updateTime": "11:00",
           "date": "2026-11-24",
           "weekday": 2,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_2g6mip60ecw.html",
+          "url": "https://www.iqiyi.com/v_tnph08myvo.html",
           "badge": null,
           "albumId": "6911160131714801",
           "tvId": "8298104885931700",
           "rule": "每周二、四、六更新",
-          "duration": 587,
-          "total": 12
+          "duration": 949,
+          "total": 13
         },
         {
           "id": "iqiyi-2026-11-24-异世界战纪",
@@ -387,7 +387,7 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 135,
-          "total": 45
+          "total": 46
         },
         {
           "id": "iqiyi-2026-11-25-异世界战纪",
@@ -495,43 +495,43 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 135,
-          "total": 45
+          "total": 46
         },
         {
           "id": "iqiyi-2026-11-26-诸天万界游：开局大圣求我加好友",
           "platform": "iqiyi",
           "title": "诸天万界游：开局大圣求我加好友",
           "poster": "https://pic3.iqiyipic.com/image/20261111/5a/d3/a_101770757_m_601_m1_318_424.avif",
-          "episode": "第14集",
+          "episode": "第15集",
           "updateTime": "10:00",
           "date": "2026-11-26",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_ggxscak6t8.html",
+          "url": "https://www.iqiyi.com/v_17kgvuvexd0.html",
           "badge": null,
           "albumId": "4978742604605501",
           "tvId": "4328186105672200",
           "rule": "每周一、四、五、六、日更新",
           "duration": 184,
-          "total": 14
+          "total": 15
         },
         {
           "id": "iqiyi-2026-11-26-万人嫌我转修无情道",
           "platform": "iqiyi",
           "title": "万人嫌我转修无情道",
           "poster": "https://pic0.iqiyipic.com/image/20261102/b5/31/a_101731139_m_601_m1_318_424.avif",
-          "episode": "第11集",
+          "episode": "第12集",
           "updateTime": "11:00",
           "date": "2026-11-26",
           "weekday": 4,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_2g6mip60ecw.html",
+          "url": "https://www.iqiyi.com/v_tnph08myvo.html",
           "badge": null,
           "albumId": "6911160131714801",
           "tvId": "8298104885931700",
           "rule": "每周二、四、六更新",
-          "duration": 587,
-          "total": 12
+          "duration": 949,
+          "total": 13
         },
         {
           "id": "iqiyi-2026-11-26-雪王来了！",
@@ -575,7 +575,7 @@
           "title": "大主宰年番",
           "poster": "https://pic4.iqiyipic.com/image/20260710/d1/1e/a_100459186_m_601_m39_318_424.avif",
           "episode": "第101集",
-          "updateTime": "08:50",
+          "updateTime": "10:36",
           "date": "2026-11-27",
           "weekday": 5,
           "svip": false,
@@ -675,7 +675,7 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 135,
-          "total": 45
+          "total": 46
         },
         {
           "id": "iqiyi-2026-11-27-灵武大陆",
@@ -700,18 +700,18 @@
           "platform": "iqiyi",
           "title": "诸天万界游：开局大圣求我加好友",
           "poster": "https://pic3.iqiyipic.com/image/20261111/5a/d3/a_101770757_m_601_m1_318_424.avif",
-          "episode": "第14集",
+          "episode": "第15集",
           "updateTime": "10:00",
           "date": "2026-11-27",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_ggxscak6t8.html",
+          "url": "https://www.iqiyi.com/v_17kgvuvexd0.html",
           "badge": null,
           "albumId": "4978742604605501",
           "tvId": "4328186105672200",
           "rule": "每周一、四、五、六、日更新",
           "duration": 184,
-          "total": 14
+          "total": 15
         },
         {
           "id": "iqiyi-2026-11-27-缔灵爱水心缠",
@@ -736,18 +736,18 @@
           "platform": "iqiyi",
           "title": "打卡修仙万念执灯",
           "poster": "https://pic1.iqiyipic.com/image/20261111/4c/95/a_101785573_m_601_m1_318_424.avif",
-          "episode": "第10集",
+          "episode": "第11集",
           "updateTime": "11:00",
           "date": "2026-11-27",
           "weekday": 5,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_k0wl3hsjh0.html",
+          "url": "https://www.iqiyi.com/v_ycbf4ajo9o.html",
           "badge": null,
           "albumId": "1707510277686201",
           "tvId": "1308031689133400",
           "rule": "每周五、六、日更新",
-          "duration": 253,
-          "total": 10
+          "duration": 263,
+          "total": 11
         },
         {
           "id": "iqiyi-2026-11-27-雪王来了！",
@@ -808,18 +808,18 @@
           "platform": "iqiyi",
           "title": "择日飞升",
           "poster": "https://pic5.iqiyipic.com/image/20260704/41/14/a_100571652_m_601_m8_318_424.avif",
-          "episode": "第21集",
-          "updateTime": "08:50",
+          "episode": "第22集",
+          "updateTime": "10:25",
           "date": "2026-11-28",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_21wrsm9dgno.html",
+          "url": "https://www.iqiyi.com/v_255ljnzl76k.html",
           "badge": null,
           "albumId": "7909856612089201",
           "tvId": "6838163042599200",
           "rule": "每周六更新",
-          "duration": 1174,
-          "total": 22
+          "duration": 1205,
+          "total": 23
         },
         {
           "id": "iqiyi-2026-11-28-宗门修仙传",
@@ -873,79 +873,79 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 135,
-          "total": 45
+          "total": 46
         },
         {
           "id": "iqiyi-2026-11-28-绝世武神 第九季",
           "platform": "iqiyi",
           "title": "绝世武神 第九季",
           "poster": "https://pic9.iqiyipic.com/image/20261030/7f/2a/a_101506824_m_601_m1_318_424.avif",
-          "episode": "第18集",
+          "episode": "第19集",
           "updateTime": "10:00",
           "date": "2026-11-28",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_pux6sp6sdg.html",
+          "url": "https://www.iqiyi.com/v_28jdepxs2to.html",
           "badge": null,
           "albumId": "5492128747131801",
           "tvId": "2876265921094300",
           "rule": "每周六、日更新",
-          "duration": 650,
-          "total": 18
+          "duration": 678,
+          "total": 19
         },
         {
           "id": "iqiyi-2026-11-28-诸天万界游：开局大圣求我加好友",
           "platform": "iqiyi",
           "title": "诸天万界游：开局大圣求我加好友",
           "poster": "https://pic3.iqiyipic.com/image/20261111/5a/d3/a_101770757_m_601_m1_318_424.avif",
-          "episode": "第14集",
+          "episode": "第15集",
           "updateTime": "10:00",
           "date": "2026-11-28",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_ggxscak6t8.html",
+          "url": "https://www.iqiyi.com/v_17kgvuvexd0.html",
           "badge": null,
           "albumId": "4978742604605501",
           "tvId": "4328186105672200",
           "rule": "每周一、四、五、六、日更新",
           "duration": 184,
-          "total": 14
+          "total": 15
         },
         {
           "id": "iqiyi-2026-11-28-打卡修仙万念执灯",
           "platform": "iqiyi",
           "title": "打卡修仙万念执灯",
           "poster": "https://pic1.iqiyipic.com/image/20261111/4c/95/a_101785573_m_601_m1_318_424.avif",
-          "episode": "第10集",
+          "episode": "第11集",
           "updateTime": "11:00",
           "date": "2026-11-28",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_k0wl3hsjh0.html",
+          "url": "https://www.iqiyi.com/v_ycbf4ajo9o.html",
           "badge": null,
           "albumId": "1707510277686201",
           "tvId": "1308031689133400",
           "rule": "每周五、六、日更新",
-          "duration": 253,
-          "total": 10
+          "duration": 263,
+          "total": 11
         },
         {
           "id": "iqiyi-2026-11-28-万人嫌我转修无情道",
           "platform": "iqiyi",
           "title": "万人嫌我转修无情道",
           "poster": "https://pic0.iqiyipic.com/image/20261102/b5/31/a_101731139_m_601_m1_318_424.avif",
-          "episode": "第11集",
+          "episode": "第12集",
           "updateTime": "11:00",
           "date": "2026-11-28",
           "weekday": 6,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_2g6mip60ecw.html",
+          "url": "https://www.iqiyi.com/v_tnph08myvo.html",
           "badge": null,
           "albumId": "6911160131714801",
           "tvId": "8298104885931700",
           "rule": "每周二、四、六更新",
-          "duration": 587,
-          "total": 12
+          "duration": 949,
+          "total": 13
         },
         {
           "id": "iqiyi-2026-11-28-开心锤锤Story：不扫兴侦探社",
@@ -1035,43 +1035,43 @@
           "tvId": "5780908455762200",
           "rule": "每日更新",
           "duration": 135,
-          "total": 45
+          "total": 46
         },
         {
           "id": "iqiyi-2026-11-29-绝世武神 第九季",
           "platform": "iqiyi",
           "title": "绝世武神 第九季",
           "poster": "https://pic9.iqiyipic.com/image/20261030/7f/2a/a_101506824_m_601_m1_318_424.avif",
-          "episode": "第18集",
+          "episode": "第19集",
           "updateTime": "10:00",
           "date": "2026-11-29",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_pux6sp6sdg.html",
+          "url": "https://www.iqiyi.com/v_28jdepxs2to.html",
           "badge": null,
           "albumId": "5492128747131801",
           "tvId": "2876265921094300",
           "rule": "每周六、日更新",
-          "duration": 650,
-          "total": 18
+          "duration": 678,
+          "total": 19
         },
         {
           "id": "iqiyi-2026-11-29-诸天万界游：开局大圣求我加好友",
           "platform": "iqiyi",
           "title": "诸天万界游：开局大圣求我加好友",
           "poster": "https://pic3.iqiyipic.com/image/20261111/5a/d3/a_101770757_m_601_m1_318_424.avif",
-          "episode": "第14集",
+          "episode": "第15集",
           "updateTime": "10:00",
           "date": "2026-11-29",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_ggxscak6t8.html",
+          "url": "https://www.iqiyi.com/v_17kgvuvexd0.html",
           "badge": null,
           "albumId": "4978742604605501",
           "tvId": "4328186105672200",
           "rule": "每周一、四、五、六、日更新",
           "duration": 184,
-          "total": 14
+          "total": 15
         },
         {
           "id": "iqiyi-2026-11-29-肥志百科  第15季",
@@ -1096,18 +1096,18 @@
           "platform": "iqiyi",
           "title": "打卡修仙万念执灯",
           "poster": "https://pic1.iqiyipic.com/image/20261111/4c/95/a_101785573_m_601_m1_318_424.avif",
-          "episode": "第10集",
+          "episode": "第11集",
           "updateTime": "11:00",
           "date": "2026-11-29",
           "weekday": 7,
           "svip": false,
-          "url": "https://www.iqiyi.com/v_k0wl3hsjh0.html",
+          "url": "https://www.iqiyi.com/v_ycbf4ajo9o.html",
           "badge": null,
           "albumId": "1707510277686201",
           "tvId": "1308031689133400",
           "rule": "每周五、六、日更新",
-          "duration": 253,
-          "total": 10
+          "duration": 263,
+          "total": 11
         },
         {
           "id": "iqiyi-2026-11-29-开心锤锤Story：不扫兴侦探社",
